@@ -3,12 +3,18 @@
 Welcome 👋
 This is your home base for understanding how TabStax works and how to stay in flow with it.
 
-TabStax isn’t “just another tab manager.”
-It’s a **flow manager**.
+TabStax isn't "just another tab manager."
+It's a **flow manager**.
 
 It groups all the sites you use to get something done — documentation, dashboards, tools, videos, briefs, email, boards — and combines them with your **next actions** and a little **context**. One click, and you're back where your mind left off.
 
-### See the problem TabStax solves
+## The problem TabStax solves
+
+Every time you return to a project, you **rebuild context from scratch**: reopen tabs, re-find docs, try to remember "what was I doing here?" Your brain loops on unfinished work, burning through working memory just to hold it all together. There's no natural way to package that context—tabs, resources, next actions—into one named place you can trust.
+
+**TabStax is built on behavioral psychology**—not just a random idea. It works with how your brain actually wants to work: externalizing context, defining clear next actions, and freeing your working memory for actual thinking instead of remembering. ([Read the full problem statement →](topics/what_problem_tabstax_solves.md))
+
+### See it in action
 
 <div style="max-width: 800px; margin: 20px auto;">
   <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
