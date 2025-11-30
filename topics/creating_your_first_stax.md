@@ -33,4 +33,6 @@ Now you can jump back into your Christmas shopping list without hunting through 
 
 ---
 
-**Want to understand more?** → [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept
+**Next steps:**
+- [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax
+- [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept

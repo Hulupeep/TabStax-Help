@@ -21,7 +21,8 @@ Over time, this help center will grow into a small set of clear guides, includin
 * **Getting started**
   * [What is a Stax?](topics/what_is_a_stax.md) – understand the core concept
   * [Creating your first Stax](topics/creating_your_first_stax.md) – step-by-step guide with a real example
-* **Working with Stax** – saving your current tabs, reopening them later, using next actions and notes.
+* **Working with Stax**
+  * [Understanding the main popup](topics/using_the_main_popup.md) – navigate next actions and open Stax
 * **Sharing and collaboration** – what it means when someone shares a Stax with you, and how to safely use shared Stax.
 * **Accounts and sync** – using TabStax locally without an account, or signing in to sync Stax across devices.
 * **Safety and privacy** – what TabStax can see, what it cannot see, and how to treat Stax links safely.
