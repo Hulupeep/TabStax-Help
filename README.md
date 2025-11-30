@@ -27,6 +27,7 @@ TabStax Help is designed to answer one simple question:
 Over time, this help center will grow into a small set of clear guides, including:
 
 * **Getting started**
+  * [What problem TabStax solves](topics/what_problem_tabstax_solves.md) – the core problem and mindset shift
   * [What you see the first time you open TabStax](topics/first_time_opening_tabstax.md) – your first experience after installing
   * [The TabStax Mental Model](topics/tabstax_mental_model.md) – the big idea: think in problems, not tabs
   * [What is a Stax?](topics/what_is_a_stax.md) – understand the core concept
@@ -52,8 +53,8 @@ If you've just installed the extension or landed here for the first time:
 
 Start simple: pick one project, save the tabs you use for it as a Stax, add a couple of next actions, and use that as your "home base" for that piece of work.
 
+**Want to understand the core idea?** → [What problem TabStax solves](topics/what_problem_tabstax_solves.md) explains the mindset shift
 **Just installed?** → [What you see the first time you open TabStax](topics/first_time_opening_tabstax.md) explains your first screen
-**Want the full picture?** → [The TabStax Mental Model](topics/tabstax_mental_model.md) explains the conceptual shift
 **Ready to try it?** → [Creating your first Stax](topics/creating_your_first_stax.md)
 
 ---

@@ -83,6 +83,7 @@ Now you can stash this whole workspace with one click and trust it'll be there w
 ---
 
 **Next steps:**
+- [What problem TabStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
 - [Creating your first Stax](creating_your_first_stax.md) – detailed step-by-step guide with examples
 - [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax

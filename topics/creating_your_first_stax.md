@@ -38,6 +38,7 @@ Now you can jump back into your Christmas shopping list without hunting through 
 ---
 
 **Next steps:**
+- [What problem TabStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax
 - [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept
