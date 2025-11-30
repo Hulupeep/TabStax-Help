@@ -1,4 +1,6 @@
-**What is a Stax?**
+[← Back to Help Home](../README.md)
+
+# What is a Stax?
 
 A **Stax** is a *space where you get things done*.
 
@@ -223,7 +225,11 @@ If you wouldn’t trust a random link from someone, don’t trust a random Stax 
 
 ## TL;DR
 
-* A **Stax** is your **flow space**: tabs + next actions + context for one thing you’re doing.
-* It’s not a tab manager. It’s a **flow manager** that puts you back *exactly* where your mind left off.
-* When someone shares a Stax with you, they’re inviting you to work in the **same space**: same tabs, same structure, same context.
+* A **Stax** is your **flow space**: tabs + next actions + context for one thing you're doing.
+* It's not a tab manager. It's a **flow manager** that puts you back *exactly* where your mind left off.
+* When someone shares a Stax with you, they're inviting you to work in the **same space**: same tabs, same structure, same context.
 * You can open it in any browser, and with the extension, save it, edit it, and make it your own.
+
+---
+
+**Next:** [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example

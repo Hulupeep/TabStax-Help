@@ -18,7 +18,9 @@ TabStax Help is designed to answer one simple question:
 
 Over time, this help center will grow into a small set of clear guides, including:
 
-* **Getting started** – what TabStax is, how to install it, and how to create your first Stax.
+* **Getting started**
+  * [What is a Stax?](topics/what_is_a_stax.md) – understand the core concept
+  * [Creating your first Stax](topics/creating_your_first_stax.md) – step-by-step guide with a real example
 * **Working with Stax** – saving your current tabs, reopening them later, using next actions and notes.
 * **Sharing and collaboration** – what it means when someone shares a Stax with you, and how to safely use shared Stax.
 * **Accounts and sync** – using TabStax locally without an account, or signing in to sync Stax across devices.
@@ -29,15 +31,17 @@ You don’t need to read everything. Dip in when something feels confusing or wh
 
 ---
 
-## If you’re new to TabStax
+## If you're new to TabStax
 
-If you’ve just installed the extension or landed here for the first time:
+If you've just installed the extension or landed here for the first time:
 
 * Think of TabStax as a set of **named workspaces** for your brain.
 * Each workspace is a **Stax**: a bundle of tabs plus next actions and context.
 * Instead of reopening random tabs and trying to remember what you were doing, you open the Stax and step back into the same mental room.
 
-Start simple: pick one project, save the tabs you use for it as a Stax, add a couple of next actions, and use that as your “home base” for that piece of work.
+Start simple: pick one project, save the tabs you use for it as a Stax, add a couple of next actions, and use that as your "home base" for that piece of work.
+
+**Ready to try it?** → [Creating your first Stax](topics/creating_your_first_stax.md)
 
 ---
 
