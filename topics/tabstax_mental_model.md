@@ -27,7 +27,7 @@ flowchart TD
     F --> B
 </pre>
 
-<img src="../screenshots/rabbithole.png" alt="The rabbit hole of scattered tabs and distraction" width="600" style="display: block; margin: 20px auto;">
+<img src="../screenshots/rabbithole.png" alt="The rabbit hole of scattered tabs and distraction" width="800" style="display: block; margin: 20px auto;">
 
 ---
 

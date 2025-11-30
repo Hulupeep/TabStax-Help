@@ -16,6 +16,8 @@ Christmas shopping means juggling tabs for Amazon, Etsy, wish lists, price compa
 
 3. **Name your Stax** – In the input field, type something like `Christmas Shopping 2025` or `santa #shopping #christmas` and click **New**.
 
+<img src="../screenshots/2%20add%20name%20and%20tags.png" alt="Naming your Christmas shopping Stax with tags" width="800" style="display: block; margin: 20px auto;">
+
 4. **Your Start Page opens** – TabStax creates a home base for this shopping session.
 
 5. **Add your very next actions** – In the text box at the top, type what you need to do next:
