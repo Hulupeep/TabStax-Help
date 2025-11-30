@@ -27,6 +27,8 @@ flowchart TD
     F --> B
 </pre>
 
+<img src="../screenshots/rabbithole.png" alt="The rabbit hole of scattered tabs and distraction" width="600" style="display: block; margin: 20px auto;">
+
 ---
 
 ## The new mental model: Stax as entry points
