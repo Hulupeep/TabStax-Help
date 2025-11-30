@@ -116,6 +116,7 @@ Now you can think in problems and outcomes, not tabs and chaos—and your brain 
 ---
 
 **Related guides:**
+- [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
 - [What is a Stax?](what_is_a_stax.md) – detailed explanation of the core concept
 - [Creating your first Stax](creating_your_first_stax.md) – practical step-by-step guide
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions daily

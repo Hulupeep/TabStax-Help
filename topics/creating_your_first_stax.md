@@ -2,6 +2,8 @@
 
 # Creating your first Stax
 
+> **Note:** If you just installed TabStax and want to understand what you're seeing, check out [What you see the first time you open TabStax](first_time_opening_tabstax.md) first.
+
 ## Why this helps
 
 Christmas shopping means juggling tabs for Amazon, Etsy, wish lists, price comparisons, and gift ideas—all while trying to remember what you decided to buy for who. Close your browser or switch tasks, and that mental setup vanishes. You'll waste 10 minutes hunting through browser history and trying to remember "which Lego set was I comparing?" A Stax saves exactly where your brain left off, so you can drop back into Christmas shopping without rebuilding everything from scratch.
