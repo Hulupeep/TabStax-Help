@@ -8,6 +8,8 @@ When you're juggling multiple projects, your brain has to answer two questions: 
 
 The **top bar** gives you quick access to Search, Feedback, Help, and Sign out. Below that, the popup has two main sections:
 
+<img src="../screenshots/mainpopup.png" alt="Main TabStax popup showing My Next Actions and My Stax" width="800" style="display: block; margin: 20px auto;">
+
 ---
 
 ## My Next Actions
@@ -35,6 +37,8 @@ Instead of asking yourself "What was I doing?" or "Which Stax had that thing I n
 ## My Stax
 
 This section is where you **open and manage whole Stax**. Use it when you're ready to dive into a full project with all its tabs.
+
+<img src="../screenshots/mainpopup2_Nextactions_collapsed.png" alt="My Stax expanded with Next Actions collapsed" width="800" style="display: block; margin: 20px auto;">
 
 **What you can do:**
 
