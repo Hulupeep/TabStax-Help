@@ -1,5 +1,7 @@
 [← Back to Help Home](../README.md)
 
+<img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="margin: 10px 0;">
+
 # The TabStax Mental Model
 
 Most people think in terms of **websites and tabs**: "Where was that page again?", "Which doc was I using?", "Where did I leave that insurance quote?" The TabStax mental model is different. Instead of asking "which websites am I using?", you ask **"which problem or project am I in right now?"** Each Stax is an **entry point** for that problem space. In a few seconds you gather the key resources, land on a Start Page, and write the very next actions so your brain has a ledge to grab onto next time. Instead of hanging from a cliff with no grip, you've built a solid ledge.

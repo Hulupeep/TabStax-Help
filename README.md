@@ -1,3 +1,7 @@
+<div style="text-align: center; margin: 20px 0;">
+  <img src="icons/tabstax-64.png" alt="TabStax" width="64" height="64">
+</div>
+
 # Welcome to TabStax Help
 
 Welcome 👋

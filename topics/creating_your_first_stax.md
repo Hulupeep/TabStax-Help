@@ -1,5 +1,7 @@
 [← Back to Help Home](../README.md)
 
+<img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="margin: 10px 0;">
+
 # Creating your first Stax
 
 > **Note:** If you just installed TabStax and want to understand what you're seeing, check out [What you see the first time you open TabStax](first_time_opening_tabstax.md) first.

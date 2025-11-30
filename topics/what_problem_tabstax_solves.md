@@ -1,5 +1,7 @@
 [← Back to Help Home](../README.md)
 
+<img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="margin: 10px 0;">
+
 # What problem TabStax solves
 
 The web has exploded into a million pages, but your actual work lives across many tabs and tools at once—not on a single website. Every time you return to a project, you rebuild context from scratch: reopen tabs, re-find docs, try to remember "what was I doing here?" There's no natural way to package all of that context—tabs, resources, half-formed thoughts—into one named place. TabStax changes that. You don't have to rebuild context anymore.
