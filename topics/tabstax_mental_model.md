@@ -93,6 +93,28 @@ flowchart LR
 
 ---
 
+## The psychology: why your brain has been waiting for this
+
+TabStax isn't just convenient—it aligns with how your brain actually wants to work, but your prefrontal cortex keeps overriding.
+
+**Your working memory can only hold 4–7 things at once** (Miller, 1956; Cowan, 2001). Every time you try to remember "which tabs I had open" or "what I was doing next," you're burning through that tiny budget. Your prefrontal cortex—the executive function part of your brain—tries to compensate by holding everything: deadlines, URLs, half-formed intentions, mental notes. This is exhausting and it fails constantly.
+
+**The Zeigarnik Effect** (Zeigarnik, 1927) shows that unfinished tasks create mental tension. Your brain loops on them, trying not to forget. But here's the key: **the moment you have a clear, external plan for what to do next, the loop stops.** You don't need to finish the task—you just need to trust that you've captured it and know the next physical action.
+
+This is why **Getting Things Done (GTD)** works (Allen, 2001). The "next action" is the smallest, most concrete step you can take. Not "plan the presentation"—that's vague and your brain doesn't know where to grab. Instead: "Draft 3 bullet points for intro slide." That's a ledge. Your brain can let go because it knows exactly where to start next time.
+
+**TabStax does this automatically:**
+
+* **Captures context** (all the tabs/resources for this problem space) → your brain stops trying to remember what you had open
+* **Stores next actions** (the specific, physical steps) → Zeigarnik loop stops; mental tension releases
+* **Externalizes the entire setup** → frees your working memory for actual thinking instead of remembering
+
+Your prefrontal cortex has been trying to be a heroic bookmark manager and task tracker. It's the wrong tool for the job. **Your brain's intuitive system always wanted named entry points with clear next actions**—it just couldn't articulate that through the noise of your frontal lobe saying "I can hold it all, I'll remember."
+
+TabStax is the model of work your brain always wanted but didn't ask for. It stops fighting your cognitive architecture and starts working with it.
+
+---
+
 ## Why this feels different in your brain
 
 **Your brain stops looping on "don't forget."**
