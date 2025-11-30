@@ -17,7 +17,7 @@ Without TabStax, most people operate like this:
 
 The result is **vague dread** instead of progress.
 
-```mermaid
+<pre class="mermaid">
 flowchart TD
     A[Remember deadline] --> B[Open random tabs]
     B --> C[Get distracted]
@@ -25,7 +25,7 @@ flowchart TD
     D --> E[Later: try to remember what you had open]
     E --> F[Stress / procrastination]
     F --> B
-```
+</pre>
 
 ---
 
@@ -66,7 +66,7 @@ Your car insurance renews on the 13th every year. You always *mean* to compare p
 * On the Start Page, set a single next action: "Run comparison on 2 providers before accepting renewal."
 * **Result:** Next time you open that Stax, everything is ready and you just do the comparison instead of hunting for links or procrastinating.
 
-```mermaid
+<pre class="mermaid">
 flowchart TD
     A[Notice problem / deadline] --> B[Create Stax for it]
     B --> C[Add key tabs/docs]
@@ -74,11 +74,11 @@ flowchart TD
     D --> E[Later: open Stax]
     E --> F[Follow next action]
     F --> G[Progress & relief]
-```
+</pre>
 
 ### Car insurance example (detailed flow)
 
-```mermaid
+<pre class="mermaid">
 flowchart LR
     A[Insurance renews on 13th] --> B[Create 'Car Insurance Renewal' Stax]
     B --> C[Add: renewal email + provider login + comparison site]
@@ -87,7 +87,7 @@ flowchart LR
     E --> F[Click comparison site tab]
     F --> G[Complete comparison in 10 mins]
     G --> H[Save money, feel competent]
-```
+</pre>
 
 ---
 
