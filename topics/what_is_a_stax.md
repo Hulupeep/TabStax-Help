@@ -233,5 +233,6 @@ If you wouldn’t trust a random link from someone, don’t trust a random Stax 
 ---
 
 **Next steps:**
+- [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax

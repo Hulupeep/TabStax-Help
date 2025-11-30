@@ -56,3 +56,10 @@ This section is where you **open and manage whole Stax**. Use it when you're rea
 ## Now you can…
 
 Now you can answer "What should I do next?" without digging through projects, and open the right Stax in one click when you're ready to work—no more rebuilding your setup or losing track of which project needed what.
+
+---
+
+**Related guides:**
+- [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
+- [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
+- [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept
