@@ -1,0 +1,11 @@
+# TabStax Help - GitHub Pages Configuration
+
+# Site settings
+title: TabStax Help
+description: Help center for TabStax - your flow manager
+
+# Build settings
+markdown: kramdown
+
+# GitHub Pages will use this theme by default
+# We override it with our custom layout that includes Mermaid support
