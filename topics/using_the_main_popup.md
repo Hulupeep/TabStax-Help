@@ -1,8 +1,6 @@
 [← Back to Help Home](../README.md)
 
-<img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="margin: 10px 0;">
-
-# Understanding the main TabStax popup
+# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Understanding the main TabStax popup
 
 ## Why this helps
 

@@ -1,8 +1,4 @@
-<div style="text-align: center; margin: 20px 0;">
-  <img src="icons/tabstax-64.png" alt="TabStax" width="64" height="64">
-</div>
-
-# Welcome to TabStax Help
+# <img src="icons/tabstax-48.png" alt="TabStax" width="48" height="48" style="vertical-align: middle; margin-right: 10px;">Welcome to TabStax Help
 
 Welcome 👋
 This is your home base for understanding how TabStax works and how to stay in flow with it.

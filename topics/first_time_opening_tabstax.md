@@ -1,8 +1,6 @@
 [← Back to Help Home](../README.md)
 
-<img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="margin: 10px 0;">
-
-# What you see the first time you open TabStax
+# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What you see the first time you open TabStax
 
 You've just installed TabStax, pinned it to your browser toolbar, and clicked the icon. This is the very first screen you'll see. It's designed to capture your current browser window—all the tabs you have open right now—and save them as your **first Stax**. This gives you a safe, named workspace you can return to anytime.
 

@@ -1,8 +1,6 @@
 [← Back to Help Home](../README.md)
 
-<img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="margin: 10px 0;">
-
-# What is a Stax?
+# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What is a Stax?
 
 A **Stax** is a *space where you get things done*.
 
