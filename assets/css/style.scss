@@ -1,0 +1,77 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* Custom table styling for better readability */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+
+table th,
+table td {
+  padding: 0.75em 1em;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Zebra striping for alternating rows */
+table tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+/* Hover effect for rows */
+table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Make links in tables more visible */
+table a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* Specific column widths for use case tables */
+table th:first-child,
+table td:first-child {
+  width: 3em;
+  text-align: center;
+}
+
+/* Code/pattern column styling */
+table code {
+  background-color: #f6f8fa;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* Responsive table wrapper */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 0.85em;
+  }
+
+  table th,
+  table td {
+    padding: 0.5em 0.75em;
+  }
+}
