@@ -10,7 +10,7 @@ It groups all the sites you use to get something done — documentation, dashboa
 
 And not just you....you're entire team, with Tabstax sharing.
 
-Find out [great use cases](topics/topten_use_cases.md) just for you as a writer, teacher, developer, sales rep—whatever your role.
+Find out [great use cases](topics/usecases/index.md) just for you as a writer, teacher, developer, sales rep—whatever your role.
 
 ## The problem TabStax solves
 
