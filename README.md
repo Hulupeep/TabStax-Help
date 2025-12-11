@@ -10,6 +10,8 @@ It groups all the sites you use to get something done — documentation, dashboa
 
 And not just you....you're entire team, with Tabstax sharing.
 
+Find out [great use cases](topics/topten_use_cases.md) just for you as a writer, teacher, developer, sales rep—whatever your role.
+
 ## The problem TabStax solves
 
 Every time you return to a project, you **rebuild context from scratch**: reopen tabs, re-find docs, try to remember "what was I doing here?" Your brain loops on unfinished work, burning through working memory just to hold it all together. There's no natural way to package that context—tabs, resources, next actions—into one named place you can trust.
@@ -42,6 +44,7 @@ Over time, this help center will grow into a small set of clear guides, includin
   * [Creating your first Stax](topics/creating_your_first_stax.md) – step-by-step guide with a real example
 * **Working with Stax**
   * [Understanding the main popup](topics/using_the_main_popup.md) – navigate next actions and open Stax
+  * [Adding Favourites](topics/adding_favourites.md) – pin current priorities for fast access
 * **Sharing and collaboration** – what it means when someone shares a Stax with you, and how to safely use shared Stax.
 * **Accounts and sync** – using TabStax locally without an account, or signing in to sync Stax across devices.
 * **Safety and privacy** – what TabStax can see, what it cannot see, and how to treat Stax links safely.
