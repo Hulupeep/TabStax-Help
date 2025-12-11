@@ -60,6 +60,49 @@
     ul, ol {
       padding-left: 2em;
     }
+    /* Table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5em 0;
+      font-size: 0.95em;
+    }
+    table th,
+    table td {
+      padding: 0.75em 1em;
+      border: 1px solid #d0d7de;
+      text-align: left;
+      vertical-align: top;
+    }
+    table th {
+      background-color: #f6f8fa;
+      font-weight: 600;
+      color: #24292e;
+    }
+    table tbody tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+    table tbody tr:nth-child(even) {
+      background-color: #f6f8fa;
+    }
+    table tbody tr:hover {
+      background-color: #f0f3f6;
+    }
+    table a {
+      color: #0366d6;
+    }
+    table code {
+      background-color: #eff1f3;
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+    /* First column (numbers) narrower */
+    table th:first-child,
+    table td:first-child {
+      width: 2.5em;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
