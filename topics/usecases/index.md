@@ -8,117 +8,176 @@ Below you'll find over 70 ways people actually use TabStax—from high-pressure 
 
 ---
 
-## Core Heroes
+## Quick Navigation
 
-These 16 use cases have their own dedicated pages with full stories.
-
-### Core Work Heroes
-
-| # | Role | Read |
-|---|------|------|
-| 1 | Consultant With Three Clients and No Time | [Read →](consultant.md) |
-| 2 | Neurodivergent Builder With 5 Parallel Projects | [Read →](neurodivergent-builder.md) |
-| 3 | Scrum Master With a Standup That Can Run Without Them | [Read →](scrum-master.md) |
-| 4 | SME Owner Running the Business From 6 Different Apps | [Read →](sme-owner.md) |
-| 5 | DevOps Responding to a Production Incident | [Read →](devops.md) |
-| 6 | Product Manager With Three Streams and a 15-Minute Gap | [Read →](product-manager.md) |
-| 7 | Public Defender in LA, 100 Degrees, Court in 10 Minutes | [Read →](public-defender.md) |
-| 8 | Remote-First Founder Doing Investor Pitch, Hiring Interview, and Roadmap Review | [Read →](remote-founder.md) |
-
-### Core Life Heroes
-
-| # | Role | Read |
-|---|------|------|
-| 9 | ND Parent With School Chaos and Shared Mental Load | [Read →](nd-parent.md) |
-| 10 | Mum With a Son Who Has Special Needs – The Call From the School | [Read →](special-needs-mum.md) |
-| 11 | Preparing for Surgery in 4 Weeks | [Read →](surgery-prep.md) |
-| 12 | Funeral Planning While Grieving | [Read →](funeral-planning.md) |
-| 13 | Retiree Starting a Second Act Instead of Just Drifting | [Read →](retiree.md) |
-| 14 | Bill, 240lbs, Training for His First Marathon | [Read →](marathon-training.md) |
-| 15 | Mary, Who Acted 20 Years Ago and Buried It | [Read →](returning-actor.md) |
-| 16 | Caregiver for an Ageing Parent, Managing Medical, Legal, and Daily Life | [Read →](caregiver.md) |
+- [Hero Use Cases](#hero-use-cases) – 16 detailed stories with dedicated pages
+- [Work Use Cases](#work-use-cases) – Professional scenarios by category
+- [Life Use Cases](#life-use-cases) – Personal and life admin scenarios
 
 ---
 
-## All Use Cases
+### Hero Use Cases
 
-Browse the complete collection below. Click any title to jump to its full story.
+| Category | Who am I? | Scenario | Stax Pattern | What It Gives You | Read |
+|----------|-----------|----------|--------------|-------------------|------|
+| Work – Multi-Client / Multi-Project | Independent consultant / fractional PM | Three clients, back-to-back calls, no time to breathe | `Client – [Name] – Project` | One-click 'world per client' for instant context re-entry | [Read →](consultant.md) |
+| Work – Multi-Client / Multi-Project | Neurodivergent builder / founder | 5 parallel projects, ADHD brain, hyperfocus bursts | `Project – [Name]` | Save & reload 'brain states' per project | [Read →](neurodivergent-builder.md) |
+| Work – Rituals & Team Rhythms | Scrum master / agile coach | Daily standup + planning + being out sick | `Scrum – Standup Stax` | A standup cockpit anyone on the team can run | [Read →](scrum-master.md) |
+| Work – SME & Multi-Role | SME owner / studio founder | Running the business from 6 different apps | `Biz – Daily Ops` | Turns tool soup into a single daily control room | [Read →](sme-owner.md) |
+| Work – Ops & Incidents | DevOps engineer / SRE | P1 incident just triggered | `P1 – [Symptom / Service]` | Shared incident war room in one Stax | [Read →](devops.md) |
+| Work – Multi-Client / Multi-Project | Product manager (often ND) | Three streams, 15-minute gaps between meetings | `PM – [Stream Name]` | Clean mental switch between streams in seconds | [Read →](product-manager.md) |
+| Work – Legal & Crisis | Public defender | 100°F in LA, court in 10 minutes, multiple cases | `Case – [Client Name]` | Walk into court coherent, not scrambling | [Read →](public-defender.md) |
+| Work – SME & Multi-Role | Remote-first founder | Investor pitch, hiring interview, roadmap review | `Founder – [Context]` | Separate 'rooms' so you show up present | [Read →](remote-founder.md) |
+| Life – Family & School | Parent of ND child | School calls about incident; meeting tomorrow | `[Child] – School & Supports` | All portals and agreements in one shared Stax | [Read →](nd-parent.md) |
+| Life – Family & School | Parent of child with special needs | The call from school, IEP meetings | `[Child] – Special Needs` | Shared cockpit with co-parent and specialists | [Read →](special-needs-mum.md) |
+| Life – Health & Recovery | Patient facing surgery | Operation in 4 weeks; work, home, hospital logistics | `Surgery – Operation & Recovery` | Timeline-based plan shared with family | [Read →](surgery-prep.md) |
+| Life – Crisis & Loss | Adult child planning funeral | Organising funeral while grieving | `Funeral – [Name] – Farewell` | Admin scaffolding when brain is overloaded | [Read →](funeral-planning.md) |
+| Life – Dreams & Second Act | Retired professional | Sorting pensions & designing meaningful chapter 2 | `Retirement – Second Act` | Turn vague 'someday' into concrete experiment | [Read →](retiree.md) |
+| Life – Health & Recovery | 240lb first-time marathoner | 16-20 week build, wants to finish healthy | `Bill – Marathon 2025` | Plan, progress, realistic non-heroic steps | [Read →](marathon-training.md) |
+| Life – Dreams & Second Act | Former actor / creative | 20 years later, trying again before it's too late | `Mary – Return to Acting` | Safe, structured way to attempt the dream | [Read →](returning-actor.md) |
+| Life – Family & Care | Caregiver for ageing parent | Medical, legal, benefits, siblings all at once | `Mum/Dad – Health & Life Admin` | One shared cockpit for the responsible child | [Read →](caregiver.md) |
 
-| # | Use Case | Jump |
-|---|----------|------|
-| 1 | Consultant With Three Clients and No Time | [Read →](consultant.md) |
-| 2 | Neurodivergent Builder With 5 Parallel Projects | [Read →](neurodivergent-builder.md) |
-| 3 | Sales Rep Chasing a Whale Account | [Read](#3-sales-rep-chasing-a-whale-account) |
-| 4 | Scrum Master With a Standup That Can Run Without Them | [Read →](scrum-master.md) |
-| 5 | ND Parent With School Chaos and Shared Mental Load | [Read →](nd-parent.md) |
-| 6 | SME Owner Running the Business From 6 Different Apps | [Read →](sme-owner.md) |
-| 7 | Corporate Manager Living in 12 SaaS Tools All Day | [Read](#7-corporate-manager-living-in-12-saas-tools-all-day) |
-| 8 | DevOps Responding to a Production Incident | [Read →](devops.md) |
-| 9 | Emergency Manager Handling a Gas Leak With Multiple Agencies | [Read](#9-emergency-manager-handling-a-gas-leak-with-multiple-agencies) |
-| 10 | Personal Finances & Taxes – With an Accountant in the Loop | [Read](#10-personal-finances--taxes--with-an-accountant-in-the-loop) |
-| 11 | Product Manager With Three Streams and a 15-Minute Gap | [Read →](product-manager.md) |
-| 12 | Sales Engineer Prepping Two Completely Different Demos | [Read](#12-sales-engineer-prepping-two-completely-different-demos-in-one-afternoon) |
-| 13 | Customer Success Manager Surfacing From One Renewal Into Another | [Read](#13-customer-success-manager-surfacing-from-one-renewal-into-another) |
-| 14 | Data Analyst With Three Urgent Requests From Different Execs | [Read](#14-data-analyst-with-three-urgent-requests-from-different-execs) |
-| 15 | Startup Founder Doing Board Prep Between Fires | [Read](#15-startup-founder-doing-board-prep-between-fires) |
-| 16 | DevOps Engineer Moving From Postmortem to Reliability Review | [Read](#16-devops-engineer-moving-from-postmortem-to-reliability-review) |
-| 17 | Emergency Manager Switching From "Gas Leak" to "Storm Prep" | [Read](#17-emergency-manager-switching-from-gas-leak-to-storm-prep) |
-| 18 | Corporate Manager With Back-to-Back "Different Universe" Meetings | [Read](#18-corporate-manager-with-back-to-back-different-universe-meetings) |
-| 19 | UX Researcher Jumping Between Live Sessions and Synthesis | [Read](#19-ux-researcher-jumping-between-live-sessions-and-synthesis) |
-| 20 | Marketing Lead Orchestrating a Launch Across Channels | [Read](#20-marketing-lead-orchestrating-a-launch-across-channels) |
-| 21 | Small Agency Founder With Three Clients Pulling at Once | [Read](#21-small-agency-founder-with-three-clients-pulling-at-once) |
-| 22 | Solo Developer/Indie Hacker Pinballing Between Code, Bugs, and Launch | [Read](#22-solo-developerindie-hacker-pinballing-between-code-bugs-and-launch) |
-| 23 | Real Estate Agent on the Road Between Buyers and Sellers | [Read](#23-real-estate-agent-on-the-road-between-buyers-and-sellers) |
-| 24 | Doctor in Clinic Moving From Routine Checkups to a Scary Lab Result | [Read](#24-doctor-in-clinic-moving-from-routine-checkups-to-a-scary-lab-result) |
-| 25 | Teacher Running Back-to-Back Classes and Then a Parent Meeting | [Read](#25-teacher-running-back-to-back-classes-and-then-a-parent-meeting) |
-| 26 | Conference Organizer Switching Between Sponsors, Speakers, and Venue | [Read](#26-conference-organizer-switching-between-sponsors-speakers-and-venue) |
-| 27 | Wedding Photographer Moving From Planning to Shooting to Editing | [Read](#27-wedding-photographer-moving-from-planning-to-shooting-to-editing) |
-| 28 | YouTuber / Streamer Jumping Between Prep, Live, and Post | [Read](#28-youtuber--streamer-jumping-between-prep-live-and-post) |
-| 29 | NGO Program Manager Between Field Updates and Donor Reports | [Read](#29-ngo-program-manager-between-field-updates-and-donor-reports) |
-| 30 | Recruiter Running a Full Interview Loop for One Candidate | [Read](#30-recruiter-running-a-full-interview-loop-for-one-candidate) |
-| 31 | Public Defender in LA, 100 Degrees, Court in 10 Minutes | [Read →](public-defender.md) |
-| 32 | Manufacturing Ops Manager Between Factory Floor, Supplier Crisis, and Audit | [Read](#32-manufacturing-ops-manager-between-factory-floor-supplier-crisis-and-audit) |
-| 33 | Film Editor Cutting a Feature and a Trailer for a Different Client | [Read](#33-film-editor-cutting-a-feature-and-a-trailer-for-a-different-client) |
-| 34 | Hospital Social Worker Handling Three Complex Discharges | [Read](#34-hospital-social-worker-handling-three-complex-discharges) |
-| 35 | Festival Ops Lead Juggling Security, Weather, and Artist Schedules | [Read](#35-festival-ops-lead-juggling-security-weather-and-artist-schedules) |
-| 36 | HR Generalist Dealing With a Grievance, an Offer, and a Policy Rollout | [Read](#36-hr-generalist-dealing-with-a-grievance-an-offer-and-a-policy-rollout) |
-| 37 | Investment Analyst Covering Three Sectors on Earnings Week | [Read](#37-investment-analyst-covering-three-sectors-on-earnings-week) |
-| 38 | City Planner Balancing a New Transport Corridor, a Housing Project, and Public Input | [Read](#38-city-planner-balancing-a-new-transport-corridor-a-housing-project-and-public-input) |
-| 39 | Policy Lobbyist Prepping Lawmakers for a Committee Hearing | [Read](#39-policy-lobbyist-prepping-lawmakers-for-a-committee-hearing) |
-| 40 | Remote-First Founder Doing Investor Pitch, Hiring Interview, and Roadmap Review | [Read →](remote-founder.md) |
-| 41 | Emergency Vet Switching From One Crisis to the Next | [Read](#41-emergency-vet-switching-from-one-crisis-to-the-next) |
-| 42 | Airline Operations Controller in a Storm | [Read](#42-airline-operations-controller-in-a-storm) |
-| 43 | Construction Site Foreman Between Subcontractors, Deliveries, and Safety | [Read](#43-construction-site-foreman-between-subcontractors-deliveries-and-safety) |
-| 44 | Financial Planner Running Three Client Reviews in One Morning | [Read](#44-financial-planner-running-three-client-reviews-in-one-morning) |
-| 45 | Dungeon Master Running Multiple Campaigns | [Read](#45-dungeon-master-running-multiple-campaigns) |
-| 46 | Veterinary Clinic Owner Balancing Patients, Staff, and Business | [Read](#46-veterinary-clinic-owner-balancing-patients-staff-and-business) |
-| 47 | Penetration Tester Handling Two Engagements Plus Reporting | [Read](#47-penetration-tester-handling-two-engagements-plus-reporting) |
-| 48 | University Lecturer Split Between Teaching, Research, and Admin | [Read](#48-university-lecturer-split-between-teaching-research-and-admin) |
-| 49 | Genealogy Hobbyist Piecing Together a Family Line | [Read](#49-genealogy-hobbyist-piecing-together-a-family-line) |
-| 50 | Parent Planning a Multi-Country Trip With Their Partner | [Read](#50-parent-planning-a-multi-country-trip-with-their-partner) |
-| 51 | Mum With a Son Who Has Special Needs – The Call From the School | [Read →](special-needs-mum.md) |
-| 52 | Bill, 240lbs, Training for His First Marathon | [Read →](marathon-training.md) |
-| 53 | Anne, Laid Off, on a Weekly Accountability Call With Three Also-Fired Friends | [Read](#53-anne-laid-off-on-a-weekly-accountability-call-with-three-also-fired-friends) |
-| 54 | Anne Building an App, One Customer at a Time | [Read](#54-anne-building-an-app-one-customer-at-a-time) |
-| 55 | Caregiver for an Ageing Parent | [Read →](caregiver.md) |
-| 56 | Recently Sober Person Balancing Recovery, Work, and Rebuilding Life | [Read](#56-recently-sober-person-balancing-recovery-work-and-rebuilding-life) |
-| 57 | Community Organizer Leading a Tenant Group | [Read](#57-community-organizer-leading-a-tenant-group) |
-| 58 | Person Planning a Big Move to Another Country | [Read](#58-person-planning-a-big-move-to-another-country) |
-| 59 | Artist Turning a Hobby Into a Small Online Shop | [Read](#59-artist-turning-a-hobby-into-a-small-online-shop) |
-| 60 | Young Adult Balancing Uni, Side Hustle, and Family Expectations | [Read](#60-young-adult-balancing-uni-side-hustle-and-family-expectations) |
-| 61 | Retiree Starting a Second Act Instead of Just Drifting | [Read →](retiree.md) |
-| 62 | Youth Trying to Get Into College – Applications, Essays, Panic | [Read](#62-youth-trying-to-get-into-college--applications-essays-panic) |
-| 63 | Failing Student Overwhelmed and Quietly Drowning | [Read](#63-failing-student-overwhelmed-and-quietly-drowning) |
-| 64 | The Procrastinator Who Keeps Saying "It's Fine" While Ignoring Alarms | [Read](#64-the-procrastinator-who-keeps-saying-its-fine-while-ignoring-alarms) |
-| 65 | Preparing for Surgery in 4 Weeks | [Read →](surgery-prep.md) |
-| 66 | Funeral Planning While Grieving | [Read →](funeral-planning.md) |
-| 67 | Executor Handling Estate and Paperwork After a Death | [Read](#67-executor-handling-estate-and-paperwork-after-a-death) |
-| 68 | Midlife "Quiet Crisis" – Life's Okay, But They Know It's Not Fine | [Read](#68-midlife-quiet-crisis--lifes-okay-but-they-know-its-not-fine) |
-| 69 | Professor Running for State Senator Under Fire | [Read](#69-professor-running-for-state-senator-under-fire) |
-| 70 | Ger: Feeding His Family From the Back Garden in Two Years | [Read](#70-ger-feeding-his-family-from-the-back-garden-in-two-years) |
-| 71 | Mary, Who Acted 20 Years Ago and Buried It | [Read →](returning-actor.md) |
-| 72 | Climate-Anxious Engineer Building a Local Resilience Project | [Read](#72-climate-anxious-engineer-building-a-local-resilience-project) |
-| 73 | Nurse on Night Shifts, Secretly Writing a Novel | [Read](#73-nurse-on-night-shifts-secretly-writing-a-novel) |
+---
+
+## Work Use Cases
+
+### Work – Multi-Client / Multi-Project
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 1 | Independent consultant / fractional PM | Consultant With Three Clients and No Time | [Read →](consultant.md) |
+| 2 | Neurodivergent builder / product-minded founder | Neurodivergent Builder With 5 Parallel Projects | [Read →](neurodivergent-builder.md) |
+| 3 | Sales rep / account executive | Sales Rep Chasing a Whale Account | [Read](#3-sales-rep-chasing-a-whale-account) |
+| 11 | Product manager (often ND, many streams) | Product Manager With Three Streams and a 15-Minute Gap | [Read →](product-manager.md) |
+| 12 | Sales engineer / solutions architect | Sales Engineer Prepping Two Completely Different Demos | [Read](#12-sales-engineer-prepping-two-completely-different-demos) |
+| 13 | Customer success manager | Customer Success Manager Surfacing From One Renewal Into Another | [Read](#13-customer-success-manager-surfacing-from-one-renewal-into-another) |
+| 21 | Agency founder / creative director | Small Agency Founder With Three Clients Pulling at Once | [Read](#21-small-agency-founder-with-three-clients-pulling-at-once) |
+| 22 | Solo developer / indie hacker | Solo Developer/Indie Hacker Pinballing Between Code, Bugs, and Launch | [Read](#22-solo-developerindie-hacker-pinballing-between-code-bugs-and-launch) |
+| 27 | Wedding photographer / creative freelancer | Wedding Photographer Moving From Planning to Shooting to Editing | [Read](#27-wedding-photographer-moving-from-planning-to-shooting-to-editing) |
+| 33 | Film editor / post-production | Film Editor Cutting a Feature and a Trailer for a Different Client | [Read](#33-film-editor-cutting-a-feature-and-a-trailer-for-a-different-client) |
+| 44 | Financial planner / wealth advisor | Financial Planner Running Three Client Reviews in One Morning | [Read](#44-financial-planner-running-three-client-reviews-in-one-morning) |
+
+### Work – Ops, Incidents & Live Operations
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 8 | DevOps engineer / SRE | DevOps Responding to a Production Incident | [Read →](devops.md) |
+| 9 | Emergency manager / incident commander | Emergency Manager Handling a Gas Leak With Multiple Agencies | [Read](#9-emergency-manager-handling-a-gas-leak-with-multiple-agencies) |
+| 16 | DevOps engineer / SRE | DevOps Engineer Moving From Postmortem to Reliability Review | [Read](#16-devops-engineer-moving-from-postmortem-to-reliability-review) |
+| 17 | Emergency manager / EOC coordinator | Emergency Manager Switching From 'Gas Leak' to 'Storm Prep' | [Read](#17-emergency-manager-switching-from-gas-leak-to-storm-prep) |
+| 32 | Manufacturing ops manager | Manufacturing Ops Manager Between Factory Floor, Supplier Crisis, and Audit | [Read](#32-manufacturing-ops-manager-between-factory-floor-supplier-crisis-and-audit) |
+| 35 | Festival ops lead / event manager | Festival Ops Lead Juggling Security, Weather, and Artist Schedules | [Read](#35-festival-ops-lead-juggling-security-weather-and-artist-schedules) |
+| 41 | Emergency veterinarian | Emergency Vet Switching From One Crisis to the Next | [Read](#41-emergency-vet-switching-from-one-crisis-to-the-next) |
+| 42 | Airline operations controller | Airline Operations Controller in a Storm | [Read](#42-airline-operations-controller-in-a-storm) |
+| 43 | Construction foreman / site manager | Construction Site Foreman Between Subcontractors, Deliveries, and Safety | [Read](#43-construction-site-foreman-between-subcontractors-deliveries-and-safety) |
+
+### Work – Rituals, Meetings & Team Rhythms
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 4 | Scrum master / agile coach | Scrum Master With a Standup That Can Run Without Them | [Read →](scrum-master.md) |
+| 7 | Corporate manager / team lead | Corporate Manager Living in 12 SaaS Tools All Day | [Read](#7-corporate-manager-living-in-12-saas-tools-all-day) |
+| 18 | Corporate manager / director | Corporate Manager With Back-to-Back 'Different Universe' Meetings | [Read](#18-corporate-manager-with-back-to-back-different-universe-meetings) |
+| 25 | Teacher / educator | Teacher Running Back-to-Back Classes and Then a Parent Meeting | [Read](#25-teacher-running-back-to-back-classes-and-then-a-parent-meeting) |
+| 26 | Conference organizer / event planner | Conference Organizer Switching Between Sponsors, Speakers, and Venue | [Read](#26-conference-organizer-switching-between-sponsors-speakers-and-venue) |
+| 30 | Recruiter / talent acquisition | Recruiter Running a Full Interview Loop for One Candidate | [Read](#30-recruiter-running-a-full-interview-loop-for-one-candidate) |
+| 36 | HR generalist / people ops | HR Generalist Dealing With a Grievance, an Offer, and a Policy Rollout | [Read](#36-hr-generalist-dealing-with-a-grievance-an-offer-and-a-policy-rollout) |
+| 48 | University lecturer / academic | University Lecturer Split Between Teaching, Research, and Admin | [Read](#48-university-lecturer-split-between-teaching-research-and-admin) |
+
+### Work – Deep Work, Research & Analysis
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 14 | Data analyst / BI specialist | Data Analyst With Three Urgent Requests From Different Execs | [Read](#14-data-analyst-with-three-urgent-requests-from-different-execs) |
+| 15 | Startup founder / CEO | Startup Founder Doing Board Prep Between Fires | [Read](#15-startup-founder-doing-board-prep-between-fires) |
+| 19 | UX researcher | UX Researcher Jumping Between Live Sessions and Synthesis | [Read](#19-ux-researcher-jumping-between-live-sessions-and-synthesis) |
+| 20 | Marketing lead / growth manager | Marketing Lead Orchestrating a Launch Across Channels | [Read](#20-marketing-lead-orchestrating-a-launch-across-channels) |
+| 37 | Investment analyst / equity researcher | Investment Analyst Covering Three Sectors on Earnings Week | [Read](#37-investment-analyst-covering-three-sectors-on-earnings-week) |
+| 38 | City planner / urban designer | City Planner Balancing a New Transport Corridor, a Housing Project, and Public Input | [Read](#38-city-planner-balancing-a-new-transport-corridor-a-housing-project-and-public-input) |
+| 39 | Policy lobbyist / government affairs | Policy Lobbyist Prepping Lawmakers for a Committee Hearing | [Read](#39-policy-lobbyist-prepping-lawmakers-for-a-committee-hearing) |
+| 47 | Penetration tester / security consultant | Penetration Tester Handling Two Engagements Plus Reporting | [Read](#47-penetration-tester-handling-two-engagements-plus-reporting) |
+
+### Work – SME & Multi-Role Founders
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 6 | SME owner / studio founder | SME Owner Running the Business From 6 Different Apps | [Read →](sme-owner.md) |
+| 23 | Real estate agent / broker | Real Estate Agent on the Road Between Buyers and Sellers | [Read](#23-real-estate-agent-on-the-road-between-buyers-and-sellers) |
+| 28 | YouTuber / content creator / streamer | YouTuber / Streamer Jumping Between Prep, Live, and Post | [Read](#28-youtuber-streamer-jumping-between-prep-live-and-post) |
+| 29 | NGO program manager | NGO Program Manager Between Field Updates and Donor Reports | [Read](#29-ngo-program-manager-between-field-updates-and-donor-reports) |
+| 40 | Remote-first founder / CEO | Remote-First Founder Doing Investor Pitch, Hiring Interview, and Roadmap Review | [Read →](remote-founder.md) |
+| 46 | Veterinary clinic owner | Veterinary Clinic Owner Balancing Patients, Staff, and Business | [Read](#46-veterinary-clinic-owner-balancing-patients-staff-and-business) |
+| 59 | Artist / creative entrepreneur | Artist Turning a Hobby Into a Small Online Shop | [Read](#59-artist-turning-a-hobby-into-a-small-online-shop) |
+
+### Work – Legal & Crisis
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 24 | Doctor / GP / clinician | Doctor in Clinic Moving From Routine Checkups to a Scary Lab Result | [Read](#24-doctor-in-clinic-moving-from-routine-checkups-to-a-scary-lab-result) |
+| 31 | Public defender (criminal defence) | Public Defender in LA, 100 Degrees, Court in 10 Minutes | [Read →](public-defender.md) |
+| 34 | Hospital social worker | Hospital Social Worker Handling Three Complex Discharges | [Read](#34-hospital-social-worker-handling-three-complex-discharges) |
+
+---
+
+## Life Use Cases
+
+### Life – Admin, Money & Systems
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 10 | Anyone doing tax prep / personal finances | Personal Finances & Taxes – With an Accountant in the Loop | [Read](#10-personal-finances-taxes-with-an-accountant-in-the-loop) |
+| 58 | Person relocating internationally | Person Planning a Big Move to Another Country | [Read](#58-person-planning-a-big-move-to-another-country) |
+| 67 | Estate executor / administrator | Executor Handling Estate and Paperwork After a Death | [Read](#67-executor-handling-estate-and-paperwork-after-a-death) |
+
+### Life – Health, Recovery & Performance
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 52 | First-time marathoner / fitness beginner | Bill, 240lbs, Training for His First Marathon | [Read →](marathon-training.md) |
+| 56 | Person in recovery | Recently Sober Person Balancing Recovery, Work, and Rebuilding Life | [Read](#56-recently-sober-person-balancing-recovery-work-and-rebuilding-life) |
+| 65 | Patient facing surgery | Preparing for Surgery in 4 Weeks | [Read →](surgery-prep.md) |
+
+### Life – Family, Care & School
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 5 | Parent of school-age child (often ND) | ND Parent With School Chaos and Shared Mental Load | [Read →](nd-parent.md) |
+| 50 | Parent planning family travel | Parent Planning a Multi-Country Trip With Their Partner | [Read](#50-parent-planning-a-multi-country-trip-with-their-partner) |
+| 51 | Parent of child with special needs | Mum With a Son Who Has Special Needs – The Call From the School | [Read →](special-needs-mum.md) |
+| 55 | Adult child caring for ageing parent | Caregiver for an Ageing Parent | [Read →](caregiver.md) |
+
+### Life – Crisis, Loss & Legal Aftermath
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 53 | Laid-off professional in job search | Anne, Laid Off, on a Weekly Accountability Call With Three Also-Fired Friends | [Read](#53-anne-laid-off-on-a-weekly-accountability-call-with-three-also-fired-friends) |
+| 66 | Adult child planning a parent's funeral | Funeral Planning While Grieving | [Read →](funeral-planning.md) |
+
+### Life – Dreams, Second Act & Identity
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 61 | Retired professional starting chapter 2 | Retiree Starting a Second Act Instead of Just Drifting | [Read →](retiree.md) |
+| 68 | Midlife professional reassessing | Midlife 'Quiet Crisis' – Life's Okay, But They Know It's Not Fine | [Read](#68-midlife-quiet-crisis-lifes-okay-but-they-know-its-not-fine) |
+| 69 | Academic entering politics | Professor Running for State Senator Under Fire | [Read](#69-professor-running-for-state-senator-under-fire) |
+| 70 | Homeowner seeking food independence | Ger: Feeding His Family From the Back Garden in Two Years | [Read](#70-ger-feeding-his-family-from-the-back-garden-in-two-years) |
+| 71 | Former creative returning to first love | Mary, Who Acted 20 Years Ago and Buried It | [Read →](returning-actor.md) |
+| 72 | Climate-conscious professional | Climate-Anxious Engineer Building a Local Resilience Project | [Read](#72-climate-anxious-engineer-building-a-local-resilience-project) |
+| 73 | Professional with hidden creative ambition | Nurse on Night Shifts, Secretly Writing a Novel | [Read](#73-nurse-on-night-shifts-secretly-writing-a-novel) |
+
+### Life – Learning, Education & Future Self
+
+| # | Who am I? | Scenario | Read |
+|---|-----------|----------|------|
+| 45 | Dungeon master / TTRPG game master | Dungeon Master Running Multiple Campaigns | [Read](#45-dungeon-master-running-multiple-campaigns) |
+| 49 | Genealogy researcher / family historian | Genealogy Hobbyist Piecing Together a Family Line | [Read](#49-genealogy-hobbyist-piecing-together-a-family-line) |
+| 54 | Career-changer learning to build | Anne Building an App, One Customer at a Time | [Read](#54-anne-building-an-app-one-customer-at-a-time) |
+| 57 | Community organizer / activist | Community Organizer Leading a Tenant Group | [Read](#57-community-organizer-leading-a-tenant-group) |
+| 60 | University student with side projects | Young Adult Balancing Uni, Side Hustle, and Family Expectations | [Read](#60-young-adult-balancing-uni-side-hustle-and-family-expectations) |
+| 62 | High school senior applying to college | Youth Trying to Get Into College – Applications, Essays, Panic | [Read](#62-youth-trying-to-get-into-college-applications-essays-panic) |
+| 63 | Struggling student | Failing Student Overwhelmed and Quietly Drowning | [Read](#63-failing-student-overwhelmed-and-quietly-drowning) |
+| 64 | Chronic procrastinator | The Procrastinator Who Keeps Saying 'It's Fine' While Ignoring Alarms | [Read](#64-the-procrastinator-who-keeps-saying-its-fine-while-ignoring-alarms) |
+
 
 ---
 
