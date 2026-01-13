@@ -49,6 +49,8 @@ Then authenticate with your TabStax account:
 hey login
 ```
 
+**Don't have a TabStax account?** It's simple - just go to the [Chrome Web Store](https://chromewebstore.google.com/detail/tabstax/your-extension-id) and install the TabStax extension. Create an account there, and you'll see all your next actions against each project in both the extension and the CLI.
+
 ---
 
 ## Quick Start
