@@ -45,6 +45,8 @@ Over time, this help center will grow into a small set of clear guides, includin
 * **Working with Stax**
   * [Understanding the main popup](topics/using_the_main_popup.md) – navigate next actions and open Stax
   * [Adding Favourites](topics/adding_favourites.md) – pin current priorities for fast access
+* **Hey CLI - Command Line Interface**
+  * [Hey CLI Guide](topics/hey-cli.md) – manage next actions from your terminal and AI assistants
 * **Sharing and collaboration** – what it means when someone shares a Stax with you, and how to safely use shared Stax.
 * **Accounts and sync** – using TabStax locally without an account, or signing in to sync Stax across devices.
 * **Safety and privacy** – what TabStax can see, what it cannot see, and how to treat Stax links safely.
@@ -79,6 +81,30 @@ If you arrived here because someone sent you a Stax:
 * You can treat it like a curated bundle of links built around one purpose.
 
 As with any link someone sends you, you should only fully trust Stax from people or sources you trust. You can always scan the domains and open a few tabs first before opening everything.
+
+---
+
+## Hey CLI - Bring TabStax to Your Terminal & AI
+
+TabStax now has a command-line interface that brings your next actions to where you already work.
+
+```bash
+npm install -g tabstax-cli
+
+hey login
+hey use "My Project"
+hey "Build the feature"
+hey ls
+hey done 1
+```
+
+**Why CLI?** Because context-switching kills flow. When you're in your terminal or talking to an AI assistant, you shouldn't have to open a browser just to capture a thought.
+
+The CLI syncs bidirectionally with the extension - add an action in terminal, see it in your browser. Complete it in the extension, the CLI reflects it instantly.
+
+**Perfect for AI assistants:** Your LLM can run `hey ls stax` to see all your projects, understand your priorities, and help you manage your work.
+
+→ [Full Hey CLI Guide](topics/hey-cli.md)
 
 ---
 
