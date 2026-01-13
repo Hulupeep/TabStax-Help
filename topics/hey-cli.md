@@ -1,4 +1,4 @@
-# Hey CLI - Your Next Actions in Your Workflow
+# Say hello to the Tabstax CLI - Hey CLI - Your Next Actions in Your Workflow
 
 ## The Problem It Solves
 
