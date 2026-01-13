@@ -1,11 +1,8 @@
 # Say hello to the Tabstax CLI - Hey CLI - Your Next Actions in Your LLM Workflow
 
-## The Problem It Solves
+## The Problem It Solves - catch a thought before it fades...
 
-
-# hey
-
-**Catch a thought before it escapes.**
+ 
 
 ```bash
 hey "validate the signup form"
