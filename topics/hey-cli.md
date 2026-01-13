@@ -1,6 +1,122 @@
-# Say hello to the Tabstax CLI - Hey CLI - Your Next Actions in Your Workflow
+# Say hello to the Tabstax CLI - Hey CLI - Your Next Actions in Your LLM Workflow
 
 ## The Problem It Solves
+
+
+# hey
+
+**Catch a thought before it escapes.**
+
+```bash
+hey "validate the signup form"
+```
+
+That's it. The thought exists now. It's in your project. Go back to what you were doing.
+
+---
+
+## The Gap Where Ideas Die
+
+You're mid-flow - coding, debugging, talking to Claude - and a thought surfaces: *"Need to check the rate limits on that endpoint."*
+
+In the next three seconds, one of two things happens:
+
+1. You capture it
+2. It's gone
+
+Every productivity system fails at this moment. The app is somewhere else. The context switch kills the thought. You tell yourself you'll remember. You won't.
+
+**hey** collapses capture to a single line. No app to open. No project to navigate to. No form to fill out.
+
+```bash
+hey "check rate limits on /api/users"
+```
+
+Done. It's in your system. It's in the right project. Move on.
+
+---
+
+## You're Always Somewhere
+
+hey doesn't dump thoughts into an inbox for later sorting. You're always *in* a project:
+
+```bash
+hey which
+# → TabStax (Must priority, 3 actions)
+
+hey "add error handling to sync"
+# → Added to TabStax
+
+hey use "Client Portal"
+# → Switched context
+
+hey "fix the invoice PDF bug"  
+# → Added to Client Portal
+```
+
+Like `cd` in a filesystem. The CLI remembers where you are. Your thoughts land where your head already is.
+
+---
+
+## One Terrain, Every Surface
+
+What you capture in terminal appears instantly in:
+- The TabStax browser extension
+- The Attention Blocks dashboard  
+- Any device you're logged into
+- Your AI assistant (via `hey ls`)
+
+**Same data. Different views.** Capture where you work. See it where you plan.
+
+```bash
+# 2am in terminal
+hey "the auth token needs refresh logic"
+
+# Tomorrow morning, open the extension
+# It's there. Waiting. In the right project.
+```
+
+---
+
+## LLMs Get Your Context
+
+When your AI assistant can run hey commands, it sees what you see:
+
+```
+You: "What should I focus on today?"
+
+Claude: *runs hey ls stax*
+
+You have two Must-priority projects:
+- API Migration (3 pending actions)
+- Client Demo (needs prep before Thursday)
+
+Want me to show the actions for API Migration?
+```
+
+Your AI stops being generic. It knows your projects, your priorities, your next actions. Context flows both ways.
+
+---
+
+## Two Kinds of Capture
+
+**Next Actions** - what you will do:
+```bash
+hey "write tests for the auth flow"
+```
+
+**Breadcrumbs** - what you did (your trail):
+```bash
+hey -x "fixed the OAuth callback bug"
+```
+
+Some people think in tasks. Some think in streams. hey serves both.
+
+---
+
+*Everything below this line is reference. The above is why it matters.*
+
+---
 
 You're deep in your code editor, terminal, or AI assistant. You know exactly what needs to happen next on your project. But to capture that thought, you have to:
 
