@@ -1,6 +1,7 @@
 # <img src="icons/tabstax-48.png" alt="TabStax" width="48" height="48" style="vertical-align: middle; margin-right: 10px;">Welcome to TabStax Help
 
-Welcome 👋
+Welcome 
+
 This is your home base for understanding how TabStax works and how to stay in flow with it.
 
 TabStax isn't "just another tab manager."
@@ -8,7 +9,7 @@ It's a **flow manager**.
 
 It groups all the sites you use to get something done — documentation, dashboards, tools, videos, briefs, email, boards — and combines them with your **next actions** and a little **context**. One click, and you're back where your mind left off.
 
-And not just you....you're entire team, with Tabstax sharing.
+And not just you....you're entire team, with Tabstax sharing. Use it as an extension or right inside your LLM with the Tabstax CLI 'Hey'. 
 
 Find out [great use cases](topics/usecases/index.md) just for you as a writer, teacher, developer, sales rep—whatever your role.
 
