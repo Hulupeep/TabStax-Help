@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Consultant With Three Clients and No Time
 
 [← Back to Use Cases](index.md)

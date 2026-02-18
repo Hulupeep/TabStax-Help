@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 Let's   add two extra axes:
 
 * **Category** → “What *kind* of situation is this?” (for scanning / grouping)

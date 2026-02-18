@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Caregiver for an Ageing Parent, Managing Medical, Legal, and Daily Life
 
 [← Back to Use Cases](index.md)

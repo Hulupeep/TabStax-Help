@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Funeral Planning While Grieving
 
 [← Back to Use Cases](index.md)

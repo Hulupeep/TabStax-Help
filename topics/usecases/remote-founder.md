@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Remote-First Founder Doing Investor Pitch, Hiring Interview, and Roadmap Review
 
 [← Back to Use Cases](index.md)

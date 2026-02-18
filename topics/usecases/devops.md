@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # DevOps Responding to a Production Incident
 
 [← Back to Use Cases](index.md)

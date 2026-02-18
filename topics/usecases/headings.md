@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Use Case Headings
 
 ## 10niche.md

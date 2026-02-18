@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Retiree Starting a Second Act Instead of Just Drifting
 
 [← Back to Use Cases](index.md)

@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Product Manager With Three Streams and a 15-Minute Gap
 
 [← Back to Use Cases](index.md)

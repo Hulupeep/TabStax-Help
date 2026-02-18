@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Mary, Who Acted 20 Years Ago and Buried It
 
 [← Back to Use Cases](index.md)

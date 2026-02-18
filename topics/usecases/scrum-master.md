@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Scrum Master With a Standup That Can Run Without Them
 
 [← Back to Use Cases](index.md)

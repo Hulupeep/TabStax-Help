@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Bill, 240lbs, Training for His First Marathon
 
 [← Back to Use Cases](index.md)

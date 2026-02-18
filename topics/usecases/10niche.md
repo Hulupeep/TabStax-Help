@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 
 ## 11. Product Manager With Three Streams and a 15-Minute Gap
 

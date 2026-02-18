@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Neurodivergent Builder With 5 Parallel Projects
 
 [← Back to Use Cases](index.md)

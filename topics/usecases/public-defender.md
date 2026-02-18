@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Public Defender in LA, 100 Degrees, Court in 10 Minutes
 
 [← Back to Use Cases](index.md)

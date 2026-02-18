@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # SME Owner Running the Business From 6 Different Apps
 
 [← Back to Use Cases](index.md)

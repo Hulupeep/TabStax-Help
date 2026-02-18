@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # ND Parent With School Chaos and Shared Mental Load
 
 [← Back to Use Cases](index.md)

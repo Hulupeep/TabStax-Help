@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
 # Preparing for Surgery in 4 Weeks
 
 [← Back to Use Cases](index.md)

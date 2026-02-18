@@ -1,3 +1,7 @@
+---
+nav_exclude: true
+---
+
  
 ## 1. Professor Running for State Senator Under Fire
 
