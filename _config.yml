@@ -1,14 +1,36 @@
 # TabStax Help - GitHub Pages Configuration
 
-# Site settings
 title: TabStax Help
-description: Help center for TabStax - your flow manager
+description: Help center for TabStax — your flow manager
 
 # Build settings
 markdown: kramdown
 
-# Theme
-theme: jekyll-theme-primer
+# Just the Docs theme
+remote_theme: just-the-docs/just-the-docs@v0.10.0
 
-# GitHub Pages will use this theme by default
-# We override it with our custom layout that includes Mermaid support
+# Aux links in the top-right
+aux_links:
+  "Get TabStax":
+    - "https://hulupeep.github.io/TabStax-Help/"
+
+# Heading anchor links on hover
+heading_anchors: true
+
+# Footer content
+footer_content: "TabStax Help &copy; Hulupeep"
+
+# Color scheme (light is default)
+color_scheme: light
+
+# Search
+search_enabled: true
+
+# Navigation order / grouping
+# Pages declare their own nav_order and parent in front matter
+
+# Exclude files we don't want published
+exclude:
+  - scripts/
+  - valueprop.md
+  - CLAUDE.md

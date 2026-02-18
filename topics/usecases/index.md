@@ -1,4 +1,10 @@
-[← Back to Help Home](../../README.md)
+---
+title: Use Cases
+nav_order: 5
+has_children: false
+---
+
+[← Back to Help Home](/)
 
 # Using TabStax in Your Job and Your Life
 

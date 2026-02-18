@@ -1,3 +1,9 @@
+---
+title: Hey CLI Guide
+parent: Hey CLI
+nav_order: 1
+---
+
 # Say hello to the Tabstax CLI - Hey CLI - Your Next Actions in Your LLM Workflow
 
 ## The Problem It Solves - catch a thought before it fades...

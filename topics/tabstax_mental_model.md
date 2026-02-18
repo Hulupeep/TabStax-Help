@@ -1,4 +1,10 @@
-[← Back to Help Home](../README.md)
+---
+title: The TabStax Mental Model
+parent: Getting Started
+nav_order: 3
+---
+
+[← Back to Help Home](/)
 
 # <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">The TabStax Mental Model
 

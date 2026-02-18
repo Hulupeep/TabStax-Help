@@ -1,3 +1,10 @@
+---
+title: Home
+nav_order: 1
+description: Help center for TabStax — your flow manager
+permalink: /
+---
+
 # <img src="icons/tabstax-48.png" alt="TabStax" width="48" height="48" style="vertical-align: middle; margin-right: 10px;">Welcome to TabStax Help
 
 Welcome 
