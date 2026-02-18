@@ -9,6 +9,9 @@ markdown: kramdown
 # Just the Docs theme
 remote_theme: just-the-docs/just-the-docs@v0.10.0
 
+plugins:
+  - jekyll-remote-theme
+
 # Aux links in the top-right
 aux_links:
   "Get TabStax":
@@ -20,8 +23,8 @@ heading_anchors: true
 # Footer content
 footer_content: "TabStax Help &copy; Hulupeep"
 
-# Color scheme (light is default)
-color_scheme: light
+# Color scheme
+color_scheme: tabstax
 
 # Search
 search_enabled: true
