@@ -53,6 +53,9 @@ Over time, this help center will grow into a small set of clear guides, includin
   * [Adding Favourites](topics/adding_favourites.md) – pin current priorities for fast access
 * **Hey CLI - Command Line Interface**
   * [Hey CLI Guide](topics/hey-cli.md) – manage next actions from your terminal and AI assistants
+* **AI Integrations (MCP)** – connect TabStax to AI assistants
+  * [Connect to Claude.ai](topics/mcp-claude-ai) – use your Stax and Next Actions through conversation
+  * [Connect to Claude Code](topics/mcp-claude-code) – manage actions from the terminal while coding with Claude
 * **Sharing and collaboration** – what it means when someone shares a Stax with you, and how to safely use shared Stax.
 * **Accounts and sync** – using TabStax locally without an account, or signing in to sync Stax across devices.
 * **Safety and privacy** – what TabStax can see, what it cannot see, and how to treat Stax links safely.
@@ -111,6 +114,26 @@ The CLI syncs bidirectionally with the extension - add an action in terminal, se
 **Perfect for AI assistants:** Your LLM can run `hey ls stax` to see all your projects, understand your priorities, and help you manage your work.
 
 → [Full Hey CLI Guide](topics/hey-cli.md)
+
+---
+
+## AI Integrations — Talk to Your Stax
+
+TabStax connects directly to AI assistants through the **Model Context Protocol (MCP)**. Ask Claude to list your stax, add next actions, mark things done — all through natural conversation.
+
+```
+You: What are my next actions for the WebApp project?
+
+Claude: Here are the pending actions for WebApp:
+  1. Fix the auth timeout bug
+  2. Review PR #42
+  3. Update deployment docs
+```
+
+Works with **Claude.ai** (web) and **Claude Code** (CLI). Connect once, use everywhere.
+
+→ [Connect to Claude.ai](topics/mcp-claude-ai)
+→ [Connect to Claude Code](topics/mcp-claude-code)
 
 ---
 
