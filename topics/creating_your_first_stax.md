@@ -6,7 +6,7 @@ nav_order: 5
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Creating your first Stax
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Creating your first Stax
 
 > **Note:** If you just installed TabStax and want to understand what you're seeing, check out [What you see the first time you open TabStax](first_time_opening_tabstax.md) first.
 
@@ -24,7 +24,7 @@ Christmas shopping means juggling tabs for Amazon, Etsy, wish lists, price compa
 
 <img src="../screenshots/2%20add%20name%20and%20tags.png" alt="Naming your Christmas shopping Stax with tags" width="800" style="display: block; margin: 20px auto;">
 
-4. **Your Start Page opens** – TabStax creates a home base for this shopping session.
+4. **Your Start Page opens** – HeyStax creates a home base for this shopping session.
 
 5. **Add your very next actions** – In the text box at the top, type what you need to do next:
    - "Check kids' wish lists"
@@ -44,7 +44,7 @@ Now you can jump back into your Christmas shopping list without hunting through 
 ---
 
 **Next steps:**
-- [What problem TabStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
+- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax
-- [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
+- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept

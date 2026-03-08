@@ -10,7 +10,7 @@ has_children: false
 
 **Real people. Real chaos. Real Stax.**
 
-Below you'll find over 70 ways people actually use TabStax—from high-pressure work scenarios to deeply personal life moments. Each story shows how a named workspace with tabs, next actions, and context can cut through chaos and help you stay present.
+Below you'll find over 70 ways people actually use HeyStax—from high-pressure work scenarios to deeply personal life moments. Each story shows how a named workspace with tabs, next actions, and context can cut through chaos and help you stay present.
 
 ---
 
@@ -207,11 +207,11 @@ You've got:
 * Internal Slack thread
 * Call recordings from discovery
 
-### Without TabStax
+### Without HeyStax
 
 Before each interaction, you hunt: where's that deck, what did they say about budget, which competitor are they evaluating again?
 
-### With TabStax
+### With HeyStax
 
 You've created **"NordicGrid – Deal Cycle"** Stax:
 
@@ -258,11 +258,11 @@ You're a manager in a big company. Your days are:
 * Docs for each project
 * Constant 30-minute context cuts
 
-### Without TabStax
+### Without HeyStax
 
 Each meeting requires hunting: "Where are the notes? Where's the dashboard? What did we decide last time?"
 
-### With TabStax
+### With HeyStax
 
 You have:
 
@@ -311,11 +311,11 @@ To manage it, you need:
 * Media / press release template
 * Internal comms platform
 
-### Without TabStax
+### Without HeyStax
 
 You're firing links to fire brigade, police, utilities, press office separately. Everyone builds their own tab mess.
 
-### With TabStax
+### With HeyStax
 
 You have **"Incident – Gas Leak (Zone A)"** Stax ready:
 
@@ -352,11 +352,11 @@ You've got:
 * Receipts in Drive
 * Email thread with your accountant
 
-### Without TabStax
+### Without HeyStax
 
 You re-open these every time you work on taxes, then lose them, then forward random info to your accountant.
 
-### With TabStax
+### With HeyStax
 
 You make **"2024 – Tax Prep"** Stax:
 
@@ -407,11 +407,11 @@ For the startup, you need:
 * GitHub repo
 * Live logs
 
-### Without TabStax
+### Without HeyStax
 
 You're constantly reconfiguring your browser: logging into different tenants, hunting for the right docs, closing tabs from the previous demo, praying you don't show the wrong environment.
 
-### With TabStax
+### With HeyStax
 
 You build two separate worlds:
 
@@ -462,11 +462,11 @@ The at-risk account:
 * Executive sponsor who's gone quiet
 * Notes from last call: *"Concerned about adoption"*
 
-### Without TabStax
+### Without HeyStax
 
 You carry the emotional residue of the first call into the second. Your tabs bleed together. You keep almost sharing the wrong deck, searching for the last email, checking the wrong dashboard filter.
 
-### With TabStax
+### With HeyStax
 
 You set up:
 
@@ -510,11 +510,11 @@ Each question:
 * Has a different dashboard
 * Needs a different story
 
-### Without TabStax
+### Without HeyStax
 
 You open 12 tabs, drown in queries, and by the time you answer the first, you've forgotten what the second was even about.
 
-### With TabStax
+### With HeyStax
 
 You make:
 
@@ -559,11 +559,11 @@ Morning:
 
 Everything is urgent. Everything is fragmented.
 
-### Without TabStax
+### Without HeyStax
 
 Your browser becomes a junk drawer: Notion, Slides, Stripe, Slack, Jira, Google Sheets, Gmail… all on top of each other. You open the board deck, then remember the bug, jump to Jira, forget where you left the deck, miss a detail in the email to the prospect.
 
-### With TabStax
+### With HeyStax
 
 You deliberately slice your day into:
 
@@ -614,11 +614,11 @@ Reliability review world:
 * Upcoming risky changes
 * Capacity planning sheet
 
-### Without TabStax
+### Without HeyStax
 
 You finish the postmortem surrounded by emotional debris and scary graphs. You try to spin up reliability dashboards while Slack pings you about something else. You drag the mood of "we just fought a fire" into what should be a cool-headed review.
 
-### With TabStax
+### With HeyStax
 
 You have:
 
@@ -655,11 +655,11 @@ An hour later you're due in a planning call about a **storm system** due this we
 
 Different risk. Different partners. Different tools.
 
-### Without TabStax
+### Without HeyStax
 
 You leave your gas leak tabs open, open new tabs for weather, flood maps, shelters. You're mentally still half in the last crisis, glancing at the wrong map, mixing protocols.
 
-### With TabStax
+### With HeyStax
 
 You prepared:
 
@@ -704,11 +704,11 @@ Your Tuesday:
 
 These are three completely different hats.
 
-### Without TabStax
+### Without HeyStax
 
 All three hats sit in one tab soup. You join the HR meeting and still have Jira and slide decks open, flipping around, stalling while you find the performance spreadsheet.
 
-### With TabStax
+### With HeyStax
 
 You build:
 
@@ -749,11 +749,11 @@ Synthesis world:
 * Affinity diagram
 * Summary report draft
 
-### Without TabStax
+### Without HeyStax
 
 You end a session, promise yourself you'll just take "two minutes" to start synthesis, but can't find the right doc. Then the next session starts, and you're still half in analysis mode.
 
-### With TabStax
+### With HeyStax
 
 You have two Stax:
 
@@ -797,11 +797,11 @@ Live pieces:
 * PR outreach list
 * Product Hunt page draft
 
-### Without TabStax
+### Without HeyStax
 
 Your browser becomes a graveyard of half-remembered tabs. You fix copy on the landing page, then get distracted by ads performance, forget to update the email, lose the PR sheet.
 
-### With TabStax
+### With HeyStax
 
 You spin up **"Launch – TabStax Cloud Sync"** Stax:
 
@@ -842,11 +842,11 @@ Each client has:
 * Shared folders
 * Random Looms and notes
 
-### Without TabStax
+### Without HeyStax
 
 You Frankenstein your morning: search Gmail for "Aurora deck", dig through Slack for Nova's Figma link, open the wrong Harbour dashboard, and start each call slightly frazzled and half-loaded.
 
-### With TabStax
+### With HeyStax
 
 You've already carved your day into three Stax:
 
@@ -893,11 +893,11 @@ Each of those is a separate mental canvas:
 * Support inbox, user profiles, admin panel
 * Launch checklist, landing page builder, PH draft
 
-### Without TabStax
+### Without HeyStax
 
 You open everything at once. You start debugging, then an email comes in, you open support, forget your stack trace, bounce to the landing page, tweak copy, then "oh yeah, the bug…"
 
-### With TabStax
+### With HeyStax
 
 You create four worlds:
 
@@ -942,11 +942,11 @@ Different contexts:
 * Seller: recent comparables, valuation spreadsheet, staging tips, photos
 * Negotiation: offer history, email thread, seller notes
 
-### Without TabStax
+### Without HeyStax
 
 Your phone browser is a mess: maps, listings, WhatsApp, email, portals. You show up to the valuation trying to remember which comparables you used, fumble between tabs on a tiny screen, and hope you don't mix up properties.
 
-### With TabStax
+### With HeyStax
 
 You build:
 
@@ -991,11 +991,11 @@ You're in a GP clinic.
 
 All three are different headspaces.
 
-### Without TabStax
+### Without HeyStax
 
 You rely on your EHR's clunky navigation, flipping between patients, reopening guidelines, and scanning for labs. You rush into the urgent consult scanning for the right tab, a bit behind emotionally and cognitively.
 
-### With TabStax
+### With HeyStax
 
 You set up:
 
@@ -1040,11 +1040,11 @@ Today:
 
 Different prep, different resources, different emotional tone.
 
-### Without TabStax
+### Without HeyStax
 
 Your browser is some mix of past papers, YouTube videos, worksheets, Google Classroom, and the school admin portal. You scramble between classes, hunting for the right set of questions and then desperately trying to find the student's record before the parent sits down.
 
-### With TabStax
+### With HeyStax
 
 You create:
 
@@ -1088,11 +1088,11 @@ You have three simultaneous tracks going on in your head:
 * Speakers: bios, talk titles, scheduling, AV needs
 * Venue: rooms, layouts, catering, tech
 
-### Without TabStax
+### Without HeyStax
 
 Your browser becomes a junkyard: Stripe, DocuSign, Google Sheets, deck mockups, speaker DM threads, venue portal. You join calls half-prepared, flicking through tabs to remember what you last agreed with whom.
 
-### With TabStax
+### With HeyStax
 
 You build three core Stax:
 
@@ -1138,11 +1138,11 @@ You're shooting a wedding this weekend, and have three distinct phases:
 * Shooting: checklists, gear, timeline
 * Editing & delivery: Lightroom, culling, gallery, album design
 
-### Without TabStax
+### Without HeyStax
 
 You plan in one mess of tabs, then the day before you're searching Gmail for the timeline, the client's Pinterest board, and the form with names of VIPs. After the wedding, you can't find your own notes when editing.
 
-### With TabStax
+### With HeyStax
 
 You create:
 
@@ -1176,7 +1176,7 @@ Editing Stax:
 You **share Planning Stax with the planner and the couple** so everyone agrees on what's happening.
 You **share Editing Stax with your editor/retoucher** so they can see inspo, shot list, and delivery expectations.
 
-Your brain treats each phase like a different mode. TabStax lets you switch modes with one click instead of reconstructing the wedding from memory.
+Your brain treats each phase like a different mode. HeyStax lets you switch modes with one click instead of reconstructing the wedding from memory.
 
 ---
 
@@ -1201,11 +1201,11 @@ Each mode uses:
 * Thumbnail designer
 * Social scheduler
 
-### Without TabStax
+### Without HeyStax
 
 Everything piles into one monstrous browser: you've got Twitter open while you're meant to be scripting, OBS while you try to edit, your brain pinging between "what's my hook?" and "is the bitrate okay?"
 
-### With TabStax
+### With HeyStax
 
 You define three worlds:
 
@@ -1253,11 +1253,11 @@ You have two overlapping worlds:
 * Field reality: updates from local staff, WhatsApp photos, spreadsheets of attendance, issues on the ground
 * Donor reality: logframes, KPIs, highly structured reports, deadlines
 
-### Without TabStax
+### Without HeyStax
 
 Your browser shows donor report templates next to grainy WhatsApp images and half-translated messages, and you mentally flip between "messy, human, local detail" and "polished, formal, structured" without any separation.
 
-### With TabStax
+### With HeyStax
 
 You build:
 
@@ -1307,11 +1307,11 @@ For this candidate you need:
 * Hiring manager's requirements
 * Reference contact details
 
-### Without TabStax
+### Without HeyStax
 
 You're hunting the candidate's profile before each step, digging through Gmail for their GitHub, reopening the feedback form link, mixing up which manager wanted what.
 
-### With TabStax
+### With HeyStax
 
 You create a dedicated world:
 
@@ -1358,11 +1358,11 @@ Each one involves different tools:
 * Supplier portal, email threads, cost spreadsheets
 * Audit checklist, documentation, non-conformance reports
 
-### Without TabStax
+### Without HeyStax
 
 She drags everything into one chaotic browser: live machine metrics, half-open PDFs, emails from the supplier, and an audit checklist she keeps misplacing. When the auditor asks for a specific record, she hunts frantically.
 
-### With TabStax
+### With HeyStax
 
 She builds three Stax:
 
@@ -1414,11 +1414,11 @@ The tools overlap but the worlds don't:
 * Feature film: long timeline, character arcs, director's notes, continuity sheets
 * Brand trailer: brand guidelines, endcard requirements, legal lines, media specs
 
-### Without TabStax
+### Without HeyStax
 
 His browser and reference windows are a tangle: script PDFs, frame.io comments, two different brand folders, music licensing pages. When Director A drops in on Zoom, he still has Brand B's style guide open and spends the first five minutes finding the last cut.
 
-### With TabStax
+### With HeyStax
 
 He defines:
 
@@ -1471,11 +1471,11 @@ Each case requires:
 * Notes from multidisciplinary team meetings
 * Contact logs
 
-### Without TabStax
+### Without HeyStax
 
 Her browser is a maze of portals, PDFs, and notes. She keeps 6–10 tabs pinned and prays she doesn't close one accidentally. Each time she switches patients, she wastes time re-opening the right combination of records and websites.
 
-### With TabStax
+### With HeyStax
 
 She sets up:
 
@@ -1529,11 +1529,11 @@ Tools:
 * Airline/travel tracking
 * Artist liaison chat
 
-### Without TabStax
+### Without HeyStax
 
 They click through browser tabs on a laptop in a noisy operations cabin, trying to remember which window held the gate camera and where they bookmarked the backup weather model. Every new issue adds more noise.
 
-### With TabStax
+### With HeyStax
 
 They've created:
 
@@ -1585,11 +1585,11 @@ Within three hours, she needs to:
 
 Each uses different data sensitivities and emotional tones.
 
-### Without TabStax
+### Without HeyStax
 
 She has Gmail, HRIS, Google Docs, Slack, and a contract template all open at once. She jumps from grievance notes to offer letter paragraphs to policy bullets without resetting. Easy to mis-send the wrong doc or carry the emotional weight of the grievance into the cheerfulness of the offer call.
 
-### With TabStax
+### With HeyStax
 
 She defines:
 
@@ -1641,11 +1641,11 @@ This week, three of "his" companies across **three sectors** are reporting earni
 
 Each earnings story uses different KPIs, comps, and narratives.
 
-### Without TabStax
+### Without HeyStax
 
 His Bloomberg/terminal windows and browser tabs are a tangle of PDFs, models, call transcripts, and competitor charts. He keeps reopening the wrong model or clicking into the wrong transcript.
 
-### With TabStax
+### With HeyStax
 
 He sets up:
 
@@ -1697,11 +1697,11 @@ Each topic needs:
 * Public feedback portal
 * Internal memos
 
-### Without TabStax
+### Without HeyStax
 
 Her browser is piled with shapefiles, PDFs, forms, and council minutes. She hops from transport to housing to consultation logistics without ever feeling fully anchored in any.
 
-### With TabStax
+### With HeyStax
 
 She creates:
 
@@ -1748,11 +1748,11 @@ Tomorrow, there's a **parliamentary committee hearing** on a topic his organisat
 * Track opposition talking points
 * Coordinate media follow-up
 
-### Without TabStax
+### Without HeyStax
 
 His browser is full of bill texts, amendments, op-eds, polling, MP profiles. He copies/pastes into docs and emails, hoping not to send the wrong briefing to the wrong office.
 
-### With TabStax
+### With HeyStax
 
 He builds:
 
@@ -1810,11 +1810,11 @@ Your world is:
 * Treatment protocols
 * Whiteboard of "who's where"
 
-### Without TabStax
+### Without HeyStax
 
 Your browser is chaos: three different patient records open, Google tabs for dosages, imaging viewer, PDF protocols. You keep flicking between them, trying not to mix up which animal has which condition. When you step into a consult room, you're half-thinking about the last case.
 
-### With TabStax
+### With HeyStax
 
 You've set up:
 
@@ -1867,11 +1867,11 @@ Your tools:
 * Airport ops dashboards
 * Internal chat with ground staff
 
-### Without TabStax
+### Without HeyStax
 
 You're juggling 20 tabs and three monitors, flipping between radar, a particular flight, Slack DMs, and an Excel with crew duty times. The mental context for each flight blurs.
 
-### With TabStax
+### With HeyStax
 
 You make:
 
@@ -1921,11 +1921,11 @@ Your life is:
 * Email threads
 * Safety checklists
 
-### Without TabStax
+### Without HeyStax
 
 You've got the schedule open in one tab, supplier portal in another, PDFs of safety documentation buried somewhere, and three chat apps dinging. You react to whoever shouts loudest.
 
-### With TabStax
+### With HeyStax
 
 You define:
 
@@ -1971,11 +1971,11 @@ You're a financial planner with back-to-back annual reviews.
 
 They all need completely different conversations, numbers, and tone.
 
-### Without TabStax
+### Without HeyStax
 
 You pull up the wrong portfolio, briefly blank on what stage of life they're in, click through the CRM while they're on Zoom, and feel yourself warming up mid-meeting instead of starting sharp.
 
-### With TabStax
+### With HeyStax
 
 You set up:
 
@@ -2030,11 +2030,11 @@ Each has:
 * Player backstories
 * Encounter notes
 
-### Without TabStax
+### Without HeyStax
 
 Your browser has five different D&D Beyond tabs, three map tools, fifteen random "name generator" tabs, and session notes buried in Docs. You show up on Thursday remembering Tuesday's plot twist.
 
-### With TabStax
+### With HeyStax
 
 You build:
 
@@ -2088,11 +2088,11 @@ Each mode uses different tools:
 * Scheduling system, HR docs
 * Accounting, bank, social media, Google reviews
 
-### Without TabStax
+### Without HeyStax
 
 You have everything half-open all day: x-rays next to payroll, Facebook ads next to lab results. You stay in a fuzzy, stressed "everything at once" state.
 
-### With TabStax
+### With HeyStax
 
 You carve out:
 
@@ -2137,11 +2137,11 @@ Today you're:
 
 Each engagement has scopes, tools, notes, and findings.
 
-### Without TabStax
+### Without HeyStax
 
 Your browser is full of Burp, recon tools, notes, Jira tickets, PDFs of scopes, and you risk mixing up credentials or URLs between clients — a big no-no.
 
-### With TabStax
+### With HeyStax
 
 You define:
 
@@ -2192,11 +2192,11 @@ Different mental spaces:
 * Deep research & writing
 * Bureaucratic checklist hell
 
-### Without TabStax
+### Without HeyStax
 
 Your browser holds lecture slides, Moodle, email, journal submission portal, spreadsheets, Teams, and three random PDFs. You carry the admin frustration into your lecture and the student stories into your writing block.
 
-### With TabStax
+### With HeyStax
 
 You create:
 
@@ -2252,11 +2252,11 @@ You're chasing the Byrne line back through:
 * DNA matches
 * Old family photos someone uploaded once
 
-### Without TabStax
+### Without HeyStax
 
 You open 25 tabs from Ancestry/MyHeritage, a map, a notes doc, and get hopelessly lost: "Which Patrick Byrne am I looking at? Was this the one from Boston or Liverpool?"
 
-### With TabStax
+### With HeyStax
 
 You create:
 
@@ -2297,11 +2297,11 @@ It's complicated:
 * Things to do that work for both adults and kids
 * Budget you don't want to blow
 
-### Without TabStax
+### Without HeyStax
 
 You screenshot things, send each other random links on WhatsApp, have 40 tabs open with "maybe" ideas, and constantly ask, "Where was that cool apartment you found?"
 
-### With TabStax
+### With HeyStax
 
 You spin up:
 
@@ -2349,11 +2349,11 @@ Each has their own goals:
 * Friend 2: explore a career pivot
 * Friend 3: finally ship a personal project
 
-### Without TabStax
+### Without HeyStax
 
 The calls devolve into updates like "yeah, I did some stuff". Their browsers are chaos: job boards, half-written resumes, random notes, bookmarked posts. The group energy is good, but the execution is fuzzy.
 
-### With TabStax
+### With HeyStax
 
 They create a **shared Stax for the group**:
 **"Laid Off, Leveling Up – Accountability Crew"**.
@@ -2403,11 +2403,11 @@ Her reality:
 * A list of 20 people she thinks she can help
 * DM threads and email replies
 
-### Without TabStax
+### Without HeyStax
 
 It's all one soup: code editor, landing page builder, Stripe dashboard, Gmail, DMs. When she tries to focus on "just one customer," she still has 11 other tabs whispering in her face.
 
-### With TabStax
+### With HeyStax
 
 She creates a separate Stax for each prospective customer she's truly dancing with:
 
@@ -2444,11 +2444,11 @@ Life is now three overlapping, fragile layers:
 * Work: still have a job, still have responsibilities
 * Rebuilding: money, relationships, health
 
-### Without TabStax
+### Without HeyStax
 
 The recovery tabs (meeting list, readings, chat boards) sit in the same window as work email and YouTube. One bad day, they go searching for help but fall into distraction instead.
 
-### With TabStax
+### With HeyStax
 
 They create:
 
@@ -2496,11 +2496,11 @@ Her world:
 * Petition or complaint form
 * Meeting notes from past discussions
 
-### Without TabStax
+### Without HeyStax
 
 Every WhatsApp ping sends her back into ad hoc mode. When the city asks for specifics, she wastes time re-building the list or searching for the last reference link. Tenants ask "what's the latest?" and she has to reconstruct the state of play manually.
 
-### With TabStax
+### With HeyStax
 
 She defines **"Tenants – Building 42 Oak Street"** Stax:
 
@@ -2538,11 +2538,11 @@ Tabs everywhere:
 * Airline and moving quotes
 * Spreadsheet of "things to cancel, things to set up"
 
-### Without TabStax
+### Without HeyStax
 
 Their move exists as 50 tabs across devices plus notes in three apps. They forget which "how to register in Germany" guide they trusted. Every time they sit down to plan, they feel like they're starting again.
 
-### With TabStax
+### With HeyStax
 
 They create **"Move – Dublin → Berlin 2026"** Stax:
 
@@ -2580,11 +2580,11 @@ Current needs:
 * Promote on Instagram / TikTok
 * Track orders and commissions
 
-### Without TabStax
+### Without HeyStax
 
 She flutters between tutorials, shop platforms, pricing advice articles, and Instagram, never anchoring the project structure. Every time she thinks "I should work on the shop," she has to remember what the next step even is.
 
-### With TabStax
+### With HeyStax
 
 She creates **"Art Shop – Launch"** Stax:
 
@@ -2618,11 +2618,11 @@ Their worlds:
 * Side hustle: portfolio, Upwork/Fiverr listings, invoicing, client chats
 * Family: budget, long-term planning tabs, maybe visa or loan info
 
-### Without TabStax
+### Without HeyStax
 
 Everything collides. They sit down to work on an assignment and end up scrolling Upwork. They try to do client work with a lecture PDF half-open and WhatsApp from home asking about exam results.
 
-### With TabStax
+### With HeyStax
 
 They split reality into:
 
@@ -2673,11 +2673,11 @@ His world is:
 * Scholarship info
 * Teachers' and counsellors' advice
 
-### Without TabStax
+### Without HeyStax
 
 He's got 25 tabs open: three universities, a half-finished essay, a WhatsApp chat about "which course is easiest to get into", a random Reddit thread. Every time he sits down to "work on college stuff," he gets overwhelmed and does almost nothing.
 
-### With TabStax
+### With HeyStax
 
 He defines two Stax:
 
@@ -2720,11 +2720,11 @@ Her mental browser:
 * Emails from lecturers she hasn't answered
 * Student support pages she can't quite click on
 
-### Without TabStax
+### Without HeyStax
 
 She opens the LMS, sees the mountain of red "late" labels, and closes the tab. Maybe scrolls TikTok. The story in her head is "it's too late anyway."
 
-### With TabStax
+### With HeyStax
 
 She constructs **"Uni – Triage Mode (Saving This Semester)"** Stax with help from a tutor or friend:
 
@@ -2769,7 +2769,7 @@ But under the hood, there are nagging alarms:
 * A certification he needs to maintain for his job
 * A side project he claims he "really wants" but never moves
 
-### Without TabStax
+### Without HeyStax
 
 He dismisses each worry as it pops up:
 
@@ -2779,7 +2779,7 @@ He dismisses each worry as it pops up:
 
 So he does nothing. The alarms become background noise.
 
-### With TabStax
+### With HeyStax
 
 He builds **"Alarms – Stuff I Keep Dismissing"** Stax:
 
@@ -2820,11 +2820,11 @@ Their world is:
 * Letters from lawyers and tax authorities
 * Siblings asking "what's happening?"
 
-### Without TabStax
+### Without HeyStax
 
 They drown in envelopes, PDFs, and browser tabs. It all feels endless. They keep promising to "deal with the estate soon," but never want to open that pile.
 
-### With TabStax
+### With HeyStax
 
 They create **"Estate – [Name] (Executor Workspace)"** Stax:
 
@@ -2863,11 +2863,11 @@ She's 42. Life is… fine.
 
 These are **quiet alarms**, not emergencies. Which makes them easier to ignore.
 
-### Without TabStax
+### Without HeyStax
 
 She feels a low-level dissatisfaction and occasionally binge-reads self-help or checks job boards. Then she goes back to autopilot.
 
-### With TabStax
+### With HeyStax
 
 She creates **"Life – Nagging Thoughts I Don't Want to Lose"** Stax:
 
@@ -2913,11 +2913,11 @@ But the campaign is a different beast:
 
 The opposition thinks he's roadkill: too soft, too academic, not built for the mud.
 
-### Without TabStax
+### Without HeyStax
 
 His laptop is a disaster: academic papers, campaign strategy docs, health portal, school emails, and security briefings all in the same tab bar. One minute he's reading poll crosstabs, the next he's grading, then panicking about a hit piece someone just sent him. His partner asks "what's the plan if they go after us?" and he says "we'll figure it out" — but there's no actual place where that plan lives.
 
-### With TabStax
+### With HeyStax
 
 He deliberately splits his life into **four Stax**:
 
@@ -2993,11 +2993,11 @@ He needs:
 * Advice from people who've actually done this
 * Buy-in from his partner and kids
 
-### Without TabStax
+### Without HeyStax
 
 He spends winter opening random gardening blogs, watching homesteading videos, looking up polytunnels on his phone at 11pm… and then forgetting what mattered. Seasons roll past: *"Ah, we missed planting time again. Next year."* Next year can vanish very fast.
 
-### With TabStax
+### With HeyStax
 
 He sets up a master world: **"Back Garden – Food by 2027"**.
 
@@ -3042,7 +3042,7 @@ He also **shares a read-only version with a local gardening group or online ment
 
 Instead of endless vague "I'd love to be self-sufficient someday," Ger has a literal two-year project cockpit he opens every weekend.
 
-He is not just gardening. He's running a quiet, deeply personal food security project — with TabStax holding the plan.
+He is not just gardening. He's running a quiet, deeply personal food security project — with HeyStax holding the plan.
 
 ---
 
@@ -3069,11 +3069,11 @@ His brain lives in:
 * Community Facebook/Discord groups
 * 1000 "we should really…" conversations
 
-### Without TabStax
+### Without HeyStax
 
 He doom-scrolls climate Twitter, shares an article, feels sick, does nothing structured. Everything feels both urgent and impossible.
 
-### With TabStax
+### With HeyStax
 
 He defines **"Local Resilience – Project (My Town)"** Stax:
 
@@ -3119,11 +3119,11 @@ Her world:
 * Scraps of dialogue noted in her phone
 * Word documents with half-started chapters
 
-### Without TabStax
+### Without HeyStax
 
 On a day off, she opens a Word doc called "Novel draft v3," stares at it, then ends up doing laundry, doomscrolling, or sleeping. Her story feels like a foggy dream she keeps waking from before the ending.
 
-### With TabStax
+### With HeyStax
 
 She creates **"Novel – Night Shift Stories"** Stax.
 

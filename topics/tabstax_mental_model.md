@@ -1,12 +1,12 @@
 ---
-title: The TabStax Mental Model
+title: The HeyStax Mental Model
 parent: Getting Started
 nav_order: 3
 ---
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">The TabStax Mental Model
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">The HeyStax Mental Model
 
 Most people think in terms of **websites and tabs**: "Where was that page again?", "Which doc was I using?", "Where did I leave that insurance quote?" The TabStax mental model is different. Instead of asking "which websites am I using?", you ask **"which problem or project am I in right now?"** Each Stax is an **entry point** for that problem space. In a few seconds you gather the key resources, land on a Start Page, and write the very next actions so your brain has a ledge to grab onto next time. Instead of hanging from a cliff with no grip, you've built a solid ledge.
 
@@ -14,7 +14,7 @@ Most people think in terms of **websites and tabs**: "Where was that page again?
 
 ## The old mental model: tab soup & vague deadlines
 
-Without TabStax, most people operate like this:
+Without HeyStax, most people operate like this:
 
 * You hold deadlines in your head: "I have that November 24th thing" or "Car insurance renews on the 13th."
 * Tabs are scattered across windows or lost in browser history.
@@ -39,7 +39,7 @@ flowchart TD
 
 ## The new mental model: Stax as entry points
 
-With TabStax, you shift from "tab thinking" to "problem thinking":
+With HeyStax, you shift from "tab thinking" to "problem thinking":
 
 1. **Name the situation** – the project, deadline, or problem you're working on.
 2. **Gather the key resources** – tabs, docs, Notion pages, dashboards, whatever you need.
@@ -101,7 +101,7 @@ flowchart LR
 
 ## The psychology: why your brain has been waiting for this
 
-TabStax isn't just convenient—it aligns with how your brain actually wants to work, but your prefrontal cortex keeps overriding.
+HeyStax isn't just convenient—it aligns with how your brain actually wants to work, but your prefrontal cortex keeps overriding.
 
 **Your working memory can only hold 4–7 things at once** (Miller, 1956; Cowan, 2001). Every time you try to remember "which tabs I had open" or "what I was doing next," you're burning through that tiny budget. Your prefrontal cortex—the executive function part of your brain—tries to compensate by holding everything: deadlines, URLs, half-formed intentions, mental notes. This is exhausting and it fails constantly.
 
@@ -109,7 +109,7 @@ TabStax isn't just convenient—it aligns with how your brain actually wants to 
 
 This is why **Getting Things Done (GTD)** works (Allen, 2001). The "next action" is the smallest, most concrete step you can take. Not "plan the presentation"—that's vague and your brain doesn't know where to grab. Instead: "Draft 3 bullet points for intro slide." That's a ledge. Your brain can let go because it knows exactly where to start next time.
 
-**TabStax does this automatically:**
+**HeyStax does this automatically:**
 
 * **Captures context** (all the tabs/resources for this problem space) → your brain stops trying to remember what you had open
 * **Stores next actions** (the specific, physical steps) → Zeigarnik loop stops; mental tension releases
@@ -117,7 +117,7 @@ This is why **Getting Things Done (GTD)** works (Allen, 2001). The "next action"
 
 Your prefrontal cortex has been trying to be a heroic bookmark manager and task tracker. It's the wrong tool for the job. **Your brain's intuitive system always wanted named entry points with clear next actions**—it just couldn't articulate that through the noise of your frontal lobe saying "I can hold it all, I'll remember."
 
-TabStax is the model of work your brain always wanted but didn't ask for. It stops fighting your cognitive architecture and starts working with it.
+HeyStax is the model of work your brain always wanted but didn't ask for. It stops fighting your cognitive architecture and starts working with it.
 
 ---
 
@@ -146,7 +146,7 @@ Now you can think in problems and outcomes, not tabs and chaos—and your brain 
 ---
 
 **Related guides:**
-- [What problem TabStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
+- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
 - [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
 - [What is a Stax?](what_is_a_stax.md) – detailed explanation of the core concept
 - [Creating your first Stax](creating_your_first_stax.md) – practical step-by-step guide

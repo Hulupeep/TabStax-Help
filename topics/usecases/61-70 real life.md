@@ -18,11 +18,11 @@ Everyone says “enjoy it!” but her brain is full of static:
 * An online course she keeps thinking about
 * A vague sense she “should do something with all this time”
 
-### Without TabStax
+### Without HeyStax
 
 It all lives in her head and scattered tabs. One day she’s reading about pensions, the next she’s looking at walking tours in Italy, the next she’s down a YouTube rabbit hole. Nothing moves forward. The years could blur.
 
-### With TabStax
+### With HeyStax
 
 She builds **“Retirement – Foundations”** Stax:
 
@@ -66,11 +66,11 @@ His world is:
 * Scholarship info
 * Teachers’ and counsellors’ advice
 
-### Without TabStax
+### Without HeyStax
 
 He’s got 25 tabs open: three universities, a half-finished essay, a WhatsApp chat about “which course is easiest to get into”, a random Reddit thread. Every time he sits down to “work on college stuff,” he gets overwhelmed and does almost nothing.
 
-### With TabStax
+### With HeyStax
 
 He defines two Stax:
 
@@ -113,11 +113,11 @@ Her mental browser:
 * Emails from lecturers she hasn’t answered
 * Student support pages she can’t quite click on
 
-### Without TabStax
+### Without HeyStax
 
 She opens the LMS, sees the mountain of red “late” labels, and closes the tab. Maybe scrolls TikTok. The story in her head is “it’s too late anyway.”
 
-### With TabStax
+### With HeyStax
 
 She constructs **“Uni – Triage Mode (Saving This Semester)”** Stax with help from a tutor or friend:
 
@@ -162,7 +162,7 @@ But under the hood, there are nagging alarms:
 * A certification he needs to maintain for his job
 * A side project he claims he “really wants” but never moves
 
-### Without TabStax
+### Without HeyStax
 
 He dismisses each worry as it pops up:
 
@@ -172,7 +172,7 @@ He dismisses each worry as it pops up:
 
 So he does nothing. The alarms become background noise.
 
-### With TabStax
+### With HeyStax
 
 He builds **“Alarms – Stuff I Keep Dismissing”** Stax:
 
@@ -212,11 +212,11 @@ Her world explodes into:
 * Home: who will mind the kids, meals, transport to/from hospital
 * Recovery: physio, equipment, follow-up visits
 
-### Without TabStax
+### Without HeyStax
 
 She prints some stuff, bookmarks other bits, and leaves emails starred. She wakes up at 3am thinking “Did I ever confirm who’s picking me up?” and “When exactly do I stop taking that medication?”
 
-### With TabStax
+### With HeyStax
 
 She creates **“Surgery – Operation & Recovery Plan”** Stax:
 
@@ -269,11 +269,11 @@ Immediate load:
 * Sort clothes, photos, music
 * Deal with costs
 
-### Without TabStax
+### Without HeyStax
 
 He’s doing all this out of his head and phone: calls, emails, half-open tabs on funeral packages, a note somewhere with the priest’s number. Every “small” thing feels huge because he has to remember it *and* do it *and* feel it.
 
-### With TabStax
+### With HeyStax
 
 He quietly creates **“Dad – Funeral & Farewell”** Stax:
 
@@ -301,7 +301,7 @@ He **shares this Stax with one sibling and maybe a close cousin**:
 
 He doesn’t need to hold the whole thing in his head. He opens the Stax, does the next piece, closes it when his brain can’t carry more.
 
-The grief is still raw. TabStax just reduces the administrative cruelty layered on top.
+The grief is still raw. HeyStax just reduces the administrative cruelty layered on top.
 
 ---
 
@@ -319,11 +319,11 @@ Their world is:
 * Letters from lawyers and tax authorities
 * Siblings asking “what’s happening?”
 
-### Without TabStax
+### Without HeyStax
 
 They drown in envelopes, PDFs, and browser tabs. It all feels endless. They keep promising to “deal with the estate soon,” but never want to open that pile.
 
-### With TabStax
+### With HeyStax
 
 They create **“Estate – [Name] (Executor Workspace)”** Stax:
 
@@ -362,11 +362,11 @@ She’s 42. Life is… fine.
 
 These are **quiet alarms**, not emergencies. Which makes them easier to ignore.
 
-### Without TabStax
+### Without HeyStax
 
 She feels a low-level dissatisfaction and occasionally binge-reads self-help or checks job boards. Then she goes back to autopilot.
 
-### With TabStax
+### With HeyStax
 
 She creates **“Life – Nagging Thoughts I Don’t Want to Lose”** Stax:
 

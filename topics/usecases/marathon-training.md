@@ -20,11 +20,11 @@ His world now has:
 * A calendar mapping out long runs
 * Nutrition and recovery guides
 
-## Without TabStax
+## Without HeyStax
 
 He keeps googling the same stuff. Training plans in one tab, shoe reviews in another, a random blog post open on his phone. He forgets which plan he chose. Every time he thinks "I should train" he has to rebuild the universe.
 
-## With TabStax
+## With HeyStax
 
 He builds **"Bill – Marathon 2025"** Stax:
 

@@ -1,7 +1,7 @@
-# TabStax Help - GitHub Pages Configuration
+# HeyStax Help - GitHub Pages Configuration
 
-title: TabStax Help
-description: Help center for TabStax — your flow manager
+title: HeyStax Help
+description: Help center for HeyStax — your flow engine
 
 # Build settings
 markdown: kramdown
@@ -14,14 +14,14 @@ plugins:
 
 # Aux links in the top-right
 aux_links:
-  "Get TabStax":
-    - "https://hulupeep.github.io/TabStax-Help/"
+  "Get HeyStax":
+    - "https://heystax.ai"
 
 # Heading anchor links on hover
 heading_anchors: true
 
 # Footer content
-footer_content: "TabStax Help &copy; Hulupeep"
+footer_content: "HeyStax Help &copy; Hulupeep"
 
 # Color scheme
 color_scheme: tabstax

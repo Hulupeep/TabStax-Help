@@ -19,11 +19,11 @@ But the campaign is a different beast:
 
 The opposition thinks he’s roadkill: too soft, too academic, not built for the mud.
 
-### Without TabStax
+### Without HeyStax
 
 His laptop is a disaster: academic papers, campaign strategy docs, health portal, school emails, and security briefings all in the same tab bar. One minute he’s reading poll crosstabs, the next he’s grading, then panicking about a hit piece someone just sent him. His partner asks “what’s the plan if they go after us?” and he says “we’ll figure it out” — but there’s no actual place where that plan lives.
 
-### With TabStax
+### With HeyStax
 
 He deliberately splits his life into **four Stax**:
 
@@ -99,11 +99,11 @@ He needs:
 * Advice from people who’ve actually done this
 * Buy-in from his partner and kids
 
-### Without TabStax
+### Without HeyStax
 
 He spends winter opening random gardening blogs, watching homesteading videos, looking up polytunnels on his phone at 11pm… and then forgetting what mattered. Seasons roll past: *“Ah, we missed planting time again. Next year.”* Next year can vanish very fast.
 
-### With TabStax
+### With HeyStax
 
 He sets up a master world: **“Back Garden – Food by 2027”**.
 
@@ -148,7 +148,7 @@ He also **shares a read-only version with a local gardening group or online ment
 
 Instead of endless vague “I’d love to be self-sufficient someday,” Ger has a literal two-year project cockpit he opens every weekend.
 
-He is not just gardening. He’s running a quiet, deeply personal food security project — with TabStax holding the plan.
+He is not just gardening. He’s running a quiet, deeply personal food security project — with HeyStax holding the plan.
 
 ---
 
@@ -170,11 +170,11 @@ Her real constraints:
 * Money
 * Fear: “What if I find out I was never any good?”
 
-### Without TabStax
+### Without HeyStax
 
 She binge-watches “how to get into acting” videos, follows actors on Instagram, bookmarks local acting classes, opens Spotlight / casting sites… and never quite pulls the trigger. It feels like a fog.
 
-### With TabStax
+### With HeyStax
 
 She creates **“Mary – Return to Acting”** Stax.
 
@@ -241,11 +241,11 @@ His brain lives in:
 * Community Facebook/Discord groups
 * 1000 “we should really…” conversations
 
-### Without TabStax
+### Without HeyStax
 
 He doom-scrolls climate Twitter, shares an article, feels sick, does nothing structured. Everything feels both urgent and impossible.
 
-### With TabStax
+### With HeyStax
 
 He defines **“Local Resilience – Project (My Town)”** Stax:
 
@@ -291,11 +291,11 @@ Her world:
 * Scraps of dialogue noted in her phone
 * Word documents with half-started chapters
 
-### Without TabStax
+### Without HeyStax
 
 On a day off, she opens a Word doc called “Novel draft v3,” stares at it, then ends up doing laundry, doomscrolling, or sleeping. Her story feels like a foggy dream she keeps waking from before the ending.
 
-### With TabStax
+### With HeyStax
 
 She creates **“Novel – Night Shift Stories”** Stax.
 

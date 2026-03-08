@@ -19,11 +19,11 @@ Everyone says "enjoy it!" but her brain is full of static:
 * An online course she keeps thinking about
 * A vague sense she "should do something with all this time"
 
-## Without TabStax
+## Without HeyStax
 
 It all lives in her head and scattered tabs. One day she's reading about pensions, the next she's looking at walking tours in Italy, the next she's down a YouTube rabbit hole. Nothing moves forward. The years could blur.
 
-## With TabStax
+## With HeyStax
 
 She builds **"Retirement – Foundations"** Stax:
 

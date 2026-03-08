@@ -45,10 +45,10 @@ hey doesn't dump thoughts into an inbox for later sorting. You're always *in* a 
 
 ```bash
 hey which
-# → TabStax (Must priority, 3 actions)
+# → HeyStax (Must priority, 3 actions)
 
 hey "add error handling to sync"
-# → Added to TabStax
+# → Added to HeyStax
 
 hey use "Client Portal"
 # → Switched context
@@ -162,13 +162,13 @@ Now your AI has context. It can help you plan, prioritize, and execute.
 npm install -g tabstax-cli
 ```
 
-Then authenticate with your TabStax account:
+Then authenticate with your HeyStax account:
 
 ```bash
 hey login
 ```
 
-**Don't have a TabStax account?** It's simple - just go to the [Chrome Web Store](https://chromewebstore.google.com/detail/tabstax/your-extension-id) and install the TabStax extension. Create an account there, and you'll see all your next actions against each project in both the extension and the CLI.
+**Don't have a HeyStax account?** It's simple - just go to the [Chrome Web Store](https://chromewebstore.google.com/detail/tabstax/your-extension-id) and install the TabStax extension. Create an account there, and you'll see all your next actions against each project in both the extension and the CLI.
 
 ---
 
@@ -243,7 +243,7 @@ hey done 1
 
 | Command | Description |
 |---------|-------------|
-| `hey login` | Log in to TabStax |
+| `hey login` | Log in to HeyStax |
 | `hey logout` | Log out |
 | `hey whoami` | Show current user |
 | `hey status` | Show full CLI status |
@@ -252,7 +252,7 @@ hey done 1
 
 ## Priority System
 
-TabStax uses attention-based priorities to help you focus:
+HeyStax uses attention-based priorities to help you focus:
 
 | Icon | Level | Meaning |
 |------|-------|---------|
@@ -267,7 +267,7 @@ Set priorities to see your most important projects at the top of `hey ls stax`.
 
 ## The 7-Action Limit
 
-TabStax enforces a maximum of **7 active actions per project**. This isn't a bug - it's a feature.
+HeyStax enforces a maximum of **7 active actions per project**. This isn't a bug - it's a feature.
 
 **Why?** Research shows humans can only hold ~7 items in working memory. More than 7 actions means you're not being specific enough, or you're avoiding the hard work of prioritizing.
 
@@ -338,7 +338,7 @@ You use Claude, ChatGPT, or Cursor daily. You want your AI to understand your pr
 ```
 You: "What should I work on today?"
 
-AI: Let me check your TabStax projects.
+AI: Let me check your HeyStax projects.
     *runs: hey ls stax*
 
     You have 3 "Must" priority projects:
@@ -387,7 +387,7 @@ hey ls
 
 ---
 
-## Syncing with TabStax Extension
+## Syncing with HeyStax Extension
 
 **Everything syncs automatically.**
 
@@ -455,7 +455,7 @@ hey pri "Urgent Client" must
 ### Integrate with AI Assistants
 Tell your AI about Hey CLI:
 ```
-"I use TabStax to track my next actions. You can run 'hey ls stax'
+"I use HeyStax to track my next actions. You can run 'hey ls stax'
 to see my projects, 'hey ls' to see actions, and 'hey done 1' to
 complete them. Help me manage my work."
 ```
@@ -497,7 +497,7 @@ hey status
 
 ## What's Next?
 
-Hey CLI is the foundation for bringing TabStax into your development workflow. Coming soon:
+Hey CLI is the foundation for bringing HeyStax into your development workflow. Coming soon:
 
 - **MCP Integration**: Direct integration with Claude and other AI assistants
 - **Git Hooks**: Auto-capture breadcrumbs on commits
@@ -507,7 +507,7 @@ Hey CLI is the foundation for bringing TabStax into your development workflow. C
 
 ## Links
 
-- [Install TabStax Extension](https://tabstax.app)
-- [TabStax Dashboard](https://tabstax.app/dashboard)
+- [Install TabStax Extension](https://heystax.ai)
+- [HeyStax Dashboard](https://heystax.ai/dashboard)
 - [npm Package](https://www.npmjs.com/package/tabstax-cli)
 - [Report Issues](https://github.com/Hulupeep/tabstax/issues)

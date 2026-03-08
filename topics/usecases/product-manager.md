@@ -16,11 +16,11 @@ You're a PM managing three parallel streams:
 
 You have a 15-minute gap between two meetings, and you want to move something forward.
 
-## Without TabStax
+## Without HeyStax
 
 You open Slack, see 40 messages, start hunting for the Figma link, find an old version, get distracted by a Jira comment, lose the thread entirely.
 
-## With TabStax
+## With HeyStax
 
 You've set up:
 

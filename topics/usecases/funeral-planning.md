@@ -21,11 +21,11 @@ Immediate load:
 * Sort clothes, photos, music
 * Deal with costs
 
-## Without TabStax
+## Without HeyStax
 
 He's doing all this out of his head and phone: calls, emails, half-open tabs on funeral packages, a note somewhere with the priest's number. Every "small" thing feels huge because he has to remember it *and* do it *and* feel it.
 
-## With TabStax
+## With HeyStax
 
 He quietly creates **"Dad – Funeral & Farewell"** Stax:
 
@@ -53,7 +53,7 @@ He **shares this Stax with one sibling and maybe a close cousin**:
 
 He doesn't need to hold the whole thing in his head. He opens the Stax, does the next piece, closes it when his brain can't carry more.
 
-The grief is still raw. TabStax just reduces the administrative cruelty layered on top.
+The grief is still raw. HeyStax just reduces the administrative cruelty layered on top.
 
 ---
 

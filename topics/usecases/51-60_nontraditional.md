@@ -21,11 +21,11 @@ Her world for this child already spans:
 * Autism/ADHD resources she trusts
 * Her own notes from past meetings
 
-### Without TabStax
+### Without HeyStax
 
 Every incident is a fresh storm. She scrambles: searching her inbox, opening the wrong report, hunting for the last IEP, trying to remember what they promised last time. By the time she’s in the meeting, she’s reactive and exhausted.
 
-### With TabStax
+### With HeyStax
 
 She already has **“[Child’s Name] – School & Supports”** Stax:
 
@@ -66,11 +66,11 @@ His world now has:
 * A calendar mapping out long runs
 * Nutrition and recovery guides
 
-### Without TabStax
+### Without HeyStax
 
 He keeps googling the same stuff. Training plans in one tab, shoe reviews in another, a random blog post open on his phone. He forgets which plan he chose. Every time he thinks “I should train” he has to rebuild the universe.
 
-### With TabStax
+### With HeyStax
 
 He builds **“Bill – Marathon 2025”** Stax:
 
@@ -111,11 +111,11 @@ Each has their own goals:
 * Friend 2: explore a career pivot
 * Friend 3: finally ship a personal project
 
-### Without TabStax
+### Without HeyStax
 
 The calls devolve into updates like “yeah, I did some stuff”. Their browsers are chaos: job boards, half-written resumes, random notes, bookmarked posts. The group energy is good, but the execution is fuzzy.
 
-### With TabStax
+### With HeyStax
 
 They create a **shared Stax for the group**:
 **“Laid Off, Leveling Up – Accountability Crew”**.
@@ -165,11 +165,11 @@ Her reality:
 * A list of 20 people she thinks she can help
 * DM threads and email replies
 
-### Without TabStax
+### Without HeyStax
 
 It’s all one soup: code editor, landing page builder, Stripe dashboard, Gmail, DMs. When she tries to focus on “just one customer,” she still has 11 other tabs whispering in her face.
 
-### With TabStax
+### With HeyStax
 
 She creates a separate Stax for each prospective customer she’s truly dancing with:
 
@@ -211,11 +211,11 @@ His world:
 * Benefits and pension info
 * Siblings’ WhatsApp thread with opinions
 
-### Without TabStax
+### Without HeyStax
 
 Every new issue — a fall, a new prescription, a letter about benefits — sends him back into the mess. He hunts for which login goes where, which doctor said what, and how that aligns with the legal stuff. Siblings ask questions he can’t quickly answer without repeating a 20-minute search.
 
-### With TabStax
+### With HeyStax
 
 He defines **“Mum – Health & Life Admin”** Stax:
 
@@ -251,11 +251,11 @@ Life is now three overlapping, fragile layers:
 * Work: still have a job, still have responsibilities
 * Rebuilding: money, relationships, health
 
-### Without TabStax
+### Without HeyStax
 
 The recovery tabs (meeting list, readings, chat boards) sit in the same window as work email and YouTube. One bad day, they go searching for help but fall into distraction instead.
 
-### With TabStax
+### With HeyStax
 
 They create:
 
@@ -303,11 +303,11 @@ Her world:
 * Petition or complaint form
 * Meeting notes from past discussions
 
-### Without TabStax
+### Without HeyStax
 
 Every WhatsApp ping sends her back into ad hoc mode. When the city asks for specifics, she wastes time re-building the list or searching for the last reference link. Tenants ask “what’s the latest?” and she has to reconstruct the state of play manually.
 
-### With TabStax
+### With HeyStax
 
 She defines **“Tenants – Building 42 Oak Street”** Stax:
 
@@ -345,11 +345,11 @@ Tabs everywhere:
 * Airline and moving quotes
 * Spreadsheet of “things to cancel, things to set up”
 
-### Without TabStax
+### Without HeyStax
 
 Their move exists as 50 tabs across devices plus notes in three apps. They forget which “how to register in Germany” guide they trusted. Every time they sit down to plan, they feel like they’re starting again.
 
-### With TabStax
+### With HeyStax
 
 They create **“Move – Dublin → Berlin 2026”** Stax:
 
@@ -387,11 +387,11 @@ Current needs:
 * Promote on Instagram / TikTok
 * Track orders and commissions
 
-### Without TabStax
+### Without HeyStax
 
 She flutters between tutorials, shop platforms, pricing advice articles, and Instagram, never anchoring the project structure. Every time she thinks “I should work on the shop,” she has to remember what the next step even is.
 
-### With TabStax
+### With HeyStax
 
 She creates **“Art Shop – Launch”** Stax:
 
@@ -425,11 +425,11 @@ Their worlds:
 * Side hustle: portfolio, Upwork/Fiverr listings, invoicing, client chats
 * Family: budget, long-term planning tabs, maybe visa or loan info
 
-### Without TabStax
+### Without HeyStax
 
 Everything collides. They sit down to work on an assignment and end up scrolling Upwork. They try to do client work with a lecture PDF half-open and WhatsApp from home asking about exam results.
 
-### With TabStax
+### With HeyStax
 
 They split reality into:
 

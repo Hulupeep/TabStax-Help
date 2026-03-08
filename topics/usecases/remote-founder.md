@@ -18,11 +18,11 @@ In one afternoon you must:
 
 Each "room" you enter expects a different story from the same product.
 
-## Without TabStax
+## Without HeyStax
 
 You keep pitch deck, hiring scorecards, roadmap doc, and Miro board all floating in one environment. You show the investor the wrong roadmap version, open the candidate's CV during the team review, fumble for the right doc when the investor asks about metrics.
 
-## With TabStax
+## With HeyStax
 
 You set up:
 

@@ -22,11 +22,11 @@ You're tweaking one last chart. The email with your deck needs to go out in **2 
 
 In **5 minutes**, you're due on a Zoom call with **the Swedish Department of Education** about a completely different topic and stack of tools.
 
-## Without TabStax
+## Without HeyStax
 
 You finish the Lighting Brothers deck, scramble to find the Zoom link for Sweden, try to remember where you left your notes, close the wrong tabs, reopen others, and start the call already mentally out of breath.
 
-## With TabStax
+## With HeyStax
 
 You've already set things up:
 

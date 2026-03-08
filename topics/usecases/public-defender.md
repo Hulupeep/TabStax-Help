@@ -25,11 +25,11 @@ Each case lives in its own mess:
 * Motion draft
 * Sentencing guideline references
 
-## Without TabStax
+## Without HeyStax
 
 His browser is 40 tabs deep. Ramirez motion draft is somewhere. The DA's last email is buried. The docket link? Who knows. Sweat, literal and metaphorical. He goes into court with "good enough" recall and hopes he doesn't miss something crucial.
 
-## With TabStax
+## With HeyStax
 
 He's already set up:
 

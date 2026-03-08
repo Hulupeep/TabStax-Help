@@ -6,7 +6,7 @@ nav_order: 1
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Understanding the main TabStax popup
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Understanding the main HeyStax popup
 
 ## Why this helps
 
@@ -14,7 +14,7 @@ When you're juggling multiple projects, your brain has to answer two questions: 
 
 The **top bar** gives you quick access to Search, Feedback, Help, and Sign out. Below that, the popup has two main sections:
 
-<img src="../screenshots/mainpopup.png" alt="Main TabStax popup showing My Next Actions and My Stax" width="400" style="display: block; margin: 20px auto;">
+<img src="../screenshots/mainpopup.png" alt="Main HeyStax popup showing My Next Actions and My Stax" width="400" style="display: block; margin: 20px auto;">
 
 ---
 
@@ -70,8 +70,8 @@ Now you can answer "What should I do next?" without digging through projects, an
 ---
 
 **Related guides:**
-- [What problem TabStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
+- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
 - [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
-- [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
+- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
 - [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept

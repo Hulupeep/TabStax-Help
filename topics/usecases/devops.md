@@ -19,11 +19,11 @@ For this type of incident, you usually need:
 * Runbook doc
 * Incident Slack/Teams channel
 
-## Without TabStax
+## Without HeyStax
 
 You burn 5–10 minutes just spinning everything up and pasting links around.
 
-## With TabStax
+## With HeyStax
 
 You already prepared **"P1 – Web Latency / Errors"** Stax:
 

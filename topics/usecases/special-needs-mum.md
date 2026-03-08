@@ -22,11 +22,11 @@ Her world for this child already spans:
 * Autism/ADHD resources she trusts
 * Her own notes from past meetings
 
-## Without TabStax
+## Without HeyStax
 
 Every incident is a fresh storm. She scrambles: searching her inbox, opening the wrong report, hunting for the last IEP, trying to remember what they promised last time. By the time she's in the meeting, she's reactive and exhausted.
 
-## With TabStax
+## With HeyStax
 
 She already has **"[Child's Name] – School & Supports"** Stax:
 

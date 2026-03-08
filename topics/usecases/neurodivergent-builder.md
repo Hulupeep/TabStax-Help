@@ -18,11 +18,11 @@ You have:
 
 Your brain wants to go deep… but the **setup cost** of getting back into each thing kills you.
 
-## Without TabStax
+## Without HeyStax
 
 You bounce between random tabs, lose the "world state" of each project, and every return feels like starting from zero. Half your energy is spent remembering what you were doing.
 
-## With TabStax
+## With HeyStax
 
 Each project gets its own **world**:
 

@@ -18,11 +18,11 @@ Your "standup cockpit" usually includes:
 * CI/CD status page
 * A short script / checklist for running standup
 
-## Without TabStax
+## Without HeyStax
 
 When you're sick or late, the team freestyles. Standup loses structure, and new members are confused.
 
-## With TabStax
+## With HeyStax
 
 You create **"Team Falcon – Standup Stax"**:
 

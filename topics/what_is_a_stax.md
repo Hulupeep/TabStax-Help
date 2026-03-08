@@ -6,7 +6,7 @@ nav_order: 4
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What is a Stax?
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What is a Stax?
 
 A **Stax** is a *space where you get things done*.
 
@@ -239,8 +239,8 @@ If you wouldn’t trust a random link from someone, don’t trust a random Stax 
 ---
 
 **Next steps:**
-- [What problem TabStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
+- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
 - [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
-- [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
+- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax

@@ -24,11 +24,11 @@ Her real constraints:
 * Money
 * Fear: "What if I find out I was never any good?"
 
-## Without TabStax
+## Without HeyStax
 
 She binge-watches "how to get into acting" videos, follows actors on Instagram, bookmarks local acting classes, opens Spotlight / casting sites… and never quite pulls the trigger. It feels like a fog.
 
-## With TabStax
+## With HeyStax
 
 She creates **"Mary – Return to Acting"** Stax.
 

@@ -21,11 +21,11 @@ You’re tweaking one last chart. The email with your deck needs to go out in **
 
 In **5 minutes**, you’re due on a Zoom call with **the Swedish Department of Education** about a completely different topic and stack of tools.
 
-### Without TabStax
+### Without HeyStax
 
 You finish the Lighting Brothers deck, scramble to find the Zoom link for Sweden, try to remember where you left your notes, close the wrong tabs, reopen others, and start the call already mentally out of breath.
 
-### With TabStax
+### With HeyStax
 
 You’ve already set things up:
 
@@ -92,11 +92,11 @@ You have:
 
 Your brain wants to go deep… but the **setup cost** of getting back into each thing kills you.
 
-### Without TabStax
+### Without HeyStax
 
 You bounce between random tabs, lose the “world state” of each project, and every return feels like starting from zero. Half your energy is spent remembering what you were doing.
 
-### With TabStax
+### With HeyStax
 
 Each project gets its own **world**:
 
@@ -146,11 +146,11 @@ You’ve got:
 * Internal Slack thread
 * Call recordings from discovery
 
-### Without TabStax
+### Without HeyStax
 
 Before each interaction, you hunt: where’s that deck, what did they say about budget, which competitor are they evaluating again?
 
-### With TabStax
+### With HeyStax
 
 You’ve created **“NordicGrid – Deal Cycle”** Stax:
 
@@ -198,11 +198,11 @@ Your “standup cockpit” usually includes:
 * CI/CD status page
 * A short script / checklist for running standup
 
-### Without TabStax
+### Without HeyStax
 
 When you’re sick or late, the team freestyles. Standup loses structure, and new members are confused.
 
-### With TabStax
+### With HeyStax
 
 You create **“Team Falcon – Standup Stax”**:
 
@@ -235,11 +235,11 @@ You’ve got a child in school and the usual mess:
 * Calendar of random one-off days
 * A running checklist of “things to remember for Thursday”
 
-### Without TabStax
+### Without HeyStax
 
 Stuff slips. One parent ends up carrying all the mental load. You scramble the morning of the school play.
 
-### With TabStax
+### With HeyStax
 
 You create **“Rory – School Admin (This Term)”** Stax:
 
@@ -280,11 +280,11 @@ Your daily operating stack:
 * WhatsApp Web for client messages
 * Social media for leads
 
-### Without TabStax
+### Without HeyStax
 
 Every morning is a “rebuild ops view” exercise. You open things in random order, miss an invoice, forget which client is overdue, and lose half an hour to getting oriented.
 
-### With TabStax
+### With HeyStax
 
 You create **“BrightPixel – Daily Ops”** Stax:
 
@@ -334,11 +334,11 @@ You’re a manager in a big company. Your days are:
 * Docs for each project
 * Constant 30-minute context cuts
 
-### Without TabStax
+### Without HeyStax
 
 Each meeting requires hunting: “Where are the notes? Where’s the dashboard? What did we decide last time?”
 
-### With TabStax
+### With HeyStax
 
 You have:
 
@@ -386,11 +386,11 @@ For this type of incident, you usually need:
 * Runbook doc
 * Incident Slack/Teams channel
 
-### Without TabStax
+### Without HeyStax
 
 You burn 5–10 minutes just spinning everything up and pasting links around.
 
-### With TabStax
+### With HeyStax
 
 You already prepared **“P1 – Web Latency / Errors”** Stax:
 
@@ -424,11 +424,11 @@ To manage it, you need:
 * Media / press release template
 * Internal comms platform
 
-### Without TabStax
+### Without HeyStax
 
 You’re firing links to fire brigade, police, utilities, press office separately. Everyone builds their own tab mess.
 
-### With TabStax
+### With HeyStax
 
 You have **“Incident – Gas Leak (Zone A)”** Stax ready:
 
@@ -465,11 +465,11 @@ You’ve got:
 * Receipts in Drive
 * Email thread with your accountant
 
-### Without TabStax
+### Without HeyStax
 
 You re-open these every time you work on taxes, then lose them, then forward random info to your accountant.
 
-### With TabStax
+### With HeyStax
 
 You make **“2024 – Tax Prep”** Stax:
 

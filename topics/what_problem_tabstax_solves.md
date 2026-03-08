@@ -1,16 +1,16 @@
 ---
-title: What problem TabStax solves
+title: What problem HeyStax solves
 parent: Getting Started
 nav_order: 1
 ---
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What problem TabStax solves
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What problem HeyStax solves
 
-The web has exploded into a million pages, but your actual work lives across many tabs and tools at once—not on a single website. Every time you return to a project, you rebuild context from scratch: reopen tabs, re-find docs, try to remember "what was I doing here?" There's no natural way to package all of that context—tabs, resources, half-formed thoughts—into one named place. TabStax changes that. You don't have to rebuild context anymore.
+The web has exploded into a million pages, but your actual work lives across many tabs and tools at once—not on a single website. Every time you return to a project, you rebuild context from scratch: reopen tabs, re-find docs, try to remember "what was I doing here?" There's no natural way to package all of that context—tabs, resources, half-formed thoughts—into one named place. HeyStax changes that. You don't have to rebuild context anymore.
 
-**TabStax exists because:**
+**HeyStax exists because:**
 
 * **You keep reopening the same tabs for the same project.** Amazon, Etsy, wish lists, price comparisons—every time you sit down to finish Christmas shopping, you start from zero.
 * **Your work is spread across tools with no single entry point.** The brief is in Notion, the slide deck is in Google Slides, the data is in three dashboards, and you're holding it all in your head.
@@ -21,7 +21,7 @@ The web has exploded into a million pages, but your actual work lives across man
 
 ## How you'll think differently
 
-With TabStax, you shift from treating the web as individual sites to treating it as **problem spaces you can save and reopen**.
+With HeyStax, you shift from treating the web as individual sites to treating it as **problem spaces you can save and reopen**.
 
 * **From thinking in websites** → to **thinking in problem spaces**. Not "I need that Amazon page," but "I need my Christmas Shopping workspace."
 * **From rebuilding context** → to **reopening a named Stax with next actions**. One click and every tab, every resource, every next step is exactly where you left it.
@@ -37,5 +37,5 @@ Now you can stop rebuilding context and start reopening it—with one click, exa
 
 **Next steps:**
 - [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
-- [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
+- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example

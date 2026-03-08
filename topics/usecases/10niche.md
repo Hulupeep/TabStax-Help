@@ -15,12 +15,12 @@ Each stream lives in a completely different mental universe:
 * **Billing revamp** → PRD, spreadsheets, finance feedback, edge case tickets
 * **SLA feature** → Support macros, incident reports, PM spec, engineering estimates
 
-### Without TabStax
+### Without HeyStax
 
 You alt-tab like a maniac: “Where’s the billing PRD? What was the last comment from finance? Which dashboard shows churn by plan again?”
 By the time the stakeholder review starts, you sound like you’re remembering, not leading.
 
-### With TabStax
+### With HeyStax
 
 You’ve carved your world into three Stax:
 
@@ -79,11 +79,11 @@ For the startup, you need:
 * GitHub repo
 * Live logs
 
-### Without TabStax
+### Without HeyStax
 
 You’re constantly reconfiguring your browser: logging into different tenants, hunting for the right docs, closing tabs from the previous demo, praying you don’t show the wrong environment.
 
-### With TabStax
+### With HeyStax
 
 You build two separate worlds:
 
@@ -134,11 +134,11 @@ The at-risk account:
 * Executive sponsor who’s gone quiet
 * Notes from last call: *“Concerned about adoption”*
 
-### Without TabStax
+### Without HeyStax
 
 You carry the emotional residue of the first call into the second. Your tabs bleed together. You keep almost sharing the wrong deck, searching for the last email, checking the wrong dashboard filter.
 
-### With TabStax
+### With HeyStax
 
 You set up:
 
@@ -182,11 +182,11 @@ Each question:
 * Has a different dashboard
 * Needs a different story
 
-### Without TabStax
+### Without HeyStax
 
 You open 12 tabs, drown in queries, and by the time you answer the first, you’ve forgotten what the second was even about.
 
-### With TabStax
+### With HeyStax
 
 You make:
 
@@ -231,11 +231,11 @@ Morning:
 
 Everything is urgent. Everything is fragmented.
 
-### Without TabStax
+### Without HeyStax
 
 Your browser becomes a junk drawer: Notion, Slides, Stripe, Slack, Jira, Google Sheets, Gmail… all on top of each other. You open the board deck, then remember the bug, jump to Jira, forget where you left the deck, miss a detail in the email to the prospect.
 
-### With TabStax
+### With HeyStax
 
 You deliberately slice your day into:
 
@@ -286,11 +286,11 @@ Reliability review world:
 * Upcoming risky changes
 * Capacity planning sheet
 
-### Without TabStax
+### Without HeyStax
 
 You finish the postmortem surrounded by emotional debris and scary graphs. You try to spin up reliability dashboards while Slack pings you about something else. You drag the mood of “we just fought a fire” into what should be a cool-headed review.
 
-### With TabStax
+### With HeyStax
 
 You have:
 
@@ -327,11 +327,11 @@ An hour later you’re due in a planning call about a **storm system** due this 
 
 Different risk. Different partners. Different tools.
 
-### Without TabStax
+### Without HeyStax
 
 You leave your gas leak tabs open, open new tabs for weather, flood maps, shelters. You’re mentally still half in the last crisis, glancing at the wrong map, mixing protocols.
 
-### With TabStax
+### With HeyStax
 
 You prepared:
 
@@ -376,11 +376,11 @@ Your Tuesday:
 
 These are three completely different hats.
 
-### Without TabStax
+### Without HeyStax
 
 All three hats sit in one tab soup. You join the HR meeting and still have Jira and slide decks open, flipping around, stalling while you find the performance spreadsheet.
 
-### With TabStax
+### With HeyStax
 
 You build:
 
@@ -421,11 +421,11 @@ Synthesis world:
 * Affinity diagram
 * Summary report draft
 
-### Without TabStax
+### Without HeyStax
 
 You end a session, promise yourself you’ll just take “two minutes” to start synthesis, but can’t find the right doc. Then the next session starts, and you’re still half in analysis mode.
 
-### With TabStax
+### With HeyStax
 
 You have two Stax:
 
@@ -469,11 +469,11 @@ Live pieces:
 * PR outreach list
 * Product Hunt page draft
 
-### Without TabStax
+### Without HeyStax
 
 Your browser becomes a graveyard of half-remembered tabs. You fix copy on the landing page, then get distracted by ads performance, forget to update the email, lose the PR sheet.
 
-### With TabStax
+### With HeyStax
 
 You spin up **“Launch – TabStax Cloud Sync”** Stax:
 

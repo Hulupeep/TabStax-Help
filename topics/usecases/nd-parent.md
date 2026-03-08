@@ -16,11 +16,11 @@ You've got a child in school and the usual mess:
 * Calendar of random one-off days
 * A running checklist of "things to remember for Thursday"
 
-## Without TabStax
+## Without HeyStax
 
 Stuff slips. One parent ends up carrying all the mental load. You scramble the morning of the school play.
 
-## With TabStax
+## With HeyStax
 
 You create **"Rory – School Admin (This Term)"** Stax:
 

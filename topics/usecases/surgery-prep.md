@@ -19,11 +19,11 @@ Her world explodes into:
 * Home: who will mind the kids, meals, transport to/from hospital
 * Recovery: physio, equipment, follow-up visits
 
-## Without TabStax
+## Without HeyStax
 
 She prints some stuff, bookmarks other bits, and leaves emails starred. She wakes up at 3am thinking "Did I ever confirm who's picking me up?" and "When exactly do I stop taking that medication?"
 
-## With TabStax
+## With HeyStax
 
 She creates **"Surgery – Operation & Recovery Plan"** Stax:
 

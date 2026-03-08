@@ -6,13 +6,13 @@ nav_order: 2
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What you see the first time you open TabStax
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What you see the first time you open TabStax
 
 You've just installed TabStax, pinned it to your browser toolbar, and clicked the icon. This is the very first screen you'll see. It's designed to capture your current browser window—all the tabs you have open right now—and save them as your **first Stax**. This gives you a safe, named workspace you can return to anytime.
 
 ---
 
-## Pin TabStax and open the popup
+## Pin HeyStax and open the popup
 
 After installing the TabStax extension:
 
@@ -30,11 +30,11 @@ The main section shows a card that says:
 
 > **👋 No stax yet — let's create your first one!**
 
-Below that, you'll see a **list of your currently open tabs** (for example: TabStax Help pages, Gmail, research tabs, whatever you have open right now).
+Below that, you'll see a **list of your currently open tabs** (for example: HeyStax Help pages, Gmail, research tabs, whatever you have open right now).
 
 **What this means:**
 
-TabStax is looking at your current browser window and treating it as a potential workspace. These tabs aren't random—they're probably related to something you're doing right now. TabStax is offering to save them all together so you can come back to this exact setup later.
+HeyStax is looking at your current browser window and treating it as a potential workspace. These tabs aren't random—they're probably related to something you're doing right now. HeyStax is offering to save them all together so you can come back to this exact setup later.
 
 ---
 
@@ -89,7 +89,7 @@ Now you can stash this whole workspace with one click and trust it'll be there w
 ---
 
 **Next steps:**
-- [What problem TabStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
+- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
 - [Creating your first Stax](creating_your_first_stax.md) – detailed step-by-step guide with examples
-- [The TabStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
+- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax

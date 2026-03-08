@@ -20,11 +20,11 @@ Your daily operating stack:
 * WhatsApp Web for client messages
 * Social media for leads
 
-## Without TabStax
+## Without HeyStax
 
 Every morning is a "rebuild ops view" exercise. You open things in random order, miss an invoice, forget which client is overdue, and lose half an hour to getting oriented.
 
-## With TabStax
+## With HeyStax
 
 You create **"BrightPixel – Daily Ops"** Stax:
 

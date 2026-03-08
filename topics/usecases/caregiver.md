@@ -20,11 +20,11 @@ His world:
 * Benefits and pension info
 * Siblings' WhatsApp thread with opinions
 
-## Without TabStax
+## Without HeyStax
 
 Every new issue — a fall, a new prescription, a letter about benefits — sends him back into the mess. He hunts for which login goes where, which doctor said what, and how that aligns with the legal stuff. Siblings ask questions he can't quickly answer without repeating a 20-minute search.
 
-## With TabStax
+## With HeyStax
 
 He defines **"Mum – Health & Life Admin"** Stax:
 

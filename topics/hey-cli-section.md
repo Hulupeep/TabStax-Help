@@ -6,4 +6,4 @@ has_children: true
 
 # Hey CLI — Terminal & AI Integration
 
-Bring your TabStax next actions into your terminal and AI assistant workflows.
+Bring your HeyStax next actions into your terminal and AI assistant workflows.
