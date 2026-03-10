@@ -1,9 +1,6 @@
 ---
 title: Working with Stax
-nav_order: 3
-has_children: true
+nav_exclude: true
 ---
 
-# Working with Stax
-
-Once you have your first Stax, these guides cover the day-to-day features that keep you in flow.
+This section has moved. The TabStax extension documentation now lives under [Surfaces → TabStax](surfaces/tabstax-extension).

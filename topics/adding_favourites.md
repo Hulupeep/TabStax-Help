@@ -1,7 +1,7 @@
 ---
 title: Adding Favourites
-parent: Working with Stax
-nav_order: 2
+parent: TabStax (Chrome extension)
+nav_order: 3
 ---
 
 [← Back to Help Home](/)

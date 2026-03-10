@@ -1,12 +1,14 @@
 ---
-title: Using the main popup
-parent: Working with Stax
-nav_order: 1
+title: Using the TabStax popup
+parent: TabStax (Chrome extension)
+nav_order: 2
 ---
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Understanding the main HeyStax popup
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Understanding the TabStax popup
+
+The TabStax popup is the browser extension interface — your quick-access panel for next actions and Stax while you're working in Chrome.
 
 ## Why this helps
 

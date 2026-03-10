@@ -1,7 +1,7 @@
 ---
-title: First time opening Heystax
-parent: Getting Started
-nav_order: 2
+title: First time opening TabStax
+parent: TabStax (Chrome extension)
+nav_order: 1
 ---
 
 [← Back to Help Home](/)
