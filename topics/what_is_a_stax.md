@@ -1,246 +1,77 @@
 ---
 title: What is a Stax?
 parent: Getting Started
-nav_order: 4
+nav_order: 3
 ---
 
 [← Back to Help Home](/)
 
 # <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What is a Stax?
 
-A **Stax** is a *space where you get things done*.
-
-It’s all the websites you use together for a task or project —
-**documentation, dashboards, tools, videos, briefs, emails, boards** —
-plus your **next actions** and **little bits of context** that tell your brain:
-
-> “This is where we left off. Pick up here.”
-
-One click, and you’re back where your mind left off.
-
-It’s **not** a tab manager.
-It’s a **flow manager**.
+A **Stax** is a named project workspace. Not a tab group. Not a to-do list. A live container for everything needed to step back into a piece of work and immediately know what's happening and what to do next.
 
 ---
 
-## The simple definition (mental model)
+## What's inside a Stax
 
-Think of a Stax as:
-
-* **A named workspace** for one thing you’re doing
-
-  > “Team Alpha Standups”, “Client X Launch”, “My PhD Writing Session”
-* **A bundle of tabs** that actually belong together
-* **Next actions + notes** that keep your brain oriented
-
-Instead of a pile of random tabs, you have **one Stax per flow**.
-
----
-
-## Why Stax exist (and why your brain likes them)
-
-Your brain does a ton of work just to *rebuild context*:
-
-* “Where’s the doc?”
-* “What dashboard was I using?”
-* “What were we waiting on?”
-
-Normal tabs and bookmarks don’t remember any of that for you.
-
-A Stax does:
-
-* **Rebuilds your setup** → all the websites you use for that thing
-* **Reminds you of your next moves** → *Next actions* live right beside the tabs
-* **Keeps the story** → short notes like “We’re blocked on Sarah’s approval”
-
-So when you open a Stax, your brain doesn’t have to *re-boot* the project.
-You just step back into the flow.
+| Component | What it is |
+|---|---|
+| **Name** | The project identity — what this work is called |
+| **Next Actions** | The concrete step that gets you back to work without thinking |
+| **Priority** | Must / Should / Good / Meh — where this sits in your attention right now |
+| **Tabs & Links** | The web resources for this project (opened in one click by the TabStax extension) |
+| **Collaborators** | Team members with @handles, roles, and colour-coded ownership |
+| **Agents** | AI assistants connected via MCP — they read and write the same Stax |
+| **Breadcrumbs** | A timestamped trail of what happened — so returning feels like a pause, not a restart |
 
 ---
 
-## If you received a Stax link
+## A Stax is not a bookmark folder
 
-If someone shared a Stax with you (via a link or share page), it means:
+Bookmark folders save URLs. A Stax saves intent.
 
-* They’ve **captured how they work** on something into one Stax
-* They’re inviting you to **join them in that space**
-* You now see **the same tabs, same structure, same context**
+The difference is the next action — the concrete step that answers "what do I do when I come back?" without having to think about it. That's what makes reopening a Stax different from reopening a browser history page.
 
-You’re not inside their browser; you’re sharing the **same working room**.
+A bookmark says: here's a link you saved once. A Stax says: here's where you were, here's what's next, here are the tools to do it in. One is a reference. The other is a runway.
 
-### What that means for collaboration
+---
 
-Receiving a Stax is someone saying:
+## A Stax lives everywhere
 
-> “Here’s the exact setup I use to work on this. Let’s stand in the same place.”
+The same Stax is accessible across every HeyStax surface:
+
+- Add a next action from your **terminal** (`hey "review the PR"`)
+- Complete it through **Claude** ("mark the first action on API Migration as done")
+- Open the tabs from the **TabStax extension**
+- Check the priority in the **Dashboard**
+
+It's all the same workspace. No copy-paste. No sync lag. No version confusion. The Stax is the source of truth, and every surface reads and writes the same one.
+
+---
+
+## If someone shared a Stax with you
+
+When someone shares a Stax, they're not sending you a list of links. They're giving you their working context — the same tabs, the same next actions, the same structure.
 
 You can:
+- Open the tabs they use
+- See the next actions they've set
+- Save your own copy and adapt it
 
-* Open the tabs they use
-* See the structure they set up
-* (With the extension) **save your own copy** and adapt it to your flow
-
-Depending on the Stax and your plan, you might also see **live updates** when they add or change things — so you stay in sync.
-
----
-
-## Concrete examples – how people use Stax together
-
-Here are a few mental models to make it real.
-
-### 1. Scrum Master with multiple teams
-
-You’re a scrum master running three squads.
-
-You might have:
-
-* **“Team Alpha – Rituals Stax”**
-
-  * Jira board
-  * Sprint doc
-  * Retro board
-  * Team dashboard
-  * Next actions: “Check blockers before standup”, “Review carry-over stories”
-
-* **“Team Beta – Planning Stax”**
-
-  * Product spec
-  * Roadmap tool
-  * Estimates sheet
-  * Next actions: “Align with PO on Q2 scope”
-
-* **“Team Gamma – Incident Follow-up Stax”**
-
-  * Incident doc
-  * Logs dashboard
-  * Comms doc
-  * Next actions: “Draft incident summary”, “Schedule incident review”
-
-You share the Stax with each team so when they open it, everyone is literally **looking at the same tabs, same flow, same next actions**.
+Depending on the Stax and your plan, you might also see live updates when they add or change things — so you stay in sync without asking "where are we on this?"
 
 ---
 
-### 2. Client onboarding as a freelancer/consultant
+## The Flowful Re-entry
 
-You’re onboarding a new client.
+The moment of opening a cold Stax and immediately knowing what to do — that's a **Flowful Re-entry**. It's what HeyStax is built to produce. A Stax is the container that makes it possible.
 
-Your **“Client Onboarding – Company Y” Stax** might have:
-
-* The signed contract
-* Your kickoff notes
-* Their Notion/Confluence space
-* Their analytics dashboard
-* A doc with “Questions to confirm”
-
-Next actions might be:
-
-* “Prepare kickoff agenda”
-* “List data sources we’ll need access to”
-
-Share that Stax with the client. Now you both sit in the same shared workspace for onboarding instead of emailing links back and forth.
-
----
-
-### 3. Studying or exam prep
-
-You’re revising for an exam or learning a new topic.
-
-Your **“Biology Exam – Cell Division Stax”** might have:
-
-* School portal page
-* Key YouTube explainer
-* Past exam questions
-* Flashcard app page
-
-Next actions:
-
-* “Do 3 past questions on mitosis”
-* “Re-watch explanation of meiosis errors”
-
-Share that Stax with a study buddy → you’re literally revising from the *same* resources in the *same* flow.
-
----
-
-### 4. Planning a trip together
-
-You’re planning a city break with a friend or partner.
-
-Your **“Paris Weekend Stax”** might have:
-
-* Flight search
-* Hotel options
-* Restaurant lists
-* Google Maps with saved locations
-* Shared note with rough plan
-
-Next actions:
-
-* “Decide hotel by Friday”
-* “Book dinner for Saturday night”
-
-Share the Stax; now you’re both tweaking the same plan, not sending scattered links on WhatsApp.
-
----
-
-## What you can do when you open a Stax
-
-On the **share page** (no extension needed):
-
-* See the **Stax name & description**
-* Browse the **list of tabs**
-* Open individual tabs or **open them all**
-* Get a feel for how the sender works on this thing
-
-With the **Heystax extension installed**:
-
-* Save that Stax into **your collection**
-* Edit the tabs (add/remove)
-* Add your own **next actions and notes**
-* Use it as a **template** and duplicate it for other projects
-
-Once you save it, it becomes **your Stax**. Your edits don’t change the original.
-
----
-
-## Safety & trust – should you open this Stax?
-
-A Stax is a **bundle of links plus notes**. Treat it like you would any link someone sends you.
-
-### Ask yourself:
-
-1. **Do I know who shared this?**
-
-   * From your team / friend / known creator → usually fine, as with any shared doc.
-   * From a stranger or random site → be cautious.
-
-2. **Do the links look sane?**
-
-   * You can see each domain on the share page.
-   * Open a couple of tabs first instead of everything at once.
-   * Avoid anything that looks like a phishing page or weird download.
-
-### What Heystax *doesn’t* do
-
-* It **doesn’t run code on your machine** by itself — it just opens URLs in your browser.
-* It **doesn’t see your passwords** — your logins stay handled by your browser and sites.
-* It **doesn’t bypass browser security** — all your usual protections still apply.
-
-If you wouldn’t trust a random link from someone, don’t trust a random Stax from them either.
-
----
-
-## TL;DR
-
-* A **Stax** is your **flow space**: tabs + next actions + context for one thing you're doing.
-* It's not a tab manager. It's a **flow manager** that puts you back *exactly* where your mind left off.
-* When someone shares a Stax with you, they're inviting you to work in the **same space**: same tabs, same structure, same context.
-* You can open it in any browser, and with the extension, save it, edit it, and make it your own.
+Your brain doesn't have to reboot the project. You just step back into motion.
 
 ---
 
 **Next steps:**
-- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
-- [What you see the first time you open Heystax](first_time_opening_tabstax.md) – your first experience after installing
-- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
-- [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
-- [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax
+- [What problem HeyStax solves](what_problem_tabstax_solves) — the core problem and why it matters
+- [The HeyStax mental model](tabstax_mental_model) — think in projects, not tools
+- [Creating your first Stax](creating_your_first_stax) — step-by-step with the TabStax extension
+- [Surfaces](surfaces/) — how HeyStax works across browser, terminal, AI, and dashboard

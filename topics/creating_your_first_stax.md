@@ -1,12 +1,14 @@
 ---
 title: Creating your first Stax
-parent: Getting Started
-nav_order: 5
+parent: TabStax (Chrome extension)
+nav_order: 4
 ---
 
 [← Back to Help Home](/)
 
 # <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Creating your first Stax
+
+This guide walks you through creating a Stax using the TabStax Chrome extension. If you're using the CLI or dashboard, the concept is the same — name a project, add links and next actions — but the steps differ. See [Hey CLI Guide](hey-cli) or [Dashboard](surfaces/dashboard) for those surfaces.
 
 > **Note:** If you just installed Heystax and want to understand what you're seeing, check out [What you see the first time you open Heystax](first_time_opening_tabstax.md) first.
 

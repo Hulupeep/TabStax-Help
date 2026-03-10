@@ -1,5 +1,6 @@
 ---
 title: AI Integrations (MCP)
+parent: Surfaces
 nav_order: 4
 has_children: true
 ---
