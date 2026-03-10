@@ -1,52 +1,125 @@
 ---
-title: Creating your first Stax
-parent: TabStax (Chrome extension)
-nav_order: 4
+title: Get started with HeyStax
+parent: Getting Started
+nav_order: 1
 ---
 
-[← Back to Help Home](/)
+# Get started with HeyStax
 
-# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Creating your first Stax
-
-This guide walks you through creating a Stax using the TabStax Chrome extension. If you're using the CLI or dashboard, the concept is the same — name a project, add links and next actions — but the steps differ. See [Hey CLI Guide](hey-cli) or [Dashboard](surfaces/dashboard) for those surfaces.
-
-> **Note:** If you just installed Heystax and want to understand what you're seeing, check out [What you see the first time you open Heystax](first_time_opening_tabstax.md) first.
-
-## Why this helps
-
-Christmas shopping means juggling tabs for Amazon, Etsy, wish lists, price comparisons, and gift ideas—all while trying to remember what you decided to buy for who. Close your browser or switch tasks, and that mental setup vanishes. You'll waste 10 minutes hunting through browser history and trying to remember "which Lego set was I comparing?" A Stax saves exactly where your brain left off, so you can drop back into Christmas shopping without rebuilding everything from scratch.
-
-## How to do it
-
-1. **Open some shopping tabs** – Pull up the sites you're using for Christmas shopping (Amazon, Etsy, gift guides, wish lists, etc.).
-
-2. **Click the Heystax icon** in your browser toolbar (usually top-right corner).
-
-3. **Name your Stax** – In the input field, type something like `Christmas Shopping 2025` or `santa #shopping #christmas` and click **New**.
-
-<img src="../screenshots/2%20add%20name%20and%20tags.png" alt="Naming your Christmas shopping Stax with tags" width="800" style="display: block; margin: 20px auto;">
-
-4. **Your Start Page opens** – HeyStax creates a home base for this shopping session.
-
-5. **Add your very next actions** – In the text box at the top, type what you need to do next:
-   - "Check kids' wish lists"
-   - "Compare prices for Lego sets"
-   - "Order gift for Mum"
-
-   Press Enter after each one. These live right alongside your tabs.
-
-6. **Close everything when you're done** – Your Stax is saved. All those tabs and next actions wait exactly where you left them.
-
-7. **Reopen anytime** – Click Heystax, find "Christmas Shopping 2025" in "My Stax," and click it. Every tab reopens, and your next actions appear at the top.
-
-## Now you can…
-
-Now you can jump back into your Christmas shopping list without hunting through 15 tabs or trying to remember whether you'd already checked that basket in Amazon.
+Five minutes. One project. You'll end this feeling the thing HeyStax is built to produce.
 
 ---
 
-**Next steps:**
-- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
-- [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax
-- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
-- [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept
+## Step 1 — Create your account
+
+Go to [dash.heystax.ai](https://dash.heystax.ai) and sign up.
+
+That's your home base. Everything lives here — your projects, your next actions, your team. The Chrome extension, the CLI, and your AI all connect back to this.
+
+---
+
+## Step 2 — Create your first Stax
+
+Click **New Stax**.
+
+Name it after something real you're working on right now. Not "test." A real project — something that's been sitting in the back of your head.
+
+Examples:
+- `API Migration`
+- `Job Search`
+- `Kitchen Renovation`
+- `Client Proposal — Acme`
+
+Hit **Create**.
+
+---
+
+## Step 3 — Write your first three next actions
+
+You'll see a **Next Actions** field inside your new Stax.
+
+Add three actions. These are the concrete things you'd do if you sat down to work on this project right now. Not goals. Not categories. Steps.
+
+**Not this:**
+- Work on the kitchen
+- Deal with the proposal
+- Sort out the migration
+
+**This:**
+- Measure the gap between the fridge and the counter
+- Email Marcus the draft proposal — subject line only, no attachment yet
+- Run the migration script on staging and check the logs
+
+Three is enough. Write them now.
+
+---
+
+## Step 4 — Complete one
+
+Do one of those actions. Right now if you can, or in the next 24 hours.
+
+When it's done, come back to the dashboard and click the tick next to it.
+
+That completed action becomes a breadcrumb — a timestamped record of what happened on this project. Your timesheet is already building itself.
+
+---
+
+## Step 5 — Close the tab. Come back tomorrow.
+
+Seriously. Close it.
+
+Tomorrow, open [dash.heystax.ai](https://dash.heystax.ai). Find your Stax. Your next action is right there. You know exactly what to do.
+
+That's a **Flowful Re-entry**. No reconstruction. No "where was I?" Just the next thing.
+
+---
+
+## Now go one level deeper — bring someone else in
+
+Create a second Stax. This time, use something you share with another person.
+
+A home project works well. Kitchen renovation. House move. Holiday planning. Something where right now you're coordinating through WhatsApp messages that disappear, or a shared note that nobody updates.
+
+### Add your tabs
+
+Inside the Stax, click **Add tabs**.
+
+This opens your browser. Navigate to the pages you use for this project — the estate agent site, the planning doc, the budget spreadsheet, whatever it is. Add them.
+
+Now those pages are saved to the Stax. Anyone who opens it can open them all in one click.
+
+### Add your partner (or teammate)
+
+Inside the Stax, click **Add collaborator**. Enter their email.
+
+They'll get an invite. When they accept, they're in the same Stax. Same tabs. Same next actions.
+
+### Ask them to add three next actions of their own
+
+When they're in, they add their actions. They can see yours. You can see theirs.
+
+No more "can you check if we need to book the surveyor" over WhatsApp. It's already in the Stax. With a name on it.
+
+---
+
+## What you've just built
+
+A shared workspace where:
+- Both of you know what's happening
+- The next action for every open question has a name on it
+- The relevant pages are one click away
+- Nothing lives in someone's head or disappears into a chat thread
+
+That's HeyStax working at its simplest. Same model for a two-person home project as for a ten-person engineering team.
+
+---
+
+## Where to go next
+
+| If you want to... | Go here |
+|---|---|
+| Add project tabs from Chrome | [TabStax extension](surfaces/tabstax-extension) |
+| Capture actions from your terminal | [Hey CLI](hey-cli-section) |
+| Manage projects through Claude | [Connect to Claude.ai](mcp-claude-ai) |
+| Understand the full model | [What is a Stax?](what_is_a_stax) |
+| See how others use HeyStax | [Use Cases](usecases/) |

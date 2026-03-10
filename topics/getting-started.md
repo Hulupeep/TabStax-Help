@@ -6,8 +6,8 @@ has_children: true
 
 # Getting Started
 
-New to HeyStax? Start here.
+Go to [dash.heystax.ai](https://dash.heystax.ai) and sign up.
 
-These three guides explain what HeyStax is and how to think about it — before you pick up any surface. Once the model clicks, everything else is straightforward.
+Then follow [Get started with HeyStax](creating_your_first_stax). It takes five minutes and gets you to your first project with next actions, completed work, and a collaborator.
 
-For step-by-step setup guides, go to [Surfaces](surfaces/) and find the surface you're using.
+The other guides in this section explain the concepts underneath — worth reading once you've felt the thing working.
