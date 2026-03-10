@@ -159,7 +159,7 @@ Now your AI has context. It can help you plan, prioritize, and execute.
 ## Installation
 
 ```bash
-npm install -g heystax-cli
+npm i heystax-cli
 ```
 
 Then authenticate with your HeyStax account:
