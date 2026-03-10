@@ -8,7 +8,7 @@ nav_order: 5
 
 # <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Creating your first Stax
 
-> **Note:** If you just installed TabStax and want to understand what you're seeing, check out [What you see the first time you open TabStax](first_time_opening_tabstax.md) first.
+> **Note:** If you just installed Heystax and want to understand what you're seeing, check out [What you see the first time you open Heystax](first_time_opening_tabstax.md) first.
 
 ## Why this helps
 
@@ -18,7 +18,7 @@ Christmas shopping means juggling tabs for Amazon, Etsy, wish lists, price compa
 
 1. **Open some shopping tabs** – Pull up the sites you're using for Christmas shopping (Amazon, Etsy, gift guides, wish lists, etc.).
 
-2. **Click the TabStax icon** in your browser toolbar (usually top-right corner).
+2. **Click the Heystax icon** in your browser toolbar (usually top-right corner).
 
 3. **Name your Stax** – In the input field, type something like `Christmas Shopping 2025` or `santa #shopping #christmas` and click **New**.
 
@@ -35,7 +35,7 @@ Christmas shopping means juggling tabs for Amazon, Etsy, wish lists, price compa
 
 6. **Close everything when you're done** – Your Stax is saved. All those tabs and next actions wait exactly where you left them.
 
-7. **Reopen anytime** – Click TabStax, find "Christmas Shopping 2025" in "My Stax," and click it. Every tab reopens, and your next actions appear at the top.
+7. **Reopen anytime** – Click Heystax, find "Christmas Shopping 2025" in "My Stax," and click it. Every tab reopens, and your next actions appear at the top.
 
 ## Now you can…
 

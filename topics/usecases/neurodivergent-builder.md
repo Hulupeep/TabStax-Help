@@ -26,7 +26,7 @@ You bounce between random tabs, lose the "world state" of each project, and ever
 
 Each project gets its own **world**:
 
-* **"TabStax MVP – Build"**
+* **"Heystax MVP – Build"**
 * **"Book – Chapter 4 Editing"**
 * **"AI Tool – ClaimAlert Experiments"**
 * **"Landing Page Tests – May"**
@@ -44,7 +44,7 @@ When your focus shifts:
 * Your manuscript, references, and last edit notes pop up.
 * The Start Page says:
 
-  * *"Fix section on TabStax use cases"*
+  * *"Fix section on Heystax use cases"*
   * *"Tighten intro paragraph"*
 
 You're not "figuring out what to do". You're simply **continuing**.

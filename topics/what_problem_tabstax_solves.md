@@ -36,6 +36,6 @@ Now you can stop rebuilding context and start reopening it—with one click, exa
 ---
 
 **Next steps:**
-- [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
+- [What you see the first time you open Heystax](first_time_opening_tabstax.md) – your first experience after installing
 - [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example

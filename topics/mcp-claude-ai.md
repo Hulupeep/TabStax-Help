@@ -4,7 +4,7 @@ parent: AI Integrations (MCP)
 nav_order: 1
 ---
 
-# Connect TabStax to Claude.ai
+# Connect Heystax to Claude.ai
 
 Connect your Stax and Next Actions to Claude.ai so you can manage your projects through conversation.
 
@@ -12,7 +12,7 @@ Connect your Stax and Next Actions to Claude.ai so you can manage your projects 
 
 ## Prerequisites
 
-- A TabStax account with **Pro** or **Trial** plan
+- A Heystax account with **Pro** or **Trial** plan
 - A Claude account at [claude.ai](https://claude.ai) (free tier works)
 
 ---
@@ -27,17 +27,17 @@ Sign in to [claude.ai](https://claude.ai), then click the **gear icon** (bottom-
 
 Click **Integrations** in the settings sidebar. You may see it listed as "Connectors" depending on your Claude version.
 
-### 3. Add TabStax
+### 3. Add Heystax
 
 Click **Add Integration** (or **Add Connector**), then enter:
 
 ```
-https://dash.tabstax.app/api/mcp
+https://dash.heystax.ai/api/mcp
 ```
 
 ### 4. Authenticate
 
-You'll be redirected to the TabStax login page. Sign in with your TabStax email and password.
+You'll be redirected to the Heystax login page. Sign in with your Heystax email and password.
 
 ### 5. Approve access
 
@@ -45,7 +45,7 @@ On the consent screen, click **Approve** to grant Claude access to your Stax and
 
 ### 6. Done
 
-You'll be redirected back to Claude.ai. TabStax should show as **Connected** in your integrations list.
+You'll be redirected back to Claude.ai. Heystax should show as **Connected** in your integrations list.
 
 ---
 
@@ -94,7 +94,7 @@ These are the MCP tools Claude can use:
 | Problem | Solution |
 |---------|----------|
 | "Needs authentication" | Click to re-authenticate, or disconnect and reconnect |
-| "PLAN_REQUIRED" | You need a TabStax Pro or Trial plan — [upgrade here](https://dash.tabstax.app) |
+| "PLAN_REQUIRED" | You need a Heystax Pro or Trial plan — [upgrade here](https://dash.heystax.ai) |
 | "TOKEN_INVALID" | Disconnect the integration and reconnect |
 | No tools showing | Check your plan is active, then try disconnecting and reconnecting |
 | Stax not found | The tool uses fuzzy matching — try a more specific name |
@@ -106,7 +106,7 @@ These are the MCP tools Claude can use:
 To remove the connection:
 
 1. Go to Claude.ai **Settings > Integrations**
-2. Find TabStax
+2. Find Heystax
 3. Click **Disconnect**
 
-Your TabStax data is not deleted — only the connection to Claude is removed.
+Your Heystax data is not deleted — only the connection to Claude is removed.

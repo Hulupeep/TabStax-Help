@@ -468,7 +468,7 @@ The work doesn’t get easier — but **switching between selves** gets intentio
 
 If you want, next I can:
 
-* Cluster all these “human, non-traditional” ones into a **“TabStax for Real Life”** section for your site.
+* Cluster all these “human, non-traditional” ones into a **“Heystax for Real Life”** section for your site.
 * Or do another 10 in the same style for other edges: neurodivergent teens, carers, activists, gamers, hobby communities.
 
 #IdeaBank

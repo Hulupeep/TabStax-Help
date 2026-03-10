@@ -8,7 +8,7 @@ nav_order: 3
 
 # <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">The HeyStax Mental Model
 
-Most people think in terms of **websites and tabs**: "Where was that page again?", "Which doc was I using?", "Where did I leave that insurance quote?" The TabStax mental model is different. Instead of asking "which websites am I using?", you ask **"which problem or project am I in right now?"** Each Stax is an **entry point** for that problem space. In a few seconds you gather the key resources, land on a Start Page, and write the very next actions so your brain has a ledge to grab onto next time. Instead of hanging from a cliff with no grip, you've built a solid ledge.
+Most people think in terms of **websites and tabs**: "Where was that page again?", "Which doc was I using?", "Where did I leave that insurance quote?" The Heystax mental model is different. Instead of asking "which websites am I using?", you ask **"which problem or project am I in right now?"** Each Stax is an **entry point** for that problem space. In a few seconds you gather the key resources, land on a Start Page, and write the very next actions so your brain has a ledge to grab onto next time. Instead of hanging from a cliff with no grip, you've built a solid ledge.
 
 ---
 
@@ -147,7 +147,7 @@ Now you can think in problems and outcomes, not tabs and chaos—and your brain 
 
 **Related guides:**
 - [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
-- [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
+- [What you see the first time you open Heystax](first_time_opening_tabstax.md) – your first experience after installing
 - [What is a Stax?](what_is_a_stax.md) – detailed explanation of the core concept
 - [Creating your first Stax](creating_your_first_stax.md) – practical step-by-step guide
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions daily

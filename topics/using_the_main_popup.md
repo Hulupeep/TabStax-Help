@@ -71,7 +71,7 @@ Now you can answer "What should I do next?" without digging through projects, an
 
 **Related guides:**
 - [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
-- [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
+- [What you see the first time you open Heystax](first_time_opening_tabstax.md) – your first experience after installing
 - [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
 - [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept

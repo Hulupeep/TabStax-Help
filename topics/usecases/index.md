@@ -6,7 +6,7 @@ has_children: false
 
 [← Back to Help Home](/)
 
-# Using TabStax in Your Job and Your Life
+# Using Heystax in Your Job and Your Life
 
 **Real people. Real chaos. Real Stax.**
 
@@ -785,7 +785,7 @@ Your brain always knows "I am here to run sessions" or "I am here to make sense"
 
 ## 20. Marketing Lead Orchestrating a Launch Across Channels
 
-You're launching **TabStax Cloud Sync**.
+You're launching **Heystax Cloud Sync**.
 
 Live pieces:
 
@@ -803,7 +803,7 @@ Your browser becomes a graveyard of half-remembered tabs. You fix copy on the la
 
 ### With HeyStax
 
-You spin up **"Launch – TabStax Cloud Sync"** Stax:
+You spin up **"Launch – Heystax Cloud Sync"** Stax:
 
 * All the tools and docs
 * Start Page that says:
@@ -1209,7 +1209,7 @@ Everything piles into one monstrous browser: you've got Twitter open while you'r
 
 You define three worlds:
 
-* **"Creator – Video Prep: 'How I Use TabStax'"**
+* **"Creator – Video Prep: 'How I Use Heystax'"**
 * **"Creator – Live Stream: Q&A"**
 * **"Creator – Editing & Clips"**
 
@@ -1506,7 +1506,7 @@ As she moves between cases:
 
 * She closes one Stax and opens the next, fully re-entering that patient's story and support network in seconds.
 
-She doesn't carry all three in short term memory; TabStax holds the complexity so she can be fully present in the conversation at hand.
+She doesn't carry all three in short term memory; Heystax holds the complexity so she can be fully present in the conversation at hand.
 
 ---
 
@@ -1674,7 +1674,7 @@ Later, he closes CloudCo and opens FreshFoods:
 * New model, new comps, new thesis.
 * His start page says: *"Focus on margin recovery & store count, not just top-line."*
 
-He doesn't carry three theses in his working RAM; TabStax loads one coverage "universe" at a time.
+He doesn't carry three theses in his working RAM; Heystax loads one coverage "universe" at a time.
 
 ---
 

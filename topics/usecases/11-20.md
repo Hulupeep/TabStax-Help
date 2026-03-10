@@ -457,7 +457,7 @@ Your brain always knows “I am here to run sessions” or “I am here to make 
 
 ## 20. Marketing Lead Orchestrating a Launch Across Channels
 
-You’re launching **TabStax Cloud Sync**.
+You’re launching **Heystax Cloud Sync**.
 
 Live pieces:
 
@@ -475,7 +475,7 @@ Your browser becomes a graveyard of half-remembered tabs. You fix copy on the la
 
 ### With HeyStax
 
-You spin up **“Launch – TabStax Cloud Sync”** Stax:
+You spin up **“Launch – Heystax Cloud Sync”** Stax:
 
 * All the tools and docs
 * Start Page that says:

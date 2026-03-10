@@ -197,11 +197,11 @@ def main():
 
     content = """[← Back to Help Home](../../README.md)
 
-# Using TabStax in Your Job and Your Life
+# Using Heystax in Your Job and Your Life
 
 **Real people. Real chaos. Real Stax.**
 
-Below you'll find over 70 ways people actually use TabStax—from high-pressure work scenarios to deeply personal life moments. Each story shows how a named workspace with tabs, next actions, and context can cut through chaos and help you stay present.
+Below you'll find over 70 ways people actually use Heystax—from high-pressure work scenarios to deeply personal life moments. Each story shows how a named workspace with tabs, next actions, and context can cut through chaos and help you stay present.
 
 ---
 

@@ -191,7 +191,7 @@ On the **share page** (no extension needed):
 * Open individual tabs or **open them all**
 * Get a feel for how the sender works on this thing
 
-With the **TabStax extension installed**:
+With the **Heystax extension installed**:
 
 * Save that Stax into **your collection**
 * Edit the tabs (add/remove)
@@ -219,7 +219,7 @@ A Stax is a **bundle of links plus notes**. Treat it like you would any link som
    * Open a couple of tabs first instead of everything at once.
    * Avoid anything that looks like a phishing page or weird download.
 
-### What TabStax *doesn’t* do
+### What Heystax *doesn’t* do
 
 * It **doesn’t run code on your machine** by itself — it just opens URLs in your browser.
 * It **doesn’t see your passwords** — your logins stay handled by your browser and sites.
@@ -240,7 +240,7 @@ If you wouldn’t trust a random link from someone, don’t trust a random Stax 
 
 **Next steps:**
 - [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
-- [What you see the first time you open TabStax](first_time_opening_tabstax.md) – your first experience after installing
+- [What you see the first time you open Heystax](first_time_opening_tabstax.md) – your first experience after installing
 - [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
 - [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
 - [Understanding the main popup](using_the_main_popup.md) – navigate next actions and manage your Stax

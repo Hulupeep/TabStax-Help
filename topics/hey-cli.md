@@ -4,7 +4,7 @@ parent: Hey CLI
 nav_order: 1
 ---
 
-# Say hello to the Tabstax CLI - Hey CLI - Your Next Actions in Your LLM Workflow
+# Say hello to the Heystax CLI - Hey CLI - Your Next Actions in Your LLM Workflow
 
 ## The Problem It Solves - catch a thought before it fades...
 
@@ -64,7 +64,7 @@ Like `cd` in a filesystem. The CLI remembers where you are. Your thoughts land w
 ## One Terrain, Every Surface
 
 What you capture in terminal appears instantly in:
-- The TabStax browser extension
+- The Heystax browser extension
 - The Attention Blocks dashboard  
 - Any device you're logged into
 - Your AI assistant (via `hey ls`)
@@ -124,7 +124,7 @@ Some people think in tasks. Some think in streams. hey serves both.
 You're deep in your code editor, terminal, or AI assistant. You know exactly what needs to happen next on your project. But to capture that thought, you have to:
 
 1. Switch to your browser
-2. Find the TabStax extension
+2. Find the Heystax extension
 3. Click to open it
 4. Navigate to the right project
 5. Add your next action
@@ -159,7 +159,7 @@ Now your AI has context. It can help you plan, prioritize, and execute.
 ## Installation
 
 ```bash
-npm install -g tabstax-cli
+npm install -g heystax-cli
 ```
 
 Then authenticate with your HeyStax account:
@@ -168,7 +168,7 @@ Then authenticate with your HeyStax account:
 hey login
 ```
 
-**Don't have a HeyStax account?** It's simple - just go to the [Chrome Web Store](https://chromewebstore.google.com/detail/tabstax/your-extension-id) and install the TabStax extension. Create an account there, and you'll see all your next actions against each project in both the extension and the CLI.
+**Don't have a HeyStax account?** It's simple - just go to the [Chrome Web Store](https://chromewebstore.google.com/detail/heystax/your-extension-id) and install the Heystax extension. Create an account there, and you'll see all your next actions against each project in both the extension and the CLI.
 
 ---
 
@@ -397,8 +397,8 @@ hey "Review pull request #42"
 ```
 
 It appears instantly in:
-- The TabStax browser extension
-- The TabStax dashboard
+- The Heystax browser extension
+- The Heystax dashboard
 - Any other device where you're logged in
 
 When you complete an action in the extension, the CLI sees it:
@@ -422,7 +422,7 @@ This means you can:
 ### Fuzzy Project Matching
 You don't need exact names:
 ```bash
-hey use "tab"      # Matches "TabStax Project"
+hey use "tab"      # Matches "Heystax Project"
 hey use "api"      # Matches "API Migration"
 hey -p "sec" "Fix the auth bug"  # Matches "Security Audit"
 ```
@@ -507,7 +507,7 @@ Hey CLI is the foundation for bringing HeyStax into your development workflow. C
 
 ## Links
 
-- [Install TabStax Extension](https://heystax.ai)
+- [Install Heystax Extension](https://heystax.ai)
 - [HeyStax Dashboard](https://heystax.ai/dashboard)
-- [npm Package](https://www.npmjs.com/package/tabstax-cli)
-- [Report Issues](https://github.com/Hulupeep/tabstax/issues)
+- [npm Package](https://www.npmjs.com/package/heystax-cli)
+- [Report Issues](https://github.com/Hulupeep/heystax/issues)

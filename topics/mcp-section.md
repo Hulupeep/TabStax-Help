@@ -6,7 +6,7 @@ has_children: true
 
 # AI Integrations (MCP)
 
-TabStax connects to AI assistants through the **Model Context Protocol (MCP)**. This lets Claude and other AI tools read your Stax, manage Next Actions, and log breadcrumbs — all through natural conversation.
+Heystax connects to AI assistants through the **Model Context Protocol (MCP)**. This lets Claude and other AI tools read your Stax, manage Next Actions, and log breadcrumbs — all through natural conversation.
 
 **What you can do:**
 
@@ -25,4 +25,4 @@ TabStax connects to AI assistants through the **Model Context Protocol (MCP)**. 
 
 ---
 
-**Requirements:** TabStax account with **Pro** or **Trial** plan.
+**Requirements:** Heystax account with **Pro** or **Trial** plan.

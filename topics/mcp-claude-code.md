@@ -4,7 +4,7 @@ parent: AI Integrations (MCP)
 nav_order: 2
 ---
 
-# Connect TabStax to Claude Code (CLI)
+# Connect Heystax to Claude Code (CLI)
 
 Use your Stax and Next Actions directly from the terminal while coding with Claude Code.
 
@@ -12,14 +12,14 @@ Use your Stax and Next Actions directly from the terminal while coding with Clau
 
 ## Prerequisites
 
-- A TabStax account with **Pro** or **Trial** plan
+- A Heystax account with **Pro** or **Trial** plan
 - Claude Code installed ([install guide](https://docs.anthropic.com/en/docs/claude-code))
 
 ---
 
 ## Option 1: Claude.ai connector (recommended)
 
-If you've already connected TabStax to Claude.ai (see [Connect to Claude.ai](mcp-claude-ai)), **it automatically works in Claude Code too**. The same connector is shared between both.
+If you've already connected Heystax to Claude.ai (see [Connect to Claude.ai](mcp-claude-ai)), **it automatically works in Claude Code too**. The same connector is shared between both.
 
 ### Verify
 
@@ -29,7 +29,7 @@ Open Claude Code in your terminal:
 claude
 ```
 
-Type `/mcp` to see connected servers. TabStax should appear as connected.
+Type `/mcp` to see connected servers. Heystax should appear as connected.
 
 If it shows "needs authentication", press Enter to re-authenticate in your browser.
 
@@ -37,12 +37,12 @@ If it shows "needs authentication", press Enter to re-authenticate in your brows
 
 ## Option 2: Add manually (global)
 
-Add TabStax to all your Claude Code projects:
+Add Heystax to all your Claude Code projects:
 
 ```bash
-claude mcp add tabstax \
+claude mcp add heystax \
   --transport sse \
-  https://dash.tabstax.app/api/mcp/sse
+  https://dash.heystax.ai/api/mcp/sse
 ```
 
 You'll be prompted to authenticate in your browser.
@@ -53,19 +53,19 @@ You'll be prompted to authenticate in your browser.
 claude
 ```
 
-Then type `/mcp` — TabStax should show as connected.
+Then type `/mcp` — Heystax should show as connected.
 
 ---
 
 ## Option 3: Add manually (per-project)
 
-Add TabStax only to the current project:
+Add Heystax only to the current project:
 
 ```bash
-claude mcp add tabstax \
+claude mcp add heystax \
   --transport sse \
   --scope project \
-  https://dash.tabstax.app/api/mcp/sse
+  https://dash.heystax.ai/api/mcp/sse
 ```
 
 This creates a `.mcp.json` file in your project root. Useful if you want different tokens or settings per project.
@@ -92,7 +92,7 @@ Once connected, just talk naturally:
 
 ## Combining with Hey CLI
 
-TabStax MCP and the [Hey CLI](hey-cli) complement each other:
+Heystax MCP and the [Hey CLI](hey-cli) complement each other:
 
 | Use case | Best tool |
 |----------|-----------|
@@ -110,19 +110,19 @@ Both write to the same Stax — changes sync in real time.
 | Problem | Solution |
 |---------|----------|
 | "needs authentication" | Press Enter to re-auth in browser |
-| "PLAN_REQUIRED" | Upgrade to TabStax Pro or Trial |
-| TabStax not in `/mcp` list | Run `claude mcp add` command above |
-| "TOKEN_INVALID" | Remove and re-add: `claude mcp remove tabstax` then add again |
-| Connection timeout | Check your internet connection; the MCP server is at `dash.tabstax.app` |
+| "PLAN_REQUIRED" | Upgrade to Heystax Pro or Trial |
+| Heystax not in `/mcp` list | Run `claude mcp add` command above |
+| "TOKEN_INVALID" | Remove and re-add: `claude mcp remove heystax` then add again |
+| Connection timeout | Check your internet connection; the MCP server is at `dash.heystax.ai` |
 
 ---
 
 ## Remove
 
-To disconnect TabStax from Claude Code:
+To disconnect Heystax from Claude Code:
 
 ```bash
-claude mcp remove tabstax
+claude mcp remove heystax
 ```
 
 Or if using the claude.ai connector, disconnect from Claude.ai Settings > Integrations.

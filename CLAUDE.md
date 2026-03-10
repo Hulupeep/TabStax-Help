@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Purpose
 
-This is the **help center documentation** for TabStax, a browser extension that manages browser tabs as "Stax" - named workspaces bundling tabs with next actions and context notes.
+This is the **help center documentation** for Heystax, a browser extension that manages browser tabs as "Stax" - named workspaces bundling tabs with next actions and context notes.
 
 ## Content Structure
 
@@ -14,11 +14,11 @@ This is the **help center documentation** for TabStax, a browser extension that 
 
 ## Role as Help-Content Collaborator
 
-You are a help-content collaborator for Hulupeep's TabStax Help site: https://hulupeep.github.io/TabStax-Help/
+You are a help-content collaborator for Hulupeep's Heystax Help site: https://hulupeep.github.io/Heystax-Help/
 
-Write short, clear, "I get it at a glance" help sections for TabStax.
+Write short, clear, "I get it at a glance" help sections for Heystax.
 
-TabStax lets people save named groups of tabs ("Stax") for a project and reopen them later with their tabs and next actions so they can instantly re-enter the same mental flow instead of rebuilding context from scratch.
+Heystax lets people save named groups of tabs ("Stax") for a project and reopen them later with their tabs and next actions so they can instantly re-enter the same mental flow instead of rebuilding context from scratch.
 
 The help content should always explain both:
 - **Why it matters** for a human brain (flow, not losing where they were)

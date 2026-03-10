@@ -1,26 +1,26 @@
 ---
-title: First time opening TabStax
+title: First time opening Heystax
 parent: Getting Started
 nav_order: 2
 ---
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What you see the first time you open TabStax
+# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What you see the first time you open Heystax
 
-You've just installed TabStax, pinned it to your browser toolbar, and clicked the icon. This is the very first screen you'll see. It's designed to capture your current browser window—all the tabs you have open right now—and save them as your **first Stax**. This gives you a safe, named workspace you can return to anytime.
+You've just installed Heystax, pinned it to your browser toolbar, and clicked the icon. This is the very first screen you'll see. It's designed to capture your current browser window—all the tabs you have open right now—and save them as your **first Stax**. This gives you a safe, named workspace you can return to anytime.
 
 ---
 
 ## Pin HeyStax and open the popup
 
-After installing the TabStax extension:
+After installing the Heystax extension:
 
-1. **Pin the TabStax icon** to your browser toolbar (usually in the top-right corner near other extensions).
+1. **Pin the Heystax icon** to your browser toolbar (usually in the top-right corner near other extensions).
 2. **Click the icon** to open the popup.
 3. The first-time view appears, showing your current tabs ready to become a Stax.
 
-<img src="../screenshots/1%20shopping%20and%20click%20tabstax.png" alt="Clicking TabStax icon in browser" width="800" style="display: block; margin: 20px auto;">
+<img src="../screenshots/1%20shopping%20and%20click%20tabstax.png" alt="Clicking Heystax icon in browser" width="800" style="display: block; margin: 20px auto;">
 
 ---
 
@@ -63,17 +63,17 @@ When you're ready to save this workspace:
 
 1. **Check the name and tags** in the input field (edit if needed).
 2. **Click the "New" button**.
-3. TabStax saves all your currently open tabs together as a **Stax** under that name.
+3. Heystax saves all your currently open tabs together as a **Stax** under that name.
 4. A **Start Page** opens where you can add your **next actions** for this workspace (what you need to do next when you come back to this work).
 
 <img src="../screenshots/3%20start%20page%20and%20next%20actions.png" alt="Start Page with next actions" width="800" style="display: block; margin: 20px auto;">
 
 **After that:**
 
-- **Auto-save:** If you add or remove tabs while working in this Stax, TabStax automatically keeps it updated.
+- **Auto-save:** If you add or remove tabs while working in this Stax, Heystax automatically keeps it updated.
 - **Close safely:** You can confidently close all these tabs (or the whole window) when you're done. Your Stax is saved.
 - **Reopen anytime:** Later, when you want to pick up this work again:
-  - Open the TabStax popup
+  - Open the Heystax popup
   - Find this Stax in "My Stax"
   - Click **"Open All"**
   - All your tabs reopen together, and your next actions appear at the top

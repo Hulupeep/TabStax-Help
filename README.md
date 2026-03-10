@@ -1,30 +1,62 @@
 ---
 title: Home
 nav_order: 1
-description: Help center for HeyStax — your flow engine
+description: Help center for HeyStax — your workspace for momentum
 permalink: /
 ---
 
-# <img src="icons/tabstax-48.png" alt="HeyStax" width="48" height="48" style="vertical-align: middle; margin-right: 10px;">Welcome to HeyStax Help
+# <img src="icons/tabstax-48.png" alt="HeyStax" width="48" height="48" style="vertical-align: middle; margin-right: 10px;">Welcome to HeyStax
 
-Welcome
+**You're not disorganized. You lose momentum.**
 
-This is your home base for understanding how HeyStax works and how to stay in flow with it.
+When hyperfocus breaks, you don't just stop working — you lose the thread. And without the thread, you can't get back in. That's not a character flaw. That's a design problem.
 
-HeyStax isn't "just another tab manager."
-It's a **flow engine**.
+HeyStax solves it. A **Stax** is a workspace that holds everything you need to pick up where you left off: the people you're working with, the AI agents helping you, the web tabs you had open, and the concrete next action that tells you exactly what to do. One click and you're back in flow.
 
-It groups all the sites you use to get something done — documentation, dashboards, tools, videos, briefs, email, boards — and combines them with your **next actions** and a little **context**. One click, and you're back where your mind left off.
+---
 
-And not just you... your entire team, with HeyStax sharing. Use the TabStax extension in your browser, or work right inside your LLM with the Hey CLI.
+## What is a Stax?
 
-Find out [great use cases](topics/usecases/index.md) just for you as a writer, teacher, developer, sales rep—whatever your role.
+A Stax is bigger than a tab group. It's a **momentum container**.
+
+| What's inside | Why it matters |
+|---------------|---------------|
+| **People** | Collaborators with @handles, colour-coded ownership, role-based access |
+| **Agents** | AI assistants (Claude, ChatGPT) that read your stax, add actions, and do work |
+| **Tabs & Links** | The web resources for this workspace — open them all in one click |
+| **Next Actions** | The concrete step that lets you re-enter flow without thinking about what to do first |
+| **Context** | Start Here pages, breadcrumbs, notes — where you left off and why |
+
+A Stax isn't a list of bookmarks. It's a named room you can walk back into cold — with your team and your AI already there.
+
+→ [What is a Stax?](topics/what_is_a_stax.md)
+
+---
+
+## HeyStax surfaces
+
+Your Stax lives everywhere you work. Same data, every surface. Add an action on the web; it shows in the terminal. Complete it from your AI; the extension reflects it.
+
+| Surface | What it is | Best for |
+|---------|-----------|----------|
+| **TabStax** (Chrome extension) | Tabs for your Stax workspace — capture and restore browser contexts | Context switching between projects in one click |
+| **Dashboard** ([dash.heystax.ai](https://dash.heystax.ai)) | Attention blocks, actions mode, collaboration, timesheets | Planning, prioritizing, team visibility, phone access (PWA) |
+| **Hey CLI** (`hey`) | Terminal-native next actions — `hey "do the thing"`, `hey done 1` | Capturing thoughts without leaving the terminal |
+| **MCP** (AI integrations) | Your AI reads and writes your stax through natural conversation | Claude.ai, Claude Code, ChatGPT — AI-powered project management |
+| **Timesheets** ([dash.heystax.ai/time](https://dash.heystax.ai/time)) | Flow-native weekly hours capture scoped to your stax | Time tracking that doesn't break your flow |
+| **Share Pages** | Public URLs — anyone can view, import, or open your stax | Team handoffs, onboarding, shared workflows |
+
+---
 
 ## The problem HeyStax solves
 
-Every time you return to a project, you **rebuild context from scratch**: reopen tabs, re-find docs, try to remember "what was I doing here?" Your brain loops on unfinished work, burning through working memory just to hold it all together. There's no natural way to package that context—tabs, resources, next actions—into one named place you can trust.
+Every time you return to a project, you pay a **reconstruction tax**: reopen tabs, re-find docs, try to remember what you were doing. The more projects you juggle, the more energy goes to *remembering* instead of *doing*. Projects drift. Momentum dies.
 
-**HeyStax is built on behavioral psychology**. It works with how your brain actually wants to work: externalizing context, defining clear next actions, and freeing your working memory for actual thinking instead of remembering. ([Read the full problem statement →](topics/what_problem_tabstax_solves.md))
+Todo apps don't fix this. "Finish Q3 reporting" doesn't open the spreadsheet, the dashboard, and the email thread. It doesn't tell you where you stopped. It's a reminder without a runway.
+
+**HeyStax preserves your state so you can pick up any project cold.** No reconstruction. No guilt spiral. Just the next action and the workspace to do it in.
+
+→ [Read the full problem statement](topics/what_problem_tabstax_solves.md)
 
 ### See it in action
 
@@ -36,69 +68,58 @@ Every time you return to a project, you **rebuild context from scratch**: reopen
 
 ## What you'll find here
 
-HeyStax is designed to answer one simple question:
+### Getting started
+* [What problem HeyStax solves](topics/what_problem_tabstax_solves.md) — the core problem and mindset shift
+* [The HeyStax Mental Model](topics/tabstax_mental_model.md) — think in problems, not tabs
+* [What is a Stax?](topics/what_is_a_stax.md) — the core concept
+* [Creating your first Stax](topics/creating_your_first_stax.md) — step-by-step with a real example
 
-> "What do I need to know right now to get back into flow?"
+### TabStax (Chrome extension)
+* [First time opening TabStax](topics/first_time_opening_tabstax.md) — your first experience after installing
+* [Understanding the popup](topics/using_the_main_popup.md) — navigate next actions and open Stax
+* [Adding Favourites](topics/adding_favourites.md) — pin current priorities for fast access
 
-Over time, this help center will grow into a small set of clear guides, including:
+### Hey CLI
+* [Hey CLI Guide](topics/hey-cli.md) — manage next actions from your terminal
 
-* **Getting started**
-  * [What problem HeyStax solves](topics/what_problem_tabstax_solves.md) – the core problem and mindset shift
-  * [What you see the first time you open the TabStax extension](topics/first_time_opening_tabstax.md) – your first experience after installing
-  * [The HeyStax Mental Model](topics/tabstax_mental_model.md) – the big idea: think in problems, not tabs
-  * [What is a Stax?](topics/what_is_a_stax.md) – understand the core concept
-  * [Creating your first Stax](topics/creating_your_first_stax.md) – step-by-step guide with a real example
-* **Working with Stax**
-  * [Understanding the main popup](topics/using_the_main_popup.md) – navigate next actions and open Stax
-  * [Adding Favourites](topics/adding_favourites.md) – pin current priorities for fast access
-* **Hey CLI - Command Line Interface**
-  * [Hey CLI Guide](topics/hey-cli.md) – manage next actions from your terminal and AI assistants
-* **AI Integrations (MCP)** – connect TabStax to AI assistants
-  * [Connect to Claude.ai](topics/mcp-claude-ai) – use your Stax and Next Actions through conversation
-  * [Connect to Claude Code](topics/mcp-claude-code) – manage actions from the terminal while coding with Claude
-* **Sharing and collaboration** – what it means when someone shares a Stax with you, and how to safely use shared Stax.
-* **Accounts and sync** – using HeyStax locally without an account, or signing in to sync Stax across devices.
-* **Safety and privacy** – what HeyStax can see, what it cannot see, and how to treat Stax links safely.
-* **Troubleshooting** – common issues and how to fix them quickly.
+### AI Integrations (MCP)
+* [Connect to Claude.ai](topics/mcp-claude-ai) — use Stax through conversation
+* [Connect to Claude Code](topics/mcp-claude-code) — manage actions while coding with Claude
 
-You don't need to read everything. Dip in when something feels confusing or when you want to get more out of Stax.
+### Collaboration & Sharing
+* What it means when someone shares a Stax with you, and how collaborative Stax work with @handles and roles
+
+### Accounts & Sync
+* Using HeyStax locally without an account, or signing in to sync across devices
 
 ---
 
-## If you're new to HeyStax
+## If you're new
 
-If you've just installed the TabStax extension or landed here for the first time:
+Pick one project. Save the tabs you use for it as a Stax. Add a couple of next actions. That's your home base for that piece of work.
 
-* Think of HeyStax as a set of **named workspaces** for your brain.
-* Each workspace is a **Stax**: a bundle of tabs plus next actions and context.
-* Instead of reopening random tabs and trying to remember what you were doing, you open the Stax and step back into the same mental room.
+Tomorrow, open that Stax. Tabs load. Next action is right there. You're working in seconds, not minutes.
 
-Start simple: pick one project, save the tabs you use for it as a Stax, add a couple of next actions, and use that as your "home base" for that piece of work.
+That moment — opening a cold project and immediately knowing what to do — is what HeyStax exists to produce. We call it a **Flowful Re-entry**.
 
-**Want to understand the core idea?** → [What problem HeyStax solves](topics/what_problem_tabstax_solves.md) explains the mindset shift
-**Just installed?** → [What you see the first time you open the TabStax extension](topics/first_time_opening_tabstax.md) explains your first screen
+**Want to understand the core idea?** → [What problem HeyStax solves](topics/what_problem_tabstax_solves.md)
+**Just installed TabStax?** → [First time opening TabStax](topics/first_time_opening_tabstax.md)
 **Ready to try it?** → [Creating your first Stax](topics/creating_your_first_stax.md)
 
 ---
 
 ## If someone shared a Stax with you
 
-If you arrived here because someone sent you a Stax:
+They've captured the way they work on something into a single shared space. Opening that Stax lets you stand in the same place: same structure, same tabs, same context, same next actions.
 
-* They've captured the way they work on something into a single shared space.
-* Opening that Stax lets you stand in the same place: same structure, same tabs, same context.
-* You can treat it like a curated bundle of links built around one purpose.
-
-As with any link someone sends you, you should only fully trust Stax from people or sources you trust. You can always scan the domains and open a few tabs first before opening everything.
+You can treat it like a curated workspace built around one purpose. As with any link, only fully trust Stax from sources you trust.
 
 ---
 
-## Hey CLI - Bring HeyStax to Your Terminal & AI
-
-HeyStax now has a command-line interface that brings your next actions to where you already work.
+## Hey CLI — your terminal surface
 
 ```bash
-npm install -g tabstax-cli
+npm install -g heystax-cli
 
 hey login
 hey use "My Project"
@@ -107,19 +128,15 @@ hey ls
 hey done 1
 ```
 
-**Why CLI?** Because context-switching kills flow. When you're in your terminal or talking to an AI assistant, you shouldn't have to open a browser just to capture a thought.
-
-The CLI syncs bidirectionally with the TabStax extension - add an action in terminal, see it in your browser. Complete it in the extension, the CLI reflects it instantly.
-
-**Perfect for AI assistants:** Your LLM can run `hey ls stax` to see all your projects, understand your priorities, and help you manage your work.
+**Why CLI?** Because leaving your terminal to capture a thought kills momentum. The CLI syncs bidirectionally — add an action in terminal, see it in the extension. Complete it in the dashboard, the CLI reflects it.
 
 → [Full Hey CLI Guide](topics/hey-cli.md)
 
 ---
 
-## AI Integrations — Talk to Your Stax
+## AI Integrations — your LLM surface
 
-TabStax connects directly to AI assistants through the **Model Context Protocol (MCP)**. Ask Claude to list your stax, add next actions, mark things done — all through natural conversation.
+HeyStax connects to AI assistants through the **Model Context Protocol (MCP)**. Your AI can read your projects, add actions, mark things done — all through natural conversation.
 
 ```
 You: What are my next actions for the WebApp project?
@@ -130,30 +147,29 @@ Claude: Here are the pending actions for WebApp:
   3. Update deployment docs
 ```
 
-Works with **Claude.ai** (web) and **Claude Code** (CLI). Connect once, use everywhere.
+Works with **Claude.ai**, **Claude Code**, and **ChatGPT**. Connect once, use everywhere.
 
 → [Connect to Claude.ai](topics/mcp-claude-ai)
 → [Connect to Claude Code](topics/mcp-claude-code)
 
 ---
 
-## Staying in flow
+## Staying in momentum
 
 HeyStax is built around one core idea:
 
 > Your brain should spend its energy doing the work, not reconstructing where you were.
 
-This help center is here to support that.
-If you're stuck, confused, or curious, the goal of every article here is to:
+This help center supports that. Every article aims to:
 
 * Explain things in simple mental models
 * Show you how to get back to a working state quickly
-* Help you use Stax as the central "room" where your work happens, not just a list of tabs
+* Help you use Stax as the central room where your work happens — with your people, your agents, your tabs, and your next action all in one place
 
 ---
 
 ## Still need help?
 
-If something is unclear, if a feature surprises you, or if you hit a wall, come back here first. The answers, examples, and explanations are all aimed at one outcome:
+If something is unclear or you hit a wall, come back here. Everything is aimed at one outcome:
 
-Keeping you in flow, with as little friction as possible.
+Preserving your momentum, with as little friction as possible.
