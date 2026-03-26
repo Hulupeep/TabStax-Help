@@ -34,7 +34,10 @@ Home (README.md)                                    nav_order: 1
 │
 ├── Account & Sync                                  nav_order: 4
 │
-├── Use Cases                                       nav_order: 5  [no children in nav]
+├── Team Stax                                       nav_order: 5  [has_children]
+│   └── Assigning Actions to Team Members           nav_order: 1
+│
+├── Use Cases                                       nav_order: 6  [no children in nav]
 │   ├── 16 Hero pages (nav_exclude: true)
 │   └── 9 collection files (nav_exclude: true)
 │
