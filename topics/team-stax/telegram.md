@@ -142,6 +142,77 @@ Use `Blocked: none` when there is no blocker. A valid response creates the `Next
 
 When the standup closes, the group receives a summary showing who responded and who is missing.
 
+### Example 1: Bob starts a standup and everyone responds
+
+Bob, Alice, and Nancy are editors of the **claim** Stax and members of **Claim Cowboys**. Each person links their own Telegram account first. They then join the standup roster by sending this in Claim Cowboys:
+
+```text
+/join
+```
+
+Each person receives `You are in the standup roster.` Bob starts the standup:
+
+```text
+/sup
+```
+
+HeyStax posts:
+
+```text
+Standup roster: Bob, Alice, Nancy
+Reply exactly:
+Next: <what you are doing>
+Blocked: <blocker or none>
+```
+
+Bob replies directly to that prompt:
+
+```text
+Next: finish the claim summary
+Blocked: none
+```
+
+Alice replies:
+
+```text
+Next: confirm the policy dates
+Blocked: waiting for the insurer
+```
+
+Nancy replies:
+
+```text
+Next: prepare the client presentation
+Blocked: none
+```
+
+HeyStax replies `Standup response recorded.` to each valid response. In the **claim** Stax:
+
+- Bob gets the open action `finish the claim summary`.
+- Alice gets the open action `confirm the policy dates`, with the comment `Blocked: waiting for the insurer`.
+- Nancy gets the open action `prepare the client presentation`.
+
+### Example 2: Alice corrects her response
+
+Alice notices that her Next Action was wrong. She replies to the same active standup prompt with:
+
+```text
+Next: call the insurer for the policy dates
+Blocked: waiting for the insurer
+```
+
+HeyStax asks `Replace your existing standup response?` Alice selects **Replace** within 15 minutes. Her original standup action is replaced by the corrected response; HeyStax does not create two active standup responses for Alice.
+
+### Example 3: Nancy does not respond
+
+Suppose Bob and Alice respond, but Nancy does not reply before the 24-hour standup closes. HeyStax posts a summary like:
+
+```text
+Standup closed. Responded: Bob, Alice. Missing: Nancy.
+```
+
+Bob's and Alice's responses still create their actions. Nancy is named as missing and no standup action is created for her. Nancy remains enrolled for the next standup unless she sends `/leave`.
+
 ## What appears in HeyStax
 
 - A group action is stored only in the Stax connected to that group.
@@ -183,4 +254,3 @@ Open a private chat with `@heystax_bot` and select **Start**, then retry `@heyst
 ### A collaborator left the Stax
 
 Removing or deactivating their Stax access prevents future group commands even if they remain in the Telegram group. Their Telegram identity does not grant access by itself.
-

@@ -31,6 +31,12 @@ def main() -> None:
         "/sup",
         "Next: prepare the client presentation",
         "Blocked: waiting for final figures",
+        "Example 1: Bob starts a standup and everyone responds",
+        "Standup roster: Bob, Alice, Nancy",
+        "Example 2: Alice corrects her response",
+        "Replace your existing standup response?",
+        "Example 3: Nancy does not respond",
+        "Missing: Nancy",
         "This group or sender is not authorized",
     ]
     missing = [item for item in required if item not in text]
