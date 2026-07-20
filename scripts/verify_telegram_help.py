@@ -13,6 +13,13 @@ def main() -> None:
     required = [
         "@heystax_bot",
         "@heystax_test_bot",
+        "Turn Telegram updates into shared work in HeyStax",
+        "Everyone with access to the Stax can then see who is working on what",
+        "A live view of the team's work",
+        "Standups without another meeting",
+        "Private personal status",
+        "which Stax",
+        "who owns",
         "Group administrator: connect a group once",
         "Collaborator: link your own Telegram account",
         "Claim Cowboys",

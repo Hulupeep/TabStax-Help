@@ -4,16 +4,39 @@ parent: Team Stax
 nav_order: 2
 ---
 
-# Use HeyStax in Telegram
+# Turn Telegram updates into shared work in HeyStax
 
-Use the production bot **[@heystax_bot](https://t.me/heystax_bot)** to add and update Next Actions without leaving Telegram. Do not use `@heystax_test_bot`; that account is reserved for automated testing.
+HeyStax connects your team's Telegram group to a shared Stax. A person can say what they are working on in the group, and HeyStax records it as that person's Next Action. Everyone with access to the Stax can then see who is working on what in the same shared view.
 
-There are two separate connections:
+For example, Bob writes this in the Claim Cowboys group:
+
+```text
+@heystax_bot working on the draft presentation
+```
+
+HeyStax adds `working on the draft presentation` under Bob in the **claim** Stax. Alice and Nancy can see Bob's action alongside their own work in HeyStax. Bob can later reply `done` to the bot's confirmation, and the shared Stax reflects that update.
+
+## What this gives your team
+
+- **A live view of the team's work:** updates from the Telegram group become attributed Next Actions in the shared Stax.
+- **Less duplicate reporting:** people capture what they are doing in the conversation where the work is already being discussed.
+- **Standups without another meeting:** HeyStax asks each enrolled person what they are doing and what is blocked, creates the resulting actions, and reports who responded or is missing.
+- **Clear ownership and blockers:** each action is attached to the person who sent it; blockers are recorded with the action instead of disappearing in chat history.
+- **Private personal status:** a team member can ask for their current actions and goal by direct message without posting those details to the whole group.
+- **One shared record across surfaces:** actions created in Telegram are the same actions shown in the HeyStax dashboard and other connected HeyStax tools.
+
+Telegram remains the quick conversational surface; HeyStax becomes the shared record of what happens next.
+
+## How the connection works
+
+Setup has two parts:
 
 1. A group administrator connects one Telegram group to one Stax.
 2. Every collaborator links their own Telegram identity to their own HeyStax account.
 
-Connecting the group does not authenticate its members. Linking one member does not authenticate anyone else.
+The group connection decides **which Stax** receives the group's actions. Each person's account link decides **who owns** the action. This is why the group is connected once, while every collaborator links their own account.
+
+The production bot is **[Heystax (@heystax_bot)](https://t.me/heystax_bot)**. The similarly named `@heystax_test_bot` is reserved for automated testing.
 
 ## Before you start
 
