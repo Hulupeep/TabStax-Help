@@ -112,6 +112,9 @@ HeyStax preserves your state so you can pick up any project cold. No reconstruct
 ### Someone shared a Stax with you?
 They've captured a whole working context and handed it to you. Opening that Stax puts you in the same place they were — same structure, same tabs, same next actions. Trust it the way you'd trust a link: only from sources you trust.
 
+### Using HeyStax with a Telegram group?
+→ [Set up Telegram and see all supported commands](topics/team-stax/telegram)
+
 ---
 
 ## Hey CLI — your terminal surface

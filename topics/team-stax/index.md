@@ -30,3 +30,4 @@ The team view works across every surface: the extension, the dashboard, the CLI,
 
 **In this section:**
 - [Assigning Actions to Team Members](assigning-actions) — delegate work with @handle mentions
+- [Telegram](telegram) — connect a group, link each collaborator, and use every supported command
