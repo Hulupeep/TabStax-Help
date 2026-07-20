@@ -21,6 +21,15 @@ def main() -> None:
         "/stax",
         "/status",
         "@heystax_bot what's up",
+        "one-to-one Telegram conversation with the HeyStax bot",
+        "Heystax (@heystax_bot)",
+        "Example: Bob adds a private action",
+        "Added to your default Stax.",
+        "Example: Bob checks his private status",
+        "Update a group action by replying to HeyStax",
+        "Example: Bob marks the correct action done",
+        "Replying to Heystax:",
+        "If Bob sends `done` as a new standalone message",
         "done",
         "reopen",
         "edit <new action text>",
@@ -43,10 +52,18 @@ def main() -> None:
     if missing:
         raise SystemExit("Telegram help is missing: " + ", ".join(missing))
 
-    linked_from = [ROOT / "README.md", ROOT / "topics" / "team-stax" / "index.md"]
+    linked_from = [
+        ROOT / "README.md",
+        ROOT / "topics" / "team-stax" / "index.md",
+        ROOT / "topics" / "surfaces" / "index.md",
+    ]
     for source in linked_from:
         if "telegram" not in source.read_text(encoding="utf-8").lower():
             raise SystemExit(f"Telegram guide is not linked from {source.relative_to(ROOT)}")
+
+    surfaces = (ROOT / "topics" / "surfaces" / "index.md").read_text(encoding="utf-8")
+    if "[**Telegram**](../team-stax/telegram)" not in surfaces:
+        raise SystemExit("Surfaces page does not link to the canonical Telegram guide")
 
     print("Telegram help contract passed")
 
