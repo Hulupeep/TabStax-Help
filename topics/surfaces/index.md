@@ -14,6 +14,7 @@ HeyStax meets you where you work. The same Stax, the same next actions, the same
 | [**Dashboard**](dashboard) | Prioritise Stax into attention lanes. Toggle to Actions Mode for pure execution. | [dash.heystax.ai](https://dash.heystax.ai) |
 | [**Hey CLI**](../hey-cli-section) | Your next actions in your terminal. Add, complete, and list without leaving your editor. | `npm i heystax-cli` |
 | [**AI Integrations (MCP)**](../mcp-section) | Claude, ChatGPT, and other AI assistants read your Stax and operate on your work context. | [Connect to Claude.ai](../mcp-claude-ai) |
+| [**Telegram**](../team-stax/telegram) | Add and update Next Actions from a private bot chat or a connected team group, and run group standups. | [Open the Telegram guide](../team-stax/telegram) |
 | [**Timesheets**](timesheets) | Flow-native weekly hours capture. Log time against Stax, submit for review. | [dash.heystax.ai/time](https://dash.heystax.ai/time) |
 
-Add an action from the CLI. Complete it in the extension. See it reflected on the dashboard. Ask your AI assistant what's left. Same data, every surface.
+Add an action from the CLI or Telegram. Complete it in the extension. See it reflected on the dashboard. Ask your AI assistant what's left. Same data, every surface.
