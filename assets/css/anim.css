@@ -1,0 +1,134 @@
+/* HeyStax help animation kit. See docs/anim-gallery.md.
+   Base styles are the final frame. Motion only runs under .is-playing,
+   which assets/js/anim.js adds when a figure scrolls into view and
+   the reader has not asked for reduced motion. */
+
+.hs-anim {
+  --hs-ink: #1f2937;
+  --hs-muted: #6b7280;
+  --hs-bg: #fffdf7;
+  --hs-line: #d6d3d1;
+  --hs-plane-fill: #fef3c7;
+  --hs-plane-line: #f59e0b;
+  --hs-stax-fill: #fff7e0;  --hs-stax-line: #d97706;
+  --hs-person-fill: #dbeafe; --hs-person-line: #2563eb;
+  --hs-agent-fill: #ede9fe;  --hs-agent-line: #7c3aed;
+  --hs-surface-fill: #f3f4f6; --hs-surface-line: #6b7280;
+  --hs-record-fill: #dcfce7; --hs-record-line: #16a34a;
+  --hs-action-fill: #ffedd5; --hs-action-line: #ea580c;
+  --hs-note-fill: #ffffff;   --hs-note-line: #d6d3d1;
+  --hs-read: #2563eb;
+  --hs-write: #d97706;
+  --hs-dispatch: #7c3aed;
+  --hs-planned-fill: #ede9fe; --hs-planned-ink: #4c1d95;
+  margin: 1.5rem 0;
+  padding: 0.75rem;
+  border: 1px solid var(--hs-line);
+  border-radius: 14px;
+  background: var(--hs-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hs-anim {
+    --hs-ink: #f3f4f6;
+    --hs-muted: #9ca3af;
+    --hs-bg: #1c1917;
+    --hs-line: #44403c;
+    --hs-plane-fill: #292524;
+    --hs-plane-line: #f59e0b;
+    --hs-stax-fill: #3b2a0a;  --hs-stax-line: #fbbf24;
+    --hs-person-fill: #172554; --hs-person-line: #60a5fa;
+    --hs-agent-fill: #2e1065;  --hs-agent-line: #a78bfa;
+    --hs-surface-fill: #27272a; --hs-surface-line: #a1a1aa;
+    --hs-record-fill: #052e16; --hs-record-line: #4ade80;
+    --hs-action-fill: #431407; --hs-action-line: #fb923c;
+    --hs-note-fill: #1c1917;   --hs-note-line: #57534e;
+    --hs-read: #60a5fa;
+    --hs-write: #fbbf24;
+    --hs-dispatch: #a78bfa;
+    --hs-planned-fill: #2e1065; --hs-planned-ink: #ddd6fe;
+  }
+}
+
+.hs-anim svg { display: block; width: 100%; height: auto; max-width: 100%; overflow: visible; }
+.hs-anim text { font-family: 'Epilogue', system-ui, sans-serif; fill: var(--hs-ink); }
+.hs-anim figcaption { margin-top: 0.5rem; font-size: 0.9em; color: var(--hs-muted); line-height: 1.45; }
+
+.hs-anim__replay {
+  display: none;
+  margin-left: 0.4em;
+  padding: 0.05em 0.6em;
+  font: inherit;
+  font-size: 0.85em;
+  color: var(--hs-muted);
+  background: transparent;
+  border: 1px solid var(--hs-line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.hs-anim.has-js .hs-anim__replay { display: inline-block; }
+@media (prefers-reduced-motion: reduce) { .hs-anim.has-js .hs-anim__replay { display: none; } }
+
+/* Nodes */
+.hs-node rect { stroke-width: 1.5; fill: var(--hs-stax-fill); stroke: var(--hs-stax-line); }
+.hs-node__label { font-size: 15px; font-weight: 600; }
+.hs-node__sub { font-size: 11px; fill: var(--hs-muted) !important; }
+.hs-node--person rect  { fill: var(--hs-person-fill);  stroke: var(--hs-person-line); }
+.hs-node--agent rect   { fill: var(--hs-agent-fill);   stroke: var(--hs-agent-line); stroke-dasharray: 5 3; }
+.hs-node--surface rect { fill: var(--hs-surface-fill); stroke: var(--hs-surface-line); }
+.hs-node--record rect  { fill: var(--hs-record-fill);  stroke: var(--hs-record-line); }
+.hs-node--action rect  { fill: var(--hs-action-fill);  stroke: var(--hs-action-line); }
+.hs-node--note rect    { fill: var(--hs-note-fill);    stroke: var(--hs-note-line); }
+.hs-node--stax rect    { stroke-width: 2; }
+
+/* Plane */
+.hs-plane rect { fill: var(--hs-plane-fill); stroke: var(--hs-plane-line); stroke-width: 1.5; }
+.hs-plane__label { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; fill: var(--hs-muted) !important; }
+
+/* Edges */
+.hs-edge path { fill: none; }
+.hs-edge__line { stroke: var(--hs-line); stroke-width: 2; }
+.hs-edge__pulse { stroke-width: 4; stroke-linecap: round; opacity: 0; }
+.hs-edge--read .hs-edge__pulse { stroke: var(--hs-read); }
+.hs-edge--write .hs-edge__pulse { stroke: var(--hs-write); }
+.hs-edge--dispatch .hs-edge__pulse { stroke: var(--hs-dispatch); }
+.hs-edge--read .hs-edge__line { stroke: color-mix(in srgb, var(--hs-read) 35%, var(--hs-line)); }
+.hs-edge--write .hs-edge__line { stroke: color-mix(in srgb, var(--hs-write) 35%, var(--hs-line)); }
+.hs-edge--dispatch .hs-edge__line { stroke: color-mix(in srgb, var(--hs-dispatch) 35%, var(--hs-line)); stroke-dasharray: 4 3; }
+
+/* Trail */
+.hs-trail text { font-size: 13px; }
+.hs-trail__when { fill: var(--hs-muted) !important; font-variant-numeric: tabular-nums; }
+.hs-trail__who { font-weight: 600; fill: var(--hs-person-line) !important; }
+.hs-trail__who--agent { fill: var(--hs-agent-line) !important; }
+
+/* Planned tag */
+.hs-planned rect { fill: var(--hs-planned-fill); stroke: var(--hs-agent-line); stroke-width: 1; }
+.hs-planned text { font-size: 11px; font-weight: 600; fill: var(--hs-planned-ink) !important; }
+
+/* Motion */
+.hs-node, .hs-planned { transform-box: fill-box; transform-origin: center; }
+
+@keyframes hs-pop { from { opacity: 0; transform: scale(0.82); } to { opacity: 1; transform: scale(1); } }
+@keyframes hs-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hs-slide { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: none; } }
+@keyframes hs-draw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@keyframes hs-travel {
+  0% { stroke-dashoffset: 10; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { stroke-dashoffset: -90; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hs-anim.is-playing .hs-node,
+  .hs-anim.is-playing .hs-planned { animation: hs-pop 0.5s cubic-bezier(.2,.8,.3,1.2) var(--d, 0s) both; }
+  .hs-anim.is-playing .hs-plane { animation: hs-fade 0.6s ease-out var(--d, 0s) both; }
+  .hs-anim.is-playing .hs-trail { animation: hs-slide 0.45s ease-out var(--d, 0s) both; }
+  .hs-anim.is-playing .hs-edge__line { stroke-dasharray: 100; animation: hs-draw 0.6s ease-in-out var(--d, 0s) both; }
+  .hs-anim.is-playing .hs-edge--dispatch .hs-edge__line { stroke-dasharray: 4 3; animation: hs-fade 0.6s ease-out var(--d, 0s) both; }
+  .hs-anim.is-playing .hs-edge__pulse {
+    stroke-dasharray: 10 90;
+    animation: hs-travel 1.6s linear calc(var(--d, 0s) + 0.6s) 3;
+  }
+}

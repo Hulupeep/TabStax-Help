@@ -1,0 +1,14 @@
+{%- comment -%}
+A labelled node.
+  x, y   centre
+  label  main text
+  sub    optional second line
+  kind   stax | person | agent | surface | record | action | note
+  w, h   size (default 120 x 40, or 120 x 52 with sub)
+  d      delay in seconds before it appears (default 0)
+{%- endcomment -%}
+{%- assign w = include.w | default: 120 -%}
+{%- if include.sub -%}{%- assign h = include.h | default: 52 -%}{%- else -%}{%- assign h = include.h | default: 40 -%}{%- endif -%}
+{%- assign hw = w | divided_by: 2 | times: -1 -%}
+{%- assign hh = h | divided_by: 2 | times: -1 -%}
+<g transform="translate({{ include.x }} {{ include.y }})"><g class="hs-node hs-node--{{ include.kind | default: 'stax' }}" style="--d:{{ include.d | default: 0 }}s"><rect x="{{ hw }}" y="{{ hh }}" width="{{ w }}" height="{{ h }}" rx="10"/>{%- if include.sub -%}<text y="-4" text-anchor="middle" class="hs-node__label">{{ include.label }}</text><text y="14" text-anchor="middle" class="hs-node__sub">{{ include.sub }}</text>{%- else -%}<text y="5" text-anchor="middle" class="hs-node__label">{{ include.label }}</text>{%- endif -%}</g></g>

@@ -1,0 +1,10 @@
+{%- comment -%}
+One row of the trail: who did what, when. Stack rows 24px apart.
+  x, y   left edge and baseline
+  who    actor, e.g. "@meetbot" or "Bob"
+  what   what they did
+  when   time, e.g. "09:14"
+  agent  "true" to tint the actor as an agent
+  d      delay in seconds (default 0)
+{%- endcomment -%}
+<g class="hs-trail" style="--d:{{ include.d | default: 0 }}s"><text x="{{ include.x }}" y="{{ include.y }}"><tspan class="hs-trail__when">{{ include.when }}</tspan><tspan dx="10" class="hs-trail__who{% if include.agent == 'true' %} hs-trail__who--agent{% endif %}">{{ include.who }}</tspan><tspan dx="8" class="hs-trail__what">{{ include.what }}</tspan></text></g>

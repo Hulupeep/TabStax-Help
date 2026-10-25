@@ -1,0 +1,13 @@
+{%- comment -%}
+Wrap SVG primitives in an animated figure.
+  viewbox  SVG viewBox, e.g. "0 0 480 300"
+  label    aria-label: what the picture shows
+  caption  text that carries the same meaning as the animation
+  svg      primitives captured with a capture tag
+{%- endcomment -%}
+<figure class="hs-anim" data-hs-anim>
+<svg viewBox="{{ include.viewbox | default: '0 0 480 300' }}" role="img" aria-label="{{ include.label | escape }}" preserveAspectRatio="xMidYMid meet">
+{{ include.svg }}
+</svg>
+<figcaption>{{ include.caption }} <button type="button" class="hs-anim__replay" aria-label="Replay animation">Replay</button></figcaption>
+</figure>

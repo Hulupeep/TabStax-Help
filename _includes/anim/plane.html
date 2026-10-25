@@ -1,0 +1,7 @@
+{%- comment -%}
+The plane: a wide band that holds the graph.
+  x, y, w, h  box (default 20, 120, 440, 80). Keep nodes 34px or more below the top edge, clear of the label.
+  label       text on the band (default "Your stax graph")
+  d           delay in seconds (default 0)
+{%- endcomment -%}
+<g class="hs-plane" style="--d:{{ include.d | default: 0 }}s"><rect x="{{ include.x | default: 20 }}" y="{{ include.y | default: 120 }}" width="{{ include.w | default: 440 }}" height="{{ include.h | default: 80 }}" rx="16"/><text x="{{ include.x | default: 20 | plus: 16 }}" y="{{ include.y | default: 120 | plus: 22 }}" class="hs-plane__label">{{ include.label | default: "Your stax graph" }}</text></g>

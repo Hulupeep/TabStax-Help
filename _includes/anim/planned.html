@@ -1,0 +1,6 @@
+{%- comment -%}
+A "Planned" tag inside a diagram, for any element that is not live yet (see _data/ledger.yml).
+  x, y  top-left corner
+  d     delay in seconds (default 0)
+{%- endcomment -%}
+<g transform="translate({{ include.x }} {{ include.y }})"><g class="hs-planned" style="--d:{{ include.d | default: 0 }}s"><rect width="62" height="20" rx="10"/><text x="31" y="14" text-anchor="middle">Planned</text></g></g>
