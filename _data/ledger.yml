@@ -1,0 +1,279 @@
+# Shipped ledger: the source of truth for what help pages may describe as live.
+#
+# States
+#   shipped     Seen working in production by a person in a browser. Pages may describe it as live.
+#   live        Observed in production from outside (endpoint, live MCP tool list, public listing),
+#               not yet browser-verified. Pages may describe it; the checker warns until verified.
+#   unverified  Code or data says it exists; nobody has observed it in production. Checker warns.
+#   partial     Some of it is in production, or code is merged but production activation is pending.
+#               Pages need the Partial badge.
+#   planned     Not in production. Pages need the Planned badge and future tense.
+#
+# Fields
+#   terms   case-insensitive regexes. A page that matches one is "naming" the capability.
+#   avoid   regexes that must never appear on a page (old URLs, retired names).
+#   wording the phrase pages should use.
+#
+# Edit this file, then run: python3 scripts/render_ledger.py
+
+checked: 2026-10-25
+
+capabilities:
+
+  # ---------------------------------------------------------------- surfaces
+  - id: dashboard
+    name: Web dashboard
+    state: live
+    evidence: "https://dash.heystax.ai/ and /attention return 200 (2026-10-25)"
+    wording: "the HeyStax dashboard at dash.heystax.ai"
+
+  - id: extension
+    name: TabStax Chrome extension (save and reopen tabs for a stax)
+    state: live
+    evidence: "Chrome Web Store listing 'TabStax - Pick up where your mind left off' returns 200 (2026-10-25)"
+    wording: "the TabStax extension for Chrome"
+
+  - id: cli
+    name: hey CLI
+    state: live
+    evidence: "npm tabstax-cli latest 0.1.11, published 2026-03-09"
+    wording: "the hey CLI (npm install -g tabstax-cli)"
+
+  - id: cli-rename
+    name: "@heystax/hey CLI package"
+    state: planned
+    terms: ['@heystax/hey']
+    evidence: "cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25)"
+    wording: "do not tell readers to install @heystax/hey yet"
+
+  - id: mcp-endpoint
+    name: MCP server
+    state: live
+    avoid: ['dash\.tabstax\.app']
+    evidence: "https://dash.heystax.ai/api/mcp returns 200; /api/mcp/sse returns 401 without auth; dash.tabstax.app/api/mcp 301-redirects to dash.heystax.ai (2026-10-25)"
+    wording: "https://dash.heystax.ai/api/mcp (SSE: https://dash.heystax.ai/api/mcp/sse)"
+
+  - id: mcp-plan-gate
+    name: MCP needs a Pro or Trial plan
+    state: unverified
+    evidence: "supabase/functions/mcp/caller-identity.ts returns PLAN_REQUIRED for plans other than pro and trial (tabstax c3c18c1)"
+    wording: "MCP needs a Pro or Trial plan"
+
+  - id: mcp-claude
+    name: Claude.ai and Claude Code connect over MCP
+    state: live
+    evidence: "same endpoint as mcp-endpoint; connector pages exist (topics/mcp-claude-ai.md, topics/mcp-claude-code.md)"
+    wording: "Claude.ai and Claude Code"
+
+  - id: mcp-chatgpt
+    name: ChatGPT connects over MCP
+    state: live
+    evidence: "TabStax stax goal: ChatGPT MCP connector (tabstax#546) production-verified 2026-04-28; same endpoint live 2026-10-25"
+    wording: "ChatGPT"
+
+  - id: swagger
+    name: Hosted API reference
+    state: live
+    evidence: "https://dash.heystax.ai/settings/mcp/swagger.yaml returns 200 (2026-10-25)"
+    wording: "the API reference at dash.heystax.ai/settings/mcp/swagger.yaml"
+
+  # ------------------------------------------------- live MCP tool surface
+  - id: mcp-tools-core
+    name: "MCP tools: stax, next actions, goals, dates, people"
+    state: live
+    evidence: "Live tools/list seen through a connected HeyStax MCP client on 2026-10-25: stax_list/get/create/update/delete, stax_audit_log, next_actions_list/add/update/complete/delete, goals_*, dates_*, people_*"
+    wording: "read and write stax, next actions, goals, dates and people"
+
+  - id: mcp-tools-records
+    name: "MCP tools: records, record grants, record audit log"
+    state: live
+    evidence: "Live tools/list on 2026-10-25: record_add/get/list/update/delete, record_grant, record_audit_log, records_schema_get"
+    wording: "typed records, with grants and an audit log"
+
+  - id: today
+    name: Today set (pick today's actions)
+    state: live
+    evidence: "Live tools/list on 2026-10-25: today_get, today_set, today_clear"
+    wording: "your Today list"
+
+  - id: mcp-tools-pending
+    name: "MCP tools merged but not in the live list: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests"
+    state: partial
+    terms: ['agent_activity', 'memory_capture', 'memory_import_ack', 'time_report', 'evidence_request']
+    evidence: "Defined in supabase/functions/mcp/index.ts (tabstax c3c18c1); absent from live tools/list for an owner token on 2026-10-25"
+    wording: "not yet available"
+
+  # ----------------------------------------------------- stax, people, team
+  - id: shared-stax
+    name: Shared stax with roles and @handles
+    state: live
+    evidence: "stax_get on the TabStax stax returns people with roles owner and agent and @handles (2026-10-25)"
+    wording: "share a stax and assign by @handle"
+
+  - id: attention-lanes
+    name: Attention lanes (Must, Should, Good, Meh)
+    state: live
+    evidence: "stax_get returns attention.priority and lane_position (2026-10-25)"
+    wording: "Must, Should, Good, Meh"
+
+  - id: project-settings
+    name: Project Settings page (description, goals, people, dates, grants)
+    state: unverified
+    evidence: "Stax settings redesign epic tabstax#901 marked done on the TabStax stax"
+    wording: "Project Settings"
+
+  - id: breadcrumbs
+    name: Breadcrumbs (completed actions as a trail)
+    state: unverified
+    evidence: "Described in tabstax-capabilities.md; not observed"
+    wording: "breadcrumbs"
+
+  - id: telegram
+    name: Telegram group to stax, personal linking, actions from messages, standups
+    state: unverified
+    evidence: "t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*; help page merged 2026-07-20 (TabStax-Help PR #8)"
+    wording: "the HeyStax Telegram bot (@heystax_bot)"
+
+  # ------------------------------------------------------------- time, money
+  - id: timesheets
+    name: Weekly timesheets per stax
+    state: live
+    evidence: "https://time.heystax.ai/time returns 200 (2026-10-25)"
+    wording: "timesheets at time.heystax.ai"
+
+  - id: timesheet-approval
+    name: Timesheet approval by a lead
+    state: partial
+    terms: ['approv\w* (the |your )?(hours|timesheet)', 'timesheet approval']
+    evidence: "CHANGELOG: approval RPC added, production activation remains separate (tabstax root #976, web #142/#143)"
+    wording: "approval is coming"
+
+  - id: invoicing
+    name: Invoices from approved time, invoice nudges, invoice PDF
+    state: partial
+    terms: ['(approved|submitted|logged) (hours|time)\W+(\w+\W+){0,3}invoic', 'invoic\w* (from|for) (your )?(approved )?(hours|time|timesheets?)', 'invoice nudge']
+    evidence: "CHANGELOG roots #978 and #982: production activation remains separate; render-invoice-pdf function exists; epic tabstax#354"
+    wording: "invoicing is partly built"
+
+  - id: pro-billing
+    name: Pro plan purchase through Stripe
+    state: unverified
+    evidence: "supabase/functions/stripe-webhook exists; prices not checked"
+    wording: "upgrade to Pro"
+
+  # ------------------------------------------------------- records and trust
+  - id: records-ui
+    name: Records in the dashboard
+    state: unverified
+    evidence: "Account Records tabstax#688 in progress in May roadmap; MCP record tools are live"
+    wording: "records"
+
+  - id: audit-view
+    name: A page in the dashboard showing the audit trail
+    state: unverified
+    evidence: "stax_audit_log and record_audit_log are live over MCP; no dashboard view observed"
+    wording: "the trail"
+
+  - id: agent-permission-boundaries
+    name: Owner-authorized agent assignment and private agent audit (tabstax#986)
+    state: partial
+    terms: ['owner-authori[sz]ed']
+    evidence: "CHANGELOG: production activation remains separate; migration 20261015020650 pending in prod rollout"
+    wording: "coming"
+
+  - id: memory-records
+    name: Memory capture and import (tabstax#932-934)
+    state: partial
+    terms: ['memory capture', 'memory import']
+    evidence: "Migrations 20261005120000-150000 partly hand-applied; rollout step 2c pending"
+    wording: "not yet available"
+
+  # ------------------------------------------------------------------ agents
+  - id: agents-as-people
+    name: Agents listed as people on a stax with an @handle
+    state: live
+    evidence: "stax_get on the TabStax stax lists @glenda with role agent (2026-10-25)"
+    wording: "agents appear on the people list"
+
+  - id: glenda
+    name: "@glenda, the HeyStax guide agent"
+    state: unverified
+    terms: ['@glenda']
+    evidence: "Migration 20260928140000_glenda_agent.sql (#926); @glenda present on a prod stax; behaviour not observed"
+    wording: "@glenda"
+
+  - id: agent-dispatch
+    name: Agent registration, HookTunnel provisioning, @mention dispatch, comment writeback
+    state: unverified
+    evidence: "Migrations 20260401160000_agent_hooktunnel_linkage, 20260402094500_agent_dispatch_audit; architecture-overview lists as implemented"
+    wording: "mention an agent on an action"
+
+  - id: agents-as-peers
+    name: "Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report"
+    state: planned
+    terms: ['agent_register', 'agent_whoami', 'stax_join', 'stax_leave', 'next_actions_claim', 'next_actions_report', 'own identity', 'claims? (the |an |its )?action']
+    evidence: "tabstax#994, PR #995 open; tools absent from main and from live tools/list (2026-10-25); prod rollout steps 2a-2e pending"
+    wording: "agents that join under their own name (planned)"
+
+  - id: agent-columns
+    name: One column per agent on the stax page
+    state: planned
+    terms: ['column per agent', 'agent columns?']
+    evidence: "tabstax-webapps PR #198 open"
+    wording: "planned"
+
+  - id: hosted-pickup
+    name: Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap
+    state: planned
+    terms: ['heystax-connect', 'runs[- ]per[- ]hour', 'pause switch', 'pick(s)? up work on (its|their) own']
+    evidence: "tabstax#1015, #1016, blocked on #995"
+    wording: "planned"
+
+  - id: notify
+    name: "@notify Telegram agent"
+    state: planned
+    terms: ['@notify']
+    evidence: "Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface"
+    wording: "planned; say 'the HeyStax Telegram bot' for what exists"
+
+  - id: scribe
+    name: "@scribe email agent, email replies routed to actions, Action Response Primitive"
+    state: planned
+    terms: ['@scribe', 'action response primitive', 'email 5 yards']
+    evidence: "tabstax#567, #572, #681; stax description says ready to roll, not shipped"
+    wording: "planned"
+
+  - id: post-m4-agents
+    name: "@meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand"
+    state: planned
+    terms: ['@meetbot', '@pulse', '@librarian', '@foreman', '@scout', '@ledger', '@refine', '@steadyhand']
+    evidence: "Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733"
+    wording: "planned"
+
+  - id: goal-verdict
+    name: Goal Verdict
+    state: planned
+    terms: ['goal verdict', 'goal_verdict']
+    evidence: "tabstax#609 open goal"
+    wording: "planned"
+
+  - id: practices
+    name: Practices runtime
+    state: planned
+    terms: ['practices runtime', 'portable skills']
+    evidence: "Roadmap #727 / #728 not started"
+    wording: "planned"
+
+  - id: efl
+    name: Executive Function Layer, hey next, Capacity Share
+    state: planned
+    terms: ['executive function layer', 'hey next', 'capacity share']
+    evidence: "Roadmap #739, #740, #741 not started"
+    wording: "planned"
+
+  - id: cross-stax
+    name: Stax composition and cascade awareness
+    state: planned
+    terms: ['stax composition', 'cascade awareness']
+    evidence: "Roadmap #737, #738 not started"
+    wording: "planned"
