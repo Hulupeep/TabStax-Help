@@ -1,60 +1,128 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for anyone, human or agent, writing pages for the HeyStax help site:
+https://hulupeep.github.io/TabStax-Help/ (Jekyll, Just the Docs, GitHub Pages).
 
-## Repository Purpose
+## What HeyStax is
 
-This is the **help center documentation** for Heystax, a browser extension that manages browser tabs as "Stax" - named workspaces bundling tabs with next actions and context notes.
+HeyStax is the **operational plane** for your work. One typed graph holds your stax and
+everything in them: next actions, people, agents, dates, goals, records, links. Every surface
+reads and writes that same graph: the dashboard, the TabStax extension, the `hey` CLI,
+AI clients over MCP, and Telegram. People and agents are both actors on it, addressed the
+same way by `@handle`. Every write is attributed.
 
-## Content Structure
+- **HeyStax** is the system. **TabStax** is the Chrome extension that saves and reopens a
+  stax's tabs. Never mix them up.
+- It is an agent operations platform where agents are peers, not bots.
+- A **stax** (singular and plural) is a named piece of work in the graph.
 
-- `README.md` - Help center landing page and navigation
-- `topics/` - Individual help articles as markdown files
-- `screenshots/` - UI screenshots referenced in documentation
+## The thread on every page: own your own cognition
 
-## Role as Help-Content Collaborator
+Your working state (what you are doing, what is next, why, and who is on it) belongs to you.
+Not to one chat app's memory. Not to one person's head. Every page lands at least one of
+these four beats, in the reader's own terms, never as a slogan:
 
-You are a help-content collaborator for Hulupeep's Heystax Help site: https://hulupeep.github.io/Heystax-Help/
+1. **It is yours.** Your context sits in your account, not inside a model vendor.
+2. **It travels.** The same context opens in Claude, ChatGPT, Claude Code, the CLI.
+3. **You set the edges.** You decide what an agent can see and do.
+4. **You can check.** You can see what every actor did in your name.
 
-Write short, clear, "I get it at a glance" help sections for Heystax.
+Agents extend your thinking. They never take custody of it.
 
-Heystax lets people save named groups of tabs ("Stax") for a project and reopen them later with their tabs and next actions so they can instantly re-enter the same mental flow instead of rebuilding context from scratch.
+Good: "You did not paste your context. It was already yours, and it travelled."
+Bad: "HeyStax empowers you to own your cognition."
 
-The help content should always explain both:
-- **Why it matters** for a human brain (flow, not losing where they were)
-- **How to do it** in practice (simple, numbered steps)
+## Truth rule
 
-## Core Value Proposition
+Before you name any capability, look it up in `_data/ledger.yml` (rendered at
+`docs/shipped-ledger.md`).
 
-"Save exactly where your brain left off, so you can drop back into that project without hunting for tabs or remembering what to do next."
+| Ledger state | What the page may say |
+|---|---|
+| `shipped`, `live`, `unverified` | Describe it as it works today, using the ledger's wording. |
+| `partial` | Say which part works today. Add `{% include badge-partial.html %}`. |
+| `planned` | Future tense only. Add `{% include badge-planned.html %}`. Put it in a "Coming next" box. |
 
-## Style Guidelines
+`scripts/check_truth.py` enforces this on every pull request. If the product changed, update the
+ledger first, with evidence, then the page.
 
-### Tone
-Clear, friendly, grounded. No corporate fluff.
+- The MCP address is `https://dash.heystax.ai/api/mcp`. Never `dash.tabstax.app`.
+- Say "the HeyStax Telegram bot" for what exists today. `@notify` is planned.
 
-### Length
-Think micro-docs. A user should understand the whole section in under 20–30 seconds.
+## Voice
 
-### Structure for Each Help Section
+Short sensory sentences. Warm, not effusive. The reader is smart, busy and tired. They live or
+die by momentum, and they lose it on every switch.
 
-1. **Title** – short, action-focused (e.g., "Creating your first Stax")
-2. **Why this helps** – 2–3 sentences that connect to real life ("so you can get back to Christmas shopping exactly where you left off")
-3. **How to do it** – 3–7 numbered steps, minimal words, no walls of text
-4. **Tiny payoff line** – 1 sentence starting with "Now you can…" that reinforces benefit (e.g., "Now you can jump back into your Christmas list without rebuilding it from scratch.")
+- Concrete over abstract: "30 tabs", "a scrolled-away chat", "Monday, 08:00".
+- One idea per sentence. Paragraphs of three lines or fewer.
+- Name the felt moment before the mechanism.
+- Use "you". Use real names in scenarios (Bob, Alice), never "the user".
 
-### Language
+### Never write
 
-- Prefer concrete phrases like "pick up where your brain left off", "re-enter your flow," "no more hunting through 40 tabs," etc.
-- Avoid jargon and internal architecture details
-- Assume the user is smart but tired and busy
+`scripts/check_voice.py` flags these.
 
-### Focus on Context + Next Actions
+- Em dashes. Use a full stop, a comma, or a colon.
+- "project management", "productivity tool", "productivity app", "flow manager", "focus app",
+  "task manager".
+- "connect your life to AI".
+- Wellness framing: "wellness", "self-care", "mindfulness", "peace of mind", "calm your mind".
+- Hype: "revolutionary", "game-changer", "game-changing", "seamless", "supercharge", "unleash",
+  "cutting-edge", "next-level", "effortless", "world-class", "best-in-class", "10x".
+- Credentialism: awards, "trusted by", "built by experts".
+- Internal names: table names, JSON, migration ids, edge functions, unless the ledger's wording
+  uses them.
 
-Whenever possible, show that Stax are not just saved tabs; they're **saved context plus very next actions** for that project.
+### Lines you may use
 
-## Key Terminology
+- "ChatGPT has a text box. HeyStax has the nervous system."
+- "Your typed graph. Any LLM."
+- "Always know what to do next."
+- "Pick up where your mind left off." (extension pages)
 
-- **Stax** (singular and plural) - a workspace containing tabs + next actions + context
-- **Flow** - the mental state of being engaged in work
-- **Next actions** - actionable items attached to a Stax
+## Page shape
+
+1. **Title**: short, verb-first where it fits ("Connect Claude to your stax").
+2. **What it is**: one or two sentences.
+3. **Why it matters to you**: two or three sentences tied to a real moment.
+4. **How to do it**: 3 to 7 numbered steps, few words each.
+5. **The animation** from `_includes/anim/` (once the kit lands), with a caption that carries
+   the same meaning in text.
+6. **Payoff**: one line starting "Now you can".
+
+A reader should get the whole page in under 30 seconds.
+
+Front matter: `title`, `parent` (if nested), `nav_order`. Archived pages get `nav_exclude: true`.
+
+## Animations
+
+- Inline SVG plus CSS from the shared kit. No JS animation libraries. No video for diagrams.
+- Real-UI clips (`.webm` with a poster frame) only on scenario pages, recorded from the live product.
+- Every animation has a `<figcaption>`. `prefers-reduced-motion` shows the final frame.
+- Readable at 375px wide and in dark mode.
+
+## Scenarios
+
+Scenario pages live in `topics/scenarios/` and follow `docs/scenario-template.md`: cast,
+starting state, steps, what the graph looks like after, the cognition beat, and a table of each
+step's ledger state. A scenario with any planned step is badged on the page and on its index card.
+
+## Checks before you open a pull request
+
+```bash
+python3 scripts/check_truth.py --changed origin/main
+python3 scripts/check_voice.py --changed origin/main
+python3 -m unittest discover -s scripts -p "test_*.py"
+python3 scripts/render_ledger.py --check
+```
+
+## Repo map
+
+- `README.md`: home page.
+- `topics/`: help pages.
+- `_data/ledger.yml`: what is live. `docs/shipped-ledger.md` is generated from it.
+- `_includes/`: badges, and later the animation kit.
+- `screenshots/`: UI captures. Replace old TabStax popup shots when a page is rewritten.
+- `scripts/`: checks and their tests.
+- Work is tracked in epic #9.
