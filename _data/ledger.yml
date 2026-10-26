@@ -213,8 +213,8 @@ capabilities:
     name: "Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report"
     state: partial
     terms: ['agent_register', 'agent_whoami', 'stax_join', 'stax_leave', 'next_actions_claim', 'next_actions_report', 'own identity', 'claims? (the |an |its )?action']
-    evidence: "Root PR #995 merged; Supabase project ayfhqcwzdqakxgkbzdpn reports mcp ACTIVE v28 since 2026-10-26T09:41:38Z; existing authenticated stax_get passed. New six-tool tools/list and owner/worker UI journey remain unverified (help #36)"
-    wording: "agent peer pilot deployed; live tool and browser journey still to verify"
+    evidence: "Root PR #995 merged; mcp ACTIVE v28. Authenticated production initialize → initialized → tools/list returned all six names on 2026-10-26 (evidence/agent-peer-tools-list-2026-10-26.json); agent calls and owner/worker browser journey remain unverified (help #36). Claim/report races are tracked in tabstax#1011"
+    wording: "agent peer commands are discoverable; claim/report and browser journey still need verification"
 
   - id: agent-columns
     name: One column per agent on the stax page

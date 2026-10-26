@@ -1,0 +1,24 @@
+{
+  "captured_at_utc": "2026-10-26T22:27:56+00:00",
+  "target": "https://dash.heystax.ai/api/mcp",
+  "auth_source": "existing Codex MCP connection; header values omitted",
+  "unauthenticated_initialize_http": 401,
+  "authenticated_initialize_http": 200,
+  "requested_protocol": "2025-06-18",
+  "negotiated_protocol": "2024-11-05",
+  "initialized_notification_http": 202,
+  "initialized_notification_body_bytes": 0,
+  "tools_list_http": 200,
+  "tools_list_pages": 1,
+  "tools_list_total_count": 44,
+  "six_agent_tool_names": [
+    "agent_register",
+    "agent_whoami",
+    "stax_join",
+    "stax_leave",
+    "next_actions_claim",
+    "next_actions_report"
+  ],
+  "all_six_present": true,
+  "scope_limit": "Tool discovery only; no agent tool or browser journey executed."
+}
