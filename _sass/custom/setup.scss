@@ -32,3 +32,76 @@ table td:first-child {
   width: 3em;
   text-align: center;
 }
+
+// Each step remains readable without motion. The caption carries the same story.
+.hs-action-flow {
+  margin: 1.5rem 0;
+  color: #1f2937;
+}
+
+.hs-action-flow__steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr) 1.5rem minmax(0, 1fr) 1.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.hs-action-flow__card {
+  min-width: 0;
+  min-height: 7rem;
+  padding: 0.9rem;
+  border: 2px solid #d6c8a6;
+  border-radius: 0.8rem;
+  background: #fffaf0;
+  animation: hs-action-step 8s ease-in-out infinite;
+}
+
+.hs-action-flow__card strong,
+.hs-action-flow__card span {
+  display: block;
+}
+
+.hs-action-flow__card span {
+  margin-top: 0.35rem;
+  overflow-wrap: anywhere;
+}
+
+.hs-action-flow__card--second { animation-delay: 2s; }
+.hs-action-flow__card--third { animation-delay: 4s; }
+.hs-action-flow__card--fourth { animation-delay: 6s; }
+
+.hs-action-flow__arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #765c23;
+}
+
+.hs-action-flow figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+}
+
+@keyframes hs-action-step {
+  0%, 78%, 100% { border-color: #d6c8a6; background: #fffaf0; }
+  8%, 23% { border-color: #a15c08; background: #fef3c7; }
+}
+
+@media (max-width: 600px) {
+  .hs-action-flow__steps { grid-template-columns: minmax(0, 1fr); }
+  .hs-action-flow__card { min-height: 0; }
+  .hs-action-flow__arrow { justify-self: center; transform: rotate(90deg); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .hs-action-flow { color: #f9fafb; }
+  .hs-action-flow__card { border-color: #8b7355; background: #30291f; }
+  .hs-action-flow__arrow { color: #fbbf24; }
+  @keyframes hs-action-step {
+    0%, 78%, 100% { border-color: #8b7355; background: #30291f; }
+    8%, 23% { border-color: #fbbf24; background: #4c3b20; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hs-action-flow__card { animation: none; border-color: #a15c08; }
+}

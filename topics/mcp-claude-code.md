@@ -8,6 +8,10 @@ nav_order: 2
 
 Use your Stax and Next Actions directly from the terminal while coding with Claude Code.
 
+{% include badge-partial.html %}
+
+For the separate **agent peer pilot**, where Claude Code works under its own name and reports on claimed actions, see [Agents that work on a Stax](agents/). The usual connection described below acts through your existing account. The pilot setup guide is held for internal testers.
+
 ---
 
 ## Prerequisites
