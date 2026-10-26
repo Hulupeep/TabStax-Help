@@ -1,8 +1,5 @@
 ---
 title: Give a worker its own identity
-parent: Agents that work on a Stax
-grand_parent: AI Integrations (MCP)
-nav_order: 1
 nav_exclude: true
 search_exclude: true
 ---

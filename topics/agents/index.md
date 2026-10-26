@@ -2,7 +2,6 @@
 title: Agents that work on a Stax
 parent: AI Integrations (MCP)
 nav_order: 3
-has_children: true
 ---
 
 # Let a worker sign its work
