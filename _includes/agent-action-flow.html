@@ -1,0 +1,30 @@
+<figure class="hs-action-flow">
+  <div class="hs-action-flow__steps" aria-hidden="true">
+    <div class="hs-action-flow__card hs-action-flow__card--first">
+      <strong>1. Open action</strong>
+      <span>{{ include.start | escape }}</span>
+    </div>
+    <svg class="hs-action-flow__arrow" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+      <path d="M3 12h17m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div class="hs-action-flow__card hs-action-flow__card--second">
+      <strong>2. Claimed by a worker</strong>
+      <span>{{ include.middle | escape }}</span>
+    </div>
+    <svg class="hs-action-flow__arrow" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+      <path d="M3 12h17m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div class="hs-action-flow__card hs-action-flow__card--third">
+      <strong>3. Blocker recorded</strong>
+      <span>{{ include.blocker | escape }}</span>
+    </div>
+    <svg class="hs-action-flow__arrow" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+      <path d="M3 12h17m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <div class="hs-action-flow__card hs-action-flow__card--fourth">
+      <strong>4. Result linked</strong>
+      <span>{{ include.end | escape }}</span>
+    </div>
+  </div>
+  <figcaption>{{ include.caption | escape }}</figcaption>
+</figure>

@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-10-25
+checked: 2026-10-26
 
 capabilities:
 
@@ -97,11 +97,11 @@ capabilities:
     wording: "your Today list"
 
   - id: mcp-tools-pending
-    name: "MCP tools merged but not in the live list: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests"
+    name: "Additional MCP tools awaiting fresh authenticated production verification: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests"
     state: partial
     terms: ['agent_activity', 'memory_capture', 'memory_import_ack', 'time_report', 'evidence_request']
-    evidence: "Defined in supabase/functions/mcp/index.ts (tabstax c3c18c1); absent from live tools/list for an owner token on 2026-10-25"
-    wording: "not yet available"
+    evidence: "Bundled in production mcp v28 on 2026-10-26; fresh authenticated tools/list and behaviour check still needed"
+    wording: "in the deployed function; verify before using"
 
   # ----------------------------------------------------- stax, people, team
   - id: shared-stax
@@ -178,15 +178,15 @@ capabilities:
     name: Owner-authorized agent assignment and private agent audit (tabstax#986)
     state: partial
     terms: ['owner-authori[sz]ed']
-    evidence: "CHANGELOG: production activation remains separate; migration 20261015020650 pending in prod rollout"
-    wording: "coming"
+    evidence: "Migration 20261015020650 applied and catalog/RLS checks passed on 2026-10-25; outside-user boundary #1005 remains open"
+    wording: "internal pilot boundary; public grants remain planned"
 
   - id: memory-records
     name: Memory capture and import (tabstax#932-934)
     state: partial
     terms: ['memory capture', 'memory import']
-    evidence: "Migrations 20261005120000-150000 partly hand-applied; rollout step 2c pending"
-    wording: "not yet available"
+    evidence: "All four 20261005 migrations applied and catalog-verified on 2026-10-25; fresh MCP behaviour check remains"
+    wording: "schema live; user journey unverified"
 
   # ------------------------------------------------------------------ agents
   - id: agents-as-people
@@ -203,24 +203,25 @@ capabilities:
     wording: "@glenda"
 
   - id: agent-dispatch
-    name: Agent registration, HookTunnel provisioning, @mention dispatch, comment writeback
-    state: unverified
-    evidence: "Migrations 20260401160000_agent_hooktunnel_linkage, 20260402094500_agent_dispatch_audit; architecture-overview lists as implemented"
-    wording: "mention an agent on an action"
+    name: Automatic HookTunnel delivery and @mention dispatch to worker agents
+    state: planned
+    terms: ['automatic (agent )?(delivery|dispatch|wake-up)', 'HookTunnel push']
+    evidence: "tabstax#1008/#1006 and hooktunnel-web#170 are parked; mcp v28 supports manual/poll pickup, not signed push delivery (2026-10-26)"
+    wording: "automatic delivery is planned; start or poll a worker for current pickup"
 
   - id: agents-as-peers
     name: "Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report"
-    state: planned
+    state: partial
     terms: ['agent_register', 'agent_whoami', 'stax_join', 'stax_leave', 'next_actions_claim', 'next_actions_report', 'own identity', 'claims? (the |an |its )?action']
-    evidence: "tabstax#994, PR #995 open; tools absent from main and from live tools/list (2026-10-25); prod rollout steps 2a-2e pending"
-    wording: "agents that join under their own name (planned)"
+    evidence: "Root PR #995 merged; Supabase project ayfhqcwzdqakxgkbzdpn reports mcp ACTIVE v28 since 2026-10-26T09:41:38Z; existing authenticated stax_get passed. New six-tool tools/list and owner/worker UI journey remain unverified (help #36)"
+    wording: "agent peer pilot deployed; live tool and browser journey still to verify"
 
   - id: agent-columns
     name: One column per agent on the stax page
-    state: planned
+    state: partial
     terms: ['column per agent', 'agent columns?']
-    evidence: "tabstax-webapps PR #198 open"
-    wording: "planned"
+    evidence: "webapps PR #198 merged and its main production deployment READY on 2026-10-25; signed-in agent-column browser check remains (help #36)"
+    wording: "web code deployed; signed-in display still to verify"
 
   - id: hosted-pickup
     name: Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap

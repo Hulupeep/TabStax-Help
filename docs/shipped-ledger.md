@@ -8,7 +8,7 @@ search_exclude: true
 
 # Shipped ledger
 
-Last checked: 2026-10-25. Source: `_data/ledger.yml`.
+Last checked: 2026-10-26. Source: `_data/ledger.yml`.
 
 Help pages may only describe what this ledger says is live. `scripts/check_truth.py` enforces it on every pull request.
 
@@ -16,9 +16,9 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 14 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 9 |
-| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 5 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 8 |
+| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 7 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
 
 ## Live
 
@@ -51,25 +51,25 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Records in the dashboard | records | Account Records tabstax#688 in progress in May roadmap; MCP record tools are live |
 | A page in the dashboard showing the audit trail | the trail | stax_audit_log and record_audit_log are live over MCP; no dashboard view observed |
 | @glenda, the HeyStax guide agent | @glenda | Migration 20260928140000_glenda_agent.sql (#926); @glenda present on a prod stax; behaviour not observed |
-| Agent registration, HookTunnel provisioning, @mention dispatch, comment writeback | mention an agent on an action | Migrations 20260401160000_agent_hooktunnel_linkage, 20260402094500_agent_dispatch_audit; architecture-overview lists as implemented |
 
 ## Partial
 
 | Capability | Docs wording | Evidence |
 |---|---|---|
-| MCP tools merged but not in the live list: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests | not yet available | Defined in supabase/functions/mcp/index.ts (tabstax c3c18c1); absent from live tools/list for an owner token on 2026-10-25 |
+| Additional MCP tools awaiting fresh authenticated production verification: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests | in the deployed function; verify before using | Bundled in production mcp v28 on 2026-10-26; fresh authenticated tools/list and behaviour check still needed |
 | Timesheet approval by a lead | approval is coming | CHANGELOG: approval RPC added, production activation remains separate (tabstax root #976, web #142/#143) |
 | Invoices from approved time, invoice nudges, invoice PDF | invoicing is partly built | CHANGELOG roots #978 and #982: production activation remains separate; render-invoice-pdf function exists; epic tabstax#354 |
-| Owner-authorized agent assignment and private agent audit (tabstax#986) | coming | CHANGELOG: production activation remains separate; migration 20261015020650 pending in prod rollout |
-| Memory capture and import (tabstax#932-934) | not yet available | Migrations 20261005120000-150000 partly hand-applied; rollout step 2c pending |
+| Owner-authorized agent assignment and private agent audit (tabstax#986) | internal pilot boundary; public grants remain planned | Migration 20261015020650 applied and catalog/RLS checks passed on 2026-10-25; outside-user boundary #1005 remains open |
+| Memory capture and import (tabstax#932-934) | schema live; user journey unverified | All four 20261005 migrations applied and catalog-verified on 2026-10-25; fresh MCP behaviour check remains |
+| Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report | agent peer pilot deployed; live tool and browser journey still to verify | Root PR #995 merged; Supabase project ayfhqcwzdqakxgkbzdpn reports mcp ACTIVE v28 since 2026-10-26T09:41:38Z; existing authenticated stax_get passed. New six-tool tools/list and owner/worker UI journey remain unverified (help #36) |
+| One column per agent on the stax page | web code deployed; signed-in display still to verify | webapps PR #198 merged and its main production deployment READY on 2026-10-25; signed-in agent-column browser check remains (help #36) |
 
 ## Planned
 
 | Capability | Docs wording | Evidence |
 |---|---|---|
 | @heystax/hey CLI package | do not tell readers to install @heystax/hey yet | cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25) |
-| Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report | agents that join under their own name (planned) | tabstax#994, PR #995 open; tools absent from main and from live tools/list (2026-10-25); prod rollout steps 2a-2e pending |
-| One column per agent on the stax page | planned | tabstax-webapps PR #198 open |
+| Automatic HookTunnel delivery and @mention dispatch to worker agents | automatic delivery is planned; start or poll a worker for current pickup | tabstax#1008/#1006 and hooktunnel-web#170 are parked; mcp v28 supports manual/poll pickup, not signed push delivery (2026-10-26) |
 | Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap | planned | tabstax#1015, #1016, blocked on #995 |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
@@ -105,4 +105,3 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] A page in the dashboard showing the audit trail
 - [ ] Agents listed as people on a stax with an @handle
 - [ ] @glenda, the HeyStax guide agent
-- [ ] Agent registration, HookTunnel provisioning, @mention dispatch, comment writeback

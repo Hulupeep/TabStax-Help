@@ -29,7 +29,9 @@ Home (README.md)                                    nav_order: 1
 │   │   └── Hey CLI Guide                           nav_order: 1
 │   ├── AI Integrations (MCP)                       nav_order: 4  [has_children]
 │   │   ├── Connect to Claude.ai                    nav_order: 1
-│   │   └── Connect to Claude Code                  nav_order: 2
+│   │   ├── Connect to Claude Code                  nav_order: 2
+│   │   └── Agents that work on a Stax              nav_order: 3  [Partial]
+│   │       └── Worker pickup pilot guide          nav_exclude: true
 │   └── Timesheets                                  nav_order: 5
 │
 ├── Account & Sync                                  nav_order: 4
@@ -40,6 +42,11 @@ Home (README.md)                                    nav_order: 1
 ├── Use Cases                                       nav_order: 6  [no children in nav]
 │   ├── 16 Hero pages (nav_exclude: true)
 │   └── 9 collection files (nav_exclude: true)
+│
+├── Scenarios                                       nav_order: 7  [has_children]
+│   ├── Founder launch handoff                     nav_order: 1  [Partial]
+│   ├── Studio client handoff                      nav_order: 2  [Partial]
+│   └── Consultant returns to agent work          nav_order: 3  [Partial]
 │
 └── [Retired] Working with Stax                     nav_exclude: true
 ```

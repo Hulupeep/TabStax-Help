@@ -108,6 +108,8 @@ HeyStax preserves your state so you can pick up any project cold. No reconstruct
 → [Hey CLI guide](topics/hey-cli)
 → [Connect to Claude.ai](topics/mcp-claude-ai)
 → [Connect to Claude Code](topics/mcp-claude-code)
+→ [See how a named AI worker handles a Next Action](topics/agents/)
+→ [Read founder, studio and consultant scenarios](topics/scenarios/)
 
 ### Someone shared a Stax with you?
 They've captured a whole working context and handed it to you. Opening that Stax puts you in the same place they were — same structure, same tabs, same next actions. Trust it the way you'd trust a link: only from sources you trust.
@@ -152,6 +154,10 @@ Works with **Claude.ai**, **Claude Code**, and **ChatGPT**. Connect once.
 
 → [Connect to Claude.ai](topics/mcp-claude-ai)
 → [Connect to Claude Code](topics/mcp-claude-code)
+
+{% include badge-partial.html %}
+
+**New agent peer pilot:** start a worker such as Codex or Claude Code under its own name. It can claim a Next Action and leave a blocked or done note on your Stax. [See the feature](topics/agents/) and [three everyday scenarios](topics/scenarios/). The full live journey is still being checked.
 
 ---
 

@@ -22,7 +22,15 @@ Heystax connects to AI assistants through the **Model Context Protocol (MCP)**. 
 |------------|--------|-----|
 | [Claude.ai (web)](mcp-claude-ai) | Live | OAuth connector |
 | [Claude Code (CLI)](mcp-claude-code) | Live | Same connector or manual setup |
-| ChatGPT | Coming soon | Apps SDK (in development) |
+| ChatGPT | Live | Existing MCP connection; client-specific steps are being refreshed |
+
+{% include badge-partial.html %}
+
+**Agent peer pilot:** a worker can have its own name, claim a Next Action and report a blocker or result on the Stax. The backend is deployed; the complete owner/worker/browser journey still needs a live check. [See what it means in plain language](agents/). The setup guide is held for internal testers.
+
+{% include badge-planned.html %}
+
+Automatic delivery to an offline worker and public worker installation are planned. Current pickup starts when you run the worker or it checks for work.
 
 ---
 
