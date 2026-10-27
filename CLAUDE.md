@@ -58,3 +58,18 @@ Whenever possible, show that Stax are not just saved tabs; they're **saved conte
 - **Stax** (singular and plural) - a workspace containing tabs + next actions + context
 - **Flow** - the mental state of being engaged in work
 - **Next actions** - actionable items attached to a Stax
+
+
+## Product mission and outcome-led editorial direction (27 October 2026)
+
+**Begin with what HeyStax is:** the operational plane for persistent intent, helping humans and interchangeable AI agents pursue measurable outcomes rather than merely accumulate activity.
+
+Three reader-facing primitives: **Mission (why), Goal (what result), Next Action (who does what now)**. Context, grants, evidence, decisions and history serve those primitives. Continuity is the enabling mechanism, not the final customer outcome.
+
+Distinguish work and outcomes: PRs, tasks, emails, meetings and claims of completion are not proof of customer payment or another external result. Attribute observations to sources; say unknown or inconclusive when warranted. Explain how a stalled goal prompts a bounded next move, not an unowned backlog.
+
+**Founder story:** Colm's goal is commercial, to build useful things, get paid, support his family and keep creating. Do not generalise that all users seek revenue. Examples may include clinical/regulatory development (FDA review remains in expert/regulator control), construction, community work and commercial sales.
+
+**Truth discipline:** Vision language may explain what HeyStax is intended to become, but do not describe unshipped outcome engines, replaceable workers or proactive autonomous loops as working today. Check `docs/shipped-ledger.md` and preserve the editorial truth-gate requirements in issue #9. Any new blog routes must be verified before linking from a published navigation surface.
+
+Primary mission article: `topics/what-heystax-really-is.md`. Founder statement: `topics/why-im-building-heystax.md`. Blog drafts: `blog/`.
