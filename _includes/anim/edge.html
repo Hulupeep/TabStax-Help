@@ -1,0 +1,10 @@
+{%- comment -%}
+A connection that draws in, then carries a travelling pulse.
+  x1, y1, x2, y2  ends
+  cx, cy          optional control point for a curve
+  kind            read | write | dispatch | plain (default plain: no pulse)
+  d               delay in seconds before it draws (default 0)
+{%- endcomment -%}
+{%- if include.cx -%}{%- capture path -%}M{{ include.x1 }} {{ include.y1 }} Q{{ include.cx }} {{ include.cy }} {{ include.x2 }} {{ include.y2 }}{%- endcapture -%}{%- else -%}{%- capture path -%}M{{ include.x1 }} {{ include.y1 }} L{{ include.x2 }} {{ include.y2 }}{%- endcapture -%}{%- endif -%}
+{%- assign kind = include.kind | default: 'plain' -%}
+<g class="hs-edge hs-edge--{{ kind }}" style="--d:{{ include.d | default: 0 }}s"><path d="{{ path }}" pathLength="100" class="hs-edge__line"/>{%- unless kind == 'plain' -%}<path d="{{ path }}" pathLength="100" class="hs-edge__pulse"/>{%- endunless -%}</g>
