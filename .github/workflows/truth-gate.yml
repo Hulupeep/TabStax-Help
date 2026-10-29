@@ -23,5 +23,10 @@ jobs:
       - name: Changed pages pass the gate
         if: github.event_name == 'pull_request'
         run: python3 scripts/check_truth.py --changed origin/${{ github.base_ref }}
+      - name: Changed pages pass the voice check
+        if: github.event_name == 'pull_request'
+        run: python3 scripts/check_voice.py --changed origin/${{ github.base_ref }}
       - name: Whole site report
-        run: python3 scripts/check_truth.py
+        run: |
+          python3 scripts/check_truth.py
+          python3 scripts/check_voice.py
