@@ -4,8 +4,9 @@ Wrap SVG primitives in an animated figure.
   label    aria-label: what the picture shows
   caption  text that carries the same meaning as the animation
   svg      primitives captured with a capture tag
+  max      optional max width in px, centred (use on hero figures to keep them above the fold)
 {%- endcomment -%}
-<figure class="hs-anim" data-hs-anim>
+<figure class="hs-anim" data-hs-anim{% if include.max %} style="max-width:{{ include.max }}px;margin-left:auto;margin-right:auto"{% endif %}>
 <svg viewBox="{{ include.viewbox | default: '0 0 480 300' }}" role="img" aria-label="{{ include.label | escape }}" preserveAspectRatio="xMidYMid meet">
 {{ include.svg }}
 </svg>

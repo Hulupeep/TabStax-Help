@@ -26,7 +26,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | Web dashboard | the HeyStax dashboard at dash.heystax.ai | https://dash.heystax.ai/ and /attention return 200 (2026-10-25) |
 | TabStax Chrome extension (save and reopen tabs for a stax) | the TabStax extension for Chrome | Chrome Web Store listing 'TabStax - Pick up where your mind left off' returns 200 (2026-10-25) |
-| hey CLI | the hey CLI (npm install -g tabstax-cli) | npm tabstax-cli latest 0.1.11, published 2026-03-09 |
+| hey CLI | the hey CLI (npm i -g heystax-cli) | npm heystax-cli latest 0.1.13, published 2026-03-14; older name tabstax-cli stops at 0.1.11 (checked 2026-10-29) |
 | MCP server | https://dash.heystax.ai/api/mcp (SSE: https://dash.heystax.ai/api/mcp/sse) | https://dash.heystax.ai/api/mcp returns 200; /api/mcp/sse returns 401 without auth; dash.tabstax.app/api/mcp 301-redirects to dash.heystax.ai (2026-10-25) |
 | Claude.ai and Claude Code connect over MCP | Claude.ai and Claude Code | same endpoint as mcp-endpoint; connector pages exist (topics/mcp-claude-ai.md, topics/mcp-claude-code.md) |
 | ChatGPT connects over MCP | ChatGPT | TabStax stax goal: ChatGPT MCP connector (tabstax#546) production-verified 2026-04-28; same endpoint live 2026-10-25 |

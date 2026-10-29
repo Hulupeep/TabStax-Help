@@ -36,8 +36,8 @@ capabilities:
   - id: cli
     name: hey CLI
     state: live
-    evidence: "npm tabstax-cli latest 0.1.11, published 2026-03-09"
-    wording: "the hey CLI (npm install -g tabstax-cli)"
+    evidence: "npm heystax-cli latest 0.1.13, published 2026-03-14; older name tabstax-cli stops at 0.1.11 (checked 2026-10-29)"
+    wording: "the hey CLI (npm i -g heystax-cli)"
 
   - id: cli-rename
     name: "@heystax/hey CLI package"
