@@ -126,3 +126,12 @@ python3 scripts/render_ledger.py --check
 - `screenshots/`: UI captures. Replace old TabStax popup shots when a page is rewritten.
 - `scripts/`: checks and their tests.
 - Work is tracked in epic #9.
+
+
+## Outcome mission clarification (29 October 2026)
+
+Lead with what HeyStax is: an operational plane for persistent intent. The three simplest reader-facing primitives are **Mission (why), Goal (observable result), Next Action (who does what next)**. Humans and interchangeable AI agents share durable responsibility, evidence, decisions and context. Continuity serves outcomes, not activity counts.
+
+Do not treat PR volume, tasks, emails or demos as verified business results. The founder's personal commercial purpose is one application, not a restriction on users' missions. Clinical/regulatory, construction and community outcomes are examples, not claims of automated authorisation. Describe the full outcome-driven autonomous loop as the product vision unless the shipped ledger provides fresh verification.
+
+Canonical mission: `topics/what-heystax-really-is.md`. Founder account: `topics/why-im-building-heystax.md`. Editorial drafts: `blog/`. Keep the existing voice, truth-gate, and navigation rules above.

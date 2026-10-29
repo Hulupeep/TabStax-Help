@@ -7,6 +7,14 @@ permalink: /
 
 # HeyStax
 
+**Make things happen. Not merely get things done.**
+
+HeyStax is the operational plane for persistent intent. **Mission → Goal → Next Action** connects people and AI agents to meaningful outcomes, with evidence, accountability and continuity.
+
+[What HeyStax really is](topics/what-heystax-really-is) · [Why I'm building it](topics/why-im-building-heystax)
+
+The complete autonomous outcome-pursuit loop is product direction, not a claim that everything is shipped. See the [shipped ledger](docs/shipped-ledger.md).
+
 **Pick up where your mind left off.**
 
 You know you were working on something. You just can't get back in.
@@ -17,7 +25,7 @@ That's not a focus problem. It's a design problem. And it compounds.
 
 The more projects you hold, the more threads you're managing. And when other people are involved, it gets quieter and worse: they can't see your context. You can't see theirs. What's actually happening on a project is locked inside someone's head, or buried in a Slack thread from three weeks ago, or simply gone. Status updates are a workaround for this. So are standups. So is the mild dread of asking "where are we on this?" again.
 
-HeyStax is a **flow manager**. It makes project context visible and shared — not just links, but intent — so anyone on a project can step back into it cold and immediately know what's happening and what to do next.
+HeyStax is an **operational plane for persistent intent**. It makes project context visible and shared — not just links, but intent — so anyone on a project can step back into it cold and immediately know what's happening and what to do next.
 
 ---
 
