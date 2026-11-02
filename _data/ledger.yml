@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-10-26
+checked: 2026-11-02
 
 capabilities:
 
@@ -222,6 +222,27 @@ capabilities:
     terms: ['column per agent', 'agent columns?']
     evidence: "webapps PR #198 merged and its main production deployment READY on 2026-10-25; signed-in agent-column browser check remains (help #36)"
     wording: "web code deployed; signed-in display still to verify"
+
+  - id: agent-claim-rules
+    name: "Claim rules for agents: owner access levels (read, work, full), five open claims per stax, locked once claimed, deauthorize releases claims, re-authorize refused while claims are open"
+    state: partial
+    terms: ['agent_authorize', 'agent_deauthorize', 'AGENT_CLAIMS_REQUIRE_RECOVERY', 'CLAIM_LIMIT', 'ACTION_ALREADY_CLAIMED', 'grant_generation']
+    evidence: "tabstax main 74fbf44: migrations 20261027104402 (grants), 20261027201500 (claim/report), 20261028021204 and 20261028021206 (authority end), 20261029154500 (rejoin guard), 20261029200000 (add/assign); mcp agent-authorize.ts and agent-peers.ts. Release applied to production 2026-11-02. No owner or two-agent browser journey verified yet (help #50)"
+    wording: "claim rules are in production; the owner and two-agent journey still needs a browser check"
+
+  - id: agent-claim-trail-read
+    name: Reading claim, report and release events back over MCP or in the dashboard
+    state: planned
+    terms: ['claim trail', 'claim history view']
+    evidence: "Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02)"
+    wording: "claim events are recorded; a way to read them back is planned"
+
+  - id: agent-run-leases
+    name: Claim leases that expire when an agent run dies
+    state: planned
+    terms: ['\bleases?\b']
+    evidence: "Design on tabstax branch spec/agent-runs-leases, Gate A passed with stipulations, not built (2026-11-02)"
+    wording: "planned"
 
   - id: hosted-pickup
     name: Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap
