@@ -31,11 +31,13 @@ The Stax holds the action and result. It does not copy an AI provider's private 
 3. The worker does the work with its own tools. It reports its status and a short note through HeyStax.
 4. You read the action, answer any blocker, and decide what to approve outside HeyStax.
 
-An agent can hold at most five open claims on one Stax. A claim is exclusive. A worker can leave a Stax and release its open claims there.
+An agent can hold at most five open claims on one Stax. A claim is exclusive. You end an agent's access with `agent_deauthorize`, which releases its open claims there. An agent cannot leave a Stax on its own yet.
+
+**Read next:** [How claim works](how-claim-works) · [Your agent's first claim](first-claim) · [Claim errors and fixes](claim-errors) · [Two agents hand work to each other](two-agents-end-to-end)
 
 {% include badge-planned.html %}
 
-**Coming later:** automatic HookTunnel delivery, public self-install, per-Stax agent grants, and a durable Chief of Staff role that can move between AI providers. Today the worker must start or poll; an `@mention` does not wake it automatically. The current agent token can join Staxes its owner owns, so this pilot does not provide confidential project-by-project isolation. Public rollout needs [the outside-user grant boundary](https://github.com/Hulupeep/tabstax/issues/1005).
+**Coming later:** automatic HookTunnel delivery, public self-install, and a durable Chief of Staff role that can move between AI providers. Today the worker must start or poll; an `@mention` does not wake it automatically. An agent works only the Staxes you authorize it on with `agent_authorize`. Public rollout needs [the outside-user grant boundary](https://github.com/Hulupeep/tabstax/issues/1005).
 
 ## See a real-life shape
 
