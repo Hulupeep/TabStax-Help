@@ -36,11 +36,9 @@ Each token is shown once. It goes straight into the bot's secret setting, for ex
 
 To remove a worker, end its access. The role and its other workers carry on.
 
-## Coming next: your Chief of Staff hires roles
+## Let your Chief of Staff hire roles
 
-{% include badge-planned.html %}
-
-You will grant your Chief of Staff one permission per Stax, `manage_roles`. You do it once, with your own token. After that, the Chief creates new roles with `role_create` and never needs your key.
+Grant your Chief of Staff one permission per Stax, `manage_roles`. You do it once, with your own token: `agent_authorize` with `manage_roles: true`. After that, the Chief creates new roles with `role_create` and never needs your key.
 
 - A new role never gets more access than the Chief has on that Stax.
 - It works on that one Stax only, and its access ends when the Chief's does.
@@ -48,6 +46,6 @@ You will grant your Chief of Staff one permission per Stax, `manage_roles`. You 
 - Every role it creates is recorded as created by the Chief. You can end any of them.
 - The Chief can't pass `manage_roles` on. Only you can grant it.
 
-The chain then becomes: **your key → Chief of Staff → role → workers**. You set direction. The Chief staffs the work.
+The chain is: **your key → Chief of Staff → role → workers**. You set direction. The Chief staffs the work.
 
 [See what has been verified](../../docs/shipped-ledger).

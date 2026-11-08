@@ -253,10 +253,10 @@ capabilities:
 
   - id: chief-role-create
     name: The Chief of Staff creates roles on a stax (roles_manage)
-    state: planned
+    state: unverified
     terms: ['role_create', 'manage_roles', 'roles_manage']
-    evidence: "tabstax#1114 slice 1 = PR #1127 (CI green, not merged or deployed, 2026-11-08)"
-    wording: "planned"
+    evidence: "tabstax#1127 migration 20261108140000 applied and mcp deployed from main 1779c06 on 2026-11-08; production tools/list returned role_create and agent_authorize.manage_roles, and role_create without the grant returned ROLES_MANAGE_NOT_GRANTED. A full create has not been walked."
+    wording: "you grant manage_roles once per Stax; the Chief creates roles with role_create"
 
   - id: hosted-pickup
     name: Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap
