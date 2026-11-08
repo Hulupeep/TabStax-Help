@@ -65,8 +65,8 @@ The chain is: **your key → Chief of Staff → role → workers**. You set dire
 <g class="hs-out" style="--d:3.2s">{% include anim/node.html x=240 y=262 label="Codex" kind="surface" w=110 h=32 d=2.5 %}</g>
 {% include anim/node.html x=240 y=262 label="Claude Code" kind="surface" w=110 h=32 d=3.2 %}
 {% include anim/node.html x=398 y=262 label="Hermes" kind="surface" w=110 h=32 d=2.6 %}
-{% include anim/edge.html x1=310 y1=184 x2=325 y2=108 cx=340 cy=150 kind="dispatch" d=3.8 %}
-{% include anim/planned.html x=340 y=116 d=3.8 %}
+{% include anim/edge.html x1=290 y1=164 x2=290 y2=126 kind="write" d=3.8 %}
+{% include anim/planned.html x=400 y=291 d=3.8 %}
 {% include anim/trail.html x=20 y=306 when="10:40" who="@builder" agent="true" what="reported blocked: which price band?" d=3.8 %}
 {% include anim/trail.html x=20 y=330 when="10:42" who="@chief" agent="true" what="answered and assigned it back" d=4.4 %}
 {% endcapture %}

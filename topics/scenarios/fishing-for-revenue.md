@@ -30,22 +30,20 @@ Hubduck has one paying school. The goal is the second. Seventy emails to small s
 {% capture s %}
 {% include anim/node.html x=240 y=30 label="Second paying school" sub="goal on Hubduck BD" kind="record" w=240 %}
 {% include anim/edge.html x1=190 y1=56 x2=82 y2=94 d=0.4 %}
-{% include anim/edge.html x1=240 y1=56 x2=240 y2=94 d=0.5 %}
-{% include anim/edge.html x1=290 y1=56 x2=398 y2=94 d=0.6 %}
 <g class="hs-dim" style="--d:1.8s">
 {% include anim/node.html x=82 y=120 label="Small schools" sub="70 sent, 3 not now" kind="action" w=148 d=0.7 %}
 {% include anim/edge.html x1=82 y1=146 x2=82 y2=172 d=1.0 %}
 {% include anim/node.html x=82 y=190 label="@outreach" kind="agent" w=120 h=32 d=1.1 %}
 </g>
 <g class="hs-trail" style="--d:1.9s"><text x="30" y="226" class="hs-label">Parked, evidence kept</text></g>
+{% include anim/edge.html x1=240 y1=94 x2=240 y2=56 kind="write" d=2.2 %}
 {% include anim/node.html x=240 y=120 label="Large schools" sub="pricing page, then send" kind="action" w=148 d=2.2 %}
 {% include anim/edge.html x1=240 y1=146 x2=240 y2=172 d=2.5 %}
 {% include anim/node.html x=240 y=190 label="@builder" kind="agent" w=120 h=32 d=2.6 %}
+{% include anim/edge.html x1=398 y1=94 x2=290 y2=56 kind="write" d=3.0 %}
 {% include anim/node.html x=398 y=120 label="New policy rules" sub="landing page, 30 leads" kind="action" w=148 d=3.0 %}
 {% include anim/edge.html x1=398 y1=146 x2=398 y2=172 d=3.3 %}
 {% include anim/node.html x=398 y=190 label="@angles" kind="agent" w=120 h=32 d=3.4 %}
-{% include anim/edge.html x1=260 y1=94 x2=260 y2=56 kind="write" d=3.9 %}
-{% include anim/edge.html x1=378 y1=94 x2=300 y2=56 kind="write" d=4.1 %}
 {% include anim/trail.html x=20 y=260 when="Mon" who="@outreach" agent="true" what="parked small schools: 3 not now" d=4.4 %}
 {% include anim/trail.html x=20 y=284 when="Tue" who="@builder" agent="true" what="shipped pricing for 51 to 100 staff" d=4.7 %}
 {% include anim/trail.html x=20 y=308 when="Wed" who="@angles" agent="true" what="opened policy rules angle, 30 leads" d=5.0 %}

@@ -19,10 +19,8 @@ AI can produce astonishing quantities of code, pull requests, documents, message
 {% include anim/node.html x=80 y=242 label="6 drafts" kind="note" h=28 d=0.9 %}
 </g>
 {% include anim/node.html x=330 y=40 label="Mission" sub="Why: build things people pay for" kind="stax" w=280 d=1.8 %}
-{% include anim/edge.html x1=215 y1=66 x2=195 y2=120 cx=190 cy=80 kind="dispatch" d=2.4 %}
-{% include anim/edge.html x1=215 y1=66 x2=195 y2=170 cx=175 cy=110 kind="dispatch" d=2.5 %}
-{% include anim/edge.html x1=215 y1=66 x2=195 y2=220 cx=165 cy=140 kind="dispatch" d=2.6 %}
-<g class="hs-trail" style="--d:2.8s"><text x="200" y="96" class="hs-label">Progress</text></g>
+{% include anim/edge.html x1=300 y1=66 x2=300 y2=100 kind="dispatch" d=2.4 %}
+<g class="hs-trail" style="--d:2.8s"><text x="196" y="92" class="hs-label">Progress</text></g>
 {% include anim/node.html x=270 y=120 label="Email 20 schools" kind="action" w=150 d=2.8 %}
 {% include anim/node.html x=270 y=170 label="Pricing page" kind="action" w=150 d=3.0 %}
 {% include anim/node.html x=270 y=220 label="Book 3 calls" kind="action" w=150 d=3.2 %}

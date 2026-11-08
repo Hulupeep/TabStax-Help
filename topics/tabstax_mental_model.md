@@ -28,13 +28,12 @@ Every stax answers three questions, in this order:
 {% include anim/node.html x=82 y=114 label="10 paying schools" sub="goal: Hubduck" kind="record" w=148 d=0.6 %}
 {% include anim/node.html x=240 y=114 label="First book sale" sub="goal: Waymarks" kind="record" w=148 d=0.8 %}
 {% include anim/node.html x=398 y=114 label="20 Pro users" sub="goal: HeyStax" kind="record" w=148 d=1.0 %}
-{% include anim/edge.html x1=82 y1=140 x2=82 y2=172 d=1.4 %}
+{% include anim/edge.html x1=82 y1=172 x2=82 y2=140 kind="write" d=1.4 %}
 {% include anim/edge.html x1=240 y1=140 x2=240 y2=172 d=1.6 %}
 {% include anim/edge.html x1=398 y1=140 x2=398 y2=172 d=1.8 %}
 {% include anim/node.html x=82 y=198 label="Email 20 schools" sub="@outreach" kind="action" w=148 d=1.6 %}
 {% include anim/node.html x=240 y=198 label="Make one book" sub="@book-maker" kind="action" w=148 d=1.8 %}
 {% include anim/node.html x=398 y=198 label="Fix signup bug" sub="Claude Code" kind="action" w=148 d=2.0 %}
-{% include anim/edge.html x1=50 y1=172 x2=50 y2=140 kind="write" d=2.8 %}
 {% include anim/trail.html x=20 y=256 when="14:10" who="@outreach" agent="true" what="reported done: 20 sent" d=2.6 %}
 {% include anim/trail.html x=20 y=280 when="14:12" who="You" what="asked: did the goal move?" d=3.2 %}
 {% endcapture %}
