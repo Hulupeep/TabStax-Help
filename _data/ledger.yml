@@ -239,9 +239,23 @@ capabilities:
 
   - id: agent-run-leases
     name: Claim leases that expire when an agent run dies
-    state: planned
+    state: unverified
     terms: ['\bleases?\b']
-    evidence: "Design on tabstax branch spec/agent-runs-leases, Gate A passed with stipulations, not built (2026-11-02)"
+    evidence: "tabstax#1071 migrations applied to production and mcp v32 deployed from main 8c105788 on 2026-11-08; production tools/list returned run_start, run_heartbeat and run_end; lease sweep cron runs every 30 s. Not walked in a browser."
+    wording: "a claim made inside a run is leased; if the run stops sending heartbeats the claim is released"
+
+  - id: agent-worker-tokens
+    name: Worker tokens, one per machine, enrolled with the role's own token
+    state: unverified
+    terms: ['worker_register', 'worker tokens?']
+    evidence: "Production tools/list returned worker_register on 2026-11-08 (mcp v32, tabstax#1071). A PAT is refused and a worker token cannot enroll another worker. Not walked end to end."
+    wording: "a role enrolls each machine it runs on as a worker with worker_register"
+
+  - id: chief-role-create
+    name: The Chief of Staff creates roles on a stax (roles_manage)
+    state: planned
+    terms: ['role_create', 'manage_roles', 'roles_manage']
+    evidence: "tabstax#1114 slice 1 = PR #1127 (CI green, not merged or deployed, 2026-11-08)"
     wording: "planned"
 
   - id: hosted-pickup
