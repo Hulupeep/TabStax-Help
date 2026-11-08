@@ -9,6 +9,29 @@ description: Mission, Goal, Next Action. One place where people and agents pursu
 
 AI can produce astonishing quantities of code, pull requests, documents, messages and tasks. Activity is not the same as progress. The question that matters is: **Did we achieve what we set out to achieve?**
 
+{% capture s %}
+<g class="hs-trail" style="--d:0s"><text x="20" y="84" class="hs-label">Activity</text></g>
+<g class="hs-dim" style="--d:2.6s">
+{% include anim/node.html x=80 y=106 label="14 PRs" kind="note" h=28 d=0.1 %}
+{% include anim/node.html x=80 y=140 label="500 emails" kind="note" h=28 d=0.3 %}
+{% include anim/node.html x=80 y=174 label="38 tasks" kind="note" h=28 d=0.5 %}
+{% include anim/node.html x=80 y=208 label="9 docs" kind="note" h=28 d=0.7 %}
+{% include anim/node.html x=80 y=242 label="6 drafts" kind="note" h=28 d=0.9 %}
+</g>
+{% include anim/node.html x=330 y=40 label="Mission" sub="Why: build things people pay for" kind="stax" w=280 d=1.8 %}
+{% include anim/edge.html x1=300 y1=66 x2=300 y2=100 kind="dispatch" d=2.4 %}
+<g class="hs-trail" style="--d:2.8s"><text x="196" y="92" class="hs-label">Progress</text></g>
+{% include anim/node.html x=270 y=120 label="Email 20 schools" kind="action" w=150 d=2.8 %}
+{% include anim/node.html x=270 y=170 label="Pricing page" kind="action" w=150 d=3.0 %}
+{% include anim/node.html x=270 y=220 label="Book 3 calls" kind="action" w=150 d=3.2 %}
+{% include anim/edge.html x1=345 y1=120 x2=370 y2=160 kind="write" d=3.6 %}
+{% include anim/edge.html x1=345 y1=170 x2=370 y2=170 kind="write" d=3.7 %}
+{% include anim/edge.html x1=345 y1=220 x2=370 y2=180 kind="write" d=3.8 %}
+<g class="hs-out" style="--d:4.4s">{% include anim/node.html x=420 y=170 label="Paying" sub="customers: 0" kind="record" w=100 d=1.1 %}</g>
+{% include anim/node.html x=420 y=170 label="Paying" sub="customers: 1" kind="record" w=100 d=4.4 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 270" label="A pile of agent activity leaves the goal at zero; a mission picks three moves and the goal moves" caption="On the left, agents produce a pile: pull requests, emails, tasks, docs. The goal stays at zero. Then a mission arrives. It picks three moves that serve it, the pile fades, and the count of paying customers goes from zero to one." svg=s %}
+
 HeyStax is the **operational plane for persistent intent**. Its purpose is to keep the mission, goals, working context, responsibilities, decisions and evidence together as people and AI agents change. It is not a replacement for your coding harness, CRM, communication tools or agent runtime.
 
 ## Three simple primitives

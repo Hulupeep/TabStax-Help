@@ -258,6 +258,20 @@ capabilities:
     evidence: "tabstax#1127 migration 20261108140000 applied and mcp deployed from main 1779c06 on 2026-11-08; production tools/list returned role_create and agent_authorize.manage_roles, and role_create without the grant returned ROLES_MANAGE_NOT_GRANTED. A full create has not been walked."
     wording: "you grant manage_roles once per Stax; the Chief creates roles with role_create"
 
+  - id: chief-wake
+    name: A done or blocked report wakes the Chief of Staff
+    state: planned
+    terms: ['wak(e|es|ing) the Chief', 'Chief (is|gets) woken']
+    evidence: "tabstax#1072 (Chief events) is not built as of 2026-11-08; today the Chief reads blocked and done actions when it runs"
+    wording: "planned; today the Chief checks for blocked and done work when it runs"
+
+  - id: crm-angles
+    name: "Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools)"
+    state: unverified
+    terms: ['crm_\w+', 'angle records?', 'suppression list']
+    evidence: "tabstax#1126 merged and deployed 2026-11-08 13:56; production MCP tools/list includes crm_angle_upsert, crm_campaign_upsert, crm_stage_move, crm_suppression_add and crm_query, and crm_query counts on Hubduck Business Development returned an empty result on 2026-11-08. No angle has been recorded and read back yet."
+    wording: "each angle is kept on the stax with its outcome; opted-out contacts go on a suppression list"
+
   - id: hosted-pickup
     name: Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap
     state: planned
