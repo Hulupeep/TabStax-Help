@@ -29,6 +29,34 @@ Engineering a bridge is important. But building the bridge isn't the reason for 
 
 Persistent AI agents have changed the possibilities. Agents can run in different environments, use different tools and work across different providers. Their mission shouldn't disappear when their provider changes.
 
+Where models are now, I can trust them to build more and more. A site. A web app. A batch of emails to the right schools. What slows them down is waiting for me to approve the next step.
+
+So I stop being the blocker. I give them the mission, I set the fences, and I read what they did in the morning.
+
+{% capture s %}
+<g class="hs-trail" style="--d:0s"><text x="20" y="22" class="hs-label">You approve each step</text></g>
+{% include anim/node.html x=90 y=62 label="Draft ready" sub="18:10" kind="action" w=120 d=0.3 %}
+{% include anim/edge.html x1=150 y1=62 x2=180 y2=62 kind="dispatch" d=0.7 %}
+{% include anim/node.html x=240 y=62 label="Waiting on you" sub="all night" kind="note" w=120 d=0.9 %}
+{% include anim/edge.html x1=300 y1=62 x2=330 y2=62 d=1.3 %}
+{% include anim/node.html x=390 y=62 label="You, 08:00" sub="14 things waiting" kind="person" w=120 d=1.5 %}
+{% include anim/trail.html x=20 y=118 when="Goal" who="Paying schools" what="no change" d=1.9 %}
+<g class="hs-trail" style="--d:2.4s"><text x="20" y="162" class="hs-label">You set the mission</text></g>
+{% include anim/planned.html x=200 y=148 d=2.4 %}
+{% include anim/node.html x=90 y=204 label="Site built" sub="21:00" kind="agent" w=120 d=2.7 %}
+{% include anim/edge.html x1=150 y1=204 x2=180 y2=204 kind="write" d=3.1 %}
+{% include anim/node.html x=240 y=204 label="40 emails sent" sub="23:30" kind="agent" w=120 d=3.3 %}
+{% include anim/edge.html x1=300 y1=204 x2=330 y2=204 kind="write" d=3.7 %}
+{% include anim/node.html x=390 y=204 label="2 replies" sub="06:40" kind="agent" w=120 d=3.9 %}
+<g class="hs-trail" style="--d:4.3s"><text x="20" y="258" class="hs-label">Fences: 50 sends a day, opt-outs honoured, revoke any time</text></g>
+{% include anim/trail.html x=20 y=284 when="08:00" who="You" what="read the night in six lines" d=4.7 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 296" label="Two lanes over the same night: approving each step stalls the work, setting the mission lets it run inside fences" caption="Top lane: the worker finishes a draft at 18:10 and waits for you all night. At 08:00 fourteen things are waiting and the goal has not moved. Bottom lane: the same worker has the mission and fences. It builds a site, sends 40 emails and logs two replies before you wake. You read the trail at 08:00." svg=s %}
+
+{% include badge-planned.html %}
+
+**Coming next:** hosted bots that pick up work on their own while you sleep. Today a worker such as Claude Code or Codex pulls work when it is started, and every step it takes is on the stax trail.
+
 So I've started using HeyStax as an **operational plane for continuous commercial pursuit**.
 
 Start with a product, find customers who need it, and pursue a sale. Or start with a customer problem, find a solution, deliver it and get paid. Or discover an underserved niche. Or exploit a short-lived opportunity.
