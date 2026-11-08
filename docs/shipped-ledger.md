@@ -16,9 +16,9 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 14 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 10 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 11 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 8 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
 
 ## Live
 
@@ -53,6 +53,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | @glenda, the HeyStax guide agent | @glenda | Migration 20260928140000_glenda_agent.sql (#926); @glenda present on a prod stax; behaviour not observed |
 | Claim leases that expire when an agent run dies | a claim made inside a run is leased; if the run stops sending heartbeats the claim is released | tabstax#1071 migrations applied to production and mcp v32 deployed from main 8c105788 on 2026-11-08; production tools/list returned run_start, run_heartbeat and run_end; lease sweep cron runs every 30 s. Not walked in a browser. |
 | Worker tokens, one per machine, enrolled with the role's own token | a role enrolls each machine it runs on as a worker with worker_register | Production tools/list returned worker_register on 2026-11-08 (mcp v32, tabstax#1071). A PAT is refused and a worker token cannot enroll another worker. Not walked end to end. |
+| The Chief of Staff creates roles on a stax (roles_manage) | you grant manage_roles once per Stax; the Chief creates roles with role_create | tabstax#1127 migration 20261108140000 applied and mcp deployed from main 1779c06 on 2026-11-08; production tools/list returned role_create and agent_authorize.manage_roles, and role_create without the grant returned ROLES_MANAGE_NOT_GRANTED. A full create has not been walked. |
 
 ## Partial
 
@@ -74,7 +75,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | @heystax/hey CLI package | do not tell readers to install @heystax/hey yet | cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25) |
 | Automatic HookTunnel delivery and @mention dispatch to worker agents | automatic delivery is planned; start or poll a worker for current pickup | tabstax#1008/#1006 and hooktunnel-web#170 are parked; mcp v28 supports manual/poll pickup, not signed push delivery (2026-10-26) |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
-| The Chief of Staff creates roles on a stax (roles_manage) | planned | tabstax#1114 slice 1 = PR #1127 (CI green, not merged or deployed, 2026-11-08) |
 | Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap | planned | tabstax#1015, #1016, blocked on #995 |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
@@ -112,3 +112,4 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] @glenda, the HeyStax guide agent
 - [ ] Claim leases that expire when an agent run dies
 - [ ] Worker tokens, one per machine, enrolled with the role's own token
+- [ ] The Chief of Staff creates roles on a stax (roles_manage)
