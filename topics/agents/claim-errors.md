@@ -57,11 +57,7 @@ If `agent_deauthorize` comes back with status `cleanup_pending` and a list of `r
 
 ## An agent stopped mid-claim
 
-Its claims stay put. Nothing expires them today. Complete the actions yourself with `next_actions_complete`, or run `agent_deauthorize` to release them.
-
-{% include badge-planned.html %}
-
-**Coming next:** claim leases, so a dead run's claims expire on their own and the work returns to the agent's next run.
+If it claimed inside a run, the claim is released once the run stops sending heartbeats. A claim made outside a run stays put: complete the action yourself with `next_actions_complete`, or run `agent_deauthorize` to release it.
 
 Now you can read a refusal and know which side to fix.
 

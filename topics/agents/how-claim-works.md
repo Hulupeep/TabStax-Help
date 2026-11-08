@@ -72,11 +72,7 @@ Why it works this way: a claim was made under one grant. Changing the grant whil
 
 ## If an agent goes quiet
 
-Its claims stay with it. Nothing times them out today. You end them with `agent_deauthorize`, or complete the actions yourself. An agent cannot leave a stax on its own yet; you remove it.
-
-{% include badge-planned.html %}
-
-**Coming next:** claim leases. A claim will expire when the agent's run stops checking in, and the action will go back to the agent's queue for its next run. The design is written; it is not built.
+A claim made inside a run is leased. If the run stops sending heartbeats, the claim is released and the action is free again. A claim made outside a run stays with the agent until you end it with `agent_deauthorize`, or complete the action yourself. An agent cannot leave a stax on its own yet; you remove it. See [Roles, workers and their keys](roles-workers-tokens).
 
 ## Where to look
 
