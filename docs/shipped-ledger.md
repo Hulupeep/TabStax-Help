@@ -8,17 +8,17 @@ search_exclude: true
 
 # Shipped ledger
 
-Last checked: 2026-11-02. Source: `_data/ledger.yml`.
+Last checked: 2026-11-09. Source: `_data/ledger.yml`.
 
 Help pages may only describe what this ledger says is live. `scripts/check_truth.py` enforces it on every pull request.
 
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 14 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 17 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 9 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
 
 ## Live
 
@@ -26,7 +26,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | Web dashboard | the HeyStax dashboard at dash.heystax.ai | https://dash.heystax.ai/ and /attention return 200 (2026-10-25) |
 | TabStax Chrome extension (save and reopen tabs for a stax) | the TabStax extension for Chrome | Chrome Web Store listing 'TabStax - Pick up where your mind left off' returns 200 (2026-10-25) |
-| hey CLI | the hey CLI (npm install -g tabstax-cli) | npm tabstax-cli latest 0.1.11, published 2026-03-09 |
+| hey CLI | the hey CLI (npm i heystax-cli) | npm registry on 2026-11-09: heystax-cli latest 0.1.13 (published 2026-03-14, bin hey); tabstax-cli stops at 0.1.11 (2026-03-09) |
 | MCP server | https://dash.heystax.ai/api/mcp (SSE: https://dash.heystax.ai/api/mcp/sse) | https://dash.heystax.ai/api/mcp returns 200; /api/mcp/sse returns 401 without auth; dash.tabstax.app/api/mcp 301-redirects to dash.heystax.ai (2026-10-25) |
 | Claude.ai and Claude Code connect over MCP | Claude.ai and Claude Code | same endpoint as mcp-endpoint; connector pages exist (topics/mcp-claude-ai.md, topics/mcp-claude-code.md) |
 | ChatGPT connects over MCP | ChatGPT | TabStax stax goal: ChatGPT MCP connector (tabstax#546) production-verified 2026-04-28; same endpoint live 2026-10-25 |
@@ -38,6 +38,9 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Attention lanes (Must, Should, Good, Meh) | Must, Should, Good, Meh | stax_get returns attention.priority and lane_position (2026-10-25) |
 | Weekly timesheets per stax | timesheets at time.heystax.ai | https://time.heystax.ai/time returns 200 (2026-10-25) |
 | Agents listed as people on a stax with an @handle | agents appear on the people list | stax_get on the TabStax stax lists @glenda with role agent (2026-10-25) |
+| Go-ahead for work that cannot be undone (needs_go_ahead, next_actions_go_ahead) | flag an action needs_go_ahead and nobody can claim it until you or your Chief of Staff gives the go-ahead | tabstax#1134 merged 2026-11-08. Production MCP tools/list seen through a connected HeyStax client on 2026-11-09: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action has been approved in a browser yet. |
+| Plan state on a next action: state, waiting_on, next_check, done_when | say where an action stands: next, decision, waiting, blocked or parked, who it waits on, when to look again, and how anyone can tell it is done | tabstax#1124 merged 2026-11-08; production MCP next_actions_add schema on 2026-11-09 has state (next, decision, waiting, blocked, parked), waiting_on, next_check and done_when; webapps #273 (plan state on List cards) production deployment READY for 0b2d522 (Vercel, 2026-11-09) |
+| Goal board: moves toward a goal per stax, with gap-to-action generator (goal_board, readiness_set, crm_scan_report) | the goal board lists each move toward the goal and opens one next action per gap | tabstax#1136 merged 2026-11-08; production MCP tools/list on 2026-11-09 includes goal_board, goal_board_configure, readiness_set and crm_scan_report; webapps #277 production deployment READY for 52decfd (Vercel, 2026-11-09). Not walked in a browser. |
 
 ## Unverified
 
@@ -69,13 +72,14 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Memory capture and import (tabstax#932-934) | schema live; user journey unverified | All four 20261005 migrations applied and catalog-verified on 2026-10-25; fresh MCP behaviour check remains |
 | Push wake to a launcher's URL when work is assigned (works today); @mention dispatch (planned) | a launcher with a push URL is woken when work is assigned to its agent; an @mention does not wake anyone yet | Production MCP tools/list on 2026-11-09 includes launcher_register (push_url) and push_deliveries_list (#1008 push audit); tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. An @mention still does not wake anyone. |
 | Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report | agent peer commands are discoverable; claim/report and browser journey still need verification | Root PR #995 merged; mcp ACTIVE v28. Authenticated production initialize → initialized → tools/list returned all six names on 2026-10-26 (evidence/agent-peer-tools-list-2026-10-26.json); agent calls and owner/worker browser journey remain unverified (help #36). Claim/report races are tracked in tabstax#1011 |
-| One column per agent on the stax page | web code deployed; signed-in display still to verify | webapps PR #198 merged and its main production deployment READY on 2026-10-25; signed-in agent-column browser check remains (help #36) |
+| One column per agent on the stax page | web code deployed; signed-in display still to verify | webapps PR #198 merged and its main production deployment READY on 2026-10-25; webapps #276 (who is home on each agent column) production deployment READY for 8823897 (Vercel, 2026-11-09); signed-in agent-column browser check remains (help #36) |
 | Claim rules for agents: owner access levels (read, work, full), five open claims per stax, locked once claimed, deauthorize releases claims, re-authorize refused while claims are open | claim rules are in production; the owner and two-agent journey still needs a browser check | tabstax main 74fbf44: migrations 20261027104402 (grants), 20261027201500 (claim/report), 20261028021204 and 20261028021206 (authority end), 20261029154500 (rejoin guard), 20261029200000 (add/assign); mcp agent-authorize.ts and agent-peers.ts. Release applied to production 2026-11-02. No owner or two-agent browser journey verified yet (help #50) |
 
 ## Planned
 
 | Capability | Docs wording | Evidence |
 |---|---|---|
+| hey listen and hey run: CLI workers that wait for work | planned until a new heystax-cli is published | tabstax#1132 merged 2026-11-08; the published heystax-cli 0.1.13 tarball has no listen or run command (npm, 2026-11-09) |
 | @heystax/hey CLI package | do not tell readers to install @heystax/hey yet | cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25) |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | The /heystax-connect plugin that installs a listener with one question | planned | tabstax#1015; not confirmed in production as of 2026-11-09 |
@@ -113,6 +117,9 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] A page in the dashboard showing the audit trail
 - [ ] Agents listed as people on a stax with an @handle
 - [ ] @glenda, the HeyStax guide agent
+- [ ] Go-ahead for work that cannot be undone (needs_go_ahead, next_actions_go_ahead)
+- [ ] Plan state on a next action: state, waiting_on, next_check, done_when
+- [ ] Goal board: moves toward a goal per stax, with gap-to-action generator (goal_board, readiness_set, crm_scan_report)
 - [ ] Claim leases that expire when an agent run dies
 - [ ] Worker tokens, one per machine, enrolled with the role's own token
 - [ ] The Chief of Staff creates roles on a stax (roles_manage)
