@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Keys, roles and wakes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one column. Animated scene player first (keys, Chief, roles, workers, wakes, events), then the reference tables. Same palette as v1. */
+:root{--bg:#f7f6f2;--fg:#1d2026;--muted:#5e6572;--line:#d9d6cd;--surface:#fff;--owner:#b7791f;--agent:#c2562e;--worker:#2f6fbf;--hook:#0f7b80;--plan:#6b4fbb;--ok:#1f7a4d;--bad:#b83a2e;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--plan:#b49cf5;--ok:#58c48d;--bad:#f07a6c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--plan:#b49cf5;--ok:#58c48d;--bad:#f07a6c;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:2px 2px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font-size:32px;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:20px;margin:0 0 10px;text-wrap:balance}
+p{margin:0;max-width:72ch}
+.lede{color:var(--muted);margin-top:6px}
+code{font:14px var(--mono)}
+.scroll{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:15px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.k-owner{color:var(--owner);font-weight:700}.k-agent{color:var(--agent);font-weight:700}.k-worker{color:var(--worker);font-weight:700}
+.tag{font:600 12px var(--mono);padding:2px 8px;border-radius:999px;white-space:nowrap;display:inline-block}
+.live{color:var(--ok);border:1px solid var(--ok)}.review{color:var(--owner);border:1px dashed var(--owner)}.planned{color:var(--plan);border:1px dashed var(--plan)}
+ul,ol{margin:0;padding-left:22px;max-width:78ch}li{margin:6px 0}
+
+/* player */
+.player{background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding:12px;border-bottom:1px solid var(--line)}
+.tabs button{font:600 13px var(--sans);background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tabs button:focus-visible,.ctl button:focus-visible{outline:2px solid var(--worker);outline-offset:2px}
+.head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;padding:14px 16px 0}
+.head h3{margin:0;font-size:19px}
+svg{display:block;width:100%;height:auto}
+.stage{padding:4px 8px}
+.ctl{display:flex;gap:10px;align-items:center;padding:0 16px 10px}
+.ctl button{font:600 13px var(--mono);background:var(--fg);color:var(--bg);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
+.ctl button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--fg)}
+.steps{list-style:none;margin:0;padding:4px 16px 16px;display:flex;flex-direction:column;gap:2px;max-width:none}
+.steps li{margin:0;padding:6px 10px;border-radius:8px;color:var(--muted);transition:color .3s,background .3s}
+.steps li.now{color:var(--fg);background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.steps li.done{color:var(--fg)}
+.node rect{fill:var(--surface);stroke-width:2}
+.node .t{font:700 15px var(--sans);fill:var(--fg)}
+.node .s{font:400 12.5px var(--mono);fill:var(--muted)}
+.edge{stroke:var(--line);stroke-width:1.5;fill:none}
+.pk rect{stroke:none}.pk text{font:600 12px var(--mono);fill:#fff}
+@media (prefers-reduced-motion: reduce){.steps li{transition:none}}
+</style>
+<style>body{margin:0;padding-left:0;padding-right:0}</style>
+</head><body>
+<section class="player" aria-label="Animated walkthrough">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="head"><h3 id="st"></h3><span id="sg" class="tag"></span></div>
+  <div class="stage"><svg id="sv" role="img" aria-labelledby="st"></svg></div>
+  <div class="ctl"><button id="pp" type="button">Pause</button><button id="rs" class="ghost" type="button">Replay</button><div class="bar"><i id="pb"></i></div></div>
+  <ol class="steps" id="steps"></ol>
+</section>
+<script>
+(()=>{
+// kinds: owner agent worker hook plan neutral bad
+const SC=[
+{id:'pat',tab:'1 · Your PAT',title:'Your PAT makes the Chief',tag:['live','in production'],
+ nodes:[{id:'you',c:0,r:1,t:'You',s:'PAT tabstax_…',k:'owner'},{id:'hs',c:2,r:1,t:'HeyStax',s:'MCP',k:'neutral'},{id:'ch',c:4,r:1,t:'@chief-of-staff',s:'not made yet',k:'agent'}],
+ beats:[{t:1.5,chip:'ch',s:'tsk_live_…'},{t:.3,a:'you',b:'hs',l:'agent_register'},{t:1.3,a:'hs',b:'ch',l:'tsk_live_ (shown once)',k:'agent'},
+  {t:3.4,a:'you',b:'hs',l:'agent_authorize'},{t:4.4,a:'hs',b:'ch',l:'manage_roles · go_ahead',k:'agent'},{t:5.5,chip:'ch',s:'tsk_live_…\n+ manage_roles · go_ahead'}],
+ steps:[[0,'You hold the PAT. It can do everything, so it never goes into a bot.'],[.3,'agent_register makes a role. Its key starts tsk_live_ and is shown once.'],[3.4,'agent_authorize lets that role work on one stax, at read, work or full access.'],[4.4,'Two extra flags make it the Chief on that stax: manage_roles and go_ahead. Same token type, more power.']]},
+{id:'roles',tab:'2 · Chief makes roles',title:'The Chief creates roles',tag:['live','in production #1114'],
+ nodes:[{id:'ch',c:0,r:1,t:'@chief-of-staff',s:'manage_roles',k:'agent'},{id:'hs',c:2,r:1,t:'HeyStax',s:'0 of 10 roles',k:'neutral'},
+  {id:'r1',c:4,r:0,t:'@hubduck-bd',s:'',k:'agent'},{id:'r2',c:4,r:1,t:'@hubduck-research',s:'',k:'agent'},{id:'r3',c:4,r:2,t:'@builder',s:'',k:'agent'}],
+ beats:[{t:.3,a:'ch',b:'hs',l:'role_create'},{t:1.3,a:'hs',b:'r1',l:'tsk_live_',k:'agent'},{t:2.4,chip:'r1',s:'tsk_live_ · work'},{t:2.4,chip:'hs',s:'1 of 10 roles'},
+  {t:2.6,a:'ch',b:'hs',l:'role_create'},{t:3.6,a:'hs',b:'r2',l:'tsk_live_',k:'agent'},{t:4.7,chip:'r2',s:'tsk_live_ · read'},{t:4.7,chip:'hs',s:'2 of 10 roles'},
+  {t:4.9,a:'ch',b:'hs',l:'role_create'},{t:5.9,a:'hs',b:'r3',l:'tsk_live_',k:'agent'},{t:7,chip:'r3',s:'tsk_live_ · work'},{t:7,chip:'hs',s:'3 of 10 roles'},
+  {t:7.4,a:'ch',b:'hs',l:'role_create + go_ahead',k:'bad',bounce:1}],
+ steps:[[0,'With manage_roles, the Chief can add roles to the stax without your PAT.'],[.3,'Each role_create makes a new role with its own tsk_live_ key.'],[2.6,'A role never gets more access than the Chief has.'],[4.9,'The cap is 10 active roles per stax.'],[7.4,'It can never hand on manage_roles or go_ahead. That call is refused.']]},
+{id:'workers',tab:'3 · Workers',title:'A role enrolls its workers',tag:['live','in production #1071'],
+ nodes:[{id:'ro',c:0,r:1,t:'@builder',s:'role · tsk_live_',k:'agent'},{id:'hs',c:2,r:1,t:'HeyStax',s:'worker_register',k:'neutral'},
+  {id:'w1',c:4,r:0,t:'Minisforum',s:'',k:'worker'},{id:'w2',c:4,r:1,t:'Laptop',s:'',k:'worker'},{id:'w3',c:4,r:2,t:'Codex cloud',s:'',k:'worker'}],
+ beats:[{t:.3,a:'ro',b:'hs',l:'worker_register'},{t:1.3,a:'hs',b:'w1',l:'tsw_live_',k:'worker'},{t:2.4,chip:'w1',s:'tsw_live_ · live'},
+  {t:2.2,a:'ro',b:'hs',l:'worker_register'},{t:3.2,a:'hs',b:'w2',l:'tsw_live_',k:'worker'},{t:4.3,chip:'w2',s:'tsw_live_ · live'},
+  {t:4.1,a:'ro',b:'hs',l:'worker_register'},{t:5.1,a:'hs',b:'w3',l:'tsw_live_',k:'worker'},{t:6.2,chip:'w3',s:'tsw_live_ · live'},
+  {t:7.4,a:'hs',b:'w2',l:'revoke',k:'bad'},{t:8.5,chip:'w2',s:'revoked'}],
+ steps:[[0,'The role is the job. Each machine that does the job gets its own worker key.'],[.3,'worker_register runs once per machine. No person approves it.'],[4.1,'The board shows @builder. Runs and leases show which worker did the work.'],[7.4,'Lose the laptop? Revoke that one worker. The others carry on and the role keeps its history.']]},
+{id:'push',tab:'4 · HookTunnel wake',title:'A hosted bot gets a push wake',tag:['live','in production since 9 Nov'],
+ nodes:[{id:'bd',c:0,r:1,t:'Stax',s:'card for @hubduck-bd',k:'neutral'},{id:'ht',c:2,r:1,t:'HookTunnel',s:'signed push',k:'hook'},
+  {id:'bot',c:4,r:1,t:'Grok Bot',s:'worker of @hubduck-bd',k:'worker'},{id:'au',c:2,r:2,t:'Delivery log',s:'push_deliveries_list',k:'neutral'}],
+ beats:[{t:.3,a:'bd',b:'ht',l:'card assigned'},{t:1.5,a:'ht',b:'bot',l:'wake · IDs only',k:'hook',bounce:1},{t:2.7,a:'ht',b:'au',l:'no 2xx',k:'bad'},
+  {t:3.4,chip:'ht',s:'retry in 1 min'},{t:3.6,a:'ht',b:'bot',l:'retry 1 min',k:'hook',bounce:1},{t:4.8,chip:'ht',s:'retry in 5 min'},
+  {t:5,a:'ht',b:'bot',l:'retry 5 min',k:'hook'},{t:6.2,chip:'bot',s:'awake'},{t:6.2,chip:'ht',s:'delivered'},{t:6.3,a:'ht',b:'au',l:'2xx',k:'worker'},
+  {t:7.4,a:'bot',b:'bd',l:'claim · report done',k:'worker'}],
+ steps:[[0,'A card lands on a role that a hosted bot fills.'],[1.5,'HookTunnel sends a signed wake. It carries IDs only, never the card text.'],[2.7,'No 2xx back? It retries at 1, 5 and 30 minutes.'],[6.3,'Every attempt is written down. push_deliveries_list shows them.'],[7.4,'The bot reads the card with its own key, claims it and reports.']]},
+{id:'listen',tab:'5 · hey listen',title:'A CLI worker listens for work',tag:['review','merged, install from the repo'],
+ nodes:[{id:'bd',c:0,r:1,t:'Stax',s:'cards for @builder',k:'neutral'},{id:'li',c:2,r:1,t:'hey listen',s:'your machine\ntsw_live_',k:'worker'},{id:'cx',c:4,r:1,t:'claude or codex',s:'child process',k:'worker'}],
+ beats:[{t:.3,a:'li',b:'bd',l:'wait_for_work',k:'worker'},{t:1.4,chip:'li',s:'waiting\noutbound only'},{t:3,a:'bd',b:'li',l:'card arrives'},
+  {t:4.2,a:'li',b:'bd',l:'run_start · claim',k:'worker'},{t:5.3,a:'li',b:'cx',l:'start on card',k:'worker'},{t:6.4,chip:'cx',s:'working'},
+  {t:7.6,a:'cx',b:'li',l:'exit 0'},{t:8.7,a:'li',b:'bd',l:'report · run_end',k:'worker'},{t:9.8,chip:'cx',s:'child process'},{t:9.8,chip:'li',s:'your machine\ntsw_live_'}],
+ steps:[[0,'hey listen runs on your machine with a worker key.'],[.3,'It calls wait_for_work and holds the line open. Outbound only, no open ports.'],[3,'A card arrives. It starts a run and claims the card.'],[5.3,'It starts claude or codex as a child process on that card.'],[7.6,'When the child finishes, it reports done and ends the run.']]},
+{id:'events',tab:'6 · Events wake the Chief',title:'Events wake the Chief',tag:['live','in production #1072 #1073'],
+ nodes:[{id:'a',c:0,r:0,t:'@builder',s:'live',k:'worker'},{id:'b',c:0,r:1,t:'@hubduck-bd',s:'live',k:'worker'},{id:'n',c:0,r:2,t:'@timebreez-bot',s:'live',k:'worker'},
+  {id:'ev',c:2,r:1,t:'Events',s:'agent_events_list',k:'neutral'},{id:'ch',c:4,r:1,t:'@chief-of-staff',s:'idle',k:'agent'}],
+ beats:[{t:.3,a:'a',b:'ev',l:'run_ended',k:'worker'},{t:1.4,a:'ev',b:'ch',l:'run_ended',k:'agent'},{t:2.5,chip:'ch',s:'files next card'},
+  {t:2.9,chip:'b',s:'queue empty'},{t:3,a:'b',b:'ev',l:'queue_empty',k:'worker'},{t:4.1,a:'ev',b:'ch',l:'queue_empty',k:'agent'},{t:5.2,chip:'ch',s:'feeds the role'},
+  {t:5.6,chip:'n',s:'nobody home'},{t:5.7,a:'n',b:'ev',l:'no_one_home',k:'bad'},{t:6.8,a:'ev',b:'ch',l:'no_one_home',k:'agent'},{t:7.9,chip:'ch',s:'reroutes or flags you'}],
+ steps:[[0,'run_ended: a worker finished. The Chief checks the report and files the next card.'],[2.9,'queue_empty: a role ran out of work. The Chief feeds it from the goal.'],[5.6,'no_one_home: a card waits on a role with no live worker. The Chief reroutes it or flags it.'],[7.9,'The board shows live, missed or nobody home per role. You can pause a role or cap its runs per hour.']]},
+{id:'go',tab:'7 · Go-ahead',title:'Irreversible work waits for a go-ahead',tag:['live','in production #1134'],
+ nodes:[{id:'ro',c:0,r:1,t:'@builder',s:'proposes',k:'agent'},{id:'cd',c:2,r:1,t:'Card',s:'apply prod migration',k:'neutral'},
+  {id:'ch',c:4,r:0,t:'@chief-of-staff',s:'go_ahead',k:'agent'},{id:'you',c:4,r:2,t:'You',s:'PAT',k:'owner'}],
+ beats:[{t:.3,a:'ro',b:'cd',l:'needs go-ahead',k:'agent'},{t:1.4,chip:'cd',s:'waiting for go-ahead'},{t:2.4,a:'ch',b:'cd',l:'go_ahead',k:'agent'},{t:3.5,chip:'cd',s:'cleared · runs'},
+  {t:5,chip:'cd',s:'Chief proposed this one'},{t:5.2,a:'ch',b:'cd',l:'go_ahead on own card',k:'bad',bounce:1},{t:6.6,a:'you',b:'cd',l:'go_ahead',k:'owner'},{t:7.7,chip:'cd',s:'cleared · runs'}],
+ steps:[[0,'Only irreversible work waits. Everything else runs without asking.'],[2.4,'The Chief can give the go-ahead on work someone else proposed.'],[5,'It can never approve its own proposal, or work assigned to it.'],[6.6,'You can always give it with your PAT.']]},
+{id:'connect',tab:'8 · hey connect',title:'One-step setup for any CLI',tag:['planned','planned, in review #1144'],
+ nodes:[{id:'you',c:0,r:1,t:'You',s:'paste a key once',k:'owner'},{id:'cn',c:2,r:1,t:'hey connect',s:'which stax?',k:'plan'},
+  {id:'tk',c:4,r:0,t:'worker.token',s:'saved 0600',k:'plan'},{id:'ag',c:4,r:2,t:'AGENTS.md',s:'standing order',k:'plan'}],
+ beats:[{t:.3,a:'you',b:'cn',l:'PAT, role or worker key',k:'owner'},{t:1.4,chip:'cn',s:'which stax?\nwhich role?'},{t:2.6,a:'cn',b:'tk',l:'tsw_live_',k:'plan'},
+  {t:3.7,chip:'cn',s:'pasted key not saved'},{t:4,a:'cn',b:'ag',l:'tell HeyStax',k:'plan'},{t:5.6,chip:'ag',s:'hey task start\nnote · done'},{t:7.2,chip:'tk',s:'hey listen --install'}],
+ steps:[[0,'hey connect asks for a key once: your PAT, a role key or a worker key.'],[1.4,'It asks which stax, and which role only if there are several.'],[2.6,'It saves a worker key on the machine. The key you pasted is not kept.'],[4,'It writes the standing order: whatever you do, tell HeyStax.'],[5.6,'hey task start puts self-started work on the board. note adds branch and PR. done closes it.'],[7.2,'hey listen --install keeps the worker running in the background. All of this is in review, not merged.']]}
+];
+const NS='http://www.w3.org/2000/svg',sv=document.getElementById('sv');
+const mq=matchMedia('(max-width: 640px)');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cur=0,t0=performance.now(),paused=false,pauseAt=0,auto=true;
+const NW=170,NH=64;
+function pos(n){return mq.matches?{x:n.r*190,y:n.c*100}:{x:n.c*175,y:n.r*112};}
+function el(tag,at,par){const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(par)par.appendChild(e);return e;}
+function col(k){return `var(--${k==='neutral'?'muted':k})`;}
+function dur(s){let m=0;for(const b of s.beats)m=Math.max(m,b.t+(b.a?1.2:0));return m+2.2;}
+let G={};
+function build(){
+  const s=SC[cur];const ps=s.nodes.map(pos),xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);const x0=Math.min(...xs)-NW/2-12,y0=Math.min(...ys)-NH/2-40;
+  sv.setAttribute('viewBox',`${x0} ${y0} ${Math.max(...xs)+NW/2+12-x0} ${Math.max(...ys)+NH/2+16-y0}`);sv.innerHTML='';
+  const N={};s.nodes.forEach(n=>N[n.id]=n);
+  const eg=el('g',{},sv),seen={};
+  s.beats.forEach(b=>{if(!b.a)return;const k=[b.a,b.b].sort().join();if(seen[k])return;seen[k]=1;const A=pos(N[b.a]),B=pos(N[b.b]);el('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,class:'edge'},eg);});
+  G.nodes={};
+  s.nodes.forEach(n=>{const p=pos(n),g=el('g',{class:'node'},sv);
+    const r=el('rect',{x:p.x-NW/2,y:p.y-NH/2,width:NW,height:NH,rx:10,style:`stroke:${col(n.k)}`},g);
+    if(n.k==='plan')r.setAttribute('stroke-dasharray','6 4');
+    const t=el('text',{x:p.x,y:p.y-8,'text-anchor':'middle',class:'t'},g);t.textContent=n.t;
+    const s1=el('text',{x:p.x,y:p.y+11,'text-anchor':'middle',class:'s'},g),s2=el('text',{x:p.x,y:p.y+26,'text-anchor':'middle',class:'s'},g);
+    G.nodes[n.id]={n,r,s1,s2,last:null};});
+  G.pk=s.beats.filter(b=>b.a).map(b=>{const g=el('g',{class:'pk',opacity:0},sv);const tw=b.l.length*7.4+18;
+    el('rect',{x:-tw/2,y:-12,width:tw,height:24,rx:12,style:`fill:${col(b.k||'owner')}`},g);
+    const tx=el('text',{x:0,y:4,'text-anchor':'middle'},g);tx.textContent=b.l;if(!b.k)g.querySelector('rect').style.fill='var(--fg)',tx.style.fill='var(--bg)';
+    return {b,g,A:pos(N[b.a]),B:pos(N[b.b])};});
+  document.getElementById('st').textContent=s.title;
+  const sg=document.getElementById('sg');sg.textContent=s.tag[1];sg.className='tag '+s.tag[0];
+  const ol=document.getElementById('steps');ol.innerHTML='';G.steps=s.steps.map(([a,txt])=>{const li=document.createElement('li');li.textContent=txt;ol.appendChild(li);return {a,li};});
+  document.querySelectorAll('#tabs button').forEach((b,i)=>b.setAttribute('aria-selected',i===cur));
+  G.dur=dur(s);
+}
+function ease(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+function render(t){
+  const s=SC[cur];
+  for(const id in G.nodes){const o=G.nodes[id];let sub=o.n.s;for(const b of s.beats)if(b.chip===id&&t>=b.t)sub=b.s;
+    if(sub!==o.last){const [l1,l2]=(sub||'').split('\n');o.s1.textContent=l1||'';o.s2.textContent=l2||'';o.s1.setAttribute('y',l2?pos(o.n).y+11:pos(o.n).y+16);o.last=sub;
+      o.s1.style.fill=/revoked|nobody|refused|no 2xx/.test(sub)?'var(--bad)':'';}
+    let hit=false;for(const p of G.pk){const e=p.b.t+1.2;if(p.b.b===id&&!p.b.bounce&&t>=e&&t<e+.6)hit=true;}
+    o.r.setAttribute('stroke-width',hit?4:2);}
+  for(const p of G.pk){const d=t-p.b.t;if(d<0||d>1.6){p.g.setAttribute('opacity',0);continue;}
+    let u=Math.min(d/1.2,1);if(p.b.bounce)u=u<.55?u/.55*.6:(1-(u-.55)/.45)*.6;u=ease(Math.max(0,u));
+    const x=p.A.x+(p.B.x-p.A.x)*u,y=p.A.y+(p.B.y-p.A.y)*u-(p.A.y===p.B.y?0:0);
+    p.g.setAttribute('transform',`translate(${x},${y-(p.A.y===p.B.y?22:0)})`);p.g.setAttribute('opacity',d>1.2?Math.max(0,1-(d-1.2)/.4):Math.min(1,d/.15));}
+  let k=-1;G.steps.forEach((st,i)=>{if(t>=st.a)k=i;});
+  G.steps.forEach((st,i)=>{st.li.className=i===k?'now':i<k?'done':'';});
+  document.getElementById('pb').style.width=Math.min(100,t/G.dur*100)+'%';
+}
+function go(i){cur=(i+SC.length)%SC.length;build();t0=performance.now();if(paused)pauseAt=0;render(reduce?G.dur:0);try{history.replaceState(null,'','#'+SC[cur].id);}catch(e){}}
+function tick(now){if(!paused){const t=(now-t0)/1000;if(t>G.dur){if(auto)go(cur+1);else t0=now;}else render(t);}requestAnimationFrame(tick);}
+const tabs=document.getElementById('tabs');
+SC.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=s.tab;b.onclick=()=>{go(i);};tabs.appendChild(b);});
+const pp=document.getElementById('pp');
+pp.onclick=()=>{if(paused){paused=false;t0=performance.now()-pauseAt*1000;pp.textContent='Pause';}else{paused=true;pauseAt=(performance.now()-t0)/1000;pp.textContent='Play';}};
+document.getElementById('rs').onclick=()=>{go(cur);if(paused)pp.click();};
+mq.addEventListener('change',()=>{build();});
+const h=location.hash.slice(1),hi=SC.findIndex(s=>s.id===h);
+go(hi>=0?hi:0);
+window.__renderAt=(id,t)=>{const i=SC.findIndex(s=>s.id===id);paused=true;cur=i;build();render(t);};
+if(reduce){paused=true;pp.textContent='Play';render(G.dur);}
+requestAnimationFrame(tick);
+})();
+</script>
+<script>
+(()=>{function post(){try{parent.postMessage({hsKeysHeight:document.documentElement.scrollHeight},'*');}catch(e){}}
+new ResizeObserver(post).observe(document.body);addEventListener('load',post);})();
+</script>
+</body></html>

@@ -16,12 +16,20 @@ You fire a bot on a Friday. On Monday a different one picks up the same role. It
 
 Each key opens only what its holder needs, so your own key never sits inside a bot.
 
-## The three keys
+## Watch it work
+
+<iframe id="hs-keys-anim" src="{{ '/assets/anim/keys-and-wakes.html' | relative_url }}" title="Animation: how your key, the Chief of Staff, roles and workers fit together, and how work wakes them" loading="lazy" style="width:100%;height:760px;border:0;display:block"></iframe>
+<script>addEventListener('message',function(e){if(e.data&&e.data.hsKeysHeight){var f=document.getElementById('hs-keys-anim');if(f)f.style.height=(e.data.hsKeysHeight+4)+'px';}});</script>
+
+*Eight short scenes. Your key makes the Chief. The Chief creates roles, at most 10 per Stax, and can't hand on its own grants. Each role enrolls one worker per machine, and you can cut off one worker without touching the rest. A hosted bot is woken by a signed push that carries only IDs and retries at 1, 5 and 30 minutes. A worker on your own machine runs `hey listen`, which waits for work over an outbound connection and starts Claude Code or Codex on the card. When a run ends, a queue empties or nobody is home, the Chief hears about it. Irreversible work waits for a go-ahead, and the Chief can't give one on its own proposal. The last scene, `hey connect`, is still in review.*
+
+## Three keys, four holders
 
 | Key | Who holds it | What it can do |
 |---|---|---|
 | **Your personal access token** | You, and nobody else | Everything you can do. It registers roles and sets their access. |
 | **A role token** | The role's owner, usually your Chief of Staff | Acts as that role on the Stax you authorized it for. Enrolls workers. |
+| **Your Chief of Staff** | A role token with two extra grants on a Stax: `manage_roles` and `go_ahead` | Everything a role does. Creates roles. Gives the go-ahead on irreversible work it didn't propose. |
 | **A worker token** | One machine or one bot | Acts as the role, under the role's limits. It can't enroll other workers. |
 
 Each token is shown once. It goes straight into the bot's secret setting, for example its MCP bearer-token header. Never put it in a chat, a Stax, a screenshot or a file.
@@ -44,7 +52,7 @@ Grant your Chief of Staff one permission per Stax, `manage_roles`. You do it onc
 - It works on that one Stax only, and its access ends when the Chief's does.
 - A Chief can create up to 10 active roles per Stax.
 - Every role it creates is recorded as created by the Chief. You can end any of them.
-- The Chief can't pass `manage_roles` on. Only you can grant it.
+- The Chief can't pass `manage_roles` or `go_ahead` on. Only you can grant them.
 
 The chain is: **your key → Chief of Staff → role → workers**. You set direction. The Chief staffs the work.
 
@@ -73,6 +81,26 @@ The chain is: **your key → Chief of Staff → role → workers**. You set dire
 
 Blockers stop at the Chief, not at you. The Chief answers, or hands the question to the role that can.
 
-The Chief also hears when work runs out. When a worker's run ends, its queue is empty, or an action fails three times, HeyStax records an agent event. The Chief reads those events and hands out the next step toward the goal. A blocked report stays on the action, and the Chief reads it there.
+The Chief also hears when work runs out. When a worker's run ends, its queue is empty, an action fails three times, or work waits on a role with nobody home, HeyStax records an agent event. On the board each role shows live, missed or nobody home. The Chief reads those events and hands out the next step toward the goal. A blocked report stays on the action, and the Chief reads it there.
+
+
+## How work reaches a worker
+
+| Worker | How it hears about new work |
+|---|---|
+| **A hosted bot**, such as Grok Bot | Its launcher has a push URL. When work is assigned to its role, HeyStax sends a signed wake that carries only IDs. If the bot doesn't answer, it tries again at 1, 5 and 30 minutes. Every attempt is listed by `push_deliveries_list`. |
+| **A worker on your machine**, such as Claude Code or Codex | `hey listen` calls `wait_for_work` and holds the line open. Your machine only makes outbound calls. When a card arrives, it starts a run, claims the card and starts Claude Code or Codex on it. Install it from the repo for now. |
+
+You can pause a launcher or cap its runs per hour. A paused worker gets no pushes and `wait_for_work` tells it to wait.
+
+## Irreversible work waits for a go-ahead
+
+Most work runs without asking. Work that can't be undone, such as a production migration, waits for a go-ahead. Your Chief can give it if you granted `go_ahead`, but never on work it proposed or work assigned to it. You can always give it with your own key.
+
+<div markdown="1" style="border:1px dashed #C4B5FD;border-radius:8px;padding:0.8em 1em;margin:1em 0">
+**Coming next** {% include badge-planned.html %}
+
+`hey connect` will set up a worker in one step: paste a key once, pick a Stax, and it saves a worker key on that machine. It will also write a standing order so the CLI tells HeyStax whatever it does, add `hey task start`, `note` and `done` for work you start yourself, and install `hey listen` as a background service.
+</div>
 
 [See what has been verified](../../docs/shipped-ledger).
