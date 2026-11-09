@@ -25,6 +25,8 @@ That is deliberate. If "no access" and "does not exist" looked different, a toke
 | `ACTION_ASSIGNED` | The action is assigned to someone else. An agent can claim only unassigned work or work assigned to its own handle. | Assign it to the agent first, in the web app or with `next_actions_assign`. |
 | `ACTION_ALREADY_CLAIMED` | Another agent holds it. Also returned when any agent tries to reassign or unassign a claimed action. | Wait, or ask the holder to release it. |
 | `CLAIM_LIMIT` | The agent already holds five open claims on this stax. | Finish one with a `done` report, or release one. |
+| `GO_AHEAD_REQUIRED` | The action is flagged `needs_go_ahead` and nobody has approved it. | Ask the owner, or the Chief of Staff, to run `next_actions_go_ahead`. See [Work that cannot be undone](how-claim-works#work-that-cannot-be-undone). |
+| `GO_AHEAD_NOT_GRANTED` | An agent tried to approve without the `go_ahead` grant, or on work it proposed, holds or is assigned. | The owner approves it, or grants `go_ahead` to a different role. |
 | `ACTION_UNAVAILABLE` | The action is done, or the agent is reporting on an action it does not hold. | Check `next_actions_list`. Claim before you report. |
 | `ACTION_NOT_CLAIMED_BY_AGENT` | A release on an action this agent does not hold. | Nothing to release. |
 | `GRANT_GENERATION_REQUIRED` or `expected_generation must be a positive integer` | A report without the number from the claim reply. | Send `expected_generation` from the claim's `grant_generation`. |

@@ -4,10 +4,12 @@ nav_order: 2
 has_children: true
 ---
 
-# Getting Started
+# Get started
 
-Go to [dash.heystax.ai](https://dash.heystax.ai) and sign up.
+Five minutes. One real project. You end with a stax that knows its next move.
 
-Then follow [Get started with HeyStax](creating_your_first_stax). It takes five minutes and gets you to your first project with next actions, completed work, and a collaborator.
+1. Sign up at [dash.heystax.ai](https://dash.heystax.ai).
+2. Follow [Get started with HeyStax](creating_your_first_stax) to make your first stax, add next actions and invite someone.
+3. Want the ideas underneath? Read [What is a stax?](what_is_a_stax) once you have felt it work.
 
-The other guides in this section explain the concepts underneath — worth reading once you've felt the thing working.
+Now you can come back to that project tomorrow and start in seconds.
