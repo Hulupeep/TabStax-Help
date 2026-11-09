@@ -203,11 +203,11 @@ capabilities:
     wording: "@glenda"
 
   - id: agent-dispatch
-    name: Automatic HookTunnel delivery and @mention dispatch to worker agents
-    state: planned
-    terms: ['automatic (agent )?(delivery|dispatch|wake-up)', 'HookTunnel push']
-    evidence: "tabstax#1008/#1006 and hooktunnel-web#170 are parked; mcp v28 supports manual/poll pickup, not signed push delivery (2026-10-26)"
-    wording: "automatic delivery is planned; start or poll a worker for current pickup"
+    name: "Push wake to a launcher's URL when work is assigned (works today); @mention dispatch (planned)"
+    state: partial
+    terms: ['automatic (agent )?(delivery|dispatch|wake-up)', 'HookTunnel push', 'push wake', '@mention (dispatch|wakes)']
+    evidence: "Production MCP tools/list on 2026-11-09 includes launcher_register (push_url) and push_deliveries_list (#1008 push audit); tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. An @mention still does not wake anyone."
+    wording: "a launcher with a push URL is woken when work is assigned to its agent; an @mention does not wake anyone yet"
 
   - id: agents-as-peers
     name: "Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report"
@@ -259,11 +259,11 @@ capabilities:
     wording: "you grant manage_roles once per Stax; the Chief creates roles with role_create"
 
   - id: chief-wake
-    name: A done or blocked report wakes the Chief of Staff
-    state: planned
-    terms: ['wak(e|es|ing) the Chief', 'Chief (is|gets) woken']
-    evidence: "tabstax#1072 (Chief events) is not built as of 2026-11-08; today the Chief reads blocked and done actions when it runs"
-    wording: "planned; today the Chief checks for blocked and done work when it runs"
+    name: "Agent events the Chief reads: run ended, queue empty, claim escalated after 3 failures, no one home, worker missed"
+    state: unverified
+    terms: ['agent_events_list', 'agent_queue_empty', 'queue is empty', 'agent events']
+    evidence: "Production MCP tools/list on 2026-11-09 includes agent_events_list and agent_queue_empty; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. A blocked report is not an event; it stays on the action."
+    wording: "when a run ends, a worker runs out of work or an action fails three times, HeyStax records an event the Chief reads"
 
   - id: crm-angles
     name: "Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools)"
@@ -273,10 +273,17 @@ capabilities:
     wording: "each angle is kept on the stax with its outcome; opted-out contacts go on a suppression list"
 
   - id: hosted-pickup
-    name: Hosted bots pick up work on their own; /heystax-connect; pause switch and runs-per-hour cap
+    name: "Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap"
+    state: unverified
+    terms: ['wait_for_work', 'runs[- ]per[- ]hour', 'pause switch', 'pick(s)? up work on (its|their) own', 'launchers?']
+    evidence: "Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet."
+    wording: "a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour"
+
+  - id: heystax-connect
+    name: The /heystax-connect plugin that installs a listener with one question
     state: planned
-    terms: ['heystax-connect', 'runs[- ]per[- ]hour', 'pause switch', 'pick(s)? up work on (its|their) own']
-    evidence: "tabstax#1015, #1016, blocked on #995"
+    terms: ['heystax-connect']
+    evidence: "tabstax#1015; not confirmed in production as of 2026-11-09"
     wording: "planned"
 
   - id: notify

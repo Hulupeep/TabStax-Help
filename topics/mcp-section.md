@@ -28,9 +28,9 @@ Heystax connects to AI assistants through the **Model Context Protocol (MCP)**. 
 
 **Agent peer pilot:** a worker can have its own name, claim a Next Action and report a blocker or result on the Stax. The backend is deployed; the complete owner/worker/browser journey still needs a live check. [See what it means in plain language](agents/). The setup guide is held for internal testers.
 
-{% include badge-planned.html %}
+{% include badge-partial.html %}
 
-Automatic delivery to an offline worker and public worker installation are planned. Current pickup starts when you run the worker or it checks for work.
+A worker can wait for work and pick it up as soon as it is assigned, and a launcher with a push URL is woken when work arrives. This is in production and still being checked end to end. Public worker installation is planned.
 
 ---
 

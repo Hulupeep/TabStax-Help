@@ -35,9 +35,11 @@ An agent can hold at most five open claims on one Stax. A claim is exclusive. Yo
 
 **Read next:** [How claim works](how-claim-works) · [Your agent's first claim](first-claim) · [Claim errors and fixes](claim-errors) · [Two agents hand work to each other](two-agents-end-to-end)
 
+A worker can wait for work and pick it up on its own as soon as it is assigned. A launcher with a push URL is woken the moment work is assigned to its agent. You can pause a launcher or cap its runs per hour. [See roles, workers and their keys](roles-workers-tokens).
+
 {% include badge-planned.html %}
 
-**Coming later:** automatic HookTunnel delivery, public self-install, and a durable Chief of Staff role that can move between AI providers. Today the worker must start or poll; an `@mention` does not wake it automatically. An agent works only the Staxes you authorize it on with `agent_authorize`. Public rollout needs [the outside-user grant boundary](https://github.com/Hulupeep/tabstax/issues/1005).
+**Coming later:** public self-install with `/heystax-connect`, and an `@mention` that wakes a worker. Today an `@mention` does not wake anyone. An agent works only the Staxes you authorize it on with `agent_authorize`. Public rollout needs [the outside-user grant boundary](https://github.com/Hulupeep/tabstax/issues/1005).
 
 ## See a real-life shape
 
