@@ -63,11 +63,9 @@ Hubduck has one paying school. The goal is the second. Seventy emails to small s
 | The Chief creates roles | works today, not yet browser-checked | ledger `chief-role-create` |
 | Each angle kept on the stax with its outcome, opt-outs on a suppression list | works today, not yet browser-checked | ledger `crm-angles` |
 | Building the page, sending the email | outside HeyStax | the worker's own tools; the result link goes on the action |
-| Bots pick up new angles on their own overnight | planned | ledger `hosted-pickup` |
+| Workers pick up work on their own as soon as it is assigned, with a pause switch and a runs-per-hour cap | works today, not yet browser-checked | ledger `hosted-pickup` |
+| The Chief hears when a run ends or a worker runs out of work | works today, not yet browser-checked | ledger `chief-wake` |
 
-{% include badge-planned.html %}
-
-**Coming next:** hosted bots that pick up work on their own, and a report that wakes the Chief when an angle is blocked or done.
 
 ## Try it
 

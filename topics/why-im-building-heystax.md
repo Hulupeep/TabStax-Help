@@ -42,7 +42,6 @@ So I stop being the blocker. I give them the mission, I set the fences, and I re
 {% include anim/node.html x=390 y=62 label="You, 08:00" sub="14 things waiting" kind="person" w=120 d=1.5 %}
 {% include anim/trail.html x=20 y=118 when="Goal" who="Paying schools" what="no change" d=1.9 %}
 <g class="hs-trail" style="--d:2.4s"><text x="20" y="162" class="hs-label">You set the mission</text></g>
-{% include anim/planned.html x=200 y=148 d=2.4 %}
 {% include anim/node.html x=90 y=204 label="Site built" sub="21:00" kind="agent" w=120 d=2.7 %}
 {% include anim/edge.html x1=150 y1=204 x2=180 y2=204 kind="write" d=3.1 %}
 {% include anim/node.html x=240 y=204 label="40 emails sent" sub="23:30" kind="agent" w=120 d=3.3 %}
@@ -53,9 +52,7 @@ So I stop being the blocker. I give them the mission, I set the fences, and I re
 {% endcapture %}
 {% include anim/figure.html viewbox="0 0 480 296" label="Two lanes over the same night: approving each step stalls the work, setting the mission lets it run inside fences" caption="Top lane: the worker finishes a draft at 18:10 and waits for you all night. At 08:00 fourteen things are waiting and the goal has not moved. Bottom lane: the same worker has the mission and fences. It builds a site, sends 40 emails and logs two replies before you wake. You read the trail at 08:00." svg=s %}
 
-{% include badge-planned.html %}
-
-**Coming next:** hosted bots that pick up work on their own while you sleep. Today a worker such as Claude Code or Codex pulls work when it is started, and every step it takes is on the stax trail.
+A worker can now wait for work and pick it up on its own as soon as it is assigned. You can pause it, or cap its runs per hour. Every step it takes is on the stax trail.
 
 So I've started using HeyStax as an **operational plane for continuous commercial pursuit**.
 

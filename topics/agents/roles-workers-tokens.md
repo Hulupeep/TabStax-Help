@@ -66,16 +66,13 @@ The chain is: **your key → Chief of Staff → role → workers**. You set dire
 {% include anim/node.html x=240 y=262 label="Claude Code" kind="surface" w=110 h=32 d=3.2 %}
 {% include anim/node.html x=398 y=262 label="Hermes" kind="surface" w=110 h=32 d=2.6 %}
 {% include anim/edge.html x1=290 y1=164 x2=290 y2=126 kind="write" d=3.8 %}
-{% include anim/planned.html x=400 y=291 d=3.8 %}
 {% include anim/trail.html x=20 y=306 when="10:40" who="@builder" agent="true" what="reported blocked: which price band?" d=3.8 %}
 {% include anim/trail.html x=20 y=330 when="10:42" who="@chief" agent="true" what="answered and assigned it back" d=4.4 %}
 {% endcapture %}
-{% include anim/figure.html viewbox="0 0 480 340" label="You hand the mission to the Chief of Staff, who creates three roles; workers fill them and a blocker goes to the Chief" caption="You give @chief the mission and goal once, then step back. @chief creates three roles. A worker fills each one, and when Codex is swapped for Claude Code the @builder role stays. @builder gets blocked on a price band. The question goes to @chief, not to you, and @chief answers. Waking the Chief on a blocker is planned; today the Chief checks for blocked work." svg=s %}
+{% include anim/figure.html viewbox="0 0 480 340" label="You hand the mission to the Chief of Staff, who creates three roles; workers fill them and a blocker goes to the Chief" caption="You give @chief the mission and goal once, then step back. @chief creates three roles. A worker fills each one, and when Codex is swapped for Claude Code the @builder role stays. @builder gets blocked on a price band. The question goes to @chief, not to you, and @chief answers." svg=s %}
 
 Blockers stop at the Chief, not at you. The Chief answers, or hands the question to the role that can.
 
-{% include badge-planned.html %}
-
-**Coming next:** a blocked or done report will wake the Chief on its own. Today the Chief checks for blocked and done work each time it runs.
+The Chief also hears when work runs out. When a worker's run ends, its queue is empty, or an action fails three times, HeyStax records an agent event. The Chief reads those events and hands out the next step toward the goal. A blocked report stays on the action, and the Chief reads it there.
 
 [See what has been verified](../../docs/shipped-ledger).
