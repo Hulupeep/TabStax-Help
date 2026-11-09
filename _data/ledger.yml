@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-02
+checked: 2026-11-09
 
 capabilities:
 
@@ -264,6 +264,13 @@ capabilities:
     terms: ['agent_events_list', 'agent_queue_empty', 'queue is empty', 'agent events']
     evidence: "Production MCP tools/list on 2026-11-09 includes agent_events_list and agent_queue_empty; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. A blocked report is not an event; it stays on the action."
     wording: "when a run ends, a worker runs out of work or an action fails three times, HeyStax records an event the Chief reads"
+
+  - id: go-ahead-gate
+    name: "Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal"
+    state: unverified
+    terms: ['go_ahead', 'go-ahead']
+    evidence: "tabstax#1134 deployed 2026-11-09 (coordinator); the production MCP tool list seen on 2026-11-09 includes next_actions_go_ahead. No browser walk yet."
+    wording: "irreversible work waits for a go-ahead from you or a Chief you granted go_ahead"
 
   - id: crm-angles
     name: "Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools)"
