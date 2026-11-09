@@ -128,8 +128,8 @@ function col(k){return `var(--${k==='neutral'?'muted':k})`;}
 function dur(s){let m=0;for(const b of s.beats)m=Math.max(m,b.t+(b.a?1.2:0));return m+2.2;}
 let G={};
 function build(){
-  const s=SC[cur];const ps=s.nodes.map(pos),xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);const x0=Math.min(...xs)-NW/2-12,y0=Math.min(...ys)-NH/2-40;
-  sv.setAttribute('viewBox',`${x0} ${y0} ${Math.max(...xs)+NW/2+12-x0} ${Math.max(...ys)+NH/2+16-y0}`);sv.innerHTML='';
+  const s=SC[cur];const ps=s.nodes.map(pos),xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);let x0=Math.min(...xs)-NW/2-12,vw=Math.max(...xs)+NW/2+12-x0;const minW=mq.matches?420:700;if(vw<minW){x0-=(minW-vw)/2;vw=minW;}const y0=Math.min(...ys)-NH/2-40;
+  sv.setAttribute('viewBox',`${x0} ${y0} ${vw} ${Math.max(...ys)+NH/2+16-y0}`);sv.innerHTML='';
   const N={};s.nodes.forEach(n=>N[n.id]=n);
   const eg=el('g',{},sv),seen={};
   s.beats.forEach(b=>{if(!b.a)return;const k=[b.a,b.b].sort().join();if(seen[k])return;seen[k]=1;const A=pos(N[b.a]),B=pos(N[b.b]);el('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,class:'edge'},eg);});
