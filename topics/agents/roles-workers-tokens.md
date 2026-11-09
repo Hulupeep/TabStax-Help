@@ -45,6 +45,7 @@ Grant your Chief of Staff one permission per Stax, `manage_roles`. You do it onc
 - A Chief can create up to 10 active roles per Stax.
 - Every role it creates is recorded as created by the Chief. You can end any of them.
 - The Chief can't pass `manage_roles` on. Only you can grant it.
+- You can also let the Chief approve irreversible work with `go_ahead: true`. It can't pass that on either. See [Work that cannot be undone](how-claim-works#work-that-cannot-be-undone).
 
 The chain is: **your key → Chief of Staff → role → workers**. You set direction. The Chief staffs the work.
 
