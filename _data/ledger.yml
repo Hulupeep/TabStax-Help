@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-02
+checked: 2026-11-09
 
 capabilities:
 
@@ -36,8 +36,15 @@ capabilities:
   - id: cli
     name: hey CLI
     state: live
-    evidence: "npm tabstax-cli latest 0.1.11, published 2026-03-09"
-    wording: "the hey CLI (npm install -g tabstax-cli)"
+    evidence: "npm registry on 2026-11-09: heystax-cli latest 0.1.13 (published 2026-03-14, bin hey); tabstax-cli stops at 0.1.11 (2026-03-09)"
+    wording: "the hey CLI (npm i heystax-cli)"
+
+  - id: cli-listen
+    name: "hey listen and hey run: CLI workers that wait for work"
+    state: planned
+    terms: ['hey listen', 'hey run\b']
+    evidence: "tabstax#1132 merged 2026-11-08; the published heystax-cli 0.1.13 tarball has no listen or run command (npm, 2026-11-09)"
+    wording: "planned until a new heystax-cli is published"
 
   - id: cli-rename
     name: "@heystax/hey CLI package"
@@ -220,7 +227,7 @@ capabilities:
     name: One column per agent on the stax page
     state: partial
     terms: ['column per agent', 'agent columns?']
-    evidence: "webapps PR #198 merged and its main production deployment READY on 2026-10-25; signed-in agent-column browser check remains (help #36)"
+    evidence: "webapps PR #198 merged and its main production deployment READY on 2026-10-25; webapps #276 (who is home on each agent column) production deployment READY for 8823897 (Vercel, 2026-11-09); signed-in agent-column browser check remains (help #36)"
     wording: "web code deployed; signed-in display still to verify"
 
   - id: agent-claim-rules
@@ -229,6 +236,27 @@ capabilities:
     terms: ['agent_authorize', 'agent_deauthorize', 'AGENT_CLAIMS_REQUIRE_RECOVERY', 'CLAIM_LIMIT', 'ACTION_ALREADY_CLAIMED', 'grant_generation']
     evidence: "tabstax main 74fbf44: migrations 20261027104402 (grants), 20261027201500 (claim/report), 20261028021204 and 20261028021206 (authority end), 20261029154500 (rejoin guard), 20261029200000 (add/assign); mcp agent-authorize.ts and agent-peers.ts. Release applied to production 2026-11-02. No owner or two-agent browser journey verified yet (help #50)"
     wording: "claim rules are in production; the owner and two-agent journey still needs a browser check"
+
+  - id: go-ahead
+    name: "Go-ahead for work that cannot be undone (needs_go_ahead, next_actions_go_ahead)"
+    state: live
+    terms: ['needs_go_ahead', 'next_actions_go_ahead', 'GO_AHEAD_\w+', '\bgo-ahead\b']
+    evidence: "tabstax#1134 merged 2026-11-08. Production MCP tools/list seen through a connected HeyStax client on 2026-11-09: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action has been approved in a browser yet."
+    wording: "flag an action needs_go_ahead and nobody can claim it until you or your Chief of Staff gives the go-ahead"
+
+  - id: action-plan-state
+    name: "Plan state on a next action: state, waiting_on, next_check, done_when"
+    state: live
+    terms: ['waiting_on', 'next_check', 'done_when', 'plan state']
+    evidence: "tabstax#1124 merged 2026-11-08; production MCP next_actions_add schema on 2026-11-09 has state (next, decision, waiting, blocked, parked), waiting_on, next_check and done_when; webapps #273 (plan state on List cards) production deployment READY for 0b2d522 (Vercel, 2026-11-09)"
+    wording: "say where an action stands: next, decision, waiting, blocked or parked, who it waits on, when to look again, and how anyone can tell it is done"
+
+  - id: goal-board
+    name: "Goal board: moves toward a goal per stax, with gap-to-action generator (goal_board, readiness_set, crm_scan_report)"
+    state: live
+    terms: ['goal_board', 'goal board', 'readiness_set', 'crm_scan_report']
+    evidence: "tabstax#1136 merged 2026-11-08; production MCP tools/list on 2026-11-09 includes goal_board, goal_board_configure, readiness_set and crm_scan_report; webapps #277 production deployment READY for 52decfd (Vercel, 2026-11-09). Not walked in a browser."
+    wording: "the goal board lists each move toward the goal and opens one next action per gap"
 
   - id: agent-claim-trail-read
     name: Reading claim, report and release events back over MCP or in the dashboard
