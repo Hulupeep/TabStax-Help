@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-09
+checked: 2026-11-10
 
 capabilities:
 
@@ -36,8 +36,15 @@ capabilities:
   - id: cli
     name: hey CLI
     state: live
-    evidence: "npm tabstax-cli latest 0.1.11, published 2026-03-09"
-    wording: "the hey CLI (npm install -g tabstax-cli)"
+    evidence: "npm registry on 2026-11-10: heystax-cli latest 0.1.13 (published 2026-03-14, bin hey); tabstax-cli stops at 0.1.11 (2026-03-09)"
+    wording: "the hey CLI (npm i heystax-cli)"
+
+  - id: cli-listen
+    name: "hey listen and hey run: CLI workers that wait for work"
+    state: partial
+    terms: ['hey listen', 'hey run\b']
+    evidence: "tabstax#1132 merged 2026-11-08, so it runs from the repo. npm on 2026-11-10: heystax-cli latest is still 0.1.13 (published 2026-03-14), whose tarball has no listen or run command (checked 2026-11-09). wait_for_work, which hey listen calls, is in the production MCP tool list on 2026-11-10."
+    wording: "hey listen runs from the repo today; it is not in the published heystax-cli yet"
 
   - id: cli-rename
     name: "@heystax/hey CLI package"
@@ -59,11 +66,18 @@ capabilities:
     evidence: "supabase/functions/mcp/caller-identity.ts returns PLAN_REQUIRED for plans other than pro and trial (tabstax c3c18c1)"
     wording: "MCP needs a Pro or Trial plan"
 
-  - id: mcp-claude
-    name: Claude.ai and Claude Code connect over MCP
+  - id: mcp-token-only
+    name: "MCP takes a token, not a sign-in (Authorization: Bearer)"
     state: live
-    evidence: "same endpoint as mcp-endpoint; connector pages exist (topics/mcp-claude-ai.md, topics/mcp-claude-code.md)"
-    wording: "Claude.ai and Claude Code"
+    terms: ['no sign-in', 'token connector']
+    evidence: "OAuth sign-in retired 9 Oct (tabstax#948, #949). tabstax-webapps#281 answers every OAuth discovery path with 404 and its settings page says to use a token connector; its production deployment for 7a0942a is READY (Vercel, 2026-11-10). tabstax#1142 merged 2026-11-09 makes the MCP function send a plain 401 with a token hint."
+    wording: "HeyStax has no sign-in; your app sends your token as Authorization: Bearer <token>"
+
+  - id: mcp-claude
+    name: Claude Code connects over MCP with a token; Claude.ai on the web cannot sign in
+    state: partial
+    evidence: "Claude Code takes a token header (tabstax-webapps settings/mcp ConnectWizard, production 7a0942a READY, Vercel 2026-11-10). The same deploy tells Claude.ai users that sign-in and the token-as-OAuth-Client-ID path are gone and to use a token connector instead. Downgraded from live on 2026-11-10. ChatGPT not re-checked."
+    wording: "Claude Code connects with your token; Claude.ai on the web asks for a sign-in HeyStax does not have"
 
   - id: mcp-chatgpt
     name: ChatGPT connects over MCP
@@ -220,7 +234,7 @@ capabilities:
     name: One column per agent on the stax page
     state: partial
     terms: ['column per agent', 'agent columns?']
-    evidence: "webapps PR #198 merged and its main production deployment READY on 2026-10-25; signed-in agent-column browser check remains (help #36)"
+    evidence: "webapps PR #198 merged and its main production deployment READY on 2026-10-25; webapps #276 (who is home on each agent column) production deployment READY for 8823897 (Vercel, 2026-11-10); signed-in agent-column browser check remains (help #36)"
     wording: "web code deployed; signed-in display still to verify"
 
   - id: agent-claim-rules
@@ -229,6 +243,20 @@ capabilities:
     terms: ['agent_authorize', 'agent_deauthorize', 'AGENT_CLAIMS_REQUIRE_RECOVERY', 'CLAIM_LIMIT', 'ACTION_ALREADY_CLAIMED', 'grant_generation']
     evidence: "tabstax main 74fbf44: migrations 20261027104402 (grants), 20261027201500 (claim/report), 20261028021204 and 20261028021206 (authority end), 20261029154500 (rejoin guard), 20261029200000 (add/assign); mcp agent-authorize.ts and agent-peers.ts. Release applied to production 2026-11-02. No owner or two-agent browser journey verified yet (help #50)"
     wording: "claim rules are in production; the owner and two-agent journey still needs a browser check"
+
+  - id: action-plan-state
+    name: "Plan state on a next action: state, waiting_on, next_check, done_when"
+    state: live
+    terms: ['waiting_on', 'next_check', 'done_when', 'plan state']
+    evidence: "tabstax#1124 merged 2026-11-08; production MCP next_actions_add schema on 2026-11-10 has state (next, decision, waiting, blocked, parked), waiting_on, next_check and done_when; webapps #273 (plan state on List cards) production deployment READY for 0b2d522 (Vercel, 2026-11-10)"
+    wording: "say where an action stands: next, decision, waiting, blocked or parked, who it waits on, when to look again, and how anyone can tell it is done"
+
+  - id: goal-board
+    name: "Goal board: moves toward a goal per stax, with gap-to-action generator (goal_board, readiness_set, crm_scan_report)"
+    state: live
+    terms: ['goal_board', 'goal board', 'readiness_set', 'crm_scan_report']
+    evidence: "tabstax#1136 merged 2026-11-08; production MCP tools/list on 2026-11-10 includes goal_board, goal_board_configure, readiness_set and crm_scan_report; webapps #277 production deployment READY for 52decfd (Vercel, 2026-11-10). Not walked in a browser."
+    wording: "the goal board lists each move toward the goal and opens one next action per gap"
 
   - id: agent-claim-trail-read
     name: Reading claim, report and release events back over MCP or in the dashboard
@@ -267,9 +295,9 @@ capabilities:
 
   - id: go-ahead-gate
     name: "Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal"
-    state: unverified
-    terms: ['go_ahead', 'go-ahead']
-    evidence: "tabstax#1134 deployed 2026-11-09 (coordinator); the production MCP tool list seen on 2026-11-09 includes next_actions_go_ahead. No browser walk yet."
+    state: live
+    terms: ['go_ahead', 'go-ahead', 'needs_go_ahead', 'next_actions_go_ahead', 'GO_AHEAD_\w+']
+    evidence: "tabstax#1134 deployed 2026-11-09 (coordinator). Production MCP tool list seen through a connected HeyStax client on 2026-11-10: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action approved in a browser yet."
     wording: "irreversible work waits for a go-ahead from you or a Chief you granted go_ahead"
 
   - id: crm-angles

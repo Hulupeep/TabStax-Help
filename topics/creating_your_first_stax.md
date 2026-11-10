@@ -10,31 +10,31 @@ Five minutes. One project. You'll end this feeling the thing HeyStax is built to
 
 ---
 
-## Step 1 — Create your account
+## Step 1: Create your account
 
 Go to [dash.heystax.ai](https://dash.heystax.ai) and sign up.
 
-That's your home base. Everything lives here — your projects, your next actions, your team. The Chrome extension, the CLI, and your AI all connect back to this.
+That's your home base. Everything lives here: your projects, your next actions, your team. The Chrome extension, the CLI, and your AI all connect back to this.
 
 ---
 
-## Step 2 — Create your first Stax
+## Step 2: Create your first Stax
 
 Click **New Stax**.
 
-Name it after something real you're working on right now. Not "test." A real project — something that's been sitting in the back of your head.
+Name it after something real you're working on right now. Not "test." A real project, something that's been sitting in the back of your head.
 
 Examples:
 - `API Migration`
 - `Job Search`
 - `Kitchen Renovation`
-- `Client Proposal — Acme`
+- `Client Proposal: Acme`
 
 Hit **Create**.
 
 ---
 
-## Step 3 — Write your first three next actions
+## Step 3: Write your first three next actions
 
 You'll see a **Next Actions** field inside your new Stax.
 
@@ -47,24 +47,24 @@ Add three actions. These are the concrete things you'd do if you sat down to wor
 
 **This:**
 - Measure the gap between the fridge and the counter
-- Email Marcus the draft proposal — subject line only, no attachment yet
+- Email Marcus the draft proposal, subject line only, no attachment yet
 - Run the migration script on staging and check the logs
 
 Three is enough. Write them now.
 
 ---
 
-## Step 4 — Complete one
+## Step 4: Complete one
 
 Do one of those actions. Right now if you can, or in the next 24 hours.
 
 When it's done, come back to the dashboard and click the tick next to it.
 
-That completed action becomes a breadcrumb — a timestamped record of what happened on this project. Your timesheet is already building itself.
+That completed action becomes a breadcrumb: a timestamped record of what happened on this project. Your timesheet is already building itself.
 
 ---
 
-## Step 5 — Close the tab. Come back tomorrow.
+## Step 5: Close the tab. Come back tomorrow.
 
 Seriously. Close it.
 
@@ -74,7 +74,7 @@ That's a **Flowful Re-entry**. No reconstruction. No "where was I?" Just the nex
 
 ---
 
-## Now go one level deeper — bring someone else in
+## Now go one level deeper: bring someone else in
 
 Create a second Stax. This time, use something you share with another person.
 
@@ -84,7 +84,7 @@ A home project works well. Kitchen renovation. House move. Holiday planning. Som
 
 Inside the Stax, click **Add tabs**.
 
-This opens your browser. Navigate to the pages you use for this project — the estate agent site, the planning doc, the budget spreadsheet, whatever it is. Add them.
+This opens your browser. Navigate to the pages you use for this project: the estate agent site, the planning doc, the budget spreadsheet, whatever it is. Add them.
 
 Now those pages are saved to the Stax. Anyone who opens it can open them all in one click.
 
@@ -120,6 +120,6 @@ That's HeyStax working at its simplest. Same model for a two-person home project
 |---|---|
 | Add project tabs from Chrome | [TabStax extension](surfaces/tabstax-extension) |
 | Capture actions from your terminal | [Hey CLI](hey-cli-section) |
-| Manage projects through Claude | [Connect to Claude.ai](mcp-claude-ai) |
+| Manage projects through Claude | [Connect Claude](mcp-claude-ai) |
 | Understand the full model | [What is a Stax?](what_is_a_stax) |
 | See how others use HeyStax | [Use Cases](usecases/) |

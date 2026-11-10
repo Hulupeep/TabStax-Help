@@ -2,65 +2,45 @@
 nav_exclude: true
 ---
 
-# SME Owner Running the Business From 6 Different Apps
+# A studio owner running the business from six apps
 
 [← Back to Use Cases](index.md)
 
----
+{% include badge-partial.html %}
 
-You run a small design studio: **BrightPixel Studio**.
+Maya runs **BrightPixel Studio**. Xero, the bank portal, Asana, email, Figma and WhatsApp Web are all open by 08:30. Every morning she rebuilds the picture by hand, and some mornings an overdue invoice slips through.
 
-Your daily operating stack:
+## What Maya sets up
 
-* Invoicing (Xero)
-* Bank portal
-* Project tracker (Trello/Asana)
-* Email
-* Figma
-* WhatsApp Web for client messages
-* Social media for leads
+| | |
+|---|---|
+| **Mission** | Keep BrightPixel paid and clients happy |
+| **Goal** | No invoice more than 14 days overdue |
+| **Next Actions** | Chase the Atlas Retail invoice. Reply to Nova's logo notes. 10 minutes on leads. |
 
-## Without HeyStax
+1. She makes a **BrightPixel Daily Ops** stax. The TabStax extension saves the six tabs with it.
+2. Each client gets its own stax: **Atlas Retail Website**, **Nova Branding**. Only that client's Figma file, doc and thread.
+3. She puts Daily Ops in **Must** and the quieter client in **Good**, so the dashboard opens on what matters today.
+4. She shares Nova Branding with her freelancer, @tom. He sees the same tabs and next actions, not a vague brief.
+5. She lets an agent draft payment reminders. It claims the action under its own name. The bulk send is flagged `needs_go_ahead`, so nothing goes out until Maya approves it.
 
-Every morning is a "rebuild ops view" exercise. You open things in random order, miss an invoice, forget which client is overdue, and lose half an hour to getting oriented.
+## Why it holds
 
-## With HeyStax
+**You set the edges.** The agent does the drafting. Maya keeps the one decision that cannot be undone, and the stax shows who did what.
 
-You create **"BrightPixel – Daily Ops"** Stax:
+## What works today
 
-* All core tools in one saved state
-* A Start Page with:
+| Step | State |
+|---|---|
+| Stax, tabs, next actions, attention lanes | Works today |
+| Sharing a stax with @handles | Works today |
+| Go-ahead before irreversible work | Works today over MCP |
+| An agent claiming and reporting under its own name | Partly: in production, browser journey still being checked |
 
-  * *"1. Check overdue invoices in Xero"*
-  * *"2. Review today's tasks in Asana"*
-  * *"3. Respond to client pings (WhatsApp, Email)"*
-  * *"4. 10 mins on lead gen (LinkedIn/Twitter)"*
+## Try it
 
-Every morning:
-
-* You open that Stax.
-* The business control panel snaps into view.
-* You follow your own sequence.
-
-You also have:
-
-* **"Client – Atlas Retail Website"** Stax
-* **"Client – Nova Branding"** Stax
-
-Each has just the tabs for that project: Figma, doc, email thread.
-
-When you switch clients, you:
-
-* Close one Stax.
-* Open the other.
-* Your brain doesn't have to drag context across — it's already there.
-
-You can **share individual client Stax with freelancers or staff**:
-
-* They see the live tools, not just some vague brief.
-
-**Outcome:** Running the business feels like opening "Ops Mode" and "Client Mode" on demand — not juggling spaghetti.
-
----
+1. [Create your first stax](../creating_your_first_stax).
+2. [Share it and assign by @handle](../team-stax/assigning-actions).
+3. [See how claims and the go-ahead work](../agents/how-claim-works).
 
 [← Back to Use Cases](index.md)

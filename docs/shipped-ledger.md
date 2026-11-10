@@ -8,16 +8,16 @@ search_exclude: true
 
 # Shipped ledger
 
-Last checked: 2026-11-09. Source: `_data/ledger.yml`.
+Last checked: 2026-11-10. Source: `_data/ledger.yml`.
 
 Help pages may only describe what this ledger says is live. `scripts/check_truth.py` enforces it on every pull request.
 
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 14 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 15 |
-| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 9 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 17 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
+| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 11 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
 
 ## Live
@@ -26,9 +26,9 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | Web dashboard | the HeyStax dashboard at dash.heystax.ai | https://dash.heystax.ai/ and /attention return 200 (2026-10-25) |
 | TabStax Chrome extension (save and reopen tabs for a stax) | the TabStax extension for Chrome | Chrome Web Store listing 'TabStax - Pick up where your mind left off' returns 200 (2026-10-25) |
-| hey CLI | the hey CLI (npm install -g tabstax-cli) | npm tabstax-cli latest 0.1.11, published 2026-03-09 |
+| hey CLI | the hey CLI (npm i heystax-cli) | npm registry on 2026-11-10: heystax-cli latest 0.1.13 (published 2026-03-14, bin hey); tabstax-cli stops at 0.1.11 (2026-03-09) |
 | MCP server | https://dash.heystax.ai/api/mcp (SSE: https://dash.heystax.ai/api/mcp/sse) | https://dash.heystax.ai/api/mcp returns 200; /api/mcp/sse returns 401 without auth; dash.tabstax.app/api/mcp 301-redirects to dash.heystax.ai (2026-10-25) |
-| Claude.ai and Claude Code connect over MCP | Claude.ai and Claude Code | same endpoint as mcp-endpoint; connector pages exist (topics/mcp-claude-ai.md, topics/mcp-claude-code.md) |
+| MCP takes a token, not a sign-in (Authorization: Bearer) | HeyStax has no sign-in; your app sends your token as Authorization: Bearer <token> | OAuth sign-in retired 9 Oct (tabstax#948, #949). tabstax-webapps#281 answers every OAuth discovery path with 404 and its settings page says to use a token connector; its production deployment for 7a0942a is READY (Vercel, 2026-11-10). tabstax#1142 merged 2026-11-09 makes the MCP function send a plain 401 with a token hint. |
 | ChatGPT connects over MCP | ChatGPT | TabStax stax goal: ChatGPT MCP connector (tabstax#546) production-verified 2026-04-28; same endpoint live 2026-10-25 |
 | Hosted API reference | the API reference at dash.heystax.ai/settings/mcp/swagger.yaml | https://dash.heystax.ai/settings/mcp/swagger.yaml returns 200 (2026-10-25) |
 | MCP tools: stax, next actions, goals, dates, people | read and write stax, next actions, goals, dates and people | Live tools/list seen through a connected HeyStax MCP client on 2026-10-25: stax_list/get/create/update/delete, stax_audit_log, next_actions_list/add/update/complete/delete, goals_*, dates_*, people_* |
@@ -38,6 +38,9 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Attention lanes (Must, Should, Good, Meh) | Must, Should, Good, Meh | stax_get returns attention.priority and lane_position (2026-10-25) |
 | Weekly timesheets per stax | timesheets at time.heystax.ai | https://time.heystax.ai/time returns 200 (2026-10-25) |
 | Agents listed as people on a stax with an @handle | agents appear on the people list | stax_get on the TabStax stax lists @glenda with role agent (2026-10-25) |
+| Plan state on a next action: state, waiting_on, next_check, done_when | say where an action stands: next, decision, waiting, blocked or parked, who it waits on, when to look again, and how anyone can tell it is done | tabstax#1124 merged 2026-11-08; production MCP next_actions_add schema on 2026-11-10 has state (next, decision, waiting, blocked, parked), waiting_on, next_check and done_when; webapps #273 (plan state on List cards) production deployment READY for 0b2d522 (Vercel, 2026-11-10) |
+| Goal board: moves toward a goal per stax, with gap-to-action generator (goal_board, readiness_set, crm_scan_report) | the goal board lists each move toward the goal and opens one next action per gap | tabstax#1136 merged 2026-11-08; production MCP tools/list on 2026-11-10 includes goal_board, goal_board_configure, readiness_set and crm_scan_report; webapps #277 production deployment READY for 52decfd (Vercel, 2026-11-10). Not walked in a browser. |
+| Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal | irreversible work waits for a go-ahead from you or a Chief you granted go_ahead | tabstax#1134 deployed 2026-11-09 (coordinator). Production MCP tool list seen through a connected HeyStax client on 2026-11-10: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action approved in a browser yet. |
 
 ## Unverified
 
@@ -55,7 +58,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Worker tokens, one per machine, enrolled with the role's own token | a role enrolls each machine it runs on as a worker with worker_register | Production tools/list returned worker_register on 2026-11-08 (mcp v32, tabstax#1071). A PAT is refused and a worker token cannot enroll another worker. Not walked end to end. |
 | The Chief of Staff creates roles on a stax (roles_manage) | you grant manage_roles once per Stax; the Chief creates roles with role_create | tabstax#1127 migration 20261108140000 applied and mcp deployed from main 1779c06 on 2026-11-08; production tools/list returned role_create and agent_authorize.manage_roles, and role_create without the grant returned ROLES_MANAGE_NOT_GRANTED. A full create has not been walked. |
 | Agent events the Chief reads: run ended, queue empty, claim escalated after 3 failures, no one home, worker missed | when a run ends, a worker runs out of work or an action fails three times, HeyStax records an event the Chief reads | Production MCP tools/list on 2026-11-09 includes agent_events_list and agent_queue_empty; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. A blocked report is not an event; it stays on the action. |
-| Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal | irreversible work waits for a go-ahead from you or a Chief you granted go_ahead | tabstax#1134 deployed 2026-11-09 (coordinator); the production MCP tool list seen on 2026-11-09 includes next_actions_go_ahead. No browser walk yet. |
 | Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools) | each angle is kept on the stax with its outcome; opted-out contacts go on a suppression list | tabstax#1126 merged and deployed 2026-11-08 13:56; production MCP tools/list includes crm_angle_upsert, crm_campaign_upsert, crm_stage_move, crm_suppression_add and crm_query, and crm_query counts on Hubduck Business Development returned an empty result on 2026-11-08. No angle has been recorded and read back yet. |
 | Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap | a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour | Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. |
 
@@ -63,6 +65,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 
 | Capability | Docs wording | Evidence |
 |---|---|---|
+| hey listen and hey run: CLI workers that wait for work | hey listen runs from the repo today; it is not in the published heystax-cli yet | tabstax#1132 merged 2026-11-08, so it runs from the repo. npm on 2026-11-10: heystax-cli latest is still 0.1.13 (published 2026-03-14), whose tarball has no listen or run command (checked 2026-11-09). wait_for_work, which hey listen calls, is in the production MCP tool list on 2026-11-10. |
+| Claude Code connects over MCP with a token; Claude.ai on the web cannot sign in | Claude Code connects with your token; Claude.ai on the web asks for a sign-in HeyStax does not have | Claude Code takes a token header (tabstax-webapps settings/mcp ConnectWizard, production 7a0942a READY, Vercel 2026-11-10). The same deploy tells Claude.ai users that sign-in and the token-as-OAuth-Client-ID path are gone and to use a token connector instead. Downgraded from live on 2026-11-10. ChatGPT not re-checked. |
 | Additional MCP tools awaiting fresh authenticated production verification: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests | in the deployed function; verify before using | Bundled in production mcp v28 on 2026-10-26; fresh authenticated tools/list and behaviour check still needed |
 | Timesheet approval by a lead | approval is coming | CHANGELOG: approval RPC added, production activation remains separate (tabstax root #976, web #142/#143) |
 | Invoices from approved time, invoice nudges, invoice PDF | invoicing is partly built | CHANGELOG roots #978 and #982: production activation remains separate; render-invoice-pdf function exists; epic tabstax#354 |
@@ -70,7 +74,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Memory capture and import (tabstax#932-934) | schema live; user journey unverified | All four 20261005 migrations applied and catalog-verified on 2026-10-25; fresh MCP behaviour check remains |
 | Push wake to a launcher's URL when work is assigned (works today); @mention dispatch (planned) | a launcher with a push URL is woken when work is assigned to its agent; an @mention does not wake anyone yet | Production MCP tools/list on 2026-11-09 includes launcher_register (push_url) and push_deliveries_list (#1008 push audit); tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. An @mention still does not wake anyone. |
 | Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report | agent peer commands are discoverable; claim/report and browser journey still need verification | Root PR #995 merged; mcp ACTIVE v28. Authenticated production initialize → initialized → tools/list returned all six names on 2026-10-26 (evidence/agent-peer-tools-list-2026-10-26.json); agent calls and owner/worker browser journey remain unverified (help #36). Claim/report races are tracked in tabstax#1011 |
-| One column per agent on the stax page | web code deployed; signed-in display still to verify | webapps PR #198 merged and its main production deployment READY on 2026-10-25; signed-in agent-column browser check remains (help #36) |
+| One column per agent on the stax page | web code deployed; signed-in display still to verify | webapps PR #198 merged and its main production deployment READY on 2026-10-25; webapps #276 (who is home on each agent column) production deployment READY for 8823897 (Vercel, 2026-11-10); signed-in agent-column browser check remains (help #36) |
 | Claim rules for agents: owner access levels (read, work, full), five open claims per stax, locked once claimed, deauthorize releases claims, re-authorize refused while claims are open | claim rules are in production; the owner and two-agent journey still needs a browser check | tabstax main 74fbf44: migrations 20261027104402 (grants), 20261027201500 (claim/report), 20261028021204 and 20261028021206 (authority end), 20261029154500 (rejoin guard), 20261029200000 (add/assign); mcp agent-authorize.ts and agent-peers.ts. Release applied to production 2026-11-02. No owner or two-agent browser journey verified yet (help #50) |
 
 ## Planned
@@ -97,7 +101,7 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] hey CLI
 - [ ] MCP server
 - [ ] MCP needs a Pro or Trial plan
-- [ ] Claude.ai and Claude Code connect over MCP
+- [ ] MCP takes a token, not a sign-in (Authorization: Bearer)
 - [ ] ChatGPT connects over MCP
 - [ ] Hosted API reference
 - [ ] MCP tools: stax, next actions, goals, dates, people
@@ -114,6 +118,8 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] A page in the dashboard showing the audit trail
 - [ ] Agents listed as people on a stax with an @handle
 - [ ] @glenda, the HeyStax guide agent
+- [ ] Plan state on a next action: state, waiting_on, next_check, done_when
+- [ ] Goal board: moves toward a goal per stax, with gap-to-action generator (goal_board, readiness_set, crm_scan_report)
 - [ ] Claim leases that expire when an agent run dies
 - [ ] Worker tokens, one per machine, enrolled with the role's own token
 - [ ] The Chief of Staff creates roles on a stax (roles_manage)

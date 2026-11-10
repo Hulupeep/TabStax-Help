@@ -1,7 +1,7 @@
 ---
 title: Home
 nav_order: 1
-description: Help center for HeyStax — your workspace for momentum
+description: Help for HeyStax, the operational plane where people and agents work from one graph
 permalink: /
 ---
 
@@ -9,182 +9,101 @@ permalink: /
 
 **Make things happen. Not merely get things done.**
 
-HeyStax is the operational plane for persistent intent. **Mission → Goal → Next Action** connects people and AI agents to meaningful outcomes, with evidence, accountability and continuity.
+A plan in a Claude chat. Thirty tabs. A group thread from Tuesday. None of them holds the whole.
 
-[What HeyStax really is](topics/what-heystax-really-is) · [Why I'm building it](topics/why-im-building-heystax)
+HeyStax is the **operational plane** for your work. One graph holds why the work exists, the result you want, and the next move. Every tool and every teammate, person or agent, works from that same graph.
 
-The complete autonomous outcome-pursuit loop is product direction, not a claim that everything is shipped. See the [shipped ledger](docs/shipped-ledger.md).
+{% capture s %}
+{% include anim/node.html x=80 y=28 label="Claude chat" kind="note" %}
+{% include anim/node.html x=240 y=28 label="30 tabs" kind="note" d=0.1 %}
+{% include anim/node.html x=400 y=28 label="Group thread" kind="note" d=0.2 %}
+{% include anim/plane.html y=88 h=104 d=0.3 %}
+{% include anim/edge.html x1=80 y1=48 x2=390 y2=124 cx=300 cy=40 kind="write" d=0.5 %}
+{% include anim/edge.html x1=240 y1=48 x2=390 y2=124 cx=330 cy=60 kind="write" d=0.6 %}
+{% include anim/edge.html x1=400 y1=48 x2=390 y2=124 kind="write" d=0.7 %}
+{% include anim/node.html x=390 y=150 label="Launch" sub="mission" kind="stax" w=150 d=0.9 %}
+{% include anim/node.html x=245 y=150 label="5 paying users" sub="goal" kind="record" w=120 d=1.1 %}
+{% include anim/node.html x=95 y=150 label="Call Ana's school" sub="next action" kind="action" w=150 d=1.3 %}
+{% include anim/node.html x=80 y=250 label="Dashboard" kind="surface" w=110 d=1.5 %}
+{% include anim/node.html x=240 y=250 label="ChatGPT" kind="surface" w=110 d=1.55 %}
+{% include anim/node.html x=400 y=250 label="Telegram" kind="surface" w=110 d=1.6 %}
+{% include anim/edge.html x1=95 y1=176 x2=80 y2=230 kind="read" d=1.8 %}
+{% include anim/edge.html x1=95 y1=176 x2=240 y2=230 kind="read" d=1.8 %}
+{% include anim/edge.html x1=95 y1=176 x2=400 y2=230 kind="read" d=1.8 %}
+{% include anim/trail.html x=20 y=304 when="09:14" who="You via Claude" what="added Call Ana's school" d=2.3 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 315" label="Scattered pieces of a project come together in one stax, and every tool reads the same next action" caption="Pieces of one project sit in a chat, thirty tabs and a group thread. HeyStax brings them into one stax: the mission, the goal and the next action. The dashboard, ChatGPT and Telegram all read that same action. The trail shows who added it, and from where." svg=s %}
 
-**Pick up where your mind left off.**
+[What HeyStax really is](topics/what-heystax-really-is) · [Why I'm building it](topics/why-im-building-heystax) · [What is live today](docs/shipped-ledger)
 
-You know you were working on something. You just can't get back in.
+## Mission, Goal, Next Action
 
-Not because the work disappeared. Because the *context* did. The thread you were holding — what you were doing, what came next, why it mattered — that's what's gone. And without the thread, even opening the project feels like starting over.
+Every stax answers three questions.
 
-That's not a focus problem. It's a design problem. And it compounds.
+| | Asks | Example |
+|---|---|---|
+| **Mission** | Why does this work exist? | Launch the tutoring app |
+| **Goal** | What result counts? | 5 paying users by March |
+| **Next Action** | Who does what next? | Bob calls Ana's school |
 
-The more projects you hold, the more threads you're managing. And when other people are involved, it gets quieter and worse: they can't see your context. You can't see theirs. What's actually happening on a project is locked inside someone's head, or buried in a Slack thread from three weeks ago, or simply gone. Status updates are a workaround for this. So are standups. So is the mild dread of asking "where are we on this?" again.
+Keep next actions few. Three clear moves beat thirty vague ones.
 
-HeyStax is an **operational plane for persistent intent**. It makes project context visible and shared — not just links, but intent — so anyone on a project can step back into it cold and immediately know what's happening and what to do next.
+→ [What is a stax?](topics/what_is_a_stax)
 
----
+## Own your own cognition
 
-## A different way of seeing projects
-
-Most tools treat a project as a list of tasks. Check things off, add more, repeat.
-
-But that's not what a project actually is when you're inside it. A project is a **live mental state** — a specific set of tools open, a thread of thinking in progress, a concrete next move held in working memory. The task list is the skeleton. The context is what makes it possible to act.
-
-When you lose context — through interruption, through switching, through handing off to someone else — you lose the ability to act without first doing reconstruction work. And reconstruction is friction. Friction becomes avoidance. Avoidance is where projects quietly die.
-
-HeyStax treats context as the primary thing worth saving. Not the task. The state of being *in* the work.
-
-That matters for humans. It turns out it matters just as much for agents. An AI that can read your project context — what's open, what's pending, what happened last — is a different kind of collaborator than one starting from a blank prompt.
-
-
-→ [What problem HeyStax solves](topics/what_problem_tabstax_solves)
-
----
-
-## What is a Stax?
-
-A **Stax** is a named workspace. Not a bookmark folder. Not a todo list. A live container for a project that holds everything you need to step back into it:
-
-| What's in a Stax | Why it matters |
+| | |
 |---|---|
-| **Tabs & Links** | The web pages for this project — open them all in one click |
-| **Next Actions** | The concrete step that gets you back to work without thinking |
-| **Priority** | Must / Should / Good / Meh — where this sits in your attention right now |
-| **Collaborators** | Team members with @handles, roles, and colour-coded ownership |
-| **Agents** | AI assistants connected via MCP — they read your Stax, add actions, and do work inside the same context |
-| **Breadcrumbs** | A trail of what happened — so returning after a week feels like a pause, not a restart |
+| **It is yours** | Your context sits in your HeyStax account, not inside one AI vendor's chat memory. |
+| **It travels** | The same stax opens in Claude, ChatGPT, Claude Code and the `hey` CLI. |
+| **You set the edges** | You decide who joins a stax and what each agent may do there. |
+| **You can check** | Every write names who made it, person or agent. |
 
-The moment of opening a cold Stax and immediately knowing what to do next — we call that a **Flowful Re-entry**. That's what HeyStax is built to produce.
-
-→ [What is a Stax?](topics/what_is_a_stax)
-
----
+Agents extend your thinking. They never take custody of it.
 
 ## Where HeyStax lives
 
-Same data. Every surface. Add an action in the terminal; it appears in the extension. Complete it through Claude; the dashboard reflects it.
+Add an action in the terminal and it shows in the dashboard. Complete it through Claude and the extension knows.
 
-| Surface | What it is | Best for |
-|---|---|---|
-| **TabStax** (Chrome extension) | Captures and restores your browser context as a named Stax | One-click context switching between projects |
-| **Dashboard** ([dash.heystax.ai](https://dash.heystax.ai)) | Full attention view, actions mode, collaboration, timesheets — installable as a PWA | Planning, prioritising, team visibility, phone access |
-| **Timesheets** ([dash.heystax.ai/time](https://dash.heystax.ai/time)) | Flow-native weekly hours, scoped to your Stax | Time tracking that doesn't break your momentum |
-| **Hey CLI** (`npm i heystax-cli`) | Terminal-native next actions: `hey "do the thing"`, `hey done 1` | Capturing thoughts without leaving your tools |
-| **MCP** (AI integrations) | Claude.ai, Claude Code, ChatGPT — your AI reads and writes your Stax | Natural language project management, AI-powered planning |
-| **Share Pages** | Public URLs anyone can open or import | Team handoffs, onboarding, shared workflows |
+| Surface | What it does |
+|---|---|
+| **Dashboard** ([dash.heystax.ai](https://dash.heystax.ai)) | Attention lanes, actions, people. Installs on your phone. |
+| **TabStax** ([Chrome extension](https://chromewebstore.google.com/detail/heystax/gfdcobncoohhlhppmoidalociahfdcam)) | Saves a stax's tabs and reopens them in one click. |
+| **Hey CLI** (`npm i heystax-cli`) | Next actions from your terminal: `hey "do the thing"`, `hey done 1`. |
+| **AI clients** (MCP) | Claude Code, ChatGPT and other apps that send your token read and write your stax. |
+| **Timesheets** ([time.heystax.ai](https://time.heystax.ai/time)) | Weekly hours, logged against each stax. |
+| **Telegram** | The HeyStax Telegram bot links a group to a stax. |
+| **Share Pages** | Public links anyone can open or import. |
 
----
+## Start here
 
-## The reconstruction tax
+- **New?** [Get started](topics/getting-started), then [create your first stax](topics/creating_your_first_stax).
+- **Just installed the extension?** [First time opening TabStax](topics/first_time_opening_tabstax).
+- **Live in a terminal?** [Hey CLI guide](topics/hey-cli).
+- **Use an AI assistant?** [Connect Claude Code](topics/mcp-claude-code). It takes one command.
+- **Run a team in Telegram?** [Set up the Telegram bot](topics/team-stax/telegram).
+- **Someone shared a stax with you?** Opening it puts you where they were: same tabs, same next actions. Open shared stax only from people you trust.
 
-Every time you return to a project, you rebuild it from scratch.
-
-Which tabs. Which docs. Which tools. Where you left off. What to do next.
-
-That's the **reconstruction tax** — and it compounds. The more projects you're holding, the more energy goes to *remembering* instead of *doing*. Projects drift. Momentum quietly dies.
-
-Todo apps don't fix this. "Finish Q3 reporting" doesn't open the spreadsheet, the Slack thread, and the dashboard. It doesn't tell you where you stopped. It's a reminder without a runway.
-
-HeyStax preserves your state so you can pick up any project cold. No reconstruction. No guilt spiral. Just the next action and the workspace it lives in.
-
-→ [Read the full problem statement](topics/what_problem_tabstax_solves)
-
-### See it in action
-
-[![Watch HeyStax in action](https://img.youtube.com/vi/jcc-PsCdbM8/maxresdefault.jpg)](https://www.youtube.com/watch?v=jcc-PsCdbM8)
-
-*Click to watch on YouTube*
-
----
-
-## Where to start
-
-### Just installed the Chrome extension?
-→ [First time opening HeyStax](topics/first_time_opening_tabstax)
-→ [Creating your first Stax](topics/creating_your_first_stax)
-
-### Want to understand the system?
-→ [The HeyStax mental model](topics/tabstax_mental_model)
-→ [What problem HeyStax solves](topics/what_problem_tabstax_solves)
-
-### Using the CLI or MCP?
-→ [Hey CLI guide](topics/hey-cli)
-→ [Connect to Claude.ai](topics/mcp-claude-ai)
-→ [Connect to Claude Code](topics/mcp-claude-code)
-→ [See how a named AI worker handles a Next Action](topics/agents/)
-→ [Read founder, studio and consultant scenarios](topics/scenarios/)
-
-### Someone shared a Stax with you?
-They've captured a whole working context and handed it to you. Opening that Stax puts you in the same place they were — same structure, same tabs, same next actions. Trust it the way you'd trust a link: only from sources you trust.
-
-### Using HeyStax with a Telegram group?
-→ [Set up Telegram and see all supported commands](topics/team-stax/telegram)
-
----
-
-## Hey CLI — your terminal surface
-
-```bash
-npm i heystax-cli
-
-hey login
-hey use "My Project"
-hey "Build the feature"
-hey ls
-hey done 1
-```
-
-Leaving your terminal to capture a thought costs you context. The CLI keeps you in flow — add an action here, complete it in the dashboard, see it in the extension. All the same Stax.
-
-→ [Full Hey CLI guide](topics/hey-cli)
-
----
-
-## AI integrations — your LLM surface
-
-HeyStax connects to AI assistants through the **Model Context Protocol (MCP)**. Your AI reads your projects, adds actions, marks things done — through natural conversation.
-
-```
-You: What are my next actions for the WebApp project?
-
-Claude: Here are the pending actions for WebApp:
-  1. Fix the auth timeout bug
-  2. Review PR #42
-  3. Update deployment docs
-```
-
-Works with **Claude.ai**, **Claude Code**, and **ChatGPT**. Connect once.
-
-→ [Connect to Claude.ai](topics/mcp-claude-ai)
-→ [Connect to Claude Code](topics/mcp-claude-code)
+## Agents work beside you
 
 {% include badge-partial.html %}
 
-**New agent peer pilot:** start a worker such as Codex or Claude Code under its own name. It can claim a Next Action and leave a blocked or done note on your Stax. [See the feature](topics/agents/) and [three everyday scenarios](topics/scenarios/). The full live journey is still being checked.
+Start a worker such as Codex or Claude Code under its own name. It claims a next action, reports a blocker or a result, and every step carries its name. The claim rules are in production. The full journey is still being checked in a browser.
 
----
+→ [How agents work on a stax](topics/agents/) · [Scenarios](topics/scenarios/)
+
+## See it in action
+
+[![Watch HeyStax in action](https://img.youtube.com/vi/jcc-PsCdbM8/maxresdefault.jpg)](https://www.youtube.com/watch?v=jcc-PsCdbM8)
 
 ## Plans
 
 | Plan | What you get |
 |---|---|
-| **Free** | Local-only extension, receive shared Stax |
-| **Trial** | Full cloud sync, sharing, MCP access, cross-device |
-| **Pro** | Everything in Trial, plus collaboration, timesheets, team features |
+| **Free** | Local-only extension, receive shared stax |
+| **Trial** | Cloud sync, sharing, MCP access, every device |
+| **Pro** | Everything in Trial, plus collaboration, timesheets and team features |
 
-MCP access requires Trial or Pro.
+MCP needs Trial or Pro.
 
----
-
-## The one thing
-
-Your brain should spend its energy doing the work. Not reconstructing where you were.
-
-Pick one project. Save the tabs as a Stax. Add a next action. Tomorrow, open that Stax. Tabs load. Next action is right there. You're working in seconds.
-
-That moment — that's a Flowful Re-entry. That's what HeyStax is here for.
+Now you can open any stax cold and know the next move in seconds.
