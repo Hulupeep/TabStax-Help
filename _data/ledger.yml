@@ -67,17 +67,17 @@ capabilities:
     wording: "MCP needs a Pro or Trial plan"
 
   - id: mcp-token-only
-    name: "MCP takes a token, not a sign-in (Authorization: Bearer)"
+    name: "AI apps connect with your token; they cannot sign in to HeyStax for you (OAuth connector login retired)"
     state: live
-    terms: ['no sign-in', 'token connector']
+    terms: ['token connector', 'sign in to HeyStax for you']
     evidence: "OAuth sign-in retired 9 Oct (tabstax#948, #949). tabstax-webapps#281 answers every OAuth discovery path with 404 and its settings page says to use a token connector; its production deployment for 7a0942a is READY (Vercel, 2026-11-10). tabstax#1142 merged 2026-11-09 makes the MCP function send a plain 401 with a token hint."
-    wording: "HeyStax has no sign-in; your app sends your token as Authorization: Bearer <token>"
+    wording: "you sign in at dash.heystax.ai and copy your token; your AI app sends it as Authorization: Bearer <token>"
 
   - id: mcp-claude
-    name: Claude Code connects over MCP with a token; Claude.ai on the web cannot sign in
+    name: Claude Code connects over MCP with your token; Claude.ai on the web cannot connect without connector login
     state: partial
     evidence: "Claude Code takes a token header (tabstax-webapps settings/mcp ConnectWizard, production 7a0942a READY, Vercel 2026-11-10). The same deploy tells Claude.ai users that sign-in and the token-as-OAuth-Client-ID path are gone and to use a token connector instead. Downgraded from live on 2026-11-10. ChatGPT not re-checked."
-    wording: "Claude Code connects with your token; Claude.ai on the web asks for a sign-in HeyStax does not have"
+    wording: "Claude Code connects with your token; Claude.ai on the web wants to sign in for you, which HeyStax no longer offers"
 
   - id: mcp-chatgpt
     name: ChatGPT connects over MCP
