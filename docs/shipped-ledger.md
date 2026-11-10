@@ -15,8 +15,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 19 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 15 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 21 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 9 |
 
@@ -43,6 +43,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Plan state on a next action: state, waiting_on, next_check, done_when | say where an action stands: next, decision, waiting, blocked or parked, who it waits on, when to look again, and how anyone can tell it is done | tabstax#1124 merged 2026-11-08; production MCP next_actions_add schema on 2026-11-10 has state (next, decision, waiting, blocked, parked), waiting_on, next_check and done_when; webapps #273 (plan state on List cards) production deployment READY for 0b2d522 (Vercel, 2026-11-10) |
 | Goal board: moves toward a goal per stax, with gap-to-action generator (goal_board, readiness_set, crm_scan_report) | the goal board lists each move toward the goal and opens one next action per gap | tabstax#1136 merged 2026-11-08; production MCP tools/list on 2026-11-10 includes goal_board, goal_board_configure, readiness_set and crm_scan_report; webapps #277 production deployment READY for 52decfd (Vercel, 2026-11-10). Not walked in a browser. |
 | Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal | irreversible work waits for a go-ahead from you or a Chief you granted go_ahead | tabstax#1134 deployed 2026-11-09 (coordinator). Production MCP tool list seen through a connected HeyStax client on 2026-11-10: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action approved in a browser yet. |
+| Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools) | each angle is kept on the stax with its outcome; opted-out contacts go on a suppression list | tabstax#1126 merged and deployed 2026-11-08 13:56; production MCP tools/list includes crm_angle_upsert, crm_campaign_upsert, crm_stage_move, crm_suppression_add and crm_query, and crm_query counts on Hubduck Business Development returned an empty result on 2026-11-08. On 2026-11-09 Grok Bot imported 114 organisations, 1 campaign, 8 angles and 13 suppressions into Hubduck Business Development, and @hubduck-marketing made 13 attributed CRM writes with its own key (tabstax#1125, #1139). |
+| Reserve before every send: holds, suppression, cooldown, per-mailbox caps, QC sampling (crm_send_reserve) | every send is reserved first; holds, suppressions, a 7-day cooldown per organisation and 30 sends per mailbox per day are checked before it goes | tabstax#1140 / #1148 deployed and migration 20261109180000 applied on 2026-11-09; between 13:41 and 13:43 @hubduck-marketing reserved, sent and recorded 5 Batch A sends with 0 refusals. |
 
 ## Unverified
 
@@ -61,7 +63,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Worker tokens, one per machine, enrolled with the role's own token | a role enrolls each machine it runs on as a worker with worker_register | Production tools/list returned worker_register on 2026-11-08 (mcp v32, tabstax#1071). A PAT is refused and a worker token cannot enroll another worker. Not walked end to end. |
 | The Chief of Staff creates roles on a stax (roles_manage) | you grant manage_roles once per Stax; the Chief creates roles with role_create | tabstax#1127 migration 20261108140000 applied and mcp deployed from main 1779c06 on 2026-11-08; production tools/list returned role_create and agent_authorize.manage_roles, and role_create without the grant returned ROLES_MANAGE_NOT_GRANTED. A full create has not been walked. |
 | Agent events the Chief reads: run ended, queue empty, claim escalated after 3 failures, no one home, worker missed | when a run ends, a worker runs out of work or an action fails three times, HeyStax records an event the Chief reads | Production MCP tools/list on 2026-11-09 includes agent_events_list and agent_queue_empty; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. A blocked report is not an event; it stays on the action. |
-| Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools) | each angle is kept on the stax with its outcome; opted-out contacts go on a suppression list | tabstax#1126 merged and deployed 2026-11-08 13:56; production MCP tools/list includes crm_angle_upsert, crm_campaign_upsert, crm_stage_move, crm_suppression_add and crm_query, and crm_query counts on Hubduck Business Development returned an empty result on 2026-11-08. No angle has been recorded and read back yet. |
 | Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap | a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour | Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. |
 
 ## Partial
@@ -132,4 +133,5 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Agent events the Chief reads: run ended, queue empty, claim escalated after 3 failures, no one home, worker missed
 - [ ] Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal
 - [ ] Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools)
+- [ ] Reserve before every send: holds, suppression, cooldown, per-mailbox caps, QC sampling (crm_send_reserve)
 - [ ] Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap
