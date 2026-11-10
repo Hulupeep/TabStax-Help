@@ -33,6 +33,8 @@ The question lives on the work it is about, not in one chat app. Anyone on the s
 
 ### An emergency team: a storm, 02:10
 
+<iframe id="hs-scene-storm" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=storm" title="Animation: a coordinator agent asks a crew lead about a fallen tree, he replies from the van, and the crew is sent" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
+
 The **Storm response** stax has Aoife (incident lead), Declan (crew lead, Cork depot) and an agent role `@storm-coordinator` that keeps the action list moving overnight.
 
 1. A card reads "Clear fallen tree, N71 at Bandon". The coordinator needs to know if a crew can go now.
@@ -45,6 +47,8 @@ At 07:00 the morning shift reads one card and sees the question, the answer and 
 
 ### An executive team: the board pack, Thursday 17:00
 
+<iframe id="hs-scene-board" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=board" title="Animation: the Chief of Staff agent finds two revenue figures, asks the CFO, fixes the slide and tells the CEO and Head of Sales" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
+
 The **Q4 board pack** stax has Maeve (CEO), Tom (CFO), Priya (Head of Sales) and `@chief-of-staff`, a role that assembles the pack.
 
 1. The Chief finds that the revenue figure on the sales slide and the one in the finance summary differ.
@@ -54,6 +58,8 @@ The **Q4 board pack** stax has Maeve (CEO), Tom (CFO), Priya (Head of Sales) and
 5. Maeve didn't chase anyone. She gets one message, and the reason sits on the action if a board member asks.
 
 ### Building software: the import that needs one answer
+
+<iframe id="hs-scene-build" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=build" title="Animation: a coding agent asks Gaia which org a file is for, waits, then finishes the import and tells her it is fixed" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
 
 The **Timebreez** stax has Gaia (business analyst), Colm (owner) and `@timebreez-builder`, a coding agent working on a machine of yours.
 
@@ -84,6 +90,8 @@ The **Timebreez** stax has Gaia (business analyst), Colm (owner) and `@timebreez
 
 ### A warehouse robot: bay 14 is blocked
 
+<iframe id="hs-scene-robot" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=robot" title="Animation: a robot worker of the picker role meets a blocked aisle, asks the floor lead, and reroutes by aisle 9 when she replies" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
+
 The **Galway warehouse** stax has Niamh (floor lead) and a role, `@picker`. The role is the job. Its workers are two robots, `robot-01` and `robot-02`. Each robot's control software holds its own worker key, the same kind of key a laptop or a cloud bot gets. HeyStax never drives motors. The controller reads the card, turns it into a route, and reports back.
 
 1. Niamh adds a card for `@picker`: "Move order 5521 to dispatch door 3 by 11:00."
@@ -103,6 +111,8 @@ The **Galway warehouse** stax has Niamh (floor lead) and a role, `@picker`. The 
 6. Niamh can talk to the job, not the machine. She comments to `@picker` on a card: "Use door 4 today, door 3 is closed for repairs." Whichever robot reads the card next picks it up.
 
 Swap `robot-02` for a new robot next year and nothing changes for Niamh. She still writes to `@picker`, and every message says which worker answered.
+
+<script>addEventListener('message',function(e){if(e.data&&e.data.hsSceneHeight&&e.data.scene){var f=document.getElementById('hs-scene-'+e.data.scene);if(f)f.style.height=(e.data.hsSceneHeight+4)+'px';}});</script>
 
 ## The rules
 

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Message scenes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f7f6f2;--fg:#1d2026;--muted:#5e6572;--line:#d9d6cd;--surface:#fff;--owner:#b7791f;--agent:#c2562e;--worker:#2f6fbf;--hook:#0f7b80;--ok:#1f7a4d;--bad:#b83a2e;--bubble:#ecebe6;--sky1:#1c2a44;--sky2:#3a4d6e;--road:#5b6170;--code:#1b1f27;--codefg:#d6dbe4;--wood:#8a5a2b;--leaf:#2f7d4a;--floor:#efece4;--rack:#b9b2a3;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--ok:#58c48d;--bad:#f07a6c;--bubble:#262c37;--floor:#20252e;--rack:#4a5262;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--ok:#58c48d;--bad:#f07a6c;--bubble:#262c37;--floor:#20252e;--rack:#4a5262;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans)}
+.player{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;padding:14px 16px 0}
+.head h3{margin:0;font-size:19px}
+.tag{font:600 12px var(--mono);padding:2px 8px;border-radius:999px;color:var(--ok);border:1px solid var(--ok)}
+svg{display:block;width:100%;height:auto}
+.stage{padding:6px 8px}
+.ctl{display:flex;gap:10px;align-items:center;padding:0 16px 10px}
+.ctl button{font:600 13px var(--mono);background:var(--fg);color:var(--bg);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
+.ctl button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.ctl button:focus-visible{outline:2px solid var(--worker);outline-offset:2px}
+.bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--fg)}
+.steps{list-style:none;margin:0;padding:4px 16px 16px;display:flex;flex-direction:column;gap:2px}
+.steps li{margin:0;padding:6px 10px;border-radius:8px;color:var(--muted);transition:color .3s,background .3s}
+.steps li.now{color:var(--fg);background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.steps li.done{color:var(--fg)}
+.t{font:700 16px var(--sans);fill:var(--fg)}.s{font:400 13px var(--mono);fill:var(--muted)}
+.lbl{font:600 13px var(--sans);fill:var(--fg)}.lblw{font:600 13px var(--sans);fill:#fff}
+.mono{font:400 13.5px var(--mono);fill:var(--codefg)}
+.big{font:700 34px var(--sans);fill:var(--fg)}
+.bt{font:400 13.5px var(--sans);fill:var(--fg)}.btw{font:400 13.5px var(--sans);fill:#fff}.bh{font:700 13.5px var(--sans);fill:var(--fg)}
+.note{font:400 12px var(--sans);fill:var(--muted)}
+@media (prefers-reduced-motion: reduce){.steps li{transition:none}}
+</style></head><body>
+<section class="player" aria-label="Animated scenario">
+  <div class="head"><h3 id="st"></h3><span class="tag">live today</span></div>
+  <div class="stage"><svg id="sv" role="img" aria-labelledby="st"></svg></div>
+  <div class="ctl"><button id="pp" type="button">Pause</button><button id="rs" class="ghost" type="button">Replay</button><div class="bar"><i id="pb"></i></div></div>
+  <ol class="steps" id="steps"></ol>
+</section>
+<script>
+(()=>{
+const NS='http://www.w3.org/2000/svg',sv=document.getElementById('sv');
+const mq=matchMedia('(max-width: 560px)'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),ease=u=>u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
+const span=(t,a,b)=>ease(clamp((t-a)/(b-a),0,1));
+function el(tag,at,par){const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(par)par.appendChild(e);return e;}
+function txt(par,x,y,s,cls,anchor){const e=el('text',{x,y,class:cls,'text-anchor':anchor||'start'},par);e.textContent=s;return e;}
+function along(pts,u){let L=[],tot=0;for(let i=1;i<pts.length;i++){const d=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);L.push(d);tot+=d;}
+  let d=u*tot;for(let i=0;i<L.length;i++){if(d<=L[i]||i===L.length-1){const f=L[i]?clamp(d/L[i],0,1):0;return [pts[i][0]+(pts[i+1][0]-pts[i][0])*f,pts[i][1]+(pts[i+1][1]-pts[i][1])*f];}d-=L[i];}}
+const show=(e,o)=>e.setAttribute('opacity',clamp(o,0,1));
+
+// ---------- shared: action card + phone ----------
+function card(W,title){const g=el('g',{},W);el('rect',{x:10,y:10,width:440,height:58,rx:10,fill:'var(--surface)',stroke:'var(--line)','stroke-width':2},g);
+  txt(g,24,34,title,'t');const st=txt(g,24,56,'','s');return {set(s,c){if(st.textContent!==s)st.textContent=s;st.style.fill=c?`var(--${c})`:'';}};}
+function phone(P,who,msgs){
+  const g=el('g',{},P);el('rect',{x:0,y:0,width:240,height:380,rx:26,fill:'var(--surface)',stroke:'var(--line)','stroke-width':2},g);
+  el('rect',{x:0,y:0,width:240,height:50,rx:26,fill:'var(--hook)'},g);el('rect',{x:0,y:30,width:240,height:20,fill:'var(--hook)'},g);
+  txt(g,120,22,who,'lblw','middle');const sub=txt(g,120,40,'HeyStax Telegram bot','note','middle');sub.style.fill='#ffffffcc';
+  let y=64;const items=msgs.map(m=>{const lines=m.lines,w=Math.min(206,Math.max(...lines.map(l=>l.length))*7.1+22),h=lines.length*18+(m.head?18:0)+12;
+    const bg=el('g',{opacity:0},g);let x=m.side==='out'?228-w:12;
+    if(m.side==='note'){x=(240-w)/2;}
+    el('rect',{x,y,width:w,height:h,rx:12,fill:m.side==='out'?'var(--worker)':m.side==='note'?'transparent':'var(--bubble)'},bg);
+    let ty=y+20;if(m.head){txt(bg,x+11,ty,m.head,'bh');ty+=18;}
+    lines.forEach(l=>{txt(bg,m.side==='note'?x+w/2:x+11,ty,l,m.side==='out'?'btw':m.side==='note'?'note':'bt',m.side==='note'?'middle':'start');ty+=18;});
+    const it={m,g:bg,y};y+=h+10;return it;});
+  const buzz=el('text',{x:120,y:372,class:'note','text-anchor':'middle',opacity:0},g);buzz.textContent='bzz bzz';
+  return {render(t){items.forEach(it=>{const u=span(t,it.m.t,it.m.t+.45);show(it.g,u);it.g.setAttribute('transform',`translate(0,${(1-u)*10})`);});
+    const b=items.find(it=>it.m.side==='in'&&t>=it.m.t&&t<it.m.t+1.2);show(buzz,b?1:0);g.setAttribute('transform',b?`translate(${Math.sin(t*60)*2},0)`:'');}};}
+
+// ---------- scenes (world is 460x380, phone 240x380) ----------
+const SC={
+storm:{title:'Storm night: a crew lead answers from the van',dur:15,
+ steps:[[0,'02:10. A tree is down on the N71. The coordinator agent needs to know if a crew can go.'],[1.6,'It asks Declan on that card. His phone buzzes.'],[5.6,'He replies from the van: "Crew 2 yes, 03:15."'],[7.2,'The answer lands on the card. The coordinator assigns it and the van rolls.'],[12.4,'Road clear. Aoife gets an FYI. Hourly "still monitoring" notes never woke anyone.']],
+ phone:{who:'Declan',msgs:[{t:1.6,side:'in',head:'@storm-coordinator asks',lines:['Can Cork crew 2 take N71','Bandon before 04:00?','On: Clear fallen tree, N71']},{t:5.6,side:'out',lines:['Crew 2 yes, 03:15']},{t:6.4,side:'note',lines:['Sent to @storm-coordinator']}]},
+ build(W){const c=card(W,'Clear fallen tree, N71 Bandon');
+  const defs=el('defs',{},W),gr=el('linearGradient',{id:'sky',x1:0,y1:0,x2:0,y2:1},defs);el('stop',{offset:0,'stop-color':'var(--sky1)'},gr);el('stop',{offset:1,'stop-color':'var(--sky2)'},gr);
+  el('rect',{x:10,y:80,width:440,height:290,rx:10,fill:'url(#sky)'},W);
+  const rain=el('g',{stroke:'#9fb4d8','stroke-width':1.4,opacity:.6},W);const drops=[];for(let i=0;i<40;i++){drops.push([20+((i*53)%420),(i*37)%260]);el('line',{},rain);}
+  el('rect',{x:10,y:290,width:440,height:44,fill:'var(--road)'},W);el('line',{x1:10,y1:312,x2:450,y2:312,stroke:'#e9e3c9','stroke-width':2,'stroke-dasharray':'14 12'},W);
+  const dep=el('g',{},W);el('rect',{x:24,y:226,width:70,height:56,fill:'#d7d2c4'},dep);el('path',{d:'M18 228 L59 198 L100 228 Z',fill:'#b0a893'},dep);txt(dep,59,262,'Depot','lbl','middle');
+  const sign=el('g',{},W);el('rect',{x:360,y:212,width:72,height:24,rx:4,fill:'var(--ok)'},sign);txt(sign,396,229,'N71 Bandon','lblw','middle');el('line',{x1:396,y1:236,x2:396,y2:288,stroke:'#999','stroke-width':3},sign);
+  const tree=el('g',{},W);el('rect',{x:270,y:296,width:110,height:14,rx:5,fill:'var(--wood)'},tree);[[372,296,20],[390,308,16],[360,314,14]].forEach(([x,y,r])=>el('circle',{cx:x,cy:y,r,fill:'var(--leaf)'},tree));
+  const van=el('g',{},W);el('rect',{x:-36,y:-24,width:52,height:26,rx:4,fill:'var(--hook)'},van);el('rect',{x:16,y:-16,width:20,height:18,rx:4,fill:'var(--hook)'},van);el('rect',{x:20,y:-13,width:12,height:8,fill:'#cfeff0'},van);
+  el('circle',{cx:-22,cy:4,r:6,fill:'#222'},van);el('circle',{cx:22,cy:4,r:6,fill:'#222'},van);txt(van,-10,-7,'Crew 2','lblw','middle');
+  const clock=txt(W,436,108,'02:10','lblw','end');clock.style.font='700 20px var(--mono)';
+  const q=el('g',{opacity:0},W);el('circle',{cx:322,cy:262,r:16,fill:'var(--owner)'},q);txt(q,322,269,'?','lblw','middle').style.font='700 20px var(--sans)';
+  return t=>{drops.forEach((d,i)=>{const y=80+((d[1]+t*260)%280),x=d[0]-((t*60)%20);const l=rain.children[i];l.setAttribute('x1',x);l.setAttribute('y1',y);l.setAttribute('x2',x-5);l.setAttribute('y2',Math.min(y+12,368));});
+   const vx=60+span(t,7.4,11)*190;van.setAttribute('transform',`translate(${vx},300)`);
+   const cl=span(t,11.2,12.4);tree.setAttribute('transform',`translate(${cl*40},${cl*50})`);show(tree,1-cl);
+   show(q,t>1&&t<5.6?1:0);clock.textContent=t<7.2?'02:10':t<11?'02:4'+Math.min(9,Math.floor((t-7.2)*2.5)):'03:15';
+   c.set(t<1.6?'open · @storm-coordinator':t<5.6?'question to @declan':t<11.2?'answered · crew 2 assigned':t<12.4?'clearing':'done · FYI sent to @aoife',t>=12.4?'ok':t>=1.6&&t<5.6?'owner':null);};}},
+board:{title:'Board pack: the Chief finds two numbers',dur:13.5,
+ steps:[[0,'Thursday 17:00. The Chief of Staff agent builds the board pack.'],[1.2,'Sales says 1.42m for Q3. Finance says 1.38m. They can\'t both be right.'],[2.8,'It asks Tom, the CFO, on the finance action.'],[6.4,'Tom: "1.38m. Sales is counting a deal that signed on 2 October."'],[8,'The Chief fixes the slide.'],[9.8,'Then one FYI to Priya and Maeve. Nobody chased anyone.']],
+ phone:{who:'Tom',msgs:[{t:2.8,side:'in',head:'@chief-of-staff asks',lines:['Sales slide says 1.42m','for Q3, finance says 1.38m.','Which is the board number?']},{t:6.4,side:'out',lines:['1.38m. Sales is counting','a deal signed on 2 Oct.']},{t:7.2,side:'note',lines:['Sent to @chief-of-staff']}]},
+ build(W){const c=card(W,'Q4 board pack: finance summary');
+  function slide(x,head){const g=el('g',{},W);const r=el('rect',{x,y:96,width:200,height:150,rx:8,fill:'var(--surface)',stroke:'var(--line)','stroke-width':2},g);
+   el('rect',{x,y:96,width:200,height:28,rx:8,fill:'var(--bubble)'},g);txt(g,x+12,115,head,'lbl');txt(g,x+12,150,'Q3 revenue','s');const v=txt(g,x+12,196,'','big');
+   [0,1,2].forEach(i=>el('rect',{x:x+12+i*20,y:226-[8,14,10][i],width:12,height:[8,14,10][i],fill:'var(--line)'},g));return {r,v};}
+  const a=slide(20,'Sales slide'),b=slide(240,'Finance summary');b.v.textContent='1.38m';
+  const ne=txt(W,230,180,'≠','big','middle');ne.style.fill='var(--bad)';
+  const tick=txt(W,120,236,'fixed','lbl','middle');tick.style.fill='var(--ok)';
+  const ppl=[['Priya',120],['Maeve',340]].map(([n,x])=>{const g=el('g',{},W);el('circle',{cx:x,cy:322,r:24,fill:'var(--owner)'},g);txt(g,x,328,n[0],'lblw','middle').style.font='700 18px var(--sans)';txt(g,x,364,n,'lbl','middle');const env=el('g',{opacity:0},W);el('rect',{x:-16,y:-11,width:32,height:22,rx:4,fill:'var(--hook)'},env);el('path',{d:'M-16 -11 L0 3 L16 -11',stroke:'#fff',fill:'none','stroke-width':2},env);return {x,env};});
+  return t=>{const bad=t>1.2&&t<8;[a,b].forEach(s=>{s.r.setAttribute('stroke',bad?'var(--bad)':'var(--line)');s.r.setAttribute('stroke-width',bad?3+Math.sin(t*6):2);});
+   a.v.textContent=t<8?'1.42m':'1.38m';a.v.style.fill=t>=8?'var(--ok)':'';show(ne,bad?1:0);show(tick,span(t,8,8.5));
+   ppl.forEach((p,i)=>{const u=span(t,9.8+i*.4,11+i*.4);show(p.env,u>0&&u<1?1:0);p.env.setAttribute('transform',`translate(${230+(p.x-230)*u},${250+(300-250)*u})`);});
+   c.set(t<2.8?'@chief-of-staff assembling':t<6.4?'question to @tom':t<9.8?'answered · slide fixed':'FYI sent to @priya @maeve',t>=9.8?'ok':t>=2.8&&t<6.4?'owner':null);};}},
+build:{title:'Building: the builder asks Gaia one thing',dur:15,
+ steps:[[0,'The builder agent is fixing the stage-2 import on its own branch.'],[2.2,'Two orgs are called "Dublin". It can\'t guess, so it asks Gaia on the import action.'],[3.6,'Then it waits for her answer.'],[6.6,'Gaia replies "Dublin City". The builder wakes with the answer.'],[8,'It finishes the import and opens a pull request.'],[11.6,'And tells her: fixed, re-run stage 2. No answer needed.']],
+ phone:{who:'Gaia',msgs:[{t:2.4,side:'in',head:'@timebreez-builder asks',lines:['Which org is the stage-2','file for, Dublin North or','Dublin City?']},{t:6.6,side:'out',lines:['Dublin City']},{t:7.3,side:'note',lines:['Sent to @timebreez-builder']},{t:11.6,side:'in',head:'@timebreez-builder says',lines:['Fixed. Re-run stage 2','when you\'re ready.']}]},
+ build(W){const c=card(W,'Import stage-2 opening balances');
+  el('rect',{x:10,y:80,width:440,height:290,rx:10,fill:'var(--code)'},W);[0,1,2].forEach(i=>el('circle',{cx:28+i*16,cy:96,r:5,fill:['#e5675c','#e9b949','#5fbf73'][i]},W));
+  txt(W,236,100,'timebreez · fix/stage-2-import','note','middle').style.fill='#8a93a3';
+  const L=[[.2,'$ run stage-2 import'],[1,'✓ parsed 400 rows'],[2.2,'! 2 orgs named "Dublin"'],[3.6,'… waiting for @gaia'],[6.8,'→ org = Dublin City'],[7.6,'✓ imported 400 rows'],[8.4,'✓ tests pass'],[9.4,'✓ PR opened']];
+  const lines=L.map(([t,s],i)=>{const e=txt(W,26,134+i*28,s,'mono');e.setAttribute('opacity',0);if(s[0]==='!')e.style.fill='#f2b640';if(s[0]==='✓')e.style.fill='#7fd49a';return {t,e,s};});
+  return t=>{lines.forEach((l,i)=>{const n=Math.floor(clamp((t-l.t)/.5,0,1)*l.s.length);l.e.textContent=l.s.slice(0,n);show(l.e,t>=l.t?1:0);
+    if(i===3)show(l.e,t>=l.t?(t<6.6?.55+.45*Math.sin(t*5):.4):0);});
+   c.set(t<2.4?'claimed by @timebreez-builder':t<6.6?'question to @gaia':t<11.6?'answered · PR opened':'FYI sent to @gaia',t>=11.6?'ok':t>=2.4&&t<6.6?'owner':null);};}},
+robot:{title:'Warehouse: robot-02 meets a blocked aisle',dur:16,
+ steps:[[0,'Niamh adds a card for @picker: move order 5521 to door 3. The role is the job.'],[.9,'robot-02, a worker of @picker, claims it and sets off.'],[4.3,'Bay 14 is blocked by a pallet. The robot stops and asks Niamh on the card.'],[7.6,'She replies from the floor: "Aisle 9".'],[8.6,'The answer lands on the card for @picker. robot-02 wakes and reroutes.'],[13.4,'Order at door 3. Card done, and the card shows which worker did it.']],
+ phone:{who:'Niamh',msgs:[{t:4.6,side:'in',head:'@picker asks (robot-02)',lines:['Bay 14 blocked by a pallet.','Wait, or go round by','aisle 9 (+6 min)?']},{t:7.6,side:'out',lines:['Aisle 9']},{t:8.3,side:'note',lines:['Sent to @picker']}]},
+ build(W){const c=card(W,'Move order 5521 to door 3');
+  el('rect',{x:10,y:80,width:440,height:290,rx:10,fill:'var(--floor)',stroke:'var(--line)'},W);
+  [[60,118,320],[60,188,110],[230,188,150],[60,258,320]].forEach(([x,y,w])=>{el('rect',{x,y,width:w,height:24,rx:3,fill:'var(--rack)'},W);for(let i=x+8;i<x+w-6;i+=22)el('rect',{x:i,y:y+4,width:16,height:16,rx:2,fill:'var(--surface)',opacity:.5},W);});
+  txt(W,90,165+5,'Aisle A','note');txt(W,90,235+5,'Aisle 9','note');
+  el('rect',{x:440,y:86,width:10,height:46,fill:'var(--ok)'},W);txt(W,432,104,'Door 3','lbl','end');
+  el('rect',{x:16,y:316,width:56,height:46,rx:4,fill:'none',stroke:'var(--muted)','stroke-dasharray':'4 3'},W);txt(W,44,312,'Dock','note','middle');
+  const pal=el('g',{},W);el('rect',{x:240,y:153,width:26,height:24,rx:2,fill:'var(--wood)'},pal);el('path',{d:'M240 161 H266 M240 169 H266',stroke:'#00000040','stroke-width':2},pal);txt(W,253,148,'Bay 14','note','middle');
+  const P1=[[44,340],[44,165],[214,165]],P2=[[214,165],[200,165],[200,235],[420,235],[420,109],[434,109]];
+  const plan=el('polyline',{points:'44,340 44,165 420,165 420,109 434,109',fill:'none',stroke:'var(--worker)','stroke-width':2,'stroke-dasharray':'5 5',opacity:.5},W);
+  const re=el('polyline',{points:P2.map(p=>p.join(',')).join(' '),fill:'none',stroke:'var(--ok)','stroke-width':2.5,'stroke-dasharray':'6 5',opacity:0},W);
+  const r=el('g',{},W);el('rect',{x:-15,y:-15,width:30,height:30,rx:7,fill:'var(--worker)'},r);el('rect',{x:-7,y:-25,width:14,height:12,rx:2,fill:'var(--owner)'},r);
+  el('circle',{cx:-6,cy:-3,r:3.2,fill:'#fff'},r);el('circle',{cx:6,cy:-3,r:3.2,fill:'#fff'},r);const mouth=el('path',{d:'M-6 6 Q0 10 6 6',stroke:'#fff','stroke-width':2,fill:'none'},r);
+  [-16,16].forEach(x=>el('rect',{x:x-3,y:-10,width:6,height:20,rx:2,fill:'#333'},r));
+  const name=txt(W,0,0,'robot-02','lbl','middle');
+  const q=el('g',{opacity:0},W);el('circle',{cx:0,cy:0,r:13,fill:'var(--owner)'},q);txt(q,0,6,'?','lblw','middle').style.font='700 17px var(--sans)';
+  return t=>{let p,wob=0;if(t<1)p=P1[0];else if(t<4.3)p=along(P1,span(t,1,4.3));else if(t<8.6)p=P1[2];else p=along(P2,span(t,8.6,13.2));
+   if((t>1&&t<4.3)||(t>8.6&&t<13.2))wob=Math.sin(t*18)*1.2;
+   r.setAttribute('transform',`translate(${p[0]},${p[1]+wob})`);name.setAttribute('x',p[0]);name.setAttribute('y',p[1]+32);
+   const blocked=t>=4.3&&t<8.6;show(q,blocked?1:0);q.setAttribute('transform',`translate(${p[0]-26},${p[1]-28+Math.sin(t*4)*2})`);
+   mouth.setAttribute('d',blocked?'M-6 8 Q0 4 6 8':'M-6 6 Q0 10 6 6');show(plan,t<8.6?.5:.15);show(re,span(t,8.4,8.9));
+   c.set(t<.9?'open · for @picker':t<4.3?'claimed by robot-02':t<7.6?'question to @niamh':t<13.4?'answered · rerouting via aisle 9':'done by robot-02',t>=13.4?'ok':t>=4.3&&t<7.6?'owner':null);};}}
+};
+const id=(new URLSearchParams(location.search).get('s'))||location.hash.slice(1)||'robot';const S=SC[id]||SC.robot;
+document.getElementById('st').textContent=S.title;
+let world,ph,G={};
+function build(){sv.innerHTML='';const m=mq.matches;
+  const W=el('g',{},sv),P=el('g',{},sv);world=S.build(W);ph=phone(P,S.phone.who,S.phone.msgs);
+  if(m){sv.setAttribute('viewBox','0 0 460 975');P.setAttribute('transform','translate(50,392) scale(1.5)');}
+  else{sv.setAttribute('viewBox','0 0 720 380');P.setAttribute('transform','translate(470,0)');}
+  const ol=document.getElementById('steps');ol.innerHTML='';G.steps=S.steps.map(([a,s])=>{const li=document.createElement('li');li.textContent=s;ol.appendChild(li);return {a,li};});}
+function render(t){world(t);ph.render(t);let k=-1;G.steps.forEach((s,i)=>{if(t>=s.a)k=i;});G.steps.forEach((s,i)=>s.li.className=i===k?'now':i<k?'done':'');
+  document.getElementById('pb').style.width=Math.min(100,t/S.dur*100)+'%';}
+let t0=performance.now(),paused=false,pauseAt=0;
+function tick(now){if(!paused){const t=(now-t0)/1000;if(t>S.dur+1.5)t0=now;else render(Math.min(t,S.dur));}requestAnimationFrame(tick);}
+const pp=document.getElementById('pp');
+pp.onclick=()=>{if(paused){paused=false;t0=performance.now()-pauseAt*1000;pp.textContent='Pause';}else{paused=true;pauseAt=(performance.now()-t0)/1000;pp.textContent='Play';}};
+document.getElementById('rs').onclick=()=>{t0=performance.now();if(paused)pp.click();};
+mq.addEventListener('change',()=>{build();render(paused?pauseAt:(performance.now()-t0)/1000);});
+build();render(0);
+window.__renderAt=t=>{paused=true;render(t);};
+if(reduce){paused=true;pp.textContent='Play';pauseAt=S.dur;render(S.dur);}
+requestAnimationFrame(tick);
+function post(){try{parent.postMessage({hsSceneHeight:document.documentElement.scrollHeight,scene:id},'*');}catch(e){}}
+new ResizeObserver(post).observe(document.body);addEventListener('load',post);
+})();
+</script></body></html>
