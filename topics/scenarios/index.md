@@ -12,6 +12,7 @@ These examples follow one Next Action from a person's decision to a named agent'
 
 | Who | The moment they recognise | What stays in their Stax | Read |
 |---|---|---|---|
+| **Anyone with a goal** | You want to see the whole system move at once. | The goal, the roles, every claim and every handoff. | [The whole system in 90 seconds](heystax-system) |
 | **Founder** | A checkout fix must land before a sales demo. | The agent's claim, its blocked question and the PR link. | [Mara's launch handoff](founder-launch-handoff) |
 | **Studio owner** | A client review is near and a designer and worker depend on each other. | The human decision, the agent's status and the preview link. | [Nadia's client handoff](studio-client-handoff) |
 | **Consultant** | Four days passed; the worker's last question has gone cold. | The open claim, exact blocker and eventual rollback proof. | [Alex returns to the work](consultant-return-to-agent-work) |

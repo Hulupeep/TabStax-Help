@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeyStax in Motion</title>
+<style>
+:root{
+  --bg:#0d1015; --panel:#151a22; --panel2:#1b2230; --line:#2a3342; --text:#e8ecf2; --muted:#8a96a8;
+  --accent:#f2b640; --ok:#4cc38a; --warn:#e5624f;
+  --grok:#e8ecf2; --claude:#d97757; --codex:#5aa9e6; --hermes:#b18cf0; --human:#f2b640;
+}
+:root[data-theme="light"]{ --bg:#0d1015; }
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;overflow:hidden}
+#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg)}
+#stage{position:relative;width:1920px;height:1080px;transform-origin:center center;background:var(--bg);overflow:hidden}
+.abs{position:absolute}
+.hdr{left:60px;top:36px;width:1800px;height:190px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+.stax-name{left:96px;top:58px;font-size:20px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.mission{left:96px;top:92px;font-size:38px;font-weight:600;white-space:nowrap}
+.obj{left:1250px;top:66px;width:560px;height:128px;border-radius:16px;background:var(--panel2);border:2px solid var(--accent);display:flex;flex-direction:column;justify-content:center;padding:0 28px;box-sizing:border-box}
+.obj .k{font-size:16px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.obj .v{font-size:34px;font-weight:700;margin-top:6px}
+.obj2{left:1250px;top:66px;width:560px;height:128px;border-radius:16px;background:var(--panel2);border:2px solid var(--line);display:flex;flex-direction:column;justify-content:center;padding:0 28px;box-sizing:border-box}
+.col{width:340px;height:770px;top:262px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
+.col.human{border-color:var(--human)}
+.colh{font-size:24px;font-weight:700;padding:18px 20px 4px}
+.colm{font-size:16px;color:var(--muted);padding:0 20px;line-height:1.35;height:42px}
+.grant{position:absolute;right:14px;top:92px;font-size:12px;padding:3px 8px;border-radius:999px;border:1px solid var(--ok);color:var(--ok)}
+.chip{height:32px;border-radius:999px;padding:0 12px 0 8px;display:flex;align-items:center;gap:8px;font-size:16px;font-weight:600;background:#0f141b;border:1px solid var(--line);white-space:nowrap}
+.dot{width:12px;height:12px;border-radius:50%}
+.card{width:300px;min-height:70px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);padding:12px 14px;box-sizing:border-box;font-size:20px;line-height:1.3;font-weight:500}
+.card .who{font-size:13px;color:var(--muted);margin-top:4px}
+.card.win{border-color:var(--ok)}
+.card.human{border-color:var(--human)}
+.ring{position:absolute;right:-10px;top:-10px;width:30px;height:30px}
+.log{width:300px;border-left:2px solid var(--line);padding-left:10px;font-size:14px;color:var(--muted);line-height:1.5;font-family:ui-monospace,Menlo,monospace}
+.cap{left:0;width:1920px;top:1040px;text-align:center;font-size:30px;font-weight:600;letter-spacing:.01em}
+.capbg{left:0;top:1022px;width:1920px;height:58px;background:linear-gradient(transparent,rgba(13,16,21,.95) 40%)}
+.tag{font-size:13px;padding:4px 10px;border-radius:999px;border:1px dashed var(--muted);color:var(--muted)}
+.ping{width:14px;height:14px;border-radius:50%;background:var(--warn);box-shadow:0 0 18px var(--warn)}
+.pulse{width:14px;height:14px;border-radius:50%;background:var(--ok);box-shadow:0 0 18px var(--ok)}
+.evd{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.end{left:0;top:0;width:1920px;height:1080px;background:rgba(13,16,21,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.end .l1{font-size:64px;font-weight:700;max-width:1500px;line-height:1.15}
+.end .l2{font-size:30px;color:var(--muted);margin-top:28px}
+.counter{font-size:14px;color:var(--muted);font-family:ui-monospace,Menlo,monospace}
+#ctrl{position:fixed;left:12px;bottom:10px;font-size:13px;color:var(--muted);font-family:system-ui;z-index:9}
+#ctrl button{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="stage"></div></div>
+<div id="ctrl"><button id="replay">Replay</button></div>
+<script>
+const S=document.getElementById('stage');
+const W=1920,H=1080,DUR=90;
+function fit(){const s=Math.min(innerWidth/W,innerHeight/H);S.style.transform='scale('+s+')';}
+addEventListener('resize',fit);fit();
+function mk(cls,html,parent){const d=document.createElement('div');d.className='abs '+cls;if(html!=null)d.innerHTML=html;(parent||S).appendChild(d);return d;}
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const sm=x=>x*x*(3-2*x);
+const seg=(t,a,b)=>sm(cl((t-a)/(b-a)));
+const lerp=(a,b,k)=>a+(b-a)*k;
+function show(e,o){e.style.opacity=o;e.style.visibility=o<=0.001?'hidden':'visible';}
+function at(e,x,y,o,sc){e.style.left=x+'px';e.style.top=y+'px';if(o!=null)show(e,o);e.style.transform=sc!=null&&sc!==1?'scale('+sc+')':'';}
+
+// ---------- layout ----------
+const COLX=[60,430,800,1170,1540];
+const ROLES=[
+ {n:'Chief of Staff',m:'Manages the stax. Moves priorities.'},
+ {n:'Marketing',m:'Finds the angle to School 2 paying.'},
+ {n:'Business Development',m:'Turns angles into calls.'},
+ {n:'Builder',m:'Builds what the current angle needs.'},
+ {n:'Colm',m:'Direction. Only the moments a person must handle.',human:true},
+];
+const slotY=i=>440+i*108;
+const cardX=c=>COLX[c]+20;
+
+// threads (svg)
+const svgNS='http://www.w3.org/2000/svg';
+const svg=document.createElementNS(svgNS,'svg');svg.setAttribute('width',W);svg.setAttribute('height',H);svg.style.position='absolute';svg.style.left=0;svg.style.top=0;S.appendChild(svg);
+const threads=[];
+for(let c=0;c<4;c++){const p=document.createElementNS(svgNS,'path');const x=COLX[c]+170;
+ p.setAttribute('d',`M${x} 262 C ${x} 235, 1530 240, 1530 196`);p.setAttribute('fill','none');p.setAttribute('stroke','#f2b640');p.setAttribute('stroke-width','2');
+ svg.appendChild(p);threads.push(p);}
+threads.forEach(p=>{const L=p.getTotalLength();p.dataset.L=L;p.style.strokeDasharray=L;});
+
+// header
+const hdr=mk('hdr');
+const staxName=mk('stax-name','Stax · Hubduck');
+const mission=mk('mission','');
+const MISSION='Mission: win paying schools for Hubduck.';
+const obj=mk('obj','<div class="k">Objective</div><div class="v" id="objv">School 2 paying · 20 Nov</div>');
+const objNext=mk('obj2','<div class="k">Next objective</div><div class="v">Schools 3–10</div>');
+const routeTag=mk('','<span class="tag">route: unknown</span>');
+
+// columns
+const cols=ROLES.map((r,i)=>{const c=mk('col'+(r.human?' human':''),`<div class="colh">${r.n}</div><div class="colm">${r.m}</div>`);c.style.left=COLX[i]+'px';
+  if(!r.human){c.grant=mk('','grant: work',c);c.grant.className='grant';}return c;});
+
+// workers
+function chip(label,color){return mk('chip',`<span class="dot" style="background:${color}"></span>${label}`);}
+const WK={
+ chiefGrok:chip('Grok Bot','var(--grok)'),
+ mktGrok:chip('Grok Bot','var(--grok)'),
+ mktHermes:chip('Hermes','var(--hermes)'),
+ bdHermes:chip('Hermes','var(--hermes)'),
+ c1:chip('Claude Code · session 1','var(--claude)'),
+ cx:chip('Codex · session 1','var(--codex)'),
+ c2:chip('Claude Code · session 2','var(--claude)'),
+};
+const chipY=r=>352+r*40;
+
+// cards
+function card(txt,who,extra){const c=mk('card'+(extra?' '+extra:''),`${txt}<div class="who">${who||''}</div>`);return c;}
+const A1=card('Prove staff read safeguarding notices','angle · evidence pending');
+const A2=card('Inspection-ready in one click','angle · evidence pending');
+const A3=card('Half the principal’s inbox','angle · evidence pending');
+const A4=card('Next: growing schools, 21+ staff','angle · from 3 “not yet” replies');
+const B1=card('Landing page: safeguarding proof','@builder');
+const B2=card('Proof export','@builder');
+const B3=card('Tests','@builder');
+const D1=card('New opener for Batch C','@business-development');
+const H1=card('Take call · St. Brigid’s NS · Thu 10:00','@colm · booked','human');
+const evid=[A1,A2,A3].map(()=>[0,1,2,3,4].map(()=>mk('evd')));
+// rings
+function ring(parent){const s=document.createElementNS(svgNS,'svg');s.setAttribute('viewBox','0 0 30 30');s.classList.add('ring');
+ const bg=document.createElementNS(svgNS,'circle');bg.setAttribute('cx',15);bg.setAttribute('cy',15);bg.setAttribute('r',11);bg.setAttribute('fill','#0d1015');bg.setAttribute('stroke','#2a3342');bg.setAttribute('stroke-width','4');
+ const fg=document.createElementNS(svgNS,'circle');fg.setAttribute('cx',15);fg.setAttribute('cy',15);fg.setAttribute('r',11);fg.setAttribute('fill','none');fg.setAttribute('stroke-width','4');fg.setAttribute('transform','rotate(-90 15 15)');
+ const C=2*Math.PI*11;fg.style.strokeDasharray=C;s.appendChild(bg);s.appendChild(fg);parent.appendChild(s);return {s,fg,C};}
+const R1=ring(B1),R2=ring(B2),R3=ring(B3);
+function setRing(r,frac,color,o){r.fg.style.strokeDashoffset=r.C*(1-frac);r.fg.setAttribute('stroke',color);r.s.style.opacity=o;}
+// check marks
+function check(parent){const d=document.createElement('div');d.style.cssText='position:absolute;right:12px;bottom:8px;color:#4cc38a;font-weight:700;font-size:18px';d.textContent='✓ done';parent.appendChild(d);return d;}
+const K1=check(B1),K2=check(B2),K3=check(B3);
+// logs
+const L1=mk('log','12:04 claimed · lease 15m<br>12:19 heartbeat · copy drafted<br>12:31 page live · PR #312<br>12:33 report → done');
+const L2=mk('log','12:05 claimed (Codex)<br>12:22 run ended · lease expired<br>12:23 claimed (Claude 2)<br>12:40 report → done');
+// pings
+const ping=mk('ping'),pulse=mk('pulse'),pulse2=mk('pulse');
+const sendCtr=mk('counter','');
+const reply=mk('card','“Yes, can we talk Thursday?”<div class="who">reply · St. Brigid’s NS · 31 staff</div>');
+const tagPlanned=mk('','<span class="tag">leases, run end: live, not yet browser-checked</span>');
+const tagPlanned2=mk('','<span class="tag">worker swap: live, not yet browser-checked</span>');
+const tagIll=mk('','<span class="tag">illustrative names and numbers</span>');
+const capbg=mk('capbg');const cap=mk('cap','');
+const end=mk('end','<div class="l1">You have no idea what your bots are doing.<br>HeyStax does.</div><div class="l2">The goal stays put. The bots and the angles change.</div>');
+
+const CAPS=[[0.6,7,'The goal is clear. The route isn’t.'],[7,15,'Roles, not bots. Every role answers to the goal.'],[15,23,'Any runtime can fill a role.'],
+[23,35,'Marketing hunts for the angle.'],[35,43,'The angle turns into work, routed by handle.'],[43,56,'Sessions come and go. The work doesn’t.'],
+[56,63,'Cards stay one line. Done wakes the next role.'],[63,72,'You get the moments only you can do.'],[72,80,'Swap the bot. Keep the work.'],[80,85.5,'One objective down. The next one is already moving.']];
+
+function fly(e,from,to,t,a,b,o){const k=seg(t,a,b);at(e,lerp(from[0],to[0],k),lerp(from[1],to[1],k),o);}
+
+function render(t){
+ // header
+ show(hdr,seg(t,0,0.8));show(staxName,seg(t,0.2,1));
+ at(mission,96,92,seg(t,0.4,1));mission.textContent=MISSION.slice(0,Math.floor(cl((t-0.8)/2.2)*MISSION.length));
+ const objIn=seg(t,3,4);const pul=t<80?1+0.03*Math.sin(t*4)*objIn:1;
+ const objOut=seg(t,85.5,86.5);
+ at(obj,1250,66+lerp(0,0,0),objIn*(1-0.0*objOut),pul);
+ const done=t>=81;document.getElementById('objv').textContent=done?'School 2 paying ✓':'School 2 paying · 20 Nov';
+ obj.style.borderColor=done?'var(--ok)':'var(--accent)';
+ at(objNext,1250,66+lerp(150,0,seg(t,84,85.5)),seg(t,84,85.5)*(t<85.5?0:1));
+ if(t>=84&&t<85.5){at(obj,1250,66-lerp(0,30,seg(t,84,85.5)),1-seg(t,84,85.5));at(objNext,1250,66+lerp(40,0,seg(t,84,85.5)),seg(t,84,85.5));}
+ if(t>=85.5){show(obj,0);at(objNext,1250,66,1);}
+ at(routeTag,1255,206,seg(t,4,5)*(1-seg(t,80,81)));
+ // threads
+ threads.forEach((p,i)=>{const L=+p.dataset.L;const k=seg(t,8.5+i*0.6,10.5+i*0.6);p.style.strokeDashoffset=L*(1-k);
+   p.style.opacity=k>0?(t<80?0.45:lerp(0.45,1,seg(t,80,81.5))):0;p.style.strokeDasharray=t<80?'6 8':L;if(t>=80)p.style.strokeDashoffset=0;
+   p.setAttribute('stroke',t>=81?'#4cc38a':'#f2b640');});
+ // columns
+ cols.forEach((c,i)=>{const k=seg(t,7+i*0.7,8.2+i*0.7);c.style.top=(262+lerp(40,0,k))+'px';show(c,k);
+   if(c.grant){const g=seg(t,12+i*0.4,12.6+i*0.4);c.grant.style.opacity=g;c.grant.style.transform='scale('+lerp(1.6,1,g)+')';}});
+ // workers
+ const cin=(a)=>seg(t,a,a+0.7);
+ at(WK.chiefGrok,COLX[0]+20,chipY(0)+lerp(-20,0,cin(16)),cin(16));
+ const swap=seg(t,73,75.5);
+ at(WK.mktGrok,COLX[1]+20,chipY(0)+lerp(-20,0,cin(17)),cin(17)*(1-swap));
+ WK.mktGrok.style.filter=t>72.5?'grayscale(1)':'';
+ at(WK.mktHermes,COLX[1]+20,chipY(0)+lerp(-20,0,seg(t,75,76)),seg(t,75,76));
+ at(WK.bdHermes,COLX[2]+20,chipY(0)+lerp(-20,0,cin(18)),cin(18));
+ at(WK.c1,COLX[3]+20,chipY(0)+lerp(-20,0,cin(19)),cin(19));
+ const cxDead=seg(t,50,51);
+ at(WK.cx,COLX[3]+20,chipY(1)+lerp(-20,0,cin(20)),cin(20)*(1-seg(t,53.5,54.5)));
+ WK.cx.style.filter=cxDead>0?`grayscale(${cxDead}) brightness(${1-0.4*cxDead})`:'';
+ at(WK.c2,COLX[3]+20,(t<54.5?chipY(2):lerp(chipY(2),chipY(1),seg(t,54.5,55.3)))+lerp(-20,0,seg(t,46,46.7)),seg(t,46,46.7));
+ // scene 4 angles in marketing
+ const mx=cardX(1);
+ [A1,A2,A3].forEach((a,i)=>{const k=seg(t,23.5+i*0.8,24.3+i*0.8);let o=k;let y=slotY(i);
+   if(i>0){o*=1-seg(t,31,32.5);} if(i===0){y=lerp(slotY(0),slotY(0),1);}
+   at(a,mx+lerp(-30,0,k),y,o);
+   a.classList.toggle('win',i===0&&t>=32);
+   a.querySelector('.who').textContent=i===0&&t>=32?'angle · locked by evidence':(t>=27?'angle · gathering evidence':'angle · evidence pending');
+   a.style.textDecoration=(i>0&&t>=30.5)?'line-through':'none';
+   evid[i].forEach((d,j)=>{const n=i===0?5:(i===1?2:1);const kk=seg(t,26+j*0.9,26.5+j*0.9);at(d,mx+222+j*13,slotY(i)+58,j<n?kk*(i>0?1-seg(t,31,32.5):1):0);});
+ });
+ // A1 compacts later, A4 appears at swap
+ at(A4,mx,slotY(1),seg(t,76.5,77.5));
+ // scene 5: cards created in marketing, fly to targets
+ const src=[mx,slotY(1)];
+ fly(B1,src,[cardX(3),slotY(0)],t,36,38,seg(t,35.4,36));
+ fly(B2,src,[cardX(3),slotY(1)],t,37,39,seg(t,36.4,37));
+ fly(B3,src,[cardX(3),slotY(2)],t,38,40,seg(t,37.4,38));
+ fly(D1,src,[cardX(2),slotY(0)],t,39,41,seg(t,38.4,39));
+ if(t<35.4){show(B1,0);show(B2,0);show(B3,0);show(D1,0);}
+ // chief nudge: B3 moves above? simple: ping from chief to builder col at 41.5-43
+ const nk=seg(t,41.2,42.6);at(pulse2,lerp(COLX[0]+170,COLX[3]+170,nk),lerp(352,400,nk),t>41.2&&t<42.6?1:0);
+ if(t>42.6&&t<43.6){B1.style.boxShadow='0 0 0 2px var(--accent)';}else B1.style.boxShadow='';
+ // scene 6: claims + leases
+ const lease=(a,len)=>1-cl((t-a)/len);
+ const c1on=t>=44; const cxon=t>=44.8; const c2on=t>=47;
+ setRing(R1,c1on?Math.max(0.55,lease(44,60)):0,'var(--claude)',c1on&&t<57.5?1:0);
+ // codex lease drains from 50 to 52.5
+ let r2=0,col2='var(--codex)';if(cxon&&t<50)r2=1-0.05*Math.sin((t-44.8)*3)**2; if(t>=50&&t<52.5)r2=1-seg(t,50,52.5);
+ if(t>=54.5){r2=1;col2='var(--claude)';}
+ setRing(R2,r2,col2,(cxon&&t<52.5)||(t>=54.5&&t<59)?1:0);
+ setRing(R3,c2on?0.9:0,'var(--claude)',c2on&&t<56.5?1:0);
+ B1.querySelector('.who').textContent=t>=44?'claimed · Claude s1':'@builder';
+ B2.querySelector('.who').textContent=t>=54.5?'claimed · Claude s2':(t>=52.5?'released · still @builder':(t>=44.8?'claimed · Codex s1':'@builder'));
+ B3.querySelector('.who').textContent=t>=47?'claimed · Claude s2':'@builder';
+ // run ended ping codex -> chief
+ const pk=seg(t,52.5,53.8);at(ping,lerp(COLX[3]+30,COLX[0]+300,pk),lerp(chipY(1)+8,chipY(0)+8,pk),t>52.5&&t<53.9?1:0);
+ at(tagPlanned,COLX[3]+20,990,seg(t,44,45)*(1-seg(t,56,57)));
+ // scene 7: done + logs
+ K3.style.opacity=seg(t,56.3,56.8);K1.style.opacity=seg(t,57.3,57.8);K2.style.opacity=seg(t,58.6,59.1);
+ at(L1,cardX(3),slotY(2)+96+lerp(10,0,seg(t,57.5,58.5)),seg(t,57.5,58.5)*(1-seg(t,63,64)));
+ at(L2,cardX(3),slotY(2)+200+lerp(10,0,seg(t,58.8,59.8)),seg(t,58.8,59.8)*(1-seg(t,63,64)));
+ const dk=seg(t,60,61.6);at(pulse,lerp(COLX[3]+20,COLX[2]+300,dk),lerp(slotY(0)+30,slotY(0)+30,dk),t>60&&t<61.7?1:0);
+ if(t>=61.6&&t<62.6)D1.style.boxShadow='0 0 0 2px var(--ok)';else D1.style.boxShadow='';
+ // builder cards compact after done
+ [B1,B2,B3].forEach(b=>{b.style.opacity=t>64?lerp(1,0.55,seg(t,64,65)):b.style.opacity;});
+ // scene 8: BD sends within caps, reply, booked, human card
+ const n=Math.round(lerp(8,12,seg(t,63.5,66)));
+ at(sendCtr,cardX(2),slotY(1)-18,seg(t,63.3,63.8)*(1-seg(t,79,80)));sendCtr.textContent=`sent today ${n}/20 (cap)`;
+ D1.querySelector('.who').textContent=t>=63.5?'sending within caps':'@business-development';
+ at(reply,cardX(2)+lerp(40,0,seg(t,66.5,67.5)),slotY(1)+14,seg(t,66.5,67.5)*(1-seg(t,79,80)));
+ fly(H1,[cardX(2),slotY(2)],[cardX(4),slotY(0)],t,68.8,70.4,seg(t,68,68.8));
+ if(t<68)show(H1,0);
+ H1.style.boxShadow=t>70.4&&t<72?'0 0 0 3px var(--human)':'';
+ // scene 9 tag
+ at(tagPlanned2,COLX[1]+20,990,seg(t,72.5,73.3)*(1-seg(t,79.5,80.5)));
+ // tag illustrative
+ at(tagIll,96,180,seg(t,1,2)*(1-seg(t,86,87)));
+ // captions
+ let c='',co=0;for(const [a,b,txt] of CAPS){if(t>=a&&t<b){c=txt;co=Math.min(seg(t,a,a+0.5),1-seg(t,b-0.5,b));}}
+ cap.textContent=c;show(cap,co);cap.style.top='1030px';show(capbg,1);
+ // end
+ show(end,seg(t,86,87.2));
+}
+// initial positions for hidden things
+[A1,A2,A3,A4,B1,B2,B3,D1,H1,reply,L1,L2,ping,pulse,pulse2].forEach(e=>show(e,0));
+window.render=render;window.DUR=DUR;
+let t0=null,raf;
+function loop(ts){if(t0==null)t0=ts;const t=(ts-t0)/1000;render(Math.min(t,DUR));if(t<DUR)raf=requestAnimationFrame(loop);}
+function play(){cancelAnimationFrame(raf);t0=null;raf=requestAnimationFrame(loop);}
+document.getElementById('replay').onclick=play;
+if(!location.hash.includes('manual'))play();else{document.getElementById('ctrl').style.display='none';render(0);}
+</script>
+</body>
+</html>
