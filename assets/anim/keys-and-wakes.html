@@ -91,12 +91,12 @@ const SC=[
   {t:5,a:'ht',b:'bot',l:'retry 5 min',k:'hook'},{t:6.2,chip:'bot',s:'awake'},{t:6.2,chip:'ht',s:'delivered'},{t:6.3,a:'ht',b:'au',l:'2xx',k:'worker'},
   {t:7.4,a:'bot',b:'bd',l:'claim · report done',k:'worker'}],
  steps:[[0,'A card lands on a role that a hosted bot fills.'],[1.5,'HookTunnel sends a signed wake. It carries IDs only, never the card text.'],[2.7,'No 2xx back? It retries at 1, 5 and 30 minutes.'],[6.3,'Every attempt is written down. push_deliveries_list shows them.'],[7.4,'The bot reads the card with its own key, claims it and reports.']]},
-{id:'listen',tab:'5 · hey listen',title:'A CLI worker listens for work',tag:['review','merged, install from the repo'],
- nodes:[{id:'bd',c:0,r:1,t:'Stax',s:'cards for @builder',k:'neutral'},{id:'li',c:2,r:1,t:'hey listen',s:'your machine\ntsw_live_',k:'worker'},{id:'cx',c:4,r:1,t:'claude or codex',s:'child process',k:'worker'}],
+{id:'listen',tab:'5 · heystax listen',title:'A CLI worker listens for work',tag:['review','live, install from the repo'],
+ nodes:[{id:'bd',c:0,r:1,t:'Stax',s:'cards for @builder',k:'neutral'},{id:'li',c:2,r:1,t:'heystax listen',s:'your folder\ntsw_live_',k:'worker'},{id:'cx',c:4,r:1,t:'claude or codex',s:'own git worktree',k:'worker'}],
  beats:[{t:.3,a:'li',b:'bd',l:'wait_for_work',k:'worker'},{t:1.4,chip:'li',s:'waiting\noutbound only'},{t:3,a:'bd',b:'li',l:'card arrives'},
   {t:4.2,a:'li',b:'bd',l:'run_start · claim',k:'worker'},{t:5.3,a:'li',b:'cx',l:'start on card',k:'worker'},{t:6.4,chip:'cx',s:'working'},
-  {t:7.6,a:'cx',b:'li',l:'exit 0'},{t:8.7,a:'li',b:'bd',l:'report · run_end',k:'worker'},{t:9.8,chip:'cx',s:'child process'},{t:9.8,chip:'li',s:'your machine\ntsw_live_'}],
- steps:[[0,'hey listen runs on your machine with a worker key.'],[.3,'It calls wait_for_work and holds the line open. Outbound only, no open ports.'],[3,'A card arrives. It starts a run and claims the card.'],[5.3,'It starts claude or codex as a child process on that card.'],[7.6,'When the child finishes, it reports done and ends the run.']]},
+  {t:7.6,a:'cx',b:'li',l:'exit 0'},{t:8.7,a:'li',b:'bd',l:'report · run_end',k:'worker'},{t:9.8,chip:'cx',s:'worktree removed'},{t:9.8,chip:'li',s:'your folder\ntsw_live_'}],
+ steps:[[0,'heystax listen runs in a connected folder with that folder\'s worker key.'],[.3,'It calls wait_for_work and holds the line open. Outbound only, no open ports.'],[3,'A card arrives. It starts a run and claims the card.'],[5.3,'It starts claude or codex on the card in its own git worktree, on its own branch. The folder you work in is never touched.'],[7.6,'When it finishes, it reports and ends the run.'],[9.8,'Pushed work: the worktree is removed. Unpushed work is kept, never thrown away.']]},
 {id:'events',tab:'6 · Events wake the Chief',title:'Events wake the Chief',tag:['live','in production #1072 #1073'],
  nodes:[{id:'a',c:0,r:0,t:'@builder',s:'live',k:'worker'},{id:'b',c:0,r:1,t:'@hubduck-bd',s:'live',k:'worker'},{id:'n',c:0,r:2,t:'@timebreez-bot',s:'live',k:'worker'},
   {id:'ev',c:2,r:1,t:'Events',s:'agent_events_list',k:'neutral'},{id:'ch',c:4,r:1,t:'@chief-of-staff',s:'idle',k:'agent'}],
@@ -110,12 +110,12 @@ const SC=[
  beats:[{t:.3,a:'ro',b:'cd',l:'needs go-ahead',k:'agent'},{t:1.4,chip:'cd',s:'waiting for go-ahead'},{t:2.4,a:'ch',b:'cd',l:'go_ahead',k:'agent'},{t:3.5,chip:'cd',s:'cleared · runs'},
   {t:5,chip:'cd',s:'Chief proposed this one'},{t:5.2,a:'ch',b:'cd',l:'go_ahead on own card',k:'bad',bounce:1},{t:6.6,a:'you',b:'cd',l:'go_ahead',k:'owner'},{t:7.7,chip:'cd',s:'cleared · runs'}],
  steps:[[0,'Only irreversible work waits. Everything else runs without asking.'],[2.4,'The Chief can give the go-ahead on work someone else proposed.'],[5,'It can never approve its own proposal, or work assigned to it.'],[6.6,'You can always give it with your PAT.']]},
-{id:'connect',tab:'8 · hey connect',title:'One-step setup for any CLI',tag:['planned','planned, in review #1144'],
- nodes:[{id:'you',c:0,r:1,t:'You',s:'paste a key once',k:'owner'},{id:'cn',c:2,r:1,t:'hey connect',s:'which stax?',k:'plan'},
-  {id:'tk',c:4,r:0,t:'worker.token',s:'saved 0600',k:'plan'},{id:'ag',c:4,r:2,t:'AGENTS.md',s:'standing order',k:'plan'}],
- beats:[{t:.3,a:'you',b:'cn',l:'PAT, role or worker key',k:'owner'},{t:1.4,chip:'cn',s:'which stax?\nwhich role?'},{t:2.6,a:'cn',b:'tk',l:'tsw_live_',k:'plan'},
-  {t:3.7,chip:'cn',s:'pasted key not saved'},{t:4,a:'cn',b:'ag',l:'tell HeyStax',k:'plan'},{t:5.6,chip:'ag',s:'hey task start\nnote · done'},{t:7.2,chip:'tk',s:'hey listen --install'}],
- steps:[[0,'hey connect asks for a key once: your PAT, a role key or a worker key.'],[1.4,'It asks which stax, and which role only if there are several.'],[2.6,'It saves a worker key on the machine. The key you pasted is not kept.'],[4,'It writes the standing order: whatever you do, tell HeyStax.'],[5.6,'hey task start puts self-started work on the board. note adds branch and PR. done closes it.'],[7.2,'hey listen --install keeps the worker running in the background. All of this is in review, not merged.']]}
+{id:'connect',tab:'8 · heystax connect',title:'One-step setup for any CLI',tag:['review','live, install from the repo'],
+ nodes:[{id:'you',c:0,r:1,t:'You',s:'paste a key once',k:'owner'},{id:'cn',c:2,r:1,t:'heystax connect',s:'in this folder',k:'worker'},
+  {id:'tk',c:4,r:0,t:'worker.token',s:'one per folder, 0600',k:'worker'},{id:'ag',c:4,r:2,t:'Standing order',s:'plugin or AGENTS.md',k:'worker'}],
+ beats:[{t:.3,a:'you',b:'cn',l:'PAT, role or worker key',k:'owner'},{t:1.4,chip:'cn',s:'which stax?\nwhich role?'},{t:2.6,a:'cn',b:'tk',l:'tsw_live_',k:'worker'},
+  {t:3.7,chip:'cn',s:'pasted key not saved'},{t:4,a:'cn',b:'ag',l:'tell HeyStax',k:'worker'},{t:5.6,chip:'ag',s:'heystax task start\nnote · done'},{t:7.2,chip:'tk',s:'listen --install'}],
+ steps:[[0,'In a folder, heystax connect asks for a key once: your PAT, a role key or a worker key.'],[1.4,'It asks which stax, and which role only if there are several.'],[2.6,'It saves a worker key for this folder. Another folder on the same machine can be another role. The key you pasted is not kept.'],[4,'It writes the standing order: whatever you do, tell HeyStax. Claude Code gets it from the HeyStax plugin, Codex from AGENTS.md.'],[5.6,'heystax task start puts self-started work on the board. note adds branch and PR. done closes it.'],[7.2,'heystax listen --install keeps that folder\'s worker running in the background.']]}
 ];
 const NS='http://www.w3.org/2000/svg',sv=document.getElementById('sv');
 const mq=matchMedia('(max-width: 640px)');

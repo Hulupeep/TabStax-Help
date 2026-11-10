@@ -40,11 +40,11 @@ capabilities:
     wording: "the hey CLI (npm i heystax-cli)"
 
   - id: cli-listen
-    name: "hey listen and hey run: CLI workers that wait for work"
+    name: "heystax listen and heystax run: CLI workers that wait for work, one git worktree per card"
     state: partial
-    terms: ['hey listen', 'hey run\b']
-    evidence: "tabstax#1132 merged 2026-11-08, so it runs from the repo. npm on 2026-11-10: heystax-cli latest is still 0.1.13 (published 2026-03-14), whose tarball has no listen or run command (checked 2026-11-09). wait_for_work, which hey listen calls, is in the production MCP tool list on 2026-11-10."
-    wording: "hey listen runs from the repo today; it is not in the published heystax-cli yet"
+    terms: ['hey listen', 'hey run\b', 'heystax listen', 'heystax run\b']
+    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Runs from the repo (cli/); npm heystax-cli 0.1.13 has no listen or run. wait_for_work is in the production MCP tool list on 2026-11-10."
+    wording: "heystax listen runs from the repo today; it is not on npm yet"
 
   - id: cli-rename
     name: "@heystax/hey CLI package"
@@ -315,11 +315,11 @@ capabilities:
     wording: "a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour"
 
   - id: heystax-connect
-    name: The /heystax-connect plugin that installs a listener with one question
-    state: planned
-    terms: ['heystax-connect']
-    evidence: "tabstax#1015; not confirmed in production as of 2026-11-09"
-    wording: "planned"
+    name: "heystax connect: set up a folder as a worker of one role, plus the Claude Code plugin and standing order"
+    state: partial
+    terms: ['heystax-connect', '(?-i:heystax connect)', '(?-i:heystax task)']
+    evidence: "tabstax#1144 merged 2026-11-09 and worker_enroll live in mcp v35; per-folder roles tabstax#1152, key paste fix #1153. Colm connected two folders on his machine as @timebreez-main and @timebreez-builder (2026-11-09). CLI installs from the repo only."
+    wording: "heystax connect works from the repo today; it is not on npm yet"
 
   - id: notify
     name: "@notify Telegram agent"
