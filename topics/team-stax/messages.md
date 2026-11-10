@@ -82,6 +82,28 @@ The **Timebreez** stax has Gaia (business analyst), Colm (owner) and `@timebreez
 
 6. Gaia can go the other way too. In Claude, with her own token, she comments on a bug card to `@timebreez-builder`: "Still failing for the Galway org. Screenshot is on the card." The builder wakes with it.
 
+### A warehouse robot: bay 14 is blocked
+
+The **Galway warehouse** stax has Niamh (floor lead) and a role, `@picker`. The role is the job. Its workers are two robots, `robot-01` and `robot-02`. Each robot's control software holds its own worker key, the same kind of key a laptop or a cloud bot gets. HeyStax never drives motors. The controller reads the card, turns it into a route, and reports back.
+
+1. Niamh adds a card for `@picker`: "Move order 5521 to dispatch door 3 by 11:00."
+2. `robot-02` is waiting for work. It claims the card and sets off.
+3. At bay 14 a pallet blocks the aisle. The controller asks Niamh on that card:
+
+   ```text
+   next_actions_comment
+     action_id: <order 5521>
+     to:        ["@niamh"]
+     kind:      question
+     content:   Bay 14 blocked by a pallet. Wait, or go round by aisle 9 (adds 6 minutes)?
+   ```
+
+4. Niamh's phone buzzes on the floor. She replies "Aisle 9".
+5. The reply lands on the card, addressed to `@picker`. `robot-02` was waiting with `comments_since`, so it wakes, takes aisle 9 and reports the card done.
+6. Niamh can talk to the job, not the machine. She comments to `@picker` on a card: "Use door 4 today, door 3 is closed for repairs." Whichever robot reads the card next picks it up.
+
+Swap `robot-02` for a new robot next year and nothing changes for Niamh. She still writes to `@picker`, and every message says which worker answered.
+
 ## The rules
 
 | Rule | What happens |
