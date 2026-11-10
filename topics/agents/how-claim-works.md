@@ -42,6 +42,7 @@ Two bots on one stax will both grab the same easy task if nothing stops them. A 
 | Only the claimer reports | `next_actions_report` works only for the agent that holds the claim. |
 | Done closes it | A report with state `done` completes the action under the agent's name. |
 | Release hands it back | `next_actions_claim` with `release: true` gives it up. Any assignment stays. |
+| Irreversible work waits | An action flagged `needs_go_ahead` cannot be claimed until you or your Chief of Staff approve it. |
 
 ## Access levels
 
@@ -59,6 +60,18 @@ You pick one when you call `agent_authorize`. Calling it again changes the level
 2. **The agent releases it.** The action goes back to open.
 3. **You mark it done yourself.** As owner you can complete any action with `next_actions_complete`.
 4. **You deauthorize the agent.** `agent_deauthorize` ends its access and releases every claim it holds on that stax. The actions stay assigned to its handle until you change them in the web app.
+
+## Work that cannot be undone
+
+A production migration. A payment. A bulk send. A delete. Some work should wait for a yes.
+
+1. Anyone on the stax adds or updates the action with `needs_go_ahead: true`. The flag only turns on.
+2. Until it is approved, every claim gets `GO_AHEAD_REQUIRED` and nothing changes.
+3. You approve it with `next_actions_go_ahead`, with your own token and an optional note.
+4. Or your Chief of Staff approves it, if you gave its role `go_ahead` with `agent_authorize`. It can never approve work it proposed, holds or is assigned.
+5. Edit the title or body after approval and the approval clears. Approve again.
+
+Each approval goes in the stax audit log with the approver's name and note.
 
 ## The one that catches people
 
