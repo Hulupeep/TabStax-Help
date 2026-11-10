@@ -15,8 +15,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 18 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 19 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 15 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 9 |
 
@@ -36,6 +36,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Today set (pick today's actions) | your Today list | Live tools/list on 2026-10-25: today_get, today_set, today_clear |
 | Shared stax with roles and @handles | share a stax and assign by @handle | stax_get on the TabStax stax returns people with roles owner and agent and @handles (2026-10-25) |
 | Attention lanes (Must, Should, Good, Meh) | Must, Should, Good, Meh | stax_get returns attention.priority and lane_position (2026-10-25) |
+| Issue or replace an agent's key (agent_token_issue); the old key and its workers stop at once | your own token issues the Chief a key with agent_token_issue; the key is shown once | tabstax#1143 merged and live in mcp v35+ (2026-11-09); production tools/list on 2026-11-10 lists agent_token_issue with the owner-only description. Colm's Optimizer started its switch to its own key on 2026-11-10. |
 | Bots and people message each other as comments on actions, delivered by the Telegram bot | address a comment on an action to @handles; the HeyStax Telegram bot DMs them, and a plain reply comes back as a comment | tabstax#1161 merged 2026-11-10 (migration 20261110140000 applied, mcp deployed); tabstax-webapps#292 merged 2026-11-10 (comment DMs and reply-as-comment). Epic tabstax#1158. |
 | Weekly timesheets per stax | timesheets at time.heystax.ai | https://time.heystax.ai/time returns 200 (2026-10-25) |
 | Agents listed as people on a stax with an @handle | agents appear on the people list | stax_get on the TabStax stax lists @glenda with role agent (2026-10-25) |
@@ -51,6 +52,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Project Settings page (description, goals, people, dates, grants) | Project Settings | Stax settings redesign epic tabstax#901 marked done on the TabStax stax |
 | Breadcrumbs (completed actions as a trail) | breadcrumbs | Described in tabstax-capabilities.md; not observed |
 | Telegram group to stax, personal linking, actions from messages, standups | the HeyStax Telegram bot (@heystax_bot) | t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*; help page merged 2026-07-20 (TabStax-Help PR #8) |
+| A Chief that works across stax reads with the owner token and writes with its own role key (two connectors) | keep one connector on your token for reading, and give every write a second connector that uses the Chief's key | agent_token_issue description in production tools/list (2026-11-10) recommends it; Hubduck bus-dev Grok Bot runs a second connector with the @hubduck-marketing key and made 13 attributed CRM writes on 2026-11-09. |
 | Pro plan purchase through Stripe | upgrade to Pro | supabase/functions/stripe-webhook exists; prices not checked |
 | Records in the dashboard | records | Account Records tabstax#688 in progress in May roadmap; MCP record tools are live |
 | A page in the dashboard showing the audit trail | the trail | stax_audit_log and record_audit_log are live over MCP; no dashboard view observed |
@@ -113,6 +115,8 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Project Settings page (description, goals, people, dates, grants)
 - [ ] Breadcrumbs (completed actions as a trail)
 - [ ] Telegram group to stax, personal linking, actions from messages, standups
+- [ ] Issue or replace an agent's key (agent_token_issue); the old key and its workers stop at once
+- [ ] A Chief that works across stax reads with the owner token and writes with its own role key (two connectors)
 - [ ] Bots and people message each other as comments on actions, delivered by the Telegram bot
 - [ ] Weekly timesheets per stax
 - [ ] Pro plan purchase through Stripe
