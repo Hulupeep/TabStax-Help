@@ -1,112 +1,53 @@
 ---
-title: Connect to Claude.ai
+title: Connect Claude
 parent: AI Integrations (MCP)
 nav_order: 1
 ---
 
-# Connect Heystax to Claude.ai
+# Connect Claude to your stax
 
-Connect your Stax and Next Actions to Claude.ai so you can manage your projects through conversation.
+Claude reads and writes your stax over MCP. Ask in plain words. The answer lands in your graph, not in a scrolled-away chat.
 
----
+## Why it matters to you
 
-## Prerequisites
+You plan a launch with Claude on Tuesday. On Thursday you open the `hey` CLI and the same next actions are there. You did not paste your context. It was already yours, and it travelled.
 
-- A Heystax account with **Pro** or **Trial** plan
-- A Claude account at [claude.ai](https://claude.ai) (free tier works)
+## One thing first: HeyStax has no sign-in
 
----
+HeyStax MCP takes a token, not a sign-in. Your app sends it as a header: `Authorization: Bearer <your token>`.
 
-## Step-by-step setup
+Claude.ai on the web asks you to sign in when you add a custom connector. That sign-in no longer exists, so it can't connect that way. Use Claude Code, or another app that sends a token header.
 
-### 1. Open Claude.ai settings
+## You need
 
-Sign in to [claude.ai](https://claude.ai), then click the **gear icon** (bottom-left) to open Settings.
+- A HeyStax account on the **Pro** or **Trial** plan. MCP needs one of these.
+- Your personal access token from **Settings, MCP** at [dash.heystax.ai](https://dash.heystax.ai).
 
-### 2. Go to Integrations
+## Connect it
 
-Click **Integrations** in the settings sidebar. You may see it listed as "Connectors" depending on your Claude version.
+1. Copy your token. Keep it out of chats and screenshots.
+2. Follow [Connect to Claude Code](mcp-claude-code). It is one command.
+3. Start Claude and type `List my stax`. Claude lists your stax by name.
 
-### 3. Add Heystax
+## What to ask
 
-Click **Add Integration** (or **Add Connector**), then enter:
+| Say | Claude uses | What happens |
+|---|---|---|
+| "What are my stax?" | `stax_list` | Lists your stax |
+| "Show next actions for WebApp" | `next_actions_list` | Lists the open actions on one stax |
+| "Add 'Fix login bug' to WebApp" | `next_actions_add` | Adds a next action |
+| "Mark the login bug as done" | `next_actions_complete` | Completes it |
+| "Note that the code review is finished" | `next_actions_log` | Adds a progress note to the action |
 
-```
-https://dash.heystax.ai/api/mcp
-```
+Claude can also read and write goals, dates, people and records. See [what is live](../docs/shipped-ledger).
 
-### 4. Authenticate
+## If it goes wrong
 
-You'll be redirected to the Heystax login page. Sign in with your Heystax email and password.
+| You see | Do this |
+|---|---|
+| The app asks you to sign in | It can't connect that way. Use a token connector |
+| `TOKEN_INVALID` | Copy the token again and re-add the connector |
+| `PLAN_REQUIRED` | Move to Pro or Trial at [dash.heystax.ai](https://dash.heystax.ai) |
+| No tools show | Check your plan is active, then re-add the connector |
 
-### 5. Approve access
-
-On the consent screen, click **Approve** to grant Claude access to your Stax and Next Actions.
-
-### 6. Done
-
-You'll be redirected back to Claude.ai. Heystax should show as **Connected** in your integrations list.
-
----
-
-## Verify it works
-
-Start a new conversation and try:
-
-```
-List my stax
-```
-
-Claude should return your Stax names, tags, and action counts.
-
----
-
-## What you can ask
-
-| Prompt | What happens |
-|--------|-------------|
-| "What are my stax?" | Lists all your Stax |
-| "Show next actions for WebApp" | Lists pending actions for a specific Stax |
-| "Add 'Fix login bug' to WebApp" | Creates a new next action |
-| "Mark action 1 on WebApp as done" | Completes an action |
-| "Log that I finished the code review on WebApp" | Adds a breadcrumb |
-
----
-
-## Available tools
-
-These are the MCP tools Claude can use:
-
-| Tool | What it does |
-|------|-------------|
-| `stax_list` | List all your Stax with tags and action counts |
-| `stax_get` | Get details of a specific Stax including tabs |
-| `next_actions_list` | List pending next actions for a Stax |
-| `next_actions_add` | Add a new next action |
-| `next_actions_complete` | Mark a next action as done |
-| `next_actions_delete` | Remove a next action |
-| `breadcrumb_add` | Log a completed activity |
-
----
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| "Needs authentication" | Click to re-authenticate, or disconnect and reconnect |
-| "PLAN_REQUIRED" | You need a Heystax Pro or Trial plan — [upgrade here](https://dash.heystax.ai) |
-| "TOKEN_INVALID" | Disconnect the integration and reconnect |
-| No tools showing | Check your plan is active, then try disconnecting and reconnecting |
-| Stax not found | The tool uses fuzzy matching — try a more specific name |
-
----
-
-## Disconnect
-
-To remove the connection:
-
-1. Go to Claude.ai **Settings > Integrations**
-2. Find Heystax
-3. Click **Disconnect**
-
-Your Heystax data is not deleted — only the connection to Claude is removed.
+Now you can plan with Claude and find the plan waiting everywhere else.

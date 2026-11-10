@@ -7,7 +7,7 @@ has_children: true
 
 # AI Integrations (MCP)
 
-Heystax connects to AI assistants through the **Model Context Protocol (MCP)**. This lets Claude and other AI tools read your Stax, manage Next Actions, and log breadcrumbs, all through natural conversation.
+HeyStax connects to AI assistants through the **Model Context Protocol (MCP)**. This lets Claude and other AI tools read your Stax, manage Next Actions, and log breadcrumbs, all through natural conversation.
 
 **What you can do:**
 
@@ -15,13 +15,14 @@ Heystax connects to AI assistants through the **Model Context Protocol (MCP)**. 
 - "Add 'review PR #42' to WebApp": add a next action
 - "Mark the first action on WebApp as done": complete an action
 - "What's on my plate?": see all pending actions across stax
+- "Call Ana is waiting on Ana until Thursday": set where an action stands (next, decision, waiting, blocked or parked), who it waits on, when to look again, and how anyone can tell it is done. The same state shows on the dashboard's List cards.
 
 **Supported integrations:**
 
 | Integration | Status | How |
 |------------|--------|-----|
-| [Claude.ai (web)](mcp-claude-ai) | Live | OAuth connector |
-| [Claude Code (CLI)](mcp-claude-code) | Live | Same connector or manual setup |
+| [Claude Code (CLI)](mcp-claude-code) | Live | One command with your token |
+| [Claude.ai (web)](mcp-claude-ai) | Not today | It asks you to sign in, and HeyStax has no sign-in |
 | ChatGPT | Live | Existing MCP connection; client-specific steps are being refreshed |
 
 {% include badge-partial.html %}
@@ -34,4 +35,4 @@ A worker can wait for work and pick it up as soon as it is assigned, and a launc
 
 ---
 
-**Requirements:** Heystax account with **Pro** or **Trial** plan.
+**Requirements:** HeyStax account with **Pro** or **Trial** plan.

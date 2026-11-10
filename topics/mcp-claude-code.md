@@ -4,7 +4,7 @@ parent: AI Integrations (MCP)
 nav_order: 2
 ---
 
-# Connect Heystax to Claude Code (CLI)
+# Connect HeyStax to Claude Code (CLI)
 
 Use your Stax and Next Actions directly from the terminal while coding with Claude Code.
 
@@ -16,63 +16,28 @@ For the separate **agent peer pilot**, where Claude Code works under its own nam
 
 ## Prerequisites
 
-- A Heystax account with **Pro** or **Trial** plan
+- A HeyStax account with **Pro** or **Trial** plan
 - Claude Code installed ([install guide](https://docs.anthropic.com/en/docs/claude-code))
 
 ---
 
-## Option 1: Claude.ai connector (recommended)
+## Add HeyStax
 
-If you've already connected Heystax to Claude.ai (see [Connect to Claude.ai](mcp-claude-ai)), **it automatically works in Claude Code too**. The same connector is shared between both.
+HeyStax has no sign-in. Claude Code sends your personal access token as a header. Copy the token from **Settings, MCP** at [dash.heystax.ai](https://dash.heystax.ai).
+
+For all your projects:
+
+```bash
+claude mcp add --transport sse heystax \
+  https://dash.heystax.ai/api/mcp/sse \
+  --header "Authorization: Bearer YOUR_TOKEN"
+```
+
+For this project only, add `--scope project`. That writes a `.mcp.json` file in the project root, so keep it out of git.
 
 ### Verify
 
-Open Claude Code in your terminal:
-
-```bash
-claude
-```
-
-Type `/mcp` to see connected servers. Heystax should appear as connected.
-
-If it shows "needs authentication", press Enter to re-authenticate in your browser.
-
----
-
-## Option 2: Add manually (global)
-
-Add Heystax to all your Claude Code projects:
-
-```bash
-claude mcp add heystax \
-  --transport sse \
-  https://dash.heystax.ai/api/mcp/sse
-```
-
-You'll be prompted to authenticate in your browser.
-
-### Verify
-
-```bash
-claude
-```
-
-Then type `/mcp` — Heystax should show as connected.
-
----
-
-## Option 3: Add manually (per-project)
-
-Add Heystax only to the current project:
-
-```bash
-claude mcp add heystax \
-  --transport sse \
-  --scope project \
-  https://dash.heystax.ai/api/mcp/sse
-```
-
-This creates a `.mcp.json` file in your project root. Useful if you want different tokens or settings per project.
+Run `claude`, then type `/mcp`. HeyStax shows as connected.
 
 ---
 
@@ -96,7 +61,7 @@ Once connected, just talk naturally:
 
 ## Combining with Hey CLI
 
-Heystax MCP and the [Hey CLI](hey-cli) complement each other:
+HeyStax MCP and the [Hey CLI](hey-cli) complement each other:
 
 | Use case | Best tool |
 |----------|-----------|
@@ -105,7 +70,7 @@ Heystax MCP and the [Hey CLI](hey-cli) complement each other:
 | Add actions while chatting with Claude | Claude Code MCP |
 | Bulk operations from terminal | Hey CLI |
 
-Both write to the same Stax — changes sync in real time.
+Both write to the same Stax. Changes sync in real time.
 
 ---
 
@@ -113,9 +78,9 @@ Both write to the same Stax — changes sync in real time.
 
 | Problem | Solution |
 |---------|----------|
-| "needs authentication" | Press Enter to re-auth in browser |
-| "PLAN_REQUIRED" | Upgrade to Heystax Pro or Trial |
-| Heystax not in `/mcp` list | Run `claude mcp add` command above |
+| "needs authentication" | Remove HeyStax and add it again with your token |
+| "PLAN_REQUIRED" | Upgrade to HeyStax Pro or Trial |
+| HeyStax not in `/mcp` list | Run `claude mcp add` command above |
 | "TOKEN_INVALID" | Remove and re-add: `claude mcp remove heystax` then add again |
 | Connection timeout | Check your internet connection; the MCP server is at `dash.heystax.ai` |
 
@@ -123,10 +88,8 @@ Both write to the same Stax — changes sync in real time.
 
 ## Remove
 
-To disconnect Heystax from Claude Code:
+To disconnect HeyStax from Claude Code:
 
 ```bash
 claude mcp remove heystax
 ```
-
-Or if using the claude.ai connector, disconnect from Claude.ai Settings > Integrations.
