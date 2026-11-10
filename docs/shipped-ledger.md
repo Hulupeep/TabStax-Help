@@ -17,8 +17,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 17 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
-| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 11 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
+| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 9 |
 
 ## Live
 
@@ -65,7 +65,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 
 | Capability | Docs wording | Evidence |
 |---|---|---|
-| hey listen and hey run: CLI workers that wait for work | hey listen runs from the repo today; it is not in the published heystax-cli yet | tabstax#1132 merged 2026-11-08, so it runs from the repo. npm on 2026-11-10: heystax-cli latest is still 0.1.13 (published 2026-03-14), whose tarball has no listen or run command (checked 2026-11-09). wait_for_work, which hey listen calls, is in the production MCP tool list on 2026-11-10. |
+| heystax listen and heystax run: CLI workers that wait for work, one git worktree per card | heystax listen runs from the repo today; it is not on npm yet | tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Runs from the repo (cli/); npm heystax-cli 0.1.13 has no listen or run. wait_for_work is in the production MCP tool list on 2026-11-10. |
 | Claude Code connects over MCP with your token; Claude.ai on the web cannot connect without connector login | Claude Code connects with your token; Claude.ai on the web wants to sign in for you, which HeyStax no longer offers | Claude Code takes a token header (tabstax-webapps settings/mcp ConnectWizard, production 7a0942a READY, Vercel 2026-11-10). The same deploy tells Claude.ai users that sign-in and the token-as-OAuth-Client-ID path are gone and to use a token connector instead. Downgraded from live on 2026-11-10. ChatGPT not re-checked. |
 | Additional MCP tools awaiting fresh authenticated production verification: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests | in the deployed function; verify before using | Bundled in production mcp v28 on 2026-10-26; fresh authenticated tools/list and behaviour check still needed |
 | Timesheet approval by a lead | approval is coming | CHANGELOG: approval RPC added, production activation remains separate (tabstax root #976, web #142/#143) |
@@ -76,6 +76,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Agents with their own identity: agent_register, agent_whoami, stax_join, stax_leave, next_actions_claim, next_actions_report | agent peer commands are discoverable; claim/report and browser journey still need verification | Root PR #995 merged; mcp ACTIVE v28. Authenticated production initialize → initialized → tools/list returned all six names on 2026-10-26 (evidence/agent-peer-tools-list-2026-10-26.json); agent calls and owner/worker browser journey remain unverified (help #36). Claim/report races are tracked in tabstax#1011 |
 | One column per agent on the stax page | web code deployed; signed-in display still to verify | webapps PR #198 merged and its main production deployment READY on 2026-10-25; webapps #276 (who is home on each agent column) production deployment READY for 8823897 (Vercel, 2026-11-10); signed-in agent-column browser check remains (help #36) |
 | Claim rules for agents: owner access levels (read, work, full), five open claims per stax, locked once claimed, deauthorize releases claims, re-authorize refused while claims are open | claim rules are in production; the owner and two-agent journey still needs a browser check | tabstax main 74fbf44: migrations 20261027104402 (grants), 20261027201500 (claim/report), 20261028021204 and 20261028021206 (authority end), 20261029154500 (rejoin guard), 20261029200000 (add/assign); mcp agent-authorize.ts and agent-peers.ts. Release applied to production 2026-11-02. No owner or two-agent browser journey verified yet (help #50) |
+| heystax connect: set up a folder as a worker of one role, plus the Claude Code plugin and standing order | heystax connect works from the repo today; it is not on npm yet | tabstax#1144 merged 2026-11-09 and worker_enroll live in mcp v35; per-folder roles tabstax#1152, key paste fix #1153. Colm connected two folders on his machine as @timebreez-main and @timebreez-builder (2026-11-09). CLI installs from the repo only. |
 
 ## Planned
 
@@ -83,7 +84,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | @heystax/hey CLI package | do not tell readers to install @heystax/hey yet | cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25) |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
-| The /heystax-connect plugin that installs a listener with one question | planned | tabstax#1015; not confirmed in production as of 2026-11-09 |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |

@@ -21,7 +21,7 @@ Each key opens only what its holder needs, so your own key never sits inside a b
 <iframe id="hs-keys-anim" src="{{ '/assets/anim/keys-and-wakes.html' | relative_url }}" title="Animation: how your key, the Chief of Staff, roles and workers fit together, and how work wakes them" loading="lazy" style="width:100%;height:760px;border:0;display:block"></iframe>
 <script>addEventListener('message',function(e){if(e.data&&e.data.hsKeysHeight){var f=document.getElementById('hs-keys-anim');if(f)f.style.height=(e.data.hsKeysHeight+4)+'px';}});</script>
 
-*Eight short scenes. Your key makes the Chief. The Chief creates roles, at most 10 per Stax, and can't hand on its own grants. Each role enrolls one worker per machine, and you can cut off one worker without touching the rest. A hosted bot is woken by a signed push that carries only IDs and retries at 1, 5 and 30 minutes. A worker on your own machine runs `hey listen`, which waits for work over an outbound connection and starts Claude Code or Codex on the card. When a run ends, a queue empties or nobody is home, the Chief hears about it. Irreversible work waits for a go-ahead, and the Chief can't give one on its own proposal. The last scene, `hey connect`, is still in review.*
+*Eight short scenes. Your key makes the Chief. The Chief creates roles, at most 10 per Stax, and can't hand on its own grants. Each role enrolls one worker per machine, and you can cut off one worker without touching the rest. A hosted bot is woken by a signed push that carries only IDs and retries at 1, 5 and 30 minutes. A worker on your own machine runs `heystax listen`, which waits for work over an outbound connection and starts Claude Code or Codex on the card in its own git worktree. When a run ends, a queue empties or nobody is home, the Chief hears about it. Irreversible work waits for a go-ahead, and the Chief can't give one on its own proposal. The last scene, `heystax connect`, sets up a folder as a worker of one role.*
 
 ## Three keys, four holders
 
@@ -89,7 +89,7 @@ The Chief also hears when work runs out. When a worker's run ends, its queue is 
 | Worker | How it hears about new work |
 |---|---|
 | **A hosted bot**, such as Grok Bot | Its launcher has a push URL. When work is assigned to its role, HeyStax sends a signed wake that carries only IDs. If the bot doesn't answer, it tries again at 1, 5 and 30 minutes. Every attempt is listed by `push_deliveries_list`. |
-| **A worker on your machine**, such as Claude Code or Codex | `hey listen` calls `wait_for_work` and holds the line open. Your machine only makes outbound calls. When a card arrives, it starts a run, claims the card and starts Claude Code or Codex on it. Install it from the repo for now. |
+| **A worker on your machine**, such as Claude Code or Codex | `heystax listen` calls `wait_for_work` and holds the line open. Your machine only makes outbound calls. When a card arrives, it starts a run, claims the card and starts Claude Code or Codex on it in its own git worktree, so the folder you work in is never touched. {% include badge-partial.html %} Install it from the repo for now. |
 
 You can pause a launcher or cap its runs per hour. A paused worker gets no pushes and `wait_for_work` tells it to wait.
 
@@ -97,10 +97,15 @@ You can pause a launcher or cap its runs per hour. A paused worker gets no pushe
 
 Most work runs without asking. Work that can't be undone, such as a production migration, waits for a go-ahead. Your Chief can give it if you granted `go_ahead`, but never on work it proposed or work assigned to it. You can always give it with your own key.
 
-<div markdown="1" style="border:1px dashed #C4B5FD;border-radius:8px;padding:0.8em 1em;margin:1em 0">
-**Coming next** {% include badge-planned.html %}
+## Set up a worker in one step {% include badge-partial.html %}
 
-`hey connect` will set up a worker in one step: paste a key once, pick a Stax, and it saves a worker key on that machine. It will also write a standing order so the CLI tells HeyStax whatever it does, add `hey task start`, `note` and `done` for work you start yourself, and install `hey listen` as a background service.
-</div>
+`heystax connect` works today if you install the CLI from the repo. It is not on npm yet.
+
+1. In the folder the worker should work in, run `heystax connect`. Paste a key once: your PAT, a role key or a worker key. Pick the Stax, and the role if there are several.
+2. It saves a worker key for that folder. Your pasted key is not kept. Two folders on one machine can be two different roles.
+3. It writes a standing order, so the CLI tells HeyStax whatever it does: `heystax task start`, `note` and `done` for work you start yourself.
+4. `heystax listen --install` keeps that folder's worker running in the background.
+
+`heystax` sits beside the older `hey` CLI for now. They will become one command.
 
 [See what has been verified](../../docs/shipped-ledger).
