@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRM walkthrough</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one column. Animated scene player first (keys, Chief, roles, workers, wakes, events), then the reference tables. Same palette as v1. */
+:root{--bg:#f7f6f2;--fg:#1d2026;--muted:#5e6572;--line:#d9d6cd;--surface:#fff;--owner:#b7791f;--agent:#c2562e;--worker:#2f6fbf;--hook:#0f7b80;--plan:#6b4fbb;--ok:#1f7a4d;--bad:#b83a2e;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--plan:#b49cf5;--ok:#58c48d;--bad:#f07a6c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--plan:#b49cf5;--ok:#58c48d;--bad:#f07a6c;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:2px 2px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font-size:32px;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:20px;margin:0 0 10px;text-wrap:balance}
+p{margin:0;max-width:72ch}
+.lede{color:var(--muted);margin-top:6px}
+code{font:14px var(--mono)}
+.scroll{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:15px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.k-owner{color:var(--owner);font-weight:700}.k-agent{color:var(--agent);font-weight:700}.k-worker{color:var(--worker);font-weight:700}
+.tag{font:600 12px var(--mono);padding:2px 8px;border-radius:999px;white-space:nowrap;display:inline-block}
+.live{color:var(--ok);border:1px solid var(--ok)}.review{color:var(--owner);border:1px dashed var(--owner)}.planned{color:var(--plan);border:1px dashed var(--plan)}
+ul,ol{margin:0;padding-left:22px;max-width:78ch}li{margin:6px 0}
+
+/* player */
+.player{background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding:12px;border-bottom:1px solid var(--line)}
+.tabs button{font:600 13px var(--sans);background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tabs button:focus-visible,.ctl button:focus-visible{outline:2px solid var(--worker);outline-offset:2px}
+.head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;padding:14px 16px 0}
+.head h3{margin:0;font-size:19px}
+svg{display:block;width:100%;height:auto}
+.stage{padding:4px 8px}
+.ctl{display:flex;gap:10px;align-items:center;padding:0 16px 10px}
+.ctl button{font:600 13px var(--mono);background:var(--fg);color:var(--bg);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
+.ctl button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--fg)}
+.steps{list-style:none;margin:0;padding:4px 16px 16px;display:flex;flex-direction:column;gap:2px;max-width:none}
+.steps li{margin:0;padding:6px 10px;border-radius:8px;color:var(--muted);transition:color .3s,background .3s}
+.steps li.now{color:var(--fg);background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.steps li.done{color:var(--fg)}
+.node rect{fill:var(--surface);stroke-width:2}
+.node .t{font:700 15px var(--sans);fill:var(--fg)}
+.node .s{font:400 12.5px var(--mono);fill:var(--muted)}
+.edge{stroke:var(--line);stroke-width:1.5;fill:none}
+.pk rect{stroke:none}.pk text{font:600 12px var(--mono);fill:#fff}
+@media (prefers-reduced-motion: reduce){.steps li{transition:none}}
+</style>
+<style>body{margin:0;padding-left:0;padding-right:0}</style>
+</head><body>
+<section class="player" aria-label="Animated walkthrough">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="head"><h3 id="st"></h3><span id="sg" class="tag"></span></div>
+  <div class="stage"><svg id="sv" role="img" aria-labelledby="st"></svg></div>
+  <div class="ctl"><button id="pp" type="button">Pause</button><button id="rs" class="ghost" type="button">Replay</button><div class="bar"><i id="pb"></i></div></div>
+  <ol class="steps" id="steps"></ol>
+</section>
+<script>
+(()=>{
+// kinds: owner agent worker hook plan neutral bad
+const SC=[
+{id:'import',tab:'1 · Import',title:'Prospects arrive once',tag:['live','in production since 9 Nov'],
+ nodes:[{id:'bot',c:0,r:1,t:'@outreach',s:'200 schools found',k:'agent'},{id:'crm',c:2,r:1,t:'Your CRM',s:'0 organisations',k:'neutral'},{id:'sup',c:4,r:0,t:'Do-not-contact',s:'account-wide',k:'bad'},{id:'cmp',c:4,r:2,t:'Campaign',s:'running',k:'worker'}],
+ beats:[{t:.3,a:'bot',b:'sup',l:'suppressions first',k:'agent'},{t:1.6,chip:'sup',s:'13 entries'},{t:1.8,a:'bot',b:'crm',l:'import 200',k:'agent'},{t:3,chip:'crm',s:'200 organisations'},{t:3.2,a:'crm',b:'cmp',l:'stage: new',k:'worker'},
+  {t:4.6,a:'bot',b:'crm',l:'import again',k:'agent'},{t:5.8,chip:'crm',s:'200 organisations\nno duplicates'}],
+ steps:[[0,'A bot finds 200 schools. Before anything else, it loads the do-not-contact list.'],[1.8,'Then it imports them. One record per organisation, however many emails it has.'],[3.2,'Each school joins the campaign at stage new.'],[4.6,'Import the same list again and nothing doubles.']]},
+{id:'send',tab:'2 · Send',title:'Reserve, send, record',tag:['live','in production since 9 Nov'],
+ nodes:[{id:'bot',c:0,r:1,t:'@outreach',s:'draft ready',k:'agent'},{id:'gate',c:2,r:1,t:'Send check',s:'hold · suppression\ncooldown · cap',k:'neutral'},{id:'mb',c:4,r:0,t:'Mailbox',s:'4 of 30 today',k:'worker'},{id:'log',c:4,r:2,t:'Message history',s:'',k:'neutral'}],
+ beats:[{t:.3,a:'bot',b:'gate',l:'reserve',k:'agent'},{t:1.5,chip:'gate',s:'all clear\nreserved 15 min'},{t:1.8,a:'gate',b:'bot',l:'reservation id',k:'worker'},{t:3,a:'bot',b:'mb',l:'send one email',k:'agent'},{t:4.2,chip:'mb',s:'5 of 30 today'},{t:4.4,a:'bot',b:'log',l:'sent + reservation',k:'agent'},{t:5.6,chip:'log',s:'sent · cannot change'}],
+ steps:[[0,'Before every email, the bot asks for a reservation.'],[.3,'The check runs in order: your holds, the do-not-contact list, the campaign, a 7-day cooldown per school, 30 sends per mailbox per day.'],[1.8,'All clear: it gets a reservation that lasts 15 minutes.'],[3,'It sends exactly one email.'],[4.4,'Then it records the send with that reservation. History can\'t be edited later.']]},
+{id:'refuse',tab:'3 · Refused',title:'When the answer is no',tag:['live','in production since 9 Nov'],
+ nodes:[{id:'bot',c:0,r:1,t:'@outreach',s:'next 3 schools',k:'agent'},{id:'gate',c:2,r:1,t:'Send check',s:'',k:'neutral'},{id:'a',c:4,r:0,t:'St Brigid\'s',s:'opted out',k:'bad'},{id:'b',c:4,r:1,t:'Scoil Mhuire',s:'emailed 3 days ago',k:'neutral'},{id:'c',c:4,r:2,t:'Galway ETNS',s:'',k:'neutral'}],
+ beats:[{t:.3,a:'bot',b:'gate',l:'reserve St Brigid\'s',k:'bad',bounce:1},{t:1.3,chip:'gate',s:'SUPPRESSED'},{t:1.2,a:'gate',b:'a',l:'blocked',k:'bad',bounce:1},{t:2,a:'bot',b:'gate',l:'reserve Scoil Mhuire',k:'bad',bounce:1},{t:3,chip:'gate',s:'COOLDOWN\nretry in 4 days'},{t:2.9,a:'gate',b:'b',l:'wait',k:'bad',bounce:1},
+  {t:3.7,a:'bot',b:'gate',l:'reserve Galway ETNS',k:'bad',bounce:1},{t:4.7,chip:'gate',s:'CAP\n30 of 30 today'},{t:4.6,a:'gate',b:'c',l:'tomorrow',k:'bad',bounce:1},{t:5.6,chip:'bot',s:'waits, sends nothing'}],
+ steps:[[0,'A refusal means do not send. The bot is told why.'],[.3,'Opted out: suppressed everywhere, in every campaign and every stax.'],[2,'Emailed 3 days ago: the cooldown says wait, and when.'],[3.7,'Mailbox at 30 today: the cap stops it until tomorrow.'],[5.6,'No approvals, no begging. Within the limits it sends on its own. Outside them it can\'t.']]},
+{id:'reply',tab:'4 · A reply',title:'A reply comes back',tag:['live','in production since 9 Nov'],
+ nodes:[{id:'sch',c:0,r:1,t:'Principal',s:'replies',k:'owner'},{id:'log',c:2,r:0,t:'Message history',s:'',k:'neutral'},{id:'q',c:2,r:2,t:'Replies to handle',s:'0',k:'neutral'},{id:'bot',c:4,r:1,t:'@outreach',s:'',k:'agent'}],
+ beats:[{t:.3,a:'sch',b:'log',l:'"how much for 40 staff?"',k:'owner'},{t:1.5,chip:'log',s:'reply · stage unchanged'},{t:1.7,a:'log',b:'q',l:'unresolved',k:'neutral'},{t:2.9,chip:'q',s:'1'},
+  {t:3.2,a:'q',b:'bot',l:'work queue',k:'agent'},{t:4.4,a:'bot',b:'log',l:'stage: engaged',k:'agent'},{t:5.6,chip:'q',s:'0'},{t:5.6,chip:'bot',s:'answers, follow-up set'}],
+ steps:[[0,'A principal replies with a question.'],[.3,'The reply is recorded. It never moves the stage by itself.'],[1.7,'It joins the queue of replies to handle.'],[3.2,'The bot works the queue, answers, and moves the stage to engaged. A question is engaged, never demo booked.'],[5.6,'The queue is empty again. A follow-up date is set.']]},
+{id:'hold',tab:'5 · Your hold',title:'You can stop it all',tag:['live','in production since 9 Nov'],
+ nodes:[{id:'you',c:0,r:1,t:'You',s:'your token',k:'owner'},{id:'gate',c:2,r:1,t:'Send check',s:'',k:'neutral'},{id:'bot',c:4,r:1,t:'@outreach',s:'2 reserved',k:'agent'}],
+ beats:[{t:.3,a:'you',b:'gate',l:'hold: Ireland campaign',k:'owner'},{t:1.5,chip:'gate',s:'HELD\n"stop until I say"'},{t:1.7,a:'gate',b:'bot',l:'open reservations cancelled',k:'bad'},{t:2.9,chip:'bot',s:'0 reserved'},
+  {t:3.4,a:'bot',b:'gate',l:'reserve',k:'bad',bounce:1},{t:4.6,chip:'bot',s:'sees your reason'},{t:5.4,a:'you',b:'gate',l:'clear hold',k:'owner'},{t:6.6,chip:'gate',s:'open'}],
+ steps:[[0,'Only you, with your own token, can hold sends: everything, a stax, a campaign or one organisation.'],[1.7,'Open reservations are cancelled at once.'],[3.4,'Every new try is refused, and the bot reads your reason and your exact words.'],[5.4,'Only you can clear it. A bot saying it was cleared doesn\'t count.']]},
+{id:'learn',tab:'6 · Angles learn',title:'Angles prove themselves',tag:['live','in production since 9 Nov'],
+ nodes:[{id:'a1',c:0,r:0,t:'Angle: safety',s:'testing',k:'agent'},{id:'a2',c:0,r:2,t:'Angle: secretary',s:'testing',k:'agent'},{id:'cnt',c:2,r:1,t:'Counts',s:'computed, never stored',k:'neutral'},{id:'ch',c:4,r:1,t:'@chief-of-staff',s:'',k:'agent'}],
+ beats:[{t:.3,a:'a1',b:'cnt',l:'25 sent · 4 replies',k:'agent'},{t:1.3,a:'a2',b:'cnt',l:'25 sent · 0 replies',k:'agent'},{t:2.5,a:'cnt',b:'ch',l:'counts by angle',k:'agent'},{t:3.7,chip:'a1',s:'winner'},{t:3.9,chip:'a2',s:'dead · stop condition met'},{t:4.8,chip:'ch',s:'more of safety'}],
+ steps:[[0,'Each angle has a hook, a hypothesis and a stop condition, such as fewer than 2 replies in 25 sends.'],[.3,'Results are counted from what really happened, by angle. Nothing is typed in.'],[2.5,'The Chief reads the counts.'],[3.7,'One angle becomes a winner. The other hits its stop condition and is retired. Its history still counts.']]}
+];
+const NS='http://www.w3.org/2000/svg',sv=document.getElementById('sv');
+const mq=matchMedia('(max-width: 640px)');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cur=0,t0=performance.now(),paused=false,pauseAt=0,auto=true;
+const NW=170,NH=64;
+function pos(n){return mq.matches?{x:n.r*190,y:n.c*100}:{x:n.c*175,y:n.r*112};}
+function el(tag,at,par){const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(par)par.appendChild(e);return e;}
+function col(k){return `var(--${k==='neutral'?'muted':k})`;}
+function dur(s){let m=0;for(const b of s.beats)m=Math.max(m,b.t+(b.a?1.2:0));return m+2.2;}
+let G={};
+function build(){
+  const s=SC[cur];const ps=s.nodes.map(pos),xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);let x0=Math.min(...xs)-NW/2-12,vw=Math.max(...xs)+NW/2+12-x0;const minW=mq.matches?420:700;if(vw<minW){x0-=(minW-vw)/2;vw=minW;}const y0=Math.min(...ys)-NH/2-40;
+  sv.setAttribute('viewBox',`${x0} ${y0} ${vw} ${Math.max(...ys)+NH/2+16-y0}`);sv.innerHTML='';
+  const N={};s.nodes.forEach(n=>N[n.id]=n);
+  const eg=el('g',{},sv),seen={};
+  s.beats.forEach(b=>{if(!b.a)return;const k=[b.a,b.b].sort().join();if(seen[k])return;seen[k]=1;const A=pos(N[b.a]),B=pos(N[b.b]);el('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,class:'edge'},eg);});
+  G.nodes={};
+  s.nodes.forEach(n=>{const p=pos(n),g=el('g',{class:'node'},sv);
+    const r=el('rect',{x:p.x-NW/2,y:p.y-NH/2,width:NW,height:NH,rx:10,style:`stroke:${col(n.k)}`},g);
+    if(n.k==='plan')r.setAttribute('stroke-dasharray','6 4');
+    const t=el('text',{x:p.x,y:p.y-8,'text-anchor':'middle',class:'t'},g);t.textContent=n.t;
+    const s1=el('text',{x:p.x,y:p.y+11,'text-anchor':'middle',class:'s'},g),s2=el('text',{x:p.x,y:p.y+26,'text-anchor':'middle',class:'s'},g);
+    G.nodes[n.id]={n,r,s1,s2,last:null};});
+  G.pk=s.beats.filter(b=>b.a).map(b=>{const g=el('g',{class:'pk',opacity:0},sv);const tw=b.l.length*7.4+18;
+    el('rect',{x:-tw/2,y:-12,width:tw,height:24,rx:12,style:`fill:${col(b.k||'owner')}`},g);
+    const tx=el('text',{x:0,y:4,'text-anchor':'middle'},g);tx.textContent=b.l;if(!b.k)g.querySelector('rect').style.fill='var(--fg)',tx.style.fill='var(--bg)';
+    return {b,g,A:pos(N[b.a]),B:pos(N[b.b])};});
+  document.getElementById('st').textContent=s.title;
+  const sg=document.getElementById('sg');sg.textContent=s.tag[1];sg.className='tag '+s.tag[0];
+  const ol=document.getElementById('steps');ol.innerHTML='';G.steps=s.steps.map(([a,txt])=>{const li=document.createElement('li');li.textContent=txt;ol.appendChild(li);return {a,li};});
+  document.querySelectorAll('#tabs button').forEach((b,i)=>b.setAttribute('aria-selected',i===cur));
+  G.dur=dur(s);
+}
+function ease(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+function render(t){
+  const s=SC[cur];
+  for(const id in G.nodes){const o=G.nodes[id];let sub=o.n.s;for(const b of s.beats)if(b.chip===id&&t>=b.t)sub=b.s;
+    if(sub!==o.last){const [l1,l2]=(sub||'').split('\n');o.s1.textContent=l1||'';o.s2.textContent=l2||'';o.s1.setAttribute('y',l2?pos(o.n).y+11:pos(o.n).y+16);o.last=sub;
+      o.s1.style.fill=/SUPPRESSED|COOLDOWN|CAP|HELD|opted|dead/.test(sub)?'var(--bad)':'';}
+    let hit=false;for(const p of G.pk){const e=p.b.t+1.2;if(p.b.b===id&&!p.b.bounce&&t>=e&&t<e+.6)hit=true;}
+    o.r.setAttribute('stroke-width',hit?4:2);}
+  for(const p of G.pk){const d=t-p.b.t;if(d<0||d>1.6){p.g.setAttribute('opacity',0);continue;}
+    let u=Math.min(d/1.2,1);if(p.b.bounce)u=u<.55?u/.55*.6:(1-(u-.55)/.45)*.6;u=ease(Math.max(0,u));
+    const x=p.A.x+(p.B.x-p.A.x)*u,y=p.A.y+(p.B.y-p.A.y)*u-(p.A.y===p.B.y?0:0);
+    p.g.setAttribute('transform',`translate(${x},${y-(p.A.y===p.B.y?22:0)})`);p.g.setAttribute('opacity',d>1.2?Math.max(0,1-(d-1.2)/.4):Math.min(1,d/.15));}
+  let k=-1;G.steps.forEach((st,i)=>{if(t>=st.a)k=i;});
+  G.steps.forEach((st,i)=>{st.li.className=i===k?'now':i<k?'done':'';});
+  document.getElementById('pb').style.width=Math.min(100,t/G.dur*100)+'%';
+}
+function go(i){cur=(i+SC.length)%SC.length;build();t0=performance.now();if(paused)pauseAt=0;render(reduce?G.dur:0);try{history.replaceState(null,'','#'+SC[cur].id);}catch(e){}}
+function tick(now){if(!paused){const t=(now-t0)/1000;if(t>G.dur){if(auto)go(cur+1);else t0=now;}else render(t);}requestAnimationFrame(tick);}
+const tabs=document.getElementById('tabs');
+SC.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=s.tab;b.onclick=()=>{go(i);};tabs.appendChild(b);});
+const pp=document.getElementById('pp');
+pp.onclick=()=>{if(paused){paused=false;t0=performance.now()-pauseAt*1000;pp.textContent='Pause';}else{paused=true;pauseAt=(performance.now()-t0)/1000;pp.textContent='Play';}};
+document.getElementById('rs').onclick=()=>{go(cur);if(paused)pp.click();};
+mq.addEventListener('change',()=>{build();});
+const h=location.hash.slice(1),hi=SC.findIndex(s=>s.id===h);
+go(hi>=0?hi:0);
+window.__renderAt=(id,t)=>{const i=SC.findIndex(s=>s.id===id);paused=true;cur=i;build();render(t);};
+if(reduce){paused=true;pp.textContent='Play';render(G.dur);}
+requestAnimationFrame(tick);
+})();
+</script>
+<script>
+(()=>{function post(){try{parent.postMessage({hsCrmHeight:document.documentElement.scrollHeight},'*');}catch(e){}}
+new ResizeObserver(post).observe(document.body);addEventListener('load',post);})();
+</script>
+</body></html>
