@@ -18,7 +18,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 21 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 9 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
 
 ## Live
 
@@ -87,6 +87,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Capability | Docs wording | Evidence |
 |---|---|---|
 | @heystax/hey CLI package | do not tell readers to install @heystax/hey yet | cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25) |
+| Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
