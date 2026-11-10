@@ -23,7 +23,7 @@ For the separate **agent peer pilot**, where Claude Code works under its own nam
 
 ## Add HeyStax
 
-HeyStax has no sign-in. Claude Code sends your personal access token as a header. Copy the token from **Settings, MCP** at [dash.heystax.ai](https://dash.heystax.ai).
+Sign in at [dash.heystax.ai](https://dash.heystax.ai) and copy your personal access token from **Settings, MCP**. Claude Code sends it with every request.
 
 For all your projects:
 

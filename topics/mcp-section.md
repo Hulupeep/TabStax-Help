@@ -22,7 +22,7 @@ HeyStax connects to AI assistants through the **Model Context Protocol (MCP)**. 
 | Integration | Status | How |
 |------------|--------|-----|
 | [Claude Code (CLI)](mcp-claude-code) | Live | One command with your token |
-| [Claude.ai (web)](mcp-claude-ai) | Not today | It asks you to sign in, and HeyStax has no sign-in |
+| [Claude.ai (web)](mcp-claude-ai) | Not today | It wants to sign in to HeyStax for you. HeyStax needs your token instead |
 | ChatGPT | Live | Existing MCP connection; client-specific steps are being refreshed |
 
 {% include badge-partial.html %}
