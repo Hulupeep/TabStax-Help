@@ -162,6 +162,13 @@ capabilities:
     evidence: "agent_token_issue description in production tools/list (2026-11-10) recommends it; Hubduck bus-dev Grok Bot runs a second connector with the @hubduck-marketing key and made 13 attributed CRM writes on 2026-11-09."
     wording: "keep one connector on your token for reading, and give every write a second connector that uses the Chief's key"
 
+  - id: stax-templates
+    name: "Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy)"
+    state: planned
+    terms: ['stax_copy', 'use as template', 'from a template']
+    evidence: "tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10."
+    wording: "templates are coming; today you build the same stax by hand"
+
   - id: action-messages
     name: Bots and people message each other as comments on actions, delivered by the Telegram bot
     state: live
