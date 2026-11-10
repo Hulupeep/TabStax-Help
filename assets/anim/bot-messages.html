@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bot messages</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one column. Animated scene player first (keys, Chief, roles, workers, wakes, events), then the reference tables. Same palette as v1. */
+:root{--bg:#f7f6f2;--fg:#1d2026;--muted:#5e6572;--line:#d9d6cd;--surface:#fff;--owner:#b7791f;--agent:#c2562e;--worker:#2f6fbf;--hook:#0f7b80;--plan:#6b4fbb;--ok:#1f7a4d;--bad:#b83a2e;
+  --sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--plan:#b49cf5;--ok:#58c48d;--bad:#f07a6c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#12151b;--fg:#e7eaf0;--muted:#97a0ae;--line:#2b313c;--surface:#191d25;--owner:#f2b640;--agent:#e58a62;--worker:#5aa2f2;--hook:#4cc3c8;--plan:#b49cf5;--ok:#58c48d;--bad:#f07a6c;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:2px 2px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font-size:32px;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-size:20px;margin:0 0 10px;text-wrap:balance}
+p{margin:0;max-width:72ch}
+.lede{color:var(--muted);margin-top:6px}
+code{font:14px var(--mono)}
+.scroll{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+table{border-collapse:collapse;width:100%;min-width:820px;font-size:15px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.k-owner{color:var(--owner);font-weight:700}.k-agent{color:var(--agent);font-weight:700}.k-worker{color:var(--worker);font-weight:700}
+.tag{font:600 12px var(--mono);padding:2px 8px;border-radius:999px;white-space:nowrap;display:inline-block}
+.live{color:var(--ok);border:1px solid var(--ok)}.review{color:var(--owner);border:1px dashed var(--owner)}.planned{color:var(--plan);border:1px dashed var(--plan)}
+ul,ol{margin:0;padding-left:22px;max-width:78ch}li{margin:6px 0}
+
+/* player */
+.player{background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding:12px;border-bottom:1px solid var(--line)}
+.tabs button{font:600 13px var(--sans);background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tabs button:focus-visible,.ctl button:focus-visible{outline:2px solid var(--worker);outline-offset:2px}
+.head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;padding:14px 16px 0}
+.head h3{margin:0;font-size:19px}
+svg{display:block;width:100%;height:auto}
+.stage{padding:4px 8px}
+.ctl{display:flex;gap:10px;align-items:center;padding:0 16px 10px}
+.ctl button{font:600 13px var(--mono);background:var(--fg);color:var(--bg);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
+.ctl button.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.bar{flex:1;height:4px;background:var(--line);border-radius:2px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--fg)}
+.steps{list-style:none;margin:0;padding:4px 16px 16px;display:flex;flex-direction:column;gap:2px;max-width:none}
+.steps li{margin:0;padding:6px 10px;border-radius:8px;color:var(--muted);transition:color .3s,background .3s}
+.steps li.now{color:var(--fg);background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.steps li.done{color:var(--fg)}
+.node rect{fill:var(--surface);stroke-width:2}
+.node .t{font:700 15px var(--sans);fill:var(--fg)}
+.node .s{font:400 12.5px var(--mono);fill:var(--muted)}
+.edge{stroke:var(--line);stroke-width:1.5;fill:none}
+.pk rect{stroke:none}.pk text{font:600 12px var(--mono);fill:#fff}
+@media (prefers-reduced-motion: reduce){.steps li{transition:none}}
+</style>
+<style>body{margin:0;padding-left:0;padding-right:0}</style>
+</head><body>
+<section class="player" aria-label="Animated walkthrough">
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="head"><h3 id="st"></h3><span id="sg" class="tag"></span></div>
+  <div class="stage"><svg id="sv" role="img" aria-labelledby="st"></svg></div>
+  <div class="ctl"><button id="pp" type="button">Pause</button><button id="rs" class="ghost" type="button">Replay</button><div class="bar"><i id="pb"></i></div></div>
+  <ol class="steps" id="steps"></ol>
+</section>
+<script>
+(()=>{
+// kinds: owner agent worker hook plan neutral bad
+const SC=[
+{id:'ask',tab:'1 · A bot asks',title:'A bot asks Gaia a question',tag:['live','in production since 10 Nov'],
+ nodes:[{id:'bd',c:0,r:1,t:'@builder',s:'stuck on a card',k:'agent'},{id:'hs',c:2,r:1,t:'The action',s:'Import stage-2 file',k:'neutral'},
+  {id:'tg',c:4,r:0,t:'Telegram bot',s:'@heystax_bot',k:'hook'},{id:'ga',c:4,r:2,t:'Gaia',s:'on the stax',k:'owner'}],
+ beats:[{t:.3,a:'bd',b:'hs',l:'comment to @gaia',k:'agent'},{t:1.5,chip:'hs',s:'question saved\non the action'},
+  {t:1.8,a:'hs',b:'tg',l:'notice',k:'hook'},{t:3,a:'tg',b:'ga',l:'builder asks…',k:'hook'},{t:4.2,chip:'ga',s:'reads it in a DM'}],
+ steps:[[0,'The builder needs one fact from Gaia: which org is the stage-2 file for?'],[.3,'It posts a comment on the action the question is about, addressed to @gaia.'],[1.8,'The HeyStax Telegram bot sends Gaia a DM: who asks, the question, and the task it is about.'],[4.2,'No new chat app. No hunting through logs. The question sits on the work it belongs to.']]},
+{id:'reply',tab:'2 · Gaia replies',title:'Gaia replies, and the bot wakes',tag:['live','in production since 10 Nov'],
+ nodes:[{id:'ga',c:0,r:1,t:'Gaia',s:'in Telegram',k:'owner'},{id:'tg',c:2,r:0,t:'Telegram bot',s:'@heystax_bot',k:'hook'},
+  {id:'hs',c:2,r:2,t:'The action',s:'Import stage-2 file',k:'neutral'},{id:'bd',c:4,r:1,t:'@builder',s:'waiting for work',k:'agent'}],
+ beats:[{t:.3,a:'ga',b:'tg',l:'reply: The Dublin one',k:'owner'},{t:1.5,a:'tg',b:'hs',l:'comment to @builder',k:'hook'},{t:2.7,chip:'hs',s:'answer on the\nsame action'},
+  {t:2.9,a:'tg',b:'ga',l:'Sent to @builder',k:'hook'},{t:4.1,a:'hs',b:'bd',l:'wakes with the answer',k:'agent'},{t:5.3,chip:'bd',s:'carries on'}],
+ steps:[[0,'Gaia replies to the DM in plain words. No command to remember.'],[1.5,'Her reply becomes a comment on the same action, addressed back to the builder.'],[2.9,'The bot tells her who it went to.'],[4.1,'A worker waiting for work wakes as soon as the answer lands, and gets on with the card.']]},
+{id:'fyi',tab:'3 · "That\'s fixed"',title:'A bot tells you it\'s fixed',tag:['live','in production since 10 Nov'],
+ nodes:[{id:'bd',c:0,r:1,t:'@builder',s:'bug fixed',k:'agent'},{id:'hs',c:2,r:1,t:'The action',s:'Login loops on Safari',k:'neutral'},{id:'you',c:4,r:1,t:'You',s:'on your phone',k:'owner'}],
+ beats:[{t:.3,a:'bd',b:'hs',l:'fyi to your handle',k:'agent'},{t:1.5,chip:'hs',s:'"That\'s fixed,\nPR is merged"'},{t:1.8,a:'hs',b:'you',l:'builder says…',k:'hook'},{t:3,chip:'you',s:'no answer needed'}],
+ steps:[[0,'Not every message is a question. A bot can just tell you something.'],[.3,'It marks the comment as an FYI and addresses it to your handle.'],[1.8,'You get one DM. The note stays on the action, so anyone on the stax can see it later.']]},
+{id:'quiet',tab:'4 · Notes stay quiet',title:'Progress notes ping nobody',tag:['live','in production since 10 Nov'],
+ nodes:[{id:'bd',c:0,r:1,t:'@builder',s:'working',k:'agent'},{id:'hs',c:2,r:1,t:'The action',s:'Import stage-2 file',k:'neutral'},{id:'tg',c:4,r:1,t:'Your phone',s:'quiet',k:'owner'}],
+ beats:[{t:.3,a:'bd',b:'hs',l:'log: parsed 400 rows',k:'agent'},{t:1.5,chip:'hs',s:'note added\nnobody pinged'},{t:2.4,a:'bd',b:'hs',l:'comment, no handle',k:'agent'},{t:3.6,chip:'hs',s:'note added\nnobody pinged'},{t:3.8,chip:'tg',s:'still quiet'}],
+ steps:[[0,'Bots write a lot of progress notes. You do not want a buzz for each one.'],[.3,'A log entry notifies nobody.'],[2.4,'A comment with nobody in it is a note too.'],[3.8,'Your phone only buzzes when someone puts your handle on a message.']]},
+{id:'fence',tab:'5 · Only the stax',title:'Only people on the stax',tag:['live','in production since 10 Nov'],
+ nodes:[{id:'bd',c:0,r:1,t:'@builder',s:'on timebreez',k:'agent'},{id:'hs',c:2,r:1,t:'timebreez stax',s:'Gaia, Colm, builder',k:'neutral'},
+  {id:'ol',c:4,r:0,t:'Olga',s:'not on this stax',k:'bad'},{id:'ga',c:4,r:2,t:'Gaia',s:'on this stax',k:'owner'}],
+ beats:[{t:.3,a:'bd',b:'hs',l:'to @olga',k:'bad',bounce:1},{t:1.4,chip:'hs',s:'refused:\nnot on this stax'},{t:2.6,a:'bd',b:'hs',l:'to @gaia',k:'agent'},{t:3.8,a:'hs',b:'ga',l:'delivered',k:'hook'},{t:5,chip:'ol',s:'never contacted'}],
+ steps:[[0,'You set the edges. A bot can only reach people and agents on the stax it works on.'],[.3,'Anyone else is refused, and the bot is told why.'],[2.6,'Gaia is on the stax, so her message goes through.'],[5,'Every message carries who wrote it. You can check what each bot said, and to whom.']]},
+{id:'you',tab:'6 · You ask a bot',title:'You can message a bot too',tag:['live','in production since 10 Nov'],
+ nodes:[{id:'you',c:0,r:1,t:'You',s:'in Claude',k:'owner'},{id:'hs',c:2,r:1,t:'The action',s:'Weekly report',k:'neutral'},{id:'bd',c:4,r:1,t:'@builder',s:'waiting for work',k:'agent'}],
+ beats:[{t:.3,a:'you',b:'hs',l:'ask @builder',k:'owner'},{t:1.5,chip:'hs',s:'question saved\non the action'},{t:1.8,a:'hs',b:'bd',l:'wakes',k:'agent'},{t:3,a:'bd',b:'hs',l:'answer to you',k:'agent'},{t:4.2,a:'hs',b:'you',l:'DM',k:'hook'}],
+ steps:[[0,'It works both ways. From Claude or any AI app connected with your token, comment on an action and address the bot.'],[1.8,'The bot gets it the next time it checks, or wakes at once if it is waiting.'],[3,'Its answer comes back to you the same way: on the action, and in a DM.']]}
+];
+const NS='http://www.w3.org/2000/svg',sv=document.getElementById('sv');
+const mq=matchMedia('(max-width: 640px)');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cur=0,t0=performance.now(),paused=false,pauseAt=0,auto=true;
+const NW=170,NH=64;
+function pos(n){return mq.matches?{x:n.r*190,y:n.c*100}:{x:n.c*175,y:n.r*112};}
+function el(tag,at,par){const e=document.createElementNS(NS,tag);for(const k in at)e.setAttribute(k,at[k]);if(par)par.appendChild(e);return e;}
+function col(k){return `var(--${k==='neutral'?'muted':k})`;}
+function dur(s){let m=0;for(const b of s.beats)m=Math.max(m,b.t+(b.a?1.2:0));return m+2.2;}
+let G={};
+function build(){
+  const s=SC[cur];const ps=s.nodes.map(pos),xs=ps.map(p=>p.x),ys=ps.map(p=>p.y);let x0=Math.min(...xs)-NW/2-12,vw=Math.max(...xs)+NW/2+12-x0;const minW=mq.matches?420:700;if(vw<minW){x0-=(minW-vw)/2;vw=minW;}const y0=Math.min(...ys)-NH/2-40;
+  sv.setAttribute('viewBox',`${x0} ${y0} ${vw} ${Math.max(...ys)+NH/2+16-y0}`);sv.innerHTML='';
+  const N={};s.nodes.forEach(n=>N[n.id]=n);
+  const eg=el('g',{},sv),seen={};
+  s.beats.forEach(b=>{if(!b.a)return;const k=[b.a,b.b].sort().join();if(seen[k])return;seen[k]=1;const A=pos(N[b.a]),B=pos(N[b.b]);el('line',{x1:A.x,y1:A.y,x2:B.x,y2:B.y,class:'edge'},eg);});
+  G.nodes={};
+  s.nodes.forEach(n=>{const p=pos(n),g=el('g',{class:'node'},sv);
+    const r=el('rect',{x:p.x-NW/2,y:p.y-NH/2,width:NW,height:NH,rx:10,style:`stroke:${col(n.k)}`},g);
+    if(n.k==='plan')r.setAttribute('stroke-dasharray','6 4');
+    const t=el('text',{x:p.x,y:p.y-8,'text-anchor':'middle',class:'t'},g);t.textContent=n.t;
+    const s1=el('text',{x:p.x,y:p.y+11,'text-anchor':'middle',class:'s'},g),s2=el('text',{x:p.x,y:p.y+26,'text-anchor':'middle',class:'s'},g);
+    G.nodes[n.id]={n,r,s1,s2,last:null};});
+  G.pk=s.beats.filter(b=>b.a).map(b=>{const g=el('g',{class:'pk',opacity:0},sv);const tw=b.l.length*7.4+18;
+    el('rect',{x:-tw/2,y:-12,width:tw,height:24,rx:12,style:`fill:${col(b.k||'owner')}`},g);
+    const tx=el('text',{x:0,y:4,'text-anchor':'middle'},g);tx.textContent=b.l;if(!b.k)g.querySelector('rect').style.fill='var(--fg)',tx.style.fill='var(--bg)';
+    return {b,g,A:pos(N[b.a]),B:pos(N[b.b])};});
+  document.getElementById('st').textContent=s.title;
+  const sg=document.getElementById('sg');sg.textContent=s.tag[1];sg.className='tag '+s.tag[0];
+  const ol=document.getElementById('steps');ol.innerHTML='';G.steps=s.steps.map(([a,txt])=>{const li=document.createElement('li');li.textContent=txt;ol.appendChild(li);return {a,li};});
+  document.querySelectorAll('#tabs button').forEach((b,i)=>b.setAttribute('aria-selected',i===cur));
+  G.dur=dur(s);
+}
+function ease(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+function render(t){
+  const s=SC[cur];
+  for(const id in G.nodes){const o=G.nodes[id];let sub=o.n.s;for(const b of s.beats)if(b.chip===id&&t>=b.t)sub=b.s;
+    if(sub!==o.last){const [l1,l2]=(sub||'').split('\n');o.s1.textContent=l1||'';o.s2.textContent=l2||'';o.s1.setAttribute('y',l2?pos(o.n).y+11:pos(o.n).y+16);o.last=sub;
+      o.s1.style.fill=/revoked|refused|never/.test(sub)?'var(--bad)':'';}
+    let hit=false;for(const p of G.pk){const e=p.b.t+1.2;if(p.b.b===id&&!p.b.bounce&&t>=e&&t<e+.6)hit=true;}
+    o.r.setAttribute('stroke-width',hit?4:2);}
+  for(const p of G.pk){const d=t-p.b.t;if(d<0||d>1.6){p.g.setAttribute('opacity',0);continue;}
+    let u=Math.min(d/1.2,1);if(p.b.bounce)u=u<.55?u/.55*.6:(1-(u-.55)/.45)*.6;u=ease(Math.max(0,u));
+    const x=p.A.x+(p.B.x-p.A.x)*u,y=p.A.y+(p.B.y-p.A.y)*u-(p.A.y===p.B.y?0:0);
+    p.g.setAttribute('transform',`translate(${x},${y-(p.A.y===p.B.y?22:0)})`);p.g.setAttribute('opacity',d>1.2?Math.max(0,1-(d-1.2)/.4):Math.min(1,d/.15));}
+  let k=-1;G.steps.forEach((st,i)=>{if(t>=st.a)k=i;});
+  G.steps.forEach((st,i)=>{st.li.className=i===k?'now':i<k?'done':'';});
+  document.getElementById('pb').style.width=Math.min(100,t/G.dur*100)+'%';
+}
+function go(i){cur=(i+SC.length)%SC.length;build();t0=performance.now();if(paused)pauseAt=0;render(reduce?G.dur:0);try{history.replaceState(null,'','#'+SC[cur].id);}catch(e){}}
+function tick(now){if(!paused){const t=(now-t0)/1000;if(t>G.dur){if(auto)go(cur+1);else t0=now;}else render(t);}requestAnimationFrame(tick);}
+const tabs=document.getElementById('tabs');
+SC.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.role='tab';b.textContent=s.tab;b.onclick=()=>{go(i);};tabs.appendChild(b);});
+const pp=document.getElementById('pp');
+pp.onclick=()=>{if(paused){paused=false;t0=performance.now()-pauseAt*1000;pp.textContent='Pause';}else{paused=true;pauseAt=(performance.now()-t0)/1000;pp.textContent='Play';}};
+document.getElementById('rs').onclick=()=>{go(cur);if(paused)pp.click();};
+mq.addEventListener('change',()=>{build();});
+const h=location.hash.slice(1),hi=SC.findIndex(s=>s.id===h);
+go(hi>=0?hi:0);
+window.__renderAt=(id,t)=>{const i=SC.findIndex(s=>s.id===id);paused=true;cur=i;build();render(t);};
+if(reduce){paused=true;pp.textContent='Play';render(G.dur);}
+requestAnimationFrame(tick);
+})();
+</script>
+<script>
+(()=>{function post(){try{parent.postMessage({hsMsgHeight:document.documentElement.scrollHeight},'*');}catch(e){}}
+new ResizeObserver(post).observe(document.body);addEventListener('load',post);})();
+</script>
+</body></html>

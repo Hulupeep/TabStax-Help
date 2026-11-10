@@ -15,7 +15,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 17 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 18 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 9 |
@@ -36,6 +36,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Today set (pick today's actions) | your Today list | Live tools/list on 2026-10-25: today_get, today_set, today_clear |
 | Shared stax with roles and @handles | share a stax and assign by @handle | stax_get on the TabStax stax returns people with roles owner and agent and @handles (2026-10-25) |
 | Attention lanes (Must, Should, Good, Meh) | Must, Should, Good, Meh | stax_get returns attention.priority and lane_position (2026-10-25) |
+| Bots and people message each other as comments on actions, delivered by the Telegram bot | address a comment on an action to @handles; the HeyStax Telegram bot DMs them, and a plain reply comes back as a comment | tabstax#1161 merged 2026-11-10 (migration 20261110140000 applied, mcp deployed); tabstax-webapps#292 merged 2026-11-10 (comment DMs and reply-as-comment). Epic tabstax#1158. |
 | Weekly timesheets per stax | timesheets at time.heystax.ai | https://time.heystax.ai/time returns 200 (2026-10-25) |
 | Agents listed as people on a stax with an @handle | agents appear on the people list | stax_get on the TabStax stax lists @glenda with role agent (2026-10-25) |
 | Plan state on a next action: state, waiting_on, next_check, done_when | say where an action stands: next, decision, waiting, blocked or parked, who it waits on, when to look again, and how anyone can tell it is done | tabstax#1124 merged 2026-11-08; production MCP next_actions_add schema on 2026-11-10 has state (next, decision, waiting, blocked, parked), waiting_on, next_check and done_when; webapps #273 (plan state on List cards) production deployment READY for 0b2d522 (Vercel, 2026-11-10) |
@@ -112,6 +113,7 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Project Settings page (description, goals, people, dates, grants)
 - [ ] Breadcrumbs (completed actions as a trail)
 - [ ] Telegram group to stax, personal linking, actions from messages, standups
+- [ ] Bots and people message each other as comments on actions, delivered by the Telegram bot
 - [ ] Weekly timesheets per stax
 - [ ] Pro plan purchase through Stripe
 - [ ] Records in the dashboard
