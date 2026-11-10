@@ -31,7 +31,7 @@ And it holds the people and agents doing the work.
 
 - **People** are on the stax by `@handle`.
 - **Agents are roles**, such as `@builder` or `@outreach`. A role is the job, not the software.
-- **Workers** fill a role: Claude Code, Codex, whatever you like. Swap a worker and the role carries on.
+- **Workers** fill a role: Claude Code, Codex, Kimi, whoever you like. No vendor cage. Swap a worker and the role carries on.
 - **Outside agents**, such as Grok Bot, connect to the stax. They bring judgment into it and support the work.
 
 {% capture s %}
