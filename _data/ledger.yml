@@ -148,6 +148,13 @@ capabilities:
     evidence: "t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*; help page merged 2026-07-20 (TabStax-Help PR #8)"
     wording: "the HeyStax Telegram bot (@heystax_bot)"
 
+  - id: action-messages
+    name: Bots and people message each other as comments on actions, delivered by the Telegram bot
+    state: live
+    terms: ['next_actions_comment', 'comments_for_me', 'comments_since']
+    evidence: "tabstax#1161 merged 2026-11-10 (migration 20261110140000 applied, mcp deployed); tabstax-webapps#292 merged 2026-11-10 (comment DMs and reply-as-comment). Epic tabstax#1158."
+    wording: "address a comment on an action to @handles; the HeyStax Telegram bot DMs them, and a plain reply comes back as a comment"
+
   # ------------------------------------------------------------- time, money
   - id: timesheets
     name: Weekly timesheets per stax
