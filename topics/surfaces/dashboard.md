@@ -4,41 +4,32 @@ parent: Surfaces
 nav_order: 2
 ---
 
-# Dashboard — Your Attention Surface
+# See every stax at once on the dashboard
 
-The HeyStax Dashboard at [dash.heystax.ai](https://dash.heystax.ai) is where you see everything at once — and decide what to enter first.
+The HeyStax dashboard at [dash.heystax.ai](https://dash.heystax.ai) shows all your stax in one view, so you can pick which one to enter first.
 
-## The problem it solves
+## Why it matters to you
 
-Fifteen projects in flight. Looking at all of them is paralysing. You don't know which one to enter, so you enter none.
+Fifteen projects in flight. Looking at all of them at once is paralysing, so you enter none. The dashboard sorts them for you, and shows the one action that matters most.
 
-The Dashboard gives you two lenses for the same data:
+## Two ways to look
 
-### Attention Blocks — The Map
+| View | What it shows |
+|---|---|
+| **Attention blocks** | Drag each stax into a lane: **Must**, **Should**, **Good**, **Meh**. Each block shows the stax name, open actions, who is assigned and when it was last active. A pink glow marks the most important action across all of them. |
+| **Actions mode** | One column: the next action for each stax, in priority order. Tick one off and the next appears. |
 
-Drag Stax into priority lanes: **Must**, **Should**, **Good**, **Meh**. A pink glow pulses on the single most important action across all your projects. That's your answer to "what should I work on next?"
+The dashboard reads the same stax as every other surface. Tick an action here and the extension, the `hey` CLI and your AI app see it too. On a shared stax, each action carries the `@handle` of the person or agent on it.
 
-Each block shows:
-- The Stax name and tags
-- How many next actions are pending
-- Who's assigned (for collaborative Stax)
-- When it was last active
+## Archive a stax you are done with
 
-### Actions Mode — The Execution Lens
+Archiving keeps everything: actions, people, dates, records and history. The stax just stops showing up in lists, on the board, in Today and in the Telegram picker.
 
-Toggle to a single column: just the next action per project, ordered by priority. Check one off, the next surfaces. A conveyor belt for getting things done.
+1. Open the stax you own.
+2. Select **Archive**.
+3. To find it again, open the **Archive** tab next to **Active**.
+4. Select **Restore** to bring it back as it was.
 
-No tabs. No links. No context. Just: what's next, do it, move on.
+Deleting a stax offers **Archive instead**. Only the owner can archive or restore. An AI app can do the same with `stax_archive` and `stax_restore`.
 
-## How it connects to HeyStax
-
-The Dashboard reads the same Stax data as every other surface. Complete an action here and it's reflected in the extension, the CLI, and your AI assistant. Drag a Stax to a different priority lane and the extension popup reflects the new ordering.
-
-For teams, the Dashboard shows collaborative Stax with @handle attribution and colour-coded ownership. Filter between your actions and the team view.
-
-## Access
-
-The Dashboard is a web app — no install needed.
-
-- [Open the Dashboard →](https://dash.heystax.ai)
-- Requires a HeyStax account (Pro or Trial for full features)
+Now you can clear finished work out of sight without losing any of it.

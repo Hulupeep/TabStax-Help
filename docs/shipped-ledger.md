@@ -8,15 +8,15 @@ search_exclude: true
 
 # Shipped ledger
 
-Last checked: 2026-11-10. Source: `_data/ledger.yml`.
+Last checked: 2026-11-11. Source: `_data/ledger.yml`.
 
 Help pages may only describe what this ledger says is live. `scripts/check_truth.py` enforces it on every pull request.
 
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 21 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 23 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 13 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
 
@@ -36,6 +36,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Today set (pick today's actions) | your Today list | Live tools/list on 2026-10-25: today_get, today_set, today_clear |
 | Shared stax with roles and @handles | share a stax and assign by @handle | stax_get on the TabStax stax returns people with roles owner and agent and @handles (2026-10-25) |
 | Attention lanes (Must, Should, Good, Meh) | Must, Should, Good, Meh | stax_get returns attention.priority and lane_position (2026-10-25) |
+| Telegram group to stax, personal linking, actions from messages, standups, /t with urgent and @assign, /status with reply /done 1,3, /who, assignment and done notices, the 8am list | the HeyStax Telegram bot (@heystax_bot) | 2026-11-11: tabstax-webapps production deploys READY on Vercel for 0272beb (#285 /t, urgent, @assign), 5dceb5d (#288 slash replies, /status names its Stax), 4387c5c (#289 notices, /who), e9462c1 (#290 reply /done 1,2,4), 5ce0b01 (#291 /who titles), e525c94 (#292). Production database lists migrations 20261110090000 telegram_morning_digest_flag and 20261110130000 telegram_assignee_reply_done as applied. Earlier: t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*. |
+| Archive a stax: kept, not deleted, hidden from lists, the board, Today and pickers until restored | archive a stax you own; everything in it is kept, and Restore brings it back | 2026-11-11: production MCP tool list has stax_archive and stax_restore, and stax_list takes archive exclude, include or only (tabstax#1156). Production database lists migration 20261110120000 stax_archive_921 as applied. tabstax-webapps production deploy 5dceb5d (#287, Active and Archive tabs, Archive and Restore) READY on Vercel. |
 | Issue or replace an agent's key (agent_token_issue); the old key and its workers stop at once | your own token issues the Chief a key with agent_token_issue; the key is shown once | tabstax#1143 merged and live in mcp v35+ (2026-11-09); production tools/list on 2026-11-10 lists agent_token_issue with the owner-only description. Colm's Optimizer started its switch to its own key on 2026-11-10. |
 | Bots and people message each other as comments on actions, delivered by the Telegram bot | address a comment on an action to @handles; the HeyStax Telegram bot DMs them, and a plain reply comes back as a comment | tabstax#1161 merged 2026-11-10 (migration 20261110140000 applied, mcp deployed); tabstax-webapps#292 merged 2026-11-10 (comment DMs and reply-as-comment). Epic tabstax#1158. |
 | Weekly timesheets per stax | timesheets at time.heystax.ai | https://time.heystax.ai/time returns 200 (2026-10-25) |
@@ -53,7 +55,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | MCP needs a Pro or Trial plan | MCP needs a Pro or Trial plan | supabase/functions/mcp/caller-identity.ts returns PLAN_REQUIRED for plans other than pro and trial (tabstax c3c18c1) |
 | Project Settings page (description, goals, people, dates, grants) | Project Settings | Stax settings redesign epic tabstax#901 marked done on the TabStax stax |
 | Breadcrumbs (completed actions as a trail) | breadcrumbs | Described in tabstax-capabilities.md; not observed |
-| Telegram group to stax, personal linking, actions from messages, standups | the HeyStax Telegram bot (@heystax_bot) | t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*; help page merged 2026-07-20 (TabStax-Help PR #8) |
 | A Chief that works across stax reads with the owner token and writes with its own role key (two connectors) | keep one connector on your token for reading, and give every write a second connector that uses the Chief's key | agent_token_issue description in production tools/list (2026-11-10) recommends it; Hubduck bus-dev Grok Bot runs a second connector with the @hubduck-marketing key and made 13 attributed CRM writes on 2026-11-09. |
 | Pro plan purchase through Stripe | upgrade to Pro | supabase/functions/stripe-webhook exists; prices not checked |
 | Records in the dashboard | records | Account Records tabstax#688 in progress in May roadmap; MCP record tools are live |
@@ -116,7 +117,8 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Attention lanes (Must, Should, Good, Meh)
 - [ ] Project Settings page (description, goals, people, dates, grants)
 - [ ] Breadcrumbs (completed actions as a trail)
-- [ ] Telegram group to stax, personal linking, actions from messages, standups
+- [ ] Telegram group to stax, personal linking, actions from messages, standups, /t with urgent and @assign, /status with reply /done 1,3, /who, assignment and done notices, the 8am list
+- [ ] Archive a stax: kept, not deleted, hidden from lists, the board, Today and pickers until restored
 - [ ] Issue or replace an agent's key (agent_token_issue); the old key and its workers stop at once
 - [ ] A Chief that works across stax reads with the owner token and writes with its own role key (two connectors)
 - [ ] Bots and people message each other as comments on actions, delivered by the Telegram bot

@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-10
+checked: 2026-11-11
 
 capabilities:
 
@@ -143,10 +143,17 @@ capabilities:
     wording: "breadcrumbs"
 
   - id: telegram
-    name: Telegram group to stax, personal linking, actions from messages, standups
-    state: unverified
-    evidence: "t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*; help page merged 2026-07-20 (TabStax-Help PR #8)"
+    name: "Telegram group to stax, personal linking, actions from messages, standups, /t with urgent and @assign, /status with reply /done 1,3, /who, assignment and done notices, the 8am list"
+    state: live
+    evidence: "2026-11-11: tabstax-webapps production deploys READY on Vercel for 0272beb (#285 /t, urgent, @assign), 5dceb5d (#288 slash replies, /status names its Stax), 4387c5c (#289 notices, /who), e9462c1 (#290 reply /done 1,2,4), 5ce0b01 (#291 /who titles), e525c94 (#292). Production database lists migrations 20261110090000 telegram_morning_digest_flag and 20261110130000 telegram_assignee_reply_done as applied. Earlier: t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*."
     wording: "the HeyStax Telegram bot (@heystax_bot)"
+
+  - id: stax-archive
+    name: "Archive a stax: kept, not deleted, hidden from lists, the board, Today and pickers until restored"
+    state: live
+    terms: ['stax_archive', 'stax_restore', 'archive (a|the|your|this) stax', 'archived stax']
+    evidence: "2026-11-11: production MCP tool list has stax_archive and stax_restore, and stax_list takes archive exclude, include or only (tabstax#1156). Production database lists migration 20261110120000 stax_archive_921 as applied. tabstax-webapps production deploy 5dceb5d (#287, Active and Archive tabs, Archive and Restore) READY on Vercel."
+    wording: "archive a stax you own; everything in it is kept, and Restore brings it back"
 
   - id: chief-own-key
     name: "Issue or replace an agent's key (agent_token_issue); the old key and its workers stop at once"
