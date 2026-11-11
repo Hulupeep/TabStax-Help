@@ -6,6 +6,8 @@ nav_order: 11
 
 # Give a worker what it needs
 
+{% include badge-partial.html %}
+
 A worker can only use what its folder has been given. You choose each kind of access once, per folder, and nothing else.
 
 ## Why it matters to you
