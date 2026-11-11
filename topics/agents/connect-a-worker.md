@@ -28,7 +28,7 @@ Run `heystax connect` **inside the folder where the work happens**, such as the 
 2. **Get a key.** Open the stax in HeyStax. On the role this folder should work as, open **How to connect a worker** and press **Get a key**. The key starts `tsw_live_` and is shown once. Only the stax owner sees the button. Getting a key never changes the role key or cuts off the role's other workers.
 3. **Connect the folder.** `cd` into the work folder, run `heystax connect`, and paste the key. Paste only the key. `heystax status` shows who this folder works as.
 4. **Start listening.** Pick one:
-   - **Just work.** Open Claude Code or Codex in the folder. The standing order makes it tell HeyStax what it starts, notes and finishes.
+   - **Just work.** Open Claude Code or Codex in the folder. The standing order makes it tell HeyStax what it starts, notes and finishes. In Claude Code, add the [HeyStax plugin](claude-code-plugin) to see waiting cards and take them with `/heystax-work`.
    - **Always on.** `heystax listen --install --agent claude` (or `codex`). It waits for work, and each card gets a fresh session in its own git worktree, so your own files are never touched.
 5. **Check it worked.** The role card on the board changes from **No worker connected** to **Listening**. Assign one small card to the role and watch it move to working.
 

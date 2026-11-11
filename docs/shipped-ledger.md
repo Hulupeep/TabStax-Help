@@ -17,7 +17,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 23 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 15 |
-| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
+| `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 13 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
 
 ## Live
@@ -84,6 +84,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | One column per agent on the stax page | web code deployed; signed-in display still to verify | webapps PR #198 merged and its main production deployment READY on 2026-10-25; webapps #276 (who is home on each agent column) production deployment READY for 8823897 (Vercel, 2026-11-10); signed-in agent-column browser check remains (help #36) |
 | Claim rules for agents: owner access levels (read, work, full), five open claims per stax, locked once claimed, deauthorize releases claims, re-authorize refused while claims are open | claim rules are in production; the owner and two-agent journey still needs a browser check | tabstax main 74fbf44: migrations 20261027104402 (grants), 20261027201500 (claim/report), 20261028021204 and 20261028021206 (authority end), 20261029154500 (rejoin guard), 20261029200000 (add/assign); mcp agent-authorize.ts and agent-peers.ts. Release applied to production 2026-11-02. No owner or two-agent browser journey verified yet (help #50) |
 | heystax connect: set up a folder as a worker of one role, plus the Claude Code plugin and standing order | heystax connect works from the repo today; it is not on npm yet | tabstax#1144 merged 2026-11-09 and worker_enroll live in mcp v35; per-folder roles tabstax#1152, key paste fix #1153. Colm connected two folders on his machine as @timebreez-main and @timebreez-builder (2026-11-09). CLI installs from the repo only. |
+| HeyStax plugin for Claude Code: at session start it says which role you work as and what is waiting; /heystax-work and /heystax-loop take assigned cards; at session end an open card goes back to the role | the HeyStax plugin installs from the HeyStax repo today; it is not in a public plugin directory | plugins/heystax in Hulupeep/tabstax (tabstax#1144, merged 2026-11-09): SessionStart and SessionEnd hooks call heystax hook session-start / session-end; commands heystax-work, heystax-loop, heystax-connect. Installs from the repo marketplace only. Not yet installed and run on the owner's machine (2026-11-11). |
 
 ## Planned
 
