@@ -363,6 +363,20 @@ capabilities:
     evidence: "tabstax#1144 merged 2026-11-09 and worker_enroll live in mcp v35; per-folder roles tabstax#1152, key paste fix #1153. Colm connected two folders on his machine as @timebreez-main and @timebreez-builder (2026-11-09). CLI installs from the repo only."
     wording: "heystax connect works from the repo today; it is not on npm yet"
 
+  - id: get-worker-key
+    name: "Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key"
+    state: unverified
+    terms: ['Get a key', 'tsw_live_']
+    evidence: "tabstax-webapps#300 merged 2026-11-11 (owner-only button in How to connect a worker; mints a worker key through the owner path, shown once, role key untouched). tabstax#1189 merged 2026-11-11: heystax connect points to it. Not yet clicked in a browser after deploy."
+    wording: "the stax owner presses Get a key on the role card; the key starts tsw_live_ and is shown once"
+
+  - id: worker-liveness-chip
+    name: "Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since"
+    state: unverified
+    terms: ['No worker connected', 'Stalled since']
+    evidence: "tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live."
+    wording: "the role card says Listening when a worker is waiting for work, and No worker connected when none is"
+
   - id: notify
     name: "@notify Telegram agent"
     state: planned
