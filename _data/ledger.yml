@@ -363,6 +363,13 @@ capabilities:
     evidence: "tabstax#1144 merged 2026-11-09 and worker_enroll live in mcp v35; per-folder roles tabstax#1152, key paste fix #1153. Colm connected two folders on his machine as @timebreez-main and @timebreez-builder (2026-11-09). CLI installs from the repo only."
     wording: "heystax connect works from the repo today; it is not on npm yet"
 
+  - id: claude-code-plugin
+    name: "HeyStax plugin for Claude Code: at session start it says which role you work as and what is waiting; /heystax-work and /heystax-loop take assigned cards; at session end an open card goes back to the role"
+    state: partial
+    terms: ['heystax-work', 'heystax-loop', 'HeyStax plugin', 'heystax@heystax']
+    evidence: "plugins/heystax in Hulupeep/tabstax (tabstax#1144, merged 2026-11-09): SessionStart and SessionEnd hooks call heystax hook session-start / session-end; commands heystax-work, heystax-loop, heystax-connect. Installs from the repo marketplace only. Not yet installed and run on the owner's machine (2026-11-11)."
+    wording: "the HeyStax plugin installs from the HeyStax repo today; it is not in a public plugin directory"
+
   - id: get-worker-key
     name: "Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key"
     state: unverified
