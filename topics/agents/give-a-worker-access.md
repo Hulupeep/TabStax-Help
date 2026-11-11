@@ -33,9 +33,11 @@ Your Claude may be signed in to everything. A worker running on its own with nob
 
 Use a staging database. Better still, a login that can only read. Never point a worker at a database that holds real patient or customer records.
 
-## Coming next
+## Check what a worker can reach
 
-{% include badge-planned.html %} `heystax access` will list what a worker in a folder can reach, with the fix for each gap. The worker will run it before it starts, and when a card needs something missing it will come back blocked with that fix instead of a guess.
+Run `heystax access` in the folder. It lists code, branch and pull request, data, and logs, with the fix for each gap. `heystax status` and `heystax listen --install` show the same list.
+
+The worker runs it before it starts. When a card needs something missing, the card comes back blocked with that fix, not a guess.
 
 Now you can hand a bug to a builder and get a verdict that comes from your data, not a guess.
 

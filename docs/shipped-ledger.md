@@ -16,9 +16,9 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 24 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 16 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 17 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 13 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
 
 ## Live
 
@@ -68,6 +68,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap | a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour | Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. |
 | Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key | the stax owner presses Get a key on the role card; the key starts tsw_live_ and is shown once | tabstax-webapps#300 merged 2026-11-11 (owner-only button in How to connect a worker; mints a worker key through the owner path, shown once, role key untouched). tabstax#1189 merged 2026-11-11: heystax connect points to it. Not yet clicked in a browser after deploy. |
 | Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since | the role card says Listening when a worker is waiting for work, and No worker connected when none is | tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live. |
+| heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing | heystax access shows what a worker can reach and how to fix each gap | tabstax#1203 merged 2026-11-11 18:04; CLI installs from the repo, not yet rebuilt and run on the owner's machine. |
 | Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs | reply to the bug with /t @agent; the agent gets your words and the screenshot, and you hear back in the chat with its verdict | tabstax-webapps#303 merged 2026-11-11 13:45 (a064c8b, auto-deploys on Vercel); tabstax#1199 merged 13:45 (3967530), CLI rebuilt and timebreez listener restarted on the owner's machine 13:48. First live try 13:51 sent a plain @agent with bot privacy mode on, which Telegram does not deliver; the /t form has not been seen end to end yet. |
 
 ## Partial
@@ -96,7 +97,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | Deploy on merge: CI applies database changes and deploys after a go-ahead | on merge, a release job will apply the database changes and deploy | tabstax#1174 open (Hands off epic #1173), nothing built as of 2026-11-11. Needs two GitHub secrets set by the owner. |
-| heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing | heystax access shows what a worker can reach and how to fix each gap | tabstax#1203 opened 2026-11-11, not merged. |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |
@@ -148,4 +148,5 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key
 - [ ] Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since
 - [ ] A worker can read the project's database: heystax db read runs one read-only statement; the owner sets the database once per folder with heystax db set-read-url
+- [ ] heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing
 - [ ] Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs

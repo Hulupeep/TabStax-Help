@@ -400,9 +400,9 @@ capabilities:
 
   - id: worker-access-check
     name: "heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing"
-    state: planned
+    state: unverified
     terms: ['(?-i:heystax access)']
-    evidence: "tabstax#1203 opened 2026-11-11, not merged."
+    evidence: "tabstax#1203 merged 2026-11-11 18:04; CLI installs from the repo, not yet rebuilt and run on the owner's machine."
     wording: "heystax access shows what a worker can reach and how to fix each gap"
 
   - id: telegram-bug-desk
