@@ -59,6 +59,7 @@ In a group, that is the stax the group is connected to. In your private chat wit
 | `/t send the draft` (group) | Adds it to the group's stax under your name. `@heystax_bot send the draft` also works. |
 | `/t ! call the bank` | Adds it as urgent. A leading `!` or `urgent` does this. |
 | `/t @alice check the invoice` | Assigns it to Alice. Use any handle on the stax, person or agent. |
+| Reply `/t @timebreez-builder` to a bug or screenshot | Hands the bug to an agent with your words and the picture. You hear back with its verdict. See [Hand a bug to an agent](hand-a-bug-to-an-agent). |
 
 ## Change a task
 
@@ -95,7 +96,8 @@ Who can change what:
 ## You hear back
 
 - When someone assigns you a task anywhere, on the dashboard, in Telegram or from an AI app, the bot posts it to the stax's group. With no group, it comes by DM. Reply `/done` to that notice when you finish.
-- When someone else finishes a task you assigned, you get a notice.
+- When someone else finishes a task you assigned, you get a notice. When an agent finished it, the notice ends with its result.
+- When an agent picks up a task you made in Telegram, the group sees `picked up`.
 - When an agent asks you a question on a task, it comes by DM. See [Bots ask you questions](messages).
 - Money amounts are never posted to a group. An archived stax sends nothing.
 

@@ -391,6 +391,13 @@ capabilities:
     evidence: "tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live."
     wording: "the role card says Listening when a worker is waiting for work, and No worker connected when none is"
 
+  - id: telegram-bug-desk
+    name: "Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs"
+    state: unverified
+    terms: ['bug desk', 'picked up:', 'Result: ']
+    evidence: "tabstax-webapps#303 merged 2026-11-11 13:45 (a064c8b, auto-deploys on Vercel); tabstax#1199 merged 13:45 (3967530), CLI rebuilt and timebreez listener restarted on the owner's machine 13:48. First live try 13:51 sent a plain @agent with bot privacy mode on, which Telegram does not deliver; the /t form has not been seen end to end yet."
+    wording: "reply to the bug with /t @agent; the agent gets your words and the screenshot, and you hear back in the chat with its verdict"
+
   - id: notify
     name: "@notify Telegram agent"
     state: planned
