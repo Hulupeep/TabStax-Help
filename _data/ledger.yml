@@ -272,6 +272,13 @@ capabilities:
     evidence: "webapps PR #198 merged and its main production deployment READY on 2026-10-25; webapps #276 (who is home on each agent column) production deployment READY for 8823897 (Vercel, 2026-11-10); signed-in agent-column browser check remains (help #36)"
     wording: "web code deployed; signed-in display still to verify"
 
+  - id: stax-board
+    name: "Stax board: Unassigned, people and agent role columns; no CRM contact columns; fits the window with per-column scroll"
+    state: partial
+    terms: ['stax board']
+    evidence: "webapps #256 (board) merged 2026-11-04 and #296 (board is the default stax view) merged 2026-11-11, Vercel production; webapps #308 (no contact columns, board fits the window, phone header) verified in Playwright at 1600x1017 and Pixel 5 with mocked data, pending merge; not yet seen signed in"
+    wording: "the stax board shows Unassigned, then people, then agent roles; contacts get no column"
+
   - id: agent-claim-rules
     name: "Claim rules for agents: owner access levels (read, work, full), five open claims per stax, locked once claimed, deauthorize releases claims, re-authorize refused while claims are open"
     state: partial

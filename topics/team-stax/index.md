@@ -28,5 +28,6 @@ Now you can see who is on what without asking.
 
 **In this section:**
 - [Assigning actions](assigning-actions): hand work to someone with `@handle`
+- [Read your board](stax-board): who holds every piece of work, in columns
 - [Telegram](telegram): add, assign and finish work from a Telegram group
 - [Bots ask you questions](messages): answer an agent from your phone
