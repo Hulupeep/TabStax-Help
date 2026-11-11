@@ -15,10 +15,10 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 23 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 24 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 16 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 13 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
 
 ## Live
 
@@ -47,6 +47,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal | irreversible work waits for a go-ahead from you or a Chief you granted go_ahead | tabstax#1134 deployed 2026-11-09 (coordinator). Production MCP tool list seen through a connected HeyStax client on 2026-11-10: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action approved in a browser yet. |
 | Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools) | each angle is kept on the stax with its outcome; opted-out contacts go on a suppression list | tabstax#1126 merged and deployed 2026-11-08 13:56; production MCP tools/list includes crm_angle_upsert, crm_campaign_upsert, crm_stage_move, crm_suppression_add and crm_query, and crm_query counts on Hubduck Business Development returned an empty result on 2026-11-08. On 2026-11-09 Grok Bot imported 114 organisations, 1 campaign, 8 angles and 13 suppressions into Hubduck Business Development, and @hubduck-marketing made 13 attributed CRM writes with its own key (tabstax#1125, #1139). |
 | Reserve before every send: holds, suppression, cooldown, per-mailbox caps, QC sampling (crm_send_reserve) | every send is reserved first; holds, suppressions, a 7-day cooldown per organisation and 30 sends per mailbox per day are checked before it goes | tabstax#1140 / #1148 deployed and migration 20261109180000 applied on 2026-11-09; between 13:41 and 13:43 @hubduck-marketing reserved, sent and recorded 5 Batch A sends with 0 refusals. |
+| A worker can read the project's database: heystax db read runs one read-only statement; the owner sets the database once per folder with heystax db set-read-url | heystax db read lets a worker look at data, never change it; you choose the database per folder | tabstax#1201 merged 2026-11-11 15:52 (f888627), #1202 merged 16:57 (493e424). On the owner's machine 16:04 the timebreez folder was set to staging and heystax db read "select now()" returned one row; listener restarted. |
 
 ## Unverified
 
@@ -95,6 +96,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | Deploy on merge: CI applies database changes and deploys after a go-ahead | on merge, a release job will apply the database changes and deploy | tabstax#1174 open (Hands off epic #1173), nothing built as of 2026-11-11. Needs two GitHub secrets set by the owner. |
+| heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing | heystax access shows what a worker can reach and how to fix each gap | tabstax#1203 opened 2026-11-11, not merged. |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |
@@ -145,4 +147,5 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap
 - [ ] Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key
 - [ ] Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since
+- [ ] A worker can read the project's database: heystax db read runs one read-only statement; the owner sets the database once per folder with heystax db set-read-url
 - [ ] Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs

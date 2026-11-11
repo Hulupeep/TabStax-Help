@@ -391,6 +391,20 @@ capabilities:
     evidence: "tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live."
     wording: "the role card says Listening when a worker is waiting for work, and No worker connected when none is"
 
+  - id: worker-db-read
+    name: "A worker can read the project's database: heystax db read runs one read-only statement; the owner sets the database once per folder with heystax db set-read-url"
+    state: live
+    terms: ['(?-i:heystax db read)', '(?-i:set-read-url)']
+    evidence: "tabstax#1201 merged 2026-11-11 15:52 (f888627), #1202 merged 16:57 (493e424). On the owner's machine 16:04 the timebreez folder was set to staging and heystax db read \"select now()\" returned one row; listener restarted."
+    wording: "heystax db read lets a worker look at data, never change it; you choose the database per folder"
+
+  - id: worker-access-check
+    name: "heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing"
+    state: planned
+    terms: ['(?-i:heystax access)']
+    evidence: "tabstax#1203 opened 2026-11-11, not merged."
+    wording: "heystax access shows what a worker can reach and how to fix each gap"
+
   - id: telegram-bug-desk
     name: "Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs"
     state: unverified
