@@ -335,6 +335,13 @@ capabilities:
     evidence: "tabstax#1134 deployed 2026-11-09 (coordinator). Production MCP tool list seen through a connected HeyStax client on 2026-11-10: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action approved in a browser yet."
     wording: "irreversible work waits for a go-ahead from you or a Chief you granted go_ahead"
 
+  - id: deploy-on-merge
+    name: "Deploy on merge: CI applies database changes and deploys after a go-ahead"
+    state: planned
+    terms: ['deploy on merge', 'CI release', 'release job']
+    evidence: "tabstax#1174 open (Hands off epic #1173), nothing built as of 2026-11-11. Needs two GitHub secrets set by the owner."
+    wording: "on merge, a release job will apply the database changes and deploy"
+
   - id: crm-angles
     name: "Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools)"
     state: live
