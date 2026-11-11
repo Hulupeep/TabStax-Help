@@ -1,13 +1,13 @@
 ---
 title: Home
 nav_order: 1
-description: Help for HeyStax, the operational plane where people and agents work from one graph
+description: Help for HeyStax. Persisted intent. Set the mission and the goal once. People and agents keep working it until it is done.
 permalink: /
 ---
 
 # HeyStax
 
-**Make things happen. Not merely get things done.**
+**Persisted intent.**
 
 A plan in a Claude chat. Thirty tabs. A group thread from Tuesday. None of them holds the whole.
 
