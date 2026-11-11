@@ -4,30 +4,29 @@ nav_order: 5
 has_children: true
 ---
 
-# Team Stax
+# Share a stax with your team
 
-Any Stax can become a Team Stax. Add a collaborator, and the same workspace — the same tabs, the same next actions, the same context — is visible to both of you. No more coordinating through chat messages that disappear or shared docs that nobody updates.
+Any stax becomes a team stax when you add someone. You both see the same tabs, the same next actions and the same context.
 
-## What changes when a Stax has collaborators
+No more chasing work through chat threads that scroll away.
 
-| Solo Stax | Team Stax |
+| Solo stax | Team stax |
 |---|---|
 | Your actions, your view | Each person has their own column |
-| One priority, yours | Shared priorities, individual ownership |
-| Private by default | Visible to all collaborators |
-| You complete your own actions | Assign actions to specific people with @handle |
+| One priority, yours | Shared priorities, each action owned by someone |
+| Private | Visible to everyone on the stax |
+| You finish your own actions | Assign actions to people and agents by `@handle` |
 
-## How it works
+## How to do it
 
-1. Open a Stax you want to share
-2. Click **Add collaborator** and enter their email
-3. They accept the invite and see the same Stax
-4. Add actions and assign them with `@handle` — each person's work shows up in their column
+1. Open the stax you want to share.
+2. Select **Add collaborator** and enter their email.
+3. They accept the invite and see the same stax.
+4. Assign actions with `@handle`. Each person's work shows in their column.
 
-The team view works across every surface: the extension, the dashboard, the CLI, and AI assistants via MCP.
-
----
+Now you can see who is on what without asking.
 
 **In this section:**
-- [Assigning Actions to Team Members](assigning-actions) — delegate work with @handle mentions
-- [Telegram](telegram) — connect a group, link each collaborator, and use every supported command
+- [Assigning actions](assigning-actions): hand work to someone with `@handle`
+- [Telegram](telegram): add, assign and finish work from a Telegram group
+- [Bots ask you questions](messages): answer an agent from your phone
