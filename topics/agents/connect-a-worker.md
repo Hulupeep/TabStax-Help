@@ -46,6 +46,7 @@ Run `heystax connect` **inside the folder where the work happens**, such as the 
 | The role says **No worker connected** | Nothing is listening for that role. Run step 4 in the right folder. |
 | A card says **Stalled since** | It was claimed, but no worker is alive on it. Start the worker again, or reassign the card. |
 | The work landed in the wrong role | You connected the wrong folder. Run `heystax connect` again in that folder. |
+| The worker says it cannot see the data | Give the folder a database to read. See [Give a worker what it needs](give-a-worker-access). |
 
 ## Coming next
 

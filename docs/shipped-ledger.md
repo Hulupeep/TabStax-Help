@@ -15,8 +15,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 23 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 16 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 24 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 17 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 13 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
 
@@ -47,6 +47,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Go-ahead on irreversible work: owner or a Chief with the go_ahead grant, never on its own proposal | irreversible work waits for a go-ahead from you or a Chief you granted go_ahead | tabstax#1134 deployed 2026-11-09 (coordinator). Production MCP tool list seen through a connected HeyStax client on 2026-11-10: next_actions_go_ahead, needs_go_ahead on next_actions_add, go_ahead on agent_authorize. No flagged action approved in a browser yet. |
 | Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools) | each angle is kept on the stax with its outcome; opted-out contacts go on a suppression list | tabstax#1126 merged and deployed 2026-11-08 13:56; production MCP tools/list includes crm_angle_upsert, crm_campaign_upsert, crm_stage_move, crm_suppression_add and crm_query, and crm_query counts on Hubduck Business Development returned an empty result on 2026-11-08. On 2026-11-09 Grok Bot imported 114 organisations, 1 campaign, 8 angles and 13 suppressions into Hubduck Business Development, and @hubduck-marketing made 13 attributed CRM writes with its own key (tabstax#1125, #1139). |
 | Reserve before every send: holds, suppression, cooldown, per-mailbox caps, QC sampling (crm_send_reserve) | every send is reserved first; holds, suppressions, a 7-day cooldown per organisation and 30 sends per mailbox per day are checked before it goes | tabstax#1140 / #1148 deployed and migration 20261109180000 applied on 2026-11-09; between 13:41 and 13:43 @hubduck-marketing reserved, sent and recorded 5 Batch A sends with 0 refusals. |
+| A worker can read the project's database: heystax db read runs one read-only statement; the owner sets the database once per folder with heystax db set-read-url | heystax db read lets a worker look at data, never change it; you choose the database per folder | tabstax#1201 merged 2026-11-11 15:52 (f888627), #1202 merged 16:57 (493e424). On the owner's machine 16:04 the timebreez folder was set to staging and heystax db read "select now()" returned one row; listener restarted. |
 
 ## Unverified
 
@@ -67,6 +68,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap | a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour | Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. |
 | Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key | the stax owner presses Get a key on the role card; the key starts tsw_live_ and is shown once | tabstax-webapps#300 merged 2026-11-11 (owner-only button in How to connect a worker; mints a worker key through the owner path, shown once, role key untouched). tabstax#1189 merged 2026-11-11: heystax connect points to it. Not yet clicked in a browser after deploy. |
 | Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since | the role card says Listening when a worker is waiting for work, and No worker connected when none is | tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live. |
+| heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing | heystax access shows what a worker can reach and how to fix each gap | tabstax#1203 merged 2026-11-11 18:04; CLI installs from the repo, not yet rebuilt and run on the owner's machine. |
 | Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs | reply to the bug with /t @agent; the agent gets your words and the screenshot, and you hear back in the chat with its verdict | tabstax-webapps#303 merged 2026-11-11 13:45 (a064c8b, auto-deploys on Vercel); tabstax#1199 merged 13:45 (3967530), CLI rebuilt and timebreez listener restarted on the owner's machine 13:48. First live try 13:51 sent a plain @agent with bot privacy mode on, which Telegram does not deliver; the /t form has not been seen end to end yet. |
 
 ## Partial
@@ -145,4 +147,6 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap
 - [ ] Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key
 - [ ] Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since
+- [ ] A worker can read the project's database: heystax db read runs one read-only statement; the owner sets the database once per folder with heystax db set-read-url
+- [ ] heystax access: lists what a worker in this folder can reach (code, branch and PR, data, logs) with the fix for each gap; the agent checks it first and blocks with the fix instead of guessing
 - [ ] Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs
