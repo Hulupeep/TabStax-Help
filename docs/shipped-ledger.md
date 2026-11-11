@@ -16,7 +16,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 23 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 15 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 16 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 13 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
 
@@ -67,6 +67,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap | a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour | Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. |
 | Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key | the stax owner presses Get a key on the role card; the key starts tsw_live_ and is shown once | tabstax-webapps#300 merged 2026-11-11 (owner-only button in How to connect a worker; mints a worker key through the owner path, shown once, role key untouched). tabstax#1189 merged 2026-11-11: heystax connect points to it. Not yet clicked in a browser after deploy. |
 | Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since | the role card says Listening when a worker is waiting for work, and No worker connected when none is | tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live. |
+| Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs | reply to the bug with /t @agent; the agent gets your words and the screenshot, and you hear back in the chat with its verdict | tabstax-webapps#303 merged 2026-11-11 13:45 (a064c8b, auto-deploys on Vercel); tabstax#1199 merged 13:45 (3967530), CLI rebuilt and timebreez listener restarted on the owner's machine 13:48. First live try 13:51 sent a plain @agent with bot privacy mode on, which Telegram does not deliver; the /t form has not been seen end to end yet. |
 
 ## Partial
 
@@ -144,3 +145,4 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap
 - [ ] Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key
 - [ ] Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since
+- [ ] Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs
