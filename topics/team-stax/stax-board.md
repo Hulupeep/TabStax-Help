@@ -27,6 +27,7 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 4. With many columns, scroll the board sideways. The scrollbar sits just under the board, and each column scrolls on its own.
 5. Type in the box at the foot of a column to add work straight to that person or role.
 6. Use **Move to** on a card to hand it to someone else.
+7. Tap the **×** on a column to hide it. It moves to the **Hidden** row above the board. Tap its name there to bring it back.
 
 {% capture s %}
 {% include anim/plane.html x=20 y=30 w=440 h=240 label="timebreez stax" d=0 %}
@@ -45,6 +46,8 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 
 **The busy venture team.** Alice's stax has five agent roles. On a laptop the last role sits off to the right. She scrolls sideways under the board and reaches it. She doesn't have to scroll to the bottom of the longest column first.
 
+**The quiet view.** Colm only wants to see his agent roles tonight. He hides Unassigned and the people columns, and the board shows the roles side by side. Tomorrow he taps **Show all**.
+
 **The phone check.** Bob opens the stax on his phone on the train. The columns stack one under another, with the title and buttons on top. He moves one card to `@hubduck-bd` and puts the phone away.
 
 ## What works today
@@ -54,6 +57,7 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 | Unassigned, people and agent role columns, with add in place and Move to | live in the product |
 | No columns for CRM contacts; work assigned to a contact shows in Unassigned | live in the product, not yet seen signed in |
 | The board fits the window and each column scrolls on its own | live in the product, not yet seen signed in |
+| Hide a column with its ×, kept per stax in this browser | live in the product, not yet seen signed in |
 | Agent role columns showing whether a worker is connected | web code deployed; signed-in display still to verify |
 
 Now you can see who holds every piece of work on a stax in one look.
