@@ -101,7 +101,7 @@ Most work runs without asking. Work that can't be undone, such as a production m
 
 `heystax connect` works today if you install the CLI from the repo. It is not on npm yet.
 
-1. In the folder the worker should work in, run `heystax connect`. Paste a key once: your PAT, a role key or a worker key. Pick the Stax, and the role if there are several.
+1. On the role card, open **How to connect a worker** and press **Get a key**. Then, in the folder the worker should work in, run `heystax connect` and paste it. [Full steps](connect-a-worker).
 2. It saves a worker key for that folder. Your pasted key is not kept. Two folders on one machine can be two different roles.
 3. It writes a standing order, so the CLI tells HeyStax whatever it does: `heystax task start`, `note` and `done` for work you start yourself.
 4. `heystax listen --install` keeps that folder's worker running in the background.

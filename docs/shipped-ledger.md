@@ -16,7 +16,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 23 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 13 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 15 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 12 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
 
@@ -65,6 +65,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | The Chief of Staff creates roles on a stax (roles_manage) | you grant manage_roles once per Stax; the Chief creates roles with role_create | tabstax#1127 migration 20261108140000 applied and mcp deployed from main 1779c06 on 2026-11-08; production tools/list returned role_create and agent_authorize.manage_roles, and role_create without the grant returned ROLES_MANAGE_NOT_GRANTED. A full create has not been walked. |
 | Agent events the Chief reads: run ended, queue empty, claim escalated after 3 failures, no one home, worker missed | when a run ends, a worker runs out of work or an action fails three times, HeyStax records an event the Chief reads | Production MCP tools/list on 2026-11-09 includes agent_events_list and agent_queue_empty; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. A blocked report is not an event; it stays on the action. |
 | Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap | a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour | Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. |
+| Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key | the stax owner presses Get a key on the role card; the key starts tsw_live_ and is shown once | tabstax-webapps#300 merged 2026-11-11 (owner-only button in How to connect a worker; mints a worker key through the owner path, shown once, role key untouched). tabstax#1189 merged 2026-11-11: heystax connect points to it. Not yet clicked in a browser after deploy. |
+| Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since | the role card says Listening when a worker is waiting for work, and No worker connected when none is | tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live. |
 
 ## Partial
 
@@ -138,3 +140,5 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools)
 - [ ] Reserve before every send: holds, suppression, cooldown, per-mailbox caps, QC sampling (crm_send_reserve)
 - [ ] Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap
+- [ ] Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key
+- [ ] Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since
