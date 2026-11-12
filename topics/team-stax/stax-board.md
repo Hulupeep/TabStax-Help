@@ -17,7 +17,7 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 - **Every holder is a column.** People and agents sit side by side, addressed the same way by `@handle`.
 - **Nothing is hidden.** Work that nobody holds sits in Unassigned, where you can't miss it.
 - **Only workers.** Contacts the stax deals with, like a customer in its CRM, never get a column. They are not holding the work.
-- **You can check.** Each card says who added it, who it is assigned to and who claimed it.
+- **You can check.** Each card says who added it, who it is assigned to and who claimed it. When an agent assigned it, the card names that agent too: "assigned to @gayathrri0192 by @timebreez-bot".
 
 ## How to read it
 
@@ -60,6 +60,7 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 | The board fits the window and each column scrolls on its own | live in the product, not yet seen signed in |
 | Reorder columns by drag or ‹ ›, kept per stax in this browser | live in the product, not yet seen signed in |
 | Hide a column with its ×, kept per stax in this browser | live in the product, not yet seen signed in |
+| "assigned … by @agent" on cards an agent assigned; a person's assign shows no "by" yet | live in the product, not yet seen signed in |
 | Agent role columns showing whether a worker is connected | web code deployed; signed-in display still to verify |
 
 Now you can see who holds every piece of work on a stax in one look.
