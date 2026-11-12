@@ -363,6 +363,13 @@ capabilities:
     evidence: "tabstax#1140 / #1148 deployed and migration 20261109180000 applied on 2026-11-09; between 13:41 and 13:43 @hubduck-marketing reserved, sent and recorded 5 Batch A sends with 0 refusals."
     wording: "every send is reserved first; holds, suppressions, a 7-day cooldown per organisation and 30 sends per mailbox per day are checked before it goes"
 
+  - id: crm-channels
+    name: "CRM channels: X, LinkedIn, GitHub, Bluesky, Discord, Telegram, phone, WhatsApp and web handles as addresses, with reach on follow-ups"
+    state: partial
+    terms: ['channel handles?', 'social handles?']
+    evidence: "tabstax#1216 / PR #1217 (2026-11-12): migration 20261112100000_crm_channels_1216 with 88 SQL checks and the #1140 suite unchanged on a disposable database. Production migration not yet applied."
+    wording: "an address can be an email or a channel handle, and every check that applies to email applies to it"
+
   - id: hosted-pickup
     name: "Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap"
     state: unverified
