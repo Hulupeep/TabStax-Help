@@ -48,7 +48,7 @@ It does not matter whether you add the card in the board or the bot adds it. Wha
 
 1. Colm asks in the Grok chat: "Abigale's import still blocks. Sort it."
 2. The bot, writing as `@timebreez-bot`, adds a card for `@timebreez-builder`: "Check why a 2026 booking blocks Abigale", with the why and when it is done.
-3. Within a minute the builder picks it up, reads the staging data, and reports "Bug: fixed in PR #1101".
+3. Within a minute the builder picks it up, reads the staging data, and reports its verdict with a pull request.
 4. The bot adds a second card for Gaia: "Re-run the stage 3 import on staging". Gaia gets it in Telegram.
 5. The board shows each step signed by whoever did it. Colm did one thing: ask.
 
