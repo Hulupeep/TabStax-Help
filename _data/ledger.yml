@@ -273,7 +273,7 @@ capabilities:
     wording: "web code deployed; signed-in display still to verify"
 
   - id: stax-board
-    name: "Stax board: Unassigned, people and agent role columns; no CRM contact columns; fits the window with per-column scroll; hide a column"
+    name: "Stax board: Unassigned, people and agent role columns; no CRM contact columns; fits the window with per-column scroll; hide and reorder columns"
     state: partial
     terms: ['stax board']
     evidence: "webapps #256 (board) merged 2026-11-04 and #296 (board is the default stax view) merged 2026-11-11, Vercel production; webapps #308 (no contact columns, board fits the window, phone header) merged 2026-11-11 18:50; hide a column with its x in webapps PR (Playwright, mocked data); not yet seen signed in"
