@@ -2,60 +2,46 @@
 nav_exclude: true
 ---
 
-# Neurodivergent Builder With 5 Parallel Projects
+# Five projects, one brain: the neurodivergent builder
 
 [← Back to Use Cases](index.md)
 
----
+Sam has five things in flight: a Chrome extension, a book edit, a small AI tool, a landing page test and a client retainer. Going deep is easy. Getting back in is what costs.
 
-You have:
+Every return used to start from zero: 30 tabs, a scrolled-away chat, and twenty minutes of "where was I?".
 
-* A Chrome extension you're building
-* A book you're editing
-* A small AI tool spinning up
-* A landing page experiment
-* A client advisory gig
+## How Sam sets it up
 
-Your brain wants to go deep… but the **setup cost** of getting back into each thing kills you.
+Each project is its own stax, with a Mission, a Goal and Next Actions.
 
-## Without HeyStax
+| Stax | Mission | Goal | Next Action |
+|---|---|---|---|
+| Price tracker extension | Ship the side project | First 10 users by 1 December | Fix the save button on small screens |
+| Book: chapter 4 | Finish the edit | Chapter 4 to the editor by Friday | Tighten the intro paragraph |
+| Client retainer | Keep the client moving | Monthly report sent on the 1st | Draft the November summary |
 
-You bounce between random tabs, lose the "world state" of each project, and every return feels like starting from zero. Half your energy is spent remembering what you were doing.
+## How a switch goes now
 
-## With HeyStax
+1. Sam closes the price tracker stax. The TabStax extension saves its tabs.
+2. Sam opens **Book: chapter 4**. The manuscript, references and notes reopen.
+3. The Next Action is waiting: "Tighten the intro paragraph". Sam starts there.
+4. Away from the desk, Sam sends `/stax` to the HeyStax Telegram bot, switches to the book, and adds a thought with one line.
+5. Sam asks an AI app over MCP what is open on the book. It reads the same stax.
+6. When the client work ends, Sam archives that stax. Nothing is lost, and it stops taking up space.
 
-Each project gets its own **world**:
+## What works today
 
-* **"Heystax MVP – Build"**
-* **"Book – Chapter 4 Editing"**
-* **"AI Tool – ClaimAlert Experiments"**
-* **"Landing Page Tests – May"**
-* **"Client – Advisory Retainer X"**
+| Step | State |
+|---|---|
+| Save and reopen tabs with the TabStax extension | live |
+| Mission, Goal and Next Actions in a stax | live |
+| Switch stax and add actions from Telegram | live |
+| Read a stax from an AI app over MCP | live |
+| Archive and restore a stax | live |
+| Share a stax with an editor ([Team Stax](../team-stax/)) | live |
 
-Inside each:
+You did not carry five projects in your head. Each one was waiting where you left it, and it was yours.
 
-* The exact tabs you need for *that* mode: editor, docs, analytics, email, notes.
-* A Start Page with **3–5 concrete Next Actions** that you wrote when you last left it.
-
-When your focus shifts:
-
-* You close the current Stax.
-* You hit **Open Stax → "Book – Chapter 4 Editing"**.
-* Your manuscript, references, and last edit notes pop up.
-* The Start Page says:
-
-  * *"Fix section on Heystax use cases"*
-  * *"Tighten intro paragraph"*
-
-You're not "figuring out what to do". You're simply **continuing**.
-
-If you collaborate (editor, dev, designer):
-
-* You **share the relevant Stax** with them.
-* They step into the same world you operate in — not a random link bundle.
-
-**Outcome:** Each context is a saveable, reloadable "brain state". Hyperfocus becomes a weapon, not a liability.
-
----
+Now you can drop a project mid-thought and pick it up days later without the restart cost.
 
 [← Back to Use Cases](index.md)

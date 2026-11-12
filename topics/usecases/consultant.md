@@ -2,83 +2,51 @@
 nav_exclude: true
 ---
 
-# Consultant With Three Clients and No Time
+# A consultant with three clients and two minutes
 
 [← Back to Use Cases](index.md)
 
----
+Aoife is finishing a pricing pack for **Brightline Lighting**. The deck, the dashboard and their last email are open. The deck must go in two minutes.
 
-You're in the middle of finishing an insight pack for **Lighting Brothers**.
+In five minutes she is on a video call with a schools agency. Different people, different tabs, different questions.
 
-* You've got:
+## What Aoife sets up
 
-  * A Google Doc with the analysis
-  * Their last email with questions
-  * A Looker/PowerBI dashboard
-  * Their website and competitor sites
-  * A notes page with key recommendations
+One stax per client, each with its own mission, goal and next actions.
 
-You're tweaking one last chart. The email with your deck needs to go out in **2 minutes**.
+| | Brightline Lighting | Schools agency pilot |
+|---|---|---|
+| **Mission** | Price the new range so it sells | Win the pilot |
+| **Goal** | Pricing pack signed off by Friday | Pilot scope agreed on this call |
+| **Next Actions** | Export chart to slide 7. Send the summary with three bullets. | Open with a two-minute recap. Ask about scope limits. |
 
-In **5 minutes**, you're due on a Zoom call with **the Swedish Department of Education** about a completely different topic and stack of tools.
+The TabStax extension saves each client's tabs with its stax: deck, dashboard, email thread, call link, agenda.
 
-## Without HeyStax
+## The two-minute switch
 
-You finish the Lighting Brothers deck, scramble to find the Zoom link for Sweden, try to remember where you left your notes, close the wrong tabs, reopen others, and start the call already mentally out of breath.
+1. In Brightline, she ticks off the last two next actions and sends the email.
+2. She opens the **Schools agency pilot** stax. The call link, the agenda and her notes open together.
+3. The first next action tells her how to open the call.
+4. After the call she adds the agreed scope as the next action, from the call or later from Telegram.
+5. She shares the pilot stax with her colleague @ben. He sees the same tabs and next actions, not a forwarded summary.
 
-## With HeyStax
+## Why it holds
 
-You've already set things up:
+**It is yours.** Each client's state sits in its own stax, not in Aoife's head or one chat app. She walks into the call already knowing the next move.
 
-* **Stax 1: "Lighting Brothers – Q3 Analysis"** includes:
+## What works today
 
-  * Deck in Google Docs
-  * BI dashboard
-  * Email thread
-  * Notes doc
-  * Their website / competitors
-  * A Start Page with Next Actions like:
+| Step | State |
+|---|---|
+| Stax, saved tabs, next actions | Works today |
+| Mission and goal on a stax | Works today |
+| Adding a next action from Telegram | Works today |
+| Sharing a stax with an @handle | Works today |
 
-    * *"Export final chart to slide 7"*
-    * *"Send summary email with 3 key bullets"*
+## Try it
 
-* **Stax 2: "Swedish Dept of Education – Pilot Call"** includes:
-
-  * Zoom meeting link
-  * Agenda doc
-  * Research on their existing systems
-  * Your internal prep notes
-  * A Start Page with:
-
-    * *"Open with 2-minute recap of last meeting"*
-    * *"Ask about scope constraints"*
-
-Here's the move:
-
-1. You're in **Lighting Brothers Stax**.
-
-   * You tick off your final Next Action.
-   * Export the chart, drop it into the deck.
-   * Hit send on the email.
-   * Mark the Stax as "Done for now".
-
-2. **Two minutes before** the Swedish call:
-
-   * You hit **Open Stax → "Swedish Dept of Education – Pilot Call"**.
-   * Zoom opens.
-   * Agenda is loaded.
-   * Your last notes are in front of you.
-   * The Start Page is literally reminding you *how to start the conversation*.
-
-You join the call calm, not scrambling.
-
-If you're working with a colleague:
-
-* You **share the Swedish Stax** with them.
-* They open it and instantly see the same agenda, research, and notes you're using.
-
-**Outcome:** You switch from one client universe to another in under 10 seconds, with full confidence you haven't left anything behind.
-
----
+1. [Create your first stax](../creating_your_first_stax).
+2. [Run your stax from Telegram](../team-stax/telegram).
+3. [Share it and assign by @handle](../team-stax/assigning-actions).
 
 [← Back to Use Cases](index.md)

@@ -4,345 +4,125 @@ parent: Team Stax
 nav_order: 2
 ---
 
-# Turn Telegram updates into shared work in HeyStax
+# Run your stax from Telegram
 
-HeyStax connects your team's Telegram group to a shared Stax. A person can say what they are working on in the group, and HeyStax records it as that person's Next Action. Everyone with access to the Stax can then see who is working on what in the same shared view.
+The HeyStax Telegram bot (`@heystax_bot`) turns a line in a chat into a Next Action in your stax. Add work, hand it to someone, tick it off, and see who is on the stax, without leaving Telegram.
 
-For example, Bob writes this in the Claim Cowboys group:
+## Why it matters to you
 
-```text
-@heystax_bot working on the draft presentation
-```
+Bob is in a van between jobs. He types `/t ! call the insurer` in the team group. It lands in the **claim** stax as an urgent action under his name. Alice sees it on the dashboard before he reaches the next site.
 
-HeyStax adds `working on the draft presentation` under Bob in the **claim** Stax. Alice and Nancy can see Bob's action alongside their own work in HeyStax. Bob can later reply `done` to the bot's confirmation, and the shared Stax reflects that update.
+Nobody pasted anything. The work was already in the stax, and it travelled to the chat.
 
-## What this gives your team
+{% capture s %}
+{% include anim/node.html x=95 y=48 label="Claim Cowboys" sub="Telegram group" kind="surface" w=150 d=0.2 %}
+{% include anim/node.html x=385 y=48 label="Dashboard" sub="Alice assigns" kind="surface" w=140 d=0.4 %}
+{% include anim/plane.html x=20 y=118 w=440 h=92 label="claim stax" d=0.6 %}
+{% include anim/edge.html x1=95 y1=74 x2=120 y2=155 kind="write" d=1.0 %}
+{% include anim/node.html x=125 y=172 label="Bob: call the insurer" kind="action" w=180 h=34 d=1.4 %}
+{% include anim/edge.html x1=385 y1=74 x2=355 y2=155 kind="write" d=1.8 %}
+{% include anim/node.html x=355 y=172 label="Bob: check invoice" kind="action" w=170 h=34 d=2.2 %}
+{% include anim/edge.html x1=355 y1=189 x2=330 y2=245 kind="dispatch" d=2.6 %}
+{% include anim/node.html x=250 y=262 label="@bob, Alice assigned you" kind="note" w=220 h=34 d=3.0 %}
+{% include anim/edge.html x1=140 y1=262 x2=40 y2=74 cx=20 cy=262 kind="dispatch" d=3.4 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 300" label="A Telegram group writes actions into the claim stax, and assignments made on the dashboard come back to the group as notices" caption="Bob adds an action from the Claim Cowboys group and it lands in the claim stax under his name. Alice assigns Bob a second action on the dashboard. The bot posts the assignment back to the group, and Bob replies /done to it when it is finished." svg=s %}
 
-- **A live view of the team's work:** updates from the Telegram group become attributed Next Actions in the shared Stax.
-- **Less duplicate reporting:** people capture what they are doing in the conversation where the work is already being discussed.
-- **Standups without another meeting:** HeyStax asks each enrolled person what they are doing and what is blocked, creates the resulting actions, and reports who responded or is missing.
-- **Clear ownership and blockers:** each action is attached to the person who sent it; blockers are recorded with the action instead of disappearing in chat history.
-- **Private personal status:** a team member can ask for their current actions and goal by direct message without posting those details to the whole group.
-- **One shared record across surfaces:** actions created in Telegram are the same actions shown in the HeyStax dashboard and other connected HeyStax tools.
+## Set it up once
 
-Telegram remains the quick conversational surface; HeyStax becomes the shared record of what happens next.
+You need the bot in the group, the group connected to one stax, and every person linked to their own HeyStax account.
 
-## How the connection works
+**Connect the group** (an owner or editor, once):
 
-Setup has two parts:
+1. Open the stax at [dash.heystax.ai](https://dash.heystax.ai), then **Project Settings**, then **Telegram**.
+2. Select **Add group** and pick the group in Telegram.
+3. Wait for `Group connected to HeyStax - claim Stax.`
 
-1. A group administrator connects one Telegram group to one Stax.
-2. Every collaborator links their own Telegram identity to their own HeyStax account.
+**Link yourself** (every person, once):
 
-The group connection decides **which Stax** receives the group's actions. Each person's account link decides **who owns** the action. This is why the group is connected once, while every collaborator links their own account.
+1. Open the same stax's **Project Settings**, then **Telegram**.
+2. Select **Link account**, then **Continue in Telegram**.
+3. Send the prepared `/start` message to `@heystax_bot` within 15 minutes.
+4. Wait for `Telegram is linked to this Stax.`
 
-The production bot is **[Heystax (@heystax_bot)](https://t.me/heystax_bot)**. The similarly named `@heystax_test_bot` is reserved for automated testing.
+Each link is single-use and tied to the person who made it. Never use someone else's.
 
-## Before you start
+## Everything works on one stax
 
-For group commands to work, all of these must be true:
+In a group, that is the stax the group is connected to. In your private chat with the bot, it is your current stax. Send `/stax` to see it or switch.
 
-- `@heystax_bot` is a member of the Telegram group.
-- The group is connected to the intended Stax.
-- The person sending the command has linked their own Telegram account.
-- That person is a current owner or editor of the connected Stax.
+## Add work
 
-For example, the **Claim Cowboys** Telegram group should be connected once to the **claim** Stax. Each editor in Claim Cowboys then links their own Telegram account; they do not reconnect the group.
-
-## Group administrator: connect a group once
-
-An owner or editor can connect the group.
-
-1. Sign in at [dash.heystax.ai](https://dash.heystax.ai) with your own HeyStax account.
-2. Open the Stax that the Telegram group should use. For Claim Cowboys, open **claim**.
-3. Open **Project Settings**, then find **Telegram**.
-4. If your account is not linked, select **Link account**, then **Continue in Telegram**. Complete the `/start` message with `@heystax_bot` within 15 minutes.
-5. Return to the same Stax's Project Settings and select **Add group**.
-6. Continue to Telegram and select the target group when Telegram asks where to add the bot. For this example, select **Claim Cowboys**.
-7. Wait for the message `Group connected to HeyStax - claim Stax.`
-8. Return to Project Settings and confirm that the group is listed in the Telegram section.
-
-Do not select a separate DM default to connect a group. The group is connected to the Stax that was open when **Add group** was selected.
-
-## Collaborator: link your own Telegram account
-
-Every collaborator completes these steps once. They must use their own HeyStax and Telegram accounts.
-
-1. Confirm that you are already an owner or editor of the shared Stax.
-2. Sign in to your own account at [dash.heystax.ai](https://dash.heystax.ai).
-3. Open the shared Stax, such as **claim**.
-4. Open **Project Settings**, then find **Telegram**.
-5. Select **Link account**, then **Continue in Telegram**.
-6. Send the prepared `/start` message to `@heystax_bot` within 15 minutes.
-7. Wait for `Telegram is linked to this Stax.`
-8. Return to the Telegram group you already belong to and try a group command.
-
-Do not select **Add group** when the group is already connected. Do not use another collaborator's link: account links are short-lived, single-use, and tied to the HeyStax user who created them.
-
-## Commands in a Telegram group
-
-### Add a Next Action
-
-Mention the bot followed by the action:
-
-```text
-@heystax_bot working on draft presentation
-```
-
-The bot replies:
-
-```text
-<Your first name> Next Action: working on draft presentation
-```
-
-The action appears in the connected Stax under the sender's column. In Claim Cowboys, it appears in **claim**, not in the sender's DM default Stax.
-
-Messages that do not mention `@heystax_bot` are ignored. Editing a Telegram message after the bot has processed it does not edit the HeyStax action; use the reply command below.
-
-### See your status privately
-
-In the group, send either:
-
-```text
-@heystax_bot status
-```
-
-```text
-@heystax_bot what's up
-```
-
-The group receives `I sent your status by DM.` The bot sends your five most recently updated open actions and your current goal to your private chat. It does not post your action details in the group.
-
-You must have started a private chat with `@heystax_bot` for Telegram to deliver the DM.
-
-## Commands in your private bot chat
-
-This means a one-to-one Telegram conversation with the HeyStax bot, not a message in Claim Cowboys or another group.
-
-1. In Telegram, search for `@heystax_bot` or open [t.me/heystax_bot](https://t.me/heystax_bot).
-2. Check that the chat header shows **Heystax** and the username `@heystax_bot`.
-3. Open that contact and send the command directly to the bot.
-
-The private chat uses your **DM default Stax**. It does not use the Stax connected to Claim Cowboys or any other Telegram group. Use `/stax` in the private chat to see or change that default.
-
-### Example: Bob adds a private action
-
-Bob opens his one-to-one chat with **Heystax (@heystax_bot)** and sends:
-
-```text
-/stax
-```
-
-HeyStax shows Bob the writable Stax he can choose from. Bob selects **Personal Admin**. He then sends this plain message in the same private bot chat:
-
-```text
-renew passport
-```
-
-HeyStax replies `Added to your default Stax.` The action `renew passport` appears under Bob in **Personal Admin**.
-
-If Bob instead writes `@heystax_bot renew passport` in the **Claim Cowboys** group, the action appears under Bob in the group-connected **claim** Stax. The group's connected Stax always wins inside that group; Bob's private DM default does not change it.
-
-### Example: Bob checks his private status
-
-In the one-to-one **Heystax (@heystax_bot)** chat, Bob sends:
-
-```text
-/status
-```
-
-HeyStax returns up to five of Bob's recently updated open actions and his current goal from his DM default Stax. This response is visible only to Bob.
-
-| What you want to do | What to send | Result |
-|---|---|---|
-| Add an action | Any plain text, for example `prepare client update` | Adds it to your current DM default Stax |
-| See personal status | `/status`, `status`, `what's up`, or `whats up` | Shows up to five recent open actions and your current goal |
-| Change the DM default | `/stax` | Shows the writable Stax you can choose from |
-
-`/start <link-token>` is generated by **Link account** in Project Settings. It links your identity; it is not a general-purpose command to type manually. A bare `/start` or `/help` does not replace the setup steps on this page.
-
-## Update a group action by replying to HeyStax
-
-These commands are replies to a specific action confirmation posted by **Heystax (@heystax_bot)** in the Telegram group. They are not standalone group commands.
-
-### Example: Bob marks the correct action done
-
-Bob sends this in Claim Cowboys:
-
-```text
-@heystax_bot draft the client update
-```
-
-HeyStax replies to the group:
-
-```text
-Bob Next Action: draft the client update
-```
-
-To complete that exact action, Bob uses Telegram's **Reply** function on the `Bob Next Action: draft the client update` message:
-
-1. On a phone, press and hold the HeyStax message and select **Reply**. On desktop, right-click it and select **Reply**.
-2. Check that Telegram shows the HeyStax message quoted above the message box.
-3. Type `done` and send it.
-
-The conversation should look like this:
-
-```text
-Replying to Heystax:
-Bob Next Action: draft the client update
-
-Bob: done
-```
-
-HeyStax replies `Action updated.` and the action moves from **Open** to **Done** in the `claim` Stax.
-
-If Bob sends `done` as a new standalone message, HeyStax cannot know which action he means, so nothing changes. If he replies to the wrong HeyStax confirmation, that other confirmation identifies a different action. Always check the quoted action before sending the reply.
-
-The same reply pattern applies to every action update:
-
-| Reply exactly | Result |
+| Send | What happens |
 |---|---|
-| `done` | Marks the action done |
-| `reopen` | Reopens a done action |
-| `edit <new action text>` | Replaces the action text |
-| `block <reason>` | Adds `Blocked: <reason>` as a comment on the action |
-| `delete` | Asks for deletion confirmation |
+| `send the draft` (private chat) | Adds it to your current stax |
+| `/t send the draft` (group) | Adds it to the group's stax under your name. `@heystax_bot send the draft` also works. |
+| `/t ! call the bank` | Adds it as urgent. A leading `!` or `urgent` does this. |
+| `/t @alice check the invoice` | Assigns it to Alice. Use any handle on the stax, person or agent. |
+| Reply `/t @timebreez-builder` to a bug or screenshot | Hands the bug to an agent with your words and the picture. You hear back with its verdict. See [Hand a bug to an agent](hand-a-bug-to-an-agent). |
 
-After `delete`, select **Confirm delete** within 15 minutes. The person who requested deletion must confirm it.
+## Change a task
 
-For safety, these replies work only for the person who created the action or the Stax owner. For example, Alice cannot mark Bob's action done by replying to Bob's confirmation unless Alice owns the Stax. Other editors can add and update their own actions.
+Reply to the bot's message about that task. On a phone, swipe left on it or tap **Reply**. Then send:
 
-## Run a group standup
-
-Standups operate only in a connected group. Each participant must be linked and remain an owner or editor of the Stax.
-
-| Command | Result |
+| Reply | Result |
 |---|---|
-| `/join` | Adds you to the group's standup roster |
-| `/leave` | Removes you from the standup roster |
-| `/sup` | Starts one standup for the enrolled roster |
-| `@heystax_bot sup` | Also starts the standup |
+| `/done` | Marks it done |
+| `/reopen` | Undoes done |
+| `/edit new wording` | Changes the text |
+| `/block waiting on Sam` | Says why it is stuck, as a comment |
+| `/delete` | Removes it after you confirm, within 15 minutes |
 
-Reply directly to the active standup prompt using this exact two-line format:
+Plain words without the slash work too. A `done` sent on its own, not as a reply, changes nothing. The bot cannot tell which task you mean.
 
-```text
-Next: prepare the client presentation
-Blocked: waiting for final figures
-```
+Who can change what:
 
-Use `Blocked: none` when there is no blocker. A valid response creates the `Next:` text as your Next Action in the connected Stax. A blocker is attached to that action. If you submit another response to the same active standup, the bot asks whether to replace your existing response.
+| Person | Can do |
+|---|---|
+| The person who made it, or the stax owner | Everything |
+| The person it is assigned to | done, reopen, block |
+| Any other editor of the stax | done, reopen, block, edit |
 
-When the standup closes, the group receives a summary showing who responded and who is missing.
+## See your work and your team
 
-### Example 1: Bob starts a standup and everyone responds
+| Send | What you get |
+|---|---|
+| `/status` | Your open tasks in this stax, the ones you made and the ones assigned to you, newest first. Your goal and up to three tasks done this week. In a group, it comes to you by DM. |
+| Reply `/done 1,3` to a status list | Ticks off tasks 1 and 3 and sends the list back with them crossed out |
+| `/who` | Everyone on the stax, people and agents, with the handle to use, their title and what they are accountable for |
+| `/morning off` | Stops the 8am list. `/morning on` starts it again. |
+| `/help` | The full command list |
 
-Bob, Alice, and Nancy are editors of the **claim** Stax and members of **Claim Cowboys**. Each person links their own Telegram account first. They then join the standup roster by sending this in Claim Cowboys:
+## You hear back
 
-```text
-/join
-```
+- When someone assigns you a task anywhere, on the dashboard, in Telegram or from an AI app, the bot posts it to the stax's group. With no group, it comes by DM. Reply `/done` to that notice when you finish.
+- When someone else finishes a task you assigned, you get a notice. When an agent finished it, the notice ends with its result.
+- When an agent picks up a task you made in Telegram, the group sees `picked up`.
+- When an agent asks you a question on a task, it comes by DM. See [Bots ask you questions](messages).
+- Money amounts are never posted to a group. An archived stax sends nothing.
 
-Each person receives `You are in the standup roster.` Bob starts the standup:
+## Run a standup
 
-```text
-/sup
-```
-
-HeyStax posts:
-
-```text
-Standup roster: Bob, Alice, Nancy
-Reply exactly:
-Next: <what you are doing>
-Blocked: <blocker or none>
-```
-
-Bob replies directly to that prompt:
-
-```text
-Next: finish the claim summary
-Blocked: none
-```
-
-Alice replies:
+In a connected group, `/join` puts you on the roster and `/leave` takes you off. `/sup` starts a standup. Each person replies to the prompt in two lines:
 
 ```text
 Next: confirm the policy dates
 Blocked: waiting for the insurer
 ```
 
-Nancy replies:
+Use `Blocked: none` when nothing is in the way. The `Next:` line becomes your action, and the blocker is attached to it. After 24 hours the group gets a summary of who answered and who is missing.
 
-```text
-Next: prepare the client presentation
-Blocked: none
-```
+## When it does not work
 
-HeyStax replies `Standup response recorded.` to each valid response. In the **claim** Stax:
+| You see | Do this |
+|---|---|
+| "This group or sender is not authorized for HeyStax actions" | Check that the bot is in the group, the group is connected to the right stax, you linked your own account, and you are still an owner or editor. |
+| A link is invalid or expired | Make a new **Link account** link and use it within 15 minutes. |
+| The wrong bot answers | The chat header must say **Heystax** and `@heystax_bot`. Remove `@heystax_test_bot` from working groups. |
+| A reply did nothing | Reply to the bot's message for that exact task. Messages from before 10 November 2026 in private chats cannot be replied to. |
+| Your status did not arrive | Open a private chat with `@heystax_bot`, press **Start**, then try again. A bot cannot start a private chat on its own. |
+| A Telegram edit did not change the task | Edits are not synced. Reply `/edit new wording` instead. |
 
-- Bob gets the open action `finish the claim summary`.
-- Alice gets the open action `confirm the policy dates`, with the comment `Blocked: waiting for the insurer`.
-- Nancy gets the open action `prepare the client presentation`.
+Removing someone from the stax stops their commands, even if they stay in the group.
 
-### Example 2: Alice corrects her response
-
-Alice notices that her Next Action was wrong. She replies to the same active standup prompt with:
-
-```text
-Next: call the insurer for the policy dates
-Blocked: waiting for the insurer
-```
-
-HeyStax asks `Replace your existing standup response?` Alice selects **Replace** within 15 minutes. Her original standup action is replaced by the corrected response; HeyStax does not create two active standup responses for Alice.
-
-### Example 3: Nancy does not respond
-
-Suppose Bob and Alice respond, but Nancy does not reply before the 24-hour standup closes. HeyStax posts a summary like:
-
-```text
-Standup closed. Responded: Bob, Alice. Missing: Nancy.
-```
-
-Bob's and Alice's responses still create their actions. Nancy is named as missing and no standup action is created for her. Nancy remains enrolled for the next standup unless she sends `/leave`.
-
-## What appears in HeyStax
-
-- A group action is stored only in the Stax connected to that group.
-- A private action is stored in the DM default selected with `/stax`.
-- The action belongs to and is assigned to the Telegram sender's linked HeyStax user.
-- Open actions appear under that person's column in the Stax **Open** view.
-- An action disappears from **Open** after `done`; find it in the **Done** view.
-
-## Troubleshooting
-
-### “This group or sender is not authorized for HeyStax actions”
-
-Check all four requirements: the production bot is in the group, the group is connected to the correct Stax, the sender linked their own Telegram account, and the sender still has owner or editor access to that Stax.
-
-### The group was already connected
-
-Do not select **Add group** again. Each remaining collaborator should follow **Collaborator: link your own Telegram account** above.
-
-### The link is invalid or expired
-
-Return to the intended Stax's Project Settings and create a new **Link account** link. Open it with the same Telegram account within 15 minutes. Do not reuse a link that already succeeded.
-
-### The wrong bot opens
-
-The chat header must show **Heystax** and `@heystax_bot`. Remove `@heystax_test_bot` from working groups.
-
-### A group message did not create an action
-
-Make sure the message contains the exact mention `@heystax_bot`, followed by non-empty action text. Check the bot's reply. If the action was marked done, look in the Stax **Done** view. Telegram edits made after creation are not synchronized.
-
-### A reply command did nothing
-
-Reply to the bot's confirmation for the exact action. Use the command formats shown above. Only the action creator or Stax owner can mutate it through Telegram.
-
-### Status did not arrive by DM
-
-Open a private chat with `@heystax_bot` and select **Start**, then retry `@heystax_bot status` in the group. Telegram bots cannot initiate a private conversation before the user starts it.
-
-### A collaborator left the Stax
-
-Removing or deactivating their Stax access prevents future group commands even if they remain in the Telegram group. Their Telegram identity does not grant access by itself.
+Now you can add, hand off and finish work from a phone, and the stax stays the one record.

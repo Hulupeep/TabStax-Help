@@ -4,509 +4,72 @@ parent: Hey CLI
 nav_order: 1
 ---
 
-# Say hello to the HeyStax CLI - Hey CLI - Your Next Actions in Your LLM Workflow
+# Catch a thought from your terminal
 
-## The Problem It Solves - catch a thought before it fades...
-
- 
-
-```bash
-hey "validate the signup form"
-```
-
-That's it. The thought exists now. It's in your project. Go back to what you were doing.
-
----
-
-## The Gap Where Ideas Die
-
-You're mid-flow - coding, debugging, talking to Claude - and a thought surfaces: *"Need to check the rate limits on that endpoint."*
-
-In the next three seconds, one of two things happens:
-
-1. You capture it
-2. It's gone
-
-Every productivity system fails at this moment. The app is somewhere else. The context switch kills the thought. You tell yourself you'll remember. You won't.
-
-**hey** collapses capture to a single line. No app to open. No project to navigate to. No form to fill out.
+`hey` is the HeyStax command line. One line adds a next action to the stax you are in, without leaving your terminal.
 
 ```bash
 hey "check rate limits on /api/users"
 ```
 
-Done. It's in your system. It's in the right project. Move on.
+## Why it matters to you
 
----
+You are mid-debug and a thought surfaces. In three seconds it is either written down or gone. `hey` writes it down where your head already is, and you go back to the bug.
 
-## You're Always Somewhere
+The action is in your stax, not in the terminal. It shows in the dashboard, the TabStax extension and any AI app connected to HeyStax.
 
-hey doesn't dump thoughts into an inbox for later sorting. You're always *in* a project:
+## How to do it
 
-```bash
-hey which
-# → HeyStax (Must priority, 3 actions)
+1. **Install:** `npm i heystax-cli`. The command is `hey`.
+2. **Log in:** `hey login`. No account yet? Start at [dash.heystax.ai](https://dash.heystax.ai).
+3. **Pick a stax:** `hey use "Client Portal"`. Names match loosely, so `hey use "portal"` works.
+4. **Add a next action:** `hey "fix the invoice PDF bug"`.
+5. **Leave a trail of what you did:** `hey -x "fixed the OAuth callback"`.
+6. **See and finish:** `hey ls`, then `hey done 1`.
 
-hey "add error handling to sync"
-# → Added to HeyStax
+## Command reference
 
-hey use "Client Portal"
-# → Switched context
+| Command | What it does |
+|---|---|
+| `hey "text"` | Add a next action to the current stax |
+| `hey -x "text"` | Add a breadcrumb: something you did |
+| `hey -p "stax" "text"` | Add to another stax |
+| `hey ls` | Actions in the current stax |
+| `hey ls stax` | All your stax, by priority |
+| `hey ls --done` | Breadcrumbs only |
+| `hey done 3` | Finish action 3 (`hey done` finishes the first) |
+| `hey rm 2` | Remove action 2 without finishing it |
+| `hey edit 1 "new text"` | Change action 1 |
+| `hey mv 3 1` | Move action 3 to the top |
+| `hey use "stax"` | Switch the current stax |
+| `hey which` | Show the current stax |
+| `hey pri "stax" must` | Set priority: `must`, `should`, `good` or `meh` |
+| `hey login` · `hey logout` · `hey whoami` · `hey status` | Sign in and check who you are |
 
-hey "fix the invoice PDF bug"  
-# → Added to Client Portal
-```
+## Seven open actions per stax
 
-Like `cd` in a filesystem. The CLI remembers where you are. Your thoughts land where your head already is.
+`hey` warns when a stax already has seven open actions. Finish one, remove one, or add anyway with `--force`. A short list keeps the next move obvious.
 
----
+## Let your AI read it too
 
-## One Terrain, Every Surface
-
-What you capture in terminal appears instantly in:
-- The TabStax extension for Chrome
-- The Attention Blocks dashboard  
-- Any device you're logged into
-- Your AI assistant (via `hey ls`)
-
-**Same data. Different views.** Capture where you work. See it where you plan.
-
-```bash
-# 2am in terminal
-hey "the auth token needs refresh logic"
-
-# Tomorrow morning, open the extension
-# It's there. Waiting. In the right project.
-```
-
----
-
-## LLMs Get Your Context
-
-When your AI assistant can run hey commands, it sees what you see:
+An AI assistant that can run commands can run `hey ls stax` and `hey ls`. It then sees your stax and your next actions, and it can add or finish them for you. Tell it once:
 
 ```
-You: "What should I focus on today?"
-
-Claude: *runs hey ls stax*
-
-You have two Must-priority projects:
-- API Migration (3 pending actions)
-- Client Demo (needs prep before Thursday)
-
-Want me to show the actions for API Migration?
+I track next actions in HeyStax. Run 'hey ls stax' to see my stax,
+'hey ls' for actions, and 'hey done 1' to finish one.
 ```
 
-Your AI stops being generic. It knows your projects, your priorities, your next actions. Context flows both ways.
+## When it goes wrong
 
----
+| You see | Do this |
+|---|---|
+| Not logged in | `hey login` |
+| Project not found | `hey ls stax`, then `hey use` with the exact name |
+| Limit reached | `hey done 1`, `hey rm 3`, or add with `--force` |
+| Actions not syncing | `hey status` shows who you are logged in as |
 
-## Two Kinds of Capture
+Workers that pick up cards on their own use a separate command, `heystax`. See [Connect a worker to a role](agents/connect-a-worker).
 
-**Next Actions** - what you will do:
-```bash
-hey "write tests for the auth flow"
-```
+Now you can catch a thought in one line and find it later in every place you work.
 
-**Breadcrumbs** - what you did (your trail):
-```bash
-hey -x "fixed the OAuth callback bug"
-```
-
-Some people think in tasks. Some think in streams. hey serves both.
-
----
-
-*Everything below this line is reference. The above is why it matters.*
-
----
-
-You're deep in your code editor, terminal, or AI assistant. You know exactly what needs to happen next on your project. But to capture that thought, you have to:
-
-1. Switch to your browser
-2. Find the TabStax extension
-3. Click to open it
-4. Navigate to the right project
-5. Add your next action
-
-By the time you've done all that, you've lost your flow. The context switch killed your momentum.
-
-**Hey CLI brings your Next Actions to where you already work** - your terminal, your IDE, your AI assistant.
-
-```bash
-# You're in your terminal, you just realized something
-hey "Add validation to the signup form"
-
-# Done. Back to coding. No context switch.
-```
-
-## The Core Insight: LLMs Need Your Context
-
-Modern development increasingly involves AI assistants - Claude, ChatGPT, Cursor, Copilot. These tools are powerful, but they don't know what you're working on across your projects.
-
-**Hey CLI bridges this gap.**
-
-When you tell your AI assistant to run `hey ls`, it instantly sees:
-- All your projects (Stax)
-- What needs to be done (Next Actions)
-- What you've accomplished (Breadcrumbs)
-- Your priorities (Must/Should/Good/Meh)
-
-Now your AI has context. It can help you plan, prioritize, and execute.
-
----
-
-## Installation
-
-```bash
-npm i heystax-cli
-```
-
-Then authenticate with your HeyStax account:
-
-```bash
-hey login
-```
-
-**Don't have a HeyStax account?** Sign up at [dash.heystax.ai](https://dash.heystax.ai). Your next actions then show in the dashboard, the CLI and the [TabStax extension](https://chromewebstore.google.com/detail/heystax/gfdcobncoohhlhppmoidalociahfdcam).
-
----
-
-## Quick Start
-
-```bash
-# Set your default project
-hey use "My Project"
-
-# Add a next action (something to do)
-hey "Build the login page"
-
-# Add a breadcrumb (something you did)
-hey -x "Fixed the auth bug"
-
-# See your actions
-hey ls
-
-# Complete an action
-hey done 1
-```
-
----
-
-## Command Reference
-
-### Adding Actions
-
-| Command | Description |
-|---------|-------------|
-| `hey "message"` | Add a next action (future intent) |
-| `hey -x "message"` | Add a breadcrumb (past accomplishment) |
-| `hey "msg" --force` | Add even when at the 7-action limit |
-| `hey -p "project" "msg"` | Add to a specific project |
-
-**Next Actions vs Breadcrumbs:**
-- **Next Action**: "Build the API endpoint" → Something you *will* do
-- **Breadcrumb**: "Fixed the login bug" → Something you *did*
-
-### Listing & Viewing
-
-| Command | Description |
-|---------|-------------|
-| `hey ls` | Show actions for current project |
-| `hey ls stax` | List all your stax with priorities |
-| `hey ls --all` | Expanded view with actions per stax |
-| `hey ls --done` | Show only breadcrumbs (completed) |
-| `hey ls "project"` | Show actions for specific project |
-
-### Managing Actions
-
-| Command | Description |
-|---------|-------------|
-| `hey done` | Complete action #1 (first in list) |
-| `hey done 3` | Complete action #3 |
-| `hey rm 2` | Remove action #2 (without completing) |
-| `hey edit 1 "new text"` | Edit action #1's content |
-| `hey mv 3 1` | Move action #3 to position #1 |
-
-### Projects & Priority
-
-| Command | Description |
-|---------|-------------|
-| `hey use "project"` | Set default project (fuzzy matched) |
-| `hey pri "project" must` | Set priority to Must (★) |
-| `hey pri "project" should` | Set priority to Should (◆) |
-| `hey pri "project" good` | Set priority to Good (○) |
-| `hey pri "project" meh` | Set priority to Meh (·) |
-| `hey which` | Show current context |
-
-### Authentication
-
-| Command | Description |
-|---------|-------------|
-| `hey login` | Log in to HeyStax |
-| `hey logout` | Log out |
-| `hey whoami` | Show current user |
-| `hey status` | Show full CLI status |
-
----
-
-## Priority System
-
-HeyStax uses attention-based priorities to help you focus:
-
-| Icon | Level | Meaning |
-|------|-------|---------|
-| ★ | Must | Critical - do today |
-| ◆ | Should | Important - do this week |
-| ○ | Good | Nice to have |
-| · | Meh | Low priority / someday |
-
-Set priorities to see your most important projects at the top of `hey ls stax`.
-
----
-
-## The 7-Action Limit
-
-HeyStax enforces a maximum of **7 active actions per project**. This isn't a bug - it's a feature.
-
-**Why?** Research shows humans can only hold ~7 items in working memory. More than 7 actions means you're not being specific enough, or you're avoiding the hard work of prioritizing.
-
-When you hit the limit:
-```bash
-hey "Another task"
-# ⚠ Project has 7/7 active actions (limit reached)
-# Options:
-#   • Complete one:  hey done <n>
-#   • Remove one:    hey rm <n>
-#   • Force add:     hey "task" --force
-```
-
-**Best practice:** Complete or remove actions before adding new ones. If you absolutely must exceed the limit, use `--force`.
-
----
-
-## Use Cases by Persona
-
-### The Solo Developer
-
-You're building a side project. You work on it in bursts - mornings before work, weekends, random evenings.
-
-**The problem:** Every time you return, you've forgotten where you were.
-
-**The solution:**
-```bash
-# End of session - capture where you stopped
-hey -x "Got OAuth working with Google"
-hey "Add OAuth for GitHub next"
-hey "Then handle the callback errors"
-
-# Next session - instant context
-hey ls
-# 1. Add OAuth for GitHub next
-# 2. Then handle the callback errors
-# ✓ Got OAuth working with Google (2d ago)
-```
-
-### The Tech Lead
-
-You're managing multiple projects and people. Context-switching is your life.
-
-**The problem:** You can't remember the status of each project.
-
-**The solution:**
-```bash
-# Quick overview
-hey ls stax
-# ★ Must
-#   API Migration    3/7 actions   last: 2h ago
-#   Security Audit   5/7 actions   last: 1d ago
-# ◆ Should
-#   Performance      2/7 actions   last: 3d ago
-
-# Dive into the urgent one
-hey use "API Migration"
-hey ls
-```
-
-### The AI-Assisted Developer
-
-You use Claude, ChatGPT, or Cursor daily. You want your AI to understand your projects.
-
-**The problem:** Your AI doesn't know what you're working on.
-
-**The solution:**
-```
-You: "What should I work on today?"
-
-AI: Let me check your HeyStax projects.
-    *runs: hey ls stax*
-
-    You have 3 "Must" priority projects:
-    - API Migration (3 actions pending)
-    - Security Audit (5 actions pending)
-    - Client Demo (2 actions pending)
-
-    The API Migration hasn't been touched in 2 hours.
-    Want me to show you those actions?
-
-You: "Yes, and help me break down the first one"
-
-AI: *runs: hey ls "API Migration"*
-
-    Your next action is "Migrate user endpoints to v2"
-
-    That's a big task. Let me help break it down:
-    *runs: hey rm 1*
-    *runs: hey "List all user endpoints in v1"*
-    *runs: hey "Create v2 schema for /users"*
-    *runs: hey "Write migration script for /users"*
-    *runs: hey "Add tests for v2 /users"*
-
-    I've replaced the vague task with 4 specific actions.
-```
-
-### The Agency/Freelancer
-
-You juggle multiple clients. Each has their own project context.
-
-**The problem:** Client calls catch you off-guard. "Where are we on the redesign?"
-
-**The solution:**
-```bash
-# Before a client call
-hey use "Acme Redesign"
-hey ls
-
-# Instant context:
-# 1. Waiting on: Client approval for homepage mockup
-# 2. Once approved: Build header component
-# 3. Then: Implement mobile nav
-# ✓ Sent mockup v2 to client (3d ago)
-# ✓ Revised color scheme per feedback (5d ago)
-```
-
----
-
-## Syncing with the TabStax extension
-
-**Everything syncs automatically.**
-
-When you add an action via CLI:
-```bash
-hey "Review pull request #42"
-```
-
-It appears instantly in:
-- The TabStax extension for Chrome
-- The HeyStax dashboard
-- Any other device where you're logged in
-
-When you complete an action in the extension, the CLI sees it:
-```bash
-hey ls
-# Shows the updated list
-```
-
-This means you can:
-- Capture actions in terminal while coding
-- Review them in the browser extension
-- Check them off on your phone (via dashboard)
-- Ask your AI to help manage them
-
-**One source of truth, accessible everywhere.**
-
----
-
-## Tips & Tricks
-
-### Fuzzy Project Matching
-You don't need exact names:
-```bash
-hey use "tab"      # Matches "TabStax Project"
-hey use "api"      # Matches "API Migration"
-hey -p "sec" "Fix the auth bug"  # Matches "Security Audit"
-```
-
-### Quick Capture Workflow
-When an idea hits, capture it fast:
-```bash
-hey "the thing I just thought of"
-# Adds to your current default project
-```
-
-### Breadcrumb Your Progress
-End each work session with breadcrumbs:
-```bash
-hey -x "Got the tests passing"
-hey -x "Pushed to staging"
-hey "Deploy to prod tomorrow"
-```
-
-### Priority Triage
-Start your day with:
-```bash
-hey ls stax
-# See what's ★ Must priority
-# Adjust priorities as needed
-hey pri "Old Project" meh
-hey pri "Urgent Client" must
-```
-
-### Integrate with AI Assistants
-Tell your AI about Hey CLI:
-```
-"I use HeyStax to track my next actions. You can run 'hey ls stax'
-to see my projects, 'hey ls' to see actions, and 'hey done 1' to
-complete them. Help me manage my work."
-```
-
----
-
-## Troubleshooting
-
-### "Not logged in"
-```bash
-hey login
-# Follow the prompts
-```
-
-### "Project not found"
-```bash
-hey ls stax
-# See exact project names, then use one
-hey use "Exact Project Name"
-```
-
-### "Limit reached"
-```bash
-hey done 1        # Complete something
-# or
-hey rm 3          # Remove something
-# or
-hey "msg" --force # Override (not recommended)
-```
-
-### Actions not syncing
-Check your connection:
-```bash
-hey status
-# Should show "Logged in as your@email.com"
-```
-
----
-
-## What's Next?
-
-Hey CLI is the foundation for bringing HeyStax into your development workflow. Coming soon:
-
-- **Git Hooks**: Auto-capture breadcrumbs on commits
-- **IDE Extensions**: Hey CLI embedded in VS Code, Cursor, etc.
-
----
-
-## Links
-
-- [Install the TabStax extension](https://chromewebstore.google.com/detail/heystax/gfdcobncoohhlhppmoidalociahfdcam)
-- [HeyStax dashboard](https://dash.heystax.ai)
-- [npm Package](https://www.npmjs.com/package/heystax-cli)
-- [Report Issues](https://github.com/Hulupeep/heystax/issues)
+**Links:** [HeyStax dashboard](https://dash.heystax.ai) · [TabStax extension](https://chromewebstore.google.com/detail/heystax/gfdcobncoohhlhppmoidalociahfdcam) · [npm package](https://www.npmjs.com/package/heystax-cli)
