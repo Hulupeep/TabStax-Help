@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-11
+checked: 2026-11-12
 
 capabilities:
 
@@ -43,7 +43,7 @@ capabilities:
     name: "heystax listen and heystax run: CLI workers that wait for work, one git worktree per card"
     state: partial
     terms: ['hey listen', 'hey run\b', 'heystax listen', 'heystax run\b']
-    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Runs from the repo (cli/); npm heystax-cli 0.1.13 has no listen or run. wait_for_work is in the production MCP tool list on 2026-11-10."
+    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-12, with no listen or run. wait_for_work is in the production MCP tool list on 2026-11-10."
     wording: "heystax listen runs from the repo today; it is not on npm yet"
 
   - id: cli-rename
@@ -386,16 +386,16 @@ capabilities:
 
   - id: get-worker-key
     name: "Get a key: the stax owner gets a worker key for one role from the role card, without changing the role key"
-    state: unverified
+    state: live
     terms: ['Get a key', 'tsw_live_']
-    evidence: "tabstax-webapps#300 merged 2026-11-11 (owner-only button in How to connect a worker; mints a worker key through the owner path, shown once, role key untouched). tabstax#1189 merged 2026-11-11: heystax connect points to it. Not yet clicked in a browser after deploy."
+    evidence: "tabstax-webapps#300 merged 2026-11-11 (owner-only button in How to connect a worker; mints a worker key through the owner path, shown once, role key untouched). tabstax#1189 merged 2026-11-11: heystax connect points to it. 2026-11-12: Vercel production deployment for 0c2937c (#300) is READY. Not yet clicked in a browser."
     wording: "the stax owner presses Get a key on the role card; the key starts tsw_live_ and is shown once"
 
   - id: worker-liveness-chip
     name: "Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since"
-    state: unverified
+    state: live
     terms: ['No worker connected', 'Stalled since']
-    evidence: "tabstax-webapps#295 merged 2026-11-11. Production launcher list was empty on 2026-11-11, so Listening has not been seen live."
+    evidence: "tabstax-webapps#295 merged 2026-11-11. 2026-11-12: Vercel production deployment for d780124 (#295) is READY. Production launcher list was empty on 2026-11-11, so Listening has not been seen in a browser."
     wording: "the role card says Listening when a worker is waiting for work, and No worker connected when none is"
 
   - id: worker-db-read
@@ -414,10 +414,38 @@ capabilities:
 
   - id: telegram-bug-desk
     name: "Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs"
-    state: unverified
+    state: live
     terms: ['bug desk', 'picked up:', 'Result: ']
-    evidence: "tabstax-webapps#303 merged 2026-11-11 13:45 (a064c8b, auto-deploys on Vercel); tabstax#1199 merged 13:45 (3967530), CLI rebuilt and timebreez listener restarted on the owner's machine 13:48. First live try 13:51 sent a plain @agent with bot privacy mode on, which Telegram does not deliver; the /t form has not been seen end to end yet."
+    evidence: "tabstax-webapps#303 merged 2026-11-11 13:45 (a064c8b, auto-deploys on Vercel); tabstax#1199 merged 13:45 (3967530), CLI rebuilt and timebreez listener restarted on the owner's machine 13:48. First live try 13:51 sent a plain @agent with bot privacy mode on, which Telegram does not deliver; the /t form has not been seen end to end yet. 2026-11-12: Vercel production deployments READY for a064c8b (#303), b0b5e6a (#304, a handle one or two letters off goes to the only near match), 7f6a2c6 (#305, /t @agent always assigns the agent) and ea5a79b (#307, the verdict is sent whole, up to 3500 characters)."
     wording: "reply to the bug with /t @agent; the agent gets your words and the screenshot, and you hear back in the chat with its verdict"
+
+  - id: role-packs
+    name: "Role packs: set up a team of roles on a stax in one call (pack_list, pack_get, pack_apply), each with its job, its Never rules and first cards"
+    state: live
+    terms: ['pack_apply', 'pack_list', 'pack_get', 'role packs?', 'venture-starter', 'bd-team']
+    evidence: "tabstax#1195 merged 2026-11-11. On 2026-11-12 the production MCP tool list seen through a connected HeyStax client has pack_list, pack_get and pack_apply (with dry_run), and pack_list returned venture-starter v1 (builder, maker, bd, qc, orders) and bd-team v1 (angles, outreach, qc). No pack applied in a browser yet."
+    wording: "apply a role pack to a stax and its roles arrive with their jobs, their Never rules and their first cards"
+
+  - id: stax-roles-status
+    name: "stax_get lists each agent role on a stax with its status and whether it takes work now"
+    state: live
+    terms: ['takes_work_now', 'takes work now']
+    evidence: "tabstax#1200 merged 2026-11-11. On 2026-11-12 the production stax_get tool description lists roles with status (working, listening, paused, offline, never_connected) and takes_work_now, plus roles_hint."
+    wording: "any bot reading a stax sees which roles take work now"
+
+  - id: stuck-card-notice
+    name: "When a card escalates after three failed tries, the stax owner gets one Telegram DM with the reason and the fix"
+    state: live
+    terms: ['is stuck on', 'stuck card']
+    evidence: "tabstax-webapps#302 merged 2026-11-11; Vercel production deployment for abc1c46 is READY on 2026-11-12. The reason line comes from the Listener note written by heystax listen (tabstax#1197), which runs from the repo. No DM seen yet."
+    wording: "when a card is stuck, you get one Telegram message saying why and how to fix it"
+
+  - id: hq
+    name: "HQ at dash.heystax.ai/hq: your goals and Never rules, what needs you, what your Chief did, the Chief's job and its log, and Copy Chief as prompt"
+    state: live
+    terms: ['(?-i:\bHQ\b)', 'Copy Chief as prompt']
+    evidence: "tabstax-webapps#297 (HQ page), #298 (standing duties) and #299 (duties are defaults, any number) merged 2026-11-11; Vercel production deployments READY for 4873e18, e7c1e77 and 95c729e on 2026-11-12. The In sync chip needs tabstax#1172's migration, not confirmed in production. Not walked in a browser."
+    wording: "HQ is your desk above every stax: your goals, what needs you, and what your Chief did"
 
   - id: notify
     name: "@notify Telegram agent"

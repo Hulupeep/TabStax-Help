@@ -18,6 +18,6 @@ These examples follow one Next Action from a person's decision to a named agent'
 | **Consultant** | Four days passed; the worker's last question has gone cold. | The open claim, exact blocker and eventual rollback proof. | [Alex returns to the work](consultant-return-to-agent-work) |
 | **Founder with bots** | One goal, and the first angle fell flat. | Every angle, its evidence and who pivoted. | [One goal, many angles](fishing-for-revenue) |
 
-Each page separates what the current MCP can do from the parts that still need live proof or are planned. [Learn what a named worker means](../agents/). The setup guide is held for internal testers. For the older tab-switching examples, see [Use Cases](../usecases/).
+Each page separates what the current MCP can do from the parts that still need live proof or are planned. [Learn what a named worker means](../agents/). To set one up, see [Connect a worker to a role](../agents/connect-a-worker). For the older tab-switching examples, see [Use Cases](../usecases/).
 
 **Own your own cognition:** the Stax keeps the work and its provenance even when you change tools.

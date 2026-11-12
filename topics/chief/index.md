@@ -20,8 +20,23 @@ Without a Chief, every blocked card waits for you. With one, a blocker goes to t
 4. **[Connect it to your bot](connect-your-bot.html).** Grok Bot, ChatGPT or Claude Code.
 5. **[Give it a standing brief](standing-brief.html).** What to do on every run.
 6. **[Link Telegram](../team-stax/telegram.html)** so it can reach you. See [Bots ask you questions](../team-stax/messages.html).
+7. **Watch it from [HQ](https://dash.heystax.ai/hq).** Your desk above every stax.
 
 Plan about 20 minutes the first time.
+
+## HQ: you and your Chief in one place
+
+Open **HQ** from the menu, or go to dash.heystax.ai/hq.
+
+| Part | What you see |
+|---|---|
+| Mission band | Your goals and Never rules. Edit them here; the old version is kept. |
+| Today | Up to three things that need you, the last five moves your Chief made, and your businesses. |
+| Chief's job | Its standing duties and its newest brief. The duties are defaults, and the brief can add more. |
+| Chief's log | Every comment and card your Chief wrote, newest first. |
+| Copy Chief as prompt | Mission, Never rules and brief in one block, to start the Chief in any AI app. |
+
+If the log is empty, your Chief is writing with your token, not its own key. [Give it its own key](own-key.html).
 
 ## What it can never do
 
