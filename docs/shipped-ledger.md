@@ -18,7 +18,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 31 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 14 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 14 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
 
 ## Live
 
@@ -102,6 +102,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | Deploy on merge: CI applies database changes and deploys after a go-ahead | on merge, a release job will apply the database changes and deploy | tabstax#1174 open (Hands off epic #1173), nothing built as of 2026-11-11. Needs two GitHub secrets set by the owner. |
+| Brain prompt for every role: agent_whoami tells a connected outside brain who it is and how it works; Copy brain prompt on each role card for brains you paste into | HeyStax will tell an outside brain which role it is, or give you the text to paste | tabstax#1205 filed 2026-11-12. Only the Chief has a generated prompt today (Copy Chief as prompt on HQ). |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |

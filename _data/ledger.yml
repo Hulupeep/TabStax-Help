@@ -412,6 +412,13 @@ capabilities:
     evidence: "tabstax#1203 merged 2026-11-11 18:04; CLI installs from the repo, not yet rebuilt and run on the owner's machine."
     wording: "heystax access shows what a worker can reach and how to fix each gap"
 
+  - id: brain-prompt
+    name: "Brain prompt for every role: agent_whoami tells a connected outside brain who it is and how it works; Copy brain prompt on each role card for brains you paste into"
+    state: planned
+    terms: ['brain prompt', 'Copy brain prompt']
+    evidence: "tabstax#1205 filed 2026-11-12. Only the Chief has a generated prompt today (Copy Chief as prompt on HQ)."
+    wording: "HeyStax will tell an outside brain which role it is, or give you the text to paste"
+
   - id: telegram-bug-desk
     name: "Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs"
     state: live
