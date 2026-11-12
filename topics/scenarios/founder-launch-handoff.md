@@ -41,4 +41,4 @@ Automatic HookTunnel delivery, automatic merge approval and a public agent insta
 
 Create a Launch Stax with one concrete action. Ask an already connected AI, “What is next on Launch?” and then “Add an action to check the checkout retry.” That uses the current user-connected MCP path. The named-worker claim flow above remains a pilot check until the live evidence is complete.
 
-**Your cognition stays yours:** the work and the proof live on Launch, not in one Codex chat. [Learn how a named worker fits into HeyStax](../agents/); the setup guide is held for internal testers.
+**Your cognition stays yours:** the work and the proof live on Launch, not in one Codex chat. [Learn how a named worker fits into HeyStax](../agents/), or [connect a worker to a role](../agents/connect-a-worker).

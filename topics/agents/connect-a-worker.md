@@ -30,6 +30,7 @@ Run `heystax connect` **inside the folder where the work happens**, such as the 
 4. **Start listening.** Pick one:
    - **Just work.** Open Claude Code or Codex in the folder. The standing order makes it tell HeyStax what it starts, notes and finishes. In Claude Code, add the [HeyStax plugin](claude-code-plugin) to see waiting cards and take them with `/heystax-work`.
    - **Always on.** `heystax listen --install --agent claude` (or `codex`). It waits for work, and each card gets a fresh session in its own git worktree, so your own files are never touched.
+   - **Set how far it may go** with `--autonomy`: `edit` (edit files only), `build` (the default: build, test and open a PR, never touch the database or merge) or `full` (no prompts; a card that needs a go-ahead still waits for one). Pick per role: careful on a client repo, `full` on your own venture.
 5. **Check it worked.** The role card on the board changes from **No worker connected** to **Listening**. Assign one small card to the role and watch it move to working.
 
 ## Keep the key safe
@@ -45,6 +46,7 @@ Run `heystax connect` **inside the folder where the work happens**, such as the 
 | The key prompt eats the next line | Run `heystax connect` on its own line, then paste only the key. Or `heystax connect --key-file <(read -rs K && printf %s "$K")`. |
 | The role says **No worker connected** | Nothing is listening for that role. Run step 4 in the right folder. |
 | A card says **Stalled since** | It was claimed, but no worker is alive on it. Start the worker again, or reassign the card. |
+| A card says **Escalated** | It failed three times. The card's Listener note says why, and, with Telegram linked, you get one message with the reason. Fix the cause, then press **Clear** on the card. |
 | The work landed in the wrong role | You connected the wrong folder. Run `heystax connect` again in that folder. |
 | The worker says it cannot see the data | Give the folder a database to read. See [Give a worker what it needs](give-a-worker-access). |
 
