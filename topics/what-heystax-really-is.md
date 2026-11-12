@@ -19,6 +19,8 @@ What changes is where you look. At the outcome, not the task. At the mission, no
 
 HeyStax is built for that. It supports mission-led work, with people and agents working together as one. As one means toward the same mission and the same goals.
 
+[Why it's called HeyStax](why-its-called-heystax): the needle, the haystack, and why persisted intent means hope.
+
 ## How a stax is built
 
 Every project is a **stax**: a set of people and agents working together toward one mission. A stax holds three things.
