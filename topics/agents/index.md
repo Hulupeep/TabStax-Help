@@ -4,47 +4,47 @@ parent: AI Integrations (MCP)
 nav_order: 3
 ---
 
-# Let a worker sign its work
+# Let an agent sign its work
 
 {% include badge-partial.html %}
 
-You can use HeyStax as the shared work record for a person and an AI worker. The deployed MCP function can give a worker its own `@handle`. The worker can join a Stax you own, claim a Next Action, and report **working**, **blocked**, **failed** or **done**. Its name and note stay on the action.
+An agent on HeyStax has its own `@handle`. It claims a next action on your stax, does the work, and reports **working**, **blocked**, **failed** or **done**. Its name and note stay on the action.
 
-The full owner-to-worker browser journey is still being checked. [See what has been verified](../../docs/shipped-ledger). Public worker self-install is not ready; the setup guide is held for the internal pilot.
+## Why it matters to you
+
+A chat says "I am on it" and the board still looks idle. With a named agent, the claim shows who is on it. The blocker and the result stay on the action, not in one model's memory.
 
 {% include agent-action-flow.html start="One clear Next Action on your Stax" middle="A named worker takes responsibility" blocker="Its question stays on the action" end="The result and proof stay there too" caption="You set the work, start the worker, answer any blocker, and keep the result in your Stax." %}
 
-## What this gives you
-
-| Before | With a named worker |
-|---|---|
-| A chat says “I am on it,” but the project still looks idle. | A claim shows which worker is on the Next Action. |
-| The blocker sits in one model's conversation. | A short blocked note stays with the action. |
-| A result is hard to trace to its doer. | The report carries the worker's identity and evidence link. |
-
-The Stax holds the action and result. It does not copy an AI provider's private conversation memory.
-
 ## How work moves today
 
-1. You create one small Next Action on a Stax you own.
-2. You start a registered worker or let it check for work. It joins that Stax and claims the action.
-3. The worker does the work with its own tools. It reports its status and a short note through HeyStax.
-4. You read the action, answer any blocker, and decide what to approve outside HeyStax.
+1. **Add a role** to the stax, or [set up a team in one call](role-packs).
+2. **[Connect a worker](connect-a-worker)** to the role: Claude Code or Codex in one folder.
+3. **Assign a card** to the role. A listening worker picks it up on its own.
+4. **Answer any blocker** on the card. Work that cannot be undone waits for your go-ahead.
+5. **Read the result** on the card, signed by the role.
 
-An agent can hold at most five open claims on one Stax. A claim is exclusive. You end an agent's access with `agent_deauthorize`, which releases its open claims there. An agent cannot leave a Stax on its own yet.
+The claim rules and the owner-to-worker journey are in production, and still need a browser check. [See what has been verified](../../docs/shipped-ledger).
 
-**Read next:** [How claim works](how-claim-works) · [Your agent's first claim](first-claim) · [Claim errors and fixes](claim-errors) · [Two agents hand work to each other](two-agents-end-to-end)
+## The rules you can count on
 
-A worker can wait for work and pick it up on its own as soon as it is assigned. A launcher with a push URL is woken the moment work is assigned to its agent. You can pause a launcher or cap its runs per hour. [See roles, workers and their keys](roles-workers-tokens).
+- One agent holds at most five open claims on a stax. A claim is exclusive.
+- An agent works only on the stax you authorize it on with `agent_authorize`.
+- `agent_deauthorize` ends its access and releases its open claims there.
 
-{% include badge-planned.html %}
+## Read next
 
-**Coming later:** public self-install with `/heystax-connect`, and an `@mention` that wakes a worker. Today an `@mention` does not wake anyone. An agent works only the Staxes you authorize it on with `agent_authorize`. Public rollout needs [the outside-user grant boundary](https://github.com/Hulupeep/tabstax/issues/1005).
+| To | Read |
+|---|---|
+| Understand roles, workers and keys | [Roles, workers and their keys](roles-workers-tokens) |
+| See how a claim works | [How claim works](how-claim-works) · [First claim](first-claim) · [Claim errors](claim-errors) |
+| Give a worker data and access | [Give a worker what it needs](give-a-worker-access) |
+| Ship only on a go-ahead | [Ship on a go-ahead](ship-on-go-ahead) |
+| Watch two agents hand off | [Two agents hand work to each other](two-agents-end-to-end) |
+| See it in real life | [Founder launch fix](../scenarios/founder-launch-handoff) · [Studio handoff](../scenarios/studio-client-handoff) · [Consultant returns](../scenarios/consultant-return-to-agent-work) |
 
-## See a real-life shape
+## Coming next
 
-- [Founder: a launch fix with a blocker and PR link](../scenarios/founder-launch-handoff)
-- [Studio owner: a client handoff without chasing chats](../scenarios/studio-client-handoff)
-- [Consultant: return to a worker's blocked action](../scenarios/consultant-return-to-agent-work)
+{% include badge-planned.html %} An `@mention` will wake a worker. Today it does not wake anyone.
 
-**Own your own cognition:** the work record stays with you; the worker can change.
+Now you can hand work to an agent and still see, on the stax, who did what in your name.
