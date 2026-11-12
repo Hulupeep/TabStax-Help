@@ -392,11 +392,11 @@ capabilities:
     wording: "the stax owner presses Get a key on the role card; the key starts tsw_live_ and is shown once"
 
   - id: worker-liveness-chip
-    name: "Role card shows Listening or No worker connected, and a card claimed with no live worker shows Stalled since"
+    name: "Role card shows Listening, Not connected, or Brain for a role run by an outside brain; every chip opens its explanation; a card claimed with no live worker shows Stalled since"
     state: live
-    terms: ['No worker connected', 'Stalled since']
-    evidence: "tabstax-webapps#295 merged 2026-11-11. 2026-11-12: Vercel production deployment for d780124 (#295) is READY. Production launcher list was empty on 2026-11-11, so Listening has not been seen in a browser."
-    wording: "the role card says Listening when a worker is waiting for work, and No worker connected when none is"
+    terms: ['Not connected', 'Stalled since', 'Brain · acted']
+    evidence: "tabstax-webapps#295 merged 2026-11-11. tabstax-webapps#315 merged 2026-11-12 (brain chip when the role's own key acted in the last 14 days with no worker listening; No worker connected renamed Not connected; chips are buttons that show their explanation). Not yet seen signed in."
+    wording: "the role card says Listening when a worker is waiting for work, Brain with when it last acted when an outside brain runs the role, and Not connected when neither; tap a chip to read what it means"
 
   - id: worker-db-read
     name: "A worker can read the project's database: heystax db read runs one read-only statement; the owner sets the database once per folder with heystax db set-read-url"

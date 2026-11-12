@@ -12,7 +12,7 @@ An **outside brain** is a bot that thinks somewhere else: a Grok Bot chat, a Cla
 
 ## Why it matters to you
 
-You open your Grok chat at 06:00 and ask "who do you send work to?". It answers in your name, because it writes through your personal key. On the board its column says "No one home". Your Chief sends it asks it never sees.
+You open your Grok chat at 06:00 and ask "who do you send work to?". It answers in your name, because it writes through your personal key. On the board its column said "No one home", though something was running it. Your Chief sends it asks it never sees.
 
 One rule fixes that: **every brain that works a stax is a role on that stax.** Then you can see what it did, it knows who it is, and nobody routes work to a brain that is asleep.
 
@@ -31,6 +31,7 @@ One rule fixes that: **every brain that works a stax is a role on that stax.** T
 4. Ask the bot: "call agent_whoami and tell me your handle". It should say its role, not your name.
 5. Paste its job into the bot's instructions: who it is, which stax, who it hands work to, what comes back to you.
 6. If the bot can run on a schedule, give it an hourly routine that checks its comments and its cards.
+7. Check the role card. Once the bot acts with its key, the card shows **🧠 Brain · acted 2h ago**. Tap it to read how the role wakes.
 
 ## Will a card I add get picked up?
 
@@ -41,6 +42,8 @@ One rule fixes that: **every brain that works a stax is a role on that stax.** T
 | A person, such as `@gayathrri0192` | That person | They get a Telegram message |
 
 It does not matter whether you add the card in the board or the bot adds it. What matters is who it is assigned to.
+
+A brain-led role may never have a worker. It runs from the top: it hands work out and picks up work given to it. So its card says **Brain**, not **Not connected**, and waiting work reads "2 waiting for its next turn".
 
 ## Scenario 1: the Timebreez lead
 
