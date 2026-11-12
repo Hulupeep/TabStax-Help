@@ -23,7 +23,7 @@ A bot that sends emails from its own memory will email the same school twice, fo
 
 | Part | What it holds |
 |---|---|
-| **Organisation** | One school or company, keyed by its official number, such as a school roll number. Its emails and contacts hang off it |
+| **Organisation** | One school or company, keyed by its official number, such as a school roll number. Its emails, handles and contacts hang off it |
 | **Campaign** | A goal and an audience, such as "Irish primary schools, 2026". Draft, running, paused or done |
 | **Angle** | One line of attack inside a campaign: the hook, why it should work, the proof, and when to stop |
 | **Membership** | One organisation in one campaign: its stage, angle and next follow-up |
@@ -37,5 +37,6 @@ A bot that sends emails from its own memory will email the same school twice, fo
 2. [Send safely](sending.html): reserve, send, record, and what you control.
 3. [Work the queue](daily-work.html): follow-ups, replies, stages and counts.
 4. [When the CRM says no](errors.html): every refusal and the fix.
+5. [Reach people on every channel](channels.html): X, LinkedIn, GitHub, Discord, phone and more.
 
 Now you can let a bot run outreach for weeks and still know who was contacted, why, and what they said.
