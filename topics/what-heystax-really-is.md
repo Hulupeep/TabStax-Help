@@ -1,11 +1,66 @@
 ---
 title: What HeyStax really is
-description: Mission, Goal, Next Action. One place where people and agents pursue outcomes.
+description: Why HeyStax exists, and how a stax holds people, roles, workers and outside agents on one mission.
 ---
 
 # What HeyStax really is
 
-**HeyStax exists to help people make things happen, not merely get things done.**
+**HeyStax is where people and agents work as one on a mission.**
+
+## Why it exists
+
+Intelligence is now abundant. An agent can build a site, write an app or draft a hundred emails before lunch. So what do we spend our time on?
+
+A Victorian clerk spent the whole day copying ledgers by hand. Nobody would do that now. We are at the same turn. Much of the detail of building things, which we did ourselves until very recently, now belongs to agents.
+
+Stepping back from the detail does not mean losing what matters. You keep the inspiration. You keep the journey. You keep the say on where it goes.
+
+What changes is where you look. At the outcome, not the task. At the mission, not the pull request. The point is to make an impact on the world you live in.
+
+HeyStax is built for that. It supports mission-led work, with people and agents working together as one. As one means toward the same mission and the same goals.
+
+[Why it's called HeyStax](why-its-called-heystax): the needle, the haystack, and why persisted intent means hope.
+
+## How a stax is built
+
+Every project is a **stax**: a set of people and agents working together toward one mission. A stax holds three things.
+
+- **Mission:** why the stax exists.
+- **Goal:** the result that would count, as a number or a date.
+- **Next action:** the move someone makes now. Next actions live inside the stax.
+
+And it holds the people and agents doing the work.
+
+- **People** are on the stax by `@handle`.
+- **Agents are roles**, such as `@builder` or `@outreach`. A role is the job, not the software.
+- **Workers** fill a role: Claude Code, Codex, Kimi, whoever you like. No vendor cage. Swap a worker and the role carries on.
+- **Outside agents**, such as Grok Bot, connect to the stax. They bring judgment into it and support the work.
+
+{% capture s %}
+{% include anim/plane.html x=10 y=16 w=350 h=296 label="Stax: Hubduck BD" %}
+{% include anim/node.html x=110 y=78 label="Mission" sub="why it exists" kind="stax" w=180 d=0.3 %}
+{% include anim/node.html x=280 y=78 label="Goal" sub="2nd paying school" kind="record" w=140 d=0.6 %}
+{% include anim/node.html x=70 y=150 label="Colm" sub="person" kind="person" w=100 d=1.0 %}
+{% include anim/node.html x=185 y=150 label="@builder" sub="role" kind="agent" w=110 d=1.2 %}
+{% include anim/node.html x=300 y=150 label="@outreach" sub="role" kind="agent" w=100 d=1.4 %}
+{% include anim/edge.html x1=185 y1=176 x2=185 y2=198 d=1.7 %}
+{% include anim/edge.html x1=300 y1=176 x2=300 y2=198 d=1.8 %}
+{% include anim/node.html x=185 y=214 label="Claude Code" kind="surface" w=104 h=30 d=1.8 %}
+{% include anim/node.html x=300 y=214 label="Codex" kind="surface" w=90 h=30 d=1.9 %}
+{% include anim/edge.html x1=185 y1=229 x2=110 y2=256 kind="dispatch" d=2.3 %}
+{% include anim/edge.html x1=300 y1=229 x2=280 y2=256 kind="dispatch" d=2.5 %}
+{% include anim/node.html x=95 y=274 label="Ship pricing page" kind="action" w=150 h=34 d=2.4 %}
+{% include anim/node.html x=270 y=274 label="Send batch B" kind="action" w=150 h=34 d=2.6 %}
+{% include anim/node.html x=420 y=150 label="Grok Bot" sub="outside agent" kind="agent" w=104 d=3.0 %}
+{% include anim/edge.html x1=420 y1=124 x2=350 y2=78 cx=420 cy=78 kind="read" d=3.3 %}
+{% include anim/edge.html x1=420 y1=176 x2=345 y2=274 cx=420 cy=274 kind="write" d=3.6 %}
+<g class="hs-trail" style="--d:3.8s"><text x="378" y="230" class="hs-label">judgment</text></g>
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 320" label="Anatomy of a stax: mission and goal at the top, a person and two roles with workers, next actions inside, and an outside agent connecting in" caption="One stax, Hubduck BD. The mission and goal sit at the top. Colm is on it as a person. @builder and @outreach are roles, and Claude Code and Codex are the workers filling them right now. The next actions live inside the stax. Grok Bot sits outside, reads the goal and brings its judgment into the work." svg=s %}
+
+Now you can swap any worker, add any person, or plug in another outside agent, and the mission, the goals and the next actions stay where they are.
+
+## Activity is not progress
 
 AI can produce astonishing quantities of code, pull requests, documents, messages and tasks. Activity is not the same as progress. The question that matters is: **Did we achieve what we set out to achieve?**
 
@@ -34,15 +89,7 @@ AI can produce astonishing quantities of code, pull requests, documents, message
 
 HeyStax is the **operational plane for persistent intent**. Its purpose is to keep the mission, goals, working context, responsibilities, decisions and evidence together as people and AI agents change. It is not a replacement for your coding harness, CRM, communication tools or agent runtime.
 
-## Three simple primitives
-
-**Mission:** Why does this work exist?
-
-**Goal:** What observable result would count as success?
-
-**Next Action:** What concrete move should a person or agent make now?
-
-Everything else supports those three: context, permissions, accountable ownership, evidence, relationships, and history.
+Everything else supports mission, goal and next action: context, permissions, accountable ownership, evidence, relationships, and history.
 
 A thousand completed actions can leave a goal untouched. One useful conversation might change everything.
 
