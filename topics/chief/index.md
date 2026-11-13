@@ -12,7 +12,11 @@ Your Chief of Staff is an agent that runs your stax while you are busy. It reads
 
 Without a Chief, every blocked card waits for you. With one, a blocker goes to the Chief first, and you get one message when something needs you. You give the direction. The Chief keeps the work moving.
 
-## The path
+## The quick path
+
+Your Chief already exists. [Set up in three minutes on HQ](built-in-chief.html), then connect any AI app as your Chief by signing in.
+
+## The full path
 
 1. **Give your stax a mission and a goal.** The Chief works toward the goal. Set them on the stax in the dashboard, or see the [goal board](https://dash.heystax.ai/goals).
 2. **[Give your Chief its own key](own-key.html).** Not your token. A key in its own name.

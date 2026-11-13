@@ -503,6 +503,13 @@ capabilities:
     evidence: "tabstax-webapps#297 (HQ page), #298 (standing duties) and #299 (duties are defaults, any number) merged 2026-11-11; Vercel production deployments READY for 4873e18, e7c1e77 and 95c729e on 2026-11-12. The In sync chip needs tabstax#1172's migration, not confirmed in production. Not walked in a browser."
     wording: "HQ is your desk above every stax: your goals, what needs you, and what your Chief did"
 
+  - id: builtin-chief
+    name: "Every account gets its own Chief with its job saved in HeyStax; HQ sets you up in five answers, shows Waiting for a brain, edits the job and changes the brain"
+    state: live
+    terms: ['Set up in three minutes', 'Waiting for a brain', 'Change brain', 'built-in Chief']
+    evidence: "tabstax#1183 (PR #1247, tabstax-webapps#331), deployed 2026-11-13. J-THREE-MINUTE-SETUP ran against production from the Minisforum on the test account: HQ made @chief-test0226a, five answers created a stax with 5 roles and 6 cards in 13 seconds, a brain connected by sign-in and read the saved job, an edit on HQ made revision 2, and Change brain left the Chief in place. Driven by a script in Chromium, not walked by a person."
+    wording: "your Chief is already there when you sign up; HQ sets you up in five answers and any AI app can run it"
+
   - id: notify
     name: "@notify Telegram agent"
     state: planned

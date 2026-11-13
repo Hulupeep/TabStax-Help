@@ -15,7 +15,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 35 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 36 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 16 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 15 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
@@ -59,6 +59,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | stax_get lists each agent role on a stax with its status and whether it takes work now | any bot reading a stax sees which roles take work now | tabstax#1200 merged 2026-11-11. On 2026-11-12 the production stax_get tool description lists roles with status (working, listening, paused, offline, never_connected) and takes_work_now, plus roles_hint. |
 | When a card escalates after three failed tries, the stax owner gets one Telegram DM with the reason and the fix | when a card is stuck, you get one Telegram message saying why and how to fix it | tabstax-webapps#302 merged 2026-11-11; Vercel production deployment for abc1c46 is READY on 2026-11-12. The reason line comes from the Listener note written by heystax listen (tabstax#1197), which runs from the repo. No DM seen yet. |
 | HQ at dash.heystax.ai/hq: your goals and Never rules, what needs you, what your Chief did, the Chief's job and its log, and Copy Chief as prompt | HQ is your desk above every stax: your goals, what needs you, and what your Chief did | tabstax-webapps#297 (HQ page), #298 (standing duties) and #299 (duties are defaults, any number) merged 2026-11-11; Vercel production deployments READY for 4873e18, e7c1e77 and 95c729e on 2026-11-12. The In sync chip needs tabstax#1172's migration, not confirmed in production. Not walked in a browser. |
+| Every account gets its own Chief with its job saved in HeyStax; HQ sets you up in five answers, shows Waiting for a brain, edits the job and changes the brain | your Chief is already there when you sign up; HQ sets you up in five answers and any AI app can run it | tabstax#1183 (PR #1247, tabstax-webapps#331), deployed 2026-11-13. J-THREE-MINUTE-SETUP ran against production from the Minisforum on the test account: HQ made @chief-test0226a, five answers created a stax with 5 roles and 6 cards in 13 seconds, a brain connected by sign-in and read the saved job, an edit on HQ made revision 2, and Change brain left the Chief in place. Driven by a script in Chromium, not walked by a person. |
 
 ## Unverified
 
@@ -173,3 +174,4 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] stax_get lists each agent role on a stax with its status and whether it takes work now
 - [ ] When a card escalates after three failed tries, the stax owner gets one Telegram DM with the reason and the fix
 - [ ] HQ at dash.heystax.ai/hq: your goals and Never rules, what needs you, what your Chief did, the Chief's job and its log, and Copy Chief as prompt
+- [ ] Every account gets its own Chief with its job saved in HeyStax; HQ sets you up in five answers, shows Waiting for a brain, edits the job and changes the brain
