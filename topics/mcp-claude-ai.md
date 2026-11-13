@@ -12,11 +12,10 @@ Claude reads and writes your stax over MCP. Ask in plain words. The answer lands
 
 You plan a launch with Claude on Tuesday. On Thursday you open the `hey` CLI and the same next actions are there. You did not paste your context. It was already yours, and it travelled.
 
-## One thing first: your AI app uses a token
+## Two ways in
 
-You sign in to HeyStax at [dash.heystax.ai](https://dash.heystax.ai) and copy your token. Your AI app sends that token with every request.
-
-The app can't sign in to HeyStax for you. Claude.ai on the web only offers that kind of connector login, so it can't connect today. Use Claude Code, or another app that sends your token.
+- **Sign in.** Add HeyStax as a connector at `https://dash.heystax.ai/api/mcp`, sign in, and pick the role Claude works as. See [Connect a bot by sign-in](agents/connect-by-sign-in). Nobody has added it from Claude.ai itself yet, so tell us how it goes.
+- **Token.** Claude Code sends your token with every request. See below.
 
 ## You need
 
@@ -45,7 +44,7 @@ Claude can also read and write goals, dates, people and records. See [what is li
 
 | You see | Do this |
 |---|---|
-| The app wants to sign in to HeyStax for you | It can't connect that way. Use an app that sends your token |
+| The app wants to sign in to HeyStax for you | That works now. Sign in and pick a role |
 | `TOKEN_INVALID` | Copy the token again and re-add the connector |
 | `PLAN_REQUIRED` | Move to Pro or Trial at [dash.heystax.ai](https://dash.heystax.ai) |
 | No tools show | Check your plan is active, then re-add the connector |
