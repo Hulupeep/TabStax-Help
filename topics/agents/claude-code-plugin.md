@@ -29,8 +29,8 @@ The plugin and the listener work side by side. The listener is for when you are 
 ## Install it
 
 1. Connect the folder first: [Connect a worker](connect-a-worker), steps 1 to 3.
-2. In Claude Code, add the HeyStax repo as a plugin source: `/plugin marketplace add ~/path/to/tabstax` (your local copy of the HeyStax repo).
-3. Install it: `/plugin install heystax@heystax`.
+2. In a terminal, add the HeyStax repo as a plugin source: `claude plugin marketplace add Hulupeep/tabstax`.
+3. Install it: `claude plugin install heystax@heystax`. To update later, run `claude plugin marketplace update heystax`, then `claude plugin update heystax@heystax`.
 4. Open a new session in the connected folder. The first thing Claude sees is the role and what is waiting.
 
 Check it any time with `/heystax-connect`. It says who this session works as, and what to do if the folder is not connected. It never asks you to paste a key into the chat.
@@ -43,7 +43,7 @@ Check it any time with `/heystax-connect`. It says who this session works as, an
 | **`/heystax-work`** | Takes the oldest card assigned to the role, claims it, does it, and reports: notes with the branch and PR as it goes, blocked if it needs a person, done with a one-line result. |
 | **`/heystax-loop`** | The same, card after card. Waits up to 50 seconds for each new card. Stops after 10 cards (or the number you give), or after about 8 minutes with no work. |
 | **You start your own work** | The standing order makes Claude put it on the stax first (`heystax task start`), then note and finish it there. |
-| **Session closes** | An open card is handed back to the role with its last note, so another worker can pick it up. |
+| **Session closes** | A session summary goes on the card: what was asked, what changed, the result, what is next, and the branch and PR. A session with no card that changed files gets a done card of its own. Then an open card is handed back to the role, so another worker can pick it up and [read what happened](what-a-worker-gets). |
 
 Claude only ever runs the `heystax` command, and `heystax` reads its own key. No key enters the chat.
 

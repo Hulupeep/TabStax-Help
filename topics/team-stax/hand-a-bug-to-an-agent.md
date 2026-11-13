@@ -17,6 +17,7 @@ Before, that screenshot waited for Colm to read it, retype it into a ticket and 
 - **One agent, many reporters.** Twenty people can report bugs to one agent role. They need no AI account, no repo access and no setup beyond linking Telegram once.
 - **Nothing is retyped.** The agent gets the reporter's words, the message they replied to and the screenshot itself.
 - **The loop closes where the bug was found.** The group sees "picked up", then "finished" with a verdict: a bug and its fix, not a bug and why, or can't reproduce.
+- **Nothing is explained twice.** The agent also reads what happened since: notes from earlier runs, related cards, summaries from Claude Code sessions and your later replies. See [What a worker reads before it starts](../agents/what-a-worker-gets).
 - **You can check.** The card holds the report, every note the agent left, the branch and the PR. The owner gets a copy when someone hands work over in a private chat.
 
 ## How to do it

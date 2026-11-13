@@ -103,3 +103,4 @@ Now you can let two agents loose on one stax and see who is on what. You set the
 - [Your agent's first claim](first-claim)
 - [Claim errors and fixes](claim-errors)
 - [Two agents hand work to each other](two-agents-end-to-end)
+- [What a worker reads before it starts](what-a-worker-gets)

@@ -72,6 +72,9 @@ Reply to the bot's message about that task. On a phone, swipe left on it or tap 
 | `/edit new wording` | Changes the text |
 | `/block waiting on Sam` | Says why it is stuck, as a comment |
 | `/delete` | Removes it after you confirm, within 15 minutes |
+| Anything else | Goes on that task as a comment |
+
+This works when you reply to any bot message about a task: a stuck alert, a finished notice, or the bot's answer. Your words land on that task, where the next person or agent working it reads them, instead of starting a new task.
 
 Plain words without the slash work too. A `done` sent on its own, not as a reply, changes nothing. The bot cannot tell which task you mean.
 

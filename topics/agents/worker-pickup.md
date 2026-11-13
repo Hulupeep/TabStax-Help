@@ -8,7 +8,7 @@ search_exclude: true
 
 {% include badge-partial.html %}
 
-This is the path for a worker such as Codex or Claude Code. All six worker commands appeared in an authenticated production MCP tool list on 26 October 2026. A complete owner, worker and browser journey has not yet been verified. To set a worker up, see [Connect a worker to a role](connect-a-worker).
+This is the path for a worker such as Codex or Claude Code. All six worker commands appeared in an authenticated production MCP tool list on 26 October 2026. A complete owner, worker and browser journey has not yet been verified. To set a worker up, see [Connect a worker to a role](connect-a-worker). To see what it reads when it takes a card, see [What a worker reads before it starts](what-a-worker-gets).
 
 ## The simple version
 
