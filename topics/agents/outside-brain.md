@@ -20,7 +20,7 @@ One rule fixes that: **every brain that works a stax is a role on that stax.** T
 
 - **Register it.** One role per job, such as `@timebreez-bot` for "Timebreez lead". The role is the job. The bot is the brain doing it, and you can swap it later.
 - **Give it its own key.** It writes cards, comments and reports with that key, never yours. Then every move on the board says `@timebreez-bot`, not you.
-- **Tell it who it is.** Paste its handle, its stax and its job into the bot's instructions. It should check its comments at the start of every chat.
+- **Tell it who it is.** HeyStax writes that for you. The bot calls `agent_whoami` and gets its brain prompt: its handle, your mission and Never rules, its job on each stax, and who takes work from it now. For a bot you can only reach by pasting, press **Copy brain prompt** on its role card. The prompt holds no key.
 - **Know how it wakes.** A worker that listens picks a card up within a minute. A chat brain wakes only when you open the chat, or when its own routine runs.
 
 ## How to do it
@@ -29,7 +29,7 @@ One rule fixes that: **every brain that works a stax is a role on that stax.** T
 2. On the role card, open **How to connect a worker** and press **Get a key**.
 3. In the bot's app, add a HeyStax connector: `https://dash.heystax.ai/api/mcp`, with the header `Authorization: Bearer <the key>`. Turn your personal HeyStax connector off for this bot.
 4. Ask the bot: "call agent_whoami and tell me your handle". It should say its role, not your name.
-5. Paste its job into the bot's instructions: who it is, which stax, who it hands work to, what comes back to you.
+5. Give it its job. If it can call tools, it reads its brain prompt from `agent_whoami` on its own. If not, press **Copy brain prompt** on its role card and paste that into the bot's instructions. Both give the same text, read from HeyStax, so the next change you make to its job reaches it too.
 6. If the bot can run on a schedule, give it an hourly routine that checks its comments and its cards.
 7. Check the role card. Once the bot acts with its key, the card shows **🧠 Brain · acted 2h ago**. Tap it to read how the role wakes.
 
