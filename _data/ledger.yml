@@ -531,6 +531,20 @@ capabilities:
     evidence: "tabstax#1178 (PR #1262, taken over from #1241; tabstax-webapps#339), migration 20261114010000 applied and mcp deployed 2026-11-13. The owner's real receipt on production: 24 cards moved by 4 roles, 5 stuck lines each with its move, 2 needs-you items and '10 more on HQ', money 'not connected', 1,526 characters. J-MORNING-RECEIPT ran against production on the test account: HQ's band showed the same 13 lines as the message text. The first 08:00 send is on 14 Nov; /receipt is covered by tests, not yet sent from a phone."
     wording: "at 08:00 your receipt says what your bots moved, what is stuck and what needs you; send /receipt for it any time; HQ shows it on top"
 
+  - id: ask-default
+    name: "Asks with options and a recommendation proceed on silence; an irreversible ask waits for a go-ahead; a role can't answer its own ask; an owner hold stops all auto-proceeding"
+    state: live
+    terms: ['proceeds? on silence', 'goes? ahead on silence', 'ask with a default', 'Asks with a default']
+    evidence: "tabstax#1179 (PR #1264, from the listener's #1242), migration 20261114020000 applied and mcp deployed 2026-11-13. J-ASK-DEFAULT on production (test account): a reversible ask with a 15-minute deadline proceeded 29 s after it, with a system note naming the option taken; an irreversible ask stayed needs_owner and set needs_go_ahead on the card; a timer without options was refused. Telegram buttons are not built (tabstax-webapps#328)."
+    wording: "a role asks with a recommendation and carries on if nobody answers in time; a step that can't be undone waits for your go-ahead"
+
+  - id: verified-done
+    name: "Verified done: a card with a page check closes only when HeyStax's own fetch passes; a fail reopens it with the reason"
+    state: live
+    terms: ['Done means checked', 'verified done', 'check fails?']
+    evidence: "tabstax#1182 (PR #1265, from the listener's #1255), migration 20261114030000 applied and mcp deployed 2026-11-13. J-VERIFIED-DONE on production (test account): a card checking the help site closed with proof (status 200); a card checking a missing help page was reported done, fetched by HeyStax and reopened the card with '404 at /TabStax-Help/j1182-not-a-page' and told the worker. The role setting a check on its own card was refused (CHECK_NOT_YOURS)."
+    wording: "put a check on a card and it closes only when HeyStax's own check passes; a fail reopens it with the reason"
+
   - id: stax-roles-status
     name: "stax_get lists each agent role on a stax with its status and whether it takes work now"
     state: live
