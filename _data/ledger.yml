@@ -510,6 +510,13 @@ capabilities:
     evidence: "tabstax#1234 (PR #1251, tabstax-webapps#335), deployed 2026-11-13. J-BUILDER-SELF-HEAL ran against production from the Minisforum: a launcher revoked mid-listen was replaced 42 seconds later in the same process, 0 systemd restarts, journal line 'the launcher was revoked; registered a new one and carried on'. The Restarting chip after three failed starts is covered by tests only."
     wording: "a listener whose launcher was revoked registers a new one and carries on; if it cannot, its role chip says Down or Restarting, with the fix"
 
+  - id: brain-prompt
+    name: "Brain prompt: agent_whoami returns a role's brain prompt (who it is, the owner's mission and Never rules, its job per stax, who takes work now); Copy brain prompt on the role card gives the same text"
+    state: live
+    terms: ['brain prompt', 'Copy brain prompt']
+    evidence: "tabstax#1205 (PR #1253, fix #1260; tabstax-webapps#336), deployed 2026-11-13. On production, agent_whoami for @heystax-builder returned a 2,525-character brain prompt with the owner's mission, Never rule, job and routing, and no key. J-BRAIN-PROMPT ran against production on the test account: Copy brain prompt on the Chief's card put 10,824 characters on the clipboard, with routes and the standing order and no key."
+    wording: "a bot calls agent_whoami and gets its brain prompt; for a bot you paste into, press Copy brain prompt on its role card"
+
   - id: stax-roles-status
     name: "stax_get lists each agent role on a stax with its status and whether it takes work now"
     state: live
