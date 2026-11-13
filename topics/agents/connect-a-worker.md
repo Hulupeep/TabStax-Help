@@ -24,6 +24,8 @@ Run `heystax connect` **inside the folder where the work happens**, such as the 
 
 ## How to do it
 
+Builders on your own stax? [`heystax up`](heystax-up) does steps 2 to 4 for all of them with one browser sign-in.
+
 1. **Install the command once.** It is not on npm yet, so build it from the HeyStax repo: `cd cli && npm i && npm run build && npm link`. After each update, build again and check with `heystax --version`.
 2. **Get a key.** On the role's card, open **How to connect a worker** and press **Get a key** (stax owner only). It starts `tsw_live_` and shows once. The role's other workers keep running.
 3. **Connect the folder.** `cd` into the work folder, run `heystax connect`, and paste only the key. `heystax status` shows who this folder works as.
