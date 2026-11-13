@@ -440,6 +440,34 @@ capabilities:
     evidence: "tabstax-webapps#303 merged 2026-11-11 13:45 (a064c8b, auto-deploys on Vercel); tabstax#1199 merged 13:45 (3967530), CLI rebuilt and timebreez listener restarted on the owner's machine 13:48. First live try 13:51 sent a plain @agent with bot privacy mode on, which Telegram does not deliver; the /t form has not been seen end to end yet. 2026-11-12: Vercel production deployments READY for a064c8b (#303), b0b5e6a (#304, a handle one or two letters off goes to the only near match), 7f6a2c6 (#305, /t @agent always assigns the agent) and ea5a79b (#307, the verdict is sent whole, up to 3500 characters)."
     wording: "reply to the bug with /t @agent; the agent gets your words and the screenshot, and you hear back in the chat with its verdict"
 
+  - id: card-history
+    name: "Card history for the next worker: next_actions_context returns a card's notes newest first (repeated runs folded into one line with a count), the reporter's Telegram messages, session summaries and related cards, each with a link; capped at 8 KB"
+    state: live
+    terms: ['next_actions_context', 'card history', 'heystax task show']
+    evidence: "tabstax#1232 merged 2026-11-13 12:58Z; release (mcp deploy + migration 20261113120000) run by the owner 17:15Z, RELEASE OK. 2026-11-13: next_actions_context is in the production MCP tool list, and a call on a real Timebreez card returned 52 notes folded into 7 entries (two with counts 16 and 20), the reporter's Telegram report and links. Not yet seen in a browser."
+    wording: "before a worker starts a card, it reads what already happened on it and around it"
+
+  - id: work-next
+    name: "work_next: one call that waits for a card, starts a run, claims it with a lease and returns the card, the role's brief and the card history"
+    state: live
+    terms: ['work_next']
+    evidence: "tabstax#1232 merged 2026-11-13, deployed 17:15Z; work_next is in the production MCP tool list (2026-11-13). Not yet called by a live worker. heystax listen still waits, starts and claims in separate steps."
+    wording: "one call takes the next card with everything about it"
+
+  - id: session-summary
+    name: "Session summary: when a Claude Code session with the HeyStax plugin ends, five lines go on its card (asked, changed, result, next, branch and PR); a session with no card that changed files gets a done card of its own; chat-only sessions leave nothing"
+    state: unverified
+    terms: ['session summar(y|ies)']
+    evidence: "tabstax#1232 (cli 0.4.9, plugin 0.2.0) merged 2026-11-13; the owner updated the CLI and plugin on the Minisforum 17:15Z. No summary from a real session seen on a card yet."
+    wording: "when a Claude Code session ends, it leaves a short summary on its card"
+
+  - id: telegram-reply-any-card
+    name: "Reply in Telegram to any bot message about a card (a stuck alert, a done notice, a reply) and your words go on that card as a comment"
+    state: unverified
+    terms: ['reply to any (bot )?message']
+    evidence: "Migration 20261113120000 (tabstax#1232) applied to production by the owner 2026-11-13 17:15Z, RELEASE OK. No reply to a stuck alert or done notice seen on a card yet."
+    wording: "reply to any bot message about a card to add to that card"
+
   - id: role-packs
     name: "Role packs: set up a team of roles on a stax in one call (pack_list, pack_get, pack_apply), each with its job, its Never rules and first cards"
     state: live
