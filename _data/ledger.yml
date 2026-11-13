@@ -524,6 +524,13 @@ capabilities:
     evidence: "tabstax#1175 (PRs #1259, #1261), migration 20261114000000 applied and mcp deployed 2026-11-13. J-OFF-OWNER-KEY ran on production with a test-account key minted for the run and revoked after (401 afterwards): a write from User-Agent grok-bot got the notice listing that stax's 7 roles, with no key in it; an interactive write and a read got none; owner_key_usage listed grok-bot and heystax-cli, each with its stax. Nothing is blocked in this slice."
     wording: "every write with your key is noted by app; owner_key_usage lists the bots still using it, and each is told how to switch"
 
+  - id: morning-receipt
+    name: "Morning receipt: at 08:00 an owner gets what moved, what is stuck and at most two things that need them, across every stax they own; /receipt on demand; HQ's top band; receipt_get for the owner and the Chief"
+    state: live
+    terms: ['/receipt', 'morning receipt', 'receipt_get']
+    evidence: "tabstax#1178 (PR #1262, taken over from #1241; tabstax-webapps#339), migration 20261114010000 applied and mcp deployed 2026-11-13. The owner's real receipt on production: 24 cards moved by 4 roles, 5 stuck lines each with its move, 2 needs-you items and '10 more on HQ', money 'not connected', 1,526 characters. J-MORNING-RECEIPT ran against production on the test account: HQ's band showed the same 13 lines as the message text. The first 08:00 send is on 14 Nov; /receipt is covered by tests, not yet sent from a phone."
+    wording: "at 08:00 your receipt says what your bots moved, what is stuck and what needs you; send /receipt for it any time; HQ shows it on top"
+
   - id: stax-roles-status
     name: "stax_get lists each agent role on a stax with its status and whether it takes work now"
     state: live
