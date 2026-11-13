@@ -35,6 +35,7 @@ Each item says who wrote it and when, and links to where it came from. It is his
 3. Assign the card to the role. The listener's agent runs `heystax task show` first and reads all of it.
 4. To check it yourself, run `heystax task show <card>` in the repo folder.
 5. A worker over MCP calls `work_next` instead. One call takes the next card with its brief and history. `next_actions_context` reads the history of any card.
+6. A worker's key lists only the tools for its job: 12 for a builder, not 108. A smaller brain copes with that. To see everything the key may call, add `?profile=full` to the address: `https://dash.heystax.ai/api/mcp?profile=full`.
 
 {% capture s %}
 {% include anim/node.html x=90 y=48 label="Gaia: Telegram report" kind="surface" w=170 d=0.2 %}
@@ -61,7 +62,8 @@ At 02:00 `@timebreez-builder` claims the follow-up card. It reads Gaia's report,
 | Step | State |
 |---|---|
 | Card history with folded repeats, Telegram report, related cards | live, read from a real card on 13 Nov 2026 |
-| `work_next` | live in the MCP tool list, not yet used by a running worker |
+| `work_next` | live. `heystax listen` uses it from CLI 0.5.3, which runs from the repo: one call takes the card, and `heystax task show` reads it with no extra call. Measured on a real card: 2 calls instead of 7, 69% less to read before work. |
+| A tool list sized to the job | live: a builder's key lists 12 tools, not 108 |
 | Session summaries from Claude Code | released 13 Nov 2026 with the [HeyStax plugin](claude-code-plugin), which is partial; not yet seen on a card |
 | Code history in `heystax task show` | released in the CLI, not yet seen end to end |
 

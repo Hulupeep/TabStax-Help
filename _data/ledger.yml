@@ -458,8 +458,15 @@ capabilities:
     name: "work_next: one call that waits for a card, starts a run, claims it with a lease and returns the card, the role's brief and the card history"
     state: live
     terms: ['work_next']
-    evidence: "tabstax#1232 merged 2026-11-13, deployed 17:15Z; work_next is in the production MCP tool list (2026-11-13). Not yet called by a live worker. heystax listen still waits, starts and claims in separate steps."
+    evidence: "tabstax#1232 merged 2026-11-13, deployed 17:15Z. tabstax#1256 (slice 3) deployed 2026-11-13 22:2xZ: heystax listen and heystax run (CLI 0.5.3, from the repo) take cards with work_next and hand the agent the packet. J-WORKER-ONE-CALL ran on production from the Minisforum on the test account: one work_next claimed the card, heystax task show printed the card, the role's job and its history from the packet with no HeyStax call, and the card was reported done. Measured on a real test card: 7 calls and 59,912 bytes before work on the old path, 2 calls and 18,428 bytes with work_next (69% less). The owner's 7 listeners still run CLI 0.4.11 and do not use it yet."
     wording: "one call takes the next card with everything about it"
+
+  - id: job-sized-tools
+    name: "A worker's key lists only the tools for its job (12 for a builder); profile=full lists everything it may call"
+    state: live
+    terms: ['tools for its job', 'profile=full', 'job-sized']
+    evidence: "tabstax#1256 deployed 2026-11-13. Production tools/list with a builder's tsw_live_ key: 12 tools (14,479 bytes); with profile=full (param or ?profile=full on the URL): 108 tools (132,046 bytes). Records and CRM tools appear only with a records grant; role management only for a role that manages roles. Every tool it may call still works when called by name."
+    wording: "a worker's key lists the 12 tools its job needs; add ?profile=full to the address to list everything it may call"
 
   - id: session-summary
     name: "Session summary: when a Claude Code session with the HeyStax plugin ends, five lines go on its card (asked, changed, result, next, branch and PR); a session with no card that changed files gets a done card of its own; chat-only sessions leave nothing"
