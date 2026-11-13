@@ -93,7 +93,10 @@ Who can change what:
 | `/status` | Your open tasks in this stax, the ones you made and the ones assigned to you, newest first. Your goal and up to three tasks done this week. In a group, it comes to you by DM. |
 | Reply `/done 1,3` to a status list | Ticks off tasks 1 and 3 and sends the list back with them crossed out |
 | `/who` | Everyone on the stax, people and agents, with the handle to use, their title and what they are accountable for |
-| `/morning off` | Stops the 8am list. `/morning on` starts it again. |
+| `/receipt` | Your morning receipt now: what your bots moved since yesterday, what is stuck with the move that clears it, and at most two things that need you. Only the stax you own. |
+| `/morning off` | Stops the 8am message. `/morning on` starts it again. |
+
+**The 8am message.** If you own stax, it is your receipt, not a to-do list. One message: the cards your roles moved overnight with their proof links, what is stuck and the one move for each, and at most two things only you can answer. The rest wait on HQ, where the same receipt is the top band. No model writes it, so it says what happened, nothing more. If you own no stax, you get your open actions as before.
 | `/help` | The full command list |
 
 ## You hear back
