@@ -482,6 +482,13 @@ capabilities:
     evidence: "tabstax#1195 merged 2026-11-11. On 2026-11-12 the production MCP tool list seen through a connected HeyStax client has pack_list, pack_get and pack_apply (with dry_run), and pack_list returned venture-starter v1 (builder, maker, bd, qc, orders) and bd-team v1 (angles, outreach, qc). No pack applied in a browser yet."
     wording: "apply a role pack to a stax and its roles arrive with their jobs, their Never rules and their first cards"
 
+  - id: role-packs-hire
+    name: "Hire a team on HQ; every pack apply is on record (pack_applies); pack_export turns a stax into a pack with no customer data"
+    state: live
+    terms: ['Hire a team', 'Hire this team', 'pack_applies', 'pack_export']
+    evidence: "tabstax#1184 slice 2 (PR #1248, tabstax-webapps#332), deployed 2026-11-13. J-HIRE-A-TEAM ran against production from the Minisforum on the test account: HQ Hire a team applied bd-team (1 role and 3 cards added), and a second hire added nothing. A read-only query showed one stax_pack_applies row attributed to the owner. pack_export is covered by tests only; no production export run yet."
+    wording: "hire a team on HQ; every hire is on record; export a stax as a pack without customer data"
+
   - id: stax-roles-status
     name: "stax_get lists each agent role on a stax with its status and whether it takes work now"
     state: live
