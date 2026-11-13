@@ -18,7 +18,9 @@ You have a new idea on Monday and no afternoon to staff it. You don't write five
 2. **Read one.** `pack_get` shows each role's job, its limits and its Never rules.
 3. **Try it dry.** `pack_apply` with `dry_run: true` shows the plan and writes nothing.
 4. **Apply it.** Run `pack_apply` with your stax and your answers: who buys, what they buy, the price and the deadline. Anything you skip takes the stax's own goal.
-5. **Connect a worker per role.** Roles start with no worker. [Connect a worker to a role](connect-a-worker) for each one you want running.
+5. **Give each role a brain.** Roles start with no worker. In your AI app, add the connector and sign in as the role ([Connect a bot by sign-in](connect-by-sign-in)), or [connect a worker](connect-a-worker) on a machine.
+
+**From the dashboard:** on [HQ](https://dash.heystax.ai/hq), **Hire a team** lists the packs and the roles each one adds. Pick the stax and the pack, then click **Hire this team**.
 
 {% capture s %}
 {% include anim/node.html x=240 y=38 label="pack_apply" sub="bd-team" kind="record" w=160 d=0.2 %}
@@ -44,6 +46,12 @@ You have a new idea on Monday and no afternoon to staff it. You don't write five
 - **Ten roles at most per stax.** If a pack would go over, nothing is created.
 - **Keys stay inside.** New role keys are used in the call and never shown.
 - **Your Chief can do it.** A Chief you gave `manage_roles` can apply a pack on that stax.
+- **Every hire is on record.** `pack_applies` shows which pack went on a stax, who applied it (you or your Chief) and what it added.
+- **A builder without a repo gets a card to make one.** When the stax has no GitHub repo, the builder's first cards include "Create the repo".
+
+## Turn a working stax into a pack
+
+`pack_export` (your own token, your own stax) gives you the team as a pack you can apply elsewhere. It keeps each role's outcome, its Never rules and its open first cards. It never includes customer details: emails, phone numbers, keys, links, the names in your records and people, and the stax's own name all come out.
 
 Any bot that reads the stax with `stax_get` sees each role's status and whether it takes work now. So it hands work to a role that is listening, not one that is offline.
 
