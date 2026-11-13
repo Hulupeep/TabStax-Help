@@ -34,6 +34,14 @@ Each key opens only what its holder needs, so your own key never sits inside a b
 
 Each token is shown once. It goes straight into the bot's secret setting, for example its MCP bearer-token header. Never put it in a chat, a Stax, a screenshot or a file.
 
+## Find a bot still using your key
+
+A bot that writes with your personal key shows up as you. You can't tell its work from yours.
+
+HeyStax now notes every write made with your key, and which app sent it. A bot that writes with your key gets a line back on each write: it should get its own role key with `agent_token_issue`, and here are the roles on that stax. Nothing is blocked. If you are chatting with the bot yourself, it is told to ignore the line.
+
+To see who is still on your key, ask any HeyStax client to call `owner_key_usage`. It lists each app with its last write, its writes in the last 7 days and the stax it touched. Your own terminal shows as `heystax-cli`. Anything else is a bot to move. The log keeps 30 days.
+
 ## How it works today
 
 1. **You:** with your own token, call `agent_register` to create the role, then `agent_authorize` it on your Stax (`read`, `work` or `full`).
