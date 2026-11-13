@@ -6,21 +6,21 @@ nav_order: 1
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="HeyStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What you see the first time you open Heystax
+# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">What you see the first time you open TabStax
 
-You've just installed Heystax, pinned it to your browser toolbar, and clicked the icon. This is the very first screen you'll see. It's designed to capture your current browser window—all the tabs you have open right now—and save them as your **first Stax**. This gives you a safe, named workspace you can return to anytime.
+You've just installed TabStax, pinned it to your browser toolbar, and clicked the icon. This is the very first screen you'll see. It's designed to capture your current browser window, all the tabs you have open right now, and save them as your **first Stax**. This gives you a safe, named workspace you can return to anytime.
 
 ---
 
-## Pin HeyStax and open the popup
+## Pin TabStax and open the popup
 
-After installing the Heystax extension:
+After installing the TabStax extension:
 
-1. **Pin the Heystax icon** to your browser toolbar (usually in the top-right corner near other extensions).
+1. **Pin the TabStax icon** to your browser toolbar (usually in the top-right corner near other extensions).
 2. **Click the icon** to open the popup.
 3. The first-time view appears, showing your current tabs ready to become a Stax.
 
-<img src="../screenshots/1%20shopping%20and%20click%20tabstax.png" alt="Clicking Heystax icon in browser" width="800" style="display: block; margin: 20px auto;">
+<img src="../screenshots/1%20shopping%20and%20click%20tabstax.png" alt="Clicking TabStax icon in browser" width="800" style="display: block; margin: 20px auto;">
 
 ---
 
@@ -28,13 +28,13 @@ After installing the Heystax extension:
 
 The main section shows a card that says:
 
-> **👋 No stax yet — let's create your first one!**
+> **👋 No stax yet. Let's create your first one!**
 
 Below that, you'll see a **list of your currently open tabs** (for example: HeyStax Help pages, Gmail, research tabs, whatever you have open right now).
 
 **What this means:**
 
-HeyStax is looking at your current browser window and treating it as a potential workspace. These tabs aren't random—they're probably related to something you're doing right now. HeyStax is offering to save them all together so you can come back to this exact setup later.
+TabStax is looking at your current browser window and treating it as a potential workspace. These tabs aren't random. They're probably related to something you're doing right now. TabStax offers to save them all together so you can come back to this exact setup later.
 
 ---
 
@@ -63,17 +63,17 @@ When you're ready to save this workspace:
 
 1. **Check the name and tags** in the input field (edit if needed).
 2. **Click the "New" button**.
-3. Heystax saves all your currently open tabs together as a **Stax** under that name.
+3. TabStax saves all your currently open tabs together as a **Stax** under that name.
 4. A **Start Page** opens where you can add your **next actions** for this workspace (what you need to do next when you come back to this work).
 
 <img src="../screenshots/3%20start%20page%20and%20next%20actions.png" alt="Start Page with next actions" width="800" style="display: block; margin: 20px auto;">
 
 **After that:**
 
-- **Auto-save:** If you add or remove tabs while working in this Stax, Heystax automatically keeps it updated.
+- **Auto-save:** If you add or remove tabs while working in this Stax, TabStax automatically keeps it updated.
 - **Close safely:** You can confidently close all these tabs (or the whole window) when you're done. Your Stax is saved.
 - **Reopen anytime:** Later, when you want to pick up this work again:
-  - Open the Heystax popup
+  - Open the TabStax popup
   - Find this Stax in "My Stax"
   - Click **"Open All"**
   - All your tabs reopen together, and your next actions appear at the top
@@ -84,7 +84,7 @@ You step back into the same workspace instead of hunting through browser history
 
 ## Now you can…
 
-Now you can stash this whole workspace with one click and trust it'll be there when you're ready to pick up again—no more losing track of tabs or forgetting where you left off.
+Now you can stash this whole workspace with one click and trust it'll be there when you're ready to pick up where your mind left off.
 
 ---
 

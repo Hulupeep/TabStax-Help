@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-12
+checked: 2026-11-13
 
 capabilities:
 
@@ -43,7 +43,7 @@ capabilities:
     name: "heystax listen and heystax run: CLI workers that wait for work, one git worktree per card"
     state: partial
     terms: ['hey listen', 'hey run\b', 'heystax listen', 'heystax run\b']
-    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-12, with no listen or run. wait_for_work is in the production MCP tool list on 2026-11-10."
+    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10."
     wording: "heystax listen runs from the repo today; it is not on npm yet"
 
   - id: cli-rename
@@ -145,7 +145,7 @@ capabilities:
   - id: telegram
     name: "Telegram group to stax, personal linking, actions from messages, standups, /t with urgent and @assign, /status with reply /done 1,3, /who, assignment and done notices, the 8am list"
     state: live
-    evidence: "2026-11-11: tabstax-webapps production deploys READY on Vercel for 0272beb (#285 /t, urgent, @assign), 5dceb5d (#288 slash replies, /status names its Stax), 4387c5c (#289 notices, /who), e9462c1 (#290 reply /done 1,2,4), 5ce0b01 (#291 /who titles), e525c94 (#292). Production database lists migrations 20261110090000 telegram_morning_digest_flag and 20261110130000 telegram_assignee_reply_done as applied. Earlier: t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*."
+    evidence: "2026-11-11: tabstax-webapps production deploys READY on Vercel for 0272beb (#285 /t, urgent, @assign), 5dceb5d (#288 slash replies, /status names its Stax), 4387c5c (#289 notices, /who), e9462c1 (#290 reply /done 1,2,4), 5ce0b01 (#291 /who titles), e525c94 (#292). Production database lists migrations 20261110090000 telegram_morning_digest_flag and 20261110130000 telegram_assignee_reply_done as applied. Earlier: t.me/heystax_bot resolves to 'Heystax'; migrations 20260717-20260720 telegram_*. 2026-11-13: production deploys READY for 252167b (#319 finished notices struck through with Done by, Now with or Card removed; Open PR buttons for what a message names), 93a52f2 (#320 bold state line and What to do rendered), d06fd44 (#321) and 7ef3638 (#322 results with nothing for you arrive as one quiet line)."
     wording: "the HeyStax Telegram bot (@heystax_bot)"
 
   - id: stax-archive
@@ -180,7 +180,7 @@ capabilities:
     name: Bots and people message each other as comments on actions, delivered by the Telegram bot
     state: live
     terms: ['next_actions_comment', 'comments_for_me', 'comments_since']
-    evidence: "tabstax#1161 merged 2026-11-10 (migration 20261110140000 applied, mcp deployed); tabstax-webapps#292 merged 2026-11-10 (comment DMs and reply-as-comment). Epic tabstax#1158."
+    evidence: "tabstax#1161 merged 2026-11-10 (migration 20261110140000 applied, mcp deployed); tabstax-webapps#292 merged 2026-11-10 (comment DMs and reply-as-comment). Epic tabstax#1158. 2026-11-13: the production HeyStax MCP server's instructions tell every agent to write messages to people action first: one bold state line, What to do, What was done (tabstax#1212)."
     wording: "address a comment on an action to @handles; the HeyStax Telegram bot DMs them, and a plain reply comes back as a comment"
 
   # ------------------------------------------------------------- time, money
@@ -273,11 +273,18 @@ capabilities:
     wording: "web code deployed; signed-in display still to verify"
 
   - id: stax-board
-    name: "Stax board: Unassigned, people and agent role columns; no CRM contact columns; fits the window with per-column scroll; hide and reorder columns"
+    name: "Stax board: Unassigned, people and agent role columns; no CRM contact columns; fits the window with per-column scroll; hide and reorder columns; your own column tagged You; Working or Stuck with a blocked count on role cards; Open PR buttons on cards"
     state: partial
     terms: ['stax board']
-    evidence: "webapps #256 (board) merged 2026-11-04 and #296 (board is the default stax view) merged 2026-11-11, Vercel production; webapps #308 (no contact columns, board fits the window, phone header) merged 2026-11-11 18:50; hide a column with its x in webapps PR (Playwright, mocked data); not yet seen signed in"
+    evidence: "webapps #256 (board) merged 2026-11-04 and #296 (board is the default stax view) merged 2026-11-11, Vercel production; webapps #308 (no contact columns, board fits the window, phone header) merged 2026-11-11 18:50; hide a column with its x in webapps PR (Playwright, mocked data); not yet seen signed in. 2026-11-13: Vercel production deploys READY for eefcf0e (#316 You tag on your own column), b481e61 (#317 'Working · N blocked' and 'Stuck · N blocked'), 1f384ef (#318 cards link to the PR, issue or page they name, using the stax's GitHub repo); still not seen signed in"
     wording: "the stax board shows Unassigned, then people, then agent roles; contacts get no column"
+
+  - id: in-mind-switcher
+    name: "In mind: chips under the stax header for pinned stax and stax worked on in the last 10 days (up to 7), one click to switch; kept in this browser"
+    state: live
+    terms: ['in mind']
+    evidence: "tabstax-webapps#312 merged 2026-11-12; Vercel production deploy for b75d22d READY (checked 2026-11-13). Kept in this browser only; account-level list not built. Not yet seen signed in."
+    wording: "the In mind chips on the stax board switch between the stax you are holding in your head, one click each"
 
   - id: agent-claim-rules
     name: "Claim rules for agents: owner access levels (read, work, full), five open claims per stax, locked once claimed, deauthorize releases claims, re-authorize refused while claims are open"
