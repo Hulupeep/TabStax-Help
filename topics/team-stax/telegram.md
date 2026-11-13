@@ -99,6 +99,9 @@ Who can change what:
 - When someone else finishes a task you assigned, you get a notice. When an agent finished it, the notice ends with its result.
 - When an agent picks up a task you made in Telegram, the group sees `picked up`.
 - When an agent asks you a question on a task, it comes by DM. See [Bots ask you questions](messages).
+- An old notice tidies itself. Once the task is done, moved or removed, the bot strikes it through and adds one line: **✓ Done by @builder**, **→ Now with Colm** or **✕ Card removed**.
+- A message that names a PR or an issue gets an **Open PR** button, so you never hunt for the link.
+- An agent's result leads with one bold line of state, then what you need to do. When nothing needs you, it is one quiet line.
 - Money amounts are never posted to a group. An archived stax sends nothing.
 
 ## Run a standup

@@ -12,23 +12,25 @@ Open a stax and you land on its board. There is one column for each actor who ca
 
 ## Why it matters to you
 
-Monday, 08:00. Twelve open actions, two people, four agent roles. You need to know who holds what without opening a single card.
+Monday, 08:00. Twelve open actions, two people, four agent roles. You need to know who holds what without opening a card.
 
-- **Every holder is a column.** People and agents sit side by side, addressed the same way by `@handle`.
-- **Nothing is hidden.** Work that nobody holds sits in Unassigned, where you can't miss it.
-- **Only workers.** Contacts the stax deals with, like a customer in its CRM, never get a column. They are not holding the work.
-- **You can check.** Each card says who added it, who it is assigned to and who claimed it. When an agent assigned it, the card names that agent too: "assigned to @gayathrri0192 by @timebreez-bot".
+- **Every holder is a column.** People and agents sit side by side, each addressed by `@handle`.
+- **Nothing hides.** Work nobody holds sits in Unassigned.
+- **Only workers.** A customer in the stax's CRM never gets a column. They don't hold the work.
+- **You can check.** Each card says who added it, who holds it and who claimed it. When an agent assigned it, the card says so: "assigned to @gayathrri0192 by @timebreez-bot".
 
 ## How to read it
 
-1. **Unassigned** comes first. Move each card in it to a person or a role.
-2. **People** come next: the owner and everyone invited to the stax.
-3. **Agent roles** come last. Each one shows its purpose, its status and whether a worker is connected.
-4. With many columns, scroll the board sideways. The scrollbar sits just under the board, and each column scrolls on its own.
-5. Type in the box at the foot of a column to add work straight to that person or role.
-6. Use **Move to** on a card to hand it to someone else.
-7. Drag a column by its top strip to move it, or use **‹ ›**. **Reset column order** puts it back.
-8. Tap the **×** on a column to hide it. It moves to the **Hidden** row above the board. Tap its name there to bring it back.
+1. **Unassigned** comes first. Move each card to a person or a role.
+2. **People** come next. Your own column carries a **You** tag.
+3. **Agent roles** come last. A role card says **Working · 2 blocked** while it is busy with others waiting, or **Stuck · 2 blocked** when nothing moves.
+4. A card that names a PR or an issue shows an **Open PR** button into the stax's GitHub repo.
+5. Type at the foot of a column to add work to that person or role. Use **Move to** to hand a card on.
+6. Drag a column by its top strip, or use **‹ ›**. Tap **×** to hide it; tap its name in **Hidden** to bring it back.
+
+## Switch stax in one click
+
+Under the stax header sit your **In mind** chips: stax you pinned, plus ones you worked on in the last 10 days, up to 7. Tap one to jump. Pin the stax you are on, or drop a chip. The list lives in this browser for now.
 
 {% capture s %}
 {% include anim/plane.html x=20 y=30 w=440 h=240 label="timebreez stax" d=0 %}
@@ -43,13 +45,11 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 
 ## Scenarios
 
-**The onboarding stax.** Colm owns the timebreez stax. Gaia, a collaborator, runs customer onboarding. Sandra and Mella are the customer's staff, kept as CRM contacts. The board shows Unassigned, Colm, Gaia and the builder role. It does not show Sandra or Mella. A card that says "Ask Sandra for the rota" is Gaia's work, so Colm moves it to Gaia.
+**The onboarding stax.** Gaia runs onboarding on Colm's timebreez stax. Sandra and Mella, the customer's staff, are CRM contacts, so they get no column. "Ask Sandra for the rota" is Gaia's work, so Colm moves it to Gaia.
 
-**The busy venture team.** Alice's stax has five agent roles. On a laptop the last role sits off to the right. She scrolls sideways under the board and reaches it. She doesn't have to scroll to the bottom of the longest column first.
+**The quiet view.** Colm wants only his agent roles tonight. He drags the builder role to the front and hides the rest. Tomorrow he taps **Show all**.
 
-**The quiet view.** Colm only wants to see his agent roles tonight. He drags his builder role to the front and hides Unassigned and the people columns, so the board shows the roles side by side. Tomorrow he taps **Show all**.
-
-**The phone check.** Bob opens the stax on his phone on the train. The columns stack one under another, with the title and buttons on top. He moves one card to `@hubduck-bd` and puts the phone away.
+**The phone check.** Bob opens the stax on the train. The columns stack. He moves one card to `@hubduck-bd` and taps his next stax in **In mind**.
 
 ## What works today
 
@@ -61,6 +61,9 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 | Reorder columns by drag or ‹ ›, kept per stax in this browser | live in the product, not yet seen signed in |
 | Hide a column with its ×, kept per stax in this browser | live in the product, not yet seen signed in |
 | "assigned … by @agent" on cards an agent assigned; a person's assign shows no "by" yet | live in the product, not yet seen signed in |
+| **You** tag on your column; **Working** or **Stuck** with a blocked count on role cards | live in the product, not yet seen signed in |
+| **Open PR** buttons on cards that name a PR, issue or link | live in the product, not yet seen signed in |
+| **In mind** chips, kept in this browser | live in the product, not yet seen signed in |
 | Agent role columns showing whether a worker is connected | web code deployed; signed-in display still to verify |
 
 Now you can see who holds every piece of work on a stax in one look.
