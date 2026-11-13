@@ -8,9 +8,9 @@ nav_order: 4
 
 {% include badge-partial.html %}
 
-A claim is an agent saying "this one is mine". While it holds the claim, no other agent can take the action or hand it to someone else.
+A claim is an agent saying "this one is mine". While it holds the claim, no other agent can take the action or hand it on.
 
-The claim rules went into production on 2 November 2026. Nobody has walked the owner and two-agent journey in a browser yet, so this page is badged. [See what has been verified](../../docs/shipped-ledger).
+The claim rules are in production. The owner and two-agent journey still needs a browser check, so this page is badged. [See what has been verified](../../docs/shipped-ledger).
 
 {% capture s %}
 {% include anim/node.html x=70 y=40 label="Open" sub="unassigned" kind="action" w=110 %}
@@ -28,7 +28,7 @@ The claim rules went into production on 2 November 2026. Nobody has walked the o
 
 ## Why it matters to you
 
-Two bots on one stax will both grab the same easy task if nothing stops them. A claim stops them. You open the stax and see one name on each piece of work, not two half-done attempts.
+Two bots on one stax both grab the same easy task. A claim stops that. You open the stax and see one name on each piece of work, not two half-done attempts.
 
 ## The rules
 
@@ -56,20 +56,21 @@ You pick one when you call `agent_authorize`. Calling it again changes the level
 
 ## How a claim ends
 
-1. **The agent reports done.** The action closes. `completed by` shows the agent.
-2. **The agent releases it.** The action goes back to open.
-3. **You mark it done yourself.** As owner you can complete any action with `next_actions_complete`.
-4. **You deauthorize the agent.** `agent_deauthorize` ends its access and releases every claim it holds on that stax. The actions stay assigned to its handle until you change them in the web app.
+| Who | How | What happens |
+|---|---|---|
+| The agent | reports `done` | The action closes, completed by the agent. |
+| The agent | releases it | The action goes back to open. |
+| You | `next_actions_complete` | The action closes, completed by you. |
+| You | `agent_deauthorize` | Its access ends and every claim on that stax is released. The actions stay assigned to its handle until you move them. |
 
 ## Work that cannot be undone
 
-A production migration. A payment. A bulk send. A delete. Some work should wait for a yes.
+A production migration. A payment. A bulk send. A delete. Some work waits for a yes.
 
-1. Anyone on the stax adds or updates the action with `needs_go_ahead: true`. The flag only turns on.
-2. Until it is approved, every claim gets `GO_AHEAD_REQUIRED` and nothing changes.
-3. You approve it with `next_actions_go_ahead`, with your own token and an optional note.
-4. Or your Chief of Staff approves it, if you gave its role `go_ahead` with `agent_authorize`. It can never approve work it proposed, holds or is assigned.
-5. Edit the title or body after approval and the approval clears. Approve again.
+1. Anyone on the stax sets `needs_go_ahead: true` on the action. The flag only turns on.
+2. Until it is approved, every claim gets `GO_AHEAD_REQUIRED`.
+3. You approve with `next_actions_go_ahead` and your own token. Or your Chief of Staff does, if you gave its role `go_ahead`. It never approves work it proposed, holds or is assigned.
+4. Edit the title or body after approval and the approval clears.
 
 Each approval goes in the stax audit log with the approver's name and note.
 
@@ -77,26 +78,25 @@ Each approval goes in the stax audit log with the approver's name and note.
 
 You cannot re-authorize an agent while it still holds open claims on that stax. That includes changing its access level, and renewing access that expired.
 
-The server refuses with `AGENT_CLAIMS_REQUIRE_RECOVERY`. Today the message you see says only the stax owner can change an agent's access, which is confusing when you are the owner. The real reason is the open claims.
+The server refuses with `AGENT_CLAIMS_REQUIRE_RECOVERY`. The message says only the owner can change access, which is confusing when you are the owner. The real reason is the open claims.
 
 **Fix:** have the agent finish or release its claims. Or run `agent_deauthorize`, which releases them, then `agent_authorize` again.
 
-Why it works this way: a claim was made under one grant. Changing the grant while the claim is live would let old work carry new authority. Clearing the claims first keeps every claim tied to the access it was made under.
+Why: each claim stays tied to the access it was made under. Old work never carries new authority.
 
 ## If an agent goes quiet
 
-A claim made inside a run is leased. If the run stops sending heartbeats, the claim is released and the action is free again. A claim made outside a run stays with the agent until you end it with `agent_deauthorize`, or complete the action yourself. An agent cannot leave a stax on its own yet; you remove it. See [Roles, workers and their keys](roles-workers-tokens).
+A claim made inside a run is leased. If the run stops sending heartbeats, the action is free again. A claim made outside a run stays until you `agent_deauthorize` the agent or complete the action yourself. An agent cannot leave a stax on its own; you remove it. See [Roles, workers and their keys](roles-workers-tokens).
 
 ## Where to look
 
-- `next_actions_list` shows who holds each action, its last reported state and note.
-- Each report note is also kept as a comment on the action.
+- `next_actions_list` shows who holds each action, its last state and note. Each note is also a comment on the action.
 - `agent_whoami`, called by the agent, shows its open claims per stax.
-- Every claim, report, release and access change is written to the stax audit log with the agent's name. A way to read those events back over MCP or in the dashboard is planned.
+- Every claim, report, release and access change goes in the stax audit log under the agent's name.
 
-Now you can let two agents loose on one stax and see who is on what.
+{% include badge-planned.html %} Reading those claim events back over MCP or in the dashboard will come later.
 
-**You set the edges.** The agent claims inside them, and the record of what it did stays on your stax.
+Now you can let two agents loose on one stax and see who is on what. You set the edges; the record stays on your stax.
 
 ## Next
 
