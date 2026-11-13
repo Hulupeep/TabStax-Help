@@ -15,7 +15,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 34 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 35 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 16 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 15 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
@@ -28,7 +28,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | TabStax Chrome extension (save and reopen tabs for a stax) | the TabStax extension for Chrome | Chrome Web Store listing 'TabStax - Pick up where your mind left off' returns 200 (2026-10-25) |
 | hey CLI | the hey CLI (npm i heystax-cli) | npm registry on 2026-11-10: heystax-cli latest 0.1.13 (published 2026-03-14, bin hey); tabstax-cli stops at 0.1.11 (2026-03-09) |
 | MCP server | https://dash.heystax.ai/api/mcp (SSE: https://dash.heystax.ai/api/mcp/sse) | https://dash.heystax.ai/api/mcp returns 200; /api/mcp/sse returns 401 without auth; dash.tabstax.app/api/mcp 301-redirects to dash.heystax.ai (2026-10-25) |
-| AI apps connect with your token; they cannot sign in to HeyStax for you (OAuth connector login retired) | you sign in at dash.heystax.ai and copy your token; your AI app sends it as Authorization: Bearer <token> | OAuth sign-in retired 9 Oct (tabstax#948, #949). tabstax-webapps#281 answers every OAuth discovery path with 404 and its settings page says to use a token connector; its production deployment for 7a0942a is READY (Vercel, 2026-11-10). tabstax#1142 merged 2026-11-09 makes the MCP function send a plain 401 with a token hint. |
+| AI apps can connect with your token | you sign in at dash.heystax.ai and copy your token; your AI app sends it as Authorization: Bearer <token> | Personal and agent tokens in Authorization: Bearer work as before (tabstax#1137 tests, kept by tabstax#1180). Legacy OAuth /oauth/* stays retired (410, checked on prod 2026-11-13). |
+| Connect a bot by sign-in: add the connector, sign in, pick the role it works as; no key is shown | add HeyStax as a connector at https://dash.heystax.ai/api/mcp, sign in, and choose which role the bot works as | tabstax#1180 (PR #1246, tabstax-webapps#330), deployed 2026-11-13. J-CONNECT-BY-SIGN-IN ran against production from the Minisforum on 2026-11-13: discovery, registration, the /mcp/connect page in Chromium, a new role, a tsw_live_ worker token, agent_whoami as that role, work_next, refresh, Disconnect, then WORKER_REVOKED. Not yet tried from Claude.ai, ChatGPT or Grok themselves. |
 | ChatGPT connects over MCP | ChatGPT | TabStax stax goal: ChatGPT MCP connector (tabstax#546) production-verified 2026-04-28; same endpoint live 2026-10-25 |
 | Hosted API reference | the API reference at dash.heystax.ai/settings/mcp/swagger.yaml | https://dash.heystax.ai/settings/mcp/swagger.yaml returns 200 (2026-10-25) |
 | MCP tools: stax, next actions, goals, dates, people | read and write stax, next actions, goals, dates and people | Live tools/list seen through a connected HeyStax MCP client on 2026-10-25: stax_list/get/create/update/delete, stax_audit_log, next_actions_list/add/update/complete/delete, goals_*, dates_*, people_* |
@@ -85,7 +86,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Capability | Docs wording | Evidence |
 |---|---|---|
 | heystax listen and heystax run: CLI workers that wait for work, one git worktree per card | heystax listen runs from the repo today; it is not on npm yet | tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10. |
-| Claude Code connects over MCP with your token; Claude.ai on the web cannot connect without connector login | Claude Code connects with your token; Claude.ai on the web wants to sign in for you, which HeyStax no longer offers | Claude Code takes a token header (tabstax-webapps settings/mcp ConnectWizard, production 7a0942a READY, Vercel 2026-11-10). The same deploy tells Claude.ai users that sign-in and the token-as-OAuth-Client-ID path are gone and to use a token connector instead. Downgraded from live on 2026-11-10. ChatGPT not re-checked. |
+| Claude Code connects over MCP with your token; Claude.ai can add HeyStax as a sign-in connector | Claude Code connects with your token; Claude.ai adds HeyStax as a connector and you sign in and pick a role | Claude Code takes a token header (production 7a0942a READY, Vercel 2026-11-10). Sign-in connect is live on production from 2026-11-13 (tabstax#1180) and shows Claude as verified for claude.ai return addresses, but nobody has yet added the connector from Claude.ai itself. |
 | Additional MCP tools awaiting fresh authenticated production verification: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests | in the deployed function; verify before using | Bundled in production mcp v28 on 2026-10-26; fresh authenticated tools/list and behaviour check still needed |
 | Timesheet approval by a lead | approval is coming | CHANGELOG: approval RPC added, production activation remains separate (tabstax root #976, web #142/#143) |
 | Invoices from approved time, invoice nudges, invoice PDF | invoicing is partly built | CHANGELOG roots #978 and #982: production activation remains separate; render-invoice-pdf function exists; epic tabstax#354 |
@@ -126,7 +127,8 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] hey CLI
 - [ ] MCP server
 - [ ] MCP needs a Pro or Trial plan
-- [ ] AI apps connect with your token; they cannot sign in to HeyStax for you (OAuth connector login retired)
+- [ ] AI apps can connect with your token
+- [ ] Connect a bot by sign-in: add the connector, sign in, pick the role it works as; no key is shown
 - [ ] ChatGPT connects over MCP
 - [ ] Hosted API reference
 - [ ] MCP tools: stax, next actions, goals, dates, people
