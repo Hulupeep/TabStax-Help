@@ -489,6 +489,20 @@ capabilities:
     evidence: "tabstax#1184 slice 2 (PR #1248, tabstax-webapps#332), deployed 2026-11-13. J-HIRE-A-TEAM ran against production from the Minisforum on the test account: HQ Hire a team applied bd-team (1 role and 3 cards added), and a second hire added nothing. A read-only query showed one stax_pack_applies row attributed to the owner. pack_export is covered by tests only; no production export run yet."
     wording: "hire a team on HQ; every hire is on record; export a stax as a pack without customer data"
 
+  - id: cli-up
+    name: "heystax up: one browser sign-in connects every builder role on a machine, makes its folder and starts its listener"
+    state: partial
+    terms: ['heystax up', 'npx heystax']
+    evidence: "tabstax#1236 (PR #1249, localhost sign-in fix #1251), CLI 0.5.1. J-HEYSTAX-UP ran against production from the Minisforum on 2026-11-13: one browser sign-in, the consent page listed the builder role, up made its folder, installed the listener service, and the table said listening; launcher live, health ok, 0 restarts. Runs from the repo build (cli/); not on npm yet, so npx heystax up does not work yet."
+    wording: "heystax up runs from the repo today: one browser sign-in, and every builder role on the machine is listening; it is not on npm yet"
+
+  - id: worker-self-heal
+    name: "A listener replaces a revoked launcher by itself; the role chip says Down or Restarting and gives the fix"
+    state: live
+    terms: ['Restarting', 'self-heal', 'replaces? (a|its) revoked launcher']
+    evidence: "tabstax#1234 (PR #1251, tabstax-webapps#335), deployed 2026-11-13. J-BUILDER-SELF-HEAL ran against production from the Minisforum: a launcher revoked mid-listen was replaced 42 seconds later in the same process, 0 systemd restarts, journal line 'the launcher was revoked; registered a new one and carried on'. The Restarting chip after three failed starts is covered by tests only."
+    wording: "a listener whose launcher was revoked registers a new one and carries on; if it cannot, its role chip says Down or Restarting, with the fix"
+
   - id: stax-roles-status
     name: "stax_get lists each agent role on a stax with its status and whether it takes work now"
     state: live
