@@ -21,10 +21,10 @@ With this, the change goes live while you are on the school run. You read the re
 1. **The builder ships the PR.** A card assigned to `@timebreez-builder` ends with a branch and a pull request, noted on the card.
 2. **The card asks for a go-ahead.** Anything that touches production is flagged as needing one. Workers cannot approve their own work.
 3. **The Chief gives the go-ahead.** It checks the change against your mission and Never rules. You can give it yourself instead.
-4. **CI applies it.** {% include badge-planned.html %} On merge, the release job will apply the database changes in order, then deploy.
+4. **CI applies it.** {% include badge-partial.html %} For HeyStax itself, the release job is built: each merge gets a plan, and it applies only when the owner runs it. For your own products, this will come later.
 5. **The card closes with proof.** {% include badge-planned.html %} The release job will note what went live and when, on the same card.
 
-Steps 1 to 3 work today: irreversible work waits for a go-ahead from you or a Chief you granted go_ahead. Steps 4 and 5 are coming next.
+Steps 1 to 3 work today: irreversible work waits for a go-ahead from you or a Chief you granted go_ahead. Step 4 works only for HeyStax itself. Step 5 is coming next.
 
 {% capture s %}
 {% include anim/node.html x=90 y=40 label="Builder" sub="@timebreez-builder" kind="agent" w=160 %}
@@ -60,7 +60,7 @@ The Chief reads the change, checks it against "never touch a closed pay period",
 
 ## Coming next
 
-{% include badge-planned.html %} Deploy on merge for the HeyStax repo first, then for your own products such as Timebreez. A release that fails will stop, put the error on the card and message you.
+{% include badge-planned.html %} Deploy on merge for your own products, such as Timebreez. A release that fails will stop, put the error on the card and message you.
 
 Now you can hand a change to a role and see it reach production, with every step signed on the card.
 

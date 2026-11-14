@@ -38,5 +38,6 @@ A bot that sends emails from its own memory will email the same school twice, fo
 3. [Work the queue](daily-work.html): follow-ups, replies, stages and counts.
 4. [When the CRM says no](errors.html): every refusal and the fix.
 5. [Reach people on every channel](channels.html): X, LinkedIn, GitHub, Discord, phone and more.
+6. [Run many client stax](coach-board.html): one ranked list of the clients that need a push.
 
 Now you can let a bot run outreach for weeks and still know who was contacted, why, and what they said.
