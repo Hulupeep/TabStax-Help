@@ -68,10 +68,6 @@ A brain-led role may never have a worker. It runs from the top: it hands work ou
 
 **After:** the work did not wait for anyone to wake up, and the lead still knows what happened.
 
-## Coming next
-
-{% include badge-planned.html %} HeyStax will hand every role its brain prompt. A bot connected with its own key will be told who it is when it first calls HeyStax. For a bot you paste into, each role card will have **Copy brain prompt**. Today only the Chief has this, as Copy Chief as prompt on HQ.
-
 Now you can let any bot work your stax, see everything it did under its own name, and swap the brain without losing the job.
 
 **Read next:** [Connect a worker to a role](connect-a-worker) · [Give a worker what it needs](give-a-worker-access) · [Roles, workers and their keys](roles-workers-tokens)

@@ -25,6 +25,7 @@ Your Chief already exists. [Set up in three minutes on HQ](built-in-chief.html),
 5. **[Give it a standing brief](standing-brief.html).** What to do on every run.
 6. **[Link Telegram](../team-stax/telegram.html)** so it can reach you. See [Bots ask you questions](../team-stax/messages.html).
 7. **Watch it from [HQ](https://dash.heystax.ai/hq).** Your desk above every stax.
+8. **[See what the work earned and cost](results.html).** Replies, signups and money, credited to the role.
 
 Plan about 20 minutes the first time.
 

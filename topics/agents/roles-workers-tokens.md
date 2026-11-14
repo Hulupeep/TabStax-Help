@@ -36,11 +36,7 @@ Each token is shown once. It goes straight into the bot's secret setting, for ex
 
 ## Find a bot still using your key
 
-A bot that writes with your personal key shows up as you. You can't tell its work from yours.
-
-HeyStax now notes every write made with your key, and which app sent it. A bot that writes with your key gets a line back on each write: it should get its own role key with `agent_token_issue`, and here are the roles on that stax. Nothing is blocked. If you are chatting with the bot yourself, it is told to ignore the line.
-
-To see who is still on your key, ask any HeyStax client to call `owner_key_usage`. It lists each app with its last write, its writes in the last 7 days and the stax it touched. Your own terminal shows as `heystax-cli`. Anything else is a bot to move. The log keeps 30 days.
+A bot on your personal key writes as you. Ask any HeyStax client to call `owner_key_usage`: it lists each app still writing with your key, its last write and the stax it touched. `heystax-cli` is your own terminal. Anything else is a bot to move to its own role key. Nothing is blocked, and each such bot is told how to switch.
 
 ## How it works today
 
@@ -87,33 +83,25 @@ The chain is: **your key → Chief of Staff → role → workers**. You set dire
 {% endcapture %}
 {% include anim/figure.html viewbox="0 0 480 340" label="You hand the mission to the Chief of Staff, who creates three roles; workers fill them and a blocker goes to the Chief" caption="You give @chief the mission and goal once, then step back. @chief creates three roles. A worker fills each one, and when Codex is swapped for Claude Code the @builder role stays. @builder gets blocked on a price band. The question goes to @chief, not to you, and @chief answers." svg=s %}
 
-Blockers stop at the Chief, not at you. The Chief answers, or hands the question to the role that can.
-
-The Chief also hears when work runs out. When a worker's run ends, its queue is empty, an action fails three times, or work waits on a role with nobody home, HeyStax records an agent event. On the board each role shows live, missed or nobody home. The Chief reads those events and hands out the next step toward the goal. A blocked report stays on the action, and the Chief reads it there.
-
+Blockers stop at the Chief, not at you. The Chief also hears when a run ends, a queue empties, a card fails three times or work waits on a role with nobody home. It hands out the next step toward the goal.
 
 ## How work reaches a worker
 
 | Worker | How it hears about new work |
 |---|---|
-| **A hosted bot**, such as Grok Bot | Its launcher has a push URL. When work is assigned to its role, HeyStax sends a signed wake that carries only IDs. If the bot doesn't answer, it tries again at 1, 5 and 30 minutes. Every attempt is listed by `push_deliveries_list`. |
-| **A worker on your machine**, such as Claude Code or Codex | `heystax listen` calls `wait_for_work` and holds the line open. Your machine only makes outbound calls. When a card arrives, it starts a run, claims the card and starts Claude Code or Codex on it in its own git worktree, so the folder you work in is never touched. {% include badge-partial.html %} Install it from the repo for now. |
+| **A hosted bot**, such as Grok Bot | A signed wake to its push URL, carrying only IDs. Retries at 1, 5 and 30 minutes. `push_deliveries_list` shows every attempt. |
+| **A worker on your machine**, such as Claude Code or Codex | {% include badge-partial.html %} `heystax listen` takes the next card with `work_next` and starts the agent in its own git worktree. Your machine only makes outbound calls. Install it from the repo for now. |
 
-You can pause a launcher or cap its runs per hour. A paused worker gets no pushes and `wait_for_work` tells it to wait.
+You can pause a launcher or cap its runs per hour.
 
-## Irreversible work waits for a go-ahead
+Irreversible work, such as a production migration, waits for a go-ahead from you, or from a Chief you granted `go_ahead`. Never on work the Chief proposed or holds.
 
-Most work runs without asking. Work that can't be undone, such as a production migration, waits for a go-ahead. Your Chief can give it if you granted `go_ahead`, but never on work it proposed or work assigned to it. You can always give it with your own key.
+## Connect a worker
 
-## Set up a worker in one step {% include badge-partial.html %}
-
-`heystax connect` works today if you install the CLI from the repo. It is not on npm yet.
-
-1. On the role card, open **How to connect a worker** and press **Get a key**. Then, in the folder the worker should work in, run `heystax connect` and paste it. [Full steps](connect-a-worker).
-2. It saves a worker key for that folder. Your pasted key is not kept. Two folders on one machine can be two different roles.
-3. It writes a standing order, so the CLI tells HeyStax whatever it does: `heystax task start`, `note` and `done` for work you start yourself.
-4. `heystax listen --install` keeps that folder's worker running in the background.
-
-`heystax` sits beside the older `hey` CLI for now. They will become one command.
+| You want | Read |
+|---|---|
+| A bot in an AI app, with no key to copy | [Connect a bot by sign-in](connect-by-sign-in) |
+| Every builder role on this computer, one command | [Start every builder with one command](heystax-up) |
+| One folder as one role | [Connect a worker to a role](connect-a-worker) |
 
 [See what has been verified](../../docs/shipped-ledger).

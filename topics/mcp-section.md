@@ -7,32 +7,34 @@ has_children: true
 
 # AI Integrations (MCP)
 
-HeyStax connects to AI assistants through the **Model Context Protocol (MCP)**. This lets Claude and other AI tools read your Stax, manage Next Actions, and log breadcrumbs, all through natural conversation.
+Your AI app reads and writes your stax over MCP, the Model Context Protocol. The address is `https://dash.heystax.ai/api/mcp`.
 
-**What you can do:**
+## Why it matters to you
 
-- "What are my stax?": list all your projects
-- "Add 'review PR #42' to WebApp": add a next action
-- "Mark the first action on WebApp as done": complete an action
-- "What's on my plate?": see all pending actions across stax
-- "Call Ana is waiting on Ana until Thursday": set where an action stands (next, decision, waiting, blocked or parked), who it waits on, when to look again, and how anyone can tell it is done. The same state shows on the dashboard's List cards.
+You plan in Claude on Tuesday and ask ChatGPT on Thursday. Both open the same stax, the same next actions, the same history. Your context sits in your account, not in one chat.
 
-**Supported integrations:**
+## Connect your app
 
-| Integration | Status | How |
-|------------|--------|-----|
-| [Claude Code (CLI)](mcp-claude-code) | Live | One command with your token |
-| [Claude.ai (web)](mcp-claude-ai) | Not today | It wants to sign in to HeyStax for you. HeyStax needs your token instead |
-| ChatGPT | Live | Existing MCP connection; client-specific steps are being refreshed |
+| App | How | State |
+|---|---|---|
+| [Claude Code](mcp-claude-code) | One command with your token | Live |
+| [Claude.ai](mcp-claude-ai) | Add the connector, sign in, pick a role | Live on HeyStax's side; not yet tried from Claude.ai itself |
+| ChatGPT | The MCP connector | Live |
+| Grok Bot and other apps | [Connect a bot by sign-in](agents/connect-by-sign-in), or send your token | Live on HeyStax's side; check it in your app |
 
-{% include badge-partial.html %}
+MCP needs a **Pro** or **Trial** plan.
 
-**Agent peer pilot:** a worker can have its own name, claim a Next Action and report a blocker or result on the Stax. The backend is deployed; the complete owner/worker/browser journey still needs a live check. [See what it means in plain language](agents/). To set one up, see [Connect a worker to a role](agents/connect-a-worker).
+## What to ask
 
-{% include badge-partial.html %}
+| Say | What happens |
+|---|---|
+| "What are my stax?" | Lists your stax |
+| "Add 'review PR #42' to WebApp" | Adds a next action |
+| "Mark the first action on WebApp as done" | Completes it |
+| "Call Ana is waiting on Ana until Thursday" | Sets where the action stands, who it waits on and when to look again |
 
-A worker can wait for work and pick it up as soon as it is assigned, and a launcher with a push URL is woken when work arrives. This is in production and still being checked end to end. Public worker installation is planned.
+## Give work to agents
 
----
+An agent works as a role on your stax, with its own key and its own column. Start at [Agents on your stax](agents/).
 
-**Requirements:** HeyStax account with **Pro** or **Trial** plan.
+Now you can open the same work in any AI app and pick up where you left off.
