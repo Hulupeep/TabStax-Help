@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-13
+checked: 2026-11-14
 
 capabilities:
 
@@ -358,10 +358,10 @@ capabilities:
 
   - id: deploy-on-merge
     name: "Deploy on merge: CI applies database changes and deploys after a go-ahead"
-    state: planned
+    state: partial
     terms: ['deploy on merge', 'CI release', 'release job']
-    evidence: "tabstax#1174 open (Hands off epic #1173), nothing built as of 2026-11-11. Needs two GitHub secrets set by the owner."
-    wording: "on merge, a release job will apply the database changes and deploy"
+    evidence: "tabstax#1250 (#1174) merged 2026-11-13 21:48Z, actions pinned in #1269 (2026-11-14 00:27Z). For the HeyStax repo only: every merge that touches migrations or the MCP server gets a release plan, and the owner's Run workflow applies it. It cannot reach production until the owner adds two secrets; no release run seen as of 2026-11-14. GitHub's plan refused a required-reviewer rule, so the go-ahead is the owner's Run workflow, not the Chief's. Nothing writes back to the card yet. Not available for your own products."
+    wording: "for HeyStax itself, the release job is built and waits for the owner to run it; for your own products it is coming next"
 
   - id: crm-angles
     name: "Outreach angles, campaigns, stages and a suppression list on a stax (crm_* tools)"
@@ -432,13 +432,6 @@ capabilities:
     terms: ['(?-i:heystax access)']
     evidence: "tabstax#1203 merged 2026-11-11 18:04; CLI installs from the repo, not yet rebuilt and run on the owner's machine."
     wording: "heystax access shows what a worker can reach and how to fix each gap"
-
-  - id: brain-prompt
-    name: "Brain prompt for every role: agent_whoami tells a connected outside brain who it is and how it works; Copy brain prompt on each role card for brains you paste into"
-    state: planned
-    terms: ['brain prompt', 'Copy brain prompt']
-    evidence: "tabstax#1205 filed 2026-11-12. Only the Chief has a generated prompt today (Copy Chief as prompt on HQ)."
-    wording: "HeyStax will tell an outside brain which role it is, or give you the text to paste"
 
   - id: telegram-bug-desk
     name: "Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs"
@@ -544,6 +537,34 @@ capabilities:
     terms: ['Done means checked', 'verified done', 'check fails?']
     evidence: "tabstax#1182 (PR #1265, from the listener's #1255), migration 20261114030000 applied and mcp deployed 2026-11-13. J-VERIFIED-DONE on production (test account): a card checking the help site closed with proof (status 200); a card checking a missing help page was reported done, fetched by HeyStax and reopened the card with '404 at /TabStax-Help/j1182-not-a-page' and told the worker. The role setting a check on its own card was refused (CHECK_NOT_YOURS)."
     wording: "put a check on a card and it closes only when HeyStax's own check passes; a fail reopens it with the reason"
+
+  - id: outcome-events
+    name: "Outcome events: replies, signups, trials and Stripe money recorded once per source event and credited to the role and card whose CRM send came last in the 60 days before; the goal board's MRR comes from Stripe and says not connected instead of 0 (outcomes_list, outcome_connect)"
+    state: live
+    terms: ['outcomes_list', 'outcome_connect', 'outcome events?', 'what the work earned']
+    evidence: "tabstax#1266 (#1181) merged 2026-11-13 23:55Z. 2026-11-14: outcomes_list and outcome_connect are in the production MCP tool list; outcomes_list on the TabStax stax returned a summary with crm connected, stripe and webhook not_connected, and mrr 'not connected'. No Stripe source connected or event seen yet."
+    wording: "connect Stripe or your product's signups to a stax, and each reply, signup or payment is credited to the role whose send came before it; MRR says not connected until a source is"
+
+  - id: run-spend
+    name: "Run cost: a run can report its model, tokens and cost on run_end (self-reported, never guessed); stax_get shows the stax's month-to-date spend by role"
+    state: live
+    terms: ['cost_usd', 'month-to-date spend', 'spend_usd', 'runs_without_cost']
+    evidence: "tabstax#1235 (#1186 slice 1) merged 2026-11-13 18:17Z. 2026-11-14: the production run_end schema takes model, input_tokens, output_tokens and cost_usd; the production stax_get description lists spend (spend_usd, by_source, runs, runs_without_cost, by_role). Not seen in a browser."
+    wording: "a worker can report what a run cost when it ends; the stax shows this month's spend by role, and runs that reported nothing are counted, not priced"
+
+  - id: coach-board
+    name: "Coach board: one ranked read across every client stax a coach runs; needs a push first (blocked card, reply waiting, no goal, silent 48 hours, no outreach in 7 days), then moving, then closed; each row has one verb-first move and its one-tap routes (coach_board, coach_board_configure)"
+    state: live
+    terms: ['coach_board', 'coach board', 'needs a push']
+    evidence: "tabstax#1268 (#1218) merged 2026-11-14 00:18Z. 2026-11-14: coach_board and coach_board_configure are in the production MCP tool list; coach_board returned a ranked result (0 rows, no client stax configured yet). Its web page is not in production; read it through an AI app."
+    wording: "ask your AI app for the coach board: every client stax, the ones that need a push first, each with the next move"
+
+  - id: receipt-share
+    name: "Share a receipt: a public, expiring, revocable link to one redacted receipt (receipt_share, receipt_share_list, receipt_share_revoke); counts only by default; a weekly page on Mondays if you turn it on"
+    state: partial
+    terms: ['receipt_share', 'share a receipt', 'receipt link']
+    evidence: "tabstax#1267 (#1185) merged 2026-11-14 00:08Z. 2026-11-14: receipt_share, receipt_share_list, receipt_share_revoke and receipt_share_weekly are in the production MCP tool list, and receipt_share_list returned no links and weekly off. The page a link opens is the web half (tabstax-webapps#338), not merged or deployed yet, so a link has nowhere to open."
+    wording: "you can make a receipt link from your AI app today; the page it opens is coming next"
 
   - id: stax-roles-status
     name: "stax_get lists each agent role on a stax with its status and whether it takes work now"
