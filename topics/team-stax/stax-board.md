@@ -31,7 +31,7 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 
 ## Switch stax in one click
 
-Under the stax header sit your **In mind** chips: stax you pinned, plus ones you worked on in the last 10 days, up to 7. Tap one to jump. Pin the stax you are on, or drop a chip. The list lives in this browser for now.
+In the top right of the stax header sit your **In mind** chips: stax you pinned, plus ones you worked on in the last 10 days, up to 7. Tap one to jump. Pin the stax you are on, or drop a chip. The list lives in this browser for now.
 
 {% capture s %}
 {% include anim/plane.html x=20 y=30 w=440 h=240 label="timebreez stax" d=0 %}
@@ -67,16 +67,19 @@ Under the stax header sit your **In mind** chips: stax you pinned, plus ones you
 | **In mind** chips, kept in this browser | live in the product, not yet seen signed in |
 | Agent role columns showing whether a worker is connected | web code deployed; signed-in display still to verify |
 | Scroll rail with **‹ ›** above the columns | live in the product, not yet seen signed in |
+| Moving · Stuck · Needs you, one-line goals with **Stale**, quiet roles folded | live in the product, not yet seen signed in |
 
-## Coming next
+## Start with what needs you
 
-{% include badge-planned.html %}
+{% include badge-partial.html %}
 
 Monday, 08:00. You open Hubduck · Sell and want three answers before coffee.
 
-- **Moving · Stuck · Needs you** will sit at the top. "Moving 3" counts roles that acted in the last hour, so the board never says nothing is happening while your bots work.
-- A **Needs you** strip will list what only you can unblock: a card on your column, a role holding work that nothing runs, three cards waiting for a brain's next turn. One button each takes you to the column.
-- **Goals** will fit on one line each, three at a time. A goal that names a date that has passed will say **Stale**. Goals are set by you and the Chief; the Chief works back from each one before it writes it.
-- **Quiet roles** with no work and nothing listening for a week will fold to a thin strip at the end, so the roles that are moving come first.
+- **Moving · Stuck · Needs you** sits at the top. "Moving 3" counts roles that acted in the last hour, so the board never says nothing is happening while your bots work.
+- The **Needs you** strip lists what only you can unblock: a card on your column, a role holding work that nothing runs, cards waiting for a brain's next turn. One button each takes you to the column.
+- **Goals** fit on one line each, three at a time. Tap one to read it whole. A goal that names a date that has passed says **Stale**. Goals are set by you and the Chief.
+- **Quiet roles** with no work and nothing listening for a week fold to a thin strip at the end. Tap one to open it.
+
+This is live in the product. It has not yet been seen signed in on a real stax.
 
 Now you can see who holds every piece of work on a stax in one look.
