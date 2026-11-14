@@ -675,3 +675,10 @@ capabilities:
     terms: ['comment wakes?', 'agent\\.comment_addressed']
     evidence: "2026-11-14: push today fires on work assigned and on Chief events (#1008); no event for a comment addressed to a role. The Chief filed card 65e56771 for @heystax-builder. Workers that long-poll already wake on comments (wait_for_work comments_since, #1159)."
     wording: "a comment addressed to a role will wake that role's launchers by push"
+
+  - id: wake-key
+    name: "A wake address can carry the bot's own key, so a keyed webhook (a Grok Bot routine) can be woken by push"
+    state: planned
+    terms: ['wake key']
+    evidence: "2026-11-14: HookTunnel cannot add a target's auth header to a forwarded wake (hooktunnel-web 79eeee0). Fix tabstax#1308: write-only push_auth_header/push_auth_value on launcher_register. Being built 14 Nov; prod migration needs Colm's go-ahead."
+    wording: "you will be able to give a wake address the bot's own key, so a keyed webhook wakes by push"

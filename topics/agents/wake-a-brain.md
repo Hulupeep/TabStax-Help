@@ -26,14 +26,13 @@ With a wake address, the Chief hears about it at 10:05. The two-hour check stays
 
 ## How to do it with Grok Bot
 
-Grok Bot routines can start from a webhook. That routine URL wants its own sender key. HeyStax signs with its own secret instead, so a relay sits in the middle: HookTunnel takes the HeyStax wake and passes it on with the routine's key, and keeps a log of each one.
+Grok Bot routines can start from a webhook, but that URL only answers a call that carries the routine's own sender key. HeyStax signs every wake with its own secret, and a relay cannot add the key for you. So today a Grok Bot brain wakes on its schedule:
 
-1. In Grok Bot, open the role's webhook routine and copy its **webhook URL** and **sender key**.
-2. In HookTunnel, make a hook that forwards to that URL with that key. Keep the key in HookTunnel, never in a chat or a card.
-3. Ask the bot to call `launcher_register` with kind `hosted`, a label, and the HookTunnel hook URL as `push_url`. It gets a signing secret back once. Store it in the hook.
-4. Give the routine one rule: "on every wake, ignore the body, call `agent_events_list` and `comments_for_me`, read the cards, then act."
-5. Keep a slow routine, every two hours, that does the same. That catches anything a wake missed.
-6. For GitHub, add a repo webhook (pull request, checks, merged) that points at another hook to the same routine.
+1. Give the role a routine that runs every two hours, or as often as you like.
+2. Its one rule: "call `agent_events_list` and `comments_for_me`, read the cards, then act."
+3. For GitHub events, point a repo webhook (pull request, checks, merged) at a routine of its own.
+
+{% include badge-planned.html %} **Coming next:** a wake key on the wake address. You paste the routine's sender key into HeyStax once, HeyStax sends it with every wake, and the brain wakes within a minute. The two-hour routine stays as the safety net.
 
 ## Other brains
 
@@ -41,7 +40,7 @@ Grok Bot routines can start from a webhook. That routine URL wants its own sende
 |---|---|---|
 | Claude Code or Codex on your machine | `heystax listen`: it waits on HeyStax and starts within a minute | Yes, comments included |
 | Hermes, or any bot with an HTTPS address | Its own URL as `push_url`; check `X-HeyStax-Signature` | Yes |
-| A bot whose webhook needs its own key | HookTunnel in the middle, as above | Yes |
+| A bot whose webhook needs its own key, such as Grok Bot | Its schedule today; a wake key is coming next | No |
 | A chat with no routine | Only when you open the chat | No wake |
 
 To check a signature: compute HMAC SHA-256 of `timestamp.body` with the launcher's secret, where the timestamp is the `X-HeyStax-Timestamp` header. Compare it with the hex after `sha256=`.
