@@ -286,6 +286,13 @@ capabilities:
     evidence: "webapps #256 (board) merged 2026-11-04 and #296 (board is the default stax view) merged 2026-11-11, Vercel production; webapps #308 (no contact columns, board fits the window, phone header) merged 2026-11-11 18:50; hide a column with its x in webapps PR (Playwright, mocked data); not yet seen signed in. 2026-11-13: Vercel production deploys READY for eefcf0e (#316 You tag on your own column), b481e61 (#317 'Working · N blocked' and 'Stuck · N blocked'), 1f384ef (#318 cards link to the PR, issue or page they name, using the stax's GitHub repo); still not seen signed in"
     wording: "the stax board shows Unassigned, then people, then agent roles; contacts get no column"
 
+  - id: board-handoff-note
+    name: "Say why when you hand a card on: Move to opens a note for the new holder; Comment on any card with a For picker; both reach the addressee like next_actions_comment"
+    state: planned
+    terms: ['handoff note', 'move and send note']
+    evidence: "tabstax#1275 filed 2026-11-14; tabstax-webapps#345 open (Playwright journey J-BOARD-HANDOFF-NOTE 6/6 on mocked data). Not merged, so not in production."
+    wording: "a note with the handoff is coming; today, comment on the card from MCP or Telegram"
+
   - id: in-mind-switcher
     name: "In mind: chips under the stax header for pinned stax and stax worked on in the last 10 days (up to 7), one click to switch; kept in this browser"
     state: live
