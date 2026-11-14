@@ -300,10 +300,10 @@ capabilities:
     wording: "the board will lead with what is moving, what is stuck and what needs you"
   - id: board-handoff-note
     name: "Say why when you hand a card on: Move to opens a note for the new holder; Comment on any card with a For picker; both reach the addressee like next_actions_comment"
-    state: planned
+    state: partial
     terms: ['handoff note', 'move and send note']
-    evidence: "tabstax#1275 filed 2026-11-14; tabstax-webapps#345 open (Playwright journey J-BOARD-HANDOFF-NOTE 6/6 on mocked data). Not merged, so not in production."
-    wording: "a note with the handoff is coming; today, comment on the card from MCP or Telegram"
+    evidence: "tabstax#1275; tabstax-webapps#345 merged 2026-11-14 09:43Z (Vercel production deploy on merge). Playwright journey J-BOARD-HANDOFF-NOTE 6/6 on mocked data; not yet seen signed in on real data."
+    wording: "when you move a card, add a note; the new holder gets it"
 
   - id: in-mind-switcher
     name: "In mind: chips under the stax header for pinned stax and stax worked on in the last 10 days (up to 7), one click to switch; kept in this browser"
