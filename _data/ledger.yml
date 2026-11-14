@@ -295,7 +295,7 @@ capabilities:
   - id: board-needs-you
     name: "Stax board leads with Moving · Stuck · Needs you, and a Needs you strip with one action per row; one-line goal chips with a Stale tag; quiet roles fold to a strip and live roles come first"
     state: planned
-    terms: ['needs you', 'stale goal', 'quiet role']
+    terms: ['needs you strip', 'stale goal', 'quiet role']
     evidence: "tabstax#1282, #1283, #1284 filed 2026-11-14 from a JTBD review of Hubduck · Sell. tabstax-webapps#347 open (Playwright J-BOARD-NEEDS-YOU, J-BOARD-GOALS, J-BOARD-QUIET on mocked data). Not merged, so not in production."
     wording: "the board will lead with what is moving, what is stuck and what needs you"
   - id: board-handoff-note
