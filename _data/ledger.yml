@@ -294,10 +294,10 @@ capabilities:
     wording: "a scroll rail with ‹ › arrows sits right above the columns"
   - id: board-needs-you
     name: "Stax board leads with Moving · Stuck · Needs you, and a Needs you strip with one action per row; one-line goal chips with a Stale tag; quiet roles fold to a strip and live roles come first"
-    state: planned
+    state: partial
     terms: ['needs you strip', 'stale goal', 'quiet role']
-    evidence: "tabstax#1282, #1283, #1284 filed 2026-11-14 from a JTBD review of Hubduck · Sell. tabstax-webapps#347 open (Playwright J-BOARD-NEEDS-YOU, J-BOARD-GOALS, J-BOARD-QUIET on mocked data). Not merged, so not in production."
-    wording: "the board will lead with what is moving, what is stuck and what needs you"
+    evidence: "tabstax#1282, #1283, #1284. tabstax-webapps#347 merged 2026-11-14 (860ab23); Vercel production deploy on merge. Playwright J-BOARD-NEEDS-YOU, J-BOARD-GOALS, J-BOARD-QUIET pass on mocked data. Not yet seen signed in on real data. Goal writes by agents limited to the Chief: tabstax#1286 merged 2026-11-14 (7bf586f), mcp deploy on the owner's machine."
+    wording: "the board leads with what is moving, what is stuck and what needs you"
   - id: board-handoff-note
     name: "Say why when you hand a card on: Move to opens a note for the new holder; Comment on any card with a For picker; both reach the addressee like next_actions_comment"
     state: partial
