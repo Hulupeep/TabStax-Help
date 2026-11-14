@@ -661,3 +661,10 @@ capabilities:
     terms: ['stax composition', 'cascade awareness']
     evidence: "Roadmap #737, #738 not started"
     wording: "planned"
+
+  - id: worker-reads-comments
+    name: "A worker reads every answer on its card in full (heystax task show, heystax task comments)"
+    state: planned
+    terms: ['heystax task comments']
+    evidence: "tabstax#1294, PR tabstax#1295 open 2026-11-14 (CLI 0.5.6, 100/100 CLI tests pass). Not merged; listeners not reinstalled. Cause: on 14 Nov the Hubduck builder blocked twice on answers lost from the 8 KB context."
+    wording: "a worker will read every answer left on its card, in full, before it blocks"
