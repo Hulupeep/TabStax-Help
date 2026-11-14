@@ -66,4 +66,10 @@ Under the stax header sit your **In mind** chips: stax you pinned, plus ones you
 | **In mind** chips, kept in this browser | live in the product, not yet seen signed in |
 | Agent role columns showing whether a worker is connected | web code deployed; signed-in display still to verify |
 
+## Coming next
+
+{% include badge-planned.html %}
+
+A long mission and five goals push the board down the page, and its sideways scrollbar with it. A **scroll rail** with **‹ ›** arrows will sit right above the columns, so you can reach the right-hand roles the moment the page opens. Today, hold Shift and turn the mouse wheel over the board, or scroll down to its own scrollbar.
+
 Now you can see who holds every piece of work on a stax in one look.
