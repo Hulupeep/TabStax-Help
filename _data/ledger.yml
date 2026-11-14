@@ -286,6 +286,12 @@ capabilities:
     evidence: "webapps #256 (board) merged 2026-11-04 and #296 (board is the default stax view) merged 2026-11-11, Vercel production; webapps #308 (no contact columns, board fits the window, phone header) merged 2026-11-11 18:50; hide a column with its x in webapps PR (Playwright, mocked data); not yet seen signed in. 2026-11-13: Vercel production deploys READY for eefcf0e (#316 You tag on your own column), b481e61 (#317 'Working · N blocked' and 'Stuck · N blocked'), 1f384ef (#318 cards link to the PR, issue or page they name, using the stax's GitHub repo); still not seen signed in"
     wording: "the stax board shows Unassigned, then people, then agent roles; contacts get no column"
 
+  - id: board-scroll-rail
+    name: "Stax board scroll rail: a sideways scrollbar with one-column arrows right above the columns, so the right-hand columns are reachable without scrolling down past a long mission and goals"
+    state: planned
+    terms: ['scroll rail']
+    evidence: "Colm, 2026-11-14: had to scroll to the bottom of Hubduck · Sell to reach the right columns. tabstax-webapps#346 open (Playwright J-BOARD-RAIL plus board-fit suite 9/9 on mocked data). Not merged, so not in production."
+    wording: "a scroll rail with ‹ › arrows above the columns is coming; today, scroll down to the board's own scrollbar or use Shift and the mouse wheel"
   - id: board-handoff-note
     name: "Say why when you hand a card on: Move to opens a note for the new holder; Comment on any card with a For picker; both reach the addressee like next_actions_comment"
     state: planned
