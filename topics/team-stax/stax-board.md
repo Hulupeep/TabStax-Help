@@ -25,7 +25,7 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 2. **People** come next. Your own column carries a **You** tag.
 3. **Agent roles** come last. A role card says **Working · 2 blocked** while it is busy with others waiting, or **Stuck · 2 blocked** when nothing moves.
 4. A card that names a PR or an issue shows an **Open PR** button into the stax's GitHub repo.
-5. Type at the foot of a column to add work to that person or role. Use **Move to** to hand a card on. Soon you can [say why](handoff-note.html) as you do.
+5. Type at the foot of a column to add work to that person or role. Use **Move to** to hand a card on. Add a note to [say why](handoff-note.html).
 6. Drag a column by its top strip, or use **‹ ›**. Tap **×** to hide it; tap its name in **Hidden** to bring it back.
 7. Many roles? Use the **scroll rail** right above the columns. Its **‹ ›** arrows step one column, so the right-hand roles are in reach the moment the page opens.
 
