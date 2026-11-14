@@ -27,6 +27,7 @@ Monday, 08:00. Twelve open actions, two people, four agent roles. You need to kn
 4. A card that names a PR or an issue shows an **Open PR** button into the stax's GitHub repo.
 5. Type at the foot of a column to add work to that person or role. Use **Move to** to hand a card on. Soon you can [say why](handoff-note.html) as you do.
 6. Drag a column by its top strip, or use **‹ ›**. Tap **×** to hide it; tap its name in **Hidden** to bring it back.
+7. Many roles? Use the **scroll rail** right above the columns. Its **‹ ›** arrows step one column, so the right-hand roles are in reach the moment the page opens.
 
 ## Switch stax in one click
 
@@ -65,11 +66,17 @@ Under the stax header sit your **In mind** chips: stax you pinned, plus ones you
 | **Open PR** buttons on cards that name a PR, issue or link | live in the product, not yet seen signed in |
 | **In mind** chips, kept in this browser | live in the product, not yet seen signed in |
 | Agent role columns showing whether a worker is connected | web code deployed; signed-in display still to verify |
+| Scroll rail with **‹ ›** above the columns | live in the product, not yet seen signed in |
 
 ## Coming next
 
 {% include badge-planned.html %}
 
-A long mission and five goals push the board down the page, and its sideways scrollbar with it. A **scroll rail** with **‹ ›** arrows will sit right above the columns, so you can reach the right-hand roles the moment the page opens. Today, hold Shift and turn the mouse wheel over the board, or scroll down to its own scrollbar.
+Monday, 08:00. You open Hubduck · Sell and want three answers before coffee.
+
+- **Moving · Stuck · Needs you** will sit at the top. "Moving 3" counts roles that acted in the last hour, so the board never says nothing is happening while your bots work.
+- A **Needs you** strip will list what only you can unblock: a card on your column, a role holding work that nothing runs, three cards waiting for a brain's next turn. One button each takes you to the column.
+- **Goals** will fit on one line each, three at a time. A goal that names a date that has passed will say **Stale**. Goals are set by you and the Chief; the Chief works back from each one before it writes it.
+- **Quiet roles** with no work and nothing listening for a week will fold to a thin strip at the end, so the roles that are moving come first.
 
 Now you can see who holds every piece of work on a stax in one look.

@@ -288,10 +288,16 @@ capabilities:
 
   - id: board-scroll-rail
     name: "Stax board scroll rail: a sideways scrollbar with one-column arrows right above the columns, so the right-hand columns are reachable without scrolling down past a long mission and goals"
-    state: planned
+    state: partial
     terms: ['scroll rail']
-    evidence: "Colm, 2026-11-14: had to scroll to the bottom of Hubduck · Sell to reach the right columns. tabstax-webapps#346 open (Playwright J-BOARD-RAIL plus board-fit suite 9/9 on mocked data). Not merged, so not in production."
-    wording: "a scroll rail with ‹ › arrows above the columns is coming; today, scroll down to the board's own scrollbar or use Shift and the mouse wheel"
+    evidence: "Colm, 2026-11-14: had to scroll to the bottom of Hubduck · Sell to reach the right columns. tabstax-webapps#346 merged 2026-11-14 (a9eb9f2), Vercel production deploy completed; Playwright J-BOARD-RAIL on mocked data. Not yet seen signed in."
+    wording: "a scroll rail with ‹ › arrows sits right above the columns"
+  - id: board-needs-you
+    name: "Stax board leads with Moving · Stuck · Needs you, and a Needs you strip with one action per row; one-line goal chips with a Stale tag; quiet roles fold to a strip and live roles come first"
+    state: planned
+    terms: ['needs you', 'stale goal', 'quiet role']
+    evidence: "tabstax#1282, #1283, #1284 filed 2026-11-14 from a JTBD review of Hubduck · Sell. tabstax-webapps#347 open (Playwright J-BOARD-NEEDS-YOU, J-BOARD-GOALS, J-BOARD-QUIET on mocked data). Not merged, so not in production."
+    wording: "the board will lead with what is moving, what is stuck and what needs you"
   - id: board-handoff-note
     name: "Say why when you hand a card on: Move to opens a note for the new holder; Comment on any card with a For picker; both reach the addressee like next_actions_comment"
     state: planned
