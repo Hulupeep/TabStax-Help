@@ -18,7 +18,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 47 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 16 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 10 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 11 |
 
 ## Live
 
@@ -122,6 +122,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | @heystax/hey CLI package | do not tell readers to install @heystax/hey yet | cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25) |
 | Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
+| Say why when you hand a card on: Move to opens a note for the new holder; Comment on any card with a For picker; both reach the addressee like next_actions_comment | a note with the handoff is coming; today, comment on the card from MCP or Telegram | tabstax#1275 filed 2026-11-14; tabstax-webapps#345 open (Playwright journey J-BOARD-HANDOFF-NOTE 6/6 on mocked data). Not merged, so not in production. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
