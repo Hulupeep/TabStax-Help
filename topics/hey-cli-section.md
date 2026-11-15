@@ -5,6 +5,16 @@ nav_order: 3
 has_children: true
 ---
 
-# Hey CLI — Your Next Actions in Your Terminal
+# Your next actions in your terminal
 
-Never leave your editor. `hey ls` to see what's next. `hey done 1` to check it off. `hey "write the migration script"` to capture a thought before it fades. Momentum stays unbroken.
+`hey` adds, lists and finishes next actions without leaving your editor.
+
+1. `npm i heystax-cli`, then `hey login`.
+2. `hey "write the migration script"` catches a thought before it fades.
+3. `hey ls` shows what is next. `hey done 1` checks it off.
+
+Every action lands in the same stax your dashboard, the TabStax extension and your AI apps read.
+
+Now you can keep your momentum and still keep the list.
+
+**Read next:** [Hey CLI guide](hey-cli)
