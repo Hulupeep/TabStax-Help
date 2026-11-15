@@ -67,10 +67,8 @@ At 02:00 `@timebreez-builder` claims the follow-up card. It reads Gaia's report,
 | Session summaries from Claude Code | released 13 Nov 2026 with the [HeyStax plugin](claude-code-plugin), which is partial; not yet seen on a card |
 | Code history in `heystax task show` | released in the CLI, not yet seen end to end |
 
-## Coming next
+## Every answer, in full {% include badge-partial.html %}
 
-{% include badge-planned.html %}
-
-A worker will read every answer on its card in full. Today a long trail of notes can push the Chief's reply out of the 8 KB history, so a builder may ask again for something already answered. With CLI 0.5.6, `heystax task show` will print every comment addressed to someone, every question and every comment a person wrote, whole, with the ones for this role marked. `heystax task comments` will print them again.
+A long trail of notes used to push the Chief's reply out of the 8 KB history, so a builder asked again for something already answered. From CLI 0.5.6, run from the repo, `heystax task show` prints every comment addressed to someone, every question and every comment a person wrote, whole, with the ones for this role marked. `heystax task comments` prints them again. It is not on npm yet, and not yet seen on a real card.
 
 Now you can hand a card to any worker, at any hour, and it starts where the last one stopped.

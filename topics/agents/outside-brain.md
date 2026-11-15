@@ -30,7 +30,7 @@ One rule fixes that: **every brain that works a stax is a role on that stax.** T
 3. In the bot's app, add a HeyStax connector: `https://dash.heystax.ai/api/mcp`, with the header `Authorization: Bearer <the key>`. Turn your personal HeyStax connector off for this bot.
 4. Ask the bot: "call agent_whoami and tell me your handle". It should say its role, not your name.
 5. Give it its job. If it can call tools, it reads its brain prompt from `agent_whoami` on its own. If not, press **Copy brain prompt** on its role card and paste that into the bot's instructions. Both give the same text, read from HeyStax, so the next change you make to its job reaches it too.
-6. If the bot can run on a schedule, give it an hourly routine that checks its comments and its cards.
+6. If the bot can run on a schedule, give it an hourly routine that checks its comments and its cards. If it has a webhook, [give it a wake address](wake-a-brain) too, so it wakes the minute work lands.
 7. Check the role card. Once the bot acts with its key, the card shows **🧠 Brain · acted 2h ago**. Tap it to read how the role wakes.
 
 ## Will a card I add get picked up?
