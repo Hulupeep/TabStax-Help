@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-14
+checked: 2026-11-15
 
 capabilities:
 
@@ -288,9 +288,9 @@ capabilities:
 
   - id: board-scroll-rail
     name: "Stax board scroll rail: a sideways scrollbar with one-column arrows right above the columns, so the right-hand columns are reachable without scrolling down past a long mission and goals"
-    state: partial
+    state: live
     terms: ['scroll rail']
-    evidence: "Colm, 2026-11-14: had to scroll to the bottom of Hubduck · Sell to reach the right columns. tabstax-webapps#346 merged 2026-11-14 (a9eb9f2), Vercel production deploy completed; Playwright J-BOARD-RAIL on mocked data. Not yet seen signed in."
+    evidence: "Colm, 2026-11-14: had to scroll to the bottom of Hubduck · Sell to reach the right columns. tabstax-webapps#346 merged 2026-11-14 (a9eb9f2); Playwright J-BOARD-RAIL on mocked data. 2026-11-15: Vercel production deploy for a9eb9f2 READY, and later production deploys build on it. Not yet seen signed in."
     wording: "a scroll rail with ‹ › arrows sits right above the columns"
   - id: board-needs-you
     name: "Stax board leads with Moving · Stuck · Needs you, and a Needs you strip with one action per row; one-line goal chips with a Stale tag; quiet roles fold to a strip and live roles come first"
@@ -300,9 +300,9 @@ capabilities:
     wording: "the board leads with what is moving, what is stuck and what needs you"
   - id: board-handoff-note
     name: "Say why when you hand a card on: Move to opens a note for the new holder; Comment on any card with a For picker; both reach the addressee like next_actions_comment"
-    state: partial
+    state: live
     terms: ['handoff note', 'move and send note']
-    evidence: "tabstax#1275; tabstax-webapps#345 merged 2026-11-14 09:43Z (Vercel production deploy on merge). Playwright journey J-BOARD-HANDOFF-NOTE 6/6 on mocked data; not yet seen signed in on real data."
+    evidence: "tabstax#1275; tabstax-webapps#345 merged 2026-11-14 09:43Z. Playwright journey J-BOARD-HANDOFF-NOTE 6/6 on mocked data. 2026-11-15: Vercel production deploy for 9b1e2f2 (#345) READY. Not yet seen signed in on real data."
     wording: "when you move a card, add a note; the new holder gets it"
 
   - id: in-mind-switcher
@@ -664,10 +664,10 @@ capabilities:
 
   - id: worker-reads-comments
     name: "A worker reads every answer on its card in full (heystax task show, heystax task comments)"
-    state: planned
+    state: partial
     terms: ['heystax task comments']
-    evidence: "tabstax#1294, PR tabstax#1295 open 2026-11-14 (CLI 0.5.6, 100/100 CLI tests pass). Not merged; listeners not reinstalled. Cause: on 14 Nov the Hubduck builder blocked twice on answers lost from the 8 KB context."
-    wording: "a worker will read every answer left on its card, in full, before it blocks"
+    evidence: "tabstax#1294, PR tabstax#1295 merged 2026-11-14 13:47 (CLI 0.5.6). Runs from the repo like the rest of heystax listen; npm heystax-cli latest still 0.1.13 on 2026-11-15. Not yet seen on a real card. Cause: on 14 Nov the Hubduck builder blocked twice on answers lost from the 8 KB context."
+    wording: "a worker on CLI 0.5.6, run from the repo, reads every answer left on its card in full before it blocks"
 
   - id: comment-wake
     name: "A comment addressed to a role wakes that role's launchers by push"
@@ -677,8 +677,15 @@ capabilities:
     wording: "a comment addressed to a role will wake that role's launchers by push"
 
   - id: wake-key
-    name: "A wake address can carry the bot's own key, so a keyed webhook (a Grok Bot routine) can be woken by push"
-    state: planned
-    terms: ['wake key']
-    evidence: "2026-11-14: HookTunnel cannot add a target's auth header to a forwarded wake (hooktunnel-web 79eeee0). Fix tabstax#1308: write-only push_auth_header/push_auth_value on launcher_register. Being built 14 Nov; prod migration needs Colm's go-ahead."
-    wording: "you will be able to give a wake address the bot's own key, so a keyed webhook wakes by push"
+    name: "A wake address can carry the bot's own key, so a keyed webhook (a Grok Bot routine) can be woken by push; a test wake proves it"
+    state: live
+    terms: ['wake key', 'launcher_wake_key_set', 'launcher_wake_key_link', 'launcher_test_wake', 'test wake']
+    evidence: "2026-11-15: production MCP tool list has launcher_wake_key_set, launcher_wake_key_link and launcher_test_wake, and launcher_register and launcher_update take wake_key, wake_key_header and test_wake (tabstax#1309 merged 2026-11-14 14:31, #1313 merged 16:11). Vercel production deploys READY for f460b05 (webapps#348, Wake key button on the stax page) and e90bb5c (webapps#349, one-time link page dash.heystax.ai/wake-key/<token>). Earlier: HookTunnel cannot add a target's auth header to a forwarded wake (hooktunnel-web 79eeee0). No test wake run from here; no browser walk."
+    wording: "you give a wake address the bot's own key once, on the stax page or through a one-time link, and launcher_test_wake says whether the bot answered"
+
+  - id: wake-failing-chief
+    name: "A wake that keeps failing is reported to the stax's Chief and in the morning receipt"
+    state: unverified
+    terms: ['wake_failing', 'failing wakes?']
+    evidence: "tabstax#1313 merged 2026-11-14: a delivery that fails for good writes one worker-missed event per launcher per 6 hours. Server side only; not observed from outside on 2026-11-15."
+    wording: "if wakes to a launcher keep failing, your Chief hears about it and it shows in the morning receipt"
