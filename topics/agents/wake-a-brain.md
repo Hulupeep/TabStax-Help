@@ -26,13 +26,31 @@ With a wake address, the Chief hears about it at 10:05. The two-hour check stays
 
 ## How to do it with Grok Bot
 
-Grok Bot routines can start from a webhook, but that URL only answers a call that carries the routine's own sender key. HeyStax signs every wake with its own secret, and a relay cannot add the key for you. So today a Grok Bot brain wakes on its schedule:
+A Grok Bot routine starts from a webhook, but that URL only answers a call that carries the routine's own sender key. So you give HeyStax the key once, and it sends the key with every wake.
 
-1. Give the role a routine that runs every two hours, or as often as you like.
-2. Its one rule: "call `agent_events_list` and `comments_for_me`, read the cards, then act."
-3. For GitHub events, point a repo webhook (pull request, checks, merged) at a routine of its own.
+1. Register a launcher for the role with the routine's webhook as its `push_url`.
+2. Give it the key, written as the header wants it, such as `Bearer sk-...`. Three ways: the **Wake key** button on the launcher on the stax page, `wake_key` on `launcher_register`, or a one-time link from `launcher_wake_key_link` when the bot cannot see its own key.
+3. Ask for `launcher_test_wake`. It answers **woken**, **rejected**, **error** or **waiting**.
+4. Keep a slow routine, every two hours, as the safety net.
 
-{% include badge-planned.html %} **Coming next:** a wake key on the wake address. You paste the routine's sender key into HeyStax once, HeyStax sends it with every wake, and the brain wakes within a minute. The two-hour routine stays as the safety net.
+{% capture s %}
+{% include anim/node.html x=100 y=50 label="You" sub="paste the key once" kind="person" w=150 d=0 %}
+{% include anim/edge.html x1=100 y1=76 x2=240 y2=124 kind="write" d=0.4 %}
+{% include anim/node.html x=240 y=150 label="HeyStax" sub="work assigned" kind="stax" w=150 d=0.8 %}
+{% include anim/edge.html x1=315 y1=150 x2=390 y2=150 kind="dispatch" d=1.2 %}
+{% include anim/node.html x=400 y=200 label="Grok Bot routine" sub="wakes, reads the board" kind="agent" w=150 d=1.6 %}
+{% include anim/edge.html x1=400 y1=226 x2=240 y2=250 cx=330 cy=270 kind="read" d=2.0 %}
+{% include anim/node.html x=150 y=258 label="Test wake: woken" kind="note" w=170 h=30 d=2.4 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 300" label="You give HeyStax the routine's key once; when work is assigned HeyStax wakes the routine with that key, and a test wake reports woken" caption="You paste the routine's key once. When work lands, HeyStax wakes the routine with that key, and the routine reads the board itself. A test wake tells you it worked." svg=s %}
+
+**Rejected** means a 401 or 403. The usual cause is a bare key where `Bearer ` was expected.
+
+The key is write-only. No tool, list or log shows it again. `launcher_list` only says whether a key is set, stale or rejected. Change the `push_url` and the key goes stale until you set it again.
+
+The one-time link opens only for you, signed in. It works once, for 24 hours. Never paste a key into a card or a chat.
+
+If wakes to a launcher keep failing, your Chief hears about it, and it shows in the morning receipt.
 
 ## Other brains
 
@@ -40,7 +58,7 @@ Grok Bot routines can start from a webhook, but that URL only answers a call tha
 |---|---|---|
 | Claude Code or Codex on your machine | `heystax listen`: it waits on HeyStax and starts within a minute | Yes, comments included |
 | Hermes, or any bot with an HTTPS address | Its own URL as `push_url`; check `X-HeyStax-Signature` | Yes |
-| A bot whose webhook needs its own key, such as Grok Bot | Its schedule today; a wake key is coming next | No |
+| A bot whose webhook needs its own key, such as Grok Bot | Its webhook as `push_url`, plus a wake key | Yes |
 | A chat with no routine | Only when you open the chat | No wake |
 
 To check a signature: compute HMAC SHA-256 of `timestamp.body` with the launcher's secret, where the timestamp is the `X-HeyStax-Timestamp` header. Compare it with the hex after `sha256=`.

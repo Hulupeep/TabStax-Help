@@ -2,53 +2,46 @@
 nav_exclude: true
 ---
 
-# Caregiver for an Ageing Parent, Managing Medical, Legal, and Daily Life
+# Caregiver: your mum's admin, out of your head
 
 [← Back to Use Cases](index.md)
 
----
+Ronan is the "responsible child" for his mum, Nora. A letter about her pension arrives. A new prescription. A physio referral. Each one sends him hunting through portals, scans and a sibling WhatsApp thread full of opinions. His sister Cliona asks a question, and the answer is a 20-minute search.
 
-He's the "responsible child" for his ageing mum.
+## The stax
 
-His world:
+Ronan keeps one stax, **Mum: health and admin**, shared with Cliona.
 
-* GP and specialist portals
-* Medication lists
-* Lab results
-* Legal docs (power of attorney, will)
-* Home care providers
-* Benefits and pension info
-* Siblings' WhatsApp thread with opinions
+| | |
+|---|---|
+| **Mission** | Mum is looked after, and nobody has to remember it all alone. |
+| **Goal** | Every letter and appointment has a named owner within a day. |
+| **Next Action** | One card per thing to do, with a name on it. |
 
-## Without HeyStax
+## What happens
 
-Every new issue — a fall, a new prescription, a letter about benefits — sends him back into the mess. He hunts for which login goes where, which doctor said what, and how that aligns with the legal stuff. Siblings ask questions he can't quickly answer without repeating a 20-minute search.
+1. **Save the tabs.** With the TabStax extension Ronan saves the GP portal, the clinic portal, the medication sheet, the pension portal and a running notes doc as the stax. One click reopens them all.
+2. **Catch it when it lands.** The pension letter arrives. In their Telegram group Ronan types `/t @cliona call the pension office about the letter`. It lands on the stax, on Cliona's column.
+3. **Know who has what.** `/who` lists everyone on the stax. Each card says who added it and who holds it.
+4. **Close it from the phone.** Cliona makes the call and replies `/done`. Ronan sees it at 08:00 in the morning list.
+5. **Ask without searching.** Ronan asks Claude, connected to HeyStax, "what is open for Mum?" It reads the stax and answers from the cards.
 
-## With HeyStax
+Passwords stay in a password manager. They never go in the stax.
 
-He defines **"Mum – Health & Life Admin"** Stax:
+## After
 
-* GP portal tab
-* Specialist clinic portal
-* Medications tracking sheet
-* Folder with scans of legal docs
-* Benefits/pension portal
-* A running "Timeline & Notes" doc
-* Start Page:
+The load is still heavy, but the hunt is gone. The next step and its owner are written down, not held in Ronan's head.
 
-  * *"Last updates: new blood pressure meds, physio referral."*
-  * *"Next Actions: schedule follow-up, check side effects, call benefits office about letter."*
+**It is yours.** The record of what was done for Nora sits in your account, not in a chat thread that scrolls away.
 
-He **shares this Stax with his siblings** (with passwords handled via manager, not in-stax, obviously).
+## What works today
 
-Now when the benefits letter arrives or the doctor calls:
+| Step | State |
+|---|---|
+| Save and reopen the tabs with the TabStax extension; share the stax | live |
+| `/t @handle`, `/who`, reply `/done` and the 8am list in Telegram | live |
+| Ask Claude or ChatGPT about the stax over MCP | live with your token; Claude.ai on the web is partial |
 
-* He opens that Stax.
-* Takes notes *in one place*.
-* Siblings can open the Stax and self-serve: "Oh, she already had that scan; here's the date."
-
-The caregiving load is still heavy. But the cognitive retrieval tax is much lighter.
-
----
+Now you can answer your sister in ten seconds, from the cards.
 
 [← Back to Use Cases](index.md)

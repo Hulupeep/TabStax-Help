@@ -6,15 +6,17 @@ has_children: true
 
 # Surfaces
 
-HeyStax meets you where you work. The same Stax, the same next actions, the same momentum, on every surface.
+HeyStax meets you where you work. Every surface reads and writes the same stax.
 
 | Surface | What it does | Access |
 |---------|-------------|--------|
-| [**TabStax** (Chrome extension)](tabstax-extension) | Save and restore browser workspaces. Your instant-access control panel. | [Install from Chrome Web Store](https://chromewebstore.google.com/detail/heystax/gfdcobncoohhlhppmoidalociahfdcam) |
-| [**Dashboard**](dashboard) | Prioritise Stax into attention lanes. Toggle to Actions Mode for pure execution. | [dash.heystax.ai](https://dash.heystax.ai) |
-| [**Hey CLI**](../hey-cli-section) | Your next actions in your terminal. Add, complete, and list without leaving your editor. | `npm i heystax-cli` |
-| [**AI Integrations (MCP)**](../mcp-section) | Claude, ChatGPT, and other AI assistants read your Stax and operate on your work context. | [Connect Claude](../mcp-claude-ai) |
+| [**TabStax** (Chrome extension)](tabstax-extension) | Save a window's tabs as a stax and reopen them in one click. | [Install from Chrome Web Store](https://chromewebstore.google.com/detail/heystax/gfdcobncoohhlhppmoidalociahfdcam) |
+| [**Dashboard**](dashboard) | Sort your stax into Must, Should, Good and Meh, and work the next actions. | [dash.heystax.ai](https://dash.heystax.ai) |
+| [**Hey CLI**](../hey-cli-section) | Add, list and finish next actions without leaving your editor. | `npm i heystax-cli` |
+| [**AI Integrations (MCP)**](../mcp-section) | Claude, ChatGPT and other AI apps read and update your stax. | [Connect Claude](../mcp-claude-ai) |
 | [**Telegram**](../team-stax/telegram) | Add and update Next Actions from a private bot chat or a connected team group, and run group standups. | [Open the Telegram guide](../team-stax/telegram) |
-| [**Timesheets**](timesheets) | Flow-native weekly hours capture. Log time against Stax, submit for review. | [dash.heystax.ai/time](https://dash.heystax.ai/time) |
+| [**Timesheets**](timesheets) | Log weekly hours against a stax. | [dash.heystax.ai/time](https://dash.heystax.ai/time) |
 
-Add an action from the CLI or Telegram. Complete it in the extension. See it reflected on the dashboard. Ask your AI assistant what's left. Same data, every surface.
+Add an action from Telegram. Finish it in the CLI. Your AI app already knows it is done. Nothing to paste, nothing to sync by hand.
+
+Now you can pick any surface and find your work where you left it.
