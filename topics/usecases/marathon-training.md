@@ -2,55 +2,48 @@
 nav_exclude: true
 ---
 
-# Bill, 240lbs, Training for His First Marathon
+# Bill trains for his first marathon
 
 [← Back to Use Cases](index.md)
 
----
+Bill has decided: this year he runs a marathon. Not to look different. To prove he can.
 
-Bill is 240lbs and has decided: *I'm running a marathon this year.*
-Not to "get skinny". To prove to himself he can.
+By week three he has a training plan in one tab, shoe reviews in another, and a form video on his phone. Every time he thinks "I should train", he first has to find which plan he chose.
 
-His world now has:
+## The stax
 
-* Beginner marathon training plans
-* YouTube videos on form
-* Articles on running at higher weight
-* Shoe and gear reviews
-* A calendar mapping out long runs
-* Nutrition and recovery guides
+Bill keeps one stax, **Marathon**, shared with his running friend Dee.
 
-## Without HeyStax
+| | |
+|---|---|
+| **Mission** | Finish the race, and know I did the work. |
+| **Goal** | Every long run in the 18-week plan is logged as done. |
+| **Next Action** | Saturday: 5-mile long run, then 5 minutes of form drills. |
 
-He keeps googling the same stuff. Training plans in one tab, shoe reviews in another, a random blog post open on his phone. He forgets which plan he chose. Every time he thinks "I should train" he has to rebuild the universe.
+## What happens
 
-## With HeyStax
+1. **Save the tabs.** With the TabStax extension Bill saves the plan, his run log, his shoe shortlist and the form playlist as the stax. One click reopens them.
+2. **One next action.** Each Sunday he adds the week's long run as a card, in the Must lane.
+3. **Close it from the phone.** After the run he replies `/done` in Telegram.
+4. **A friend on the card.** Dee leaves a comment on the card: "Added a link on knee-friendly strength work." Bill sees it next time he opens the stax.
+5. **Ask without scrolling.** Bill asks Claude, connected to HeyStax, "what is my next run?" It answers from the card.
 
-He builds **"Bill – Marathon 2025"** Stax:
+## After
 
-* The **one training plan** he chose
-* A shoe store tab with his shortlist
-* A spreadsheet logging runs
-* A YouTube playlist: "Running Form & Recovery"
-* A calendar showing the 16–20 week build
-* Start Page with:
+When doubt creeps in, Bill opens one stax. The plan, the log and the next run are all there. He is not restarting. He is carrying on.
 
-  * *"This week's long run: 5 miles on Saturday."*
-  * *"Next Action TODAY: 20-minute easy run + 5 minutes form drills."*
+**It travels.** The same next run shows in Chrome, in Telegram and in Claude.
 
-He **shares this Stax with his running buddy / partner / accountability friend**:
+## What works today
 
-* They see his plan.
-* They can drop comments ("I added a link about knee-friendly strength work.").
+| Step | State |
+|---|---|
+| Save and reopen the tabs with the TabStax extension; share the stax | live |
+| Attention lanes (Must, Should, Good, Meh) | live |
+| Reply `/done` in Telegram | live |
+| Comments on a card | live |
+| Ask Claude or ChatGPT about the stax over MCP | live with your token; Claude.ai on the web is partial |
 
-Every time doubt creeps in, the task is simple: **open the Marathon Stax**.
-
-* The plan
-* The progress
-* The "why"
-
-…all load at once. He's not restarting the project every time he laces up — he's continuing a story.
-
----
+Now you can lace up and know the next run without looking for it.
 
 [← Back to Use Cases](index.md)

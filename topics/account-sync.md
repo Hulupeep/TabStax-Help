@@ -4,43 +4,35 @@ nav_order: 4
 has_children: true
 ---
 
-# Account & Sync
+# Your account, on every surface
 
-HeyStax works locally with no account. Sign in to unlock cloud sync, sharing, collaboration, and access across every surface.
+One HeyStax account holds your stax. Every surface you sign in to reads and writes the same ones.
 
-## Free vs Pro
+## Why it matters to you
 
-| | Free | Pro |
-|---|---|---|
-| **Local Stax** | Unlimited | Unlimited |
-| **Cloud sync** | — | Cross-device, automatic |
-| **Sharing** | Import shared Stax | Create and share Stax |
-| **Collaboration** | — | @handle assignment, colour-coded team view |
-| **Next actions** | Local only | Synced everywhere |
-| **Attention Blocks** | — | Full priority board |
-| **Timesheets** | — | Weekly hours capture per Stax |
-| **Start Here pages** | Basic | Rich markdown + collaboration |
-| **MCP + CLI** | — | AI agent access + terminal commands |
+You add an action from the terminal at 09:00. At 11:00 Claude closes it. At 14:00 your teammate sees it done on the dashboard. Nobody copied anything across.
 
-Free works entirely locally — no account needed, no data leaves your browser. Pro unlocks sync, sharing, collaboration, timesheets, and the priority system.
+Your context sits in your account, not inside one app or one laptop.
 
-## Local-only mode
+## Where your stax show up
 
-Without an account, HeyStax stores everything in your browser's local storage. Your Stax are private, fast, and completely offline-capable. You can create, edit, restore, and delete Stax without ever signing in.
+| Surface | How you get in |
+|---|---|
+| Dashboard | Sign in at [dash.heystax.ai](https://dash.heystax.ai) |
+| TabStax extension | Sign in from the extension popup |
+| hey CLI | `npm i heystax-cli`, then sign in from the terminal |
+| AI apps (Claude, ChatGPT) | Connect over MCP. [How to connect](mcp-section) |
+| Telegram | Link the HeyStax Telegram bot (@heystax_bot). [Telegram](team-stax/telegram) |
 
-The tradeoff: local-only Stax don't sync across devices, can't be shared, and aren't accessible from the CLI, dashboard, or AI assistants.
+## Get started
 
-## Cross-device sync
+1. Sign in at [dash.heystax.ai](https://dash.heystax.ai).
+2. Create a stax, or open one someone shared with you.
+3. Sign in to the TabStax extension with the same account.
+4. Connect your AI app or the CLI when you want them.
 
-On Pro, your Stax sync to the cloud automatically. Open a Stax on your laptop, add a next action on your phone's browser, complete it from your work machine. Same data, everywhere.
+## Plans
 
-Sync is bidirectional — changes from any surface propagate to all others. If you're offline, changes queue locally and sync when you reconnect.
+MCP needs a Pro or Trial plan. Upgrade to Pro from the dashboard.
 
-## Signing up
-
-1. Click the sync button in the TabStax extension popup
-2. Create an account with email and password
-3. Confirm your email
-4. Choose Free (stay local) or start a Pro trial
-
-You can also sign in from [dash.heystax.ai](https://dash.heystax.ai) or the Hey CLI (`hey login`).
+Now you can start a piece of work in one place and pick it up in any other.

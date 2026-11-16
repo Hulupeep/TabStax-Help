@@ -24,13 +24,15 @@ Now it says what it would do, and when. If you're busy, the work goes on. If you
 
 ## Done means checked
 
-1. You, or your Chief, put a check on a card: a page that must answer, for example `https://yoursite.com/pricing` must return 200.
-2. When the role reports the card done, it doesn't close. HeyStax fetches the page itself.
+1. You, or your Chief, put a check on a card. For example: `https://yoursite.com/pricing` must return 200, or pull request #123 must be merged.
+2. When the role reports the card done, it doesn't close. HeyStax runs the check itself.
 3. **Pass:** the card closes, with the proof (status and time).
 4. **Fail:** the card reopens with the reason, such as "404 at /pricing", and the role is told what to fix. After the third fail, your Chief hears about it.
 5. The role doing the work can't set or change its own check. If you mark the card done yourself, that counts, and it is noted as your call.
 
-Checks fetch only public https pages on port 443. Never an IP address, an internal name, or a page behind a redirect.
+Page checks fetch only public https pages on port 443. Never an IP address, an internal name, or a page behind a redirect.
+
+A pull request check reads the GitHub repo linked to the stax. Today that repo must be public.
 
 ## What works today
 
@@ -39,3 +41,13 @@ Checks fetch only public https pages on port 443. Never an IP address, an intern
 | Asks with options, a recommendation and a deadline; going ahead on silence; never for a step that can't be undone | live, seen on 13 Nov 2026 |
 | Buttons for an ask in Telegram | coming next |
 | A page check on a card; a failed check reopens it with the reason | live, seen on 13 Nov 2026 |
+| A merged pull request as a card's check, on a public repo | live, offered in production on 16 Nov 2026 |
+| Your own GitHub token, so a pull request check can read a private repo | coming next |
+
+## Coming next
+
+{% include badge-planned.html %}
+
+You will be able to give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo. Only you, the owner, will set it. Without it, a private repo will show as unreachable, not as the role's mistake.
+
+Now you can let work go on while you are busy, and close a card only when the proof is in.
