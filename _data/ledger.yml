@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-15
+checked: 2026-11-16
 
 capabilities:
 
@@ -554,8 +554,15 @@ capabilities:
     name: "Verified done: a card with a page check closes only when HeyStax's own fetch passes; a fail reopens it with the reason"
     state: live
     terms: ['Done means checked', 'verified done', 'check fails?']
-    evidence: "tabstax#1182 (PR #1265, from the listener's #1255), migration 20261114030000 applied and mcp deployed 2026-11-13. J-VERIFIED-DONE on production (test account): a card checking the help site closed with proof (status 200); a card checking a missing help page was reported done, fetched by HeyStax and reopened the card with '404 at /TabStax-Help/j1182-not-a-page' and told the worker. The role setting a check on its own card was refused (CHECK_NOT_YOURS)."
+    evidence: "tabstax#1182 (PR #1265, from the listener's #1255), migration 20261114030000 applied and mcp deployed 2026-11-13. J-VERIFIED-DONE on production (test account): a card checking the help site closed with proof (status 200); a card checking a missing help page was reported done, fetched by HeyStax and reopened the card with '404 at /TabStax-Help/j1182-not-a-page' and told the worker. The role setting a check on its own card was refused (CHECK_NOT_YOURS). 2026-11-16: the production next_actions_check_set schema offers url_live, github_pr_merged (the stax's linked repo by default), record_exists, crm_send_logged and peer_review; tabstax#1312 says github_pr_merged sends no credential, so only a public repo can be read today."
     wording: "put a check on a card and it closes only when HeyStax's own check passes; a fail reopens it with the reason"
+
+  - id: pr-check-private-repo
+    name: "A pull request check reads a private repo with the stax owner's own GitHub token, set by the owner only; with no token a private repo is reported as unreachable, not as the worker's failure"
+    state: planned
+    terms: ['own GitHub token', 'github_check_token', 'check can read a private repo']
+    evidence: "tabstax#1312 (#1297) merged 2026-11-15 02:57Z. 2026-11-16: github_check_token_set is not in the production MCP tool list, so the owner cannot set a token yet."
+    wording: "you will be able to give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo"
 
   - id: outcome-events
     name: "Outcome events: replies, signups, trials and Stripe money recorded once per source event and credited to the role and card whose CRM send came last in the 60 days before; the goal board's MRR comes from Stripe and says not connected instead of 0 (outcomes_list, outcome_connect)"
