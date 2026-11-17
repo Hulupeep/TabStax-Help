@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-16
+checked: 2026-11-17
 
 capabilities:
 
@@ -118,11 +118,11 @@ capabilities:
     wording: "your Today list"
 
   - id: mcp-tools-pending
-    name: "Additional MCP tools awaiting fresh authenticated production verification: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests"
-    state: partial
+    name: "More MCP tools: agent_activity, memory_capture, memory_import_ack, time_report, evidence requests"
+    state: live
     terms: ['agent_activity', 'memory_capture', 'memory_import_ack', 'time_report', 'evidence_request']
-    evidence: "Bundled in production mcp v28 on 2026-10-26; fresh authenticated tools/list and behaviour check still needed"
-    wording: "in the deployed function; verify before using"
+    evidence: "Bundled in production mcp v28 on 2026-10-26. 2026-11-17: an authenticated production MCP tool list has agent_activity, memory_capture, memory_import_ack, time_report, evidence_request_raise and evidence_request_update, with their schemas. Names and schemas only; no call made."
+    wording: "in the production MCP tool list"
 
   # ----------------------------------------------------- stax, people, team
   - id: shared-stax
@@ -194,8 +194,8 @@ capabilities:
   - id: timesheets
     name: Weekly timesheets per stax
     state: live
-    evidence: "https://time.heystax.ai/time returns 200 (2026-10-25)"
-    wording: "timesheets at time.heystax.ai"
+    evidence: "https://time.heystax.ai/time returns 200 (2026-10-25). 2026-11-17: on Vercel, time.heystax.ai and dash.heystax.ai are both production domains of the tabstax-webapps project, and its middleware at e90bb5c serves /time unchanged on dash.heystax.ai, so dash.heystax.ai/time and time.heystax.ai open the same page. hey ts is in the published heystax-cli 0.1.13 (npm pack)."
+    wording: "timesheets at dash.heystax.ai/time (time.heystax.ai opens the same page)"
 
   - id: timesheet-approval
     name: Timesheet approval by a lead
@@ -239,10 +239,10 @@ capabilities:
 
   - id: memory-records
     name: Memory capture and import (tabstax#932-934)
-    state: partial
+    state: live
     terms: ['memory capture', 'memory import']
-    evidence: "All four 20261005 migrations applied and catalog-verified on 2026-10-25; fresh MCP behaviour check remains"
-    wording: "schema live; user journey unverified"
+    evidence: "All four 20261005 migrations applied and catalog-verified on 2026-10-25. 2026-11-17: memory_capture and memory_import_ack are in an authenticated production MCP tool list, with schemas. No capture made from here; no browser walk."
+    wording: "an AI client saves a memory you tell it, in your words, with memory_capture"
 
   # ------------------------------------------------------------------ agents
   - id: agents-as-people
@@ -561,7 +561,7 @@ capabilities:
     name: "A pull request check reads a private repo with the stax owner's own GitHub token, set by the owner only; with no token a private repo is reported as unreachable, not as the worker's failure"
     state: planned
     terms: ['own GitHub token', 'github_check_token', 'check can read a private repo']
-    evidence: "tabstax#1312 (#1297) merged 2026-11-15 02:57Z. 2026-11-16: github_check_token_set is not in the production MCP tool list, so the owner cannot set a token yet."
+    evidence: "tabstax#1312 (#1297) merged 2026-11-15 02:57Z. 2026-11-16: github_check_token_set is not in the production MCP tool list, so the owner cannot set a token yet. Still absent on 2026-11-17."
     wording: "you will be able to give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo"
 
   - id: outcome-events
@@ -679,7 +679,7 @@ capabilities:
   - id: comment-wake
     name: "A comment addressed to a role wakes that role's launchers by push"
     state: planned
-    terms: ['comment wakes?', 'agent\\.comment_addressed']
+    terms: ['comment wakes?', 'agent\\\\.comment_addressed']
     evidence: "2026-11-14: push today fires on work assigned and on Chief events (#1008); no event for a comment addressed to a role. The Chief filed card 65e56771 for @heystax-builder. Workers that long-poll already wake on comments (wait_for_work comments_since, #1159)."
     wording: "a comment addressed to a role will wake that role's launchers by push"
 
