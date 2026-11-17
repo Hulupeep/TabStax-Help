@@ -4,31 +4,25 @@ parent: Surfaces
 nav_order: 5
 ---
 
-# Timesheets — Time Tracking Built on Work You're Already Doing
+# Log your week against your stax
 
-HeyStax Timesheets at [dash.heystax.ai/time](https://dash.heystax.ai/time) let you log hours against Stax — the projects you're already tracking.
+Timesheets is a weekly grid of hours at [dash.heystax.ai/time](https://dash.heystax.ai/time). The rows are your stax.
 
-## The problem it solves
+## Why it matters to you
 
-Most time tracking tools ask you to context-switch into a separate system, remember what you worked on, and manually log it. That's friction on top of friction.
+Friday, 17:00, and the week is a blur. Most time sheets make you rebuild it in a second list of projects. Here the rows already exist: the stax you worked in all week.
 
-HeyStax already knows your projects. It knows your next actions. It knows when you were last active. Timesheets build on top of that — you're logging time against work contexts that already exist, not creating new entries from scratch.
+## How to do it
 
-## How it works
+1. Open [dash.heystax.ai/time](https://dash.heystax.ai/time). `time.heystax.ai` opens the same page.
+2. Find the row for each stax you worked in.
+3. Type the hours under each day, Monday to Sunday.
+4. In a terminal, `hey ts` shows the same week. It comes with the [hey CLI](../hey-cli).
 
-- **Weekly view** — see Mon–Sun at a glance, hours per day
-- **Stax-scoped** — log time against the Stax you worked on
-- **Evidence-aware** — calendar events and activity are surfaced as evidence to help you remember what you did
-- **Draft → Submit** — fill in your hours, submit for review when ready
-- **Team-visible** — managers can see submitted timesheets for their team
+## Partly works today
 
-## How it connects to HeyStax
+{% include badge-partial.html %}
 
-Timesheets are scoped to Stax. The projects you're already managing are the rows in your timesheet. No duplicate data entry, no separate project list to maintain.
+Sending a week to a lead for approval, and invoices from approved hours, are built. Turning them on in production is still pending.
 
-The `hey ts` CLI command gives you a quick terminal view of your current week.
-
-## Access
-
-- [Open Timesheets →](https://dash.heystax.ai/time)
-- Requires a HeyStax account with Pro or Trial plan
+Now you can say where the week went, from the stax you already keep.
