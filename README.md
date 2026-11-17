@@ -71,9 +71,8 @@ Add an action in the terminal and it shows in the dashboard. Complete it through
 | **TabStax** ([Chrome extension](https://chromewebstore.google.com/detail/heystax/gfdcobncoohhlhppmoidalociahfdcam)) | Saves a stax's tabs and reopens them in one click. |
 | **Hey CLI** (`npm i heystax-cli`) | Next actions from your terminal: `hey "do the thing"`, `hey done 1`. |
 | **AI clients** (MCP) | Claude Code, ChatGPT and other apps that send your token read and write your stax. |
-| **Timesheets** ([time.heystax.ai](https://time.heystax.ai/time)) | Weekly hours, logged against each stax. |
+| **Timesheets** ([dash.heystax.ai/time](https://dash.heystax.ai/time)) | Weekly hours, logged against each stax. |
 | **Telegram** | The HeyStax Telegram bot links a group to a stax. |
-| **Share Pages** | Public links anyone can open or import. |
 
 ## Start here
 
@@ -98,12 +97,6 @@ Start a worker such as Codex or Claude Code under its own name. It claims a next
 
 ## Plans
 
-| Plan | What you get |
-|---|---|
-| **Free** | Local-only extension, receive shared stax |
-| **Trial** | Cloud sync, sharing, MCP access, every device |
-| **Pro** | Everything in Trial, plus collaboration, timesheets and team features |
-
-MCP needs Trial or Pro.
+MCP needs a Pro or Trial plan. You can upgrade to Pro from the dashboard.
 
 Now you can open any stax cold and know the next move in seconds.
