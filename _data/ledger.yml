@@ -688,7 +688,7 @@ capabilities:
     state: live
     terms: ['wake key', 'launcher_wake_key_set', 'launcher_wake_key_link', 'launcher_test_wake', 'test wake']
     evidence: "2026-11-15: production MCP tool list has launcher_wake_key_set, launcher_wake_key_link and launcher_test_wake, and launcher_register and launcher_update take wake_key, wake_key_header and test_wake (tabstax#1309 merged 2026-11-14 14:31, #1313 merged 16:11). Vercel production deploys READY for f460b05 (webapps#348, Wake key button on the stax page) and e90bb5c (webapps#349, one-time link page dash.heystax.ai/wake-key/<token>). Earlier: HookTunnel cannot add a target's auth header to a forwarded wake (hooktunnel-web 79eeee0). No test wake run from here; no browser walk."
-    wording: "a comment addressed to a role will wake that role's launchers by push"
+    wording: "you give a wake address the bot's own key once, on the stax page or through a one-time link, and launcher_test_wake says whether the bot answered"
 
   - id: wake-failing-chief
     name: "A wake that keeps failing is reported to the stax's Chief and in the morning receipt"
