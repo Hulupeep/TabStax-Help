@@ -47,7 +47,7 @@ Then she builds **"Retirement – Second Act"** Stax:
   * *"This quarter's experiment: join X volunteering group 1x/week."*
 
 She **shares Foundations Stax with her financial advisor and adult child** so they can see the numbers and plans.
-She **shares Second Act Stax with a close friend**—they can nudge her: "Did you email the volunteer coordinator yet?"
+She **shares Second Act Stax with a close friend**. They can nudge her: "Did you email the volunteer coordinator yet?"
 
 Instead of vague "someday," she opens one Stax and pushes one concrete next action. Retirement becomes an intentional project, not just an absence of work.
 
