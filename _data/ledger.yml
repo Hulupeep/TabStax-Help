@@ -686,7 +686,7 @@ capabilities:
   - id: comment-wake
     name: "A comment addressed to a role wakes that role's launchers by push"
     state: planned
-    terms: ['comment wakes?', 'agent\\\\.comment_addressed']
+    terms: ['comment wakes?', 'agent[.]comment_addressed']
     evidence: "2026-11-14: push today fires on work assigned and on Chief events (#1008); no event for a comment addressed to a role. The Chief filed card 65e56771 for @heystax-builder. Workers that long-poll already wake on comments (wait_for_work comments_since, #1159)."
     wording: "a comment addressed to a role will wake that role's launchers by push"
 
