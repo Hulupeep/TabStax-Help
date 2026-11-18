@@ -4,92 +4,51 @@ parent: AI Integrations (MCP)
 nav_order: 2
 ---
 
-# Connect HeyStax to Claude Code (CLI)
+# Connect HeyStax to Claude Code
 
-Use your Stax and Next Actions directly from the terminal while coding with Claude Code.
+Claude Code reads and writes your stax from the terminal, while you code.
 
-{% include badge-partial.html %}
+## Why it matters to you
 
-For the separate **agent peer pilot**, where Claude Code works under its own name and reports on claimed actions, see [Agents that work on a Stax](agents/). The usual connection described below acts through your existing account. To set one up, see [Connect a worker to a role](agents/connect-a-worker).
+You are deep in a branch at 23:00 and remember a bug. Tell Claude Code. The next action lands on the stax, and it is there in the morning on the dashboard and in Telegram.
 
----
+## You need
 
-## Prerequisites
+- A HeyStax account on the **Pro** or **Trial** plan. MCP needs one of these.
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed.
+- Your personal access token from **Settings, MCP** at [dash.heystax.ai](https://dash.heystax.ai).
 
-- A HeyStax account with **Pro** or **Trial** plan
-- Claude Code installed ([install guide](https://docs.anthropic.com/en/docs/claude-code))
+## How to do it
 
----
+1. Copy your token. Keep it out of chats and screenshots.
+2. Add HeyStax for all your projects:
 
-## Add HeyStax
+   ```bash
+   claude mcp add --transport sse heystax \
+     https://dash.heystax.ai/api/mcp/sse \
+     --header "Authorization: Bearer YOUR_TOKEN"
+   ```
 
-Sign in at [dash.heystax.ai](https://dash.heystax.ai) and copy your personal access token from **Settings, MCP**. Claude Code sends it with every request.
+   For one project only, add `--scope project`. That writes `.mcp.json` in the project root, so keep it out of git.
+3. Run `claude`, then type `/mcp`. HeyStax shows as connected.
+4. Type `List my stax`. Claude lists your stax by name.
 
-For all your projects:
+## What to ask
 
-```bash
-claude mcp add --transport sse heystax \
-  https://dash.heystax.ai/api/mcp/sse \
-  --header "Authorization: Bearer YOUR_TOKEN"
-```
+- "What are the next actions on WebApp?"
+- "Add 'fix the auth timeout bug' to WebApp"
+- "Log that I deployed v2.3 on WebApp"
 
-For this project only, add `--scope project`. That writes a `.mcp.json` file in the project root, so keep it out of git.
+For quick capture without Claude, the [hey CLI](hey-cli) writes to the same stax. Want Claude Code to work under its own name instead of yours? See [Connect a worker to a role](agents/connect-a-worker).
 
-### Verify
+## If it goes wrong
 
-Run `claude`, then type `/mcp`. HeyStax shows as connected.
+| You see | Do this |
+|---|---|
+| "needs authentication" or `TOKEN_INVALID` | `claude mcp remove heystax`, then add it again with a fresh token |
+| `PLAN_REQUIRED` | Move to Pro or Trial at [dash.heystax.ai](https://dash.heystax.ai) |
+| HeyStax is not in `/mcp` | Run the `claude mcp add` command again |
 
----
+To disconnect: `claude mcp remove heystax`.
 
-## Usage examples
-
-Once connected, just talk naturally:
-
-```
-> List my stax
-
-> What are the next actions for my WebApp project?
-
-> Add "fix the auth timeout bug" to WebApp
-
-> Mark action 1 on WebApp as done
-
-> Log that I deployed v2.3 to production on WebApp
-```
-
----
-
-## Combining with Hey CLI
-
-HeyStax MCP and the [Hey CLI](hey-cli) complement each other:
-
-| Use case | Best tool |
-|----------|-----------|
-| Quick capture mid-flow | `hey "fix the bug"` |
-| Review and manage actions in conversation | Claude Code MCP |
-| Add actions while chatting with Claude | Claude Code MCP |
-| Bulk operations from terminal | Hey CLI |
-
-Both write to the same Stax. Changes sync in real time.
-
----
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| "needs authentication" | Remove HeyStax and add it again with your token |
-| "PLAN_REQUIRED" | Upgrade to HeyStax Pro or Trial |
-| HeyStax not in `/mcp` list | Run `claude mcp add` command above |
-| "TOKEN_INVALID" | Remove and re-add: `claude mcp remove heystax` then add again |
-| Connection timeout | Check your internet connection; the MCP server is at `dash.heystax.ai` |
-
----
-
-## Remove
-
-To disconnect HeyStax from Claude Code:
-
-```bash
-claude mcp remove heystax
-```
+Now you can capture work mid-flow and find it waiting everywhere else.

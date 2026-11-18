@@ -2,67 +2,46 @@
 nav_exclude: true
 ---
 
-# Public Defender in LA, 100 Degrees, Court in 10 Minutes
+# Marcus has ten minutes before the judge
 
 [← Back to Use Cases](index.md)
 
----
+Los Angeles, 15:20, 38 degrees. Marcus, a public defender, sits in his car outside the courthouse with the laptop on the steering wheel.
 
-It's Los Angeles, 3:20pm, 100 degrees.
-He's in his car outside the courthouse, laptop balanced on the steering wheel, AC fighting for its life.
+At 15:30 he argues **People v. Ramirez**. This morning he was deep in two other cases: a plea on Johnson and a bail review on Flores. His browser is 40 tabs deep, and the DA's last email is somewhere in there.
 
-In 10 minutes, he's standing in front of a judge on **People v. Ramirez**. Before that, he was working on two other cases in completely different states of chaos:
+## The stax
 
-* A plea negotiation on **People v. Johnson**
-* A bail review on **People v. Flores**
+Marcus keeps one stax per case.
 
-Each case lives in its own mess:
+| Stax | Mission | Goal | Next Action |
+|---|---|---|---|
+| **Ramirez** | A fair result for a client who fears a strike | A continuance if the DA's offer has not moved | Raise the discovery still missing from 14 March |
+| **Johnson (plea)** | A plea the client understands | Terms agreed in writing this week | Send the counter-offer to the DA |
+| **Flores (bail review)** | Get Flores home to his kids | Bail reduced at Friday's hearing | Collect two employer letters |
 
-* Court docket
-* Discovery PDFs
-* Notes from last client meeting
-* Email from DA
-* Motion draft
-* Sentencing guideline references
+## What happens
 
-## Without HeyStax
+1. **Save the tabs.** With the TabStax extension the Ramirez stax holds the court portal, the motion draft, the DA thread, his jail visit notes and the guidelines.
+2. **Share it.** Earlier in the week he shared Ramirez with Dana, his paralegal, and Luis, his investigator.
+3. **Hand on from the phone.** Leaving the jail, he types `/t @dana build the discovery timeline` in Telegram. It lands as a card with her name on it.
+4. **Switch cases.** At 15:20 he closes Johnson and Flores and opens Ramirez. Only those tabs, only that next action.
+5. **Ask without scrolling.** He asks Claude, connected to HeyStax, "what is open on Ramirez?" It answers from the stax, with Dana's timeline card marked done.
 
-His browser is 40 tabs deep. Ramirez motion draft is somewhere. The DA's last email is buried. The docket link? Who knows. Sweat, literal and metaphorical. He goes into court with "good enough" recall and hopes he doesn't miss something crucial.
+## After
 
-## With HeyStax
+Marcus walks in hot, but not scattered. The stax did the remembering. Johnson and Flores wait in their own stax, next action and all.
 
-He's already set up:
+**It is yours.** The case context sits in his account, not in one chat window or one tired head.
 
-* **"Case – People v. Ramirez"** Stax
-* **"Case – People v. Johnson (Plea)"**
-* **"Case – People v. Flores (Bail Review)"**
+## What works today
 
-Ramirez Stax includes:
+| Step | State |
+|---|---|
+| Save and reopen a stax's tabs with the TabStax extension; share the stax | live |
+| `/t @handle` in Telegram adds a card for that person | live |
+| Ask Claude or ChatGPT about the stax over MCP | live with your token; Claude.ai on the web is partial |
 
-* The case in the LA court portal
-* The motion draft
-* Email thread with the DA
-* Notes from his last jail visit
-* A tab with relevant statute / guidelines
-* Start Page with bold Next Actions:
-
-  * *"Argue for continuance if DA's offer unchanged"*
-  * *"Bring up missing discovery from 03/14"*
-
-He **shares the Ramirez Stax with his investigator and paralegal** earlier in the week:
-
-* Investigator adds a tab with a key witness statement.
-* Paralegal adds a timeline doc and a checklist.
-
-Sitting in the baking car now, he hits **Open Stax → Ramirez**.
-
-* The docket is right there
-* The motion is open to the last paragraph he edited
-* His notes remind him: *"Client wants to avoid any plea with strike implications; confirm understanding of risk on record."*
-
-He closes Johnson and Flores worlds. For these 10 minutes, his whole brain is Ramirez.
-When his case is called, he walks in hot, but not scattered — his environment did the remembering for him.
-
----
+Now you can walk into the next room carrying only the case in front of you.
 
 [← Back to Use Cases](index.md)

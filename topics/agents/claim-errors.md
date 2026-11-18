@@ -37,6 +37,17 @@ That is deliberate. If "no access" and "does not exist" looked different, a toke
 | `Agent tokens cannot call tool: next_actions_complete` | Agents finish work with a report, not this tool. | Send `next_actions_report` with state `done`. |
 | `Agent tokens cannot call tool: stax_leave` | Agents cannot leave a stax on their own yet. | Ask the owner to run `agent_deauthorize`. |
 
+### Coming next for agents
+
+{% include badge-planned.html %}
+
+A role will close its own card with `next_actions_complete`, and the Chief will close, reassign or reopen any card. Two new refusals will come with it:
+
+| Message | What it will mean | What to do |
+|---|---|---|
+| `ACTION_NOT_YOURS` | The role tried to close another role's card. | Comment on the card to its holder, the Chief or you. |
+| `REOPEN_NOT_ALLOWED` | A role other than the Chief tried to reopen a done card. | File a new card, or ask the Chief with a comment. |
+
 ## What the owner sees
 
 | Message | What it means | What to do |

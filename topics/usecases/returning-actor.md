@@ -10,7 +10,7 @@ nav_exclude: true
 
 Mary is in her 40s.
 
-In her early 20s, she acted — small theatre, student films. It lit her up like nothing else.
+In her early 20s, she acted: small theatre, student films. It lit her up like nothing else.
 But then life happened: a job, bills, maybe kids, safety. She buried that dream very deep.
 
 Now, every time she sees a great performance, something inside her twists.

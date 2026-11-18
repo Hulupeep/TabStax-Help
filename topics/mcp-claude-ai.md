@@ -6,7 +6,7 @@ nav_order: 1
 
 # Connect Claude to your stax
 
-Claude reads and writes your stax over MCP. Ask in plain words. The answer lands in your graph, not in a scrolled-away chat.
+Claude reads and writes your stax over MCP. Ask in plain words. The answer lands in your stax, not in a scrolled-away chat.
 
 ## Why it matters to you
 
@@ -26,7 +26,7 @@ You plan a launch with Claude on Tuesday. On Thursday you open the `hey` CLI and
 
 1. Copy your token. Keep it out of chats and screenshots.
 2. Follow [Connect to Claude Code](mcp-claude-code). It is one command.
-3. Start Claude and type `List my stax`. Claude lists your stax by name.
+3. Type `List my stax`. Claude lists your stax by name.
 
 ## What to ask
 
@@ -36,7 +36,7 @@ You plan a launch with Claude on Tuesday. On Thursday you open the `hey` CLI and
 | "Show next actions for WebApp" | `next_actions_list` | Lists the open actions on one stax |
 | "Add 'Fix login bug' to WebApp" | `next_actions_add` | Adds a next action |
 | "Mark the login bug as done" | `next_actions_complete` | Completes it |
-| "Note that the code review is finished" | `next_actions_log` | Adds a progress note to the action |
+| "Note that the code review is finished" | `next_actions_log` | Adds a note to the action |
 
 Claude can also read and write goals, dates, people and records. See [what is live](../docs/shipped-ledger).
 
