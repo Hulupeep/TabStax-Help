@@ -63,6 +63,18 @@ You pick one when you call `agent_authorize`. Calling it again changes the level
 | You | `next_actions_complete` | The action closes, completed by you. |
 | You | `agent_deauthorize` | Its access ends and every claim on that stax is released. The actions stay assigned to its handle until you move them. |
 
+### Coming next
+
+{% include badge-planned.html %}
+
+| Who | Will be able to |
+|---|---|
+| A role | Close its own card with `next_actions_complete`: one it holds, or one nobody holds that it filed or is assigned. |
+| Your Chief of Staff | Close any card on the stax, reassign a card another role holds, and reopen a done card. |
+| You | Reopen a done card with `next_actions_reopen`. It goes back to open and unclaimed, still assigned. |
+
+A card with a check will still close only when its check passes. Irreversible work will still wait for your go-ahead.
+
 ## Work that cannot be undone
 
 A production migration. A payment. A bulk send. A delete. Some work waits for a yes.
