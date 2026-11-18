@@ -8,7 +8,7 @@ search_exclude: true
 
 # Shipped ledger
 
-Last checked: 2026-11-17. Source: `_data/ledger.yml`.
+Last checked: 2026-11-18. Source: `_data/ledger.yml`.
 
 Help pages may only describe what this ledger says is live. `scripts/check_truth.py` enforces it on every pull request.
 
@@ -18,7 +18,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 52 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 17 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 13 |
 
 ## Live
 
@@ -103,7 +103,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 
 | Capability | Docs wording | Evidence |
 |---|---|---|
-| heystax listen and heystax run: CLI workers that wait for work, one git worktree per card | heystax listen runs from the repo today; it is not on npm yet | tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10. |
+| heystax listen and heystax run: CLI workers that wait for work, one git worktree per card | heystax listen runs from the repo today; it is not on npm yet | tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10. 2026-11-17: a done card's committed work reaches GitHub, or the card says why it did not (tabstax#1335, 0.5.8), and the listener pushes and opens the PR from the card's own worktree, so your pre-push hooks check the card's work, not your half-done files (tabstax#1337, 0.5.9). npm heystax-cli latest still 0.1.13 on 2026-11-18. |
 | Claude Code connects over MCP with your token; Claude.ai can add HeyStax as a sign-in connector | Claude Code connects with your token; Claude.ai adds HeyStax as a connector and you sign in and pick a role | Claude Code takes a token header (production 7a0942a READY, Vercel 2026-11-10). Sign-in connect is live on production from 2026-11-13 (tabstax#1180) and shows Claude as verified for claude.ai return addresses, but nobody has yet added the connector from Claude.ai itself. |
 | Timesheet approval by a lead | approval is coming | CHANGELOG: approval RPC added, production activation remains separate (tabstax root #976, web #142/#143) |
 | Invoices from approved time, invoice nudges, invoice PDF | invoicing is partly built | CHANGELOG roots #978 and #982: production activation remains separate; render-invoice-pdf function exists; epic tabstax#354 |
@@ -129,7 +129,8 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | @heystax/hey CLI package | do not tell readers to install @heystax/hey yet | cli/package.json names @heystax/hey 0.1.0; npm returns Not found (2026-10-25) |
 | Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
-| A pull request check reads a private repo with the stax owner's own GitHub token, set by the owner only; with no token a private repo is reported as unreachable, not as the worker's failure | you will be able to give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo | tabstax#1312 (#1297) merged 2026-11-15 02:57Z. 2026-11-16: github_check_token_set is not in the production MCP tool list, so the owner cannot set a token yet. Still absent on 2026-11-17. |
+| Agents close their own cards; the Chief closes, reassigns or reopens any card on the stax; you reopen a done card | a role will close its own card with next_actions_complete; the Chief will close, reassign or reopen any card on the stax | tabstax#1331, PR tabstax#1336 merged 2026-11-17 07:20Z (migration 20261117090000, mcp card-authority.ts). 2026-11-18: the production MCP tool list seen through a connected HeyStax client has no next_actions_reopen, and next_actions_complete still reads 'Mark a Next Action as done' with only action_id, so the change is not deployed yet. |
+| A pull request check reads a private repo with the stax owner's own GitHub token, set by the owner only; with no token a private repo is reported as unreachable, not as the worker's failure | you will be able to give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo | tabstax#1312 (#1297) merged 2026-11-15 02:57Z. 2026-11-16: github_check_token_set is not in the production MCP tool list, so the owner cannot set a token yet. Still absent on 2026-11-17 and 2026-11-18. |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |
