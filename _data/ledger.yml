@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-18
+checked: 2026-11-19
 
 capabilities:
 
@@ -43,7 +43,7 @@ capabilities:
     name: "heystax listen and heystax run: CLI workers that wait for work, one git worktree per card"
     state: partial
     terms: ['hey listen', 'hey run\b', 'heystax listen', 'heystax run\b']
-    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10. 2026-11-17: a done card's committed work reaches GitHub, or the card says why it did not (tabstax#1335, 0.5.8), and the listener pushes and opens the PR from the card's own worktree, so your pre-push hooks check the card's work, not your half-done files (tabstax#1337, 0.5.9). npm heystax-cli latest still 0.1.13 on 2026-11-18."
+    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10. 2026-11-17: a done card's committed work reaches GitHub, or the card says why it did not (tabstax#1335, 0.5.8), and the listener pushes and opens the PR from the card's own worktree, so your pre-push hooks check the card's work, not your half-done files (tabstax#1337, 0.5.9). npm heystax-cli latest still 0.1.13 on 2026-11-18. 2026-11-18: the listener rebases a stale card branch onto main before its first push, with no prompt (tabstax#1340, 0.5.10). npm heystax-cli latest still 0.1.13 on 2026-11-19."
     wording: "heystax listen runs from the repo today; it is not on npm yet"
 
   - id: cli-rename
@@ -407,7 +407,7 @@ capabilities:
     name: "Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap"
     state: unverified
     terms: ['wait_for_work', 'runs[- ]per[- ]hour', 'pause switch', 'pick(s)? up work on (its|their) own', 'launchers?']
-    evidence: "Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet."
+    evidence: "Production MCP tools/list on 2026-11-09 includes wait_for_work (paused, capped, retry_after_seconds), launcher_register, launcher_list and launcher_update; tabstax#1071-#1073 are deployed (coordinator, 2026-11-09). Gate D, the end-to-end check, is running; no browser walk yet. tabstax#1339 (merged 2026-11-18) makes wait_for_work poll every 10 s, not 3 s, to cut database load; tabstax#1341 (merged 2026-11-18) holds a waiting card back from listeners until its next_check. Both need a production migration; not observed from outside on 2026-11-19."
     wording: "a worker waits for work and picks it up as soon as it is assigned; you can pause its launcher or cap its runs per hour"
 
   - id: heystax-connect
@@ -552,10 +552,10 @@ capabilities:
 
   - id: card-authority
     name: "Agents close their own cards; the Chief closes, reassigns or reopens any card on the stax; you reopen a done card"
-    state: planned
+    state: live
     terms: ['next_actions_reopen', 'ACTION_NOT_YOURS', 'REOPEN_NOT_ALLOWED', 'close (its|their) own cards?', 'reopen a done card']
-    evidence: "tabstax#1331, PR tabstax#1336 merged 2026-11-17 07:20Z (migration 20261117090000, mcp card-authority.ts). 2026-11-18: the production MCP tool list seen through a connected HeyStax client has no next_actions_reopen, and next_actions_complete still reads 'Mark a Next Action as done' with only action_id, so the change is not deployed yet."
-    wording: "a role will close its own card with next_actions_complete; the Chief will close, reassign or reopen any card on the stax"
+    evidence: "tabstax#1331, PR tabstax#1336 merged 2026-11-17 07:20Z (migration 20261117090000, mcp card-authority.ts). 2026-11-18: not in the production tool list yet. 2026-11-19: the production MCP tool list seen through a connected HeyStax client has next_actions_reopen ('Reopen a done card. The stax owner's own token, or ... the Chief ... Other roles get REOPEN_NOT_ALLOWED'), and next_actions_complete now reads 'With an agent token: a role closes its own card (one it holds, or one nobody holds that it filed or is assigned; ACTION_NOT_YOURS otherwise), and the Chief closes any.' Schemas only; no card was closed or reopened."
+    wording: "a role closes its own card with next_actions_complete; the Chief closes, reassigns or reopens any card on the stax; you reopen a done card with next_actions_reopen"
 
   - id: verified-done
     name: "Verified done: a card with a page check closes only when HeyStax's own fetch passes; a fail reopens it with the reason"
@@ -566,10 +566,10 @@ capabilities:
 
   - id: pr-check-private-repo
     name: "A pull request check reads a private repo with the stax owner's own GitHub token, set by the owner only; with no token a private repo is reported as unreachable, not as the worker's failure"
-    state: planned
+    state: live
     terms: ['own GitHub token', 'github_check_token', 'check can read a private repo']
-    evidence: "tabstax#1312 (#1297) merged 2026-11-15 02:57Z. 2026-11-16: github_check_token_set is not in the production MCP tool list, so the owner cannot set a token yet. Still absent on 2026-11-17 and 2026-11-18."
-    wording: "you will be able to give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo"
+    evidence: "tabstax#1312 (#1297) merged 2026-11-15 02:57Z. Absent from the production MCP tool list on 2026-11-16, 2026-11-17 and 2026-11-18. 2026-11-19: github_check_token_set is in the production MCP tool list seen through a connected HeyStax client: 'Stax owner only (your own key; agents and the Chief cannot). Give HeyStax a GitHub token so github_pr_merged checks can read a private repo. Without one ... the check reports it as unreachable (not the worker's failure)'. Write-only, bound to the stax and its linked repo, clear: true removes it. Schema only; no token was set."
+    wording: "give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo"
 
   - id: outcome-events
     name: "Outcome events: replies, signups, trials and Stripe money recorded once per source event and credited to the role and card whose CRM send came last in the 60 days before; the goal board's MRR comes from Stripe and says not connected instead of 0 (outcomes_list, outcome_connect)"
