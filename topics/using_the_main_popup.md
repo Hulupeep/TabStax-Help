@@ -6,74 +6,41 @@ nav_order: 2
 
 [← Back to Help Home](/)
 
-# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Understanding the TabStax popup
+# <img src="../icons/tabstax-32.png" alt="TabStax" width="32" height="32" style="vertical-align: middle; margin-right: 10px;">Use the TabStax popup
 
-The TabStax popup is the extension's panel: quick access to your next actions and Stax while you're working in Chrome.
+The popup is the TabStax extension's panel in Chrome. It shows your next actions and your stax.
 
-## Why this helps
+## Why it helps
 
-When you're juggling multiple projects, your brain has to answer two questions: "What should I do next?" and "Which project should I open?" The main popup splits those questions into two clean sections so you can either follow the last thing you were working on, pick a different next action that matters more right now, or open a whole Stax when you're ready to dive in. No hunting through tabs or trying to remember which project needed what.
+Two questions eat your morning: "What should I do next?" and "Which project do I open?". The popup answers each in its own section. Glance, pick, go.
 
-The **top bar** gives you quick access to Search, Feedback, Help, and Sign out. Below that, the popup has two main sections:
+The top bar has Search, Feedback, Help and Sign out.
 
 <img src="../screenshots/mainpopup.png" alt="Main TabStax popup showing My Next Actions and My Stax" width="400" style="display: block; margin: 20px auto;">
 
----
-
 ## My Next Actions
 
-This is your cross-project brain inbox. It shows **three next actions** pulled from across all your Stax, sorted by **last updated**.
+Three next actions from across all your stax, newest update first. The most recent one has a soft pink glow: probably what you were just doing. It is a hint, not a rule.
 
-**What you'll see:**
-
-* The **most recently updated** next action has a **soft pink glow** – a gentle nudge toward "this is probably what you were just working on."
-* You're not locked into that choice; it's just a suggestion based on recency.
-
-**What you can do:**
-
-* **Click any next action** to jump to that Stax's **Start Page** – this opens the page where you can edit or review that Stax's next actions (it doesn't open all the tabs; just the Start Page).
-* **See more next actions** in two ways:
-  1. Click the **number** beside "My Next Actions" (e.g., `59`) to open a fuller list.
-  2. Collapse the **My Next Actions** panel; when collapsed, a **"Browse all"** link appears. Click it to see a dashboard listing all projects and their next actions.
-
-**Why this matters:**
-
-Instead of asking yourself "What was I doing?" or "Which Stax had that thing I needed to finish?", you just glance at this section. Your brain can decide: follow the pink-highlighted recent action or pick something else that's more urgent right now.
-
----
+1. Click a next action to open that stax's Start Page. It opens the page, not all the tabs.
+2. Click the number beside "My Next Actions" (for example `59`) for the full list.
+3. Or collapse the panel and click **Browse all** to see every project and its next actions.
 
 ## My Stax
 
-This section is where you **open and manage whole Stax**. Use it when you're ready to dive into a full project with all its tabs.
+Open and manage whole stax here.
 
 <img src="../screenshots/mainpopup2_Nextactions_collapsed.png" alt="My Stax expanded with Next Actions collapsed" width="400" style="display: block; margin: 20px auto;">
 
-**What you can do:**
+1. Pick a stax from the dropdown, or search by name or tag (`#clients`, `billing`).
+2. Click **Open All** to open every tab in it.
+3. To save the tabs you have open now, type a name and optional tags (`cardano billing #clients`) and click **New**. More in [Creating your first stax](creating_your_first_stax).
 
-* **Collapse or expand** the My Stax section to focus on either actions or your project list.
-* Click the **dropdown** to see all your Stax.
-* **Scroll and select** the Stax you want.
-* Click **"Open All"** to open every tab in that Stax.
-* Use the **search field** at the top to quickly find a Stax by name or hashtag (e.g., search `#clients` or `billing`).
-
-**Creating a new Stax from this view:**
-
-* In the Stax name field, type a name plus optional tags – for example, `cardano billing #clients`.
-* Click **New**.
-* The current set of tabs is saved as that Stax. Tags make it easier to find later.
-* (For more detail, see [Creating your first Stax](creating_your_first_stax.md).)
-
----
-
-## Now you can…
-
-Now you can answer "What should I do next?" without digging through projects, and open the right Stax in one click when you're ready to work.
+Now you can answer "what next?" in one glance, and open the right stax in one click.
 
 ---
 
 **Related guides:**
-- [What problem HeyStax solves](what_problem_tabstax_solves.md) – the core problem and mindset shift
-- [What you see the first time you open TabStax](first_time_opening_tabstax.md): your first experience after installing
-- [The HeyStax Mental Model](tabstax_mental_model.md) – understand the big idea: think in problems, not tabs
-- [Creating your first Stax](creating_your_first_stax.md) – step-by-step guide with a real example
-- [What is a Stax?](what_is_a_stax.md) – deep dive into the core concept
+- [What you see the first time you open TabStax](first_time_opening_tabstax)
+- [The HeyStax mental model](tabstax_mental_model)
+- [What is a stax?](what_is_a_stax)

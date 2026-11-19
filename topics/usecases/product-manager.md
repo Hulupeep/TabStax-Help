@@ -2,56 +2,46 @@
 nav_exclude: true
 ---
 
-# Product Manager With Three Streams and a 15-Minute Gap
+# Priya moves a stream forward in a 15-minute gap
 
 [← Back to Use Cases](index.md)
 
----
+Priya is a product manager with three streams: a mobile redesign, an API platform and an analytics MVP. She has 15 minutes between two meetings.
 
-You're a PM managing three parallel streams:
+Last week that gap went on 40 Slack messages, an old Figma link and a Jira comment. Nothing moved.
 
-* **Stream A:** Mobile app redesign
-* **Stream B:** API platform revamp
-* **Stream C:** Analytics dashboard MVP
+## The stax
 
-You have a 15-minute gap between two meetings, and you want to move something forward.
+One stax per stream.
 
-## Without HeyStax
+| Stax | Mission | Goal | Next Action |
+|---|---|---|---|
+| **Mobile redesign** | Make checkout easy on a phone | Design handoff signed off by 28 Nov | Ask Sarah to confirm the handoff date |
+| **API platform** | Let partners build without asking us | Spec v2 agreed with engineering | Follow up with Omar on the auth section |
+| **Analytics MVP** | Show customers their own usage | First dashboard in front of three customers | Unblock the design review |
 
-You open Slack, see 40 messages, start hunting for the Figma link, find an old version, get distracted by a Jira comment, lose the thread entirely.
+## What happens
 
-## With HeyStax
+1. **Save the tabs.** With the TabStax extension each stax keeps its own tabs: the PRD, the Figma file, the filtered Jira board, the Slack channel.
+2. **Share each one.** Sarah and the designers are on Mobile redesign. Omar and the engineers are on API platform. They open the same tabs and next actions.
+3. **Use the gap.** At 11:45 Priya opens Mobile redesign. Only those tabs, and one next action: ask Sarah.
+4. **Hand it on.** She types `Confirm the handoff date @sarah` in the stax. It moves to Sarah's column.
+5. **Ask without hunting.** Before the next meeting she asks Claude, connected to HeyStax, "what is open on API platform?" It answers from the stax.
 
-You've set up:
+## After
 
-* **"PM – Mobile Redesign"** Stax
-* **"PM – API Platform"** Stax
-* **"PM – Analytics Dashboard"** Stax
+The gap moved one stream. The other two wait in their stax, next action and all.
 
-Each Stax contains:
+**It travels.** The same next actions show in Chrome, on the dashboard and in Claude.
 
-* PRD or spec doc
-* Figma designs
-* Jira board filtered to that stream
-* Key Slack channel
-* Stakeholder comms
-* Start Page with:
+## What works today
 
-  * *"Unblock design review"*
-  * *"Follow up with eng on API spec"*
+| Step | State |
+|---|---|
+| Save and reopen a stax's tabs with the TabStax extension; share the stax | live |
+| Type `@handle` in a next action on a shared stax to assign it | live |
+| Ask Claude or ChatGPT about the stax over MCP | live with your token; Claude.ai on the web is partial |
 
-In 15 minutes:
-
-* You open Mobile Redesign Stax.
-* You see: Figma, PRD, and a note saying *"Ask Sarah to confirm timeline for handoff."*
-* You send the message, check Jira, move on.
-
-You **share each Stax with your cross-functional team**:
-
-* Designers, engineers, and stakeholders open the same world when they work on that stream.
-
-**Outcome:** Every spare minute becomes usable. You're not choosing between "figuring out what to work on" and "doing actual work."
-
----
+Now you can turn a 15-minute gap into progress, not a search.
 
 [← Back to Use Cases](index.md)

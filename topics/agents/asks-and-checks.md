@@ -32,7 +32,7 @@ Now it says what it would do, and when. If you're busy, the work goes on. If you
 
 Page checks fetch only public https pages on port 443. Never an IP address, an internal name, or a page behind a redirect.
 
-A pull request check reads the GitHub repo linked to the stax. Today that repo must be public.
+A pull request check reads the GitHub repo linked to the stax. For a private repo, give HeyStax your own GitHub token for that stax with `github_check_token_set`. Only you, the owner, can set it. Without it, a private repo shows as unreachable, not as the role's mistake.
 
 ## What works today
 
@@ -42,12 +42,6 @@ A pull request check reads the GitHub repo linked to the stax. Today that repo m
 | Buttons for an ask in Telegram | coming next |
 | A page check on a card; a failed check reopens it with the reason | live, seen on 13 Nov 2026 |
 | A merged pull request as a card's check, on a public repo | live, offered in production on 16 Nov 2026 |
-| Your own GitHub token, so a pull request check can read a private repo | coming next |
-
-## Coming next
-
-{% include badge-planned.html %}
-
-You will be able to give HeyStax your own GitHub token for one stax, so a pull request check can read a private repo. Only you, the owner, will set it. Without it, a private repo will show as unreachable, not as the role's mistake.
+| Your own GitHub token, so a pull request check can read a private repo | live, offered in production on 19 Nov 2026 |
 
 Now you can let work go on while you are busy, and close a card only when the proof is in.

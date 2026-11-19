@@ -60,20 +60,13 @@ You pick one when you call `agent_authorize`. Calling it again changes the level
 |---|---|---|
 | The agent | reports `done` | The action closes, completed by the agent. |
 | The agent | releases it | The action goes back to open. |
+| A role | `next_actions_complete` | Closes its own card: one it holds, or one nobody holds that it filed or is assigned. Any other card gets `ACTION_NOT_YOURS`. |
+| Your Chief of Staff | `next_actions_complete` | Closes any card on the stax. It can also reassign a card another role holds. |
 | You | `next_actions_complete` | The action closes, completed by you. |
+| You or your Chief | `next_actions_reopen` | A done card goes back to open and unclaimed, still assigned. Other roles get `REOPEN_NOT_ALLOWED`. |
 | You | `agent_deauthorize` | Its access ends and every claim on that stax is released. The actions stay assigned to its handle until you move them. |
 
-### Coming next
-
-{% include badge-planned.html %}
-
-| Who | Will be able to |
-|---|---|
-| A role | Close its own card with `next_actions_complete`: one it holds, or one nobody holds that it filed or is assigned. |
-| Your Chief of Staff | Close any card on the stax, reassign a card another role holds, and reopen a done card. |
-| You | Reopen a done card with `next_actions_reopen`. It goes back to open and unclaimed, still assigned. |
-
-A card with a check will still close only when its check passes. Irreversible work will still wait for your go-ahead.
+A card with a check still closes only when its check passes. Irreversible work still waits for your go-ahead.
 
 ## Work that cannot be undone
 

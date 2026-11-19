@@ -47,50 +47,37 @@ A finished action is not the point. The point is whether the goal moved. If it d
 
 ## Think in projects, not tools
 
-Traditional thinking:
-> "I need to open Notion, then find the doc, then check Jira, then pull up the dashboard."
+Old habit: open Notion, find the doc, check Jira, pull up the dashboard.
 
-HeyStax thinking:
-> "I'm in the API Migration project." Everything else follows from that.
-
-A Stax is the entry point for a project, not for a tool. You move between projects, not between apps. The tools are inside the Stax. You don't have to assemble them every time.
+New habit: "I'm in the API Migration stax." The tabs, the next actions and the people are already inside it. You move between projects, not between apps.
 
 ---
 
-## Context is shared
+## Everyone starts from the same place
 
-This applies to your teammates and your AI agents, not just you.
-
-When someone is added to a Stax, they get the same entry point: the same tabs, the same next actions, the same priority, the same state. When an agent connects via MCP, it reads the same context. No "let me catch you up." No five links pasted into Slack. The model doesn't change depending on who or what is accessing the project. It's always: name the project, find the state, take the next action.
+Add Alice to a stax and she sees the same tabs, next actions and state as you. Connect Claude over MCP and it reads the same context. No "let me catch you up". No five links pasted into Slack.
 
 ---
 
-## The constraint is the feature
+## One clear next action beats thirty vague ones
 
-HeyStax shows you a small number of next actions per project, on purpose. Not because it can't hold more, but because the job is to answer "what do I do right now?" not "what is everything that could ever be done?"
-
-A Stax with one clear next action is more useful than a Stax with thirty vague ones. The constraint is what makes re-entry fast. You open a Stax, you see the next action, you do it. No scrolling. No triaging. No decision fatigue about which of forty-seven items to start with.
+The job of a stax is to answer "what do I do right now?". Open it, see the next action, do it. No scrolling, no triage.
 
 ---
 
-## The psychology
+## Why it works
 
-**Your working memory can only hold 4–7 things at once** (Miller, 1956; Cowan, 2001). Every time you try to remember where you left off (which tools, which docs, what you were about to do), you're burning through that budget before any useful work happens.
+| Idea | What it means for you |
+|---|---|
+| Working memory holds about four to seven things (Miller, 1956; Cowan, 2001) | Remembering where you left off spends that budget before real work starts. |
+| Unfinished tasks keep looping in your head (Zeigarnik, 1927) | Once the next step is written down outside you, the loop lets go. |
 
-**The Zeigarnik Effect** (Zeigarnik, 1927) shows that unfinished tasks create mental tension. Your brain loops on them, trying not to forget. But the moment you have a clear, external plan for what to do next, the loop stops. You don't need to finish the task. You just need to trust that you've captured it and know the next step.
-
-A Stax does both: captures the full context so your working memory is freed, and stores the next action so the Zeigarnik loop releases. Your brain stops trying to be a bookmark manager and a task tracker. It gets to just do the work.
-
----
-
-## The model in one sentence
-
-Your brain should spend its energy doing the work, not reconstructing where you were.
+A stax holds the context and the next step, so your head does not have to.
 
 ---
 
 **Related guides:**
 - [What problem HeyStax solves](what_problem_tabstax_solves): the core problem
-- [What is a Stax?](what_is_a_stax): the building block of everything
-- [Creating your first Stax](creating_your_first_stax): step by step with the TabStax extension
+- [What is a stax?](what_is_a_stax): the building block
+- [Creating your first stax](creating_your_first_stax): step by step
 - [Surfaces](surfaces/): how HeyStax works across browser, terminal, AI, and dashboard
