@@ -62,6 +62,8 @@ If `agent_deauthorize` comes back with status `cleanup_pending` and a list of `r
 
 If it claimed inside a run, the claim is released once the run stops sending heartbeats. A claim made outside a run stays put: complete the action yourself with `next_actions_complete`, or run `agent_deauthorize` to release it.
 
+{% include badge-planned.html %} Coming next: you, or your Chief, will be able to free a claim held by an agent that is no longer working, without that agent. Its access ended, or it has no live run, so the card is no longer stuck behind it.
+
 Now you can read a refusal and know which side to fix.
 
 **You set the edges.** Most of these errors are the edges doing their job.
