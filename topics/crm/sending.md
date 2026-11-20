@@ -34,6 +34,8 @@ Decided not to send? `crm_send_release` frees the reservation, so it stops count
 
 A refusal means do not send. Cooldowns and caps come back with when to try again.
 
+{% include badge-planned.html %} Coming next: send windows, so nothing goes out outside the hours you set (`WINDOW_CLOSED`), and an address check that refuses a bad address before it is used (`ADDRESS_INVALID`).
+
 ## What only you control
 
 With your own token. A bot's key is refused.
