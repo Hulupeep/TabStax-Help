@@ -44,4 +44,6 @@ A reply is a message, not a stage. The bot moves the stage itself with `crm_stag
 
 An angle starts as testing. It becomes a winner or dead with `crm_angle_status_set`. Dead is final, but its sends and replies still count. Results are never typed in. `counts` works them out from what happened.
 
+{% include badge-planned.html %} Coming next: an angle you are not testing yet will wait as a candidate, or be parked or rejected with revisit dates. Each prospect will carry its fit tier and the evidence for why now.
+
 Now you can open one stax and see which angle is working, what is waiting, and who needs an answer.

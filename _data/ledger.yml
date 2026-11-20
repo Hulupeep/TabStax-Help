@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-19
+checked: 2026-11-20
 
 capabilities:
 
@@ -63,7 +63,7 @@ capabilities:
   - id: mcp-plan-gate
     name: MCP needs a Pro or Trial plan
     state: unverified
-    evidence: "supabase/functions/mcp/caller-identity.ts returns PLAN_REQUIRED for plans other than pro and trial (tabstax c3c18c1)"
+    evidence: "supabase/functions/mcp/caller-identity.ts returns PLAN_REQUIRED for plans other than pro and trial (tabstax c3c18c1). tabstax#1324 merged 2026-11-19 06:35Z: every PLAN_REQUIRED refusal (MCP calls, sign-in connect, Chief setup) now reads 'needs HeyStax Pro or a trial. Start one at https://dash.heystax.ai/billing', because dash.heystax.ai/pricing answered 404 on 2026-11-14 and /billing 200 (per the PR's test). Code only; not observed tonight (2026-11-20), dash.heystax.ai is not reachable from the nightly sandbox."
     wording: "MCP needs a Pro or Trial plan"
 
   - id: mcp-token-only
@@ -214,7 +214,7 @@ capabilities:
   - id: pro-billing
     name: Pro plan purchase through Stripe
     state: unverified
-    evidence: "supabase/functions/stripe-webhook exists; prices not checked"
+    evidence: "supabase/functions/stripe-webhook exists; prices not checked. tabstax#1342 (2026-11-19 03:53Z) upgrades buyers of current HeyStax products, not only the old Pro product; tabstax#1347 (2026-11-19 07:56Z) upgrades only on paid checkouts and downgrades ended subscriptions. Code only; no purchase observed."
     wording: "upgrade to Pro"
 
   # ------------------------------------------------------- records and trust
@@ -400,8 +400,15 @@ capabilities:
     name: "CRM channels: X, LinkedIn, GitHub, Bluesky, Discord, Telegram, phone, WhatsApp and web handles as addresses, with reach on follow-ups"
     state: partial
     terms: ['channel handles?', 'social handles?']
-    evidence: "tabstax#1216 / PR #1217 (2026-11-12): migration 20261112100000_crm_channels_1216 with 88 SQL checks and the #1140 suite unchanged on a disposable database. Production migration not yet applied."
+    evidence: "tabstax#1216 / PR #1217 (2026-11-12): migration 20261112100000_crm_channels_1216 with 88 SQL checks and the #1140 suite unchanged on a disposable database. Production migration not yet applied. 2026-11-20: the production MCP tool list seen through a connected HeyStax client describes channel handles (crm_send_reserve takes x:name, linkedin:in/slug, github:name, discord:name, phone:+353..., or a profile URL; crm_query follow-ups carry reach with each address's channel). Schemas only; no send was made, and whether the database change is applied is still unconfirmed, so the state stays partial."
     wording: "an address can be an email or a channel handle, and every check that applies to email applies to it"
+
+  - id: crm-targeting
+    name: "CRM targeting: qualification and fit tier per prospect, address kinds, touches, a campaign landing page, send windows, and candidate, parked or rejected angles with revisit dates"
+    state: planned
+    terms: ['send windows?', 'WINDOW_CLOSED', 'ADDRESS_INVALID', 'angles_due', 'blocked_on_page', 'fit tier', 'revisit dates?', 'parked angles?']
+    evidence: "tabstax#1226 to #1231 (PRs #1316, #1320, #1321, #1322, #1326 to #1329) merged together through tabstax#1344 on 2026-11-19 06:34Z; six migrations wait for a production go-ahead (per the PR). 2026-11-20: the production MCP tool list seen through a connected HeyStax client has crm_query views due_follow_ups, unresolved_replies and counts only (no angles_due or blocked_on_page), crm_angle_status_set statuses testing, winner and dead only, and crm_send_reserve refusals without ADDRESS_INVALID or WINDOW_CLOSED. Schemas only."
+    wording: "send windows, address checks, prospect qualification and angle revisit dates are coming next"
 
   - id: hosted-pickup
     name: "Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap"
@@ -556,6 +563,20 @@ capabilities:
     terms: ['next_actions_reopen', 'ACTION_NOT_YOURS', 'REOPEN_NOT_ALLOWED', 'close (its|their) own cards?', 'reopen a done card']
     evidence: "tabstax#1331, PR tabstax#1336 merged 2026-11-17 07:20Z (migration 20261117090000, mcp card-authority.ts). 2026-11-18: not in the production tool list yet. 2026-11-19: the production MCP tool list seen through a connected HeyStax client has next_actions_reopen ('Reopen a done card. The stax owner's own token, or ... the Chief ... Other roles get REOPEN_NOT_ALLOWED'), and next_actions_complete now reads 'With an agent token: a role closes its own card (one it holds, or one nobody holds that it filed or is assigned; ACTION_NOT_YOURS otherwise), and the Chief closes any.' Schemas only; no card was closed or reopened."
     wording: "a role closes its own card with next_actions_complete; the Chief closes, reassigns or reopens any card on the stax; you reopen a done card with next_actions_reopen"
+
+  - id: orphan-claim-release
+    name: "Free a claim held by an agent whose access ended or that has no live run: the owner or the Chief lists and releases it"
+    state: planned
+    terms: ['claims_orphaned', 'claim_release_orphan', 'orphan(ed)? claims?']
+    evidence: "tabstax#1317 merged 2026-11-19 07:56Z (migration orphan_claim_release, mcp orphan-claims.ts; also in tabstax#1325 and #1346). The PR says the production migration waits for the Chief's go-ahead. 2026-11-20: claims_orphaned and claim_release_orphan are not in the production MCP tool list seen through a connected HeyStax client."
+    wording: "you, or your Chief, will be able to free a claim held by an agent that is no longer working"
+
+  - id: earned-autonomy
+    name: "Earned autonomy: a role starts at a low level and its reach widens as its checks pass; failed checks drop it at once; off until the owner turns it on"
+    state: planned
+    terms: ['earned autonomy', 'autonomy_status', 'autonomy_configure']
+    evidence: "tabstax#1188 slice 1, PRs tabstax#1307 and #1330 merged 2026-11-19 07:56Z (migration earned_autonomy_1188, mcp autonomy.ts; also in #1346): levels new, proven, trusted, lead; up one level after 10 verified cards in 14 days; 3 failed checks in 7 days or one QC rejection drops it; off per stax until the owner turns it on. 2026-11-20: autonomy_status and autonomy_configure are not in the production MCP tool list seen through a connected HeyStax client. The web role chip is tabstax-webapps#342, not merged."
+    wording: "a role will earn its reach as its checks pass"
 
   - id: verified-done
     name: "Verified done: a card with a page check closes only when HeyStax's own fetch passes; a fail reopens it with the reason"

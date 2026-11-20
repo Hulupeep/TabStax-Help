@@ -8,13 +8,13 @@ nav_order: 11
 
 {% include badge-partial.html %}
 
-A worker can only use what its folder has been given. You choose each kind of access once, per folder, and nothing else.
+A worker uses only what its folder has been given. You choose each kind of access once, per folder.
 
 ## Why it matters to you
 
-Gaia replies to a bug in Telegram. The card lands on your builder at 16:00. If the builder cannot see the data, it guesses, or it stops with "can't reproduce". You lose the afternoon.
+Gaia replies to a bug in Telegram. The card lands on your builder at 16:00. If the builder cannot see the data, it guesses, or stops with "can't reproduce".
 
-Your Claude may be signed in to everything. A worker running on its own with nobody watching is not. That is on purpose: you set the edges, so a card at 03:00 cannot change production.
+Your Claude may be signed in to everything. A worker running alone is not, on purpose. You set the edges, so a card at 03:00 cannot change production.
 
 ## What a worker can reach
 
@@ -33,13 +33,13 @@ Your Claude may be signed in to everything. A worker running on its own with nob
 4. Restart the listener: `systemctl --user restart 'heystax-listen-*'`.
 5. Check it: `heystax db read "select now()"` prints one row.
 
-Use a staging database. Better still, a login that can only read. Never point a worker at a database that holds real patient or customer records.
+Use a staging database, ideally with a read-only login. Never point a worker at real patient or customer records.
 
 ## Check what a worker can reach
 
 Run `heystax access` in the folder. It lists code, branch and pull request, data, and logs, with the fix for each gap. `heystax status` and `heystax listen --install` show the same list.
 
-The worker runs it before it starts. When a card needs something missing, the card comes back blocked with that fix, not a guess.
+The worker runs it before it starts. A card that needs something missing comes back blocked with that fix, not a guess.
 
 Now you can hand a bug to a builder and get a verdict that comes from your data, not a guess.
 
