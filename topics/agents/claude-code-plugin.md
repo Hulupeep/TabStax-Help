@@ -14,7 +14,7 @@ The HeyStax plugin connects a Claude Code session to the role its folder works a
 
 You open Claude Code at 08:00. You don't scroll back through yesterday's chat or paste the card in. Claude already knows it is `@timebreez-builder`, that two cards are waiting, and what it was halfway through.
 
-When you close the laptop mid-card, the card goes back to the role with its last note on it. Nothing is left stuck as "working".
+Close the laptop mid-card and the card goes back to the role with its last note. Nothing is left stuck as "working".
 
 ## Do you need it?
 
@@ -23,8 +23,6 @@ When you close the laptop mid-card, the card goes back to the role with its last
 | Cards picked up while you are away | **Not the plugin.** Run `heystax listen --install --agent claude` in the folder. [Connect a worker](connect-a-worker). |
 | Claude to take cards in a session you are watching | The plugin: `/heystax-work` or `/heystax-loop`. |
 | Work you start yourself to show up on the stax | The plugin's standing order, or just `heystax connect` (it writes the same order for Codex). |
-
-The plugin and the listener work side by side. The listener is for when you are away. The plugin is for when you are at the keyboard.
 
 ## Install it
 
@@ -64,13 +62,9 @@ Claude only ever runs the `heystax` command, and `heystax` reads its own key. No
 {% endcapture %}
 {% include anim/figure.html viewbox="0 0 480 300" label="A Claude Code session with the HeyStax plugin: session start shows the role and waiting cards, /heystax-work claims one, notes and done land on the card, and an open card goes back when the session ends" caption="You open Claude Code in a connected folder. The plugin tells Claude its role and that two cards are waiting. /heystax-work claims the oldest. The card shows working, signed by the role, then a note with the PR and done. If you close the session mid-card, the card goes back to the role with its last note." svg=s %}
 
-## Three mornings
+## Sam goes to lunch
 
-**Bob takes the queue.** Bob opens Claude Code in his repo. It says two cards are assigned to `@timebreez-builder`. He types `/heystax-work`. Claude claims the first, fixes it, notes the PR and marks it done. Bob reads the result on the card from his phone.
-
-**Alice starts something herself.** Alice asks Claude to tidy the import script. No card exists. Under the standing order, Claude runs `heystax task start "Tidy the import script"` first, so the work shows on the stax as hers and the role's. When she comes back next week, the note says where it got to.
-
-**Sam goes to lunch.** Sam types `/heystax-loop 3` and leaves the session open. Claude works three cards in a row and posts a one-line update after each. One needs a price decision, so Claude marks it blocked with the question and moves to the next. The question waits on the card, not in a scrolled-away chat.
+Sam types `/heystax-loop 3` and leaves the session open. Claude works three cards in a row. One needs a price decision, so Claude marks it blocked with the question and moves on. The question waits on the card, not in a scrolled-away chat.
 
 ## When it goes wrong
 

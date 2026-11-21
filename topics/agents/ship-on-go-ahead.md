@@ -12,9 +12,9 @@ A builder role writes the change and opens a pull request. Your Chief of Staff g
 
 ## Why it matters to you
 
-Today the builder stops at the pull request. Then you open a terminal on your own computer, paste a release script and watch it run. You are the last step of every change.
+Today the builder stops at the pull request. You open a terminal, paste a release script and watch it run. You are the last step of every change.
 
-With this, the change goes live while you are on the school run. You read the result on the card.
+With this, the change goes live while you are on the school run.
 
 ## How it works
 
@@ -23,8 +23,6 @@ With this, the change goes live while you are on the school run. You read the re
 3. **The Chief gives the go-ahead.** It checks the change against your mission and Never rules. You can give it yourself instead.
 4. **CI applies it.** {% include badge-partial.html %} For HeyStax itself, the release job is built: each merge gets a plan, and it applies only when the owner runs it. For your own products, this will come later.
 5. **The card closes with proof.** {% include badge-planned.html %} The release job will note what went live and when, on the same card.
-
-Steps 1 to 3 work today: irreversible work waits for a go-ahead from you or a Chief you granted go_ahead. Step 4 works only for HeyStax itself. Step 5 is coming next.
 
 {% capture s %}
 {% include anim/node.html x=90 y=40 label="Builder" sub="@timebreez-builder" kind="agent" w=160 %}
@@ -50,7 +48,7 @@ Bob runs a small payroll product. At 13:40 he tells his Chief, "staff need to se
 
 The Chief adds a card for `@timebreez-builder`. The builder writes the change, with a new database column, and opens a pull request by 14:02. The card asks for a go-ahead because it touches production.
 
-The Chief reads the change, checks it against "never touch a closed pay period", and gives the go-ahead at 14:09. Today Bob runs the release himself. When this is complete, CI runs it and the card says what went live.
+The Chief checks it against "never touch a closed pay period" and gives the go-ahead at 14:09. Today Bob still runs the release himself.
 
 ## What stays yours
 
