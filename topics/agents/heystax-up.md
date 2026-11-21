@@ -12,7 +12,7 @@ nav_order: 9
 
 ## Why it matters to you
 
-Friday, 18:00. You have three stax, each with a builder. Before, that was three keys, three folders, three `connect` runs and three services. Now it is one command, and you can close the laptop knowing which builders are listening.
+Friday, 18:00. Three stax, three builders. That used to mean three keys, three folders and three `connect` runs. Now it is one command, and you close the laptop knowing which builders are listening.
 
 ## How to do it
 
@@ -20,6 +20,21 @@ Friday, 18:00. You have three stax, each with a builder. Before, that was three 
 2. **Run `heystax up`.** Your browser opens HeyStax. If it does not, open the link it prints.
 3. **Sign in and approve.** The page lists the builder roles this computer will run. Press **Approve**.
 4. **Read the table.** One line per builder: stax, builder, folder, status. **listening** means it is waiting for cards.
+
+{% capture s %}
+{% include anim/node.html x=100 y=40 label="heystax up" sub="one command" kind="surface" w=150 %}
+{% include anim/edge.html x1=175 y1=40 x2=250 y2=40 kind="dispatch" d=0.5 %}
+{% include anim/node.html x=340 y=40 label="Your browser" sub="sign in, Approve" kind="person" w=170 d=0.8 %}
+{% include anim/edge.html x1=300 y1=66 x2=85 y2=124 kind="write" d=1.4 %}
+{% include anim/edge.html x1=340 y1=66 x2=240 y2=124 kind="write" d=1.6 %}
+{% include anim/edge.html x1=380 y1=66 x2=395 y2=124 kind="write" d=1.8 %}
+{% include anim/node.html x=85 y=150 label="@shop-builder" sub="folder, key, listener" kind="agent" w=150 d=2.2 %}
+{% include anim/node.html x=240 y=150 label="@site-builder" sub="folder, key, listener" kind="agent" w=150 d=2.4 %}
+{% include anim/node.html x=395 y=150 label="@app-builder" sub="folder, key, listener" kind="agent" w=150 d=2.6 %}
+{% include anim/trail.html x=20 y=214 when="18:00" who="you" what="heystax up, Approve" d=3.0 %}
+{% include anim/trail.html x=20 y=238 when="18:01" who="3 builders" agent="true" what="listening for cards" d=3.4 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 260" label="heystax up: one command opens your browser, you sign in and approve, and each builder role gets its folder, its own key and a listener" caption="You run heystax up and approve once in the browser. Each builder you own gets its folder, its own key and a listener. The table then shows all three as listening." svg=s %}
 
 ## What it does for each builder
 
@@ -29,7 +44,7 @@ Friday, 18:00. You have three stax, each with a builder. Before, that was three 
 - **The plugin.** If Claude Code is on this computer, it adds the HeyStax plugin.
 - **Linger.** If your computer needs one `sudo` line so listeners keep running after you log out, it prints that line. Run it once.
 
-Running `heystax up` again is safe. You get the same folders and the same workers, with new keys.
+Running it again is safe: same folders, same workers, new keys.
 
 ## When a listener goes wrong
 
@@ -38,7 +53,7 @@ A listener fixes the common breaks itself:
 - **Its launcher was revoked.** It registers a new one and carries on, with no restart. The log says "the launcher was revoked; registered a new one and carried on".
 - **Its role was taken off the stax.** It joins the stax once and tries again.
 
-When it cannot fix the break itself, it tells you on the board. The builder's chip on the stax page says **Down** or **Restarting**. Hover over it to see why and the one step that fixes it, for example "run heystax up". A listener that fails to start three times in ten minutes reports it once, not on every try.
+When it cannot fix the break, the builder's chip on the stax page says **Down** or **Restarting**. Hover over it to see why and the one step that fixes it, such as "run heystax up". Three failed starts in ten minutes are reported once, not on every try.
 
 You can check that it is your listener. The chip shows when it started listening, and every card it takes is signed as the builder role, not as you.
 
@@ -47,3 +62,5 @@ You can check that it is your listener. The chip shows when it started listening
 {% include badge-planned.html %}
 
 `npx heystax up`, with nothing to build first, once the command is on npm.
+
+Now you can start every builder you own with one sign-in, and see which ones are listening.

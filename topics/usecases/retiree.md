@@ -2,55 +2,48 @@
 nav_exclude: true
 ---
 
-# Retiree Starting a Second Act Instead of Just Drifting
+# Mary starts a second act
 
 [← Back to Use Cases](index.md)
 
----
+Mary retired on Friday after 35 years in one job. By Wednesday her head is full of static: pension options, a health check, trips, a volunteer role, a course.
 
-Mary has just retired after 35 years in a corporate job.
+One day it is pensions. The next it is walking tours in Italy. Nothing moves.
 
-Everyone says "enjoy it!" but her brain is full of static:
+## The stax
 
-* Pension and drawdown options
-* Health insurance and checkups
-* A list of trips she'd love to take
-* Volunteer roles she bookmarked
-* An online course she keeps thinking about
-* A vague sense she "should do something with all this time"
+Mary keeps two stax. She shares **Foundations** with her daughter Sinead, and **Second Act** with her friend Joan.
 
-## Without HeyStax
+| | **Foundations** | **Second Act** |
+|---|---|---|
+| **Mission** | Know what I can safely spend. | Make the next five years feel chosen. |
+| **Goal** | Pension drawdown date booked, health check done. | Volunteering once a week by the end of the quarter. |
+| **Next Action** | Confirm the pension meeting date. | Email the volunteer coordinator. |
 
-It all lives in her head and scattered tabs. One day she's reading about pensions, the next she's looking at walking tours in Italy, the next she's down a YouTube rabbit hole. Nothing moves forward. The years could blur.
+## What happens
 
-## With HeyStax
+1. **Save the tabs.** With the TabStax extension she saves the pension portal, bank and health insurer as Foundations. The volunteer roles, a local course and her travel notes become Second Act.
+2. **One next action each.** She adds one card per stax. Foundations goes in the Must lane.
+3. **A nudge on the card.** Joan comments on the Second Act card: "Did you email them yet?" Mary sees it next time she opens the stax.
+4. **Close it from the phone.** After the email goes, Mary replies `/done` in Telegram.
+5. **Ask without hunting.** She asks Claude, connected to HeyStax, "what is next on Foundations?" It answers from the card.
 
-She builds **"Retirement – Foundations"** Stax:
+## After
 
-* Pension provider portal
-* Bank accounts
-* Health insurance portal
-* A doc: *"Monthly baseline budget & what I can safely spend."*
-* Start Page:
+Mary opens one stax and moves one thing. Retirement is a plan, not an absence of work.
 
-  * *"Confirm pension drawdown meeting date."*
-  * *"Book full health check before end of month."*
+**You set the edges.** Sinead sees Foundations. Joan sees Second Act. Neither sees the other.
 
-Then she builds **"Retirement – Second Act"** Stax:
+## What works today
 
-* Links to 2–3 volunteer opportunities she's shortlisted
-* Local adult education courses
-* Travel ideas doc
-* A brainstorm doc titled: *"What do I want the next 5 years to feel like?"*
-* Start Page with ONE focus for this quarter:
+| Step | State |
+|---|---|
+| Save and reopen the tabs with the TabStax extension; share the stax | live |
+| Attention lanes (Must, Should, Good, Meh) | live |
+| Comments on a card | live |
+| Reply `/done` in Telegram | live |
+| Ask Claude or ChatGPT about the stax over MCP | live with your token; Claude.ai on the web is partial |
 
-  * *"This quarter's experiment: join X volunteering group 1x/week."*
-
-She **shares Foundations Stax with her financial advisor and adult child** so they can see the numbers and plans.
-She **shares Second Act Stax with a close friend**. They can nudge her: "Did you email the volunteer coordinator yet?"
-
-Instead of vague "someday," she opens one Stax and pushes one concrete next action. Retirement becomes an intentional project, not just an absence of work.
-
----
+Now you can turn "someday" into one next step you can see.
 
 [← Back to Use Cases](index.md)
