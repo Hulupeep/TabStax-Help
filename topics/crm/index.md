@@ -6,18 +6,18 @@ has_children: true
 
 # Run outreach with the CRM
 
-The CRM keeps every organisation you contact, every campaign and angle, and every email sent or received. It lives in your HeyStax account, so any bot you connect works from the same record.
+The CRM keeps every organisation you contact, every campaign and angle, and every message sent or received. It lives in your HeyStax account, so any bot you connect works from the same record.
 
 ## Why it matters to you
 
-A bot that sends emails from its own memory will email the same school twice, forget an opt-out, and lose the reply that said "try us in spring". Here the record outlives the bot. Swap Grok Bot for another bot and the history, the do-not-contact list and the limits stay.
+A bot that sends from its own memory emails the same school twice, forgets an opt-out, and loses the reply that said "try us in spring". Here the record outlives the bot. Swap the bot and the history, the do-not-contact list and the limits stay.
 
 ## Watch it work
 
 <iframe id="hs-crm-anim" src="{{ '/assets/anim/crm.html' | relative_url }}" title="Animation: a bot imports prospects, reserves before each send, is refused when a school opted out or the cap is reached, handles a reply, and you hold all sends" loading="lazy" style="width:100%;height:720px;border:0;display:block"></iframe>
 <script>addEventListener('message',function(e){if(e.data&&e.data.hsCrmHeight){var f=document.getElementById('hs-crm-anim');if(f)f.style.height=(e.data.hsCrmHeight+4)+'px';}});</script>
 
-*Six short scenes. A bot loads the do-not-contact list, then imports 200 schools with no duplicates. Before each email it reserves a send, and the check runs your holds, the do-not-contact list, a 7-day cooldown per school and 30 sends per mailbox per day. A refusal means do not send. A reply is recorded and queued, and the bot moves the stage itself. You can hold every send with your own token. Angles are judged on counted results, and a losing angle is retired.*
+*Six short scenes. A bot loads the do-not-contact list and imports 200 schools with no duplicates. Before each email it reserves a send: your holds, the do-not-contact list, a 7-day cooldown per school and 30 sends per mailbox per day. A refusal means do not send. A reply is recorded and queued. You can hold every send. A losing angle is retired on counted results.*
 
 ## The parts
 
@@ -27,7 +27,7 @@ A bot that sends emails from its own memory will email the same school twice, fo
 | **Campaign** | A goal and an audience, such as "Irish primary schools, 2026". Draft, running, paused or done |
 | **Angle** | One line of attack inside a campaign: the hook, why it should work, the proof, and when to stop |
 | **Membership** | One organisation in one campaign: its stage, angle and next follow-up |
-| **Message history** | Every send, reply, bounce and opt-out. It can't be edited, and it never moves a stage by itself |
+| **Message history** | Every send, reply, bounce and opt-out. It cannot be edited, and never moves a stage by itself |
 | **Do-not-contact list** | Account-wide. One opt-out covers every campaign and every stax |
 | **Send limits** | Your holds, a cooldown per organisation, a cap per mailbox per day |
 
