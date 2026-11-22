@@ -12,7 +12,7 @@ When a worker takes a card, it gets the card's history before it writes a line: 
 
 ## Why it matters to you
 
-Gaia reports a bug in Telegram on Monday. By Wednesday it has two cards, three Claude Code sessions and a note from the Chief. At 02:00 a headless worker claims the next card. It used to start blind, so somebody explained it all again.
+Gaia reports a bug in Telegram on Monday. By Wednesday it has two cards, three Claude Code sessions and a note from the Chief. A worker that claims the next card at 02:00 used to start blind.
 
 Now the worker reads that history first. You did not paste your context. It was already yours, and it travelled.
 
@@ -35,7 +35,7 @@ Each item says who wrote it and when, and links to where it came from. It is his
 3. Assign the card to the role. The listener's agent runs `heystax task show` first and reads all of it.
 4. To check it yourself, run `heystax task show <card>` in the repo folder.
 5. A worker over MCP calls `work_next` instead. One call takes the next card with its brief and history. `next_actions_context` reads the history of any card.
-6. A worker's key lists only the tools for its job: 12 for a builder, not 108. A smaller brain copes with that. To see everything the key may call, add `?profile=full` to the address: `https://dash.heystax.ai/api/mcp?profile=full`.
+6. A worker's key lists only the tools for its job: 12 for a builder, not 108. To see everything it may call, use `https://dash.heystax.ai/api/mcp?profile=full`.
 
 {% capture s %}
 {% include anim/node.html x=90 y=48 label="Gaia: Telegram report" kind="surface" w=170 d=0.2 %}
@@ -53,9 +53,7 @@ Each item says who wrote it and when, and links to where it came from. It is his
 
 ## Scenario
 
-Gaia reports "unable to sign off on reconciliation" in Telegram, with a screenshot. Alice opens Claude Code at her desk, finds half the cause and closes the laptop. Her session leaves five lines on the card: what she was asked, what she changed, the result, what is next, and her branch.
-
-At 02:00 `@timebreez-builder` claims the follow-up card. It reads Gaia's report, Alice's summary and her branch, opens her PR and finishes it. Gaia hears the verdict in Telegram. Nobody explained anything twice.
+Alice finds half the cause in Claude Code and closes the laptop. Her session leaves five lines on the card, with her branch. At 02:00 `@timebreez-builder` reads Gaia's report and Alice's summary, opens her PR and finishes it. Nobody explained anything twice.
 
 ## What works today
 
@@ -69,6 +67,6 @@ At 02:00 `@timebreez-builder` claims the follow-up card. It reads Gaia's report,
 
 ## Every answer, in full {% include badge-partial.html %}
 
-A long trail of notes used to push the Chief's reply out of the 8 KB history, so a builder asked again for something already answered. From CLI 0.5.6, run from the repo, `heystax task show` prints every comment addressed to someone, every question and every comment a person wrote, whole, with the ones for this role marked. `heystax task comments` prints them again. It is not on npm yet, and not yet seen on a real card.
+A long trail of notes used to push the Chief's reply out of the 8 KB history, so a builder asked again. From CLI 0.5.6, run from the repo, `heystax task show` prints every question and every comment a person wrote, whole, with the ones for this role marked. It is not on npm yet, and not yet seen on a real card.
 
 Now you can hand a card to any worker, at any hour, and it starts where the last one stopped.

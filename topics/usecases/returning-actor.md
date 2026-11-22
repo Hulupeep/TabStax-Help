@@ -2,74 +2,50 @@
 nav_exclude: true
 ---
 
-# Mary, Who Acted 20 Years Ago and Buried It
+# Mary goes back to acting
 
 [← Back to Use Cases](index.md)
 
----
+Mary acted in her twenties: small theatre, student films. Then came a job, bills and twenty years of not mentioning it.
 
-Mary is in her 40s.
+Now every good performance twists something inside her. She has 14 tabs open about acting classes and has booked none of them.
 
-In her early 20s, she acted: small theatre, student films. It lit her up like nothing else.
-But then life happened: a job, bills, maybe kids, safety. She buried that dream very deep.
+## The stax
 
-Now, every time she sees a great performance, something inside her twists.
-She knows: *if I don't at least try again, I'll regret this on my deathbed.*
+Mary keeps one stax, **Return to Acting**, and shares it with Dara, a friend who will tell her the truth.
 
-Her real constraints:
+| | **Return to Acting** |
+|---|---|
+| **Mission** | Find out if I still have it, before I talk myself out of it. |
+| **Goal** | One intro class done and one self-tape sent by the end of March. |
+| **Next Action** | Email the studio near work and book the intro class. |
 
-* Time (work + life)
-* Rusty skills
-* Changed industry (self-tapes, online casting)
-* Money
-* Fear: "What if I find out I was never any good?"
+## What happens
 
-## Without HeyStax
+1. **Save the tabs.** With the TabStax extension she saves the studio pages, a casting site, two headshot photographers and her monologue list as Return to Acting.
+2. **One card in the Must lane.** "Email the studio" sits at the top, so it is the first thing she sees.
+3. **A date she can see.** She adds 31 March to the stax, the day the goal is due.
+4. **A nudge from Dara.** Dara comments on the card: "Booked yet?" Mary sees it next time she opens the stax.
+5. **Close it from the phone.** The email goes on her lunch break. She replies `/done` in Telegram.
+6. **Ask, do not hunt.** That evening she asks Claude, connected to HeyStax, "what is next on Return to Acting?" It answers from the stax: pick one monologue and print it.
 
-She binge-watches "how to get into acting" videos, follows actors on Instagram, bookmarks local acting classes, opens Spotlight / casting sites… and never quite pulls the trigger. It feels like a fog.
+## After
 
-## With HeyStax
+When Mary sits down to "do something about acting", she does not search "acting classes near me" again. She opens the stax and moves one thing.
 
-She creates **"Mary – Return to Acting"** Stax.
+**It is yours.** The plan sits in her account, not in a chat she scrolled away from.
 
-It has three main dimensions:
+## What works today
 
-1. **Craft & Confidence**
+| Step | State |
+|---|---|
+| Save and reopen the tabs with the TabStax extension; share the stax | live |
+| Attention lanes (Must, Should, Good, Meh) | live |
+| Goals and dates on a stax | live |
+| Comments on a card | live |
+| Reply `/done` in Telegram | live |
+| Ask Claude or ChatGPT about the stax over MCP | live with your token; Claude.ai on the web is partial |
 
-   * Local acting classes pages
-   * Online scene study / voice classes
-   * A doc: *"Roles I'm drawn to now"*
-   * A list of monologues she might love
-   * Start Page Next Actions:
-
-     * *"Email X acting studio and book an intro class."*
-     * *"Pick 1 monologue and print it."*
-
-2. **Career Mechanics (2025, Not 2005)**
-
-   * Casting site(s) signup pages
-   * Headshot photographers' websites
-   * Unions/agreements info for her country
-   * A doc: *"Starter path: 3–6 months"*
-
-3. **Life Architecture**
-
-   * Calendar with realistic windows for classes / rehearsals
-   * Budget sheet (headshots, classes, travel)
-   * Notes shared with partner / friend: *"This is what I want and what it will cost us."*
-
-She **shares this Stax with one brutally honest friend or coach** and possibly her partner:
-
-* "This is not a phase; this is what I'm actually planning."
-
-When she sits down to "do something about acting," she doesn't re-google "acting classes near me." She **opens her Acting Stax**, where:
-
-* Her past desire is acknowledged
-* The industry reality is mapped
-* The next move is written by a clear-headed version of her, not the fearful one
-
-Even if she never becomes "famous," she'll know she treated the dream like a real project, not a fantasy she kept anesthetized.
-
----
+Now you can treat the dream like a plan, one step at a time.
 
 [← Back to Use Cases](index.md)
