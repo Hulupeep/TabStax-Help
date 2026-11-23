@@ -1,0 +1,77 @@
+# What's new in HeyStax: one line per change people can feel, newest first.
+# The HeyStax Telegram bot reads this (as /whats-new.json) when someone sends "what's up".
+#
+# Fields
+#   date      the day it went live (YYYY-MM-DD)
+#   change    what changed, from the reader's side
+#   so_that   why it matters to them
+#   audience  everyone | telegram | owner   (owner = people who own a stax)
+#   try       optional: one thing to try now, in their words
+#   help      optional: help page path
+#   refs      the merged pull requests that shipped it (evidence)
+#
+# Only add a change once it is live. Same truth rule as _data/ledger.yml.
+
+- date: 2026-11-23
+  change: "Submitting or reopening a timesheet only acts on the status you saw"
+  so_that: "a click on an old screen never undoes someone else's change"
+  audience: [everyone]
+  refs: ["tabstax-webapps#352", "tabstax-webapps#350"]
+
+- date: 2026-11-14
+  change: "When you hand a card on, you can say why, and you can comment on any card for someone"
+  so_that: "the next person starts with your reason, not a guess"
+  audience: [everyone]
+  try: "Next time you reassign a card on the board, add one line on why."
+  help: "topics/team-stax/handoff-note"
+  refs: ["tabstax-webapps#345"]
+
+- date: 2026-11-13
+  change: "A bot's question to you comes with its recommendation and a time it will go ahead"
+  so_that: "you only answer when you disagree, and work keeps moving when you are busy"
+  audience: [everyone]
+  try: "When a bot asks you something, reply only if you want a different option."
+  help: "topics/team-stax/messages"
+  refs: ["tabstax#1264"]
+
+- date: 2026-11-13
+  change: "A timesheet save that fails stays queued, and Submit sends it again"
+  so_that: "hours you entered on a bad connection are not lost"
+  audience: [everyone]
+  refs: ["tabstax-webapps#293"]
+
+- date: 2026-11-13
+  change: "Your 8am message and /receipt show what your bots moved, what is stuck and what needs you"
+  so_that: "one message tells you where your stax stand"
+  audience: [owner]
+  try: "Send /receipt to see it now."
+  help: "topics/team-stax/telegram"
+  refs: ["tabstax-webapps#339", "tabstax#1262"]
+
+- date: 2026-11-13
+  change: "You connect a bot by signing in and picking its role"
+  so_that: "you never copy or paste a key"
+  audience: [owner]
+  refs: ["tabstax#1246", "tabstax-webapps#330"]
+
+- date: 2026-11-12
+  change: "A bot's result in Telegram leads with one bold line, then only the steps that are yours"
+  so_that: "you can tell in a second whether you need to act"
+  audience: [telegram]
+  help: "topics/team-stax/telegram"
+  refs: ["tabstax-webapps#320", "tabstax-webapps#321", "tabstax-webapps#322"]
+
+- date: 2026-11-12
+  change: "An old notice is struck through once its card is done, moved or removed, and a message that names a PR gets an Open PR button"
+  so_that: "your chat shows what is still open, and links are one tap away"
+  audience: [telegram]
+  help: "topics/team-stax/telegram"
+  refs: ["tabstax-webapps#319"]
+
+- date: 2026-11-11
+  change: "Reply to a bug or screenshot with /t @agent and the agent gets your words and the picture"
+  so_that: "a bug goes from the chat to the builder without retyping it"
+  audience: [telegram]
+  try: "Next bug you see, reply to it with /t @timebreez-builder (find the handle with /who)."
+  help: "topics/team-stax/hand-a-bug-to-an-agent"
+  refs: ["tabstax-webapps#303", "tabstax-webapps#305"]
