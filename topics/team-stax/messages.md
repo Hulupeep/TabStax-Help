@@ -31,86 +31,45 @@ The question lives on the work it is about, not in one chat app. Anyone on the s
 
 ## Scenarios
 
-### An emergency team: a storm, 02:10
+Four teams, one pattern: ask on the card, answer from the phone, the work moves.
+
+### A storm, 02:10
 
 <iframe id="hs-scene-storm" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=storm" title="Animation: a coordinator agent asks a crew lead about a fallen tree, he replies from the van, and the crew is sent" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
 
-The **Storm response** stax has Aoife (incident lead), Declan (crew lead, Cork depot) and an agent role `@storm-coordinator` that keeps the action list moving overnight.
+`@storm-coordinator` asks Declan on the "Clear fallen tree, N71 at Bandon" card: "Can Cork crew 2 take this before 04:00?" He replies from the van: "Crew 2 yes, 03:15." The coordinator assigns the card and sends Aoife an FYI.
 
-1. A card reads "Clear fallen tree, N71 at Bandon". The coordinator needs to know if a crew can go now.
-2. It comments on that card, to `@declan`, as a question: "Can Cork crew 2 take this before 04:00, or do we hand it to Clonakilty?"
-3. Declan's phone buzzes with a Telegram DM. He replies from the van: "Crew 2 yes, 03:15."
-4. His answer lands on the card, addressed to the coordinator. It wakes, assigns the card and sends Aoife an FYI: "N71 Bandon: Cork crew 2, ETA 03:15."
-5. Every hourly "still monitoring" note goes in as a log. Nobody wakes for those.
+Hourly "still monitoring" notes go in as logs. Nobody wakes for those. At 07:00 the morning shift reads one card, not a night of group chat.
 
-At 07:00 the morning shift reads one card and sees the question, the answer and who decided. Nobody has to scroll back through a night of group chat.
-
-### An executive team: the board pack, Thursday 17:00
+### The board pack, Thursday 17:00
 
 <iframe id="hs-scene-board" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=board" title="Animation: the Chief of Staff agent finds two revenue figures, asks the CFO, fixes the slide and tells the CEO and Head of Sales" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
 
-The **Q4 board pack** stax has Maeve (CEO), Tom (CFO), Priya (Head of Sales) and `@chief-of-staff`, a role that assembles the pack.
+`@chief-of-staff` finds two Q3 revenue figures: 1.42m on the sales slide, 1.38m in the finance summary. It asks Tom, the CFO. He replies "1.38m". The Chief fixes the slide and tells Priya and Maeve on the same action. Maeve chased nobody.
 
-1. The Chief finds that the revenue figure on the sales slide and the one in the finance summary differ.
-2. On the action "Finance summary", it asks `@tom`: "Sales slide says 1.42m for Q3, finance summary says 1.38m. Which is the board number?"
-3. Tom replies in Telegram: "1.38m. Sales is counting a deal that signed on 2 October."
-4. The Chief fixes the slide, then sends an FYI to `@priya` and `@maeve` on the same action: "Q3 revenue set to 1.38m. The October deal moves to Q4."
-5. Maeve didn't chase anyone. She gets one message, and the reason sits on the action if a board member asks.
-
-### Building software: the import that needs one answer
+### The import that needs one answer
 
 <iframe id="hs-scene-build" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=build" title="Animation: a coding agent asks Gaia which org a file is for, waits, then finishes the import and tells her it is fixed" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
 
-The **Timebreez** stax has Gaia (business analyst), Colm (owner) and `@timebreez-builder`, a coding agent working on a machine of yours.
+`@timebreez-builder` finds two orgs called "Dublin" and cannot tell which one an import file is for. It asks Gaia on the import action, then waits:
 
-1. The builder is fixing the stage-2 opening-balance import. It finds two orgs called "Dublin" and can't tell which one the file is for.
-2. It asks Gaia on the import action:
+```text
+next_actions_comment
+  action_id: <the import action>
+  to:        ["@gaia"]
+  kind:      question
+  content:   Which org is the stage-2 file for, Dublin North or Dublin City?
+```
 
-   ```text
-   next_actions_comment
-     action_id: <the import action>
-     to:        ["@gaia"]
-     kind:      question
-     content:   Which org is the stage-2 file for, Dublin North or Dublin City?
-   ```
-
-3. It goes back to waiting, with `wait_for_work` and `comments_since` set to the time it asked.
-4. Gaia replies "Dublin City" in Telegram. The builder wakes, finishes the import and opens a pull request.
-5. It tells her, with no answer needed:
-
-   ```text
-   next_actions_comment
-     action_id: <the import action>
-     to:        ["@gaia"]
-     kind:      fyi
-     content:   Fixed. Re-run stage 2 when you're ready.
-   ```
-
-6. Gaia can go the other way too. In Claude, with her own token, she comments on a bug card to `@timebreez-builder`: "Still failing for the Galway org. Screenshot is on the card." The builder wakes with it.
+Gaia replies "Dublin City" in Telegram. The builder wakes, finishes the import, opens a pull request and sends her an `fyi`: "Fixed." It works the other way too: Gaia comments to `@timebreez-builder` from Claude, and it wakes with her message.
 
 ### A warehouse robot: bay 14 is blocked
 
 <iframe id="hs-scene-robot" src="{{ '/assets/anim/message-scenes.html' | relative_url }}?s=robot" title="Animation: a robot worker of the picker role meets a blocked aisle, asks the floor lead, and reroutes by aisle 9 when she replies" loading="lazy" style="width:100%;height:640px;border:0;display:block"></iframe>
 
-The **Galway warehouse** stax has Niamh (floor lead) and a role, `@picker`. The role is the job. Its workers are two robots, `robot-01` and `robot-02`. Each robot's control software holds its own worker key, the same kind of key a laptop or a cloud bot gets. HeyStax never drives motors. The controller reads the card, turns it into a route, and reports back.
+`robot-02`, a worker of the `@picker` role, meets a pallet in bay 14. Its controller asks Niamh on the card: "Wait, or go round by aisle 9?" She replies "Aisle 9" and it reroutes. HeyStax never drives motors. The controller reads the card and reports back.
 
-1. Niamh adds a card for `@picker`: "Move order 5521 to dispatch door 3 by 11:00."
-2. `robot-02` is waiting for work. It claims the card and sets off.
-3. At bay 14 a pallet blocks the aisle. The controller asks Niamh on that card:
-
-   ```text
-   next_actions_comment
-     action_id: <order 5521>
-     to:        ["@niamh"]
-     kind:      question
-     content:   Bay 14 blocked by a pallet. Wait, or go round by aisle 9 (adds 6 minutes)?
-   ```
-
-4. Niamh's phone buzzes on the floor. She replies "Aisle 9".
-5. The reply lands on the card, addressed to `@picker`. `robot-02` was waiting with `comments_since`, so it wakes, takes aisle 9 and reports the card done.
-6. Niamh can talk to the job, not the machine. She comments to `@picker` on a card: "Use door 4 today, door 3 is closed for repairs." Whichever robot reads the card next picks it up.
-
-Swap `robot-02` for a new robot next year and nothing changes for Niamh. She still writes to `@picker`, and every message says which worker answered.
+Niamh writes to `@picker`, the job, not to the machine. Swap the robot next year and nothing changes for her.
 
 <script>addEventListener('message',function(e){if(e.data&&e.data.hsSceneHeight&&e.data.scene){var f=document.getElementById('hs-scene-'+e.data.scene);if(f)f.style.height=(e.data.hsSceneHeight+4)+'px';}});</script>
 
