@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /whats-new.json
+---
+{"updated": {{ site.time | date_to_xmlschema | jsonify }}, "changes": {{ site.data.whats_new | jsonify }}}
