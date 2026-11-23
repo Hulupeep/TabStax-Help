@@ -459,6 +459,13 @@ capabilities:
     evidence: "tabstax#1203 merged 2026-11-11 18:04; CLI installs from the repo, not yet rebuilt and run on the owner's machine."
     wording: "heystax access shows what a worker can reach and how to fix each gap"
 
+  - id: telegram-whatsup
+    name: "Telegram what's up: what changed on your cards (unanswered notes addressed to you) and in HeyStax (the What's new list), each as X, so that Y, then your next three moves"
+    state: unverified
+    terms: ["what's up"]
+    evidence: "tabstax-webapps#353 (tabstax#1350), tested on the owner's real rows of 23 Nov 2026; the What's new feed is TabStax-Help#127, merged 2026-11-23. Not yet seen in production."
+    wording: "send what's up to the HeyStax Telegram bot"
+
   - id: telegram-bug-desk
     name: "Hand a bug to an agent from Telegram: reply to the bug with /t @agent; the screenshot and quoted message go on the card; picked up and finished-with-verdict notices; owner copied on private handoffs"
     state: live
