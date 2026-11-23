@@ -88,12 +88,13 @@ Who can change what:
 
 ## See your work and your team
 
-Gaia opens Telegram on Monday, 08:55. She sends `what's up`. One message tells her the invite fix is on staging, so she can send Eimhear's invite, and that her next three moves start with that one.
+Gaia comes back from lunch on Monday. In the Timebreez_work group she sends `what's up`. One message tells her what moved in timebreez since she last asked: five pull requests merged, what the builder found, one decision, two cards new for her. The Staff cost page merged, so she can check it on staging. That is move one.
 
 
 | Send | What you get |
 |---|---|
-| `what's up` | What changed on your cards and in HeyStax, one line each as "X, so that Y", then your next three moves and one thing to try. Built from your cards and the [What's new](../whats-new) list, nothing made up. In a group, it comes to you by DM. |
+| `what's up` | A catch-up on this stax since you last asked (the first time, the last 3 days): what merged, what the builders found, what was done and decided, notes to you and new cards. When a merge or a note frees one of your cards, the line says "so that you can" and that card leads your next three moves. In a group, it is about the group's stax. Built from the stax, nothing made up. |
+| `what's up hubduck` | The same catch-up for another stax you are on, by name |
 | `/status` | Your open tasks in this stax, the ones you made and the ones assigned to you, newest first. Your goal and up to three tasks done this week. In a group, it comes to you by DM. |
 | Reply `/done 1,3` to a status list | Ticks off tasks 1 and 3 and sends the list back with them crossed out |
 | `/who` | Everyone on the stax, people and agents, with the handle to use, their title and what they are accountable for |

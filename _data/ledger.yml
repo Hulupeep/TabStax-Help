@@ -460,10 +460,10 @@ capabilities:
     wording: "heystax access shows what a worker can reach and how to fix each gap"
 
   - id: telegram-whatsup
-    name: "Telegram what's up: what changed on your cards (unanswered notes addressed to you) and in HeyStax (the What's new list), each as X, so that Y, then your next three moves"
+    name: "Telegram what's up: a catch-up on the stax you ask in (or name) since you last asked: merges, builder results, done, decided, notes to you, new cards, then your next three moves"
     state: unverified
     terms: ["what's up"]
-    evidence: "tabstax-webapps#353 (tabstax#1350), tested on the owner's real rows of 23 Nov 2026; the What's new feed is TabStax-Help#127, merged 2026-11-23. Not yet seen in production."
+    evidence: "tabstax-webapps#353 merged 2026-11-23 (first cut: notes plus HeyStax news). The stax catch-up replaces it in the follow-up PR for tabstax#1350, tested on timebreez rows of 23 Nov 2026. Not yet seen in production."
     wording: "send what's up to the HeyStax Telegram bot"
 
   - id: telegram-bug-desk
