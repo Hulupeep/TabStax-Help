@@ -88,8 +88,12 @@ Who can change what:
 
 ## See your work and your team
 
+Gaia opens Telegram on Monday, 08:55. She sends `what's up`. One message tells her the invite fix is on staging, so she can send Eimhear's invite, and that her next three moves start with that one.
+
+
 | Send | What you get |
 |---|---|
+| `what's up` | What changed on your cards and in HeyStax, one line each as "X, so that Y", then your next three moves and one thing to try. Built from your cards and the [What's new](../whats-new) list, nothing made up. In a group, it comes to you by DM. |
 | `/status` | Your open tasks in this stax, the ones you made and the ones assigned to you, newest first. Your goal and up to three tasks done this week. In a group, it comes to you by DM. |
 | Reply `/done 1,3` to a status list | Ticks off tasks 1 and 3 and sends the list back with them crossed out |
 | `/who` | Everyone on the stax, people and agents, with the handle to use, their title and what they are accountable for |
