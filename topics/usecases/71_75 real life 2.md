@@ -21,7 +21,7 @@ The opposition thinks he’s roadkill: too soft, too academic, not built for the
 
 ### Without HeyStax
 
-His laptop is a disaster: academic papers, campaign strategy docs, health portal, school emails, and security briefings all in the same tab bar. One minute he’s reading poll crosstabs, the next he’s grading, then panicking about a hit piece someone just sent him. His partner asks “what’s the plan if they go after us?” and he says “we’ll figure it out” — but there’s no actual place where that plan lives.
+His laptop is a disaster: academic papers, campaign strategy docs, health portal, school emails, and security briefings all in the same tab bar. One minute he’s reading poll crosstabs, the next he’s grading, then panicking about a hit piece someone just sent him. His partner asks “what’s the plan if they go after us?” and he says “we’ll figure it out”, but there’s no actual place where that plan lives.
 
 ### With HeyStax
 
@@ -148,7 +148,7 @@ He also **shares a read-only version with a local gardening group or online ment
 
 Instead of endless vague “I’d love to be self-sufficient someday,” Ger has a literal two-year project cockpit he opens every weekend.
 
-He is not just gardening. He’s running a quiet, deeply personal food security project — with HeyStax holding the plan.
+He is not just gardening. He’s running a quiet, deeply personal food security project, with HeyStax holding the plan.
 
 ---
 
@@ -156,7 +156,7 @@ He is not just gardening. He’s running a quiet, deeply personal food security 
 
 Mary is in her 40s.
 
-In her early 20s, she acted — small theatre, student films. It lit her up like nothing else.
+In her early 20s, she acted: small theatre, student films. It lit her up like nothing else.
 But then life happened: a job, bills, maybe kids, safety. She buried that dream very deep.
 
 Now, every time she sees a great performance, something inside her twists.
@@ -281,7 +281,7 @@ Now climate anxiety has a container. A project universe. He can schedule “Loca
 
 She’s a nurse working rotating night shifts.
 
-She’s also been carrying a story in her head for years — a novel based on the kinds of things she’s seen and felt, but fictionalized.
+She’s also been carrying a story in her head for years: a novel based on the kinds of things she’s seen and felt, but fictionalized.
 
 Her world:
 
@@ -316,7 +316,7 @@ Start Page:
   * *“Today: write one messy scene where [character] meets [patient].”*
   * *“Add 3 bullet points to outline for Act 2.”*
 
-She **shares this Stax with no one at first** — it’s her private sanctuary.
+She **shares this Stax with no one at first**. It’s her private sanctuary.
 
 Later, when she’s ready, she **shares it with one trusted reader or writing coach**.
 
@@ -325,4 +325,3 @@ When she has 40 minutes of alive brain, she doesn’t waste it looking for the r
 Over a year, that’s the difference between “I always wanted to write” and “I wrote a damn book while saving lives at night.”
 
 ---
- 

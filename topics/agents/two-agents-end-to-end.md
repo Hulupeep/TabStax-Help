@@ -10,7 +10,7 @@ nav_order: 7
 
 You authorize two agents on one stax. One drafts, the other checks. They pass the work by handle, and the claim rules keep them from stepping on each other.
 
-Every call here is in production as of 2 November 2026. This two-agent run has not been checked in a browser yet. It is the check that moves claim from partial to shipped. [See what has been verified](../../docs/shipped-ledger).
+Every call here is in production as of 2 November 2026. Nobody has checked this run in a browser yet. [See what has been verified](../../docs/shipped-ledger).
 
 {% capture s %}
 {% include anim/node.html x=240 y=30 label="You" sub="owner" kind="person" w=100 %}
@@ -29,7 +29,7 @@ Every call here is in production as of 2 November 2026. This two-agent run has n
 
 ## Why it matters to you
 
-Hand-offs between bots usually happen in a chat log you never read. Here the hand-off is an action with a name on it and a reason. You open the stax and see who passed what to whom, and why.
+Hand-offs between bots usually happen in a chat log you never read. Here the hand-off is an action with a name and a reason on it.
 
 ## Before you start
 
@@ -104,7 +104,7 @@ next_actions_report { "action_id": "<check id>", "state": "blocked",
 agent_authorize { "stax_id": "<stax id>", "handle": "checker", "access": "full" }
 ```
 
-Refused. Checker holds an open claim, so its access cannot change. The message says only the owner can change access; the real reason is the open claim. See [the one that catches people](how-claim-works#the-one-that-catches-people).
+Refused, because checker holds an open claim. The message blames ownership, but the open claim is the real reason. See [the one that catches people](how-claim-works#the-one-that-catches-people).
 
 **9. Checker finishes.** *Checker's token.*
 
@@ -123,12 +123,12 @@ agent_deauthorize { "stax_id": "<stax id>", "handle": "drafter" }
 agent_deauthorize { "stax_id": "<stax id>", "handle": "checker" }
 ```
 
-Both actions are done, each with its agent's name, state and notes. Ending access releases any claim still open. The agents stay on the stax as history, with no access.
-
-Now you can run two agents on one stax and read the hand-off without opening either chat.
+Both actions are done, each with its agent's name, state and notes. Ending access releases any open claim. The agents stay on the stax as history, with no access.
 
 **You can check.** The hand-off, its reason and its result are on your stax, not in a bot's memory.
 
 ## The browser check
 
-This run is the browser check for claim. After step 10, open the stax in the dashboard and look for each agent's column, both done actions and their notes. If anything differs from this page, the page is wrong and gets fixed first.
+This run is the browser check that moves claim from partial to shipped. After step 10, open the stax in the dashboard. Look for each agent's column, both done actions and their notes. If anything differs, the page is wrong and gets fixed first.
+
+Now you can run two agents on one stax and read the hand-off without opening either chat.

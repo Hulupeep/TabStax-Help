@@ -2,59 +2,47 @@
 nav_exclude: true
 ---
 
-# Funeral Planning While Grieving
+# Ciarán plans his father's funeral
 
 [← Back to Use Cases](index.md)
 
----
+Ciarán's father died on Sunday. He is numb, and everyone still asks him "what happens now?"
 
-His father just died.
-He's numb, exhausted, and still the one everyone looks to for "what happens now?"
+The funeral home, the priest, the death notice, the music, the photos, the relatives, the costs. Each small thing feels huge, because he has to remember it, do it and feel it.
 
-Immediate load:
+## The stax
 
-* Contact funeral home
-* Decide on burial/cremation
-* Talk to priest/celebrant
-* Coordinate obituary
-* Notify relatives and friends
-* Sort clothes, photos, music
-* Deal with costs
+Ciarán keeps one stax, **Dad's Farewell**, and shares it with his sister Orla.
 
-## Without HeyStax
+| | **Dad's Farewell** |
+|---|---|
+| **Mission** | Give Dad a send-off he would like, without one of us carrying all of it. |
+| **Goal** | Date, readings and death notice confirmed by Wednesday evening. |
+| **Next Action** | Ring the funeral home and confirm Friday at 11:00. |
 
-He's doing all this out of his head and phone: calls, emails, half-open tabs on funeral packages, a note somewhere with the priest's number. Every "small" thing feels huge because he has to remember it *and* do it *and* feel it.
+## What happens
 
-## With HeyStax
+1. **Save the tabs.** With the TabStax extension he saves the funeral home email, the parish page, the death notice draft and the photo folder as Dad's Farewell.
+2. **One card in the Must lane.** "Ring the funeral home" sits at the top. Nothing else asks for him today.
+3. **A date he can see.** He adds Friday to the stax.
+4. **Orla takes her share.** She picks the music and adds "Ask Aunt Mary to do a reading" for herself.
+5. **Close it from the phone.** After the call he replies `/done` in Telegram.
 
-He quietly creates **"Dad – Funeral & Farewell"** Stax:
+## After
 
-Tabs:
+He does not hold the whole funeral in his head. He opens the stax, does the next piece, and closes it when he cannot carry more.
 
-* Funeral home website / email thread
-* Ceremony details with priest/celebrant
-* A Google Doc: *"Decisions"* (date, place, readings, speakers)
-* A folder of photos for slideshow / printed boards
-* Obituary draft
-* A notes doc for *"Who to call / message"*
+**It is yours.** The decisions sit in a stax he and Orla both see, not in his texts.
 
-Start Page:
+## What works today
 
-* A simple, gentle checklist:
+| Step | State |
+|---|---|
+| Save and reopen the tabs with the TabStax extension; share the stax | live |
+| Attention lanes (Must, Should, Good, Meh) | live |
+| Goals and dates on a stax | live |
+| Reply `/done` in Telegram | live |
 
-  * *"Today: Confirm date & time."*
-  * *"Choose 3 photos for obituary."*
-  * *"Ask X if they want to say something."*
-
-He **shares this Stax with one sibling and maybe a close cousin**:
-
-* They can help fill in names, draft the obituary, pick music.
-* They can own some calls, because they can see the decisions and contacts.
-
-He doesn't need to hold the whole thing in his head. He opens the Stax, does the next piece, closes it when his brain can't carry more.
-
-The grief is still raw. HeyStax just reduces the administrative cruelty layered on top.
-
----
+Now you can let the admin be lighter while the grief takes its time.
 
 [← Back to Use Cases](index.md)
