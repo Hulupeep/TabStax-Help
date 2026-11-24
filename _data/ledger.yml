@@ -466,6 +466,13 @@ capabilities:
     evidence: "tabstax-webapps#356 (tabstax#1350), tested with 7 unit tests; prod data of 24 Nov 2026 gives timebreez-worker 0 cards (last 30 Oct). Kind and job: tabstax-webapps#357 merged 24 Nov 2026. Not yet seen in a browser."
     wording: "Agent access shows what each agent on the stax did in 14 days"
 
+  - id: agent-identity
+    name: "Every agent says what it is when it registers: kind (Brain, Builder, Scheduled), platform, what it does and an optional instructions link; agent access shows it with who created it and when, and flags agents that have not said"
+    state: planned
+    terms: ["hasn't said what it is yet"]
+    evidence: "tabstax#1358: tabstax#1359 (registration requires it, agent_identity_set for older agents) and tabstax-webapps#358 (panel). Open, not merged, 24 Nov 2026."
+    wording: "Coming next: every agent says what it is when it registers"
+
   - id: telegram-whatsup
     name: "Telegram what's up: a catch-up on the stax you ask in (or name) since you last asked: merges, builder results, done, decided, notes to you, new cards, then your next three moves"
     state: unverified
