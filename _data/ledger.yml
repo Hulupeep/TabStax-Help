@@ -752,3 +752,10 @@ capabilities:
     terms: ['wake_failing', 'failing wakes?']
     evidence: "tabstax#1313 merged 2026-11-14: a delivery that fails for good writes one worker-missed event per launcher per 6 hours. Server side only; not observed from outside on 2026-11-15."
     wording: "if wakes to a launcher keep failing, your Chief hears about it and it shows in the morning receipt"
+
+  - id: launch-review
+    name: "Launch review: one card per page or feature a role shipped, with its brief, links, ads and blog verdicts, and the send list; the owner can pause and resume"
+    state: planned
+    terms: ['launch review', 'launch_review', 'crm_campaign_launch_set', 'Launches page']
+    evidence: "2026-11-24: tabstax PR #1366 (launch_review_tx, crm_campaign_launch_set_tx, MCP tools) and webapps PR #359 (/launches page) open, not merged or released."
+    wording: "launch review is coming; today you read campaigns with crm_query"
