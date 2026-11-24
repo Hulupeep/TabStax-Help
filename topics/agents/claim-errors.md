@@ -8,13 +8,13 @@ nav_order: 6
 
 {% include badge-partial.html %}
 
-Every refusal an agent or owner can hit around claims, what it means and what to do. Taken from the production server code as of 2 November 2026; not yet confirmed in a browser run. [See what has been verified](../../docs/shipped-ledger).
+An agent's claim was refused, or your own access change was. This page says which side to fix. The messages come from the production server code as of 2 November 2026, not yet confirmed in a browser run. [See what has been verified](../../docs/shipped-ledger).
 
 ## Why so many say "Stax not found"
 
-When an agent asks for something it has no access to, the server answers as if the thing does not exist. `Stax not found` for stax and actions. `Record not found` for records.
+An agent asking for something it cannot reach gets the same answer as for something that does not exist: `Stax not found` for stax and actions, `Record not found` for records.
 
-That is deliberate. If "no access" and "does not exist" looked different, a token could probe your account and learn which stax and records are there. Identical answers tell it nothing. The cost is that you diagnose from your side, as owner, not from the agent's error.
+That way a token cannot probe your account to learn what is there. The cost: you diagnose from your side, as owner, not from the agent's error.
 
 ## What the agent sees
 
@@ -50,13 +50,26 @@ That is deliberate. If "no access" and "does not exist" looked different, a toke
 
 ## Re-authorize with open claims, in plain words
 
-You changed an agent's access, or renewed it after it expired, and got refused. The agent still holds claims from its old access. Those claims have to end before new access starts, so that no claim ever runs on authority it was not made under.
+You changed or renewed an agent's access and got refused. The agent still holds claims made under its old access. Those end first, so no claim ever runs on authority it was not made under.
 
 1. Run `agent_deauthorize` for that agent on that stax. Its claims are released.
 2. Run `agent_authorize` with the level you want.
 3. The agent claims again.
 
-If `agent_deauthorize` comes back with status `cleanup_pending` and a list of `residual_action_ids`, some claims could not be released automatically. Re-authorize stays refused until they are recovered. There is no self-serve fix for this yet; contact support with the stax and the action ids.
+{% capture s %}
+{% include anim/node.html x=90 y=60 label="Old access" sub="2 open claims" kind="agent" w=140 d=0 %}
+{% include anim/edge.html x1=160 y1=60 x2=300 y2=60 kind="write" d=0.4 %}
+{% include anim/node.html x=380 y=60 label="agent_deauthorize" sub="claims released" kind="person" w=160 d=0.8 %}
+{% include anim/edge.html x1=380 y1=86 x2=380 y2=134 kind="write" d=1.2 %}
+{% include anim/node.html x=380 y=160 label="agent_authorize" sub="the level you want" kind="person" w=160 d=1.6 %}
+{% include anim/edge.html x1=300 y1=160 x2=170 y2=160 kind="dispatch" d=2.0 %}
+{% include anim/node.html x=90 y=160 label="New access" sub="claims again" kind="agent" w=140 d=2.4 %}
+{% include anim/trail.html x=40 y=240 who="You" what="deauthorized, then authorized work" when="10:02" d=2.8 %}
+{% include anim/trail.html x=40 y=264 who="@builder" what="claimed the card again" when="10:03" agent="true" d=3.2 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 290" label="Old claims are released by deauthorize, new access is granted, then the agent claims again" caption="Deauthorize first: the old claims end. Authorize at the level you want. The agent claims again under its new access, and the trail shows both moves." svg=s %}
+
+If `agent_deauthorize` returns `cleanup_pending` with `residual_action_ids`, some claims could not be released. Re-authorize stays refused until they are recovered. There is no self-serve fix yet: contact support with the stax and the action ids.
 
 ## An agent stopped mid-claim
 
@@ -64,6 +77,6 @@ If it claimed inside a run, the claim is released once the run stops sending hea
 
 {% include badge-planned.html %} Coming next: you, or your Chief, will be able to free a claim held by an agent that is no longer working, without that agent. Its access ended, or it has no live run, so the card is no longer stuck behind it.
 
-Now you can read a refusal and know which side to fix.
-
 **You set the edges.** Most of these errors are the edges doing their job.
+
+Now you can read a refusal and know which side to fix.
