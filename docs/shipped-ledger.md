@@ -15,10 +15,10 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | State | Meaning | Count |
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
-| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 54 |
+| `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 55 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 20 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 16 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 15 |
 
 ## Live
 
@@ -78,6 +78,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | HQ at dash.heystax.ai/hq: your goals and Never rules, what needs you, what your Chief did, the Chief's job and its log, and Copy Chief as prompt | HQ is your desk above every stax: your goals, what needs you, and what your Chief did | tabstax-webapps#297 (HQ page), #298 (standing duties) and #299 (duties are defaults, any number) merged 2026-11-11; Vercel production deployments READY for 4873e18, e7c1e77 and 95c729e on 2026-11-12. The In sync chip needs tabstax#1172's migration, not confirmed in production. Not walked in a browser. |
 | Every account gets its own Chief with its job saved in HeyStax; HQ sets you up in five answers, shows Waiting for a brain, edits the job and changes the brain | your Chief is already there when you sign up; HQ sets you up in five answers and any AI app can run it | tabstax#1183 (PR #1247, tabstax-webapps#331), deployed 2026-11-13. J-THREE-MINUTE-SETUP ran against production from the Minisforum on the test account: HQ made @chief-test0226a, five answers created a stax with 5 roles and 6 cards in 13 seconds, a brain connected by sign-in and read the saved job, an edit on HQ made revision 2, and Change brain left the Chief in place. Driven by a script in Chromium, not walked by a person. |
 | A wake address can carry the bot's own key, so a keyed webhook (a Grok Bot routine) can be woken by push; a test wake proves it | you give a wake address the bot's own key once, on the stax page or through a one-time link, and launcher_test_wake says whether the bot answered | 2026-11-15: production MCP tool list has launcher_wake_key_set, launcher_wake_key_link and launcher_test_wake, and launcher_register and launcher_update take wake_key, wake_key_header and test_wake (tabstax#1309 merged 2026-11-14 14:31, #1313 merged 16:11). Vercel production deploys READY for f460b05 (webapps#348, Wake key button on the stax page) and e90bb5c (webapps#349, one-time link page dash.heystax.ai/wake-key/<token>). Earlier: HookTunnel cannot add a target's auth header to a forwarded wake (hooktunnel-web 79eeee0). No test wake run from here; no browser walk. |
+| Launch review: one card per page or feature a role shipped, with its brief, links, ads and blog verdicts, and the send list; the owner can pause and resume | open Launches from the goal board to see each launch, its brief and its send list; pause or resume sends there | 2026-11-24: tabstax#1366 merged 13:06 UTC; release run 45400101532 applied 20261124140000 and deployed mcp (proof step green); prod has launch_review_tx and crm_campaign_launch_set_tx. webapps#359 merged 13:17 UTC (/launches). No browser walk yet. |
 
 ## Unverified
 
@@ -146,7 +147,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Executive Function Layer, hey next, Capacity Share | planned | Roadmap #739, #740, #741 not started |
 | Stax composition and cascade awareness | planned | Roadmap #737, #738 not started |
 | A comment addressed to a role wakes that role's launchers by push | a comment addressed to a role will wake that role's launchers by push | 2026-11-14: push today fires on work assigned and on Chief events (#1008); no event for a comment addressed to a role. The Chief filed card 65e56771 for @heystax-builder. Workers that long-poll already wake on comments (wait_for_work comments_since, #1159). |
-| Launch review: one card per page or feature a role shipped, with its brief, links, ads and blog verdicts, and the send list; the owner can pause and resume | launch review is coming; today you read campaigns with crm_query | 2026-11-24: tabstax PR #1366 (launch_review_tx, crm_campaign_launch_set_tx, MCP tools) and webapps PR #359 (/launches page) open, not merged or released. |
 
 ## Browser checks for Colm
 
@@ -226,3 +226,4 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Every account gets its own Chief with its job saved in HeyStax; HQ sets you up in five answers, shows Waiting for a brain, edits the job and changes the brain
 - [ ] A wake address can carry the bot's own key, so a keyed webhook (a Grok Bot routine) can be woken by push; a test wake proves it
 - [ ] A wake that keeps failing is reported to the stax's Chief and in the morning receipt
+- [ ] Launch review: one card per page or feature a role shipped, with its brief, links, ads and blog verdicts, and the send list; the owner can pause and resume
