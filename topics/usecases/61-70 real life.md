@@ -46,7 +46,7 @@ Then she builds **“Retirement – Second Act”** Stax:
   * *“This quarter’s experiment: join X volunteering group 1x/week.”*
 
 She **shares Foundations Stax with her financial advisor and adult child** so they can see the numbers and plans.
-She **shares Second Act Stax with a close friend**—they can nudge her: “Did you email the volunteer coordinator yet?”
+She **shares Second Act Stax with a close friend**: they can nudge her: “Did you email the volunteer coordinator yet?”
 
 Instead of vague “someday,” she opens one Stax and pushes one concrete next action. Retirement becomes an intentional project, not just an absence of work.
 
@@ -135,7 +135,7 @@ She constructs **“Uni – Triage Mode (Saving This Semester)”** Stax with he
     * *Email one lecturer and say ‘I’m behind, can we make a plan?’*
     * *Submit ANY version of Assignment X, even if incomplete.”*
 
-She **shares this Stax with someone safe**—a counsellor, tutor, older friend, or sibling.
+She **shares this Stax with someone safe**: a counsellor, tutor, older friend, or sibling.
 
 * They can see the real state, not just “I’m fine.”
 * They can co-write the Reality Check doc with her.
@@ -190,7 +190,7 @@ He builds **“Alarms – Stuff I Keep Dismissing”** Stax:
     * *“Book GP appointment for 4 weeks from now.”*
     * *“Block 2 hours this Sunday for certification study.”*
 
-He **shares this Stax with a partner or accountability friend**—“these are my quiet alarms; don’t let me pretend they don’t exist.”
+He **shares this Stax with a partner or accountability friend**: “these are my quiet alarms; don’t let me pretend they don’t exist.”
 
 Once a week, he opens this Stax **on purpose**.
 Not to catastrophize, but to take one small corrective action per alarm.
@@ -384,7 +384,7 @@ Start Page with 3 gentle but pointed questions:
 * *“What am I afraid will happen if I never try?”*
 * *“Who is one person I could talk to about this?”*
 
-She **shares this Stax only with one trusted person**—a partner, best friend, coach, or therapist.
+She **shares this Stax only with one trusted person**: a partner, best friend, coach, or therapist.
 
 * They can see the shape of her unease.
 * They can reflect it back without it being hand-wavy.
@@ -395,5 +395,3 @@ Not to fix her entire life, but to move one experiment forward: book a therapy c
 Instead of letting the “everything’s fine” mask smother the alarms, she gives those alarms a contained, named place to live and evolve.
 
 ---
-
- 

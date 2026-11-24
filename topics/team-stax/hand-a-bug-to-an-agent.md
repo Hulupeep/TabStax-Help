@@ -14,11 +14,10 @@ Before, that screenshot waited for Colm to read it, retype it into a ticket and 
 
 ## Why it matters to you
 
-- **One agent, many reporters.** Twenty people can report bugs to one agent role. They need no AI account, no repo access and no setup beyond linking Telegram once.
-- **Nothing is retyped.** The agent gets the reporter's words, the message they replied to and the screenshot itself.
-- **The loop closes where the bug was found.** The group sees "picked up", then "finished" with a verdict: a bug and its fix, not a bug and why, or can't reproduce.
-- **Nothing is explained twice.** The agent also reads what happened since: notes from earlier runs, related cards, summaries from Claude Code sessions and your later replies. See [What a worker reads before it starts](../agents/what-a-worker-gets).
-- **You can check.** The card holds the report, every note the agent left, the branch and the PR. The owner gets a copy when someone hands work over in a private chat.
+- **One agent, many reporters.** Twenty people can report to one agent role, with no AI account, no repo access, just Telegram linked once.
+- **Nothing is retyped.** The agent gets the reporter's words, the message they replied to and the screenshot.
+- **The loop closes in the chat.** The group sees "picked up", then "finished" with a verdict. The agent also reads the card's history first: see [What a worker reads before it starts](../agents/what-a-worker-gets).
+- **You can check.** The card holds the report, every note, the branch and the PR. The owner gets a copy of handoffs made in a private chat.
 
 ## How to do it
 
@@ -45,13 +44,11 @@ Use the `/t` form. In most groups the bot only receives commands, so a plain `@t
 
 ## Scenarios
 
-**The in-house tester.** Gaia rehearses a customer import and hits an error at Reconcile. She replies `/t @timebreez-builder` to her screenshot. Twenty minutes later the group reads `Result: Not a bug: the leave year is not set for this organisation. Set it in Leave settings, then reconcile.` She fixes the setting and moves on. Nobody else was pulled in.
+**The in-house tester.** Gaia hits an error at Reconcile and replies `/t @timebreez-builder` to her screenshot. Twenty minutes later: `Result: Not a bug: the leave year is not set for this organisation.` She fixes the setting. Nobody else was pulled in.
 
-**The agency client.** Nadia's studio shares a group with a client. The client posts a photo of a broken menu on their phone. Nadia replies `/t @atlas-builder`. The agent finds the cause, opens a PR and reports `Bug: menu overlaps at 375px, fixed in PR 41`. Nadia checks the preview before she tells the client.
+**The agency client.** A client posts a photo of a broken menu in the group Nadia shares with them. She replies `/t @atlas-builder`. The agent reports `Bug: menu overlaps at 375px, fixed in PR 41`, and Nadia checks the preview before she answers.
 
-**The field team.** Bob is on site with a tablet. The inspection form rejects a date. He snaps it and sends `/t @forms-builder date field rejects 31/10` as the photo caption. The agent answers `Cannot reproduce: 31/10/2026 saves on the current form. Which app version is the tablet on?` and the question comes to Bob in Telegram.
-
-**The beta group.** A founder runs a group of 30 beta users. Each bug report is one reply away from the builder role. The founder reads verdicts, not raw reports, and only steps in when the answer is a real bug that needs a product call.
+**The field team.** Bob snaps a rejected date on site and sends `/t @forms-builder date field rejects 31/10` as the caption. The agent cannot reproduce it and asks Bob, in Telegram, which app version the tablet runs.
 
 ## What you need once
 

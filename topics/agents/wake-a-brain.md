@@ -8,13 +8,13 @@ nav_order: 16
 
 {% include badge-partial.html %}
 
-HeyStax can call a bot the moment something changes on its stax. You give the bot's role a **wake address**. HeyStax posts a short, signed note to it. The bot wakes, reads the board itself, and acts.
+Give a bot's role a **wake address**. When something changes on its stax, HeyStax posts a short, signed note there, and the bot wakes, reads the board itself and acts.
 
 ## Why it matters to you
 
-Your Chief checks the board every two hours. A worker blocks at 10:05 with a question. Nobody sees it until 12:00, and the card sits.
+Your Chief checks the board every two hours. A worker blocks at 10:05 with a question, and the card sits until 12:00.
 
-With a wake address, the Chief hears about it at 10:05. The two-hour check stays, but only as a safety net.
+With a wake address, the Chief hears at 10:05. The two-hour check stays as a safety net.
 
 ## What HeyStax sends
 
@@ -26,7 +26,7 @@ With a wake address, the Chief hears about it at 10:05. The two-hour check stays
 
 ## How to do it with Grok Bot
 
-A Grok Bot routine starts from a webhook, but that URL only answers a call that carries the routine's own sender key. So you give HeyStax the key once, and it sends the key with every wake.
+A Grok Bot webhook only answers a call that carries the routine's own key. Give HeyStax the key once, and it sends it with every wake.
 
 1. Register a launcher for the role with the routine's webhook as its `push_url`.
 2. Give it the key, written as the header wants it, such as `Bearer sk-...`. Three ways: the **Wake key** button on the launcher on the stax page, `wake_key` on `launcher_register`, or a one-time link from `launcher_wake_key_link` when the bot cannot see its own key.
@@ -46,9 +46,9 @@ A Grok Bot routine starts from a webhook, but that URL only answers a call that 
 
 **Rejected** means a 401 or 403. The usual cause is a bare key where `Bearer ` was expected.
 
-The key is write-only. No tool, list or log shows it again. `launcher_list` only says whether a key is set, stale or rejected. Change the `push_url` and the key goes stale until you set it again.
+The key is write-only: `launcher_list` only says whether it is set, stale or rejected. Change the `push_url` and the key goes stale until you set it again.
 
-The one-time link opens only for you, signed in. It works once, for 24 hours. Never paste a key into a card or a chat.
+The one-time link opens only for you, signed in, once, within 24 hours. Never paste a key into a card or a chat.
 
 If wakes to a launcher keep failing, your Chief hears about it, and it shows in the morning receipt.
 
@@ -63,7 +63,7 @@ If wakes to a launcher keep failing, your Chief hears about it, and it shows in 
 
 To check a signature: compute HMAC SHA-256 of `timestamp.body` with the launcher's secret, where the timestamp is the `X-HeyStax-Timestamp` header. Compare it with the hex after `sha256=`.
 
-The brain is swappable. Move the role from Grok Bot to Hermes and you change one address. The role, its key, its cards and its history stay put.
+The brain is swappable. Move the role from Grok Bot to Hermes by changing one address. The role, its cards and its history stay put.
 
 ## Coming next
 
