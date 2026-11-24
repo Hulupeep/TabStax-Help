@@ -460,10 +460,10 @@ capabilities:
     wording: "heystax access shows what a worker can reach and how to fix each gap"
 
   - id: agent-access-activity
-    name: "Agent access on a stax shows only the agents on it, with cards created, claimed or finished there in 14 days, last activity and an Idle 14 days flag; other agents fold into Add another agent"
+    name: "Agent access on a stax shows only the agents on it, with cards created, claimed or finished there in 14 days, last activity and an Idle 14 days flag; each says what runs it (Builder, Brain, Scheduled, Not connected, explained on hover or tap) and its job from its brief; other agents fold into Add another agent"
     state: unverified
     terms: ['idle 14 days', 'add another agent']
-    evidence: "tabstax-webapps#356 (tabstax#1350), tested with 7 unit tests; prod data of 24 Nov 2026 gives timebreez-worker 0 cards (last 30 Oct). Not yet seen in production."
+    evidence: "tabstax-webapps#356 (tabstax#1350), tested with 7 unit tests; prod data of 24 Nov 2026 gives timebreez-worker 0 cards (last 30 Oct). Kind and job: tabstax-webapps#357 merged 24 Nov 2026. Not yet seen in a browser."
     wording: "Agent access shows what each agent on the stax did in 14 days"
 
   - id: telegram-whatsup
