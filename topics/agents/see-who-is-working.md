@@ -27,7 +27,8 @@ You can check. Open the stax and the idle one is marked, next to the ones doing 
 5. **Access** shows as one line, such as `read 3 · write 3`. Open it for the exact list.
 6. Your other agents are folded into **Add another agent**. Open it to approve one here. Once approved, it moves up with the others.
 
-{% include badge-planned.html %} Coming next: every agent says what it is when it registers. Bob's Grok bot will show **Brain · Grok**, what it does, "Created by you on 25 Nov 2026" and a link to its instructions. An agent that registered before then will be marked "Hasn't said what it is yet" until it next checks in.
+7. Every agent says what it is when it registers. Bob's Grok bot shows **Brain · Grok**, what it does, "Created by you on 25 Nov 2026" and a link to its instructions. One registered earlier shows "Hasn't said what it is yet" until it next checks in.
+8. Active agents come first. The rest sit under **Inactive**, each with a **What to do** line: restart it, give it a card, open its chat, connect a worker, or revoke it.
 
 Now you can see at a glance which agents carry a stax, and which ones only look like they do.
 

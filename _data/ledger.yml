@@ -468,10 +468,10 @@ capabilities:
 
   - id: agent-identity
     name: "Every agent says what it is when it registers: kind (Brain, Builder, Scheduled), platform, what it does and an optional instructions link; agent access shows it with who created it and when, and flags agents that have not said"
-    state: planned
+    state: unverified
     terms: ["hasn't said what it is yet"]
-    evidence: "tabstax#1358: tabstax#1359 (registration requires it, agent_identity_set for older agents) and tabstax-webapps#358 (panel). Open, not merged, 24 Nov 2026."
-    wording: "Coming next: every agent says what it is when it registers"
+    evidence: "tabstax#1358: tabstax#1359 + #1360 (role_create requires it too), tabstax-webapps#358 (panel, also active first and What to do for inactive agents). Released 24 Nov 2026 (release run 28); prod has the four columns. Not yet seen in a browser."
+    wording: "Every agent says what it is when it registers"
 
   - id: telegram-whatsup
     name: "Telegram what's up: a catch-up on the stax you ask in (or name) since you last asked: merges, builder results, done, decided, notes to you, new cards, then your next three moves"
