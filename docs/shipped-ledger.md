@@ -18,7 +18,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 54 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 20 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 15 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 16 |
 
 ## Live
 
@@ -146,6 +146,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Executive Function Layer, hey next, Capacity Share | planned | Roadmap #739, #740, #741 not started |
 | Stax composition and cascade awareness | planned | Roadmap #737, #738 not started |
 | A comment addressed to a role wakes that role's launchers by push | a comment addressed to a role will wake that role's launchers by push | 2026-11-14: push today fires on work assigned and on Chief events (#1008); no event for a comment addressed to a role. The Chief filed card 65e56771 for @heystax-builder. Workers that long-poll already wake on comments (wait_for_work comments_since, #1159). |
+| Launch review: one card per page or feature a role shipped, with its brief, links, ads and blog verdicts, and the send list; the owner can pause and resume | launch review is coming; today you read campaigns with crm_query | 2026-11-24: tabstax PR #1366 (launch_review_tx, crm_campaign_launch_set_tx, MCP tools) and webapps PR #359 (/launches page) open, not merged or released. |
 
 ## Browser checks for Colm
 
