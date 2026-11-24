@@ -6,17 +6,13 @@ nav_order: 7
 
 # Review what each launch sent
 
-{% include badge-planned.html %}
-
-A launch is one page or feature a role shipped at one audience. Launch review will show each one on a card: what it is, why it was built, who it is for, the links, and who it went to.
+A launch is one page or feature a role shipped at one audience. Launch review shows each one on a card: what it is, why it was built, who it is for, the links, and who it went to.
 
 ## Why it matters to you
 
-It is 07:40 and your bots sent 34 emails to tour boat operators overnight. You did not approve them, and you should not have to. You will want one screen that says what went out, to whom, and what came back.
+It is 07:40 and your bots sent 34 emails to tour boat operators overnight. You did not approve them, and you should not have to. You want one screen that says what went out, to whom, and what came back.
 
-## Coming next
-
-Nothing on this page works yet. It ships with tabstax#1363.
+## How to do it
 
 1. Open **Launches** from the goal board header.
 2. Pick a stax, such as Hubduck · Sell. The launches that need a look come first.

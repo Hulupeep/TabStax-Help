@@ -755,7 +755,7 @@ capabilities:
 
   - id: launch-review
     name: "Launch review: one card per page or feature a role shipped, with its brief, links, ads and blog verdicts, and the send list; the owner can pause and resume"
-    state: planned
+    state: live
     terms: ['launch review', 'launch_review', 'crm_campaign_launch_set', 'Launches page']
-    evidence: "2026-11-24: tabstax PR #1366 (launch_review_tx, crm_campaign_launch_set_tx, MCP tools) and webapps PR #359 (/launches page) open, not merged or released."
-    wording: "launch review is coming; today you read campaigns with crm_query"
+    evidence: "2026-11-24: tabstax#1366 merged 13:06 UTC; release run 45400101532 applied 20261124140000 and deployed mcp (proof step green); prod has launch_review_tx and crm_campaign_launch_set_tx. webapps#359 merged 13:17 UTC (/launches). No browser walk yet."
+    wording: "open Launches from the goal board to see each launch, its brief and its send list; pause or resume sends there"
