@@ -550,6 +550,12 @@ capabilities:
     evidence: "tabstax#1236 (PR #1249, localhost sign-in fix #1251), CLI 0.5.1. J-HEYSTAX-UP ran against production from the Minisforum on 2026-11-13: one browser sign-in, the consent page listed the builder role, up made its folder, installed the listener service, and the table said listening; launcher live, health ok, 0 restarts. Runs from the repo build (cli/); not on npm yet, so npx heystax up does not work yet."
     wording: "heystax up runs from the repo today: one browser sign-in, and every builder role on the machine is listening; it is not on npm yet"
 
+  - id: heystax-up-scheduled
+    name: "heystax up also connects scheduled roles: their own empty folder and a nightly heystax run slot, not a listener; the run cannot write files, run git or open a pull request"
+    state: planned
+    terms: ['scheduled roles? will get a nightly run', 'next `heystax up` will do this step']
+    evidence: "tabstax#1390, PR tabstax#1393 opened 2026-11-25 (CLI 0.5.14 + migration 20261125100000). Not merged or released yet."
+
   - id: worker-self-heal
     name: "A listener replaces a revoked launcher by itself; the role chip says Down or Restarting and gives the fix"
     state: live

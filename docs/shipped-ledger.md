@@ -18,7 +18,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 59 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 20 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 13 |
 
 ## Live
 
@@ -140,6 +140,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | Role packs carry skills: hiring a role also hands its worker links to the skills that role uses | planned | tabstax#1354 (test, epic #1352) not started |
+| heystax up also connects scheduled roles: their own empty folder and a nightly heystax run slot, not a listener; the run cannot write files, run git or open a pull request |  | tabstax#1390, PR tabstax#1393 opened 2026-11-25 (CLI 0.5.14 + migration 20261125100000). Not merged or released yet. |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |
