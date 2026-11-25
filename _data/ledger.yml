@@ -543,6 +543,13 @@ capabilities:
     evidence: "tabstax#1354 (test, epic #1352) not started"
     wording: "planned"
 
+  - id: brief-does-not-handle
+    name: "New role briefs say what the role does NOT handle: pack_apply lists every other role in the pack by its job, and agent_brief_update tips a brief that has no such section"
+    state: planned
+    terms: ['Does NOT handle section is added', 'tip when the section is missing']
+    evidence: "tabstax#1410, PR tabstax#1411 open 2026-11-25, awaiting merge and mcp deploy. Writing the section by hand into any brief's instructions works today: instructions are free text."
+    wording: "planned"
+
   - id: cli-up
     name: "heystax up: one browser sign-in connects every builder role on a machine, makes its folder and starts its listener"
     state: partial
