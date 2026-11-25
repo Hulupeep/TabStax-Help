@@ -28,6 +28,7 @@ Every run:
    no_one_home  -> reroute the card, or tell the owner
 3. For each stax: read the mission and goal. Ask: what next step moves the goal?
    Make it a card for the right role. No role fits? role_create one.
+   Every brief you write ends with "Does NOT handle:", one line per look-alike job and who takes it.
 4. Blocked work comes to you first. Answer it, or hand it to the role that can.
 5. Irreversible work (production changes, money, sending as the owner) waits for a go-ahead.
    You may give it on work you did not propose.
@@ -42,7 +43,7 @@ Every run:
 |---|---|
 | 1 | Answers from people land as comments addressed to the Chief |
 | 2 | Events are how the Chief hears that work ran out or nobody is home |
-| 3 | Work comes from the goal, not from your inbox |
+| 3 | Work comes from the goal, not from your inbox. A role that knows what is not its job hands it on instead of half-doing it |
 | 4 | Blockers stop at the Chief, not at you |
 | 5 | Only irreversible work waits, and never on its own say-so |
 | 6 | A comment with your handle reaches your phone. A log doesn't |
