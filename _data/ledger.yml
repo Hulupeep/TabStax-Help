@@ -766,6 +766,13 @@ capabilities:
     evidence: "2026-11-24: tabstax#1366 merged 13:06 UTC; release run 45400101532 applied 20261124140000 and deployed mcp (proof step green); prod has launch_review_tx and crm_campaign_launch_set_tx. webapps#359 merged 13:17 UTC (/launches). No browser walk yet."
     wording: "open Launches from the goal board to see each launch, its brief and its send list; pause or resume sends there"
 
+  - id: launch-approval
+    name: "Launch approval: the owner sets off, approve every new launch, or approve the first N per stax; a send for a launch that waits is refused until the owner approves its copy, page and feature link"
+    state: live
+    terms: ['launch approval', 'Launch approval', 'LAUNCH_NOT_APPROVED', 'Needs your approval', 'approve the first']
+    evidence: "2026-11-25: tabstax#1395 + #1400 (migration 20261125110000_launch_approval_1394) and webapps#363 (/launches and CRM Campaigns setting, Approve button). Release run 45596856829 applied 20261125110000; prod has crm_launch_approval_settings, the LAUNCH_NOT_APPROVED refusal code and the reserve wrapper. webapps#363 merged 2026-11-25, Vercel deploy success; /api/launches/approval answers 401 signed out. No browser walk yet."
+    wording: "set Launch approval per stax; a new launch waits with Needs your approval until you approve its email, landing page and feature link, and a change sends it back to you"
+
   - id: crm-campaigns-dashboard
     name: "CRM campaigns dashboard: every campaign on a stax with its links, counts, why unsent prospects are unsent, and what is stopping it, most blocking first (crm_campaigns_dashboard)"
     state: live
