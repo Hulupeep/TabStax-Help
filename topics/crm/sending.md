@@ -26,7 +26,9 @@ Decided not to send? `crm_send_release` frees the reservation, so it stops count
 |---|---|---|
 | Your holds | `HELD` | none |
 | Do-not-contact list | `SUPPRESSED` | |
+| Address not marked bad by a bounce or a check | `ADDRESS_INVALID` | |
 | Campaign is running | `CAMPAIGN_NOT_RUNNING` | |
+| Campaign's send window is still open | `WINDOW_CLOSED` | no window |
 | The bot's own message check, if it sends one | `GATE_FAILED` | |
 | One touch per organisation, across every campaign and stax | `COOLDOWN` | 7 days |
 | Sends per mailbox in 24 hours, across everything | `CAP` | 30 |
@@ -34,7 +36,9 @@ Decided not to send? `crm_send_release` frees the reservation, so it stops count
 
 A refusal means do not send. Cooldowns and caps come back with when to try again.
 
-{% include badge-planned.html %} Coming next: send windows, so nothing goes out outside the hours you set (`WINDOW_CLOSED`), and an address check that refuses a bad address before it is used (`ADDRESS_INVALID`).
+**Send windows.** `crm_window_set` gives a campaign, or one angle, a last day. After it, no first emails go out. Prospects already touched get follow-ups for 14 more days, then everything stops. Only you can move the last day later.
+
+**Address checks.** `crm_address_verify` checks an email once before its first send. A bounce marks it bad, and only you can reset it.
 
 ## What only you control
 

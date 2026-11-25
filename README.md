@@ -11,7 +11,7 @@ permalink: /
 
 A plan in a Claude chat. Thirty tabs. A group thread from Tuesday. None of them holds the whole.
 
-HeyStax is the **operational plane** for your work. One graph holds why the work exists, the result you want, and the next move. Every tool and every teammate, person or agent, works from that same graph.
+HeyStax is the **operational plane** for your work. One graph holds why the work exists, the result you want and the next move. Every teammate, person or agent, works from it.
 
 {% capture s %}
 {% include anim/node.html x=80 y=28 label="Claude chat" kind="note" %}
@@ -38,17 +38,13 @@ HeyStax is the **operational plane** for your work. One graph holds why the work
 
 ## Mission, Goal, Next Action
 
-Every stax answers three questions.
-
 | | Asks | Example |
 |---|---|---|
 | **Mission** | Why does this work exist? | Launch the tutoring app |
 | **Goal** | What result counts? | 5 paying users by March |
 | **Next Action** | Who does what next? | Bob calls Ana's school |
 
-Keep next actions few. Three clear moves beat thirty vague ones.
-
-→ [What is a stax?](topics/what_is_a_stax)
+Three clear moves beat thirty vague ones. → [What is a stax?](topics/what_is_a_stax)
 
 ## Own your own cognition
 
@@ -63,7 +59,7 @@ Agents extend your thinking. They never take custody of it.
 
 ## Where HeyStax lives
 
-Add an action in the terminal and it shows in the dashboard. Complete it through Claude and the extension knows.
+Add an action in the terminal and it shows in the dashboard.
 
 | Surface | What it does |
 |---|---|
@@ -79,17 +75,17 @@ Add an action in the terminal and it shows in the dashboard. Complete it through
 - **New?** [Get started](topics/getting-started), then [create your first stax](topics/creating_your_first_stax).
 - **Just installed the extension?** [First time opening TabStax](topics/first_time_opening_tabstax).
 - **Live in a terminal?** [Hey CLI guide](topics/hey-cli).
-- **Use an AI assistant?** [Connect Claude Code](topics/mcp-claude-code). It takes one command.
+- **Use an AI assistant?** [Connect Claude Code](topics/mcp-claude-code) or [Claude.ai](topics/mcp-claude-ai).
 - **Run a team in Telegram?** [Set up the Telegram bot](topics/team-stax/telegram).
-- **Someone shared a stax with you?** Opening it puts you where they were: same tabs, same next actions. Open shared stax only from people you trust.
+- **Someone shared a stax?** It opens where they were: same tabs, same next actions. Open stax only from people you trust.
 
 ## Agents work beside you
 
 {% include badge-partial.html %}
 
-Start a worker such as Codex or Claude Code under its own name. It claims a next action, reports a blocker or a result, and every step carries its name. The claim rules are in production. The full journey is still being checked in a browser.
+A worker such as Codex or Claude Code runs under its own name. It claims a next action and reports a blocker or a result. Every step carries its name. The claim rules are in production; the full journey is still being checked in a browser.
 
-→ [How agents work on a stax](topics/agents/) · [Scenarios](topics/scenarios/)
+→ [How agents work on a stax](topics/agents/) · [See which agents work on a stax](topics/agents/see-who-is-working) · [Scenarios](topics/scenarios/)
 
 ## See it in action
 
