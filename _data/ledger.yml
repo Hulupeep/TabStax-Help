@@ -768,9 +768,9 @@ capabilities:
 
   - id: launch-approval
     name: "Launch approval: the owner sets off, approve every new launch, or approve the first N per stax; a send for a launch that waits is refused until the owner approves its copy, page and feature link"
-    state: unverified
+    state: live
     terms: ['launch approval', 'Launch approval', 'LAUNCH_NOT_APPROVED', 'Needs your approval', 'approve the first']
-    evidence: "2026-11-25: tabstax#1395 + #1400 (migration 20261125110000_launch_approval_1394) and webapps#363 (/launches and CRM Campaigns setting, Approve button). Prod apply pending the release run; no browser walk yet."
+    evidence: "2026-11-25: tabstax#1395 + #1400 (migration 20261125110000_launch_approval_1394) and webapps#363 (/launches and CRM Campaigns setting, Approve button). Release run 45596856829 applied 20261125110000; prod has crm_launch_approval_settings, the LAUNCH_NOT_APPROVED refusal code and the reserve wrapper. webapps#363 merged 2026-11-25, Vercel deploy success; /api/launches/approval answers 401 signed out. No browser walk yet."
     wording: "set Launch approval per stax; a new launch waits with Needs your approval until you approve its email, landing page and feature link, and a change sends it back to you"
 
   - id: crm-campaigns-dashboard
