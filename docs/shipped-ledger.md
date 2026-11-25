@@ -16,7 +16,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 59 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 21 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 22 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
 | `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
 
@@ -109,6 +109,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Reply in Telegram to any bot message about a card (a stuck alert, a done notice, a reply) and your words go on that card as a comment | reply to any bot message about a card to add to that card | Migration 20261113120000 (tabstax#1232) applied to production by the owner 2026-11-13 17:15Z, RELEASE OK. No reply to a stuck alert or done notice seen on a card yet. |
 | heystax up also connects scheduled roles: their own empty folder and a nightly heystax run slot, not a listener; the run cannot write files, run git or open a pull request |  | tabstax#1390, PR tabstax#1393 merged 2026-11-25 (CLI 0.5.14 + migration 20261125100000), released by release.yml run 45591716650. Not yet seen on a user's machine. |
 | A wake that keeps failing is reported to the stax's Chief and in the morning receipt | if wakes to a launcher keep failing, your Chief hears about it and it shows in the morning receipt | tabstax#1313 merged 2026-11-14: a delivery that fails for good writes one worker-missed event per launcher per 6 hours. Server side only; not observed from outside on 2026-11-15. |
+| Launch approval: the owner sets off, approve every new launch, or approve the first N per stax; a send for a launch that waits is refused until the owner approves its copy, page and feature link | set Launch approval per stax; a new launch waits with Needs your approval until you approve its email, landing page and feature link, and a change sends it back to you | 2026-11-25: tabstax#1395 + #1400 (migration 20261125110000_launch_approval_1394) and webapps#363 (/launches and CRM Campaigns setting, Approve button). Prod apply pending the release run; no browser walk yet. |
 
 ## Partial
 
@@ -233,4 +234,5 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] A wake address can carry the bot's own key, so a keyed webhook (a Grok Bot routine) can be woken by push; a test wake proves it
 - [ ] A wake that keeps failing is reported to the stax's Chief and in the morning receipt
 - [ ] Launch review: one card per page or feature a role shipped, with its brief, links, ads and blog verdicts, and the send list; the owner can pause and resume
+- [ ] Launch approval: the owner sets off, approve every new launch, or approve the first N per stax; a send for a launch that waits is refused until the owner approves its copy, page and feature link
 - [ ] CRM campaigns dashboard: every campaign on a stax with its links, counts, why unsent prospects are unsent, and what is stopping it, most blocking first (crm_campaigns_dashboard)

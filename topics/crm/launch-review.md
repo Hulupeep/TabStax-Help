@@ -24,6 +24,19 @@ It is 07:40 and your bots sent 34 emails to tour boat operators overnight. You d
 
 Sends go ahead by default. Nothing waits for you. If a launch looks wrong, press **Pause sends**. That sets your hold on the campaign. **Resume sends** clears it.
 
+## Check the first few, then let go
+
+You can choose to see a launch before its first email goes. Set it once per stax, at the top of Launches or on the stax's CRM Campaigns page.
+
+1. Pick **Launch approval**: off, approve every new launch, or approve the first few.
+2. For the first few, set how many, such as 3. Press **Save**.
+3. A new launch shows **Needs your approval**. Its email draft, landing page and feature link sit on one screen.
+4. Press **Approve** when the three match. Sends start.
+
+Your approval covers that copy, that page and that link. If a role changes any of them, the launch waits for you again. Launches that already sent keep sending. Once you have approved the first few, new launches go on their own.
+
+A slot the role has not filled says so, such as "Landing page: Not set by @hubduck-marketing". You see the gap before anyone gets the email.
+
 ## What the role writes
 
 The role that ran the launch writes the brief with `crm_campaign_launch_set`: what, why, worth, ask, when to stop, the feature link, the email copy, and the ads and blog verdicts. A field it has not written yet is named on the card, so you can see the gap.
@@ -32,6 +45,6 @@ The counts come from the message history, never from the role. Signups and payme
 
 ## For bots
 
-`launch_review` reads the same cards over MCP, with a stax id and an optional campaign id for the send list.
+`launch_review` reads the same cards over MCP, with a stax id and an optional campaign id for the send list. A send for a launch that waits for the owner is refused with `LAUNCH_NOT_APPROVED`. The bot posts one line with the launch review link and moves on.
 
 Now you can see everything a role shipped, and who it reached, without being the one who approved it.
