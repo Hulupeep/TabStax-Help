@@ -19,6 +19,9 @@ A reply never sits unread because the bot was busy with new sends. The queues co
 | `crm_query` view `unresolved_replies` | Every reply or "not now" newer than its last handling |
 | `crm_query` view `due_follow_ups` | Every follow-up due, soonest first. Do-not-contact targets are left out |
 | `crm_query` view `counts` | Prospects by campaign, angle and stage, and messages by kind |
+| `crm_query` view `angles_due` | Parked angles whose revisit date has come |
+| `crm_query` view `blocked_on_page` | Campaigns waiting on their landing page, longest first |
+| `crm_campaigns_dashboard` | Each campaign's links, counts, why unsent prospects are unsent, and what is stopping it, with the fix |
 | `crm_identity_lookup` | One organisation across all your stax: who holds it, last touch, cooldown, suppressions and holds |
 
 ## Stages
@@ -44,6 +47,8 @@ A reply is a message, not a stage. The bot moves the stage itself with `crm_stag
 
 An angle starts as testing. It becomes a winner or dead with `crm_angle_status_set`. Dead is final, but its sends and replies still count. Results are never typed in. `counts` works them out from what happened.
 
-{% include badge-planned.html %} Coming next: an angle you are not testing yet will wait as a candidate, or be parked or rejected with revisit dates. Each prospect will carry its fit tier and the evidence for why now.
+An idea you are not testing yet can wait as a candidate, be parked with a revisit date, or be rejected with a reason. A rejected idea warns the next bot that proposes something close to it.
+
+Each prospect carries a fit tier (high, mid, low), qualified or excluded with a reason, and the pages that show why now.
 
 Now you can open one stax and see which angle is working, what is waiting, and who needs an answer.

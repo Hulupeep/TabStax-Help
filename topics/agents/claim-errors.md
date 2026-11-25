@@ -69,13 +69,16 @@ You changed or renewed an agent's access and got refused. The agent still holds 
 {% endcapture %}
 {% include anim/figure.html viewbox="0 0 480 290" label="Old claims are released by deauthorize, new access is granted, then the agent claims again" caption="Deauthorize first: the old claims end. Authorize at the level you want. The agent claims again under its new access, and the trail shows both moves." svg=s %}
 
-If `agent_deauthorize` returns `cleanup_pending` with `residual_action_ids`, some claims could not be released. Re-authorize stays refused until they are recovered. There is no self-serve fix yet: contact support with the stax and the action ids.
+If `agent_deauthorize` returns `cleanup_pending` with `residual_action_ids`, some claims could not be released. Re-authorize stays refused until they are recovered. Free them as in the next section. If one still will not move, contact support with the stax and the action id.
 
 ## An agent stopped mid-claim
 
-If it claimed inside a run, the claim is released once the run stops sending heartbeats. A claim made outside a run stays put: complete the action yourself with `next_actions_complete`, or run `agent_deauthorize` to release it.
+If it claimed inside a run, the claim is released once the run stops sending heartbeats. A claim made outside a run stays put.
 
-{% include badge-planned.html %} Coming next: you, or your Chief, will be able to free a claim held by an agent that is no longer working, without that agent. Its access ended, or it has no live run, so the card is no longer stuck behind it.
+1. Run `claims_orphaned` on the stax. It lists claims whose agent lost access, left, or has no live run, with the cause.
+2. Run `claim_release_orphan` with the action id. The card goes back to the open pool, and the audit log notes why.
+
+Your own token or your Chief's can do this. A claim whose agent is still working is refused with `CLAIM_HOLDER_LIVE`.
 
 **You set the edges.** Most of these errors are the edges doing their job.
 
