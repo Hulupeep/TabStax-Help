@@ -552,9 +552,9 @@ capabilities:
 
   - id: heystax-up-scheduled
     name: "heystax up also connects scheduled roles: their own empty folder and a nightly heystax run slot, not a listener; the run cannot write files, run git or open a pull request"
-    state: planned
-    terms: ['scheduled roles? will get a nightly run', 'next `heystax up` will do this step']
-    evidence: "tabstax#1390, PR tabstax#1393 opened 2026-11-25 (CLI 0.5.14 + migration 20261125100000). Not merged or released yet."
+    state: unverified
+    terms: ['scheduled roles get a nightly run', '`heystax up` also does this step']
+    evidence: "tabstax#1390, PR tabstax#1393 merged 2026-11-25 (CLI 0.5.14 + migration 20261125100000), released by release.yml run 45591716650. Not yet seen on a user's machine."
 
   - id: worker-self-heal
     name: "A listener replaces a revoked launcher by itself; the role chip says Down or Restarting and gives the fix"

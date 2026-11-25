@@ -28,7 +28,7 @@ A reviewer fills that gap. One run a night, one journey, at most three cards, ea
 3. **Write its job** in the brief: the outcome, which journeys, what each card must carry.
 4. **Add its Never rules:** no code, no pull requests, a card cap a night, evidence on every card.
 5. **Give it one standing card** assigned to the role. Each night's run reports on it.
-6. **Put it on a timer** with `heystax run` on your own machine, once a night, from a folder that is not a git repo. {% include badge-partial.html %} Soon your next `heystax up` will do this step for you. {% include badge-planned.html %}
+6. **Put it on a timer.** Run `heystax up` on your own machine. It gives the role an empty folder and a nightly run at 02:30. See [Start every builder with one command](heystax-up.html). {% include badge-partial.html %}
 7. **Judge it by results.** At the end of the window, count the cards you accepted that shipped.
 
 {% capture s %}
@@ -49,7 +49,7 @@ A reviewer fills that gap. One run a night, one journey, at most three cards, ea
 - **Evidence:** one line with its source, such as a card note or a run that stalled.
 - **Done when:** one line anyone can check.
 
-`heystax run` runs from the repo today; it is not on npm yet.
+{% include badge-partial.html %} `heystax up` and `heystax run` run from the repo today; they are not on npm yet.
 
 Now you can wake up to the few design fixes that matter, backed by what really happened, and keep your builders on the work you choose.
 
