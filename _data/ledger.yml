@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-20
+checked: 2026-11-25
 
 capabilities:
 
@@ -43,7 +43,7 @@ capabilities:
     name: "heystax listen and heystax run: CLI workers that wait for work, one git worktree per card"
     state: partial
     terms: ['hey listen', 'hey run\b', 'heystax listen', 'heystax run\b']
-    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10. 2026-11-17: a done card's committed work reaches GitHub, or the card says why it did not (tabstax#1335, 0.5.8), and the listener pushes and opens the PR from the card's own worktree, so your pre-push hooks check the card's work, not your half-done files (tabstax#1337, 0.5.9). npm heystax-cli latest still 0.1.13 on 2026-11-18. 2026-11-18: the listener rebases a stale card branch onto main before its first push, with no prompt (tabstax#1340, 0.5.10). npm heystax-cli latest still 0.1.13 on 2026-11-19."
+    evidence: "tabstax#1132 merged 2026-11-08; worker binary renamed to heystax (tabstax#1152, 2026-11-09); one worktree per card (tabstax#1154, merged 2026-11-09). Autonomy per folder with --autonomy edit, build or full (tabstax#1193), back-off after a failed card (#1194) and a Listener note on the card saying why a run failed (#1197), all merged 2026-11-11. On 2026-11-12: the listener pushes the card's own heystax/ branch and opens the PR itself, never main, never force, never merge (#1223, 0.4.6); a note on the card names any step Claude Code refused and where that rule lives (#1224, #1225, 0.4.8). Build reports its version with heystax --version (#1208). Runs from the repo (cli/); npm heystax-cli latest is still 0.1.13 on 2026-11-13, with no listen or run; @heystax/hey is not on npm. wait_for_work is in the production MCP tool list on 2026-11-10. 2026-11-17: a done card's committed work reaches GitHub, or the card says why it did not (tabstax#1335, 0.5.8), and the listener pushes and opens the PR from the card's own worktree, so your pre-push hooks check the card's work, not your half-done files (tabstax#1337, 0.5.9). npm heystax-cli latest still 0.1.13 on 2026-11-18. 2026-11-18: the listener rebases a stale card branch onto main before its first push, with no prompt (tabstax#1340, 0.5.10). npm heystax-cli latest still 0.1.13 on 2026-11-19. 2026-11-24: on Linux each card run gets its own scope with a 12 GB memory cap and 8 CPUs, and Claude Code runs load only the HeyStax MCP server (tabstax#1377); the listener may check out submodules and work_next carries the card body (tabstax#1370, 0.5.11). npm heystax-cli latest still 0.1.13 and @heystax/hey still 404 on 2026-11-25."
     wording: "heystax listen runs from the repo today; it is not on npm yet"
 
   - id: cli-rename
@@ -405,10 +405,10 @@ capabilities:
 
   - id: crm-targeting
     name: "CRM targeting: qualification and fit tier per prospect, address kinds, touches, a campaign landing page, send windows, and candidate, parked or rejected angles with revisit dates"
-    state: planned
+    state: live
     terms: ['send windows?', 'WINDOW_CLOSED', 'ADDRESS_INVALID', 'angles_due', 'blocked_on_page', 'fit tier', 'revisit dates?', 'parked angles?']
-    evidence: "tabstax#1226 to #1231 (PRs #1316, #1320, #1321, #1322, #1326 to #1329) merged together through tabstax#1344 on 2026-11-19 06:34Z; six migrations wait for a production go-ahead (per the PR). 2026-11-20: the production MCP tool list seen through a connected HeyStax client has crm_query views due_follow_ups, unresolved_replies and counts only (no angles_due or blocked_on_page), crm_angle_status_set statuses testing, winner and dead only, and crm_send_reserve refusals without ADDRESS_INVALID or WINDOW_CLOSED. Schemas only."
-    wording: "send windows, address checks, prospect qualification and angle revisit dates are coming next"
+    evidence: "2026-11-25: the production MCP tool list seen through a connected HeyStax client now has all of it: crm_query views blocked_on_page and angles_due; crm_angle_status_set and crm_angle_upsert with candidate, parked (revisit_at) and rejected (status_reason); crm_send_reserve refusals ADDRESS_INVALID and WINDOW_CLOSED; crm_window_set, crm_campaign_page_set, crm_campaign_page_check, crm_address_set and crm_address_verify; crm_membership_set and crm_import with fit_tier, qualification_status, exclusion_reason and trigger_evidence. Schemas only; no write was made. Earlier: tabstax#1226 to #1231 (PRs #1316, #1320, #1321, #1322, #1326 to #1329) merged together through tabstax#1344 on 2026-11-19 06:34Z; six migrations wait for a production go-ahead (per the PR). 2026-11-20: the production MCP tool list seen through a connected HeyStax client has crm_query views due_follow_ups, unresolved_replies and counts only (no angles_due or blocked_on_page), crm_angle_status_set statuses testing, winner and dead only, and crm_send_reserve refusals without ADDRESS_INVALID or WINDOW_CLOSED. Schemas only."
+    wording: "a campaign can have a send window and a landing page; addresses carry a kind and a check; each prospect carries a fit tier and why-now evidence; an angle can wait as a candidate, be parked with a revisit date, or be rejected with a reason"
 
   - id: hosted-pickup
     name: "Workers wait for work and pick it up on their own (wait_for_work); launchers with a pause switch and runs-per-hour cap"
@@ -594,17 +594,17 @@ capabilities:
 
   - id: orphan-claim-release
     name: "Free a claim held by an agent whose access ended or that has no live run: the owner or the Chief lists and releases it"
-    state: planned
+    state: live
     terms: ['claims_orphaned', 'claim_release_orphan', 'orphan(ed)? claims?']
-    evidence: "tabstax#1317 merged 2026-11-19 07:56Z (migration orphan_claim_release, mcp orphan-claims.ts; also in tabstax#1325 and #1346). The PR says the production migration waits for the Chief's go-ahead. 2026-11-20: claims_orphaned and claim_release_orphan are not in the production MCP tool list seen through a connected HeyStax client."
-    wording: "you, or your Chief, will be able to free a claim held by an agent that is no longer working"
+    evidence: "2026-11-25: claims_orphaned and claim_release_orphan are in the production MCP tool list seen through a connected HeyStax client (causes GRANT_REVOKED, GRANT_EXPIRED, GRANT_MISSING, AGENT_DEACTIVATED, MEMBERSHIP_MISSING, SYSTEM_AGENT_ORPHANED, NO_LIVE_RUN; a live holder is refused with CLAIM_HOLDER_LIVE; owner token or a Chief with roles_manage). Schemas only; nothing was released. Earlier: tabstax#1317 merged 2026-11-19 07:56Z (migration orphan_claim_release, mcp orphan-claims.ts; also in tabstax#1325 and #1346). The PR says the production migration waits for the Chief's go-ahead. 2026-11-20: claims_orphaned and claim_release_orphan are not in the production MCP tool list seen through a connected HeyStax client."
+    wording: "you, or your Chief, can free a claim held by an agent that is no longer working"
 
   - id: earned-autonomy
     name: "Earned autonomy: a role starts at a low level and its reach widens as its checks pass; failed checks drop it at once; off until the owner turns it on"
-    state: planned
+    state: live
     terms: ['earned autonomy', 'autonomy_status', 'autonomy_configure']
-    evidence: "tabstax#1188 slice 1, PRs tabstax#1307 and #1330 merged 2026-11-19 07:56Z (migration earned_autonomy_1188, mcp autonomy.ts; also in #1346): levels new, proven, trusted, lead; up one level after 10 verified cards in 14 days; 3 failed checks in 7 days or one QC rejection drops it; off per stax until the owner turns it on. 2026-11-20: autonomy_status and autonomy_configure are not in the production MCP tool list seen through a connected HeyStax client. The web role chip is tabstax-webapps#342, not merged."
-    wording: "a role will earn its reach as its checks pass"
+    evidence: "2026-11-25: autonomy_status and autonomy_configure are in the production MCP tool list seen through a connected HeyStax client (levels new, proven, trusted, lead; up after 10 verified cards in 14 days; down after 3 failed checks in 7 days or one QC rejection; owner turns it on per stax and can pin a role; go_ahead and manage_roles are never earned). Schemas only; nothing was turned on. Earlier: tabstax#1188 slice 1, PRs tabstax#1307 and #1330 merged 2026-11-19 07:56Z (migration earned_autonomy_1188, mcp autonomy.ts; also in #1346): levels new, proven, trusted, lead; up one level after 10 verified cards in 14 days; 3 failed checks in 7 days or one QC rejection drops it; off per stax until the owner turns it on. 2026-11-20: autonomy_status and autonomy_configure are not in the production MCP tool list seen through a connected HeyStax client. The web role chip is tabstax-webapps#342, not merged."
+    wording: "turn it on for a stax and each role earns its reach as its checks pass"
 
   - id: verified-done
     name: "Verified done: a card with a page check closes only when HeyStax's own fetch passes; a fail reopens it with the reason"
@@ -759,3 +759,10 @@ capabilities:
     terms: ['launch review', 'launch_review', 'crm_campaign_launch_set', 'Launches page']
     evidence: "2026-11-24: tabstax#1366 merged 13:06 UTC; release run 45400101532 applied 20261124140000 and deployed mcp (proof step green); prod has launch_review_tx and crm_campaign_launch_set_tx. webapps#359 merged 13:17 UTC (/launches). No browser walk yet."
     wording: "open Launches from the goal board to see each launch, its brief and its send list; pause or resume sends there"
+
+  - id: crm-campaigns-dashboard
+    name: "CRM campaigns dashboard: every campaign on a stax with its links, counts, why unsent prospects are unsent, and what is stopping it, most blocking first (crm_campaigns_dashboard)"
+    state: live
+    terms: ['crm_campaigns_dashboard', 'campaigns dashboard']
+    evidence: "tabstax#1372 merged 2026-11-24 15:03Z. 2026-11-25: crm_campaigns_dashboard is in the production MCP tool list seen through a connected HeyStax client (links, page, window, counts, not_sent_by_reason, sendable_now, refused_last_24h, holds, stopping gates with a fix each, state stopped, partly_stopped, clear or done; read only; needs records_read). Schema only; not called."
+    wording: "ask for the campaigns dashboard to see each campaign, its counts and what is stopping it, with the fix"
