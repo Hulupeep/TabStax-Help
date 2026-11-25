@@ -46,6 +46,16 @@ Friday, 18:00. Three stax, three builders. That used to mean three keys, three f
 
 Running it again is safe: same folders, same workers, new keys.
 
+## Scheduled roles get a nightly run
+
+Some roles do not wait for cards. A reviewer reads at night and files what it found. If your Chief registers a role as Scheduled, on Claude Code or Codex, `heystax up` also brings it back from the same sign-in.
+
+- **Its own empty folder.** Never a clone, so it has no code to change.
+- **A nightly run, not a listener.** Once a night at 02:30, or the time you pick with `--at 06:15`. On Linux it is a systemd timer; on a Mac, launchd.
+- **Read and report only.** The run cannot write files, run git or open a pull request. It reads, reports on its standing card and files cards.
+
+The table shows it as **nightly 02:30**. The Chief makes the role. `heystax up` runs it. ([#1390](https://github.com/Hulupeep/tabstax/issues/1390))
+
 ## When a listener goes wrong
 
 A listener fixes the common breaks itself:
@@ -63,6 +73,4 @@ You can check that it is your listener. The chip shows when it started listening
 
 `npx heystax up`, with nothing to build first, once the command is on npm.
 
-{% include badge-planned.html %} **Scheduled roles will get a nightly run.** A role your Chief registers as Scheduled, on Claude Code or Codex, will come back from the same sign-in. It will get its own empty folder, never a clone, and a run once a night at 02:30 or the time you pick with `--at`, not a listener. It will read, report and file cards, and it will never write files, run git or open a pull request. The Chief makes the role. Your next `heystax up` runs it. ([#1390](https://github.com/Hulupeep/tabstax/issues/1390))
-
-Now you can start every builder you own with one sign-in, and see which ones are listening.
+Now you can start every builder and nightly role you own with one sign-in, and see which ones are running.
