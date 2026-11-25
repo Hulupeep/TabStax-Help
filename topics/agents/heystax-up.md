@@ -63,4 +63,6 @@ You can check that it is your listener. The chip shows when it started listening
 
 `npx heystax up`, with nothing to build first, once the command is on npm.
 
+{% include badge-planned.html %} **Scheduled roles will get a nightly run.** A role your Chief registers as Scheduled, on Claude Code or Codex, will come back from the same sign-in. It will get its own empty folder, never a clone, and a run once a night at 02:30 or the time you pick with `--at`, not a listener. It will read, report and file cards, and it will never write files, run git or open a pull request. The Chief makes the role. Your next `heystax up` runs it. ([#1390](https://github.com/Hulupeep/tabstax/issues/1390))
+
 Now you can start every builder you own with one sign-in, and see which ones are listening.

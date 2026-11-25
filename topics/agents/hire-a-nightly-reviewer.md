@@ -28,7 +28,7 @@ A reviewer fills that gap. One run a night, one journey, at most three cards, ea
 3. **Write its job** in the brief: the outcome, which journeys, what each card must carry.
 4. **Add its Never rules:** no code, no pull requests, a card cap a night, evidence on every card.
 5. **Give it one standing card** assigned to the role. Each night's run reports on it.
-6. **Put it on a timer** with `heystax run` on your own machine, once a night, from a folder that is not a git repo. {% include badge-partial.html %}
+6. **Put it on a timer** with `heystax run` on your own machine, once a night, from a folder that is not a git repo. {% include badge-partial.html %} Soon your next `heystax up` will do this step for you. {% include badge-planned.html %}
 7. **Judge it by results.** At the end of the window, count the cards you accepted that shipped.
 
 {% capture s %}
