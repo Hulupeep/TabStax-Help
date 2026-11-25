@@ -31,9 +31,9 @@ Does NOT handle (assign it to that role, or to the Chief if no role fits):
 - Anything that leaves the building before QC: that is @shop-qc.
 ```
 
-{: .note }
-> **Coming next** {% include badge-planned.html %}
-> New roles will get this section by default. A role pack will list every other role in the pack by its job, and a brief saved without the section will get a one-line tip back.
+## New roles get it by default
+
+A role pack now writes the section for you: each new role's brief lists every other role in the pack by its job. A brief saved without the section gets a one-line tip back.
 
 You set the edges. Each role knows its own, and you can read them all in one place.
 

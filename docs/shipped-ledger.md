@@ -16,9 +16,9 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 |---|---|---|
 | `shipped` | Seen working in production by a person in a browser. Describe it as live. | 0 |
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 60 |
-| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 21 |
+| `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 22 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 13 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 12 |
 
 ## Live
 
@@ -108,6 +108,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Telegram what's up: a catch-up on the stax you ask in (or name) since you last asked: merges, builder results, done, decided, notes to you, new cards, then your next three moves | send what's up to the HeyStax Telegram bot | tabstax-webapps#353 merged 2026-11-23 (first cut: notes plus HeyStax news). The stax catch-up replaces it in the follow-up PR for tabstax#1350, tested on timebreez rows of 23 Nov 2026. Not yet seen in production. |
 | Session summary: when a Claude Code session with the HeyStax plugin ends, five lines go on its card (asked, changed, result, next, branch and PR); a session with no card that changed files gets a done card of its own; chat-only sessions leave nothing | when a Claude Code session ends, it leaves a short summary on its card | tabstax#1232 (cli 0.4.9, plugin 0.2.0) merged 2026-11-13; the owner updated the CLI and plugin on the Minisforum 17:15Z. No summary from a real session seen on a card yet. |
 | Reply in Telegram to any bot message about a card (a stuck alert, a done notice, a reply) and your words go on that card as a comment | reply to any bot message about a card to add to that card | Migration 20261113120000 (tabstax#1232) applied to production by the owner 2026-11-13 17:15Z, RELEASE OK. No reply to a stuck alert or done notice seen on a card yet. |
+| New role briefs say what the role does NOT handle: pack_apply lists every other role in the pack by its job, and agent_brief_update tips a brief that has no such section | new roles from a pack get a Does NOT handle section naming the other roles, and a brief saved without one gets a one-line tip | tabstax#1410, PR tabstax#1411 merged 2026-11-25, mcp deployed by release.yml run 45695849004 (proof step passed). Not yet seen on a live pack apply. Writing the section by hand into any brief's instructions works today: instructions are free text. |
 | heystax up also connects scheduled roles: their own empty folder and a nightly heystax run slot, not a listener; the run cannot write files, run git or open a pull request |  | tabstax#1390, PR tabstax#1393 merged 2026-11-25 (CLI 0.5.14 + migration 20261125100000), released by release.yml run 45591716650. Not yet seen on a user's machine. |
 | A wake that keeps failing is reported to the stax's Chief and in the morning receipt | if wakes to a launcher keep failing, your Chief hears about it and it shows in the morning receipt | tabstax#1313 merged 2026-11-14: a delivery that fails for good writes one worker-missed event per launcher per 6 hours. Server side only; not observed from outside on 2026-11-15. |
 
@@ -142,7 +143,6 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Start a stax from a template: roles, briefs, mission, goal, tabs and standing cards copied; people and keys never (stax_copy) | templates are coming; today you build the same stax by hand | tabstax#1085 open (copy a stax as a template); tabstax#1168 open (business development template). Nothing built on 2026-11-10. |
 | Reading claim, report and release events back over MCP or in the dashboard | claim events are recorded; a way to read them back is planned | Claim, report, release and grant events are written to the stax audit log, but MCP stax_audit_log returns record events only (shared-stax.ts) and no dashboard audit view is observed (2026-11-02) |
 | Role packs carry skills: hiring a role also hands its worker links to the skills that role uses | planned | tabstax#1354 (test, epic #1352) not started |
-| New role briefs say what the role does NOT handle: pack_apply lists every other role in the pack by its job, and agent_brief_update tips a brief that has no such section | planned | tabstax#1410, PR tabstax#1411 open 2026-11-25, awaiting merge and mcp deploy. Writing the section by hand into any brief's instructions works today: instructions are free text. |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |
@@ -214,6 +214,7 @@ Tick each one after seeing it work in the product, then move its row to `shipped
 - [ ] Reply in Telegram to any bot message about a card (a stuck alert, a done notice, a reply) and your words go on that card as a comment
 - [ ] Role packs: set up a team of roles on a stax in one call (pack_list, pack_get, pack_apply), each with its job, its Never rules and first cards
 - [ ] Hire a team on HQ; every pack apply is on record (pack_applies); pack_export turns a stax into a pack with no customer data
+- [ ] New role briefs say what the role does NOT handle: pack_apply lists every other role in the pack by its job, and agent_brief_update tips a brief that has no such section
 - [ ] heystax up also connects scheduled roles: their own empty folder and a nightly heystax run slot, not a listener; the run cannot write files, run git or open a pull request
 - [ ] A listener replaces a revoked launcher by itself; the role chip says Down or Restarting and gives the fix
 - [ ] Brain prompt: agent_whoami returns a role's brain prompt (who it is, the owner's mission and Never rules, its job per stax, who takes work now); Copy brain prompt on the role card gives the same text
