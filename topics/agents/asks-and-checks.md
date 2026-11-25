@@ -56,8 +56,20 @@ A pull request check reads the GitHub repo linked to the stax. For a private rep
 | A merged pull request as a card's check, on a public repo | live, offered in production on 16 Nov 2026 |
 | Your own GitHub token, so a pull request check can read a private repo | live, offered in production on 19 Nov 2026 |
 
-## Coming next
+## Let a role earn its reach
 
-{% include badge-planned.html %} **Earned autonomy.** A role will start small and earn its reach. A new role's asks will go to your Chief and never go ahead on silence. After 10 checked cards in 14 days it will move up a level. Failed checks will move it back down at once. It will be off until you turn it on for a stax.
+Earned autonomy is off until you turn it on for a stax with `autonomy_configure`.
+
+| Level | What the role may do |
+|---|---|
+| new | 3 open claims, 5 sends a day; asks go to your Chief and never go ahead on silence |
+| proven, trusted | Today's caps; reversible asks go ahead on their default |
+| lead | Only when you pin it there |
+
+- **Up one level:** 10 checked cards in 14 days, with no escalated failed check and no cap or do-not-contact refusal.
+- **Down one level, at once:** 3 failed checks in 7 days, or one rejected QC sample.
+- **Never earned:** go-ahead and managing roles. Only you grant those.
+
+`autonomy_status` shows each role's level and what it needs next. Every change gets one line on your morning receipt.
 
 Now you can let work go on while you are busy, and close a card only when the proof is in.

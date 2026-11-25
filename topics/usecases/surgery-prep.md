@@ -2,63 +2,48 @@
 nav_exclude: true
 ---
 
-# Preparing for Surgery in 4 Weeks
+# Surgery in four weeks: one plan, not 3am worry
 
 [← Back to Use Cases](index.md)
 
----
+Claire goes in for surgery on 22 December. The pre-op sheet, the hospital portal, the insurer, her HR policy and a list of who minds the kids are spread across email, print-outs and a family WhatsApp. At 3am she wonders: did anyone confirm the lift home?
 
-She's going in for surgery in a month.
+## The stax
 
-Her world explodes into:
+Claire keeps one stax, **Surgery and recovery**, shared with her partner Tom and her sister Maeve.
 
-* Pre-op instructions (fasting, meds to stop, tests to do)
-* Hospital portal
-* Insurance/billing details
-* Work: time off, handover docs
-* Home: who will mind the kids, meals, transport to/from hospital
-* Recovery: physio, equipment, follow-up visits
+| | |
+|---|---|
+| **Mission** | Claire goes in calm and comes home to a house that runs without her. |
+| **Goal** | Every step before and after 22 December has a date and a name. |
+| **Next Action** | Book the pre-op tests. Tell her manager the leave dates. Confirm the lift home. |
 
-## Without HeyStax
+## What happens
 
-She prints some stuff, bookmarks other bits, and leaves emails starred. She wakes up at 3am thinking "Did I ever confirm who's picking me up?" and "When exactly do I stop taking that medication?"
+1. **Save the tabs.** With the TabStax extension Claire saves the hospital portal, the pre-op sheet, the insurer, the HR policy and a shared "while I'm in hospital" doc as the stax.
+2. **Put the dates in.** She asks Claude, connected to HeyStax, to add 22 December and the pre-op appointment as dates on the stax.
+3. **Give each job a name.** In the family Telegram group she types `/t @tom confirm the lift home on the 23rd`. It lands on Tom's column.
+4. **Close it from the phone.** Tom rings the hospital and replies `/done`. Claire sees it in the 08:00 list.
+5. **Ask, don't search.** The night before, Claire asks Claude "what is still open for the surgery?" It answers from the cards.
 
-## With HeyStax
+The medical decisions stay with her surgical team. The stax holds who does what, and when.
 
-She creates **"Surgery – Operation & Recovery Plan"** Stax:
+## Why it holds
 
-Tabs:
+**It is yours.** The plan sits in Claire's account, not in a chat thread that scrolls away. Tom and Maeve see the same cards she does.
 
-* Hospital portal and surgeon info
-* Pre-op instructions PDF
-* Insurance portal / coverage details
-* Employer HR policy on medical leave
-* Shared household Google Doc: *"While I'm in hospital & recovery"*
-* List of recommended recovery equipment / physio exercises
+## What works today
 
-Start Page split into **timelines**:
+| Step | State |
+|---|---|
+| Save and reopen the tabs with the TabStax extension; share the stax | live |
+| Add dates and next actions by asking Claude or ChatGPT over MCP | live with your token; Claude.ai on the web is partial |
+| `/t @handle`, reply `/done` and the 8am list in Telegram | live |
 
-* **This Week:**
+## Try it
 
-  * *"Book pre-op tests."*
-  * *"Tell manager and confirm leave dates."*
-* **Week Before:**
-
-  * *"Stop medication X on [date]."*
-  * *"Final check with hospital about admission time."*
-* **After Surgery:**
-
-  * *"Schedule first physio session."*
-  * *"Review at-home care instructions with [partner/friend]."*
-
-She **shares this Stax with her partner / key friend** and optionally a family member:
-
-* They can see exactly what needs to happen when.
-* They can add to the "While I'm in hospital" doc (meals, kid pickups, house stuff).
-
-Now the surgery isn't just a date. It's a structured project with shared visibility.
-When she gets scared, she opens the Stax and can tell: "I'm actually doing what needs to be done."
-
----
+1. [Create your first stax](../creating_your_first_stax).
+2. [Set up the Telegram bot](../team-stax/telegram).
+3. [Connect Claude to your stax](../mcp-claude-code).
 
 [← Back to Use Cases](index.md)
