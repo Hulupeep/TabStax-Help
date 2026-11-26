@@ -582,21 +582,21 @@ capabilities:
     name: "Ask the Chief for a skill: it checks the library, writes the skill in your account with skill_create, and gives it to the role with skill_attach"
     state: live
     terms: ['[Aa]sk the Chief\b.*skill', 'Chief will check the library', 'checks the library first']
-    evidence: "PENDING: tabstax#1419 (skills in HeyStax, #1418) and the webapps /skills redesign. Fill in the release run and a browser check before merging this page."
+    evidence: "tabstax#1419 merged 2026-11-26 (6111f097); release run 45841366914 applied both migrations and deployed mcp 14:41 UTC (proof job green). skills_list over the live PAT connector at 14:47 UTC returns the owner's skills plus the read-only library (chief-daily-run 1.2.0, heystax-house 1.0.1). /skills page: webapps#367."
     wording: "Ask the Chief for a skill: it checks the library, writes the skill in your account and gives it to the role"
 
   - id: skills-in-heystax
     name: "Skills live in your HeyStax account: private to the account, versioned (a saved version never changes), lint refuses facts on save, library skills are read-only and copied on give"
     state: live
     terms: ['[Pp]rivate by default', 'Give to a role', 'New skill', 'skill_create', 'skill_attach']
-    evidence: "PENDING: tabstax#1419 (skills in HeyStax, #1418) and the webapps /skills redesign. Fill in the release run and a browser check before merging this page."
+    evidence: "tabstax#1419 merged 2026-11-26 (6111f097); release run 45841366914 applied both migrations and deployed mcp 14:41 UTC (proof job green). skills_list over the live PAT connector at 14:47 UTC returns the owner's skills plus the read-only library (chief-daily-run 1.2.0, heystax-house 1.0.1). /skills page: webapps#367."
     wording: "Skills live in your HeyStax account: private, versioned, checked for facts on save; give one to a role in one click"
 
   - id: role-create-skills
     name: "The Chief gives a new role its skills when it creates it: role_create takes skills and answers with suggested skills"
     state: live
     terms: ['skills at birth', 'role_create.{0,40}skills']
-    evidence: "PENDING: tabstax#1419 (skills in HeyStax, #1418) and the webapps /skills redesign. Fill in the release run and a browser check before merging this page."
+    evidence: "tabstax#1419 merged 2026-11-26 (6111f097); release run 45841366914 applied both migrations and deployed mcp 14:41 UTC (proof job green). skills_list over the live PAT connector at 14:47 UTC returns the owner's skills plus the read-only library (chief-daily-run 1.2.0, heystax-house 1.0.1). /skills page: webapps#367."
     wording: "When the Chief creates a role, it gives the role its skills in the same step"
 
   - id: brief-does-not-handle
