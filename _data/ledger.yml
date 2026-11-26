@@ -545,31 +545,31 @@ capabilities:
 
   - id: role-pack-skills
     name: "Role packs carry skills: hiring a role also hands its worker links to the skills that role uses"
-    state: planned
+    state: live
     terms: ['skills? in (role )?packs?', 'packs? carry skills?']
-    evidence: "tabstax#1414, PR tabstax#1415 open 2026-11-26 (PackRole.skills, micro-company-cfo pack). Not merged or deployed."
-    wording: "planned"
+    evidence: "tabstax#1415 + webapps#364 merged 2026-11-26; release run 45834279013 deployed mcp 13:59 UTC (proof job green); dash.heystax.ai/skills returns 200 with the library (14:05 UTC)."
+    wording: "Role packs carry skills: a pack role's brief lists the skills it loads, and the micro-company-cfo pack hires a CFO role with flout-cfo-tax-cutter linked"
 
   - id: skill-kinds-house
     name: "Every role gets the house skill: pack briefs list heystax-house, and work_next hands every worker a skills list (house first, then the brief's)"
-    state: planned
+    state: live
     terms: ['house skill', 'skills list on (the )?(work )?packet', 'work_next (returns|hands).{0,20}skills']
-    evidence: "tabstax#1414, PR tabstax#1415 open 2026-11-26. Not merged or deployed."
-    wording: "planned"
+    evidence: "tabstax#1415 + webapps#364 merged 2026-11-26; release run 45834279013 deployed mcp 13:59 UTC (proof job green); dash.heystax.ai/skills returns 200 with the library (14:05 UTC)."
+    wording: "Every role gets the house skill: pack briefs list heystax-house, and work_next hands every worker a skills list, house first, then the brief's"
 
   - id: skills-used-report
     name: "A worker records the skills it used: next_actions_report takes skills_used and writes Skill used lines on the card"
-    state: planned
+    state: live
     terms: ['skills_used']
-    evidence: "tabstax#1414, PR tabstax#1415 open 2026-11-26. Writing the Skill used line into a report note by hand works today: notes are free text."
-    wording: "planned"
+    evidence: "tabstax#1415 + webapps#364 merged 2026-11-26; release run 45834279013 deployed mcp 13:59 UTC (proof job green); dash.heystax.ai/skills returns 200 with the library (14:05 UTC)."
+    wording: "next_actions_report takes skills_used and writes Skill used lines on the card"
 
   - id: skill-library
     name: "The skill library: skills_list over MCP and dash.heystax.ai/skills, with a copyable brief line per skill; Agent access shows each role's skills"
-    state: planned
+    state: live
     terms: ['skills_list', 'skill library', 'dash\.heystax\.ai/skills']
-    evidence: "tabstax#1414, PRs tabstax#1415 and tabstax-webapps#364 open 2026-11-26. Not merged or deployed."
-    wording: "planned"
+    evidence: "tabstax#1415 + webapps#364 merged 2026-11-26; release run 45834279013 deployed mcp 13:59 UTC (proof job green); dash.heystax.ai/skills returns 200 with the library (14:05 UTC)."
+    wording: "The skill library: skills_list over MCP and dash.heystax.ai/skills, with a copyable brief line per skill; Agent access shows each role's skills"
 
   - id: skill-tooling
     name: "Skill tooling in the tabstax repo: new-skill.sh starts a skill from the template, build-catalog.ts lints it (no facts) and rebuilds the catalogue"

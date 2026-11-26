@@ -71,15 +71,12 @@ Builders start from `scripts/skills/new-skill.sh <name> expertise "<what it is f
 | `sales-call` | From discovery to a paid-pilot ask, with scored feedback |
 | `rule-page-writer` | One landing page per rule a buyer must meet |
 
-## Coming next
+## What HeyStax does for you
 
-{% include badge-planned.html %} **Every role will get the house skill on its own.** Pack briefs will list it, and the work packet will carry a skills list: the house skill first, then the ones the brief names.
-
-{% include badge-planned.html %} **Workers will record it for you.** `skills_used` on a report will write the Skill used lines onto the card.
-
-{% include badge-planned.html %} **A skill library page.** dash.heystax.ai/skills will list every skill with a line to copy into a brief, and Agent access will show each role's skills next to its job.
-
-{% include badge-planned.html %} **Role packs will carry skills.** A micro-company CFO pack will hire one CFO role with its expertise skill already linked.
+- **Every role gets the house skill.** Pack briefs list it, and the work packet carries a skills list: the house skill first, then the ones the brief names.
+- **Workers record it.** `skills_used` on a report writes the Skill used lines onto the card.
+- **A skill library page.** [dash.heystax.ai/skills](https://dash.heystax.ai/skills) lists every skill with a line to copy into a brief. Agent access shows each role's skills next to its job.
+- **Role packs carry skills.** The micro-company CFO pack hires one CFO role with its expertise skill already linked.
 
 Now you can keep a profession's method in one versioned file, keep your own figures on your stax, and see which method each card used.
 
