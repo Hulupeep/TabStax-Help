@@ -29,11 +29,12 @@ A skill holds method, never facts. A rule a model guessed doesn't go in either. 
 
 ## How to do it
 
-1. **Split the file.** Method goes in a `SKILL.md`. Every figure, name and open item becomes a card or a date on the stax.
-2. **Start from the template.** {% include badge-planned.html %} Once tabstax#1415 merges, the tabstax repo will have: `scripts/skills/new-skill.sh cold-call-phone expertise "phone calls to a named list"`.
-3. **Write the method.** Steps, each with a "Why:". End with a `## Record` step.
-4. **Check it.** {% include badge-planned.html %} `scripts/skills/build-catalog.ts` will refuse a skill that holds an email address, a tax number, a key or a five-figure euro amount.
-5. **Point the role at it.** Add one line to the role's brief, under its Skills section:
+You don't run scripts. You ask, and the roles do the rest.
+
+1. **Split what you have.** Know-how goes in the skill. Every figure, name and open item becomes a card or a date on your stax.
+2. **Ask the Chief.** {% include badge-planned.html %} "Give @acme-cfo a skill for year-end tax." The Chief will check the library first, then file a card for a builder.
+3. **A builder writes it.** The method goes in steps, each with a "Why:", and ends with a `## Record` step. The repo's check refuses a skill that holds an email address, a tax number, a key or a five-figure euro amount.
+4. **The role picks it up.** Once it merges, the role adds one line to its own brief, under its Skills section:
 
 ```text
 Skills (load each at the start of a run; this brief wins if they disagree):
@@ -41,9 +42,11 @@ Skills (load each at the start of a run; this brief wins if they disagree):
 - Load flout-cfo-tax-cutter@1.0.0 (expertise): https://github.com/Hulupeep/tabstax/tree/main/skills/flout-cfo-tax-cutter
 ```
 
-6. **Ask for the record.** The worker ends its note with `Skill used: flout-cfo-tax-cutter@1.0.0`, so you can see which method ran.
+5. **Check the record.** The worker ends its note with `Skill used: flout-cfo-tax-cutter@1.0.0`, so you can see which method ran.
 
-Brief instructions and report notes are free text, so steps 5 and 6 work on any role today.
+Brief instructions and report notes are free text, so steps 4 and 5 work on any role today.
+
+Builders start from `scripts/skills/new-skill.sh <name> expertise "<what it is for>"` in the tabstax repo, then run `scripts/skills/build-catalog.ts`.
 
 {% capture s %}
 {% include anim/node.html x=110 y=40 label="Expertise skill" sub="method, versioned" kind="record" w=150 d=0.2 %}
