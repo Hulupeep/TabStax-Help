@@ -22,27 +22,15 @@ Bob's last tax bot kept everything in one long chat. When the chat scrolled away
 
 ## How Bob builds it
 
-Bob gives directions. His Chief of Staff and a builder role do the rest.
+Bob gives directions. His Chief of Staff does the rest.
 
 1. **Hire the role.** He [sets up a role](../agents/role-packs) called `@taxes24-cfo` on the stax, with its job and its Never rules.
-2. **Ask the Chief for the skill.** {% include badge-planned.html %} One card to the [Chief](../chief/): "Give the CFO a method for cutting tax legally." The Chief will turn it into a card for a builder role, with what the skill is for and which kind it is.
-3. **The builder makes it.** The builder starts from the template, writes the method as steps with a "Why:" each, ends with a `## Record` step, and runs the catalog check:
-
-   ```bash
-   scripts/skills/new-skill.sh flout-cfo-tax-cutter expertise "an Irish micro-company CFO"
-   ```
-
-   The check refuses a skill that holds an email address, a tax number, a key or a five-figure euro amount.
+2. **Ask the Chief for the skill.** One card to the [Chief](../chief/): "Give the CFO a method for cutting tax legally." The Chief checks the library first, then writes the method in Bob's account as steps with a "Why:" each.
+3. **HeyStax checks it.** A skill that holds an email address, a tax number, a key or a five-figure euro amount is refused on save.
 4. **Facts stay on the stax.** Figures, Tom's name and the open items are cards and dates on `Taxes 24`, never in the skill.
-5. **The seat gets its skills.** The Chief files a card on `@taxes24-cfo` with the lines to add under its brief's Skills section:
-
-   ```text
-   - Load heystax-house@1.0.0 (house): https://github.com/Hulupeep/tabstax/tree/main/skills/heystax-house
-   - Load flout-cfo-tax-cutter@1.0.0 (expertise): https://github.com/Hulupeep/tabstax/tree/main/skills/flout-cfo-tax-cutter
-   ```
-
+5. **The seat gets its skills.** The Chief gives the skill to `@taxes24-cfo`. Its next card carries the house skill, then `cfo-tax-cutter`. Bob sees both on [dash.heystax.ai/skills](https://dash.heystax.ai/skills).
 6. **Put a brain in the seat.** A worker is [connected](../agents/connect-a-worker) to `@taxes24-cfo`. Claude Code today. Something cheaper next month.
-7. **Read the record.** The worker leaves a draft for Tom on the card and ends its note with `Skill used: flout-cfo-tax-cutter@1.0.0`.
+7. **Read the record.** The worker leaves a draft for Tom on the card and ends its note with `Skill used: cfo-tax-cutter@1.0.0`.
 
 The full rules for each kind of skill are on [Keep method in skills, facts on the stax](../agents/four-kinds-of-skill).
 
@@ -56,8 +44,8 @@ The skill tells the brain how. It cannot stop the brain. The seat can:
 
 ## Shortcuts that work today
 
-- **The CFO pack.** The `micro-company-cfo` [role pack](../agents/role-packs) hires a CFO role with `flout-cfo-tax-cutter` already linked in its brief. Steps 1, 3 and 5 in one call.
-- **The house skill comes free.** Every worker gets a skills list with each card: the house skill first, then the ones the brief names.
+- **The CFO pack.** The `micro-company-cfo` [role pack](../agents/role-packs) hires a CFO role in one call. Ask the Chief for its skill straight after.
+- **The house skill comes free.** Every worker gets its skills with each card: the house skill first, then the ones given to its role.
 - **The record writes itself.** A worker passes `skills_used` when it reports, and the Skill used line lands on the card.
 - **The library.** [dash.heystax.ai/skills](https://dash.heystax.ai/skills) lists every skill with a brief line to copy.
 
