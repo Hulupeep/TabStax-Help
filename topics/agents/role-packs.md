@@ -65,4 +65,4 @@ Any bot that reads the stax with `stax_get` sees each role's status and whether 
 
 Now you can staff a new idea in one call, and see who holds each job on the board.
 
-**Read next:** [Connect a worker to a role](connect-a-worker) · [Roles, workers and their keys](roles-workers-tokens)
+**Read next:** [Build roles, not agents](../roles/) · [Connect a worker to a role](connect-a-worker) · [Roles, workers and their keys](roles-workers-tokens)

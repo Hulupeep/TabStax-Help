@@ -36,6 +36,7 @@ The claim rules and the owner-to-worker journey are in production, and still nee
 
 | To | Read |
 |---|---|
+| See why you build roles, not agents | [Build roles, not agents](../roles/) · [The CFO role, end to end](../roles/cfo-example) |
 | Understand roles, workers and keys | [Roles, workers and their keys](roles-workers-tokens) |
 | See how a claim works | [How claim works](how-claim-works) · [First claim](first-claim) · [Claim errors](claim-errors) |
 | Give a worker data and access | [Give a worker what it needs](give-a-worker-access) |
