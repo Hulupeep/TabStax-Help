@@ -54,11 +54,12 @@ The skill tells the brain how. It cannot stop the brain. The seat can:
 - Work that cannot be undone waits for a go-ahead from Bob, or from a Chief he granted `go_ahead`.
 - Every write is signed by `@taxes24-cfo` and the worker that made it. Bob can check.
 
-## Coming next
+## Shortcuts that work today
 
-{% include badge-planned.html %} **A CFO pack.** Hiring a micro-company CFO from a pack will set up the seat with its expertise skill already linked.
-
-{% include badge-planned.html %} **Every seat gets the house skill on its own,** and a worker will record the skills it used for you. Today you write those lines in the brief and the note yourself.
+- **The CFO pack.** The `micro-company-cfo` [role pack](../agents/role-packs) hires a CFO role with `flout-cfo-tax-cutter` already linked in its brief. Steps 1, 3 and 5 in one call.
+- **The house skill comes free.** Every worker gets a skills list with each card: the house skill first, then the ones the brief names.
+- **The record writes itself.** A worker passes `skills_used` when it reports, and the Skill used line lands on the card.
+- **The library.** [dash.heystax.ai/skills](https://dash.heystax.ai/skills) lists every skill with a brief line to copy.
 
 Now you can ask for a seat and its skill in one line, swap whoever sits in it, and see which method each draft used.
 
