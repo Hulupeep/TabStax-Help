@@ -45,4 +45,4 @@ Write it once as a skill and every brain on that role reads the same steps. Clau
 
 Now you can teach a role once, swap its brain, and keep the know-how. The job and the proof stay on your stax.
 
-**Read next:** [Keep method in skills, facts on the stax](four-kinds-of-skill) · [Set up a team in one call](role-packs) · [Connect a worker to a role](connect-a-worker)
+**Read next:** [Build roles, not agents](../roles/) · [Keep method in skills, facts on the stax](four-kinds-of-skill) · [Set up a team in one call](role-packs) · [Connect a worker to a role](connect-a-worker)

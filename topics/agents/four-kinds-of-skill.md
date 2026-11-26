@@ -30,9 +30,9 @@ A skill holds method, never facts. A rule a model guessed doesn't go in either. 
 ## How to do it
 
 1. **Split the file.** Method goes in a `SKILL.md`. Every figure, name and open item becomes a card or a date on the stax.
-2. **Start from the template.** In the tabstax repo: `scripts/skills/new-skill.sh cold-call-phone expertise "phone calls to a named list"`.
+2. **Start from the template.** {% include badge-planned.html %} Once tabstax#1415 merges, the tabstax repo will have: `scripts/skills/new-skill.sh cold-call-phone expertise "phone calls to a named list"`.
 3. **Write the method.** Steps, each with a "Why:". End with a `## Record` step.
-4. **Check it.** `scripts/skills/build-catalog.ts` refuses a skill that holds an email address, a tax number, a key or a five-figure euro amount.
+4. **Check it.** {% include badge-planned.html %} `scripts/skills/build-catalog.ts` will refuse a skill that holds an email address, a tax number, a key or a five-figure euro amount.
 5. **Point the role at it.** Add one line to the role's brief, under its Skills section:
 
 ```text
@@ -80,4 +80,4 @@ Brief instructions and report notes are free text, so steps 5 and 6 work on any 
 
 Now you can keep a profession's method in one versioned file, keep your own figures on your stax, and see which method each card used.
 
-**Read next:** [Give a role a skill](give-a-role-a-skill) · [Say what a role does not handle](does-not-handle)
+**Read next:** [Build roles, not agents](../roles/) · [Give a role a skill](give-a-role-a-skill) · [Say what a role does not handle](does-not-handle)
