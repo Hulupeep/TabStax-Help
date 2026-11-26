@@ -25,14 +25,14 @@ Bob's last tax bot kept everything in one long chat. When the chat scrolled away
 Bob gives directions. His Chief of Staff and a builder role do the rest.
 
 1. **Hire the role.** He [sets up a role](../agents/role-packs) called `@taxes24-cfo` on the stax, with its job and its Never rules.
-2. **Ask the Chief for the skill.** One card to the [Chief](../chief/): "Give the CFO a method for cutting tax legally." The Chief turns it into a card for a builder role, with what the skill is for and which kind it is.
-3. **The builder makes it.** {% include badge-planned.html %} Once tabstax#1415 merges, the builder starts from the template, writes the method as steps with a "Why:" each, ends with a `## Record` step, and runs the catalog check:
+2. **Ask the Chief for the skill.** {% include badge-planned.html %} One card to the [Chief](../chief/): "Give the CFO a method for cutting tax legally." The Chief will turn it into a card for a builder role, with what the skill is for and which kind it is.
+3. **The builder makes it.** The builder starts from the template, writes the method as steps with a "Why:" each, ends with a `## Record` step, and runs the catalog check:
 
    ```bash
    scripts/skills/new-skill.sh flout-cfo-tax-cutter expertise "an Irish micro-company CFO"
    ```
 
-   The check will refuse a skill that holds an email address, a tax number, a key or a five-figure euro amount.
+   The check refuses a skill that holds an email address, a tax number, a key or a five-figure euro amount.
 4. **Facts stay on the stax.** Figures, Tom's name and the open items are cards and dates on `Taxes 24`, never in the skill.
 5. **The seat gets its skills.** The Chief files a card on `@taxes24-cfo` with the lines to add under its brief's Skills section:
 
