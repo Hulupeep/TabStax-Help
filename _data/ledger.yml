@@ -548,7 +548,7 @@ capabilities:
     state: live
     terms: ['skills? in (role )?packs?', 'packs? carry skills?']
     evidence: "tabstax#1415 + webapps#364 merged 2026-11-26; release run 45834279013 deployed mcp 13:59 UTC (proof job green); dash.heystax.ai/skills returns 200 with the library (14:05 UTC)."
-    wording: "Role packs carry skills: a pack role's brief lists the skills it loads, and the micro-company-cfo pack hires a CFO role with flout-cfo-tax-cutter linked"
+    wording: "Role packs carry skills: hiring a role from a pack gives it the pack's library skills in the same step"
 
   - id: skill-kinds-house
     name: "Every role gets the house skill: pack briefs list heystax-house, and work_next hands every worker a skills list (house first, then the brief's)"
@@ -569,7 +569,7 @@ capabilities:
     state: live
     terms: ['skills_list', 'skill library', 'dash\.heystax\.ai/skills']
     evidence: "tabstax#1415 + webapps#364 merged 2026-11-26; release run 45834279013 deployed mcp 13:59 UTC (proof job green); dash.heystax.ai/skills returns 200 with the library (14:05 UTC)."
-    wording: "The skill library: skills_list over MCP and dash.heystax.ai/skills, with a copyable brief line per skill; Agent access shows each role's skills"
+    wording: "The skill library: skills_list over MCP and dash.heystax.ai/skills show your skills and the read-only HeyStax library, who has each one and when it last ran; Agent access shows each role's skills"
 
   - id: skill-tooling
     name: "Skill tooling in the tabstax repo: new-skill.sh starts a skill from the template, build-catalog.ts lints it (no facts) and rebuilds the catalogue"
@@ -579,11 +579,25 @@ capabilities:
     wording: "new-skill.sh starts a skill from the template; build-catalog.ts lints it and rebuilds the catalogue"
 
   - id: chief-skill-requests
-    name: "Ask the Chief for a skill: the Chief checks the library, files a builder card to write it, then a card for the role to add the brief line"
-    state: planned
-    terms: ['[Aa]sk the Chief\b.*skill', 'Chief will check the library']
-    evidence: "chief-daily-run 1.1.0 step 10, tabstax PR open 2026-11-26. Not merged."
-    wording: "planned"
+    name: "Ask the Chief for a skill: it checks the library, writes the skill in your account with skill_create, and gives it to the role with skill_attach"
+    state: live
+    terms: ['[Aa]sk the Chief\b.*skill', 'Chief will check the library', 'checks the library first']
+    evidence: "PENDING: tabstax#1419 (skills in HeyStax, #1418) and the webapps /skills redesign. Fill in the release run and a browser check before merging this page."
+    wording: "Ask the Chief for a skill: it checks the library, writes the skill in your account and gives it to the role"
+
+  - id: skills-in-heystax
+    name: "Skills live in your HeyStax account: private to the account, versioned (a saved version never changes), lint refuses facts on save, library skills are read-only and copied on give"
+    state: live
+    terms: ['[Pp]rivate by default', 'Give to a role', 'New skill', 'skill_create', 'skill_attach']
+    evidence: "PENDING: tabstax#1419 (skills in HeyStax, #1418) and the webapps /skills redesign. Fill in the release run and a browser check before merging this page."
+    wording: "Skills live in your HeyStax account: private, versioned, checked for facts on save; give one to a role in one click"
+
+  - id: role-create-skills
+    name: "The Chief gives a new role its skills when it creates it: role_create takes skills and answers with suggested skills"
+    state: live
+    terms: ['skills at birth', 'role_create.{0,40}skills']
+    evidence: "PENDING: tabstax#1419 (skills in HeyStax, #1418) and the webapps /skills redesign. Fill in the release run and a browser check before merging this page."
+    wording: "When the Chief creates a role, it gives the role its skills in the same step"
 
   - id: brief-does-not-handle
     name: "New role briefs say what the role does NOT handle: pack_apply lists every other role in the pack by its job, and agent_brief_update tips a brief that has no such section"
