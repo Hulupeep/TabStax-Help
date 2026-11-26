@@ -25,7 +25,7 @@ Write it once as a skill and every brain on that role reads the same steps. Clau
 1. **Do the job once with your bot.** Correct it like a new hire until the result is right.
 2. **Ask it to write the skill.** "Turn what we just did into a skill." Claude has a skill-creator for this.
 3. **Put the folder where the worker runs.** In a repo, that is `.claude/skills/<name>/`. Claude Code loads it by itself.
-4. **Point the role at it.** Add one line to the role's brief: "Skills you may load:" and the link. Any brain on the role sees it on its next card.
+4. **Point the role at it.** Add one line to the role's brief under its Skills section: `- Load name@version (kind): link`. Any brain on the role sees it on its next card. [Which kind of skill?](four-kinds-of-skill)
 5. **Check it now and then.** Run the same card with and without the skill. If "without" wins, shrink the skill.
 
 {% capture s %}
@@ -45,4 +45,4 @@ Write it once as a skill and every brain on that role reads the same steps. Clau
 
 Now you can teach a role once, swap its brain, and keep the know-how. The job and the proof stay on your stax.
 
-**Read next:** [Set up a team in one call](role-packs) · [Connect a worker to a role](connect-a-worker)
+**Read next:** [Keep method in skills, facts on the stax](four-kinds-of-skill) · [Set up a team in one call](role-packs) · [Connect a worker to a role](connect-a-worker)
