@@ -104,4 +104,6 @@ Irreversible work, such as a production migration, waits for a go-ahead from you
 | Every builder role on this computer, one command | [Start every builder with one command](heystax-up) |
 | One folder as one role | [Connect a worker to a role](connect-a-worker) |
 
+Why roles and not agents, with one role built end to end: [Build roles, not agents](../roles/).
+
 [See what has been verified](../../docs/shipped-ledger).

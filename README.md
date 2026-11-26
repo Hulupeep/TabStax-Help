@@ -85,7 +85,7 @@ Add an action in the terminal and it shows in the dashboard.
 
 A worker such as Codex or Claude Code runs under its own name. It claims a next action and reports a blocker or a result. Every step carries its name. The claim rules are in production; the full journey is still being checked in a browser.
 
-→ [How agents work on a stax](topics/agents/) · [See which agents work on a stax](topics/agents/see-who-is-working) · [Scenarios](topics/scenarios/)
+→ [Build roles, not agents](topics/roles/) · [How agents work on a stax](topics/agents/) · [See which agents work on a stax](topics/agents/see-who-is-working) · [Scenarios](topics/scenarios/)
 
 ## See it in action
 
