@@ -74,9 +74,9 @@ Reply to the bot's message about that task. On a phone, swipe left on it or tap 
 | `/delete` | Removes it after you confirm, within 15 minutes |
 | Anything else | Goes on that task as a comment |
 
-This works when you reply to any bot message about a task: a stuck alert, a finished notice, or the bot's answer. Your words land on that task, where the next person or agent working it reads them, instead of starting a new task.
+Any bot message about a task works: a stuck alert, a finished notice, an answer. Your words land on that task, where the next person or agent reads them.
 
-Plain words without the slash work too. A `done` sent on its own, not as a reply, changes nothing. The bot cannot tell which task you mean.
+Plain words without the slash work too. A `done` sent on its own, not as a reply, changes nothing: the bot cannot tell which task you mean.
 
 Who can change what:
 
@@ -88,32 +88,33 @@ Who can change what:
 
 ## See your work and your team
 
-Gaia comes back from lunch on Monday. In the Timebreez_work group she sends `what's up`. One message tells her what moved in timebreez since she last asked: five pull requests merged, what the builder found, one decision, two cards new for her. The Staff cost page merged, so she can check it on staging. That is move one.
-
+Gaia is back from lunch. In the Timebreez_work group she sends `what's up`. One message: five pull requests merged, one decision, two cards new for her. The first card is now free to start, so it leads her next three moves.
 
 | Send | What you get |
 |---|---|
-| `what's up` | A catch-up on this stax since you last asked (the first time, the last 3 days): what merged, what the builders found, what was done and decided, notes to you and new cards. When a merge or a note frees one of your cards, the line says "so that you can" and that card leads your next three moves. In a group, it is about the group's stax. Built from the stax, nothing made up. |
-| `what's up hubduck` | The same catch-up for another stax you are on, by name |
-| `/status` | Your open tasks in this stax, the ones you made and the ones assigned to you, newest first. Your goal and up to three tasks done this week. In a group, it comes to you by DM. |
-| Reply `/done 1,3` to a status list | Ticks off tasks 1 and 3 and sends the list back with them crossed out |
-| `/who` | Everyone on the stax, people and agents, with the handle to use, their title and what they are accountable for |
-| `/receipt` | Your morning receipt now: what your bots moved since yesterday, what is stuck with the move that clears it, and at most two things that need you. Only the stax you own. |
+| `what's up` | What moved on this stax since you last asked (first time: the last 3 days). Merges, builder results, decisions, notes to you, new cards. Built from the stax, nothing made up. |
+| `what's up hubduck` | The same catch-up for another stax you are on |
+| `/status` | Your open tasks here, newest first, your goal and up to three done this week. In a group, it comes by DM. |
+| Reply `/done 1,3` to a status list | Ticks off tasks 1 and 3 and sends the list back |
+| `/who` | Everyone on the stax, people and agents, with handle, title and what they own |
+| `/receipt` | Your morning receipt now |
 | `/morning off` | Stops the 8am message. `/morning on` starts it again. |
-
-**The 8am message.** If you own stax, it is your receipt, not a to-do list. One message: the cards your roles moved overnight with their proof links, what is stuck and the one move for each, and at most two things only you can answer. The rest wait on HQ, where the same receipt is the top band. No model writes it, so it says what happened, nothing more. If you own no stax, you get your open actions as before.
 | `/help` | The full command list |
+
+**The 8am message.** If you own stax, it is your receipt: what your roles moved overnight with proof links, what is stuck with one move each, and at most two things only you can answer. No model writes it, so it says only what happened. If you own no stax, you get your open actions.
 
 ## You hear back
 
-- When someone assigns you a task anywhere, on the dashboard, in Telegram or from an AI app, the bot posts it to the stax's group. With no group, it comes by DM. Reply `/done` to that notice when you finish.
-- When someone else finishes a task you assigned, you get a notice. When an agent finished it, the notice ends with its result.
-- When an agent picks up a task you made in Telegram, the group sees `picked up`.
-- When an agent asks you a question on a task, it comes by DM. See [Bots ask you questions](messages).
-- An old notice tidies itself. Once the task is done, moved or removed, the bot strikes it through and adds one line: **✓ Done by @builder**, **→ Now with Colm** or **✕ Card removed**.
-- A message that names a PR or an issue gets an **Open PR** button, so you never hunt for the link.
-- An agent's result leads with one bold line of state, then what you need to do. When nothing needs you, it is one quiet line.
-- Money amounts are never posted to a group. An archived stax sends nothing.
+| When | You get |
+|---|---|
+| Someone assigns you a task, anywhere | A notice in the stax's group, or a DM with no group. Reply `/done` to it when you finish. |
+| A task you assigned is finished | A notice. From an agent, it ends with its result. |
+| An agent picks up your Telegram task | `picked up` in the group |
+| An agent asks you a question | A DM. See [Bots ask you questions](messages). |
+| The task is done, moved or removed | The old notice is struck through: **✓ Done by @builder**, **→ Now with Colm** or **✕ Card removed** |
+| A message names a PR or issue | An **Open PR** button |
+
+An agent's result leads with one bold line of state, then what you need to do. Money amounts never go to a group. An archived stax sends nothing.
 
 ## Run a standup
 

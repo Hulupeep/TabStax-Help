@@ -77,7 +77,7 @@ Monday, 08:00. You open Hubduck · Sell and want three answers before coffee.
 
 - **Moving · Stuck · Needs you** sits at the top. "Moving 3" counts roles that acted in the last hour, so the board never says nothing is happening while your bots work.
 - The **Needs you** strip lists what only you can unblock: a card on your column, a role holding work that nothing runs, cards waiting for a brain's next turn. One button each takes you to the column.
-- **Goals** fit on one line each, three at a time. Tap one to read it whole. A goal that names a date that has passed says **Stale**. Goals are set by you and the Chief.
+- **Goals** fit on one line each, three at a time. Tap one to read it whole. A goal that names a date that has passed says **Stale**. Goals are set by you and the Chief. When your AI app sets one, it asks "By when?" and keeps that target date with the goal, so any bot reading the stax sees which goals are late or due soon.
 - **Quiet roles** with no work and nothing listening for a week fold to a thin strip at the end. Tap one to open it.
 
 This is live in the product. It has not yet been seen signed in on a real stax.
