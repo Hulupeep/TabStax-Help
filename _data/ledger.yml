@@ -547,7 +547,28 @@ capabilities:
     name: "Role packs carry skills: hiring a role also hands its worker links to the skills that role uses"
     state: planned
     terms: ['skills? in (role )?packs?', 'packs? carry skills?']
-    evidence: "tabstax#1354 (test, epic #1352) not started"
+    evidence: "tabstax#1414, PR tabstax#1415 open 2026-11-26 (PackRole.skills, micro-company-cfo pack). Not merged or deployed."
+    wording: "planned"
+
+  - id: skill-kinds-house
+    name: "Every role gets the house skill: pack briefs list heystax-house, and work_next hands every worker a skills list (house first, then the brief's)"
+    state: planned
+    terms: ['house skill', 'skills list on (the )?(work )?packet', 'work_next (returns|hands).{0,20}skills']
+    evidence: "tabstax#1414, PR tabstax#1415 open 2026-11-26. Not merged or deployed."
+    wording: "planned"
+
+  - id: skills-used-report
+    name: "A worker records the skills it used: next_actions_report takes skills_used and writes Skill used lines on the card"
+    state: planned
+    terms: ['skills_used']
+    evidence: "tabstax#1414, PR tabstax#1415 open 2026-11-26. Writing the Skill used line into a report note by hand works today: notes are free text."
+    wording: "planned"
+
+  - id: skill-library
+    name: "The skill library: skills_list over MCP and dash.heystax.ai/skills, with a copyable brief line per skill; Agent access shows each role's skills"
+    state: planned
+    terms: ['skills_list', 'skill library', 'dash\.heystax\.ai/skills']
+    evidence: "tabstax#1414, PRs tabstax#1415 and tabstax-webapps#364 open 2026-11-26. Not merged or deployed."
     wording: "planned"
 
   - id: brief-does-not-handle
