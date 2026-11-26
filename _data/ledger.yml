@@ -599,6 +599,27 @@ capabilities:
     evidence: "tabstax#1419 merged 2026-11-26 (6111f097); release run 45841366914 applied both migrations and deployed mcp 14:41 UTC (proof job green). skills_list over the live PAT connector at 14:47 UTC returns the owner's skills plus the read-only library (chief-daily-run 1.2.0, heystax-house 1.0.1). /skills page: webapps#367."
     wording: "When the Chief creates a role, it gives the role its skills in the same step"
 
+  - id: design-skills-builders
+    name: "Builder roles carry design skills: jtbd-ux-designer (the job note before any screen) and the product's design skill (heystax-design for HeyStax), or product-design-system to write one"
+    state: live
+    terms: ['jtbd-ux-designer', 'heystax-design', 'product-design-system', 'design skills?']
+    evidence: "2026-11-26 15:00 UTC, owner PAT over the live MCP: skill_create saved jtbd-ux-designer 1.0.0, heystax-design 1.0.0 and product-design-system 1.0.0 in the owner's account; skill_attach gave them to @heystax-builder, @heystax-design, @hubduck-site-builder, @hubduck-builder and @timebreez-builder (each call answered attached)."
+    wording: "give a builder role jtbd-ux-designer and your product's design skill, and every screen card starts with the job"
+
+  - id: design-skills-default
+    name: "The Chief gives builder and design roles the design skills without being asked (chief-daily-run 1.3.0 step 11); builder roles in packs carry them; both skills in the HeyStax library"
+    state: planned
+    terms: ['builder roles will get both skills', 'Chief will give them']
+    evidence: "tabstax#1421 open 2026-11-26 (chief-daily-run 1.3.0, role packs builder skills, library seed migration 20261126170000)."
+    wording: "new builder roles will get both design skills automatically"
+
+  - id: ui-design-gate
+    name: "ui-design-gate: a webapps PR that changes a screen fails without a JTBD section and phone and dark screenshots; a Claude design review runs when the reviewer secret is set"
+    state: planned
+    terms: ['ui-design-gate', 'job note and its phone and dark screenshots']
+    evidence: "tabstax-webapps#368 open 2026-11-26."
+    wording: "a check will refuse a screen change without its job note and phone and dark screenshots"
+
   - id: brief-does-not-handle
     name: "New role briefs say what the role does NOT handle: pack_apply lists every other role in the pack by its job, and agent_brief_update tips a brief that has no such section"
     state: unverified
