@@ -41,15 +41,11 @@ Or tell your Chief: "Give @site-builder our design skills." It gives the role bo
 {% endcapture %}
 {% include anim/figure.html viewbox="0 0 480 280" label="Two skills feed the builder role: the job note and the product's design. The result is a page with one clear next step, checked on a phone and in dark mode." caption="The builder loads the job check and your design on every screen card. Whichever brain works the role, the page comes out looking like yours, with one clear next step." svg=s %}
 
-## Coming next
+## What happens without asking
 
-<div class="hs-coming-next" markdown="1">
-{% include badge-planned.html %}
-
-- **New builder roles will get both skills automatically.** The Chief will give them to any role that builds screens, and builder roles from a pack will arrive with them.
-- **Both skills will be in the HeyStax library,** so any account can copy them.
-- **A check on the dashboard's own pull requests** will refuse a screen change without its job note and its phone and dark screenshots.
-</div>
+- **New builder roles get both skills.** The Chief gives them to any role that builds screens, and builder roles from a pack arrive with them.
+- **Both skills are in the HeyStax library,** so any account can copy them.
+- **The dashboard's own pull requests are checked.** A screen change without its job note and its phone and dark screenshots fails the check.
 
 ## What stays yours
 
