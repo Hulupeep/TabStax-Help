@@ -22,6 +22,8 @@ Write the correction once as a skill. Whoever works the role reads it on every c
 4. **Fix it when the role gets it wrong.** Open the skill, press **Edit the method**, say what changed and save. You get a new version, and the roles move to it.
 5. **Check it runs.** Each skill shows which roles have it and when it was last used.
 
+<img src="{{ "/screenshots/skills/after-phone.jpg" | relative_url }}" alt="The Skills page on a phone: each skill on one row with its version, the roles that have it, and a Give to a role button" width="260" style="display: block; margin: 20px auto;">
+
 Or ask your Chief: "Give @sales-bot a skill for follow-ups." It writes the skill and gives it to the role. When it creates a new role, it gives the role its skills in the same step.
 
 {% capture s %}
