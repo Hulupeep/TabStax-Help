@@ -608,17 +608,17 @@ capabilities:
 
   - id: design-skills-default
     name: "The Chief gives builder and design roles the design skills without being asked (chief-daily-run 1.3.0 step 11); builder roles in packs carry them; both skills in the HeyStax library"
-    state: planned
-    terms: ['builder roles will get both skills', 'Chief will give them']
-    evidence: "tabstax#1421 open 2026-11-26 (chief-daily-run 1.3.0, role packs builder skills, library seed migration 20261126170000)."
-    wording: "new builder roles will get both design skills automatically"
+    state: live
+    terms: ['New builder roles get both skills', 'Both skills are in the HeyStax library']
+    evidence: "tabstax#1421 merged 2026-11-26 (b1cd969), release run 45848625397 applied migration 20261126170000."
+    wording: "new builder roles get both design skills automatically"
 
   - id: ui-design-gate
     name: "ui-design-gate: a webapps PR that changes a screen fails without a JTBD section and phone and dark screenshots; a Claude design review runs when the reviewer secret is set"
-    state: planned
+    state: live
     terms: ['ui-design-gate', 'job note and its phone and dark screenshots']
-    evidence: "tabstax-webapps#368 open 2026-11-26."
-    wording: "a check will refuse a screen change without its job note and phone and dark screenshots"
+    evidence: "tabstax-webapps#368 merged 2026-11-26 (4b37683): ui-design-gate workflow on every webapps PR."
+    wording: "a check refuses a screen change without its job note and phone and dark screenshots"
 
   - id: brief-does-not-handle
     name: "New role briefs say what the role does NOT handle: pack_apply lists every other role in the pack by its job, and agent_brief_update tips a brief that has no such section"
