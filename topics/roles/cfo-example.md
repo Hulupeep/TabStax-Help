@@ -23,14 +23,14 @@ Bob's last tax bot kept everything in one long chat. When the chat scrolled away
 ## How Bob builds it
 
 1. **Hire the role.** He [sets up a role](../agents/role-packs) called `@taxes24-cfo` on the stax, with its job and its Never rules.
-2. **Build the expertise skill.** In the tabstax repo he starts from the template:
+2. **Build the expertise skill.** {% include badge-planned.html %} Once tabstax#1415 merges, he will start from the template in the tabstax repo:
 
    ```bash
    scripts/skills/new-skill.sh flout-cfo-tax-cutter expertise "an Irish micro-company CFO"
    ```
 
    He writes the method as steps, each with a "Why:", and ends with a `## Record` step.
-3. **Keep the facts out.** Figures, Tom's name and the open items become cards and dates on `Taxes 24`. The catalog check refuses a skill that holds an email address, a tax number, a key or a five-figure euro amount.
+3. **Keep the facts out.** Figures, Tom's name and the open items become cards and dates on `Taxes 24`. {% include badge-planned.html %} The catalog check will refuse a skill that holds an email address, a tax number, a key or a five-figure euro amount.
 4. **Point the seat at its skills.** Two lines in the brief, under its Skills section:
 
    ```text

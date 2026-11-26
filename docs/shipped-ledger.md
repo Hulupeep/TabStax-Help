@@ -18,7 +18,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | `live` | Observed in production from outside. Describe it, but it still needs a browser check. | 61 |
 | `unverified` | Code or data says it exists. Nobody has seen it in production yet. | 22 |
 | `partial` | Part of it is live, or it is merged and waiting for production. Needs the Partial badge. | 18 |
-| `planned` | Not in production. Needs the Planned badge and future tense. | 15 |
+| `planned` | Not in production. Needs the Planned badge and future tense. | 16 |
 
 ## Live
 
@@ -147,6 +147,7 @@ Help pages may only describe what this ledger says is live. `scripts/check_truth
 | Every role gets the house skill: pack briefs list heystax-house, and work_next hands every worker a skills list (house first, then the brief's) | planned | tabstax#1414, PR tabstax#1415 open 2026-11-26. Not merged or deployed. |
 | A worker records the skills it used: next_actions_report takes skills_used and writes Skill used lines on the card | planned | tabstax#1414, PR tabstax#1415 open 2026-11-26. Writing the Skill used line into a report note by hand works today: notes are free text. |
 | The skill library: skills_list over MCP and dash.heystax.ai/skills, with a copyable brief line per skill; Agent access shows each role's skills | planned | tabstax#1414, PRs tabstax#1415 and tabstax-webapps#364 open 2026-11-26. Not merged or deployed. |
+| Skill tooling in the tabstax repo: new-skill.sh starts a skill from the template, build-catalog.ts lints it (no facts) and rebuilds the catalogue | planned | tabstax#1414, PR tabstax#1415 open 2026-11-26. Not on main yet. |
 | @notify Telegram agent | planned; say 'the HeyStax Telegram bot' for what exists | Roadmap FEAT #696 / #682 not started in May snapshot; the Telegram bot is a separate shipped surface |
 | @scribe email agent, email replies routed to actions, Action Response Primitive | planned | tabstax#567, #572, #681; stax description says ready to roll, not shipped |
 | @meetbot, @pulse, @librarian, @foreman, @scout, @ledger, @refine, @steadyhand | planned | Roadmap post-M4 capabilities #711, #712, #716, #725, #730, #733 |
