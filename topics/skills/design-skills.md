@@ -21,6 +21,34 @@ The bot never knew your design existed, and nobody asked it what the page was fo
 
 No design skill for a product yet? Give the role `product-design-system`. Its first screen card writes one from your best existing page, then builds with it.
 
+## What the two skills change
+
+Same data, same page. On the left, the Skills page built without them: a blue button competing with every link, and no clear next step. On the right, the same page after one card with both skills loaded.
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin:20px 0;">
+<figure style="margin:0;max-width:220px;"><img src="{{ "/screenshots/skills/before-phone.jpg" | relative_url }}" alt="Skills page on a phone before the design pass: rows with a filled blue button and an amber banner" width="220"><figcaption>Before, on a phone.</figcaption></figure>
+<figure style="margin:0;max-width:220px;"><img src="{{ "/screenshots/skills/after-phone.jpg" | relative_url }}" alt="Skills page on a phone after the design pass: one ink button per row, numbers in a fixed-width font, a quiet house rules strip" width="220"><figcaption>After, on a phone.</figcaption></figure>
+<figure style="margin:0;max-width:220px;"><img src="{{ "/screenshots/skills/after-phone-dark.jpg" | relative_url }}" alt="The same Skills page in dark mode, every surface dark with readable text" width="220"><figcaption>After, in dark mode.</figcaption></figure>
+</div>
+
+The job note behind it, five lines:
+
+- **Job:** when a role keeps doing a kind of work wrong, I want to give it the method that works, so its next run does it right.
+- **One action:** Give to a role, on every row.
+- **First five seconds:** which skills my roles have, and which sit idle.
+- **Empty:** three proven library skills, each with Give to a role.
+- **Phone:** name and version on one line, then roles, then the action.
+
+## The five rules that make a HeyStax screen
+
+The HeyStax design skill carries these. Your own product's design skill should name its own few.
+
+1. **Shapes mean things.** A goal is a diamond, an event a dot, a window a bar, a record a square. Always next to its word.
+2. **Time is drawn.** Three or more dates get a timeline with a Today line, not a list.
+3. **Numbers line up.** Counts, dates, amounts and versions sit in a fixed-width font.
+4. **Done says who.** Anything finished carries one line: done, the handle, the time.
+5. **One filled button per screen.** Everything else is outlined.
+
 ## How to do it
 
 1. **Open [dash.heystax.ai/skills](https://dash.heystax.ai/skills).**
