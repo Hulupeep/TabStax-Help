@@ -6,9 +6,7 @@ has_children: true
 
 # Share a stax with your team
 
-Any stax becomes a team stax when you add someone. You both see the same tabs, the same next actions and the same context.
-
-No more chasing work through chat threads that scroll away.
+Any stax becomes a team stax when you add someone. You both see the same tabs, next actions and context, so nobody chases work through a chat that scrolled away.
 
 | Solo stax | Team stax |
 |---|---|
@@ -31,3 +29,5 @@ Now you can see who is on what without asking.
 - [Read your board](stax-board): who holds every piece of work, in columns
 - [Telegram](telegram): add, assign and finish work from a Telegram group
 - [Bots ask you questions](messages): answer an agent from your phone
+- [Hand a bug to an agent](hand-a-bug-to-an-agent): reply to a bug in Telegram and an agent takes it
+- [Say why when you hand a card on](handoff-note): a handoff note the next person reads

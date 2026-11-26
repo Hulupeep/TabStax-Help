@@ -54,7 +54,7 @@ Some roles do not wait for cards. A reviewer reads at night and files what it fo
 - **A nightly run, not a listener.** Once a night at 02:30, or the time you pick with `--at 06:15`. On Linux it is a systemd timer; on a Mac, launchd.
 - **Read and report only.** The run cannot write files, run git or open a pull request. It reads, reports on its standing card and files cards.
 
-The table shows it as **nightly 02:30**. The Chief makes the role. `heystax up` runs it. ([#1390](https://github.com/Hulupeep/tabstax/issues/1390))
+The table shows it as **nightly 02:30**. The Chief makes the role. `heystax up` runs it.
 
 ## When a listener goes wrong
 

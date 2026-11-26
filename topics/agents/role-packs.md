@@ -14,7 +14,15 @@ You have a new idea on Monday and no afternoon to staff it. You don't write five
 
 ## How to do it
 
-1. **See the packs.** Ask your AI app to run `pack_list`. Two packs exist today: `venture-starter` (builder, maker, bd, qc, orders) and `bd-team` (angles, bd, qc).
+1. **See the packs.** Ask your AI app to run `pack_list`. Four packs exist today:
+
+   | Pack | Roles | For |
+   |---|---|---|
+   | `venture-starter` | builder, maker, bd, qc, orders | a new idea to its first paid order |
+   | `bd-team` | angles, bd, qc | outreach under caps, every message checked |
+   | `coach-client` | builder, bd, qc, groomer | a coach running one stax per client |
+   | `board-groomer` | groomer | any stax: every open card owned, verb first and checkable |
+
 2. **Read one.** `pack_get` shows each role's job, its limits and its Never rules.
 3. **Try it dry.** `pack_apply` with `dry_run: true` shows the plan and writes nothing.
 4. **Apply it.** Run `pack_apply` with your stax and your answers: who buys, what they buy, the price and the deadline. Anything you skip takes the stax's own goal.
@@ -53,7 +61,7 @@ You have a new idea on Monday and no afternoon to staff it. You don't write five
 
 `pack_export` (your own token, your own stax) gives you the team as a pack you can apply elsewhere. It keeps each role's outcome, its Never rules and its open first cards. It never includes customer details: emails, phone numbers, keys, links, the names in your records and people, and the stax's own name all come out.
 
-Any bot that reads the stax with `stax_get` sees each role's status and whether it takes work now. So it hands work to a role that is listening, not one that is offline.
+Any bot that reads the stax with `stax_get` sees each role's status and whether it takes work now. A role that does not says why, with the one step that fixes it. So work goes to a role that is listening.
 
 Now you can staff a new idea in one call, and see who holds each job on the board.
 
