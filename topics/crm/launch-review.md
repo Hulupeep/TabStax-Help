@@ -14,7 +14,7 @@ It is 07:40 and your bots sent 34 emails to tour boat operators overnight. You d
 
 ## How to do it
 
-1. Open **Launches** from the goal board header.
+1. Open **Launches** from the goal board or the CRM header. Each campaign card also has a **Launch review** link.
 2. Pick a stax, such as Hubduck · Sell. The launches that need a look come first.
 3. Read the card: the state and why, such as "34 of 37 sent. 1 replied".
 4. Open a launch. You see what, why, who, why it is worth doing, and the ask.
