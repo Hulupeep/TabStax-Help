@@ -1,7 +1,7 @@
 ---
 title: Skills
 nav_order: 2.7
-has_children: false
+has_children: true
 ---
 
 # Teach your roles skills
@@ -44,4 +44,4 @@ Or ask your Chief: "Give @sales-bot a skill for follow-ups." It writes the skill
 
 Now you can teach a role once, swap its brain, and see which method ran on every card.
 
-**Read next:** [Keep method in skills, facts on the stax](../agents/four-kinds-of-skill) · [Have your Chief make skills](../chief/make-skills) · [Build roles, not agents](../roles/)
+**Read next:** [Give builders your design skills](design-skills) · [Keep method in skills, facts on the stax](../agents/four-kinds-of-skill) · [Have your Chief make skills](../chief/make-skills) · [Build roles, not agents](../roles/)
