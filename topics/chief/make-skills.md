@@ -25,7 +25,7 @@ You should not be the one writing it. You give the direction. The Chief spots th
 | **Expertise** | "Give the CFO a tax method", or repeated corrections | A builder, from the Chief's card | The skill library, then a line in the role's brief |
 | **Context** | Figures, people, deadlines | Nobody | Cards, notes and dates on your stax. Never a skill |
 
-More on each kind: [Keep method in skills, facts on the stax](../agents/four-kinds-of-skill).
+More on each kind: [Keep method in skills, facts on the stax](../agents/four-kinds-of-skill). Every skill so far is on [dash.heystax.ai/skills](https://dash.heystax.ai/skills).
 
 ## How it will work
 
