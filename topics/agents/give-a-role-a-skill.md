@@ -39,9 +39,9 @@ Write it once as a skill and every brain on that role reads the same steps. Clau
 {% endcapture %}
 {% include anim/figure.html viewbox="0 0 480 280" label="A role's brief and a skill both feed the role's worker, which finishes the card" caption="The role's brief on your stax says what the job is and what it must never do. The SKILL.md file says how. Whichever brain works @acme-builder reads both, then finishes the card, and the result lands on your stax under the role's name." svg=s %}
 
-## Coming next
+## Role packs carry skills
 
-{% include badge-planned.html %} **Role packs will carry skills.** When you hire a role from a pack, it will also hand the worker links to the skills that role uses. It will stay a link to plain files, never a copy locked inside HeyStax.
+When you hire a role from a pack, its brief lists the skills it loads, and the worker gets the links on every card. It stays a link to plain files, never a copy locked inside HeyStax. Browse them at [dash.heystax.ai/skills](https://dash.heystax.ai/skills).
 
 Now you can teach a role once, swap its brain, and keep the know-how. The job and the proof stay on your stax.
 
