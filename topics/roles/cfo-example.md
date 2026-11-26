@@ -22,24 +22,27 @@ Bob's last tax bot kept everything in one long chat. When the chat scrolled away
 
 ## How Bob builds it
 
+Bob gives directions. His Chief of Staff and a builder role do the rest.
+
 1. **Hire the role.** He [sets up a role](../agents/role-packs) called `@taxes24-cfo` on the stax, with its job and its Never rules.
-2. **Build the expertise skill.** {% include badge-planned.html %} Once tabstax#1415 merges, he will start from the template in the tabstax repo:
+2. **Ask the Chief for the skill.** One card to the [Chief](../chief/): "Give the CFO a method for cutting tax legally." The Chief turns it into a card for a builder role, with what the skill is for and which kind it is.
+3. **The builder makes it.** {% include badge-planned.html %} Once tabstax#1415 merges, the builder starts from the template, writes the method as steps with a "Why:" each, ends with a `## Record` step, and runs the catalog check:
 
    ```bash
    scripts/skills/new-skill.sh flout-cfo-tax-cutter expertise "an Irish micro-company CFO"
    ```
 
-   He writes the method as steps, each with a "Why:", and ends with a `## Record` step.
-3. **Keep the facts out.** Figures, Tom's name and the open items become cards and dates on `Taxes 24`. {% include badge-planned.html %} The catalog check will refuse a skill that holds an email address, a tax number, a key or a five-figure euro amount.
-4. **Point the seat at its skills.** Two lines in the brief, under its Skills section:
+   The check will refuse a skill that holds an email address, a tax number, a key or a five-figure euro amount.
+4. **Facts stay on the stax.** Figures, Tom's name and the open items are cards and dates on `Taxes 24`, never in the skill.
+5. **The seat gets its skills.** The Chief files a card on `@taxes24-cfo` with the lines to add under its brief's Skills section:
 
    ```text
    - Load heystax-house@1.0.0 (house): https://github.com/Hulupeep/tabstax/tree/main/skills/heystax-house
    - Load flout-cfo-tax-cutter@1.0.0 (expertise): https://github.com/Hulupeep/tabstax/tree/main/skills/flout-cfo-tax-cutter
    ```
 
-5. **Put a brain in the seat.** He [connects a worker](../agents/connect-a-worker) to `@taxes24-cfo`. Claude Code today. Something cheaper next month.
-6. **Read the record.** The worker leaves a draft for Tom on the card and ends its note with `Skill used: flout-cfo-tax-cutter@1.0.0`.
+6. **Put a brain in the seat.** A worker is [connected](../agents/connect-a-worker) to `@taxes24-cfo`. Claude Code today. Something cheaper next month.
+7. **Read the record.** The worker leaves a draft for Tom on the card and ends its note with `Skill used: flout-cfo-tax-cutter@1.0.0`.
 
 The full rules for each kind of skill are on [Keep method in skills, facts on the stax](../agents/four-kinds-of-skill).
 
@@ -57,6 +60,6 @@ The skill tells the brain how. It cannot stop the brain. The seat can:
 
 {% include badge-planned.html %} **Every seat gets the house skill on its own,** and a worker will record the skills it used for you. Today you write those lines in the brief and the note yourself.
 
-Now you can build the seat once, swap whoever sits in it, and see which method each draft used.
+Now you can ask for a seat and its skill in one line, swap whoever sits in it, and see which method each draft used.
 
 **Read next:** [Build roles, not agents](./) · [Give a role a skill](../agents/give-a-role-a-skill) · [Say what a role does not handle](../agents/does-not-handle)

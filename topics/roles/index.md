@@ -40,7 +40,7 @@ Skills plug into the seat. There are four kinds: **house**, **craft**, **experti
 
 1. **[Hire the role](../agents/role-packs).** One call sets up a team of roles, each with a job and Never rules.
 2. **[Say what it does not handle](../agents/does-not-handle),** so look-alike work goes to the right seat.
-3. **[Give it a skill](../agents/give-a-role-a-skill).** One line in its brief points at the method.
+3. **[Give it a skill](../agents/give-a-role-a-skill).** Ask your Chief. A builder role writes the method, and one line in the seat's brief points at it.
 4. **[Put a brain in the seat](../agents/connect-a-worker).** Claude Code, Codex, Grok Bot or a person.
 5. **[Watch the record](../agents/see-who-is-working).** Who did what, in your name.
 
