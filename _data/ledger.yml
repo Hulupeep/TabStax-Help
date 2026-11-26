@@ -573,9 +573,16 @@ capabilities:
 
   - id: skill-tooling
     name: "Skill tooling in the tabstax repo: new-skill.sh starts a skill from the template, build-catalog.ts lints it (no facts) and rebuilds the catalogue"
-    state: planned
+    state: shipped
     terms: ['new-skill\.sh', 'build-catalog']
-    evidence: "tabstax#1414, PR tabstax#1415 open 2026-11-26. Not on main yet."
+    evidence: "tabstax#1415 merged to main 2026-11-26 (cc769e2): scripts/skills/new-skill.sh, scripts/skills/build-catalog.ts, skills/_template."
+    wording: "new-skill.sh starts a skill from the template; build-catalog.ts lints it and rebuilds the catalogue"
+
+  - id: chief-skill-requests
+    name: "Ask the Chief for a skill: the Chief checks the library, files a builder card to write it, then a card for the role to add the brief line"
+    state: planned
+    terms: ['[Aa]sk the Chief\b.*skill', 'Chief will check the library']
+    evidence: "chief-daily-run 1.1.0 step 10, tabstax PR open 2026-11-26. Not merged."
     wording: "planned"
 
   - id: brief-does-not-handle
