@@ -2,44 +2,68 @@
 title: Studio client handoff
 parent: Scenarios
 nav_order: 2
+scenario_state: partly
 ---
 
-# A studio owner sees the handoff without chasing chats
+# A client review, and nobody chases a chat
 
 {% include badge-partial.html %}
 
-Nadia runs a small web studio. She owns the **Atlas website** Stax. Jo is the designer; Claude Code is the coding worker. A client review is coming, and the mobile menu needs a keyboard-accessible fix.
+**Cast:** Nadia runs a small web studio. Jo is her designer. `@atlas-builder` is a Claude Code worker. The stax is **Atlas website**.
 
-## The handoff
+## Before
 
-1. Nadia writes one Next Action on Atlas: “Make the mobile menu keyboard-accessible; attach the preview link.” Jo adds the design constraint to the shared work.
-2. When Nadia starts Claude Code, it reads Atlas and claims the action as `@claude`. The action now has a named worker.
-3. Claude Code reports **blocked**: “Need Jo's final focus-ring colour.” Nadia sees the exact dependency and asks Jo. HeyStax has not sent Jo a message automatically.
-4. Jo settles the colour. Claude Code uses its coding tools to make the change and reports **done** with the preview link. Nadia checks the preview and decides what to tell the client.
-5. On Friday, Nadia opens Atlas and sees the design decision, worker result and next client-facing step in one place.
+The client review is Thursday, 10:00. The mobile menu still fails with a keyboard. The focus colour lives in Jo's head, the fix in a terminal, and the preview link in a scrolled-away chat.
 
-{% include agent-action-flow.html start="Nadia adds the mobile-menu action" middle="@claude claims it" blocker="Jo's focus-ring colour is needed" end="Preview link is reported" caption="Nadia starts the worker; Atlas keeps its claim, Jo's open decision and the preview to check." %}
+## What happens
 
-## What remains on Atlas
-
-Nadia can see that Claude Code was waiting on Jo, what Jo decided and which preview needs her own review before contacting the client. [Her older daily-ops example](../usecases/sme-owner) is about switching app contexts; this scene follows a shared handoff.
-
-## The boundary that matters
-
-The pilot worker joins Staxes owned by Nadia's account. It cannot use this flow to join a Stax owned by a different customer. **It is not a confidential per-client grant inside Nadia's account:** a worker with her agent token can request to join another Stax she owns. Use a nonsensitive test Stax until tighter outside-user permission controls are ready.
-
-| Step | State |
+| | |
 |---|---|
-| Nadia and Jo keep a shared Stax and a Next Action | Existing HeyStax work record. |
-| Claude Code joins under its own name, claims and reports | Deployed MCP/web pilot; **Partial** until the live journey in [release evidence](../../docs/evidence/agent-peers-2026-10-26) is checked. |
-| Claude Code creates a preview | Its separate coding/deployment tools do that; HeyStax stores the link. |
+| **Mission** | Win the Atlas renewal |
+| **Goal** | The client signs off the mobile menu on Thursday |
+| **Next Action** | `@atlas-builder`: make the mobile menu keyboard-accessible and post the preview link |
 
-{% include badge-planned.html %}
+1. Nadia adds the Next Action on Atlas, assigned to `@atlas-builder`, with a check: the preview page must load.
+2. `@atlas-builder` claims it. The card now names who is on it.
+3. It needs Jo's focus-ring colour. It comments on the card to `@jo`. The HeyStax Telegram bot sends Jo the question.
+4. Jo replies in Telegram with the colour. Her reply lands on the card as a comment.
+5. `@atlas-builder` makes the fix and reports done with the preview link. HeyStax loads the preview itself. The card closes only when that check passes.
+6. Nadia opens Atlas, checks the preview and decides what to tell the client.
 
-Per-Stax agent grants, automatic notice to Jo, and automatic client email are **planned**. Nadia remains the person who decides whether to contact the client.
+## The graph after
 
-## Try the verified part
+{% capture s %}
+{% include anim/plane.html x=20 y=6 w=440 h=144 label="Atlas website stax" %}
+{% include anim/node.html x=240 y=80 label="Keyboard menu fix" sub="check: preview loads" kind="action" w=180 d=0.4 %}
+{% include anim/node.html x=80 y=80 label="Nadia" sub="owner" kind="person" w=100 d=0.2 %}
+{% include anim/edge.html x1=130 y1=80 x2=150 y2=80 kind="write" d=0.6 %}
+{% include anim/node.html x=400 y=60 label="@atlas-builder" kind="agent" w=110 h=34 d=1.0 %}
+{% include anim/node.html x=400 y=108 label="Jo" sub="via Telegram" kind="person" w=110 d=1.6 %}
+{% include anim/edge.html x1=345 y1=60 x2=330 y2=72 kind="dispatch" d=1.2 %}
+{% include anim/edge.html x1=345 y1=108 x2=330 y2=92 kind="write" d=1.8 %}
+{% include anim/trail.html x=24 y=170 when="Tue 09:10" who="Nadia" what="adds the card with a check" d=2.2 %}
+{% include anim/trail.html x=24 y=194 when="Tue 09:40" who="@atlas-builder" agent="true" what="asks @jo for the colour" d=2.6 %}
+{% include anim/trail.html x=24 y=218 when="Tue 11:05" who="Jo" what="replies in Telegram" d=3.0 %}
+{% include anim/trail.html x=24 y=242 when="Tue 15:20" who="@atlas-builder" agent="true" what="done, preview check passed" d=3.4 %}
+{% endcapture %}
+{% include anim/figure.html viewbox="0 0 480 260" label="The Atlas stax holds Nadia's card with its check, the builder's claim, Jo's answer from Telegram and the passed preview check, each line signed by who did it" caption="One card holds the whole handoff. Nadia's request, the builder's question, Jo's answer from Telegram and the passed preview check sit on Atlas, each signed by who did it." svg=s %}
 
-Make an Atlas Stax and add the mobile-menu action. Ask your existing connected AI to read the action and add the design question. Save the named-agent claim as a pilot step until the live tool and browser checks pass.
+## Why it holds
 
-**Your cognition stays yours:** Nadia can answer “where are we?” from Atlas rather than asking two chats.
+**You can check.** On Thursday Nadia answers "where are we?" from Atlas. She does not ask two chats or the builder. Every line says who did it, and done means HeyStax checked the preview.
+
+## What works today
+
+| Step | State | Note |
+|---|---|---|
+| A card with a check that closes only when it passes | works today | `verified-done` |
+| A comment to `@jo` reaches her in Telegram, and her reply comes back | works today | `action-messages` |
+| A worker claims the card under its own name | partly | `agent-claim-rules`: in production, the full owner and two-agent journey still needs a browser check |
+| The builder makes the change and the preview | outside HeyStax | Claude Code's own tools; HeyStax keeps the link |
+| Telling the client | Nadia | No automatic client email |
+
+## Try it
+
+1. Make an Atlas stax and add the card. See [Verified done](../agents/asks-and-checks).
+2. Connect a builder to a role. See [Connect a worker to a role](../agents/connect-a-worker).
+3. Ask a person on a card. See [Let your bots ask you questions](../team-stax/messages).
