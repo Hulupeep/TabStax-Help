@@ -1,26 +1,26 @@
 ---
-title: Add robots, fridges and other bots by mailbox
+title: Add robots, fridges and other bots with HeyMailbox
 parent: AI Integrations (MCP)
 nav_order: 20
 ---
 
-# Add robots, fridges and other bots by mailbox
+# Add robots, fridges and other bots with HeyMailbox
 
 {% include badge-partial.html %}
 
-A **mailbox connection** lets something that can't plug into HeyStax still work on your stax. It leaves a signed note in a place HeyStax watches. HeyStax checks who really sent it, does the work as that bot's role, and leaves a receipt in the same place.
+**HeyMailbox** lets something that can't plug into HeyStax still work on your stax. It leaves a signed note in a place HeyStax watches. HeyStax checks who really sent it, does the work as that bot's role, and leaves a receipt in the same place.
 
 No app, no login, no live connection. If it can send a signed message, it can be a peer on your stax.
 
 ![A plant robot reads pot 3 as dry and sends a signed note. A card lands for Ava, who waters the basil, and the robot sees the card done and turns green. A freezer warms and its note becomes a card for Dee. A "set defrost" command from the internet is refused.](../../assets/images/mailbox-fridge-robot.gif)
 
-*Fridges and robots are planned. Today the mailbox works for ChatGPT.*
+*Fridges and robots are planned. Today HeyMailbox works for ChatGPT.*
 
 ## Why it matters to you
 
 Good ideas turn up in the wrong place. You're in ChatGPT, it says something smart, and the thread dies in that chat. Or the nightly build breaks, or the printer runs out of filament, and nobody turns it into a next action.
 
-With a mailbox, "that's a good idea, send it to TabStax for the builder" is the whole job. A card appears with the bot's name on it, a builder picks it up, and the audit log says where it came from.
+With HeyMailbox, "that's a good idea, send it to TabStax for the builder" is the whole job. A card appears with the bot's name on it, a builder picks it up, and the audit log says where it came from.
 
 ## Three ways a bot can join a stax
 
@@ -28,7 +28,7 @@ With a mailbox, "that's a good idea, send it to TabStax for the builder" is the 
 |---|---|---|---|
 | **Live** | A connector, such as Claude or Cursor | Directly, every tool, answers at once | Brains you chat with |
 | **Listener** | A worker on a machine | HeyStax wakes it when a card lands | Builders that claim and ship |
-| **Mailbox** | A signed note somewhere HeyStax watches | Never directly. Note in, receipt back | Anything that can only send a message |
+| **HeyMailbox** | A signed note somewhere HeyStax watches | Never directly. Note in, receipt back | Anything that can only send a message |
 
 ## What works today: ChatGPT through GitHub
 
@@ -54,14 +54,14 @@ What ChatGPT can do this way: **create a card** and **check one card**. It can't
 
 Today this is set up per account, for one repo and the stax you allow. It isn't self-serve yet.
 
-## How HeyStax keeps a mailbox safe
+## How HeyStax keeps HeyMailbox safe
 
 The words in the note never prove who sent it. These do:
 
 - **A signature.** GitHub signs every delivery. A note without the right signature is refused.
 - **An allowlist.** The repo, the app that posted it (ChatGPT's GitHub app) and the person it acted for must all be on your list.
 - **One request block.** Plain chat, edits and HeyStax's own receipts are never run.
-- **A role.** The request runs as `@chatgpt` with that role's grants, like any other bot. Turn the role off and the mailbox stops.
+- **A role.** The request runs as `@chatgpt` with that role's grants, like any other bot. Turn the role off and HeyMailbox stops.
 - **A receipt.** A request from an allowed sender gets an answer where it was asked: ran, or why it didn't. A note from anyone else gets no reply at all, so strangers learn nothing.
 
 ## Ideas, from obvious to odd {% include badge-planned.html %}
@@ -87,7 +87,7 @@ The receipt on the issue says what happened.
 | You see | What it means | Do this |
 |---|---|---|
 | No reply at all | It wasn't posted by an allowed app for an allowed person, or there was no `heystax-request` block, or it was an edit | Post a new comment through ChatGPT's GitHub connector, signed in as you, with exactly one request block |
-| `STAX_NOT_ALLOWED` | That stax isn't open to the mailbox | Use a stax on your list |
+| `STAX_NOT_ALLOWED` | That stax isn't open to HeyMailbox | Use a stax on your list |
 | `OPERATION_UNSUPPORTED` | It asked for something other than create or check | Use `next_action.create` or `next_action.get` |
 | Same card id as last time | You reused a `request_id` | Use a new `request_id` for new work |
 

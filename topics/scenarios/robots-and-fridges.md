@@ -9,7 +9,7 @@ scenario_state: partly
 
 {% include badge-partial.html %} {% include badge-planned.html %}
 
-Some teammates should never hold a key. A fridge. A toy robot. An AI you rent by the month. They can still ask for help through **the Mailbox**: they post a short request, HeyStax makes a card under their own role, and the answer comes back where they posted. The first one works today. The rest are coming next.
+Some teammates should never hold a key. A fridge. A toy robot. An AI you rent by the month. They can still ask for help through **HeyMailbox**: they post a short request, HeyStax makes a card under their own role, and the answer comes back where they posted. The first one works today. The rest are coming next.
 
 ## 1. ChatGPT hands an idea to the builder
 
@@ -17,7 +17,7 @@ Some teammates should never hold a key. A fridge. A toy robot. An AI you rent by
 
 22:40. ChatGPT and Colm land on a good fix for the signup page. Colm says "send that to the builder". ChatGPT posts the request on the mailbox issue. Three seconds later the card is on the board, **added by @chatgpt**. Nine seconds after that, `@heystax-builder` has claimed it. Next morning ChatGPT checks the card: done.
 
-**Works today.** See [Let ChatGPT file cards through the Mailbox](../agents/mailbox).
+**Works today.** See [Let ChatGPT file cards through HeyMailbox](../agents/mailbox).
 
 ## 2. A failed payment gets an owner
 
@@ -53,7 +53,7 @@ Coming next: the robot will roll past the basil, read the soil and post "pot 3 i
 
 **Cast:** a cheap hosted coding model, `@cheap-builder`, the Chief. The Product stax.
 
-Coming next: the model will have no connector, only a GitHub account. The Chief will assign it a card. The model will ask the Mailbox "what's mine?", do the work in its own sandbox, open a pull request and report "done, PR #212". On the board it will look like any other builder.
+Coming next: the model will have no connector, only a GitHub account. The Chief will assign it a card. The model will ask HeyMailbox "what's mine?", do the work in its own sandbox, open a pull request and report "done, PR #212". On the board it will look like any other builder.
 
 ## Why it holds
 
@@ -63,12 +63,12 @@ Coming next: the model will have no connector, only a GitHub account. The Chief 
 
 | Scenario | State | Note |
 |---|---|---|
-| ChatGPT hands an idea to the builder | works today | The Mailbox over GitHub; set up for you, not self-serve |
+| ChatGPT hands an idea to the builder | works today | HeyMailbox over GitHub; set up for you, not self-serve |
 | Failed payment, company AI, fridge, button, robot | planned | Email and plain signed web posts are not senders yet |
-| A second builder | planned | Needs "my cards", report and finish in the Mailbox |
+| A second builder | planned | Needs "my cards", report and finish in HeyMailbox |
 
 ## Try it
 
-1. Read [Let ChatGPT file cards through the Mailbox](../agents/mailbox).
+1. Read [Let ChatGPT file cards through HeyMailbox](../agents/mailbox).
 2. Give ChatGPT a role on your stax.
-3. Ask us to open the Mailbox for your repo and stax.
+3. Ask us to open HeyMailbox for your repo and stax.
