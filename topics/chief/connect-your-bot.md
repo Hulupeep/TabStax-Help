@@ -10,18 +10,18 @@ Your Chief is a role. A bot does the work: Grok Bot, ChatGPT, Claude Code or Cod
 
 ## Why it matters to you
 
-Swap the bot and the Chief stays. Its handle, grants and history belong to the role, not to the bot. You can move it from Grok Bot to Claude Code next month and lose nothing.
+Swap the bot and the Chief stays. Its handle, grants and history belong to the role, so moving from Grok Bot to Claude Code next month loses nothing.
 
 ## Two connectors, one for reading and one for writing
 
-A role key only sees the stax you granted it. A Chief that looks across all your stax needs to read more than that. So most Chiefs use two connectors:
+A role key sees only the stax you granted it. A Chief that reads across all your stax needs two connectors:
 
 | Connector | Key | Used for |
 |---|---|---|
 | HeyStax (owner) | Your token | Reading across all your stax |
 | HeyStax (Chief) | The `@chief-of-staff` key | Every write and every message |
 
-Keep one connector on your token for reading, and give every write a second connector that uses the Chief's key. The brief tells the bot which is which.
+The brief tells the bot which is which.
 
 ## Grok Bot
 
