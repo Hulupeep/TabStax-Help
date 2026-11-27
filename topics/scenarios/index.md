@@ -17,6 +17,7 @@ These examples follow one Next Action from a person's decision to a named agent'
 | **Studio owner** | A client review is near and a designer and worker depend on each other. | The human decision, the agent's status and the preview link. | [Nadia's client handoff](studio-client-handoff) |
 | **Consultant** | Four days passed; the worker's last question has gone cold. | The open claim, exact blocker and eventual rollback proof. | [Alex returns to the work](consultant-return-to-agent-work) |
 | **Founder with bots** | One goal, and the first angle fell flat. | Every angle, its evidence and who pivoted. | [One goal, many angles](fishing-for-revenue) |
+| **Anyone with a gadget or a rented AI** | A fridge, a robot or ChatGPT needs a human to act, but should never hold a key. | The request, the card under its own role, and the receipt. | [Robots, fridges and other teammates](robots-and-fridges) |
 
 Each page separates what the current MCP can do from the parts that still need live proof or are planned. [Learn what a named worker means](../agents/). To set one up, see [Connect a worker to a role](../agents/connect-a-worker). For the older tab-switching examples, see [Use Cases](../usecases/).
 

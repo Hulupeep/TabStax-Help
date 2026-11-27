@@ -16,7 +16,7 @@
 #
 # Edit this file, then run: python3 scripts/render_ledger.py
 
-checked: 2026-11-26
+checked: 2026-11-27
 
 capabilities:
 
@@ -91,6 +91,20 @@ capabilities:
     state: live
     evidence: "TabStax stax goal: ChatGPT MCP connector (tabstax#546) production-verified 2026-04-28; same endpoint live 2026-10-25"
     wording: "ChatGPT"
+
+  - id: mailbox-github
+    name: "The Mailbox: an AI with no HeyStax connector files and checks cards by posting a GitHub comment"
+    state: partial
+    terms: ['heystax-request', 'heystax-receipt', 'the mailbox']
+    evidence: "tabstax#1428, PRs #1429 and #1431, released 2026-11-27 (release run 46025799332). Live run 2026-11-27 15:48 UTC: ChatGPT comment 7222501558 on Hulupeep/tabstax#1428 made card 96cb9afa as @chatgpt, receipt comment 7222502659 3 seconds later, @heystax-builder claimed it at 15:48:28. Refusals seen live: unsigned post 401, a comment from another GitHub app 403 with no card. Partial: two actions only (make a card, read one card); turning it on for a repo, app and stax is set up by the HeyStax team, not self-serve; a scheduled ChatGPT run is not yet observed."
+    wording: "ChatGPT can file a card and check one card by posting a comment on a GitHub issue we watch"
+
+  - id: mailbox-more-senders
+    name: "Mailbox senders beyond GitHub (email, a plain signed web post, Telegram) and mailbox workers that take, report and finish cards"
+    state: planned
+    terms: ['mailbox worker', 'mailbox sender']
+    evidence: "Not built on 2026-11-27. Only the GitHub comment route (tabstax#1428) exists; it has no 'my cards', report or complete action and accepts only allowlisted GitHub apps."
+    wording: "devices, inboxes and other AIs will post to the Mailbox; today only a GitHub comment works"
 
   - id: swagger
     name: Hosted API reference
