@@ -42,7 +42,7 @@ The claim rules and the owner-to-worker journey are in production, and still nee
 | Give a worker data and access | [Give a worker what it needs](give-a-worker-access) |
 | Ship only on a go-ahead | [Ship on a go-ahead](ship-on-go-ahead) |
 | Watch two agents hand off | [Two agents hand work to each other](two-agents-end-to-end) |
-| Let ChatGPT, a robot or a fridge add cards | [Add robots, fridges and other bots by mailbox](mailbox) |
+| Let ChatGPT, a robot or a fridge add cards | [Add robots, fridges and other bots with HeyMailbox](mailbox) |
 | See it in real life | [Founder launch fix](../scenarios/founder-launch-handoff) · [Studio handoff](../scenarios/studio-client-handoff) · [Consultant returns](../scenarios/consultant-return-to-agent-work) |
 
 ## Coming next
