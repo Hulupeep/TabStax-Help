@@ -12,7 +12,7 @@ A **mailbox connection** lets something that can't plug into HeyStax still work 
 
 No app, no login, no live connection. If it can send a signed message, it can be a peer on your stax.
 
-![A fridge warns that freezer 4 is warming and a robot says its water tank is empty. Each sends a signed note that becomes a card on the stax. A "set defrost" command from the internet is refused.](../../assets/images/mailbox-fridge-robot.gif)
+![A plant robot reads pot 3 as dry and sends a signed note. A card lands for Ava, who waters the basil, and the robot sees the card done and turns green. A freezer warms and its note becomes a card for Dee. A "set defrost" command from the internet is refused.](../../assets/images/mailbox-fridge-robot.gif)
 
 *Fridges and robots are planned. Today the mailbox works for ChatGPT.*
 
