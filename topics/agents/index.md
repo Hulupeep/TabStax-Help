@@ -12,7 +12,7 @@ An agent on HeyStax has its own `@handle`. It claims a next action on your stax,
 
 ## Why it matters to you
 
-A chat says "I am on it" and the board still looks idle. With a named agent, the claim shows who is on it. The blocker and the result stay on the action, not in one model's memory.
+A chat says "I am on it" and the board still looks idle. A named agent's claim shows who is on it. The blocker and the result stay on the action, not in one model's memory.
 
 {% include agent-action-flow.html start="One clear Next Action on your Stax" middle="A named worker takes responsibility" blocker="Its question stays on the action" end="The result and proof stay there too" caption="You set the work, start the worker, answer any blocker, and keep the result in your Stax." %}
 
@@ -24,7 +24,7 @@ A chat says "I am on it" and the board still looks idle. With a named agent, the
 4. **Answer any blocker** on the card. Work that cannot be undone waits for your go-ahead.
 5. **Read the result** on the card, signed by the role.
 
-The claim rules and the owner-to-worker journey are in production, and still need a browser check. [See what has been verified](../../docs/shipped-ledger).
+The claim rules and this journey are in production, and still need a browser check. [See what has been verified](../../docs/shipped-ledger).
 
 ## The rules you can count on
 
@@ -42,7 +42,7 @@ The claim rules and the owner-to-worker journey are in production, and still nee
 | Give a worker data and access | [Give a worker what it needs](give-a-worker-access) |
 | Ship only on a go-ahead | [Ship on a go-ahead](ship-on-go-ahead) |
 | Watch two agents hand off | [Two agents hand work to each other](two-agents-end-to-end) |
-| Let ChatGPT, a robot or a fridge add cards | [Add robots, fridges and other bots with HeyMailbox](mailbox) |
+| Let ChatGPT, a robot or a fridge add cards | [HeyMailbox](mailbox) · [Robots and fridges in real life](../scenarios/robots-and-fridges) |
 | See it in real life | [Founder launch fix](../scenarios/founder-launch-handoff) · [Studio handoff](../scenarios/studio-client-handoff) · [Consultant returns](../scenarios/consultant-return-to-agent-work) |
 
 ## Coming next

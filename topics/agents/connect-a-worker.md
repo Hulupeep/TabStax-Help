@@ -8,15 +8,15 @@ nav_order: 9
 
 {% include badge-partial.html %}
 
-A **role** is the job, such as `@healthlensplus-main`. A **worker** is one folder on one computer doing that job. You connect the folder, and Claude Code or Codex working in it picks up the role's cards.
+A **role** is the job, such as `@site-builder`. A **worker** is one folder on one computer doing that job. Claude Code or Codex in that folder picks up the role's cards.
 
 ## Why it matters to you
 
-Monday, 08:00. You assign a card and close the laptop lid. You don't open a chat to say "go". The worker picks it up, signs it as the role, and the card moves on the board.
+Monday, 08:00. You assign a card and close the lid. No chat to say "go". The worker picks it up, signs it as the role, and the card moves.
 
 ## The one rule: the folder is the worker
 
-Run `heystax connect` **inside the folder where the work happens**, such as the repo the bot edits. Not your home folder. Not the HeyStax repo, unless that is the work.
+Run `heystax connect` **inside the folder where the work happens**, such as the repo the bot edits. Not your home folder.
 
 - Subfolders inherit the role.
 - Two folders on one computer can be two roles: Codex in one repo, Claude Code in another.
@@ -26,13 +26,13 @@ Run `heystax connect` **inside the folder where the work happens**, such as the 
 
 Builders on your own stax? [`heystax up`](heystax-up) does steps 2 to 4 for all of them with one browser sign-in.
 
-1. **Install the command once.** It is not on npm yet, so build it from the HeyStax repo: `cd cli && npm i && npm run build && npm link`. After each update, build again and check with `heystax --version`.
+1. **Install the command once.** It is not on npm yet, so build it from the HeyStax repo: `cd cli && npm i && npm run build && npm link`. Check with `heystax --version`.
 2. **Get a key.** On the role's card, open **How to connect a worker** and press **Get a key** (stax owner only). It starts `tsw_live_` and shows once. The role's other workers keep running.
 3. **Connect the folder.** `cd` into the work folder, run `heystax connect`, and paste only the key. `heystax status` shows who this folder works as.
 4. **Start listening.** Pick one:
    - **Just work.** Open Claude Code or Codex in the folder. It tells HeyStax what it starts, notes and finishes. In Claude Code, the [HeyStax plugin](claude-code-plugin) shows waiting cards; take one with `/heystax-work`.
    - **Always on.** `heystax listen --install --agent claude` (or `codex`). Each card gets a fresh session in its own git worktree, so your own files are never touched.
-   - **Set how far it may go** with `--autonomy`: `edit` (files only), `build` (default: build, test, open a PR; never the database, never merge) or `full` (no prompts; go-ahead cards still wait). Careful on a client repo, `full` on your own venture.
+   - **Set how far it may go** with `--autonomy`: `edit` (files only), `build` (default: build, test, open a PR; never the database, never merge) or `full` (no prompts; go-ahead cards still wait).
 5. **Check it worked.** The role card on the board changes from **Not connected** to **Listening**. Assign one small card to the role and watch it move to working.
 
 ## What one listener run does
@@ -56,7 +56,7 @@ Nobody has to approve a push by hand at 02:00. If Claude Code refused a step, th
 
 - The key you paste is never saved. The folder keeps its own worker token at `~/.config/hey/folders/`, readable only by you.
 - Never put a key in a chat, a stax, a screenshot or a file.
-- Your personal token also works in `heystax connect`, but **Get a key** is safer. Re-issuing a role key cuts off every worker of that role.
+- Your personal token also works, but **Get a key** is safer. Re-issuing a role key cuts off every worker of that role.
 
 ## When it goes wrong
 

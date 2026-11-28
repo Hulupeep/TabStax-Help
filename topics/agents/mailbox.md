@@ -14,7 +14,7 @@ No app, no login, no live connection. If it can send a signed message, it can be
 
 ![A plant robot reads pot 3 as dry and sends a signed note. A card lands for Ava, who waters the basil, and the robot sees the card done and turns green. A freezer warms and its note becomes a card for Dee. A "set defrost" command from the internet is refused.](../../assets/images/mailbox-fridge-robot.gif)
 
-*Fridges and robots are planned. Today HeyMailbox works for ChatGPT.*
+*ChatGPT works today. You can add a robot or fridge today too; a device note has not yet been seen landing in production.*
 
 ## Why it matters to you
 
@@ -54,6 +54,26 @@ What ChatGPT can do this way: **create a card** and **check one card**. It can't
 
 Today this is set up per account, for one repo and the stax you allow. It isn't self-serve yet.
 
+## Devices: robots, fridges and displays {% include badge-partial.html %}
+
+A device never holds a key to your stax and never takes a command. It gets its own handle, a secret and at most three verbs.
+
+1. In your AI app, say: "Add a device called plant-bot to my Home stax, for @ava, that can ask and check." It calls `device_add`.
+2. Copy the signing secret into the device. It is shown once.
+3. The device posts a signed note, such as "pot 3 is dry", to `https://dash.heystax.ai/api/mcp/device-requests`.
+4. A card lands for Ava, added by `@plant-bot`.
+5. On its next round the device checks the card and sees it done.
+
+| The device can | What it means |
+|---|---|
+| **ask** | Post a note that becomes a card for its person |
+| **check** | Read one of its own cards |
+| **show** | Read its person's open cards, titles only, for a kitchen display |
+
+`device_list` shows your devices, never their secrets. `device_pause` stops one. `device_remove` kills its secret at once; its past cards stay.
+
+Partly works today: adding, pausing and removing devices works from your AI app. No device note has been seen landing in production yet, and the dashboard has no Add a device screen yet.
+
 ## How HeyStax keeps HeyMailbox safe
 
 The words in the note never prove who sent it. These do:
@@ -66,7 +86,7 @@ The words in the note never prove who sent it. These do:
 
 ## Ideas, from obvious to odd {% include badge-planned.html %}
 
-Only ChatGPT through GitHub works today. These use the same pattern with a different mailbox.
+These use the same pattern with a different mailbox.
 
 | Who sends it | The note | What lands on your stax | Why it helps |
 |---|---|---|---|
@@ -74,8 +94,6 @@ Only ChatGPT through GitHub works today. These use the same pattern with a diffe
 | **Your build or monitoring** (CI, Sentry, Stripe) | "Nightly build failed" | A card for the builder, done when the build is green | Fixed before you wake up |
 | **Email** | Forward a message to your stax | A card from `@inbox` | Anyone can hand you work with no app |
 | **A phone call or text** | A caller leaves a message | A card on the right case stax | Claims and bookings never fall between chairs |
-| **A small robot** | "Battery low, stuck at shelf 3" | A card for whoever is on duty | The robot asks for help and checks when it's done |
-| **The fridge or washing machine** | "Milk is low" or "Wash finished" | "Buy milk" or "Move the laundry" on the family stax | Home tasks land where the family already looks |
 | **An offline model box** | Notes saved while it has no internet | Cards that appear when it reconnects | Works on a flaky link |
 | **Someone with no account** | A plumber replies to a text with a code | A card under their handle | Outside helpers join a stax without signing up |
 | **Another company's bot** | A comment on a shared issue | A card with only the access you gave it | Work across companies without sharing a database |

@@ -21,6 +21,7 @@ You plan in Claude on Tuesday and ask ChatGPT on Thursday. Both open the same st
 | [Claude.ai](mcp-claude-ai) | Add the connector, sign in, pick a role | Live on HeyStax's side; not yet tried from Claude.ai itself |
 | ChatGPT | The MCP connector | Live |
 | Grok Bot and other apps | [Connect a bot by sign-in](agents/connect-by-sign-in), or send your token | Live on HeyStax's side; check it in your app |
+| An AI or a device with no connector | [HeyMailbox](agents/mailbox): a signed note becomes a card | Partly works today |
 
 MCP needs a **Pro** or **Trial** plan.
 

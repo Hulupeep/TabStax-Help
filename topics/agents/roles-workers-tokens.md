@@ -56,6 +56,7 @@ Grant your Chief of Staff one permission per Stax, `manage_roles`. You do it onc
 - It works on that one Stax only, and its access ends when the Chief's does.
 - A Chief can create up to 10 active roles per Stax.
 - Every role it creates is recorded as created by the Chief. You can end any of them.
+- The answer says how the new role runs: a **brain** works in an outside chat, a **builder** listens and can push and open PRs, a **scheduled** role is a read-only nightly slot. If a read-only role's job names push, PR or merge, it warns you.
 - The Chief can't pass `manage_roles` or `go_ahead` on. Only you can grant them.
 
 The chain is: **your key → Chief of Staff → role → workers**. You set direction. The Chief staffs the work.
