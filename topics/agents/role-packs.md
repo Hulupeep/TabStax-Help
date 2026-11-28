@@ -61,7 +61,7 @@ You have a new idea on Monday and no afternoon to staff it. You don't write five
 
 `pack_export` (your own token, your own stax) gives you the team as a pack you can apply elsewhere. It keeps each role's outcome, its Never rules and its open first cards. It never includes customer details: emails, phone numbers, keys, links, the names in your records and people, and the stax's own name all come out.
 
-Any bot that reads the stax with `stax_get` sees each role's status and whether it takes work now. A role that does not says why, with the one step that fixes it. An offline Chief reads "Your Chief is down". Roles that never connected come back as one Needs you item with the commands to copy, which can wait as a card until you are at your computer. So work goes to a role that is listening.
+Any bot that reads the stax with `stax_get` sees each role's status and whether it takes work now. A role that does not says why, with the one step that fixes it. An offline Chief reads "Your Chief is down". A Chief you run in a chat is not down: if it wrote to the stax in the last 36 hours, it shows what it did instead. Roles that never connected come back as one Needs you item with the commands to copy, which can wait as a card until you are at your computer. So work goes to a role that is listening.
 
 Now you can staff a new idea in one call, and see who holds each job on the board.
 
